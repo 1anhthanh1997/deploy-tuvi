@@ -220,6 +220,7 @@ function lapDiaBan(
   );
 
   diaBan = new DiaBan(tt, gioSinh);
+  console.log("Dia:", tt, gioSinh);
 
   const amDuongNamSinh = thienCan[canNam].amDuong;
   const amDuongChiNamSinh = diaChi[chiNam].amDuong;
@@ -307,7 +308,6 @@ function lapDiaBan(
   diaBan.nhapSao(viTriTuongQuan, saoTuongQuan);
 
   const viTriTauThu = dichCung(viTriLocTon, 5 * amDuongNamNu);
-
   diaBan.nhapSao(viTriTauThu, saoTauThu);
 
   const viTriPhiLiem = dichCung(viTriLocTon, 6 * amDuongNamNu);
@@ -669,6 +669,8 @@ function lapDiaBan(
   let [viTriTriet1, viTriTriet2] = timTriet(canNam);
   diaBan.nhapTriet(viTriTriet1, viTriTriet2);
   if (namXemTieuVan) {
+    diaBan = diaBan.nhapNguyetVan(chiLuuNam, tt, gioSinh);
+
     const viTriLuuThienKhoi = timThienKhoi(canLuuNam);
     diaBan.nhapSao(viTriLuuThienKhoi, saoLuuThienKhoi);
 
@@ -707,6 +709,71 @@ function lapDiaBan(
 
     const viTriLuuThienHu = dichCung(7, chiLuuNam - 1);
     diaBan.nhapSao(viTriLuuThienHu, saoLuuThienHu);
+
+    const viTriLuuLongTri = dichCung(5, chiLuuNam - 1);
+
+    const viTriLuuPhuongCac = dichCung(2, 2 - viTriLuuLongTri);
+    diaBan.nhapSao(viTriLuuPhuongCac, saoLuuPhuongCac);
+
+    const viTriLuuTuongQuan = dichCung(viTriLuuLocTon, 4 * amDuongNamNu);
+    diaBan.nhapSao(viTriLuuTuongQuan, saoLuuTuongQuan);
+
+    const viTriLuuTauThu = dichCung(viTriLuuLocTon, 5 * amDuongNamNu);
+    diaBan.nhapSao(viTriLuuTauThu, saoLuuTauThu);
+
+    const viTriLuuDuongPhu = dichCung(viTriLuuKinhDuong, 4);
+    diaBan.nhapSao(viTriLuuDuongPhu, saoLuuDuongPhu);
+
+    const viTriLuuQuanPhu3 = dichCung(viTriLuuThaiTue, 4);
+    diaBan.nhapSao(viTriLuuQuanPhu3, saoLuuQuanPhu3);
+
+    const viTriLuuPhiLiem = dichCung(viTriLuuLocTon, 6 * amDuongNamNu);
+    diaBan.nhapSao(viTriLuuPhiLiem, saoLuuPhiLiem);
+
+    const viTriLuuHyThan = dichCung(viTriLuuLocTon, 7 * amDuongNamNu);
+    diaBan.nhapSao(viTriLuuHyThan, saoLuuHyThan);
+
+    let [viTriLuuLuuHa, viTriLuuThienTru] = timLuuTru(canLuuNam);
+    diaBan.nhapSao(viTriLuuLuuHa, saoLuuLuuHa);
+
+    const viTriLuuQuocAn = dichCung(viTriLuuDuongPhu, 3);
+    diaBan.nhapSao(viTriLuuQuocAn, saoLuuQuocAn);
+
+    const viTriLuuBenhPhu = dichCung(viTriLuuLocTon, 8 * amDuongNamNu);
+    diaBan.nhapSao(viTriLuuBenhPhu, saoLuuBenhPhu);
+
+    const viTriLuuDaiHao = dichCung(viTriLuuLocTon, 9 * amDuongNamNu);
+    diaBan.nhapSao(viTriLuuDaiHao, saoLuuDaiHao);
+
+    const viTriLuuPhucBinh = dichCung(viTriLuuLocTon, 10 * amDuongNamNu);
+    diaBan.nhapSao(viTriLuuPhucBinh, saoLuuPhucBinh);
+
+    const viTriLuuCoThan = timCoThan(chiLuuNam);
+    diaBan.nhapSao(viTriLuuCoThan, saoLuuCoThan);
+
+    const viTriLuuQuaTu = dichCung(viTriLuuCoThan, -4);
+    diaBan.nhapSao(viTriLuuQuaTu, saoLuuQuaTu);
+
+    const viTriLuuQuanPhu2 = dichCung(viTriLuuLocTon, 11 * amDuongNamNu);
+    diaBan.nhapSao(viTriLuuQuanPhu2, saoLuuQuanPhu2);
+
+    const viTriLuuDieuKhach = dichCung(viTriLuuThaiTue, 10);
+    diaBan.nhapSao(viTriLuuDieuKhach, saoLuuDieuKhach);
+
+    const viTriLuuLucSi = dichCung(viTriLuuLocTon, 1 * amDuongNamNu);
+    diaBan.nhapSao(viTriLuuLucSi, saoLuuLucSi);
+
+    const viTriLuuThanhLong = dichCung(viTriLuuLocTon, 2 * amDuongNamNu);
+    diaBan.nhapSao(viTriLuuThanhLong, saoLuuThanhLong);
+
+    const viTriLuuHoaCai = dichCung(viTriLuuThienMa, 2);
+    diaBan.nhapSao(viTriLuuHoaCai, saoLuuHoaCai);
+
+    const viTriLuuThienHy = dichCung(viTriLuuHongLoan, 6);
+    diaBan.nhapSao(viTriLuuThienHy, saoLuuThienHy);
+
+    const viTriLuuTieuHao = dichCung(viTriLuuLocTon, 3 * amDuongNamNu);
+    diaBan.nhapSao(viTriLuuTieuHao, saoLuuTieuHao);
 
     let viTriLuuHoaLoc, viTriLuuHoaQuyen, viTriLuuHoaKhoa, viTriLuuHoaKy;
 
@@ -773,10 +840,10 @@ function lapDiaBan(
         break;
     }
 
-    diaBan.nhapSao(viTriLuuHoaLoc, saoLuuHoaLoc);
-    diaBan.nhapSao(viTriLuuHoaQuyen, saoLuuHoaQuyen);
-    diaBan.nhapSao(viTriLuuHoaKhoa, saoLuuHoaKhoa);
-    diaBan.nhapSao(viTriLuuHoaKy, saoLuuHoaKy);
+    // diaBan.nhapSao(viTriLuuHoaLoc, saoLuuHoaLoc);
+    // diaBan.nhapSao(viTriLuuHoaQuyen, saoLuuHoaQuyen);
+    // diaBan.nhapSao(viTriLuuHoaKhoa, saoLuuHoaKhoa);
+    // diaBan.nhapSao(viTriLuuHoaKy, saoLuuHoaKy);
 
     let ketThucLuuTuan = dichCung(chiLuuNam, 10 - canLuuNam);
     let viTriLuuTuan1 = dichCung(ketThucLuuTuan, 1);

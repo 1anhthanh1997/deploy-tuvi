@@ -47,6 +47,11 @@ class CungDiaBan {
     return this;
   }
 
+  nguyetHan(nguyetHan) {
+    this.nguyetHan = "Tháng " + nguyetHan;
+    return this;
+  }
+
   anCungThan() {
     this.cungThan = true;
   }
@@ -133,6 +138,25 @@ class DiaBan {
     this.thapNhiCung.forEach((cung) => {
       const khoangCach = khoangCachCung(cung.cungSo, viTriCungTy1, gioiTinh);
       cung.tieuHan(khoangCach);
+    });
+    return this;
+  }
+
+  nhapNguyetVan(chiNam, thangSinh, gioSinh) {
+    let viTriBatDau = 1;
+    this.thapNhiCung.forEach((cung) => {
+      if (cung.cungTieuHan === diaChi[chiNam]["tenChi"]) {
+        viTriBatDau = cung.cungSo;
+      }
+    });
+    let viTriThang1 = dichCung(viTriBatDau, gioSinh - thangSinh);
+    this.thapNhiCung.forEach((cung) => {
+      let khoangCach = cung.cungSo - viTriThang1;
+      if (khoangCach < 0) {
+        khoangCach += 12;
+      }
+      console.log(khoangCach);
+      cung.nguyetHan(khoangCach + 1);
     });
     return this;
   }
