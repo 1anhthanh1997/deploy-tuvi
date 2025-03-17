@@ -368,13 +368,13 @@ $(document).ready(function () {
     return contentCopy;
   }
 
-  function downloadTxtFile(content) {
+  function downloadTxtFile(content,title) {
     const text = content;
     const blob = new Blob([text], { type: "text/plain" });
     const link = document.createElement("a");
 
     link.href = URL.createObjectURL(blob);
-    link.download = "sample.txt";
+    link.download = title;
 
     document.body.appendChild(link);
     link.click();
@@ -395,9 +395,17 @@ $(document).ready(function () {
   });
 
   $("#btn-download-content").click(function () {
+    let title="sample.txt"
+    let checkedValues = $("#luunien").serialize();
+    if(checkedValues){
+      let namXemTieuVan = $('#namxemtieuvan').val();
+      title="tieu_van_"+namXemTieuVan+".txt";
+    }else{
+      let name =$('#hoten').val();
+      title="la_so_"+name+".txt";
+    }
     const content = $("#contentCopy").text();
-    console.log(content);
-    downloadTxtFile(content);
+    downloadTxtFile(content,title);
   });
 
   $("#luunien").click(function () {
