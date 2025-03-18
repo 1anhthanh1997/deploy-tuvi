@@ -234,11 +234,9 @@ $(document).ready(function () {
       const { cungSao, cungSo } = cung;
       const chinhTinh = cungSao.filter((sao) => sao.saoAmDuong !== "");
       let chinhTinhStr=""
-      const phuTinh = cungSao.filter((sao) => sao.saoAmDuong === "");
-      const cungDoiXung =
-        cungSo + 6 > 12
-          ? sapXepCungTheoCungSo[cungSo + 6 - 12]
-          : sapXepCungTheoCungSo[cungSo + 6 - 1];
+      let phuTinh = cungSao.filter((sao) => sao.saoAmDuong === "");
+      console.log(sapXepCungTheoCungSo)
+      const cungDoiXung =sapXepCungTheoCungSo[(cungSo + 5) % 12]
       const cungTamHop1 =
         cungSo + 4 > 12
           ? sapXepCungTheoCungSo[cungSo + 4 - 12]
@@ -260,8 +258,17 @@ $(document).ready(function () {
               sapXepCungTheoTuoi[sttNext].cungDaiHan - 2
             } tuổi`;
             if(!chinhTinh.length){
-             let chinhTinhDoiXung=getSao(cungDoiXung.cungChu, sapXepCungTheoTuoi).chinhTinhData
-              chinhTinhStr="Lấy ý nghĩa đối xung của (" +getSao(cungDoiXung.cungChu, sapXepCungTheoTuoi).chinhTinh+") mà luận"
+              let saoDacTinh= phuTinh.filter((sao)=>{
+                return sao.saoDacTinh==="H";
+              })
+              phuTinh=phuTinh.filter((sao)=>{
+                return sao.saoDacTinh!=="H";
+              })
+              chinhTinhStr=
+              // "Lấy ý nghĩa đối xung của (" 
+              +getSao(cungDoiXung.cungChu, sapXepCungTheoTuoi).chinhTinh
+              // +") mà luận"
+              +(saoDacTinh.length?" + ":"")+ saoDacTinh.map((sao) => capitalizeWords(sao.saoTen)).join(" + ")
             }else{
               chinhTinhStr=chinhTinh.map((sao) => capitalizeWords(sao.saoTen)).join(" + ")
             }

@@ -356,8 +356,8 @@ function lapDiaBan(
   const viTriBachHo = dichCung(viTriThaiTue, 8);
   diaBan.nhapSao(viTriBachHo, saoBachHo);
 
-  const viTriPhucDuc = dichCung(viTriThaiTue, 9);
-  diaBan.nhapSao(viTriPhucDuc, saoPhucDuc);
+  // const viTriPhucDuc = dichCung(viTriThaiTue, 9);
+  // diaBan.nhapSao(viTriPhucDuc, saoPhucDuc);
   // diaBan.nhapSao(viTriPhucDuc, saoThienDuc);
 
   // const viTriDieuKhach = dichCung(viTriThaiTue, 10);
