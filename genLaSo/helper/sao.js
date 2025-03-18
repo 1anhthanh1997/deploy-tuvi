@@ -87,7 +87,7 @@ const saoThatSat = new Sao(13, "Thất sát", "K", 1, "Nam đẩu tinh", 1, 0);
 const saoPhaQuan = new Sao(14, "Phá quân", "T", 1, "Bắc đẩu tinh", -1, 0);
 
 // Vòng Địa chi - Thái tuế
-const saoThaiTue = new Sao(15, "Thái tuế", "H", 15, "", 0);
+const saoThaiTue = new Sao(15, "Thái tuế", "H", 15, "", "");
 const saoThieuDuong = new Sao(16, "Thiếu dương", "H", 5);
 const saoTangMon = new Sao(17, "Tang môn", "M", 12);
 const saoThieuAm = new Sao(18, "Thiếu âm", "T", 5);
@@ -135,7 +135,7 @@ const saoDaLa = new Sao(51, "Đà la", "K", 11);
 const saoKinhDuong = new Sao(52, "Kình dương", "K", 11);
 
 //    Địa không - Địa kiếp
-const saoDiaKhong = new Sao(53, "Địa không", "H", 11);
+const saoDiaKhong = new Sao(53, "Thiên không", "H", 11);
 const saoDiaKiep = new Sao(54, "Địa kiếp", "H", 11);
 
 //    Hỏa tinh - Linh tinh
@@ -173,7 +173,7 @@ const saoThienHu = new Sao(70, "Thiên hư", "T", 12);
 const saoThienDuc = new Sao(71, "Thiên đức", "H", 5);
 const saoNguyetDuc = new Sao(72, "Nguyệt đức", "H", 5);
 const saoThienHinh = new Sao(73, "Thiên hình", "H", 15);
-const saoThienRieu = new Sao(74, "Thiên riêu", "T", 13);
+const saoThienRieu = new Sao(74, "Thiên diêu", "T", 13);
 const saoThienY = new Sao(75, "Thiên y", "T", 5);
 const saoQuocAn = new Sao(76, "Quốc ấn", "O", 6);
 const saoDuongPhu = new Sao(77, "Đường phù", "M", 4);
@@ -207,7 +207,7 @@ const saoKiepSat = new Sao(104, "Kiếp sát", "H", 11);
 const saoHoaCai = new Sao(105, "Hoa cái", "K", 14);
 const saoVanTinh = new Sao(106, "Văn tinh", "H", 6);
 const saoDauQuan = new Sao(107, "Đẩu quân", "H", 5);
-const saoThienKhong = new Sao(108, "Thiên không", "T", 11);
+// const saoThienKhong = new Sao(108, "Thiên không", "T", 11);
 const saoLuuThaiTue = new Sao(109, "L.Thái tuế", "H", 15, "", 0, 0, true);
 const saoLuuTangMon = new Sao(110, "L.Tang môn", "M", 12, "", "", 0, true);
 const saoLuuBachHo = new Sao(111, "L.Bạch hổ", "K", 12, "", "", 0, true);
@@ -366,7 +366,7 @@ module.exports = {
   saoHoaCai,
   saoVanTinh,
   saoDauQuan,
-  saoThienKhong,
+  // saoThienKhong,
   saoLuuThaiTue,
   saoLuuTangMon,
   saoLuuBachHo,

@@ -289,7 +289,7 @@
       <div class="grid cung-middle">
           <div class="chinhTinh">
               {{for cungSao}} {{if saoLoai == 1}}
-              <li class="{{:cssSao}}">{{:saoTen}} {{if saoDacTinh !== null}} ({{:saoDacTinh}}) {{/if}}
+              <li class="{{:cssSao}}">{{:saoTen}} 
               </li>
               {{/if}} {{/for}}
           </div>
@@ -299,7 +299,7 @@
                   {{for cungSao}} {{if vongTrangSinh === 0 && saoLoai !==1 && saoLoai < 10}}
                   <div class="grid">
                       <div class="{{:cssSao}}">
-                          {{:saoTen}} {{if saoDacTinh !== null}} ({{:saoDacTinh}}) {{/if}}
+                          {{:saoTen}} 
                       </div>
                   </div>
                   {{/if}} {{/for}}
@@ -308,7 +308,7 @@
                   {{for cungSao}} {{if vongTrangSinh === 0 && saoLoai !==1 && saoLoai > 10}}
                   <div class="grid">
                       <div class="{{:cssSao}}">
-                          {{:saoTen}} {{if saoDacTinh !== null}} ({{:saoDacTinh}}) {{/if}}
+                          {{:saoTen}} 
                       </div>
                   </div>
                   {{/if}} {{/for}}

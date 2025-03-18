@@ -97,7 +97,7 @@ const {
   saoThienHy,
   saoThienKhoc,
   saoThienKhoi,
-  saoThienKhong,
+  // saoThienKhong,
   saoThienLa,
   saoThienLuong,
   saoThienMa,
@@ -292,7 +292,8 @@ function lapDiaBan(
   // sao Bác sỹ ở cùng cung với Lộc tồn
   const viTriLocTon = thienCan[canNam].vitriDiaBan;
 
-  diaBan.nhapSao(viTriLocTon, saoLocTon, saoBacSy);
+  diaBan.nhapSao(viTriLocTon, saoLocTon);
+  // diaBan.nhapSao(viTriLocTon, saoBacSy);
 
   const amDuongNamNu = gioiTinh * amDuongNamSinh;
   const viTriLucSi = dichCung(viTriLocTon, 1 * amDuongNamNu);
@@ -333,7 +334,7 @@ function lapDiaBan(
   diaBan.nhapSao(viTriThaiTue, saoThaiTue);
 
   const viTriThieuDuong = dichCung(viTriThaiTue, 1);
-  diaBan.nhapSao(viTriThieuDuong, saoThieuDuong, saoThienKhong);
+  // diaBan.nhapSao(viTriThieuDuong, saoThieuDuong, saoThienKhong);
 
   const viTriTangMon = dichCung(viTriThaiTue, 2);
   diaBan.nhapSao(viTriTangMon, saoTangMon);
@@ -421,8 +422,8 @@ function lapDiaBan(
   const viTriDiaKiep = dichCung(11, gioSinh);
   diaBan.nhapSao(viTriDiaKiep, saoDiaKiep);
 
-  // const viTriDiaKhong = dichCung(12, 12 - viTriDiaKiep);
-  // diaBan.nhapSao(viTriDiaKhong, saoDiaKhong);
+  const viTriDiaKhong = dichCung(12, 12 - viTriDiaKiep);
+  diaBan.nhapSao(viTriDiaKhong, saoDiaKhong);
 
   const [viTriHoaTinh, viTriLinhTinh] = timHoaLinh(
     chiNam,
@@ -437,7 +438,8 @@ function lapDiaBan(
   diaBan.nhapSao(viTriLongTri, saoLongTri);
 
   const viTriPhuongCac = dichCung(2, 2 - viTriLongTri);
-  diaBan.nhapSao(viTriPhuongCac, saoPhuongCac, saoGiaiThan);
+  diaBan.nhapSao(viTriPhuongCac, saoPhuongCac);
+  // diaBan.nhapSao(viTriPhuongCac, saoGiaiThan);
 
   const viTriTaPhu = dichCung(5, tt - 1);
   diaBan.nhapSao(viTriTaPhu, saoTaPhu);
@@ -568,7 +570,7 @@ function lapDiaBan(
   diaBan.nhapSao(viTriHoaCai, saoHoaCai);
 
   const viTriKiepSat = dichCung(viTriThienMa, 3);
-  diaBan.nhapSao(viTriKiepSat, saoKiepSat);
+  // diaBan.nhapSao(viTriKiepSat, saoKiepSat);
 
   const viTriDaoHoa = dichCung(viTriKiepSat, 4);
   diaBan.nhapSao(viTriDaoHoa, saoDaoHoa);
@@ -658,7 +660,7 @@ function lapDiaBan(
   // An Lưu Hà - Thiên Trù
   let [viTriLuuHa, viTriThienTru] = timLuuTru(canNam);
   diaBan.nhapSao(viTriLuuHa, saoLuuHa);
-  diaBan.nhapSao(viTriThienTru, saoThienTru);
+  // diaBan.nhapSao(viTriThienTru, saoThienTru);
 
   // An Tuần, Triệt
   let ketThucTuan = dichCung(chiNam, 10 - canNam);

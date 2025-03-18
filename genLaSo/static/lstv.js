@@ -94,7 +94,7 @@ $(document).ready(function () {
   }
 
   function getCungChuInfo(cungChu) {
-    console.log(cungChu)
+    console.log(cungChu);
     switch (cungChu) {
       case "Mệnh": {
         return {
@@ -183,6 +183,10 @@ $(document).ready(function () {
     }
   }
 
+  const newChinhTinh = [
+    51, 52, 53, 54, 55, 56, 57, 58, 61, 62, 73, 92, 93, 94, 95,
+  ];
+
   function getSao(cungChu, thapNhiCung) {
     cungArr = thapNhiCung.filter((c) => {
       return c.cungChu === cungChu;
@@ -190,8 +194,14 @@ $(document).ready(function () {
     if (cungArr.length > 0) {
       let cung = cungArr[0];
       const { cungSao, cungSo } = cung;
-      const chinhTinh = cungSao.filter((sao) => sao.saoAmDuong !== "");
-      const phuTinh = cungSao.filter((sao) => sao.saoAmDuong === "");
+      const chinhTinhGoc = cungSao.filter((sao) => sao.saoAmDuong !== "");
+      const chinhTinhMoi = cungSao.filter((sao) =>
+        newChinhTinh.includes(sao.saoID)
+      );
+      const chinhTinh = [...chinhTinhGoc, ...chinhTinhMoi];
+      const phuTinh = cungSao.filter(
+        (sao) => sao.saoAmDuong === "" && !newChinhTinh.includes(sao.saoID)
+      );
       return {
         chinhTinh: chinhTinh
           .map((sao) => capitalizeWords(sao.saoTen))
@@ -232,20 +242,19 @@ $(document).ready(function () {
 
     const contentThapNhiCung = sapXepCungTheoTuoi.map((cung, index) => {
       const { cungSao, cungSo } = cung;
-      const chinhTinh = cungSao.filter((sao) => sao.saoAmDuong !== "");
-      let chinhTinhStr=""
-      let phuTinh = cungSao.filter((sao) => sao.saoAmDuong === "");
-      console.log(sapXepCungTheoCungSo)
-      const cungDoiXung =sapXepCungTheoCungSo[(cungSo + 5) % 12]
-      const cungTamHop1 =
-        cungSo + 4 > 12
-          ? sapXepCungTheoCungSo[cungSo + 4 - 12]
-          : sapXepCungTheoCungSo[cungSo + 4 - 1];
-      const cungSoTamHop1 = cungTamHop1.cungSo - 1;
-      const cungTamHop2 =
-        cungSoTamHop1 + 4 > 12
-          ? sapXepCungTheoCungSo[cungSoTamHop1 + 4 - 12]
-          : sapXepCungTheoCungSo[cungSoTamHop1 + 4 - 1];
+      const chinhTinhGoc = cungSao.filter((sao) => sao.saoAmDuong !== "");
+      const chinhTinhMoi = cungSao.filter((sao) =>
+        newChinhTinh.includes(sao.saoID)
+      );
+      const chinhTinh = [...chinhTinhGoc, ...chinhTinhMoi];
+      let chinhTinhStr = "";
+      let phuTinh = cungSao.filter(
+        (sao) => sao.saoAmDuong === "" && !newChinhTinh.includes(sao.saoID)
+      );
+      console.log(sapXepCungTheoCungSo);
+      const cungDoiXung = sapXepCungTheoCungSo[(cungSo + 5) % 12];
+      const cungTamHop1 = sapXepCungTheoCungSo[(cungSo + 3) % 12]; //cungSo tinh tu 1 con index tinh tu 0
+      const cungTamHop2 = sapXepCungTheoCungSo[(cungSo + 7) % 12];
       const stt = index + 1;
       const sttNext =
         index === sapXepCungTheoTuoi.length - 1 ? null : index + 1;
@@ -257,21 +266,18 @@ $(document).ready(function () {
           : `${cungDaiHan - 1} tuổi đến năm ${
               sapXepCungTheoTuoi[sttNext].cungDaiHan - 2
             } tuổi`;
-            if(!chinhTinh.length){
-              let saoDacTinh= phuTinh.filter((sao)=>{
-                return sao.saoDacTinh==="H";
-              })
-              phuTinh=phuTinh.filter((sao)=>{
-                return sao.saoDacTinh!=="H";
-              })
-              chinhTinhStr=
-              // "Lấy ý nghĩa đối xung của (" +
-              getSao(cungDoiXung.cungChu, sapXepCungTheoTuoi).chinhTinh
-              // +") mà luận"
-              +(saoDacTinh.length?" + ":"")+ saoDacTinh.map((sao) => capitalizeWords(sao.saoTen)).join(" + ")
-            }else{
-              chinhTinhStr=chinhTinh.map((sao) => capitalizeWords(sao.saoTen)).join(" + ")
-            }
+      if (!chinhTinhGoc.length) {
+        chinhTinhStr =
+          // "Lấy ý nghĩa đối xung của (" +
+          getSao(cungDoiXung.cungChu, sapXepCungTheoTuoi).chinhTinh +
+          // +") mà luận"
+          (chinhTinhMoi.length ? " + " : "") +
+          chinhTinhMoi.map((sao) => capitalizeWords(sao.saoTen)).join(" + ");
+      } else {
+        chinhTinhStr = chinhTinh
+          .map((sao) => capitalizeWords(sao.saoTen))
+          .join(" + ");
+      }
       return `${stt}. 
     Cung chức gốc: ${capitalizeWords(cungChu)} ${
         getCungChuInfo(cungChu).shortName
@@ -283,7 +289,9 @@ $(document).ready(function () {
       }
     Chính Tinh của cung ${capitalizeWords(
       cungChu
-    )} của ${ten} sinh năm ${namDuong}  gồm có: ${chinhTinhStr} ${trietLo ? "+ Triệt" : ""}${tuanTrung ? "+ Tuần" : ""}
+    )} của ${ten} sinh năm ${namDuong}  gồm có: ${chinhTinhStr} ${
+        trietLo ? "+ Triệt" : ""
+      }${tuanTrung ? "+ Tuần" : ""}
     Phụ Tinh ${capitalizeWords(
       cungChu
     )} của ${ten} sinh năm ${namDuong} gồm có: ${phuTinh
@@ -381,7 +389,7 @@ $(document).ready(function () {
     return contentCopy;
   }
 
-  function downloadTxtFile(content,title) {
+  function downloadTxtFile(content, title) {
     const text = content;
     const blob = new Blob([text], { type: "text/plain" });
     const link = document.createElement("a");
@@ -408,17 +416,17 @@ $(document).ready(function () {
   });
 
   $("#btn-download-content").click(function () {
-    let title="sample.txt"
+    let title = "sample.txt";
     let checkedValues = $("#luunien").serialize();
-    if(checkedValues){
-      let namXemTieuVan = $('#namxemtieuvan').val();
-      title="tieu_van_"+namXemTieuVan+".txt";
-    }else{
-      let name =$('#hoten').val();
-      title="la_so_"+name+".txt";
+    if (checkedValues) {
+      let namXemTieuVan = $("#namxemtieuvan").val();
+      title = "tieu_van_" + namXemTieuVan + ".txt";
+    } else {
+      let name = $("#hoten").val();
+      title = "la_so_" + name + ".txt";
     }
     const content = $("#contentCopy").text();
-    downloadTxtFile(content,title);
+    downloadTxtFile(content, title);
   });
 
   $("#luunien").click(function () {
