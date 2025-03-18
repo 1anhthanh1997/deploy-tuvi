@@ -842,10 +842,10 @@ function lapDiaBan(
         break;
     }
 
-    // diaBan.nhapSao(viTriLuuHoaLoc, saoLuuHoaLoc);
-    // diaBan.nhapSao(viTriLuuHoaQuyen, saoLuuHoaQuyen);
-    // diaBan.nhapSao(viTriLuuHoaKhoa, saoLuuHoaKhoa);
-    // diaBan.nhapSao(viTriLuuHoaKy, saoLuuHoaKy);
+    diaBan.nhapSao(viTriLuuHoaLoc, saoLuuHoaLoc);
+    diaBan.nhapSao(viTriLuuHoaQuyen, saoLuuHoaQuyen);
+    diaBan.nhapSao(viTriLuuHoaKhoa, saoLuuHoaKhoa);
+    diaBan.nhapSao(viTriLuuHoaKy, saoLuuHoaKy);
 
     let ketThucLuuTuan = dichCung(chiLuuNam, 10 - canLuuNam);
     let viTriLuuTuan1 = dichCung(ketThucLuuTuan, 1);
