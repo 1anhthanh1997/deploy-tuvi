@@ -266,18 +266,10 @@ $(document).ready(function () {
           : `${cungDaiHan - 1} tuổi đến năm ${
               sapXepCungTheoTuoi[sttNext].cungDaiHan - 2
             } tuổi`;
-      if (!chinhTinhGoc.length) {
-        chinhTinhStr =
-          // "Lấy ý nghĩa đối xung của (" +
-          getSao(cungDoiXung.cungChu, sapXepCungTheoTuoi).chinhTinh +
-          // +") mà luận"
-          (chinhTinhMoi.length ? " + " : "") +
-          chinhTinhMoi.map((sao) => capitalizeWords(sao.saoTen)).join(" + ");
-      } else {
-        chinhTinhStr = chinhTinh
-          .map((sao) => capitalizeWords(sao.saoTen))
-          .join(" + ");
-      }
+      chinhTinhStr = chinhTinh
+        .map((sao) => capitalizeWords(sao.saoTen))
+        .join(" + ");
+
       return `${stt}. 
     Cung chức gốc: ${capitalizeWords(cungChu)} ${
         getCungChuInfo(cungChu).shortName
@@ -297,6 +289,11 @@ $(document).ready(function () {
     )} của ${ten} sinh năm ${namDuong} gồm có: ${phuTinh
         .map((sao) => capitalizeWords(sao.saoTen))
         .join(" + ")} 
+    ${
+      !chinhTinhGoc.length
+        ? "Tham khảo thêm ý nghĩa cung đối xung ngoại cảnh"
+        : ""
+    }    
     Xét tổ hợp ý nghĩa của cung ${capitalizeWords(
       cungChu
     )} của ${ten} sinh năm ${namDuong}
