@@ -94,6 +94,7 @@ $(document).ready(function () {
   }
 
   function getCungChuInfo(cungChu) {
+    console.log(cungChu)
     switch (cungChu) {
       case "Mệnh": {
         return {
@@ -135,7 +136,7 @@ $(document).ready(function () {
           shortName: "Nô",
         };
       }
-      case "Thiên Di": {
+      case "Thiên di": {
         return {
           description:
             "góc nhìn của xã hội về đương số, ngoại cảnh của “Mệnh”, đối tác/đối thủ/đối phương, cách đối nhân xử thế & tương tác xã hội",
@@ -232,6 +233,7 @@ $(document).ready(function () {
     const contentThapNhiCung = sapXepCungTheoTuoi.map((cung, index) => {
       const { cungSao, cungSo } = cung;
       const chinhTinh = cungSao.filter((sao) => sao.saoAmDuong !== "");
+      let chinhTinhStr=""
       const phuTinh = cungSao.filter((sao) => sao.saoAmDuong === "");
       const cungDoiXung =
         cungSo + 6 > 12
@@ -257,6 +259,12 @@ $(document).ready(function () {
           : `${cungDaiHan - 1} tuổi đến năm ${
               sapXepCungTheoTuoi[sttNext].cungDaiHan - 2
             } tuổi`;
+            if(!chinhTinh.length){
+             let chinhTinhDoiXung=getSao(cungDoiXung.cungChu, sapXepCungTheoTuoi).chinhTinhData
+              chinhTinhStr="Lấy ý nghĩa đối xung của (" +getSao(cungDoiXung.cungChu, sapXepCungTheoTuoi).chinhTinh+") mà luận"
+            }else{
+              chinhTinhStr=chinhTinh.map((sao) => capitalizeWords(sao.saoTen)).join(" + ")
+            }
       return `${stt}. 
     Cung chức gốc: ${capitalizeWords(cungChu)} ${
         getCungChuInfo(cungChu).shortName
@@ -268,9 +276,7 @@ $(document).ready(function () {
       }
     Chính Tinh của cung ${capitalizeWords(
       cungChu
-    )} của ${ten} sinh năm ${namDuong}  gồm có: ${chinhTinh
-        .map((sao) => capitalizeWords(sao.saoTen))
-        .join(" + ")} ${trietLo ? "+ Triệt" : ""}${tuanTrung ? "+ Tuần" : ""}
+    )} của ${ten} sinh năm ${namDuong}  gồm có: ${chinhTinhStr} ${trietLo ? "+ Triệt" : ""}${tuanTrung ? "+ Tuần" : ""}
     Phụ Tinh ${capitalizeWords(
       cungChu
     )} của ${ten} sinh năm ${namDuong} gồm có: ${phuTinh
