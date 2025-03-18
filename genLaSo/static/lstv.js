@@ -265,8 +265,8 @@ $(document).ready(function () {
                 return sao.saoDacTinh!=="H";
               })
               chinhTinhStr=
-              // "Lấy ý nghĩa đối xung của (" 
-              +getSao(cungDoiXung.cungChu, sapXepCungTheoTuoi).chinhTinh
+              // "Lấy ý nghĩa đối xung của (" +
+              getSao(cungDoiXung.cungChu, sapXepCungTheoTuoi).chinhTinh
               // +") mà luận"
               +(saoDacTinh.length?" + ":"")+ saoDacTinh.map((sao) => capitalizeWords(sao.saoTen)).join(" + ")
             }else{
