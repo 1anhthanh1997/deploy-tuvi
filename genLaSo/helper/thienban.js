@@ -39,9 +39,16 @@ class LapThienBan {
 
     this.timeZone = timeZone;
     this.today = new Date().toLocaleDateString("en-GB"); // format as DD/MM/YYYY
-    this.ngayDuong = nn;
-    this.thangDuong = tt;
-    this.namDuong = nnnn;
+    if (duongLich === false) {
+      const result = ngayThangNam(nn, tt, nnnn, duongLich, this.timeZone);
+      this.ngayDuong = result[0];
+      this.thangDuong = result[1];
+      this.namDuong = result[2];
+    } else {
+      this.ngayDuong = nn;
+      this.thangDuong = tt;
+      this.namDuong = nnnn;
+    }
     this.ten = ten;
     if (namXemTieuVan) {
       this.namXemTieuVan = namXemTieuVan;
@@ -63,7 +70,7 @@ class LapThienBan {
         this.ngayDuong,
         this.thangDuong,
         this.namDuong,
-        true,
+        duongLich,
         this.timeZone
       );
       this.ngayAm = result[0];
@@ -71,9 +78,9 @@ class LapThienBan {
       this.namAm = result[2];
       this.thangNhuan = result[3];
     } else {
-      this.ngayAm = this.ngayDuong;
-      this.thangAm = this.thangDuong;
-      this.namAm = this.namDuong;
+      this.ngayAm = nn;
+      this.thangAm = tt;
+      this.namAm = nnnn;
     }
 
     const canChiResult = ngayThangNamCanChi(

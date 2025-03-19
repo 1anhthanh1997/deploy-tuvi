@@ -207,6 +207,9 @@ function ngayThangNam(nn, tt, nnnn, duongLich = true, timeZone = 7) {
   if (nn > 0 && nn < 32 && tt < 13 && tt > 0) {
     if (duongLich) {
       [nn, tt, nnnn, thangNhuan] = S2L(nn, tt, nnnn, timeZone);
+      console.log("Data:", nn, tt, nnnn);
+    } else {
+      [nn, tt, nnnn] = L2S(nn, tt, nnnn, 0, timeZone);
     }
     return [nn, tt, nnnn, thangNhuan];
   } else {

@@ -25,7 +25,6 @@ app.get("/api", (req, res) => {
     const duongLich = req.query.amlich === "on" ? false : true;
     const luunien = req.query.luunien === "on" ? true : false;
     const namXemTieuVan = parseInt(req.query.namxemtieuvan) || now.year();
-
     // Gọi các hàm xử lý
     const data = lapDiaBan(
       diaBan,
@@ -46,7 +45,7 @@ app.get("/api", (req, res) => {
       gioiTinh,
       hoTen,
       data,
-      true,
+      duongLich,
       7,
       luunien ? namXemTieuVan : 0
     );
