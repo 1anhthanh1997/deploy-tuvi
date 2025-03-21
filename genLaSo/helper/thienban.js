@@ -96,7 +96,7 @@ class LapThienBan {
     this.chiThang = this.thangAm;
     this.canThangTen = thienCan[this.canThang].tenCan;
     this.canNamTen = thienCan[this.canNam].tenCan;
-    this.chiThangTen = diaChi[this.thangAm].tenChi;
+    this.chiThangTen = diaChi[this.thangAm + 2].tenChi;
     this.chiNamTen = diaChi[this.chiNam].tenChi;
 
     const ngayResult = canChiNgay(

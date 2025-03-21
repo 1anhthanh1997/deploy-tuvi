@@ -11,6 +11,7 @@ app.use(express.json());
 const { lapDiaBan } = require("./helper/lapDiaBan");
 const LapThienBan = require("./helper/thienban");
 const diaBan = require("./helper/diaBan");
+const { getLuuNhat, getLuuNguyet } = require("./helper/luuNguyetNhat");
 
 app.get("/api", (req, res) => {
   try {
@@ -49,10 +50,38 @@ app.get("/api", (req, res) => {
       7,
       luunien ? namXemTieuVan : 0
     );
+    let luuNguyet = [];
+    let luuNhat = [];
+    if (luunien) {
+      luuNguyet = getLuuNguyet(
+        diaBan,
+        ngaySinh,
+        thangSinh,
+        namSinh,
+        gioSinh,
+        gioiTinh,
+        duongLich,
+        timeZone,
+        namXemTieuVan
+      );
+      luuNhat = getLuuNhat(
+        diaBan,
+        ngaySinh,
+        thangSinh,
+        namSinh,
+        gioSinh,
+        gioiTinh,
+        duongLich,
+        timeZone,
+        namXemTieuVan
+      );
+    }
 
     const laso = {
       thienBan: thienBan,
       thapNhiCung: data.thapNhiCung,
+      luuNguyet: luunien ? luuNguyet : [],
+      luuNhat: luunien ? luuNhat : [],
     };
 
     res.json(laso);

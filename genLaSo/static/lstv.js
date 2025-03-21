@@ -514,7 +514,6 @@ $(document).ready(function () {
       let phuTinh = cungSao.filter(
         (sao) => sao.saoAmDuong === "" && !newChinhTinh.includes(sao.saoID)
       );
-      console.log(sapXepCungTheoCungSo);
       const cungDoiXung = sapXepCungTheoCungSo[(cungSo + 5) % 12];
       const cungTamHop1 = sapXepCungTheoCungSo[(cungSo + 3) % 12]; //cungSo tinh tu 1 con index tinh tu 0
       const cungTamHop2 = sapXepCungTheoCungSo[(cungSo + 7) % 12];
@@ -595,13 +594,7 @@ $(document).ready(function () {
       - Cung ${capitalizeWords(
         cungChu
       )} chủ quản thông tin Tiểu vận: năm ${capitalizeWords(cungTieuHan)}
-      - Cung ${capitalizeWords(cungChu)} chủ quản thông tin Nguyệt vận: tháng ${
-        cungSo - 2 <= 0 ? cungSo + 10 : cungSo - 2
-      }
-      - Cung ${capitalizeWords(
-        cungChu
-      )} chủ quản thông tin Nhật vận: ngày ${getNhatVan(cungSo)}
-            `;
+    `;
     });
     const contentCopy = `Lá số của ${ten} sinh năm ${namDuong} (${canNamTen} ${chiNamTen}) \n ${contentThapNhiCung.join(
       "\n"
@@ -610,7 +603,7 @@ $(document).ready(function () {
   }
 
   function copyContentLuuNien(laso) {
-    const { thienBan, thapNhiCung } = laso;
+    const { thienBan, thapNhiCung, luuNguyet } = laso;
     const {
       namDuong,
       canNamTen,
@@ -634,13 +627,27 @@ $(document).ready(function () {
 
       const stt = index + 1;
 
-      const { cungTen, cungChu, luuTrietLo, luuTuanTrung } = cung;
+      const { cungTen, cungChu, luuTrietLo, luuTuanTrung, nguyetHan } = cung;
+      const thangNguyetHan = parseInt(nguyetHan.split(" ")[1]);
+      let luuNguyetFilter = luuNguyet.filter((nguyet) => {
+        return nguyet.thang === thangNguyetHan;
+      });
 
+      let currentMonth = luuNguyetFilter[0];
+      let viTriSao = currentMonth.viTriSao;
       return `${stt}.
       Cung chức: ${cungChu}
-      Các sao lưu động: ${luuTrietLo ? "Triệt, " : ""}${
+      Các sao lưu động (lưu niên): ${luuTrietLo ? "Triệt, " : ""}${
         luuTuanTrung ? "Tuần, " : ""
-      }${saoLuuNien.map((sao) => sao.saoTen.replace("L.", "")).join(", ")}`;
+      }${saoLuuNien.map((sao) => sao.saoTen.replace("L.", "")).join(", ")}
+      Cung ${capitalizeWords(
+        cungChu
+      )} chủ quản thông tin Nguyệt vận: ${nguyetHan.toLowerCase()} (${viTriSao
+        .map((sao) => {
+          return `${sao.saoTen} an ở cung ${sao.viTriCung}`;
+        })
+        .join(", ")})
+      `;
     });
     const contentCopy = `Lá số Tiểu vận ${namXemTieuVan}
  \n${namNu} Mệnh, năm ${canNamTieuVanTen} ${chiNamTieuVanTen} ${namXemTieuVan} \n${contentThapNhiCung.join(

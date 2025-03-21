@@ -155,7 +155,6 @@ class DiaBan {
       if (khoangCach < 0) {
         khoangCach += 12;
       }
-      console.log(khoangCach);
       cung.nguyetHan(khoangCach + 1);
     });
     return this;

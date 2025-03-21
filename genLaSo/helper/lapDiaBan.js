@@ -190,7 +190,9 @@ function lapDiaBan(
   gioiTinh,
   duongLich,
   timeZone,
-  namXemTieuVan
+  namXemTieuVan,
+  thangLuuNguyet = 1,
+  ngayLuuNhat
 ) {
   let canThang, canNam, chiNam, thangNhuan, canLuuThang, canLuuNam, chiLuuNam;
 
@@ -213,14 +215,15 @@ function lapDiaBan(
   );
   [canLuuThang, canLuuNam, chiLuuNam] = ngayThangNamCanChi(
     5,
-    5,
+    thangLuuNguyet,
     namXemTieuVan,
     false,
     timeZone
   );
 
+  let chiLuuThang = thangLuuNguyet + 2;
+
   diaBan = new DiaBan(tt, gioSinh);
-  console.log("Dia:", tt, gioSinh);
 
   const amDuongNamSinh = thienCan[canNam].amDuong;
   const amDuongChiNamSinh = diaChi[chiNam].amDuong;
@@ -854,6 +857,78 @@ function lapDiaBan(
 
     let [viTriLuuTriet1, viTriLuuTriet2] = timTriet(canLuuNam);
     diaBan.nhapLuuTriet(viTriLuuTriet1, viTriLuuTriet2);
+  }
+
+  if (thangLuuNguyet && !ngayLuuNhat) {
+    let viTriLuuNguyetHoaLoc,
+      viTriLuuNguyetHoaQuyen,
+      viTriLuuNguyetHoaKhoa,
+      viTriLuuNguyetHoaKy; //
+
+    switch (canLuuThang) {
+      case 1:
+        viTriLuuNguyetHoaLoc = viTriLiemTrinh;
+        viTriLuuNguyetHoaQuyen = viTriPhaQuan;
+        viTriLuuNguyetHoaKhoa = viTriVuKhuc;
+        viTriLuuNguyetHoaKy = vitriThaiDuong;
+        break;
+      case 2:
+        viTriLuuNguyetHoaLoc = viTriThienCo;
+        viTriLuuNguyetHoaQuyen = viTriThienLuong;
+        viTriLuuNguyetHoaKhoa = viTriTuVi;
+        viTriLuuNguyetHoaKy = viTriThaiAm;
+        break;
+      case 3:
+        viTriLuuNguyetHoaLoc = viTriThienDong;
+        viTriLuuNguyetHoaQuyen = viTriThienCo;
+        viTriLuuNguyetHoaKhoa = viTriVanXuong;
+        viTriLuuNguyetHoaKy = viTriLiemTrinh;
+        break;
+      case 4:
+        viTriLuuNguyetHoaLoc = viTriThaiAm;
+        viTriLuuNguyetHoaQuyen = viTriThienDong;
+        viTriLuuNguyetHoaKhoa = viTriThienCo;
+        viTriLuuNguyetHoaKy = viTriCuMon;
+        break;
+      case 5:
+        viTriLuuNguyetHoaLoc = viTriThamLang;
+        viTriLuuNguyetHoaQuyen = viTriThaiAm;
+        viTriLuuNguyetHoaKhoa = viTriHuuBat;
+        viTriLuuNguyetHoaKy = viTriThienCo;
+        break;
+      case 6:
+        viTriLuuNguyetHoaLoc = viTriVuKhuc;
+        viTriLuuNguyetHoaQuyen = viTriThamLang;
+        viTriLuuNguyetHoaKhoa = viTriThienLuong;
+        viTriLuuNguyetHoaKy = viTriVanKhuc;
+        break;
+      case 7:
+        viTriLuuNguyetHoaLoc = vitriThaiDuong;
+        viTriLuuNguyetHoaQuyen = viTriVuKhuc;
+        viTriLuuNguyetHoaKhoa = viTriThaiAm;
+        viTriLuuNguyetHoaKy = viTriThienDong;
+        break;
+      case 8:
+        viTriLuuNguyetHoaLoc = viTriCuMon;
+        viTriLuuNguyetHoaQuyen = vitriThaiDuong;
+        viTriHoaKhoa = viTriVanKhuc;
+        viTriLuuNguyetHoaKy = viTriVanXuong;
+        break;
+      case 9:
+        viTriLuuNguyetHoaLoc = viTriThienLuong;
+        viTriHoaQuyen = viTriTuVi;
+        viTriLuuNguyetHoaKhoa = viTriTaPhu;
+        viTriLuuNguyetHoaKy = viTriVuKhuc;
+        break;
+      case 10:
+        viTriLuuNguyetHoaLoc = viTriPhaQuan;
+        viTriHoaQuyen = viTriCuMon;
+        viTriLuuNguyetHoaKhoa = viTriThaiAm;
+        viTriLuuNguyetHoaKy = viTriThamLang;
+        break;
+    }
+  }
+  if (ngayLuuNhat) {
   }
 
   return diaBan;
