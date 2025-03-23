@@ -297,7 +297,7 @@ function lapDiaBan(
   const viTriLocTon = thienCan[canNam].vitriDiaBan;
 
   diaBan.nhapSao(viTriLocTon, saoLocTon);
-  // diaBan.nhapSao(viTriLocTon, saoBacSy);
+  diaBan.nhapSao(viTriLocTon, saoBacSy);
 
   const amDuongNamNu = gioiTinh * amDuongNamSinh;
   const viTriLucSi = dichCung(viTriLocTon, 1 * amDuongNamNu);
@@ -321,8 +321,8 @@ function lapDiaBan(
   const viTriHyThan = dichCung(viTriLocTon, 7 * amDuongNamNu);
   diaBan.nhapSao(viTriHyThan, saoHyThan);
 
-  // const viTriBenhPhu = dichCung(viTriLocTon, 8 * amDuongNamNu);
-  // diaBan.nhapSao(viTriBenhPhu, saoBenhPhu);
+  const viTriBenhPhu = dichCung(viTriLocTon, 8 * amDuongNamNu);
+  diaBan.nhapSao(viTriBenhPhu, saoBenhPhu);
 
   const viTriDaiHao = dichCung(viTriLocTon, 9 * amDuongNamNu);
   diaBan.nhapSao(viTriDaiHao, saoDaiHao);
