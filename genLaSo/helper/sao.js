@@ -172,9 +172,9 @@ const saoThienKhoc = new Sao(69, "Thiên khốc", "T", 12);
 const saoThienHu = new Sao(70, "Thiên hư", "T", 12);
 const saoThienDuc = new Sao(71, "Thiên đức", "H", 5);
 const saoNguyetDuc = new Sao(72, "Nguyệt đức", "H", 5);
-const saoThienHinh = new Sao(73, "Thiên hình", "H", 15);
-const saoThienRieu = new Sao(74, "Thiên diêu", "T", 13);
-const saoThienY = new Sao(75, "Thiên y", "T", 5);
+const saoThienHinh = new Sao(73, "Thiên hình", "H", 1);
+const saoThienRieu = new Sao(74, "Thiên diêu", "T", 1);
+const saoThienY = new Sao(75, "Thiên y", "T", 1);
 const saoQuocAn = new Sao(76, "Quốc ấn", "O", 6);
 const saoDuongPhu = new Sao(77, "Đường phù", "M", 4);
 const saoDaoHoa = new Sao(78, "Đào hoa", "M", 8);
@@ -208,12 +208,12 @@ const saoHoaCai = new Sao(105, "Hoa cái", "K", 14);
 const saoVanTinh = new Sao(106, "Văn tinh", "H", 6);
 const saoDauQuan = new Sao(107, "Đẩu quân", "H", 5);
 // const saoThienKhong = new Sao(108, "Thiên không", "T", 11);
-const saoLuuThaiTue = new Sao(109, "LN.Thái tuế", "H", 15, "", "", 0, true);
-const saoLuuTangMon = new Sao(110, "LN.Tang môn", "M", 12, "", "", 0, true);
-const saoLuuBachHo = new Sao(111, "LN.Bạch hổ", "K", 12, "", "", 0, true);
+const saoLuuThaiTue = new Sao(109, "Y.Thái tuế", "H", 15, "", "", 0, true);
+const saoLuuTangMon = new Sao(110, "Y.Tang môn", "M", 12, "", "", 0, true);
+const saoLuuBachHo = new Sao(111, "Y.Bạch hổ", "K", 12, "", "", 0, true);
 const saoLuuLocTon = new Sao(
   112,
-  "LN.Lộc tồn",
+  "Y.Lộc tồn",
   "O",
   3,
   "Bắc đẩu tinh",
@@ -221,45 +221,45 @@ const saoLuuLocTon = new Sao(
   0,
   true
 );
-const saoLuuKinhDuong = new Sao(113, "LN.Kình dương", "K", 11, "", "", 0, true);
-const saoLuuDaLa = new Sao(114, "LN.Đà la", "K", 11, "", "", 0, true);
-const saoLuuThienMa = new Sao(115, "LN.Thiên mã", "H", 3, "", "", 0, true);
-const saoLuuThienKhoc = new Sao(116, "LN.Thiên khốc", "T", 12, "", "", 0, true);
-const saoLuuThienHu = new Sao(117, "LN.Thiên hư", "T", 12, "", "", 0, true);
-const saoLuuThienKhoi = new Sao(118, "LN.Thiên khôi", "H", 6, "", "", 0, true);
-const saoLuuThienViet = new Sao(119, "LN.Thiên việt", "H", 6, "", "", 0, true);
-const saoLuuDaoHoa = new Sao(120, "LN.Đào hoa", "M", 8, "", "", 0, true);
-const saoLuuHongLoan = new Sao(121, "LN.Hồng loan", "T", 8, "", "", 0, true);
-const saoLuuHoaKhoa = new Sao(122, "LN.Hóa khoa", "T", 5, "", "", 0, true);
-const saoLuuHoaQuyen = new Sao(123, "LN.Hóa quyền", "T", 4, "", "", 0, true);
-const saoLuuHoaLoc = new Sao(124, "LN.Hóa lộc", "M", 3, "", "", 0, true);
-const saoLuuHoaKy = new Sao(125, "LN.Hóa kỵ", "T", 13, "", "", 0, true);
-const saoLuuPhuongCac = new Sao(126, "LN.Phượng các", "O", 3, "", "", 0, true);
-const saoLuuTuongQuan = new Sao(127, "LN.Tướng quân", "M", 4, "", "", 0, true);
-const saoLuuTauThu = new Sao(128, "LN.Tấu thư", "K", 3, "", "", 0, true);
-const saoLuuDuongPhu = new Sao(129, "LN.Đường phù", "M", 4, "", "", 0, true);
-const saoLuuQuanPhu3 = new Sao(130, "LN.Quan phù", "H", 12, "", "", 0, true);
-const saoLuuPhiLiem = new Sao(131, "LN.Phi liêm", "H", 2, "", "", 0, true);
-const saoLuuHyThan = new Sao(132, "LN.Hỷ thần", "H", 5, "", "", 0, true);
-const saoLuuLuuHa = new Sao(133, "LN.Lưu hà", "T", 12, "", "", 0, true);
-const saoLuuQuocAn = new Sao(134, "LN.Quốc ấn", "O", 6, "", "", 0, true);
-const saoLuuBenhPhu = new Sao(135, "LN.Bệnh phù", "O", 12, "", "", 0, true);
-const saoLuuDaiHao = new Sao(136, "LN.Đại hao", "H", 12, "", "", 0, true);
-const saoLuuPhucBinh = new Sao(137, "LN.Phục binh", "H", 13, "", "", 0, true);
-const saoLuuQuaTu = new Sao(138, "LN.Quả tú", "O", 13, "", "", 0, true);
-const saoLuuQuanPhu2 = new Sao(139, "LN.Quan phủ", "H", 12, "", "", 0, true);
-const saoLuuDieuKhach = new Sao(140, "LN.Điếu khách", "H", 12, "", "", 0, true);
-const saoLuuLucSi = new Sao(141, "LN.Lực sĩ", "H", 2, "", "", 0, true);
-const saoLuuThanhLong = new Sao(142, "LN.Thanh long", "T", 5, "", "", 0, true);
-const saoLuuHoaCai = new Sao(143, "LN.Hoa cái", "K", 14, "", "", 0, true);
-const saoLuuThienHy = new Sao(144, "LN.Thiên hỷ", "T", 5, "", "", 0, true);
-const saoLuuTieuHao = new Sao(145, "LN.Tiểu hao", "H", 12, "", "", 0, true);
-const saoLuuCoThan = new Sao(146, "LN.Cô thần", "O", 13, "", "", 0, true);
-const saoLuuNguyetTaPhu = new Sao(147, "LNG.Tả phù", "O", 2, "", "", 0, true);
-const saoLuuNguyetHuuBat = new Sao(148, "LNG.Hữu bật", "O", 2, "", "", 0, true);
+const saoLuuKinhDuong = new Sao(113, "Y.Kình dương", "K", 11, "", "", 0, true);
+const saoLuuDaLa = new Sao(114, "Y.Đà la", "K", 11, "", "", 0, true);
+const saoLuuThienMa = new Sao(115, "Y.Thiên mã", "H", 3, "", "", 0, true);
+const saoLuuThienKhoc = new Sao(116, "Y.Thiên khốc", "T", 12, "", "", 0, true);
+const saoLuuThienHu = new Sao(117, "Y.Thiên hư", "T", 12, "", "", 0, true);
+const saoLuuThienKhoi = new Sao(118, "Y.Thiên khôi", "H", 6, "", "", 0, true);
+const saoLuuThienViet = new Sao(119, "Y.Thiên việt", "H", 6, "", "", 0, true);
+const saoLuuDaoHoa = new Sao(120, "Y.Đào hoa", "M", 8, "", "", 0, true);
+const saoLuuHongLoan = new Sao(121, "Y.Hồng loan", "T", 8, "", "", 0, true);
+const saoLuuHoaKhoa = new Sao(122, "Y.Hóa khoa", "T", 5, "", "", 0, true);
+const saoLuuHoaQuyen = new Sao(123, "Y.Hóa quyền", "T", 4, "", "", 0, true);
+const saoLuuHoaLoc = new Sao(124, "Y.Hóa lộc", "M", 3, "", "", 0, true);
+const saoLuuHoaKy = new Sao(125, "Y.Hóa kỵ", "T", 13, "", "", 0, true);
+const saoLuuPhuongCac = new Sao(126, "Y.Phượng các", "O", 3, "", "", 0, true);
+const saoLuuTuongQuan = new Sao(127, "Y.Tướng quân", "M", 4, "", "", 0, true);
+const saoLuuTauThu = new Sao(128, "Y.Tấu thư", "K", 3, "", "", 0, true);
+const saoLuuDuongPhu = new Sao(129, "Y.Đường phù", "M", 4, "", "", 0, true);
+const saoLuuQuanPhu3 = new Sao(130, "Y.Quan phù", "H", 12, "", "", 0, true);
+const saoLuuPhiLiem = new Sao(131, "Y.Phi liêm", "H", 2, "", "", 0, true);
+const saoLuuHyThan = new Sao(132, "Y.Hỷ thần", "H", 5, "", "", 0, true);
+const saoLuuLuuHa = new Sao(133, "Y.Lưu hà", "T", 12, "", "", 0, true);
+const saoLuuQuocAn = new Sao(134, "Y.Quốc ấn", "O", 6, "", "", 0, true);
+const saoLuuBenhPhu = new Sao(135, "Y.Bệnh phù", "O", 12, "", "", 0, true);
+const saoLuuDaiHao = new Sao(136, "Y.Đại hao", "H", 12, "", "", 0, true);
+const saoLuuPhucBinh = new Sao(137, "Y.Phục binh", "H", 13, "", "", 0, true);
+const saoLuuQuaTu = new Sao(138, "Y.Quả tú", "O", 13, "", "", 0, true);
+const saoLuuQuanPhu2 = new Sao(139, "Y.Quan phủ", "H", 12, "", "", 0, true);
+const saoLuuDieuKhach = new Sao(140, "Y.Điếu khách", "H", 12, "", "", 0, true);
+const saoLuuLucSi = new Sao(141, "Y.Lực sĩ", "H", 2, "", "", 0, true);
+const saoLuuThanhLong = new Sao(142, "Y.Thanh long", "T", 5, "", "", 0, true);
+const saoLuuHoaCai = new Sao(143, "Y.Hoa cái", "K", 14, "", "", 0, true);
+const saoLuuThienHy = new Sao(144, "Y.Thiên hỷ", "T", 5, "", "", 0, true);
+const saoLuuTieuHao = new Sao(145, "Y.Tiểu hao", "H", 12, "", "", 0, true);
+const saoLuuCoThan = new Sao(146, "Y.Cô thần", "O", 13, "", "", 0, true);
+const saoLuuNguyetTaPhu = new Sao(147, "M.Tả phù", "O", 2, "", "", 0, true);
+const saoLuuNguyetHuuBat = new Sao(148, "M.Hữu bật", "O", 2, "", "", 0, true);
 const saoLuuNguyetVanXuong = new Sao(
   149,
-  "LNG.Văn xương",
+  "M.Văn xương",
   "K",
   6,
   "",
@@ -267,19 +267,10 @@ const saoLuuNguyetVanXuong = new Sao(
   0,
   true
 );
-const saoLuuNguyetVanKhuc = new Sao(
-  150,
-  "LNG.Văn khúc",
-  "T",
-  6,
-  "",
-  "",
-  0,
-  true
-);
+const saoLuuNguyetVanKhuc = new Sao(150, "M.Văn khúc", "T", 6, "", "", 0, true);
 const saoLuuNguyetThienHinh = new Sao(
   151,
-  "LNG.Thiên hình",
+  "M.Thiên hình",
   "H",
   15,
   "",
@@ -289,7 +280,7 @@ const saoLuuNguyetThienHinh = new Sao(
 );
 const saoLuuNguyetThienRieu = new Sao(
   152,
-  "LNG.Thiên diêu",
+  "M.Thiên diêu",
   "T",
   13,
   "",
@@ -297,19 +288,10 @@ const saoLuuNguyetThienRieu = new Sao(
   0,
   true
 );
-const saoLuuNguyetHoaKhoa = new Sao(
-  153,
-  "LNG.Hóa khoa",
-  "T",
-  5,
-  "",
-  "",
-  0,
-  true
-);
+const saoLuuNguyetHoaKhoa = new Sao(153, "M.Hóa khoa", "T", 5, "", "", 0, true);
 const saoLuuNguyetHoaQuyen = new Sao(
   154,
-  "LNG.Hóa quyền",
+  "M.Hóa quyền",
   "T",
   4,
   "",
@@ -317,21 +299,12 @@ const saoLuuNguyetHoaQuyen = new Sao(
   0,
   true
 );
-const saoLuuNguyetHoaLoc = new Sao(155, "LNG.Hóa lộc", "M", 3, "", "", 0, true);
-const saoLuuNguyetHoaKy = new Sao(156, "LNG.Hóa kỵ", "T", 13, "", "", 0, true);
-const saoLuuNhatHoaKhoa = new Sao(157, "LNH.Hóa khoa", "T", 5, "", "", 0, true);
-const saoLuuNhatHoaQuyen = new Sao(
-  158,
-  "LNH.Hóa quyền",
-  "T",
-  4,
-  "",
-  "",
-  0,
-  true
-);
-const saoLuuNhatHoaLoc = new Sao(159, "LNH.Hóa lộc", "M", 3, "", "", 0, true);
-const saoLuuNhatHoaKy = new Sao(160, "LNH.Hóa kỵ", "T", 13, "", "", 0, true);
+const saoLuuNguyetHoaLoc = new Sao(155, "M.Hóa lộc", "M", 3, "", "", 0, true);
+const saoLuuNguyetHoaKy = new Sao(156, "M.Hóa kỵ", "T", 13, "", "", 0, true);
+const saoLuuNhatHoaKhoa = new Sao(157, "D.Hóa khoa", "T", 5, "", "", 0, true);
+const saoLuuNhatHoaQuyen = new Sao(158, "D.Hóa quyền", "T", 4, "", "", 0, true);
+const saoLuuNhatHoaLoc = new Sao(159, "D.Hóa lộc", "M", 3, "", "", 0, true);
+const saoLuuNhatHoaKy = new Sao(160, "D.Hóa kỵ", "T", 13, "", "", 0, true);
 
 module.exports = {
   Sao,

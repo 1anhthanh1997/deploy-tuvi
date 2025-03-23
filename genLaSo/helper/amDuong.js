@@ -382,7 +382,7 @@ function dichCung(cungBanDau, ...args) {
   for (const soCungDich of args) {
     cungSauKhiDich += parseInt(soCungDich, 10);
   }
-  if (cungSauKhiDich <= 0) {
+  while (cungSauKhiDich <= 0) {
     cungSauKhiDich += 12;
   }
   return Math.abs(cungSauKhiDich) % 12 === 0

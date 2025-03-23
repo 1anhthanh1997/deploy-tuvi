@@ -504,7 +504,7 @@ $(document).ready(function () {
     const phuTinhContent = $("#phuTinh").val();
 
     const contentThapNhiCung = sapXepCungTheoTuoi.map((cung, index) => {
-      const { cungSao, cungSo } = cung;
+      const { cungSao, cungSo, cungThan } = cung;
       const chinhTinhGoc = cungSao.filter((sao) => sao.saoAmDuong !== "");
       const chinhTinhMoi = cungSao.filter((sao) =>
         newChinhTinh.includes(sao.saoID)
@@ -537,6 +537,8 @@ $(document).ready(function () {
         getCungChuInfo(cungChu).shortName
           ? "(" + getCungChuInfo(cungChu).shortName + ")"
           : ""
+      }${
+        cungThan ? ` kiêm nhiệm cung an Thân` : ""
       } của ${ten} sinh năm ${namDuong}
     Cung ${capitalizeWords(cungChu)} chủ quản thông tin về: ${
         getCungChuInfo(cungChu).description
