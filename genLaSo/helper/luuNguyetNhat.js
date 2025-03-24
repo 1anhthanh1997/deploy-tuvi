@@ -68,16 +68,16 @@ function getLuuNguyet(
     );
     let thapNhiCung = luuNguyet.thapNhiCung;
     let listSaoTen = [
-      "LNG.Tả phù",
-      "LNG.Hữu bật",
-      "LNG.Văn khúc",
-      "LNG.Văn xương",
-      "LNG.Thiên hình",
-      "LNG.Thiên diêu",
-      "LNG.Hóa quyền",
-      "LNG.Hóa lộc",
-      "LNG.Hóa khoa",
-      "LNG.Hóa kỵ",
+      "M.Tả phù",
+      "M.Hữu bật",
+      "M.Văn khúc",
+      "M.Văn xương",
+      "M.Thiên hình",
+      "M.Thiên diêu",
+      "M.Hóa quyền",
+      "M.Hóa lộc",
+      "M.Hóa khoa",
+      "M.Hóa kỵ",
     ];
     let viTriSao = getViTriSao(listSaoTen, thapNhiCung);
     luuNguyetData.push({
@@ -138,12 +138,7 @@ function getLuuNhat(
         canNgay
       );
       let thapNhiCung = luuNhat.thapNhiCung;
-      let listSaoTen = [
-        "LNH.Hóa quyền",
-        "LNH.Hóa lộc",
-        "LNH.Hóa khoa",
-        "LNH.Hóa kỵ",
-      ];
+      let listSaoTen = ["D.Hóa quyền", "D.Hóa lộc", "D.Hóa khoa", "D.Hóa kỵ"];
       let viTriSao = getViTriSao(listSaoTen, thapNhiCung);
       luuNhatData.push({
         ngay: ngayAm,

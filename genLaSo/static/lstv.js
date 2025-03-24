@@ -622,19 +622,20 @@ $(document).ready(function () {
       (a, b) => a.cungSo - b.cungSo
     );
     const contentThapNhiCung = sapXepCungTheoCungSo.map((cung, index) => {
-      const { cungSao } = cung;
+      const { cungSao, saoID } = cung;
       let saoLuuNien = cungSao.filter((sao) => {
         return sao.saoLuuNien;
       });
 
       const stt = index + 1;
 
-      const { cungTen, cungChu, luuTrietLo, luuTuanTrung, nguyetHan } = cung;
-      const thangNguyetHan = parseInt(nguyetHan.split(" ")[1]);
+      const { cungTen, cungChu, luuTrietLo, luuTuanTrung, nguyetHan, cungSo } =
+        cung;
+      const thangNguyetHan = cungSo - 2 > 0 ? cungSo - 2 : cungSo + 10;
       let luuNguyetFilter = luuNguyet.filter((nguyet) => {
         return nguyet.thang === thangNguyetHan;
       });
-
+      console.log(luuNguyetFilter);
       let currentMonth = luuNguyetFilter[0];
       let viTriSao = currentMonth.viTriSao;
       return `${stt}.
@@ -644,7 +645,7 @@ $(document).ready(function () {
       }${saoLuuNien.map((sao) => sao.saoTen.replace("L.", "")).join(", ")}
       Cung ${capitalizeWords(
         cungChu
-      )} chủ quản thông tin Nguyệt vận: ${nguyetHan.toLowerCase()} (${viTriSao
+      )} chủ quản thông tin Nguyệt vận: ${thangNguyetHan} (${viTriSao
         .map((sao) => {
           return `${sao.saoTen} an ở cung ${sao.viTriCung}`;
         })
@@ -742,6 +743,7 @@ $(document).ready(function () {
         $("#btn-download-content").css("display", "block");
         const contentCopy = copyContent(thienBandiaBan);
         const contentCopyLuuNien = copyContentLuuNien(thienBandiaBan);
+        console.log($("form#lstv").serialize());
         if ($("form#lstv").serialize().includes("luunien=on")) {
           $("#contentCopy").text(contentCopyLuuNien);
           // $("#note").css("display", "flex");
