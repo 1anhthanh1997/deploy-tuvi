@@ -288,9 +288,10 @@ const saoLuuNguyetThienRieu = new Sao(
   0,
   true
 );
-const saoLuuNguyetHoaKhoa = new Sao(153, "M.Hóa khoa", "T", 5, "", "", 0, true);
+const saoLuuNguyetThienY = new Sao(153, "M.Thiên y", "T", 1, 5, "", "", 0, true);
+const saoLuuNguyetHoaKhoa = new Sao(154, "M.Hóa khoa", "T", 5, "", "", 0, true);
 const saoLuuNguyetHoaQuyen = new Sao(
-  154,
+  155,
   "M.Hóa quyền",
   "T",
   4,
@@ -299,12 +300,12 @@ const saoLuuNguyetHoaQuyen = new Sao(
   0,
   true
 );
-const saoLuuNguyetHoaLoc = new Sao(155, "M.Hóa lộc", "M", 3, "", "", 0, true);
-const saoLuuNguyetHoaKy = new Sao(156, "M.Hóa kỵ", "T", 13, "", "", 0, true);
-const saoLuuNhatHoaKhoa = new Sao(157, "D.Hóa khoa", "T", 5, "", "", 0, true);
-const saoLuuNhatHoaQuyen = new Sao(158, "D.Hóa quyền", "T", 4, "", "", 0, true);
-const saoLuuNhatHoaLoc = new Sao(159, "D.Hóa lộc", "M", 3, "", "", 0, true);
-const saoLuuNhatHoaKy = new Sao(160, "D.Hóa kỵ", "T", 13, "", "", 0, true);
+const saoLuuNguyetHoaLoc = new Sao(156, "M.Hóa lộc", "M", 3, "", "", 0, true);
+const saoLuuNguyetHoaKy = new Sao(157, "M.Hóa kỵ", "T", 13, "", "", 0, true);
+const saoLuuNhatHoaKhoa = new Sao(158, "D.Hóa khoa", "T", 5, "", "", 0, true);
+const saoLuuNhatHoaQuyen = new Sao(159, "D.Hóa quyền", "T", 4, "", "", 0, true);
+const saoLuuNhatHoaLoc = new Sao(160, "D.Hóa lộc", "M", 3, "", "", 0, true);
+const saoLuuNhatHoaKy = new Sao(161, "D.Hóa kỵ", "T", 13, "", "", 0, true);
 
 module.exports = {
   Sao,
@@ -469,4 +470,5 @@ module.exports = {
   saoLuuNhatHoaQuyen,
   saoLuuNhatHoaLoc,
   saoLuuNhatHoaKy,
+  saoLuuNguyetThienY
 };

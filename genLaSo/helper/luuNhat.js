@@ -224,7 +224,7 @@ function lapLuuNhat(
 
     const viTriHuuBat = dichCung(2, 2 - viTriTaPhu);
 
-    const viTriVanKhuc = dichCung(5, thangLuuNguyet - 1);
+    const viTriVanKhuc = dichCung(5, gioSinh - 1);
 
     const viTriVanXuong = dichCung(2, 2 - viTriVanKhuc);
 

@@ -635,22 +635,61 @@ $(document).ready(function () {
       let luuNguyetFilter = luuNguyet.filter((nguyet) => {
         return nguyet.thang === thangNguyetHan;
       });
-      console.log(luuNguyetFilter);
       let currentMonth = luuNguyetFilter[0];
-      let viTriSao = currentMonth.viTriSao;
+      let cungMenh = currentMonth.saoCungMenh;
+      let cungThan = currentMonth.saoCungThan;
+      let cungDaiVan = currentMonth.saoCungDaiVan;
+      let cungTieuVan = currentMonth.saoCungTieuVan;
+      let textCungTieuVan = cungTieuVan.cungSao.length
+        ? `các sao ${cungTieuVan.cungSao
+            .map((sao) => sao.saoTen)
+            .join(", ")} rơi vào cung tiểu vận${
+            cungTieuVan.kiemNhiem.length
+              ? " kiêm nhiệm" +
+                cungTieuVan.kiemNhiem.map((name) => (" cung " + name)).join(", ")
+              : ", "
+          }`
+        : "";
+      let textCungDaiVan =
+        cungDaiVan?.cungSao.length && !cungDaiVan?.cungKhacKiemNhiem
+          ? `các sao ${cungDaiVan?.cungSao
+              .map((sao) => sao.saoTen)
+              .join(", ")} rơi vào cung đại vận${
+              cungDaiVan?.kiemNhiem.length
+                ? " kiêm nhiệm" +
+                  cungDaiVan?.kiemNhiem.map((name) =>
+                    (" cung " + name)).join(", ")
+                  
+                : ", "
+            }`
+          : "";
+      let textCungMenh =
+        cungMenh.cungSao.length && !cungMenh.cungKhacKiemNhiem
+          ? `các sao ${cungMenh.cungSao
+              .map((sao) => sao.saoTen)
+              .join(", ")} rơi vào cung Mệnh${
+              cungMenh.kiemNhiem.length
+                ? " kiêm nhiệm" +
+                  cungMenh.kiemNhiem.map((name) => (" cung " + name)).join(", ")
+                : ", "
+            }`
+          : "";
+      let textCungThan =
+        cungThan.cungSao.length && !cungThan.cungKhacKiemNhiem
+          ? `các sao ${cungThan.cungSao
+              .map((sao) => sao.saoTen)
+              .join(", ")} rơi vào cung Thân,`
+          : "";
       return `${stt}.
       Cung chức: ${cungChu}
       Các sao lưu động (lưu niên): ${luuTrietLo ? "Triệt, " : ""}${
         luuTuanTrung ? "Tuần, " : ""
       }${saoLuuNien.map((sao) => sao.saoTen.replace("L.", "")).join(", ")}
-      Cung ${capitalizeWords(
-        cungChu
-      )} chủ quản thông tin Nguyệt vận: ${thangNguyetHan} (${viTriSao
-        .map((sao) => {
-          return `${sao.saoTen} an ở cung ${sao.viTriCung}`;
-        })
-        .join(", ")})
-      `;
+      Tháng ${thangNguyetHan} ${namXemTieuVan} của ${ten} có ${
+        cungTieuVan.cungSao.length ? textCungTieuVan : ""
+      }${cungDaiVan?.cungSao.length ? textCungDaiVan : ""}${
+        cungMenh.cungSao.length ? textCungMenh : ""
+      }${cungThan.cungSao.length ? textCungThan : ""} `;
     });
     const contentCopy = `Lá số Tiểu vận ${namXemTieuVan}
  \n${namNu} Mệnh, năm ${canNamTieuVanTen} ${chiNamTieuVanTen} ${namXemTieuVan} \n${contentThapNhiCung.join(

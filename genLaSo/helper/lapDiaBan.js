@@ -243,7 +243,6 @@ function lapDiaBan(
 
   // Nhập tiểu hạn
   const khoiHan = dichCung(11, -3 * (chiNam - 1));
-  console.log(khoiHan, gioiTinh, chiNam);
   diaBan = diaBan.nhapTieuHan(khoiHan, gioiTinh, chiNam);
 
   // Bắt đầu an Tử vi tinh hệ

@@ -37,6 +37,7 @@ const {
   saoLuuNguyetVanKhuc,
   saoLuuNguyetThienHinh,
   saoLuuNguyetThienRieu,
+  saoLuuNguyetThienY,
   saoLuuNguyetHoaKhoa,
   saoLuuNguyetHoaQuyen,
   saoLuuNguyetHoaLoc,
@@ -114,8 +115,6 @@ function lapLuuNguyet(
   let chiLuuThang = thangLuuNguyet + 2;
 
   diaBan = new DiaBan(thangLuuNguyet, gioSinh);
-  if (thangLuuNguyet === 2) {
-  }
 
   // Bản Mệnh chính là Ngũ hành nạp âm của năm sinh
   // const banMenh = nguHanhNapAm(canNam, chiNam);
@@ -124,11 +123,15 @@ function lapLuuNguyet(
   const cuc = nguHanh(hanhCuc);
   const cucSo = cuc.cuc;
 
+  const amDuongChiNamSinh = diaChi[chiNam].amDuong;
+  diaBan = diaBan.nhapDaiHan(cucSo, gioiTinh * amDuongChiNamSinh);
+
+  // Nhập tiểu hạn
+  const khoiHan = dichCung(11, -3 * (chiNam - 1));
+  diaBan = diaBan.nhapTieuHan(khoiHan, gioiTinh, chiNam);
+
   // Bắt đầu an Tử vi tinh hệ
   const viTriTuVi = timTuVi(cucSo, nn);
-  if (thangLuuNguyet === 2) {
-    console.log("Tu vi:", nn, cucSo);
-  }
   diaBan.nhapSao(viTriTuVi, saoTuVi);
 
   const viTriLiemTrinh = dichCung(viTriTuVi, 4);
@@ -189,13 +192,12 @@ function lapLuuNguyet(
     diaBan.nhapSao(viTriThienHinh, saoLuuNguyetThienHinh);
 
     const viTriThienRieu = dichCung(viTriThienHinh, 4);
-    diaBan.nhapSao(viTriThienRieu, saoLuuNguyetThienRieu);
+    diaBan.nhapSao(viTriThienRieu, saoLuuNguyetThienRieu, saoLuuNguyetThienY);
 
     let viTriLuuNguyetHoaLoc,
       viTriLuuNguyetHoaQuyen,
       viTriLuuNguyetHoaKhoa,
       viTriLuuNguyetHoaKy; //
-    console.log("Can luu thang:", canLuuThang);
     switch (canLuuThang) {
       case 1:
         viTriLuuNguyetHoaLoc = viTriLiemTrinh;
@@ -263,7 +265,7 @@ function lapLuuNguyet(
     diaBan.nhapSao(viTriLuuNguyetHoaKhoa, saoLuuNguyetHoaKhoa);
     diaBan.nhapSao(viTriLuuNguyetHoaKy, saoLuuNguyetHoaKy);
   }
-  if (thangLuuNguyet === 2) {
+  if (thangLuuNguyet === 12) {
     fs.writeFileSync("test.json", JSON.stringify(diaBan));
   }
   return diaBan;

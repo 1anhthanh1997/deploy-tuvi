@@ -4,9 +4,15 @@ const {
   thienCan,
   ngayThangNamCanChi,
   ngayThangNam,
+  diaChi,
 } = require("./amDuong.js");
 const { lapLuuNguyet } = require("./luuNguyet.js");
 const { lapLuuNhat } = require("./luuNhat.js");
+
+const SAO_CUNG_MENH_TYPE = 0;
+const SAO_CUNG_THAN_TYPE = 1;
+const SAO_CUNG_DAI_VAN_TYPE = 2;
+const SAO_CUNG_TIEU_VAN_TYPE = 3;
 
 function checkNgayTrongNam(nn, tt, nnnn, timeZone = 7) {
   let thangNhuan = 0;
@@ -25,21 +31,63 @@ function checkNgayTrongNam(nn, tt, nnnn, timeZone = 7) {
   };
 }
 
-function getViTriSao(listSaoTen, thapNhiCung) {
-  let viTriSao = [];
+function checkCondition(cung, type, nnnn, namXemTieuVan) {
+  let nn, tt, canThang, canNam, chiNam;
+  [nn, tt, namXemTieuVan, thangNhuan] = ngayThangNam(
+    5,
+    5,
+    namXemTieuVan,
+    true,
+    7
+  );
+
+  [canThang, canNam, chiNam] = ngayThangNamCanChi(
+    5,
+    5,
+    namXemTieuVan,
+    false,
+    7
+  );
+
+  if (type === SAO_CUNG_MENH_TYPE) {
+    return cung.cungChu === "Mệnh";
+  }
+  if (type === SAO_CUNG_THAN_TYPE) {
+    return cung.cungThan === true;
+  }
+  if (type === SAO_CUNG_DAI_VAN_TYPE) {
+    let tuoi = namXemTieuVan - nnnn;
+    console.log("Tuoi", tuoi, cung.cungDaiHan);
+    return tuoi >= cung.cungDaiHan && tuoi < cung.cungDaiHan + 10;
+  }
+  if (type === SAO_CUNG_TIEU_VAN_TYPE) {
+    return cung.cungSo && diaChi[chiNam].tenChi === cung.cungTieuHan;
+  }
+  return false;
+}
+
+function getSaoCung(listSaoTen, thapNhiCung, type, nnnn, namXemTieuVan) {
   for (let cung of thapNhiCung) {
-    let cungSao = cung.cungSao;
-    for (let sao of cungSao) {
-      if (listSaoTen.includes(sao.saoTen)) {
-        viTriSao.push({
-          saoTen: sao.saoTen,
-          viTriCung: cung.cungChu,
-        });
-      }
+    if (checkCondition(cung, type, nnnn, namXemTieuVan)) {
+      let cungSaoFilter = cung.cungSao.filter((sao) => {
+        return listSaoTen.includes(sao.saoTen);
+      });
+      return {
+        ...cung,
+        cungSao: cungSaoFilter,
+        kiemNhiem: [],
+        cungKhacKiemNhiem: false,
+      };
     }
   }
-  return viTriSao;
 }
+
+const addKiemNhiem = (cung, compareCung, kiemNhiemName) => {
+  if (cung?.cungSo === compareCung?.cungSo) {
+    cung.kiemNhiem = [...cung.kiemNhiem, kiemNhiemName];
+    compareCung.cungKhacKiemNhiem = true;
+  }
+};
 
 function getLuuNguyet(
   DiaBan,
@@ -74,15 +122,54 @@ function getLuuNguyet(
       "M.Văn xương",
       "M.Thiên hình",
       "M.Thiên diêu",
+      "M.Thiên y",
       "M.Hóa quyền",
       "M.Hóa lộc",
       "M.Hóa khoa",
       "M.Hóa kỵ",
     ];
-    let viTriSao = getViTriSao(listSaoTen, thapNhiCung);
+    let saoCungMenh = getSaoCung(
+      listSaoTen,
+      thapNhiCung,
+      SAO_CUNG_MENH_TYPE,
+      nnnn,
+      namXemTieuVan
+    );
+    let saoCungThan = getSaoCung(
+      listSaoTen,
+      thapNhiCung,
+      SAO_CUNG_THAN_TYPE,
+      nnnn,
+      namXemTieuVan
+    );
+    let saoCungDaiVan = getSaoCung(
+      listSaoTen,
+      thapNhiCung,
+      SAO_CUNG_DAI_VAN_TYPE,
+      nnnn,
+      namXemTieuVan
+    );
+    let saoCungTieuVan = getSaoCung(
+      listSaoTen,
+      thapNhiCung,
+      SAO_CUNG_TIEU_VAN_TYPE,
+      nnnn,
+      namXemTieuVan
+    );
+
+    addKiemNhiem(saoCungTieuVan, saoCungMenh, "Mệnh");
+    addKiemNhiem(saoCungTieuVan, saoCungThan, "Thân");
+    addKiemNhiem(saoCungTieuVan, saoCungDaiVan, "Đại vận");
+    addKiemNhiem(saoCungDaiVan, saoCungMenh, "Mệnh");
+    addKiemNhiem(saoCungDaiVan, saoCungThan, "Thân");
+    addKiemNhiem(saoCungMenh, saoCungThan, "Thân");
+
     luuNguyetData.push({
-      thang: thang,
-      viTriSao: viTriSao,
+      thang,
+      saoCungMenh,
+      saoCungThan,
+      saoCungDaiVan,
+      saoCungTieuVan,
     });
   }
   return luuNguyetData;
@@ -139,11 +226,17 @@ function getLuuNhat(
       );
       let thapNhiCung = luuNhat.thapNhiCung;
       let listSaoTen = ["D.Hóa quyền", "D.Hóa lộc", "D.Hóa khoa", "D.Hóa kỵ"];
-      let viTriSao = getViTriSao(listSaoTen, thapNhiCung);
+      let saoCungTieuVan = getSaoCung(
+        listSaoTen,
+        thapNhiCung,
+        SAO_CUNG_TIEU_VAN_TYPE,
+        nnnn,
+        namXemTieuVan
+      );
       luuNhatData.push({
         ngay: ngayAm,
         thang: thangAm,
-        viTriSao: viTriSao,
+        saoCungTieuVan,
       });
     }
 
