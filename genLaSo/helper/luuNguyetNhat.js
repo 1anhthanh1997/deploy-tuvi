@@ -89,6 +89,22 @@ const addKiemNhiem = (cung, compareCung, kiemNhiemName) => {
   }
 };
 
+function getViTriSao(listSaoTen, thapNhiCung) {
+  let viTriSao = [];
+  for (let cung of thapNhiCung) {
+    let cungSao = cung.cungSao;
+    for (let sao of cungSao) {
+      if (listSaoTen.includes(sao.saoTen)) {
+        viTriSao.push({
+          saoTen: sao.saoTen,
+          viTriCung: cung.cungChu,
+        });
+      }
+    }
+  }
+  return viTriSao;
+}
+
 function getLuuNguyet(
   DiaBan,
   nn,
@@ -123,11 +139,8 @@ function getLuuNguyet(
       "M.Thiên hình",
       "M.Thiên diêu",
       "M.Thiên y",
-      "M.Hóa quyền",
-      "M.Hóa lộc",
-      "M.Hóa khoa",
-      "M.Hóa kỵ",
     ];
+    let tuHoa = ["M.Hóa quyền", "M.Hóa lộc", "M.Hóa khoa", "M.Hóa kỵ"];
     let saoCungMenh = getSaoCung(
       listSaoTen,
       thapNhiCung,
@@ -156,6 +169,7 @@ function getLuuNguyet(
       nnnn,
       namXemTieuVan
     );
+    const viTriSao = getViTriSao(tuHoa, thapNhiCung);
 
     addKiemNhiem(saoCungTieuVan, saoCungMenh, "Mệnh");
     addKiemNhiem(saoCungTieuVan, saoCungThan, "Thân");
@@ -170,6 +184,7 @@ function getLuuNguyet(
       saoCungThan,
       saoCungDaiVan,
       saoCungTieuVan,
+      viTriSao
     });
   }
   return luuNguyetData;

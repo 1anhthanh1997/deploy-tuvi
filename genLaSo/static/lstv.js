@@ -640,46 +640,58 @@ $(document).ready(function () {
       let cungThan = currentMonth.saoCungThan;
       let cungDaiVan = currentMonth.saoCungDaiVan;
       let cungTieuVan = currentMonth.saoCungTieuVan;
+      let viTriTuHoa = currentMonth.viTriSao;
       let textCungTieuVan = cungTieuVan.cungSao.length
-        ? `các sao ${cungTieuVan.cungSao
+        ? `sao ${cungTieuVan.cungSao
             .map((sao) => sao.saoTen)
             .join(", ")} rơi vào cung tiểu vận${
             cungTieuVan.kiemNhiem.length
               ? " kiêm nhiệm" +
-                cungTieuVan.kiemNhiem.map((name) => (" cung " + name)).join(", ")
+                cungTieuVan.kiemNhiem
+                  .map((name) => " cung " + name)
+                  .join(", ") +
+                ", "
               : ", "
           }`
         : "";
       let textCungDaiVan =
         cungDaiVan?.cungSao.length && !cungDaiVan?.cungKhacKiemNhiem
-          ? `các sao ${cungDaiVan?.cungSao
+          ? `sao ${cungDaiVan?.cungSao
               .map((sao) => sao.saoTen)
               .join(", ")} rơi vào cung đại vận${
               cungDaiVan?.kiemNhiem.length
                 ? " kiêm nhiệm" +
-                  cungDaiVan?.kiemNhiem.map((name) =>
-                    (" cung " + name)).join(", ")
-                  
+                  cungDaiVan?.kiemNhiem
+                    .map((name) => " cung " + name)
+                    .join(", ") +
+                  ", "
                 : ", "
             }`
           : "";
       let textCungMenh =
         cungMenh.cungSao.length && !cungMenh.cungKhacKiemNhiem
-          ? `các sao ${cungMenh.cungSao
+          ? `sao ${cungMenh.cungSao
               .map((sao) => sao.saoTen)
               .join(", ")} rơi vào cung Mệnh${
               cungMenh.kiemNhiem.length
                 ? " kiêm nhiệm" +
-                  cungMenh.kiemNhiem.map((name) => (" cung " + name)).join(", ")
+                  cungMenh.kiemNhiem.map((name) => " cung " + name).join(", ") +
+                  ", "
                 : ", "
             }`
           : "";
       let textCungThan =
         cungThan.cungSao.length && !cungThan.cungKhacKiemNhiem
-          ? `các sao ${cungThan.cungSao
+          ? `sao ${cungThan.cungSao
               .map((sao) => sao.saoTen)
               .join(", ")} rơi vào cung Thân,`
           : "";
+      let textTuHoa = viTriTuHoa
+        .map((tuHoa) => {
+          return "sao " + tuHoa.saoTen + " rơi vào cung " + tuHoa.viTriCung;
+        })
+        .join(", ");
+
       return `${stt}.
       Cung chức: ${cungChu}
       Các sao lưu động (lưu niên): ${luuTrietLo ? "Triệt, " : ""}${
@@ -689,7 +701,7 @@ $(document).ready(function () {
         cungTieuVan.cungSao.length ? textCungTieuVan : ""
       }${cungDaiVan?.cungSao.length ? textCungDaiVan : ""}${
         cungMenh.cungSao.length ? textCungMenh : ""
-      }${cungThan.cungSao.length ? textCungThan : ""} `;
+      }${cungThan.cungSao.length ? textCungThan : ""}${textTuHoa} `;
     });
     const contentCopy = `Lá số Tiểu vận ${namXemTieuVan}
  \n${namNu} Mệnh, năm ${canNamTieuVanTen} ${chiNamTieuVanTen} ${namXemTieuVan} \n${contentThapNhiCung.join(
