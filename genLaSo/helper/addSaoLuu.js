@@ -353,7 +353,9 @@ function addSaoLuu(
     // Thiên Quan - Thiên Phúc
     if (luuNguyet) {
       const viTriThienHinh = dichCung(10, thangAm - 1);
-      diaBan.nhapSao(viTriThienHinh, cloneSaoLuu(saoThienHinh, type, 15));
+      if (type === SAO_LUU_NGUYET_TYPE) {
+        diaBan.nhapSao(viTriThienHinh, cloneSaoLuu(saoThienHinh, type, 15));
+      }
       const viTriThienRieu = dichCung(viTriThienHinh, 4);
 
       diaBan.nhapSao(
