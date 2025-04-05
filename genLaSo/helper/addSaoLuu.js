@@ -349,19 +349,22 @@ function addSaoLuu(
 
     const viTriThienHy = dichCung(viTriHongLoan, 6);
     diaBan.nhapSao(viTriThienHy, cloneSaoLuu(saoThienHy, type));
-    console.log(viTriHongLoan, viTriThienHy);
 
-    // Thiên Quan - Thiên Phúc
-    if (luuNguyet) {
+    if (type === SAO_LUU_NIEN_TYPE || type === SAO_LUU_NGUYET_TYPE) {
       const viTriThienHinh = dichCung(10, thangAm - 1);
-      diaBan.nhapSao(viTriThienHinh, cloneSaoLuu(saoThienHinh, type, 15));
-
       const viTriThienRieu = dichCung(viTriThienHinh, 4);
+
       diaBan.nhapSao(
         viTriThienRieu,
         cloneSaoLuu(saoThienRieu, type, 13),
         cloneSaoLuu(saoThienY, type, 5)
       );
+    }
+
+    // Thiên Quan - Thiên Phúc
+    if (luuNguyet) {
+      const viTriThienHinh = dichCung(10, thangAm - 1);
+      diaBan.nhapSao(viTriThienHinh, cloneSaoLuu(saoThienHinh, type, 15));
     }
 
     const viTriCoThan = timCoThan(chi);

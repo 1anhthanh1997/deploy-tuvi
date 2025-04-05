@@ -73,6 +73,7 @@ app.get("/api", (req, res) => {
     const laso = {
       thienBan: thienBan,
       thapNhiCung: data.thapNhiCung,
+      maCanChi: data.maCanChi,
     };
 
     res.json(laso);

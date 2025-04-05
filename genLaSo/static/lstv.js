@@ -464,6 +464,8 @@ $(document).ready(function () {
           !checkSaoLuuNguyet(sao.saoTen) &&
           !checkSaoLuuNhat(sao.saoTen)
       );
+      let saoDaiVan = cungSao.filter((sao) => checkSaoDaiVan(sao.saoTen));
+      let saoLuuNien = cungSao.filter((sao) => checkSaoLuuNien(sao.saoTen));
       let tuan = cung.tuanTrung;
       let triet = cung.trietLo;
       let chinhTinh = [...chinhTinhGoc, ...chinhTinhMoi];
@@ -473,6 +475,25 @@ $(document).ready(function () {
       if (triet) {
         chinhTinh = [...chinhTinh, { saoTen: "Triệt" }];
       }
+      if (cung.daiVanTuanTrung) {
+        saoDaiVan = [...saoDaiVan, { saoTen: "De. Tuần" }];
+      }
+      if (cung.daiVanTrietLo) {
+        saoDaiVan = [...saoDaiVan, { saoTen: "De. Triệt" }];
+      }
+      if (cung.luuNienTuanTrung) {
+        saoLuuNien = [...saoLuuNien, { saoTen: "Y. Tuần" }];
+      }
+      if (cung.luuNienTrietLo) {
+        saoLuuNien = [...saoLuuNien, { saoTen: "Y. Triệt" }];
+      }
+      if (cung.luuNguyetTuanTrung) {
+        chinhTinh = [...chinhTinh, { saoTen: "M. Tuần" }];
+      }
+      if (cung.luuNguyetTrietLo) {
+        chinhTinh = [...chinhTinh, { saoTen: "M. Triệt" }];
+      }
+
       const phuTinh = cungSao.filter(
         (sao) =>
           sao.saoAmDuong === "" &&
@@ -482,8 +503,7 @@ $(document).ready(function () {
           !checkSaoLuuNguyet(sao.saoTen) &&
           !checkSaoLuuNhat(sao.saoTen)
       );
-      const saoDaiVan = cungSao.filter((sao) => checkSaoDaiVan(sao.saoTen));
-      const saoLuuNien = cungSao.filter((sao) => checkSaoLuuNien(sao.saoTen));
+
       return {
         chinhTinh: chinhTinh
           .map((sao) => capitalizeWords(sao.saoTen))
@@ -500,8 +520,6 @@ $(document).ready(function () {
       phuTinh: "",
     };
   }
-
-  const getCungTextData = () => {};
 
   const getTamHopCungSaoText = ({
     tamHopList,
@@ -960,7 +978,10 @@ Lá số Tử Vi gốc của ${ten} ${namDuong}, ${namNu.toLowerCase()} mệnh �
   $("#btn-download-content").click(function () {
     let title = "sample.txt";
     let checkedValues = $("#luunien").serialize();
-    if (checkedValues) {
+    let checkedValuesDaiVan = $("#daivan").serialize();
+    if (checkedValuesDaiVan) {
+      title = "dai_van.txt";
+    } else if (checkedValues) {
       let namXemTieuVan = $("#namxemtieuvan").val();
       title = "tieu_van_" + namXemTieuVan + ".txt";
     } else {

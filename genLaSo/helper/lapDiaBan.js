@@ -202,7 +202,14 @@ function lapDiaBan(
   const SAO_LUU_NIEN_TYPE = "Y. ";
   const SAO_LUU_NGUYET_TYPE = "M. ";
   const SAO_LUU_NHAT_TYPE = "D. ";
-  let canThang, canNam, chiNam, thangNhuan, canLuuThang, canLuuNam, chiLuuNam;
+  let canThang,
+    canNam,
+    chiNam,
+    thangNhuan,
+    canLuuThang,
+    canLuuNam,
+    chiLuuNam,
+    maCanChi;
 
   if (duongLich === true) {
     [nn, tt, nnnn, thangNhuan] = ngayThangNam(
@@ -707,6 +714,10 @@ function lapDiaBan(
     }
     let chiLuuThang = luuThang + 2;
     if (namXemDaiVan) {
+      maCanChi =
+        thienCan[cungDaiVan.cungCan].tenCan +
+        " " +
+        diaChi[cungDaiVan.cungSo].tenChi;
       addSaoLuu(
         diaBan,
         cungDaiVan.cungCan,
@@ -733,13 +744,11 @@ function lapDiaBan(
       );
       for (let cung of diaBan.thapNhiCung) {
         if (cung.cungSo && cung.cungTieuHan === diaChi[chiLuuNam].tenChi) {
-          cung.namTieuVanTen =
+          maCanChi =
             thienCan[canLuuNam].tenCan + " " + diaChi[chiLuuNam].tenChi;
-          console.log(cung);
           break;
         }
       }
-
       addSaoLuu(
         diaBan,
         canLuuNam,
@@ -749,11 +758,12 @@ function lapDiaBan(
         gioSinh,
         gioiTinh,
         SAO_LUU_NIEN_TYPE,
-        luuThang ? luuThang : tt
+        thangLuuNguyet ? luuThang : tt
       );
     }
     if (thangLuuNguyet) {
-      console.log(canLuuThang, chiLuuThang);
+      maCanChi =
+        thienCan[canLuuThang].tenCan + " " + diaChi[chiLuuThang].tenChi;
       addSaoLuu(
         diaBan,
         canLuuThang,
@@ -791,7 +801,7 @@ function lapDiaBan(
     }
   }
 
-  return diaBan;
+  return { ...diaBan, maCanChi: maCanChi };
 }
 
 module.exports = {
