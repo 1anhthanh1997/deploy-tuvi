@@ -153,8 +153,8 @@ code {
 }
 
 .laso {
-    width: 800px;
-    height: 1200px;
+    width: 1000px;
+    height: 1600px;
     margin-right: auto;
     margin-left: auto;
     overflow: hidden;
@@ -184,7 +184,7 @@ cung-bottom {
 }
 
 .cung-middle {
-    height: 240px;
+    height: 340px;
 }
 
 .cung-middle ul,
@@ -235,13 +235,13 @@ li {
 
 .diaCung {
     width: 200px;
-    height: 300px;
+    height: 400px;
     /*background-color: #f3f6ef;*/
 }
 
 .thienBan {
     width: 400px;
-    height: 600px;
+    height: 800px;
     position: relative;
 }
 
@@ -413,7 +413,7 @@ input.primary {
     display: inline-block;
     white-space: nowrap;
     vertical-align: top;
-    max-height: 180px;
+    max-height: 280px;
     font-weight: bold;
 }
 
@@ -425,7 +425,7 @@ input.primary {
     white-space: nowrap;
     vertical-align: top;
     font-weight: bold;
-    max-height: 180px;
+    max-height: 280px;
 }
 
 .blocks {

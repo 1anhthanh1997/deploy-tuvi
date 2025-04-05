@@ -388,6 +388,7 @@ $(document).ready(function () {
         return {
           description: "sức khỏe, bệnh tật, nghiệp quả",
           shortName: "Tật",
+          doiXung: "Phụ mẫu",
         };
       }
       case "Tài Bạch": {
@@ -395,7 +396,7 @@ $(document).ready(function () {
           description:
             "tài năng/tài nguyên/tài chính, tiền, kinh tế, giá trị vật chất",
           shortName: "Tài",
-          doiXung: "Phụ mẫu",
+          doiXung: "Phúc đức",
         };
       }
       case "Tử tức": {
@@ -466,6 +467,8 @@ $(document).ready(function () {
       );
       let saoDaiVan = cungSao.filter((sao) => checkSaoDaiVan(sao.saoTen));
       let saoLuuNien = cungSao.filter((sao) => checkSaoLuuNien(sao.saoTen));
+      let saoLuuNguyet = cungSao.filter((sao) => checkSaoLuuNguyet(sao.saoTen));
+      let saoLuuNhat = cungSao.filter((sao) => checkSaoLuuNhat(sao.saoTen));
       let tuan = cung.tuanTrung;
       let triet = cung.trietLo;
       let chinhTinh = [...chinhTinhGoc, ...chinhTinhMoi];
@@ -488,10 +491,10 @@ $(document).ready(function () {
         saoLuuNien = [...saoLuuNien, { saoTen: "Y. Triệt" }];
       }
       if (cung.luuNguyetTuanTrung) {
-        chinhTinh = [...chinhTinh, { saoTen: "M. Tuần" }];
+        saoLuuNguyet = [...saoLuuNguyet, { saoTen: "M. Tuần" }];
       }
       if (cung.luuNguyetTrietLo) {
-        chinhTinh = [...chinhTinh, { saoTen: "M. Triệt" }];
+        saoLuuNguyet = [...saoLuuNguyet, { saoTen: "M. Triệt" }];
       }
 
       const phuTinh = cungSao.filter(
@@ -513,6 +516,12 @@ $(document).ready(function () {
         luuNien: saoLuuNien
           .map((sao) => capitalizeWords(sao.saoTen))
           .join(" + "),
+        luuNguyet: saoLuuNguyet
+          .map((sao) => capitalizeWords(sao.saoTen))
+          .join(" + "),
+        luuNhat: saoLuuNhat
+          .map((sao) => capitalizeWords(sao.saoTen))
+          .join(" + "),
       };
     }
     return {
@@ -532,40 +541,61 @@ $(document).ready(function () {
     daiVanIndex,
     cungTieuVan,
     namXemTieuVan,
+    thangLuuNguyet,
+    ngayLuuNhat,
   }) => {
+    const textIndex = [
+      "tam hợp mà đương số có khả năng chủ động cát hóa mạnh nhất",
+      "đương số có khả năng chủ động cát hóa mạnh",
+      "đương số có khả năng chủ động cát hóa hạn chế",
+      "đương số có khả năng chủ động cát hóa yếu nhất",
+    ];
+
     const tamHopCungSaoText = tamHopList
       .map((tamHop, index) => {
         return `\n${index + 1}. Tam hợp ${tamHop[0]} - ${tamHop[1]} - ${
           tamHop[2]
-        } thuộc dạng cách cục ${
+        } (${textIndex[index]}) thuộc dạng cách cục ${
           cungCach[index]
-        }, ${ten} ${namDuong} nắm quyền chủ động được ~${
-          80 - 20 * index
-        }%${tamHop.map((cung) => {
-          return `\n      Cung ${cung} ${
-            cung === cungChuThan ? "kiêm nhiệm cung an Thân " : ""
-          }của ${ten} ${namDuong}
-      Chính tinh: ${getSao(cung, sapXepCungTheoTuoi).chinhTinh}
-      Phụ tinh: ${getSao(cung, sapXepCungTheoTuoi).phuTinh}${
-            cungDaiVan
-              ? `\n      Cung chức mang ý nghĩa đối xung ngoại cảnh với cung ${cung} là cung ${
-                  getCungChuInfo(cung).doiXung
-                }`
-              : ""
-          }${
-            cungDaiVan
-              ? `\n      Lưu động theo đại vận thứ ${daiVanIndex}: ${
-                  getSao(cung, sapXepCungTheoTuoi).daiVan
-                }`
-              : ""
-          }${
-            cungTieuVan
-              ? `\n      Lưu động theo tiểu vận ${namXemTieuVan}: ${
-                  getSao(cung, sapXepCungTheoTuoi).luuNien
-                }`
-              : ""
-          }`;
-        })}
+        }, ${ten} ${namDuong} ${tamHop
+          .map((cung) => {
+            return `\nCung ${cung} ${
+              cung === cungChuThan ? "kiêm nhiệm cung an Thân " : ""
+            }của ${ten} ${namDuong} chủ quản thông tin về: ${
+              getCungChuInfo(cung).description
+            }
+        Chính tinh: ${getSao(cung, sapXepCungTheoTuoi).chinhTinh}
+        Phụ tinh: ${getSao(cung, sapXepCungTheoTuoi).phuTinh}
+        Cung chức mang ý nghĩa đối xung ngoại cảnh với cung ${cung} là cung ${
+              getCungChuInfo(cung).doiXung
+            }
+      ${
+        cungDaiVan
+          ? `  Lưu động theo đại vận thứ ${daiVanIndex}: ${
+              getSao(cung, sapXepCungTheoTuoi).daiVan
+            }`
+          : ""
+      }${
+              cungTieuVan
+                ? `\n        Lưu động theo tiểu vận ${namXemTieuVan}: ${
+                    getSao(cung, sapXepCungTheoTuoi).luuNien
+                  }`
+                : ""
+            }${
+              thangLuuNguyet
+                ? `\n        Lưu động theo nguyệt vận tháng ${
+                    thangLuuNguyet - 1 + "/" + namXemTieuVan
+                  }: ${getSao(cung, sapXepCungTheoTuoi).luuNguyet}`
+                : ""
+            }${
+              ngayLuuNhat && getSao(cung, sapXepCungTheoTuoi).luuNhat
+                ? `\n        Lưu động theo ngày ${
+                    ngayLuuNhat + "/" + thangLuuNguyet + "/" + namXemTieuVan
+                  }: ${getSao(cung, sapXepCungTheoTuoi).luuNhat}`
+                : ""
+            }`;
+          })
+          .join("")}
       `;
       })
       .join("");
@@ -599,38 +629,10 @@ $(document).ready(function () {
       namDuong,
       sapXepCungTheoTuoi,
     });
-    const firstSection = `I. Quy tắc luận giải:
-  1. Nội dung luận giải bao gồm ý nghĩa của các tổ hợp sao được tạo thành. Luận giải các tổ hợp sao được tạo thành từ quan hệ đồng cung, tam hợp hay đối xung với nhau.
-  2. Nội dung luận giải luôn luôn phải xoay quanh “tệp thông tin nền tảng” của đương số.
-  Tệp thông tin nền tảng của đương số = ý nghĩa tổ hợp sao tại tam hợp cung Mệnh + ý nghĩa tổ hợp sao tại tam hợp cung an Thân
-  3. Cung chức mà đương số có khả năng chủ động được nhiều thì đương số phải cát hóa bằng cách tận dụng nội lực bên trong. Cung chức không chủ động được nhiều thì đương số phải cát hóa bằng cách tận dụng ngoại lực bên ngoài.`;
+    const firstSection = `Thông tin lá số Tử Vi gốc của ${ten}, ${namNu.toLowerCase()} mệnh ${namDuong}`;
 
-    const secondSection = `II. Ý nghĩa các cung chức năng của ${ten} ${namDuong} theo giáo trình AGImighty
-Xác định cung an Thân là do cung chức nào kiêm nhiệm, từ đó mới định dạng được cách cục của “tệp thông tin nền tảng của đương số”
-  1. Các cung chức năng luôn tam hợp với nhau mà ${ten} ${namDuong} nắm ~80% quyền chủ động. 
-  Tam hợp Mệnh - Tài Bạch - Quan Lộc của ${ten} ${namDuong} là dạng cách cục ${cungCach[0]}
-  Cung Mệnh của ${ten} ${namDuong}: chủ quản thông tin về: bản chất, lý tưởng, cốt lõi, ý chí, cá tính. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Mệnh là cung Thiên Di
-  Cung Tài Bạch của ${ten} ${namDuong}: chủ quản thông tin về: tài năng/tài nguyên/tài chính, tiền, kinh tế, giá trị vật chất. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Tạch Bạch là cung Phúc Đức
-  Cung Quan Lộc của ${ten} ${namDuong}: chủ quản thông tin về: công việc/sự nghiệp, tác phong/năng lực làm việc. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Quan Lộc là cung Phu Thê
-  2. Các cung chức năng luôn tam hợp với nhau mà ${ten} ${namDuong} nắm ~60% quyền chủ động. 
-  Tam hợp Phúc Đức - Phu Thê - Thiên Di của ${ten} ${namDuong} là dạng cách cục ${cungCach[1]}
-  Cung Thiên Di của ${ten} ${namDuong}: chủ quản thông tin về: góc nhìn của xã hội về đương số, ngoại cảnh của “Mệnh”, đối tác/đối thủ/đối phương, cách đối nhân xử thế & tương tác xã hội. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Thiên Di là cung Mệnh
-  Cung Phúc Đức của ${ten} ${namDuong}: chủ quản thông tin về: phước báu/may mắn, giá trị tinh thần, gia tộc (nội/ngoại), quan điểm về hạnh phúc. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Phúc Đức là cung Tài Bạch
-  Cung Phu Thê của ${ten} ${namDuong}: chủ quản thông tin về: vợ/chồng, người yêu/người tình, mối quan hệ mật thiết cá nhân. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Phu Thê là cung Quan Lộc
-  3. Các cung chức năng luôn tam hợp với nhau mà ${ten} ${namDuong} nắm ~40% quyền chủ động
-  Tam hợp Huynh Đệ - Tật Ách - Điền Trạch của ${ten} ${namDuong} là dạng cách cục ${cungCach[2]}
-  Cung Huynh Đệ của ${ten} ${namDuong} chủ quản thông tin về: anh chị em trong gia tộc, các mối quan hệ chia sẻ cả lợi ích lẫn rủi ro, anh chị em kết nghĩa, anh chị em xã hội tri kỷ…Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Huynh Đệ là cung Nô Bộc
-  Cung Tật Ách của ${ten} ${namDuong} chủ quản thông tin về: sức khỏe, bệnh tật, nghiệp quả. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Tật Ách là cung Phụ Mẫu
-  Cung Điền Trạch của ${ten} ${namDuong} chủ quản thông tin về: tích lũy tài sản, cơ sở hạ tầng, thói quen sinh hoạt hằng ngày, di sản giá trị vật chất để lại cho đời. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Điền Trạch là cung Tử Tức
-  4. Các cung chức năng luôn tam hợp với nhau mà ${ten} ${namDuong} nắm ~20% quyền chủ động
-  Tam hợp Phụ Mẫu - Tử Tức - Nô Bộc của ${ten} ${namDuong} là dạng cách cục ${cungCach[3]}
-  Cung Phụ Mẫu chủ quản thông tin về: cha mẹ, cha mẹ vợ/chồng, những người có vai trò như cha mẹ, thế hệ đi trước (quá khứ), bề trên (sếp, tiền bối…). Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Phụ Mẫu là cung Tật Ách
-  Cung Tử Tức chủ quản thông tin về: thế hệ sau (tương lai), con cháu/đệ tử/học trò/thú cưng, di sản tinh thần để lại cho đời. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Tử Tức là cung Điền Trạch
-  Cung Nô Bộc chủ quản thông tin về: thế hệ đồng trang lứa (hiện tại), mối quan hệ xã giao không sâu sắc, các mối quan hệ chỉ chia sẻ lợi ích không chia sẻ rủi ro. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Nô Bộc là cung Huynh Đệ
-`;
-
-    const thirdSection = `III. Danh sách các ngôi sao trên lá số gốc:${tamHopCungSaoText}`;
-    const contentCopy = `Lá số Tử Vi gốc của ${ten} ${namDuong}, ${namNu} mệnh \n ${firstSection}\n${secondSection}\n${thirdSection}`;
+    const secondSection = `III. Danh sách các ngôi sao trên lá số gốc:${tamHopCungSaoText}`;
+    const contentCopy = `Lá số Tử Vi gốc của ${ten} ${namDuong}, ${namNu} mệnh \n ${firstSection}\n${secondSection}`;
     return contentCopy;
   }
   function isChildArray(parentArray, childArray) {
@@ -801,12 +803,26 @@ Lá số Tử Vi gốc của ${ten} ${namDuong}, ${namNu.toLowerCase()} mệnh �
     Chủ động sáng tạo, phản hồi linh hoạt bằng cách luận giải lần lượt các trường hợp sao De. bay vào cung chức năng gốc.
     Mọi phản hồi luôn phải được suy luận theo hướng tương tác với “tệp thông tin nền tảng của đương số” để tạo thành 2 kết quả tương phản: cát hóa (tích cực/tài phú/danh vọng) và hung hóa (tiêu cực/nghèo/hèn)
 `;
-    const thirdSection = `III. Danh sách các ngôi sao được sử dụng để luận giải đại vận ${tamHopCungSaoText}`;
+    const thirdSection = `${tamHopCungSaoText}`;
     return firstSection + "\n" + secondSection + "\n" + thirdSection;
   }
 
-  function copyContentLuuNien(laso, namXemTieuVan) {
-    const { thienBan, thapNhiCung } = laso;
+  function copyContentLuuNien(
+    laso,
+    ngayLuuNhat,
+    thangLuuNguyet,
+    namXemTieuVan,
+    namXemDaiVan
+  ) {
+    console.log(namXemTieuVan, namXemDaiVan);
+    const {
+      thienBan,
+      thapNhiCung,
+      maCanChiDaiVan,
+      maCanChiTieuVan,
+      maCanChiNguyetVan,
+      maCanChiNhatVan,
+    } = laso;
     const { namDuong, canNamTen, ten, chiNamTen, namNu } = thienBan;
     thapNhiCung.shift();
     const sapXepCungTheoCungSo = [...thapNhiCung].sort(
@@ -824,7 +840,7 @@ Lá số Tử Vi gốc của ${ten} ${namDuong}, ${namNu.toLowerCase()} mệnh �
       ["Huynh đệ", "Tật Ách", "Điền trạch"],
       ["Phụ mẫu", "Tử tức", "Nô bộc"],
     ];
-    let tuoiDaiVan = namXemTieuVan - namDuong;
+    let tuoiDaiVan = (namXemDaiVan ? namXemDaiVan : namXemTieuVan) - namDuong;
     let cungTieuVan = null;
     let cungDaiVan = null;
     thapNhiCung.forEach((cung) => {
@@ -852,101 +868,18 @@ Lá số Tử Vi gốc của ${ten} ${namDuong}, ${namNu.toLowerCase()} mệnh �
       cungDaiVan: cungDaiVan,
       daiVanIndex: Math.ceil(cungDaiVan.cungDaiHan / 10),
       namXemTieuVan: namXemTieuVan,
+      ngayLuuNhat: ngayLuuNhat,
+      thangLuuNguyet: thangLuuNguyet,
     });
-
-    const firstSection = `Cung chức Nô Bộc kiêm nhiệm chức năng là cung tiểu vận, quản lý thông tin tiểu vận ${
-      cungTieuVan.namTieuVanTen
-    } ${namXemTieuVan}, trong khoảng thời gian tuổi ${
-      namXemTieuVan - namDuong
-    } của ${ten} ${namDuong}
-Bản đồ lưu động các sao theo tiểu vận của ${ten} ${namDuong} (Y.) sẽ được căn cứ vào mã can chi ${
-      cungTieuVan.namTieuVanTen
-    }.
-Lá số Tử Vi gốc của ${ten} ${namDuong}, ${namNu.toLowerCase()} mệnh để luận giải tiểu vận năm ${namXemTieuVan}
-`;
-    const secondSection = `Quy tắc luận giải tiểu vận của đặc vụ AGI
-  Tam hợp cung tiểu vận này thuộc dạng nào trong 8 cách cục cơ bản? Tương tác với “tệp thông tin nền tảng về đương số” như thế nào?
-  Luận giải tiểu vận ưu tiên xem xét ý nghĩa tổ hợp sao đồng cung tại cung tiểu vận, tam hợp với cung tiểu vận, đối xung với cung tiểu vận để luận giải ngoại cảnh. Ưu tiên nội dung các sao Y, tiếp theo là sao De.
-  Bắt buộc phải luận giải lần lượt Y.Hóa Lộc, Y.Hóa Quyền, Y.Hóa Khoa, Y.Hóa Kỵ. 
-  Bắt buộc phải luận giải tính chất Không Vong trong tiểu vận bằng việc xem xét Y.Tuần và Y.Triệt
-  Chủ động sáng tạo, phản hồi linh hoạt bằng cách luận giải lần lượt các trường hợp sao Y. bay vào cung đại vận và các cung chức năng gốc.
-  Mọi phản hồi luôn phải được suy luận theo hướng tương tác với “tệp thông tin nền tảng của đương số” để tạo thành 2 kết quả tương phản: cát hóa (tích cực/tài phú/danh vọng) và hung hóa (tiêu cực/nghèo/hèn)
-
-`;
-    const thirdSection = `III. Danh sách các ngôi sao được sử dụng để luận giải tiểu vận ${cungTieuVan.namTieuVanTen} ${namXemTieuVan}\n${tamHopCungSaoText}`;
-    return firstSection + "\n" + secondSection + "\n" + thirdSection;
-  }
-
-  function copyContentLuuNguyet(laso, thangLuuNguyet, namXemTieuVan) {
-    const { thienBan, thapNhiCung } = laso;
-    const { namDuong, canNamTen, ten, chiNamTen, namNu } = thienBan;
-    thapNhiCung.shift();
-    const sapXepCungTheoCungSo = [...thapNhiCung].sort(
-      (a, b) => a.cungSo - b.cungSo
-    );
-    const sapXepCungTheoTuoi = [...thapNhiCung].sort(
-      (a, b) => a.cungDaiHan - b.cungDaiHan
-    );
-    const { cungCach, cungCachThan, cungChuThan, tamHopCungAnThan } =
-      getBasicInfo(sapXepCungTheoTuoi);
-
-    let tamHopList = [
-      ["Mệnh", "Tài Bạch", "Quan lộc"],
-      ["Phúc đức", "Phu thê", "Thiên di"],
-      ["Huynh đệ", "Tật Ách", "Điền trạch"],
-      ["Phụ mẫu", "Tử tức", "Nô bộc"],
-    ];
-    let tuoiDaiVan = namXemTieuVan - namDuong;
-    let cungTieuVan = null;
-    let cungDaiVan = null;
-    thapNhiCung.forEach((cung) => {
-      if (cung.namTieuVanTen) {
-        cungTieuVan = cung;
-      }
-    });
-
-    thapNhiCung.forEach((cung) => {
-      if (
-        (tuoiDaiVan < 10 && cung.cungDaiHan < 10) ||
-        (cung.cungDaiHan <= tuoiDaiVan && cung.cungDaiHan + 10 > tuoiDaiVan)
-      ) {
-        cungDaiVan = cung;
-      }
-    });
-    const tamHopCungSaoText = getTamHopCungSaoText({
-      tamHopList,
-      cungCach,
-      cungChuThan,
-      ten,
-      namDuong,
-      sapXepCungTheoTuoi,
-      cungTieuVan: cungTieuVan,
-      cungDaiVan: cungDaiVan,
-      daiVanIndex: Math.ceil(cungDaiVan.cungDaiHan / 10),
-      namXemTieuVan: namXemTieuVan,
-    });
-
-    const firstSection = `Cung chức Nô Bộc kiêm nhiệm chức năng là cung tiểu vận, quản lý thông tin tiểu vận ${
-      cungTieuVan.namTieuVanTen
-    } ${namXemTieuVan}, trong khoảng thời gian tuổi ${
-      namXemTieuVan - namDuong
-    } của ${ten} ${namDuong}
-Bản đồ lưu động các sao theo tiểu vận của ${ten} ${namDuong} (Y.) sẽ được căn cứ vào mã can chi ${
-      cungTieuVan.namTieuVanTen
-    }.
-Lá số Tử Vi gốc của ${ten} ${namDuong}, ${namNu.toLowerCase()} mệnh để luận giải tiểu vận năm ${namXemTieuVan}
-`;
-    const secondSection = `Quy tắc luận giải tiểu vận của đặc vụ AGI
-  Tam hợp cung tiểu vận này thuộc dạng nào trong 8 cách cục cơ bản? Tương tác với “tệp thông tin nền tảng về đương số” như thế nào?
-  Luận giải tiểu vận ưu tiên xem xét ý nghĩa tổ hợp sao đồng cung tại cung tiểu vận, tam hợp với cung tiểu vận, đối xung với cung tiểu vận để luận giải ngoại cảnh. Ưu tiên nội dung các sao Y, tiếp theo là sao De.
-  Bắt buộc phải luận giải lần lượt Y.Hóa Lộc, Y.Hóa Quyền, Y.Hóa Khoa, Y.Hóa Kỵ. 
-  Bắt buộc phải luận giải tính chất Không Vong trong tiểu vận bằng việc xem xét Y.Tuần và Y.Triệt
-  Chủ động sáng tạo, phản hồi linh hoạt bằng cách luận giải lần lượt các trường hợp sao Y. bay vào cung đại vận và các cung chức năng gốc.
-  Mọi phản hồi luôn phải được suy luận theo hướng tương tác với “tệp thông tin nền tảng của đương số” để tạo thành 2 kết quả tương phản: cát hóa (tích cực/tài phú/danh vọng) và hung hóa (tiêu cực/nghèo/hèn)
-
-`;
-    const thirdSection = `III. Danh sách các ngôi sao được sử dụng để luận giải tiểu vận ${cungTieuVan.namTieuVanTen} ${namXemTieuVan}\n${tamHopCungSaoText}`;
-    return firstSection + "\n" + secondSection + "\n" + thirdSection;
+    const firstSection = `I.Lá số luận giải vận cho ${ten} ${namDuong}
+    1.Mã can chi
+      Đại vận: mã can chi ${maCanChiDaiVan}
+      ${maCanChiTieuVan ? `Tiểu vận: mã can chi ${maCanChiTieuVan}` : ""}
+      ${maCanChiNguyetVan ? `Nguyệt vận: mã can chi ${maCanChiNguyetVan}` : ""}
+      ${maCanChiNhatVan ? `Nhật vận: mã can chi ${maCanChiNhatVan}` : ""}
+    `;
+    const secondSection = `Bản đồ 4 tầng sao lưu động theo yêu cầu căn cứ vào 4 mã can chi\n${tamHopCungSaoText}`;
+    return firstSection + "\n" + secondSection;
   }
 
   function downloadTxtFile(content, title) {
@@ -1047,20 +980,20 @@ Lá số Tử Vi gốc của ${ten} ${namDuong}, ${namNu.toLowerCase()} mệnh �
         lapLaSo(thienBandiaBan);
         $("#btn-copy-content").css("display", "block");
         $("#btn-download-content").css("display", "block");
-        if ($("form#lstv").serialize().includes("daivan=on")) {
+        if (
+          $("form#lstv").serialize().includes("luunien=on") ||
+          $("form#lstv").serialize().includes("daivan=on")
+        ) {
           let namXemDaiVan = $("#namxemdaivan").val();
-          const contentCopyDaiVan = copyContentDaiVan(
-            thienBandiaBan,
-            namXemDaiVan ? parseInt(namXemDaiVan) : new Date().getFullYear()
-          );
-          $("#contentCopy").text(contentCopyDaiVan);
-          // $("#note").css("display", "flex");
-          $("#valueAnhHuong").css("display", "none");
-        } else if ($("form#lstv").serialize().includes("luunien=on")) {
           let namXemTieuVan = $("#namxemtieuvan").val();
+          let thangLuuNguyet = $("#thangluunguyet").val();
+          let ngayLuuNhat = $("#ngayluunhat").val();
           const contentCopyLuuNien = copyContentLuuNien(
             thienBandiaBan,
-            namXemTieuVan ? parseInt(namXemTieuVan) : new Date().getFullYear()
+            ngayLuuNhat,
+            thangLuuNguyet,
+            namXemTieuVan ? parseInt(namXemTieuVan) : new Date().getFullYear(),
+            namXemDaiVan ? parseInt(namXemDaiVan) : new Date().getFullYear()
           );
           $("#contentCopy").text(contentCopyLuuNien);
           // $("#note").css("display", "flex");
