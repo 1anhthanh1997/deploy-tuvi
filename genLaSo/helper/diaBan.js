@@ -1,7 +1,7 @@
 const { diaChi, dichCung, khoangCachCung } = require("./amDuong.js");
 
 class CungDiaBan {
-  constructor(cungID) {
+  constructor(cungID, canNamSinh) {
     const hanhCung = [
       null,
       "Thủy",
@@ -17,12 +17,38 @@ class CungDiaBan {
       "Thổ",
       "Thủy",
     ];
-
+    const canNameList = [
+      "",
+      "Giáp",
+      "Ất",
+      "Bính",
+      "Đinh",
+      "Mậu",
+      "Kỷ",
+      "Canh",
+      "Tân",
+      "Nhâm",
+      "Quý",
+    ];
+    const listCanThangDan = [3, 5, 7, 9, 1];
+    const canThangDan =
+      listCanThangDan[canNamSinh % 5 === 0 ? 4 : (canNamSinh % 5) - 1];
     this.cungSo = cungID;
     this.hanhCung = hanhCung[cungID];
     this.cungSao = [];
     this.cungAmDuong = this.cungSo % 2 === 0 ? -1 : 1;
     this.cungTen = diaChi[this.cungSo]["tenChi"];
+    this.cungCan =
+      (this.cungSo - 3 < 0
+        ? this.cungSo + 9 + canThangDan
+        : this.cungSo - 3 + canThangDan) %
+        10 ===
+      0
+        ? 10
+        : (this.cungSo - 3 < 0
+            ? this.cungSo + 9 + canThangDan
+            : this.cungSo - 3 + canThangDan) % 10;
+    this.cungCanTen = canNameList[this.cungCan];
     this.cungThan = false;
   }
 
@@ -60,24 +86,50 @@ class CungDiaBan {
     this.tuanTrung = true;
   }
 
-  anLuuTuan() {
-    this.luuTuanTrung = true;
+  anDaiVanTuan() {
+    this.daiVanTuanTrung = true;
+  }
+
+  anLuuNienTuan() {
+    this.luuNienTuanTrung = true;
+  }
+
+  anLuuNguyetTuan() {
+    this.luuNguyetTuanTrung = true;
+  }
+
+  anLuuNhatTuan() {
+    this.luuNhatTuanTrung = true;
   }
 
   anTriet() {
     this.trietLo = true;
   }
 
-  anLuuTriet() {
-    this.luuTrietLo = true;
+  anDaiVanTriet() {
+    this.daiVanTrietLo = true;
+  }
+
+  anLuuNienTriet() {
+    this.luuNienTrietLo = true;
+  }
+
+  anLuuNguyetTriet() {
+    this.luuNguyetTrietLo = true;
+  }
+
+  anLuuNhatTriet() {
+    this.luuNhatTrietLo = true;
   }
 }
-
 class DiaBan {
-  constructor(thangSinhAmLich, gioSinhAmLich) {
+  constructor(thangSinhAmLich, gioSinhAmLich, canNamSinh) {
     this.thangSinhAmLich = thangSinhAmLich;
     this.gioSinhAmLich = gioSinhAmLich;
-    this.thapNhiCung = Array.from({ length: 13 }, (_, i) => new CungDiaBan(i));
+    this.thapNhiCung = Array.from(
+      { length: 13 },
+      (_, i) => new CungDiaBan(i, canNamSinh)
+    );
     this.nhapCungChu();
     this.nhapCungThan();
   }
@@ -170,8 +222,23 @@ class DiaBan {
     return this;
   }
 
-  nhapLuuTuan(...args) {
-    args.forEach((cung) => this.thapNhiCung[cung].anLuuTuan());
+  nhapDaiVanTuan(...args) {
+    args.forEach((cung) => this.thapNhiCung[cung].anDaiVanTuan());
+    return this;
+  }
+
+  nhapLuuNienTuan(...args) {
+    args.forEach((cung) => this.thapNhiCung[cung].anLuuNienTuan());
+    return this;
+  }
+
+  nhapLuuNguyetTuan(...args) {
+    args.forEach((cung) => this.thapNhiCung[cung].anLuuNguyetTuan());
+    return this;
+  }
+
+  nhapLuuNhatTuan(...args) {
+    args.forEach((cung) => this.thapNhiCung[cung].anLuuNhatTuan());
     return this;
   }
 
@@ -179,8 +246,24 @@ class DiaBan {
     args.forEach((cung) => this.thapNhiCung[cung].anTriet());
     return this;
   }
-  nhapLuuTriet(...args) {
-    args.forEach((cung) => this.thapNhiCung[cung].anLuuTriet());
+
+  nhapDaiVanTriet(...args) {
+    args.forEach((cung) => this.thapNhiCung[cung].anDaiVanTriet());
+    return this;
+  }
+
+  nhapLuuNienTriet(...args) {
+    args.forEach((cung) => this.thapNhiCung[cung].anLuuNienTriet());
+    return this;
+  }
+
+  nhapLuuNguyetTriet(...args) {
+    args.forEach((cung) => this.thapNhiCung[cung].anLuuNguyetTriet());
+    return this;
+  }
+
+  nhapLuuNhatTriet(...args) {
+    args.forEach((cung) => this.thapNhiCung[cung].anLuuNhatTriet());
     return this;
   }
 }

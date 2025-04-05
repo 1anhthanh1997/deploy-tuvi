@@ -329,12 +329,12 @@ $(document).ready(function () {
   }
 
   function getCungChuInfo(cungChu) {
-    console.log(cungChu);
     switch (cungChu) {
       case "Mệnh": {
         return {
           description: "bản chất, lý tưởng, cốt lõi, ý chí, cá tính",
           shortName: "",
+          doiXung: "Thiên Di",
         };
       }
       case "Phụ mẫu": {
@@ -342,6 +342,7 @@ $(document).ready(function () {
           description:
             "cha mẹ, cha mẹ vợ/chồng, những người có vai trò như cha mẹ, thế hệ đi trước (quá khứ), bề trên (sếp, thủ trưởng, tiền bối…)",
           shortName: "Phụ",
+          doiXung: "Tật Ách",
         };
       }
       case "Phúc đức": {
@@ -349,6 +350,7 @@ $(document).ready(function () {
           description:
             "phước báu/may mắn, giá trị tinh thần, gia tộc (nội/ngoại), quan điểm về hạnh phúc",
           shortName: "Phúc",
+          doiXung: "Tài Bạch",
         };
       }
       case "Điền trạch": {
@@ -356,12 +358,14 @@ $(document).ready(function () {
           description:
             "tích lũy tài sản, cơ sở hạ tầng, thói quen sinh hoạt hằng ngày, di sản giá trị vật chất để lại cho đời",
           shortName: "Điền",
+          doiXung: "Tử tức",
         };
       }
       case "Quan lộc": {
         return {
           description: "công việc/sự nghiệp, tác phong/năng lực làm việc",
           shortName: "Quan",
+          doiXung: "Phu thê",
         };
       }
       case "Nô bộc": {
@@ -369,6 +373,7 @@ $(document).ready(function () {
           description:
             "thế hệ đồng trang lứa (hiện tại), các mối quan hệ xã giao không sâu sắc, các mối quan hệ chỉ chia sẻ lợi ích mà không chia sẻ rủi ro",
           shortName: "Nô",
+          doiXung: "Huynh đệ",
         };
       }
       case "Thiên di": {
@@ -376,6 +381,7 @@ $(document).ready(function () {
           description:
             "góc nhìn của xã hội về đương số, ngoại cảnh của “Mệnh”, đối tác/đối thủ/đối phương, cách đối nhân xử thế & tương tác xã hội",
           shortName: "Di",
+          doiXung: "Mệnh",
         };
       }
       case "Tật Ách": {
@@ -389,6 +395,7 @@ $(document).ready(function () {
           description:
             "tài năng/tài nguyên/tài chính, tiền, kinh tế, giá trị vật chất",
           shortName: "Tài",
+          doiXung: "Phụ mẫu",
         };
       }
       case "Tử tức": {
@@ -396,6 +403,7 @@ $(document).ready(function () {
           description:
             "thế hệ sau (tương lai), con cháu/đệ tử/học trò/thú cưng, di sản giá trị tinh thần để lại cho đời",
           shortName: "Tử",
+          doiXung: "Điền trạch",
         };
       }
       case "Phu thê": {
@@ -403,6 +411,7 @@ $(document).ready(function () {
           description:
             "Vợ/chồng, người yêu/người tình, mối quan hệ mật thiết cá nhân",
           shortName: "Phối",
+          doiXung: "Quan lộc",
         };
       }
       case "Huynh đệ": {
@@ -410,6 +419,7 @@ $(document).ready(function () {
           description:
             "anh chị em trong gia tộc, các mối quan hệ chia sẻ cả lợi ích lẫn rủi ro, anh chị em kết nghĩa, anh chị em xã hội tri kỷ…",
           shortName: "Bào",
+          doiXung: "Nô bộc",
         };
       }
       default: {
@@ -422,6 +432,22 @@ $(document).ready(function () {
     51, 52, 53, 54, 55, 56, 57, 58, 61, 62, 73, 92, 93, 94, 95,
   ];
 
+  function checkSaoDaiVan(saoTen) {
+    return saoTen.includes("De.");
+  }
+
+  function checkSaoLuuNien(saoTen) {
+    return saoTen.includes("Y.");
+  }
+
+  function checkSaoLuuNguyet(saoTen) {
+    return saoTen.includes("M.");
+  }
+
+  function checkSaoLuuNhat(saoTen) {
+    return saoTen.includes("D.");
+  }
+
   function getSao(cungChu, thapNhiCung) {
     cungArr = thapNhiCung.filter((c) => {
       return c.cungChu === cungChu;
@@ -430,18 +456,43 @@ $(document).ready(function () {
       let cung = cungArr[0];
       const { cungSao, cungSo } = cung;
       const chinhTinhGoc = cungSao.filter((sao) => sao.saoAmDuong !== "");
-      const chinhTinhMoi = cungSao.filter((sao) =>
-        newChinhTinh.includes(sao.saoID)
+      const chinhTinhMoi = cungSao.filter(
+        (sao) =>
+          newChinhTinh.includes(sao.saoID) &&
+          !checkSaoDaiVan(sao.saoTen) &&
+          !checkSaoLuuNien(sao.saoTen) &&
+          !checkSaoLuuNguyet(sao.saoTen) &&
+          !checkSaoLuuNhat(sao.saoTen)
       );
-      const chinhTinh = [...chinhTinhGoc, ...chinhTinhMoi];
+      let tuan = cung.tuanTrung;
+      let triet = cung.trietLo;
+      let chinhTinh = [...chinhTinhGoc, ...chinhTinhMoi];
+      if (tuan) {
+        chinhTinh = [...chinhTinh, { saoTen: "Tuần" }];
+      }
+      if (triet) {
+        chinhTinh = [...chinhTinh, { saoTen: "Triệt" }];
+      }
       const phuTinh = cungSao.filter(
-        (sao) => sao.saoAmDuong === "" && !newChinhTinh.includes(sao.saoID)
+        (sao) =>
+          sao.saoAmDuong === "" &&
+          !newChinhTinh.includes(sao.saoID) &&
+          !checkSaoDaiVan(sao.saoTen) &&
+          !checkSaoLuuNien(sao.saoTen) &&
+          !checkSaoLuuNguyet(sao.saoTen) &&
+          !checkSaoLuuNhat(sao.saoTen)
       );
+      const saoDaiVan = cungSao.filter((sao) => checkSaoDaiVan(sao.saoTen));
+      const saoLuuNien = cungSao.filter((sao) => checkSaoLuuNien(sao.saoTen));
       return {
         chinhTinh: chinhTinh
           .map((sao) => capitalizeWords(sao.saoTen))
           .join(" + "),
         phuTinh: phuTinh.map((sao) => capitalizeWords(sao.saoTen)).join(" + "),
+        daiVan: saoDaiVan.map((sao) => capitalizeWords(sao.saoTen)).join(" + "),
+        luuNien: saoLuuNien
+          .map((sao) => capitalizeWords(sao.saoTen))
+          .join(" + "),
       };
     }
     return {
@@ -450,47 +501,62 @@ $(document).ready(function () {
     };
   }
 
-  function getNhatVan(cungSo) {
-    let nhatVanStr = "";
-    let year = new Date().getFullYear();
-    const start = new Date(year, 0, 1); // 01/01 của năm nhập vào
-    const endYear = year + 1;
+  const getCungTextData = () => {};
 
-    // Kiểm tra năm nhuận để tính ngày cuối tháng 2
-    const isLeapYear = new Date(endYear, 1, 29).getDate() === 29;
-    const end = new Date(endYear, 1, isLeapYear ? 29 : 28); // 28/02 hoặc 29/02 của năm sau
-
-    let currentDate = new Date(start);
-
-    while (currentDate <= end) {
-      const day = String(currentDate.getDate()).padStart(2, "0");
-      const month = String(currentDate.getMonth() + 1).padStart(2, "0");
-      const currentYear = currentDate.getFullYear();
-      let { ngayAm, thangAm, isValid } = checkNgayTrongNam(
-        parseInt(day),
-        parseInt(month),
-        currentYear
-      );
-      if (isValid) {
-        [canNgay, chiNgay] = canChiNgay(
-          parseInt(day),
-          parseInt(month),
-          currentYear
-        );
-        if (cungSo === chiNgay) {
-          nhatVanStr += ngayAm + "/" + thangAm + ", ";
-        }
-      }
-
-      currentDate.setDate(currentDate.getDate() + 1); // Tăng thêm 1 ngày
-    }
-
-    return nhatVanStr;
-  }
+  const getTamHopCungSaoText = ({
+    tamHopList,
+    cungCach,
+    cungChuThan,
+    ten,
+    namDuong,
+    sapXepCungTheoTuoi,
+    cungDaiVan,
+    daiVanIndex,
+    cungTieuVan,
+    namXemTieuVan,
+  }) => {
+    const tamHopCungSaoText = tamHopList
+      .map((tamHop, index) => {
+        return `\n${index + 1}. Tam hợp ${tamHop[0]} - ${tamHop[1]} - ${
+          tamHop[2]
+        } thuộc dạng cách cục ${
+          cungCach[index]
+        }, ${ten} ${namDuong} nắm quyền chủ động được ~${
+          80 - 20 * index
+        }%${tamHop.map((cung) => {
+          return `\n      Cung ${cung} ${
+            cung === cungChuThan ? "kiêm nhiệm cung an Thân " : ""
+          }của ${ten} ${namDuong}
+      Chính tinh: ${getSao(cung, sapXepCungTheoTuoi).chinhTinh}
+      Phụ tinh: ${getSao(cung, sapXepCungTheoTuoi).phuTinh}${
+            cungDaiVan
+              ? `\n      Cung chức mang ý nghĩa đối xung ngoại cảnh với cung ${cung} là cung ${
+                  getCungChuInfo(cung).doiXung
+                }`
+              : ""
+          }${
+            cungDaiVan
+              ? `\n      Lưu động theo đại vận thứ ${daiVanIndex}: ${
+                  getSao(cung, sapXepCungTheoTuoi).daiVan
+                }`
+              : ""
+          }${
+            cungTieuVan
+              ? `\n      Lưu động theo tiểu vận ${namXemTieuVan}: ${
+                  getSao(cung, sapXepCungTheoTuoi).luuNien
+                }`
+              : ""
+          }`;
+        })}
+      `;
+      })
+      .join("");
+    return tamHopCungSaoText;
+  };
 
   function copyContent(laso) {
     const { thienBan, thapNhiCung } = laso;
-    const { namDuong, canNamTen, ten, chiNamTen } = thienBan;
+    const { namDuong, canNamTen, ten, chiNamTen, namNu } = thienBan;
     thapNhiCung.shift();
     const sapXepCungTheoCungSo = [...thapNhiCung].sort(
       (a, b) => a.cungSo - b.cungSo
@@ -498,216 +564,371 @@ $(document).ready(function () {
     const sapXepCungTheoTuoi = [...thapNhiCung].sort(
       (a, b) => a.cungDaiHan - b.cungDaiHan
     );
+    const { cungCach, cungCachThan, cungChuThan, tamHopCungAnThan } =
+      getBasicInfo(sapXepCungTheoTuoi);
 
-    // Get content from input fields
-    const chinhTinhContent = $("#chinhTinh").val();
-    const phuTinhContent = $("#phuTinh").val();
-
-    const contentThapNhiCung = sapXepCungTheoTuoi.map((cung, index) => {
-      const { cungSao, cungSo, cungThan } = cung;
-      const chinhTinhGoc = cungSao.filter((sao) => sao.saoAmDuong !== "");
-      const chinhTinhMoi = cungSao.filter((sao) =>
-        newChinhTinh.includes(sao.saoID)
-      );
-      const chinhTinh = [...chinhTinhGoc, ...chinhTinhMoi];
-      let chinhTinhStr = "";
-      let phuTinh = cungSao.filter(
-        (sao) => sao.saoAmDuong === "" && !newChinhTinh.includes(sao.saoID)
-      );
-      const cungDoiXung = sapXepCungTheoCungSo[(cungSo + 5) % 12];
-      const cungTamHop1 = sapXepCungTheoCungSo[(cungSo + 3) % 12]; //cungSo tinh tu 1 con index tinh tu 0
-      const cungTamHop2 = sapXepCungTheoCungSo[(cungSo + 7) % 12];
-      const stt = index + 1;
-      const sttNext =
-        index === sapXepCungTheoTuoi.length - 1 ? null : index + 1;
-      const { cungTen, cungChu, cungDaiHan, cungTieuHan, tuanTrung, trietLo } =
-        cung;
-      const cungDaiVan =
-        index === sapXepCungTheoTuoi.length - 1
-          ? `${cungDaiHan - 1} tuổi trở lên`
-          : `${cungDaiHan - 1} tuổi đến năm ${
-              sapXepCungTheoTuoi[sttNext].cungDaiHan - 2
-            } tuổi`;
-      chinhTinhStr = chinhTinh
-        .map((sao) => capitalizeWords(sao.saoTen))
-        .join(" + ");
-
-      return `${stt}. 
-    Cung chức gốc: ${capitalizeWords(cungChu)} ${
-        getCungChuInfo(cungChu).shortName
-          ? "(" + getCungChuInfo(cungChu).shortName + ")"
-          : ""
-      }${
-        cungThan ? ` kiêm nhiệm cung an Thân` : ""
-      } của ${ten} sinh năm ${namDuong}
-    Cung ${capitalizeWords(cungChu)} chủ quản thông tin về: ${
-        getCungChuInfo(cungChu).description
-      }
-    Chính Tinh của cung ${capitalizeWords(
-      cungChu
-    )} của ${ten} sinh năm ${namDuong}  gồm có: ${chinhTinhStr} ${
-        trietLo ? "+ Triệt" : ""
-      }${tuanTrung ? "+ Tuần" : ""}
-    Phụ Tinh ${capitalizeWords(
-      cungChu
-    )} của ${ten} sinh năm ${namDuong} gồm có: ${phuTinh
-        .map((sao) => capitalizeWords(sao.saoTen))
-        .join(" + ")} 
-    ${
-      !chinhTinhGoc.length
-        ? "Tham khảo thêm ý nghĩa cung đối xung ngoại cảnh"
-        : ""
-    }    
-    Xét tổ hợp ý nghĩa của cung ${capitalizeWords(
-      cungChu
-    )} của ${ten} sinh năm ${namDuong}
-      - Tam hợp với cung ${capitalizeWords(cungChu)} là cung ${capitalizeWords(
-        cungTamHop1.cungChu
-      )} có ${
-        (getSao(cungTamHop1.cungChu, sapXepCungTheoTuoi).chinhTinh
-          ? "chính tinh: "
-          : "") +
-        getSao(cungTamHop1.cungChu, sapXepCungTheoTuoi).chinhTinh +
-        (getSao(cungTamHop1.cungChu, sapXepCungTheoTuoi).chinhTinh ? ", " : "")
-      }phụ tinh: ${
-        getSao(cungTamHop1.cungChu, sapXepCungTheoTuoi).phuTinh
-      } và cung ${capitalizeWords(cungTamHop2.cungChu)} có ${
-        (getSao(cungTamHop2.cungChu, sapXepCungTheoTuoi).chinhTinh
-          ? "chính tinh: "
-          : "") +
-        getSao(cungTamHop2.cungChu, sapXepCungTheoTuoi).chinhTinh +
-        (getSao(cungTamHop2.cungChu, sapXepCungTheoTuoi).chinhTinh ? ", " : "")
-      }phụ tinh: ${getSao(cungTamHop2.cungChu, sapXepCungTheoTuoi).phuTinh}
-      - Đối xung ngoại cảnh với cung ${capitalizeWords(
-        cungChu
-      )} là cung ${capitalizeWords(cungDoiXung.cungChu)} có ${
-        (getSao(cungDoiXung.cungChu, sapXepCungTheoTuoi).chinhTinh
-          ? "chính tinh: "
-          : "") +
-        getSao(cungDoiXung.cungChu, sapXepCungTheoTuoi).chinhTinh +
-        (getSao(cungDoiXung.cungChu, sapXepCungTheoTuoi).chinhTinh ? ", " : "")
-      }phụ tinh: ${getSao(cungDoiXung.cungChu, sapXepCungTheoTuoi).phuTinh}
-    Xét vận tại cung ${capitalizeWords(
-      cungChu
-    )} của ${ten} sinh năm ${namDuong}   
-      - Cung ${capitalizeWords(
-        cungChu
-      )} chủ quản thông tin Đại vận (${cungDaiVan})
-      - Cung ${capitalizeWords(
-        cungChu
-      )} chủ quản thông tin Tiểu vận: năm ${capitalizeWords(cungTieuHan)}
-    `;
+    let tamHopList = [
+      ["Mệnh", "Tài Bạch", "Quan lộc"],
+      ["Phúc đức", "Phu thê", "Thiên di"],
+      ["Huynh đệ", "Tật Ách", "Điền trạch"],
+      ["Phụ mẫu", "Tử tức", "Nô bộc"],
+    ];
+    const tamHopCungSaoText = getTamHopCungSaoText({
+      tamHopList,
+      cungCach,
+      cungChuThan,
+      ten,
+      namDuong,
+      sapXepCungTheoTuoi,
     });
-    const contentCopy = `Lá số của ${ten} sinh năm ${namDuong} (${canNamTen} ${chiNamTen}) \n ${contentThapNhiCung.join(
-      "\n"
-    )}`;
+    const firstSection = `I. Quy tắc luận giải:
+  1. Nội dung luận giải bao gồm ý nghĩa của các tổ hợp sao được tạo thành. Luận giải các tổ hợp sao được tạo thành từ quan hệ đồng cung, tam hợp hay đối xung với nhau.
+  2. Nội dung luận giải luôn luôn phải xoay quanh “tệp thông tin nền tảng” của đương số.
+  Tệp thông tin nền tảng của đương số = ý nghĩa tổ hợp sao tại tam hợp cung Mệnh + ý nghĩa tổ hợp sao tại tam hợp cung an Thân
+  3. Cung chức mà đương số có khả năng chủ động được nhiều thì đương số phải cát hóa bằng cách tận dụng nội lực bên trong. Cung chức không chủ động được nhiều thì đương số phải cát hóa bằng cách tận dụng ngoại lực bên ngoài.`;
+
+    const secondSection = `II. Ý nghĩa các cung chức năng của ${ten} ${namDuong} theo giáo trình AGImighty
+Xác định cung an Thân là do cung chức nào kiêm nhiệm, từ đó mới định dạng được cách cục của “tệp thông tin nền tảng của đương số”
+  1. Các cung chức năng luôn tam hợp với nhau mà ${ten} ${namDuong} nắm ~80% quyền chủ động. 
+  Tam hợp Mệnh - Tài Bạch - Quan Lộc của ${ten} ${namDuong} là dạng cách cục ${cungCach[0]}
+  Cung Mệnh của ${ten} ${namDuong}: chủ quản thông tin về: bản chất, lý tưởng, cốt lõi, ý chí, cá tính. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Mệnh là cung Thiên Di
+  Cung Tài Bạch của ${ten} ${namDuong}: chủ quản thông tin về: tài năng/tài nguyên/tài chính, tiền, kinh tế, giá trị vật chất. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Tạch Bạch là cung Phúc Đức
+  Cung Quan Lộc của ${ten} ${namDuong}: chủ quản thông tin về: công việc/sự nghiệp, tác phong/năng lực làm việc. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Quan Lộc là cung Phu Thê
+  2. Các cung chức năng luôn tam hợp với nhau mà ${ten} ${namDuong} nắm ~60% quyền chủ động. 
+  Tam hợp Phúc Đức - Phu Thê - Thiên Di của ${ten} ${namDuong} là dạng cách cục ${cungCach[1]}
+  Cung Thiên Di của ${ten} ${namDuong}: chủ quản thông tin về: góc nhìn của xã hội về đương số, ngoại cảnh của “Mệnh”, đối tác/đối thủ/đối phương, cách đối nhân xử thế & tương tác xã hội. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Thiên Di là cung Mệnh
+  Cung Phúc Đức của ${ten} ${namDuong}: chủ quản thông tin về: phước báu/may mắn, giá trị tinh thần, gia tộc (nội/ngoại), quan điểm về hạnh phúc. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Phúc Đức là cung Tài Bạch
+  Cung Phu Thê của ${ten} ${namDuong}: chủ quản thông tin về: vợ/chồng, người yêu/người tình, mối quan hệ mật thiết cá nhân. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Phu Thê là cung Quan Lộc
+  3. Các cung chức năng luôn tam hợp với nhau mà ${ten} ${namDuong} nắm ~40% quyền chủ động
+  Tam hợp Huynh Đệ - Tật Ách - Điền Trạch của ${ten} ${namDuong} là dạng cách cục ${cungCach[2]}
+  Cung Huynh Đệ của ${ten} ${namDuong} chủ quản thông tin về: anh chị em trong gia tộc, các mối quan hệ chia sẻ cả lợi ích lẫn rủi ro, anh chị em kết nghĩa, anh chị em xã hội tri kỷ…Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Huynh Đệ là cung Nô Bộc
+  Cung Tật Ách của ${ten} ${namDuong} chủ quản thông tin về: sức khỏe, bệnh tật, nghiệp quả. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Tật Ách là cung Phụ Mẫu
+  Cung Điền Trạch của ${ten} ${namDuong} chủ quản thông tin về: tích lũy tài sản, cơ sở hạ tầng, thói quen sinh hoạt hằng ngày, di sản giá trị vật chất để lại cho đời. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Điền Trạch là cung Tử Tức
+  4. Các cung chức năng luôn tam hợp với nhau mà ${ten} ${namDuong} nắm ~20% quyền chủ động
+  Tam hợp Phụ Mẫu - Tử Tức - Nô Bộc của ${ten} ${namDuong} là dạng cách cục ${cungCach[3]}
+  Cung Phụ Mẫu chủ quản thông tin về: cha mẹ, cha mẹ vợ/chồng, những người có vai trò như cha mẹ, thế hệ đi trước (quá khứ), bề trên (sếp, tiền bối…). Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Phụ Mẫu là cung Tật Ách
+  Cung Tử Tức chủ quản thông tin về: thế hệ sau (tương lai), con cháu/đệ tử/học trò/thú cưng, di sản tinh thần để lại cho đời. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Tử Tức là cung Điền Trạch
+  Cung Nô Bộc chủ quản thông tin về: thế hệ đồng trang lứa (hiện tại), mối quan hệ xã giao không sâu sắc, các mối quan hệ chỉ chia sẻ lợi ích không chia sẻ rủi ro. Cung chức mang ý nghĩa đối xung ngoại cảnh với cung Nô Bộc là cung Huynh Đệ
+`;
+
+    const thirdSection = `III. Danh sách các ngôi sao trên lá số gốc:${tamHopCungSaoText}`;
+    const contentCopy = `Lá số Tử Vi gốc của ${ten} ${namDuong}, ${namNu} mệnh \n ${firstSection}\n${secondSection}\n${thirdSection}`;
     return contentCopy;
   }
+  function isChildArray(parentArray, childArray) {
+    // Handle edge cases
+    if (!Array.isArray(parentArray) || !Array.isArray(childArray)) {
+      return false;
+    }
 
-  function copyContentLuuNien(laso) {
-    const { thienBan, thapNhiCung, luuNguyet } = laso;
-    const {
-      namDuong,
-      canNamTen,
-      ten,
-      chiNamTen,
-      namNu,
-      namAm,
-      namXemTieuVan,
-      canNamTieuVanTen,
-      chiNamTieuVanTen,
-    } = thienBan;
+    // Check if every element in child array exists in parent array
+    return childArray.every((element) => parentArray.includes(element));
+  }
 
+  function getCungCachName(cungCachList, toHopSao) {
+    for (let cungCach of cungCachList) {
+      let saoCungCach = cungCach.saoList;
+      if (isChildArray(toHopSao, saoCungCach)) {
+        return cungCach.name;
+      }
+    }
+  }
+
+  function getBasicInfo(thapNhiCung) {
+    const cungCachList = [
+      {
+        id: 0,
+        name: "Tử Phủ Vũ Tướng Liêm",
+        saoList: [1, 2, 4, 7, 11],
+      },
+      {
+        id: 1,
+        name: "Tử Vũ Liêm Sát Phá Tham",
+        saoList: [1, 2, 4, 9, 13, 14],
+      },
+      {
+        id: 2,
+        name: "Sát Phá Tham",
+        saoList: [9, 13, 14],
+      },
+      {
+        id: 3,
+        name: "Phủ Tướng",
+        saoList: [7, 11],
+      },
+      {
+        id: 4,
+        name: "Cơ Nguyệt Đồng Lương",
+        saoList: [3, 6, 8, 12],
+      },
+      {
+        id: 5,
+        name: "Cự Đồng Cơ",
+        saoList: [3, 6, 10],
+      },
+      {
+        id: 6,
+        name: "Cự Nhật",
+        saoList: [5, 10],
+      },
+      {
+        id: 7,
+        name: "Âm Lương Dương",
+        saoList: [5, 8, 12],
+      },
+    ];
+    let tamHopList = [
+      ["Mệnh", "Tài Bạch", "Quan lộc"],
+      ["Phúc đức", "Phu thê", "Thiên di"],
+      ["Huynh đệ", "Tật Ách", "Điền trạch"],
+      ["Phụ mẫu", "Tử tức", "Nô bộc"],
+    ];
+    let tamHopCungAnThan = [];
+    let toHopSao = [[], [], [], []];
+    let toHopSaoThan = [];
+    let cungChuThan = "";
+    let cungCach = [];
+    let cungCachThan = "";
+    tamHopList.forEach((tamHop, index) => {
+      thapNhiCung.forEach((cung) => {
+        if (cung.cungThan) {
+          cungChuThan = cung.cungChu;
+        }
+        if (tamHop.includes(cung.cungChu)) {
+          toHopSao[index] = [
+            ...toHopSao[index],
+            ...cung.cungSao
+              .filter((sao) => sao.saoID && !sao.saoTen.includes("De."))
+              .map((sao) => sao.saoID),
+          ];
+        }
+      });
+    });
+    tamHopList.map((tamHop, index) => {
+      if (tamHop.includes(cungChuThan)) {
+        tamHopCungAnThan = tamHop;
+        toHopSaoThan = toHopSao[index];
+      }
+    });
+    tamHopList.forEach((tamHop, index) => {
+      cungCach.push(getCungCachName(cungCachList, toHopSao[index]));
+    });
+    cungCachThan = getCungCachName(cungCachList, toHopSaoThan);
+    return { cungCach, cungCachThan, cungChuThan, tamHopCungAnThan };
+  }
+
+  function copyContentDaiVan(laso, namXemDaiVan) {
+    const { thienBan, thapNhiCung } = laso;
+    const { namDuong, canNamTen, ten, chiNamTen, namNu } = thienBan;
+    thapNhiCung.shift();
     const sapXepCungTheoCungSo = [...thapNhiCung].sort(
       (a, b) => a.cungSo - b.cungSo
     );
-    const contentThapNhiCung = sapXepCungTheoCungSo.map((cung, index) => {
-      const { cungSao, saoID } = cung;
-      let saoLuuNien = cungSao.filter((sao) => {
-        return sao.saoLuuNien;
-      });
+    const sapXepCungTheoTuoi = [...thapNhiCung].sort(
+      (a, b) => a.cungDaiHan - b.cungDaiHan
+    );
+    const { cungCach, cungCachThan, cungChuThan, tamHopCungAnThan } =
+      getBasicInfo(sapXepCungTheoTuoi);
 
-      const stt = index + 1;
-
-      const { cungTen, cungChu, luuTrietLo, luuTuanTrung, nguyetHan, cungSo } =
-        cung;
-      const thangNguyetHan = cungSo - 2 > 0 ? cungSo - 2 : cungSo + 10;
-      let luuNguyetFilter = luuNguyet.filter((nguyet) => {
-        return nguyet.thang === thangNguyetHan;
-      });
-      let currentMonth = luuNguyetFilter[0];
-      let cungMenh = currentMonth.saoCungMenh;
-      let cungThan = currentMonth.saoCungThan;
-      let cungDaiVan = currentMonth.saoCungDaiVan;
-      let cungTieuVan = currentMonth.saoCungTieuVan;
-      let viTriTuHoa = currentMonth.viTriSao;
-      let textCungTieuVan = cungTieuVan.cungSao.length
-        ? `sao ${cungTieuVan.cungSao
-            .map((sao) => sao.saoTen)
-            .join(", ")} rơi vào cung tiểu vận${
-            cungTieuVan.kiemNhiem.length
-              ? " kiêm nhiệm" +
-                cungTieuVan.kiemNhiem
-                  .map((name) => " cung " + name)
-                  .join(", ") +
-                ", "
-              : ", "
-          }`
-        : "";
-      let textCungDaiVan =
-        cungDaiVan?.cungSao.length && !cungDaiVan?.cungKhacKiemNhiem
-          ? `sao ${cungDaiVan?.cungSao
-              .map((sao) => sao.saoTen)
-              .join(", ")} rơi vào cung đại vận${
-              cungDaiVan?.kiemNhiem.length
-                ? " kiêm nhiệm" +
-                  cungDaiVan?.kiemNhiem
-                    .map((name) => " cung " + name)
-                    .join(", ") +
-                  ", "
-                : ", "
-            }`
-          : "";
-      let textCungMenh =
-        cungMenh.cungSao.length && !cungMenh.cungKhacKiemNhiem
-          ? `sao ${cungMenh.cungSao
-              .map((sao) => sao.saoTen)
-              .join(", ")} rơi vào cung Mệnh${
-              cungMenh.kiemNhiem.length
-                ? " kiêm nhiệm" +
-                  cungMenh.kiemNhiem.map((name) => " cung " + name).join(", ") +
-                  ", "
-                : ", "
-            }`
-          : "";
-      let textCungThan =
-        cungThan.cungSao.length && !cungThan.cungKhacKiemNhiem
-          ? `sao ${cungThan.cungSao
-              .map((sao) => sao.saoTen)
-              .join(", ")} rơi vào cung Thân,`
-          : "";
-      let textTuHoa = viTriTuHoa
-        .map((tuHoa) => {
-          return "sao " + tuHoa.saoTen + " rơi vào cung " + tuHoa.viTriCung;
-        })
-        .join(", ");
-
-      return `${stt}.
-      Cung chức: ${cungChu}
-      Các sao lưu động (lưu niên): ${luuTrietLo ? "Triệt, " : ""}${
-        luuTuanTrung ? "Tuần, " : ""
-      }${saoLuuNien.map((sao) => sao.saoTen.replace("L.", "")).join(", ")}
-      Tháng ${thangNguyetHan} ${namXemTieuVan} của ${ten} có ${
-        cungTieuVan.cungSao.length ? textCungTieuVan : ""
-      }${cungDaiVan?.cungSao.length ? textCungDaiVan : ""}${
-        cungMenh.cungSao.length ? textCungMenh : ""
-      }${cungThan.cungSao.length ? textCungThan : ""}${textTuHoa} `;
+    let tamHopList = [
+      ["Mệnh", "Tài Bạch", "Quan lộc"],
+      ["Phúc đức", "Phu thê", "Thiên di"],
+      ["Huynh đệ", "Tật Ách", "Điền trạch"],
+      ["Phụ mẫu", "Tử tức", "Nô bộc"],
+    ];
+    let tuoiDaiVan = namXemDaiVan - namDuong;
+    thapNhiCung.forEach((cung) => {
+      if (
+        (tuoiDaiVan < 10 && cung.cungDaiHan < 10) ||
+        (cung.cungDaiHan <= tuoiDaiVan && cung.cungDaiHan + 10 > tuoiDaiVan)
+      ) {
+        cungDaiVan = cung;
+      }
     });
-    const contentCopy = `Lá số Tiểu vận ${namXemTieuVan}
- \n${namNu} Mệnh, năm ${canNamTieuVanTen} ${chiNamTieuVanTen} ${namXemTieuVan} \n${contentThapNhiCung.join(
-      "\n"
+    const tamHopCungSaoText = getTamHopCungSaoText({
+      tamHopList,
+      cungCach,
+      cungChuThan,
+      ten,
+      namDuong,
+      sapXepCungTheoTuoi,
+      cungDaiVan: cungDaiVan,
+      daiVanIndex: Math.ceil(cungDaiVan.cungDaiHan / 10),
+    });
+
+    const firstSection = `Cung chức ${
+      cungDaiVan.cungChu
+    } kiêm nhiệm chức năng là cung đại vận thứ ${Math.ceil(
+      cungDaiVan.cungDaiHan / 10
+    )}, quản lý thông tin đại vận thứ ${Math.ceil(
+      cungDaiVan.cungDaiHan / 10
+    )} của ${ten} ${namDuong} trong khoảng thời gian từ ${
+      cungDaiVan.cungDaiHan - 1
+    } tuổi đến ${cungDaiVan.cungDaiHan + 8} tuổi, từ năm ${
+      namDuong + cungDaiVan.cungDaiHan - 1
+    } đến năm ${namDuong + cungDaiVan.cungDaiHan + 8}
+Bản đồ lưu động các sao theo đại vận thứ ${Math.ceil(
+      cungDaiVan.cungDaiHan / 10
+    )} của ${ten} ${namDuong} (De.) sẽ được căn cứ vào mã can chi ${
+      cungDaiVan.cungCanTen
+    } ${cungDaiVan.cungTen}.
+Lá số Tử Vi gốc của ${ten} ${namDuong}, ${namNu.toLowerCase()} mệnh để luận giải đại vận thứ ${Math.ceil(
+      cungDaiVan.cungDaiHan / 10
     )}`;
-    return contentCopy;
+    const secondSection = `Quy tắc luận giải:
+    Tam hợp cung đại vận này thuộc dạng nào trong 8 cách cục cơ bản. Tương tác với “tệp thông tin nền tảng của đương số” như thế nào?
+    Luận giải đại vận ưu tiên xem xét ý nghĩa tổ hợp sao đồng cung tại cung đại vận, tam hợp với cung đại vận, đối xung với cung đại vận để luận giải ngoại cảnh. Ưu tiên nội dung các sao De. 
+    Bắt buộc phải luận giải lần lượt De.Hóa Lộc, De.Hóa Quyền, De.Hóa Khoa, De.Hóa Kỵ. 
+    Bắt buộc phải luận giải tính chất Không Vong trong đại vận bằng việc xem xét De.Tuần và De.Triệt
+    Chủ động sáng tạo, phản hồi linh hoạt bằng cách luận giải lần lượt các trường hợp sao De. bay vào cung chức năng gốc.
+    Mọi phản hồi luôn phải được suy luận theo hướng tương tác với “tệp thông tin nền tảng của đương số” để tạo thành 2 kết quả tương phản: cát hóa (tích cực/tài phú/danh vọng) và hung hóa (tiêu cực/nghèo/hèn)
+`;
+    const thirdSection = `III. Danh sách các ngôi sao được sử dụng để luận giải đại vận ${tamHopCungSaoText}`;
+    return firstSection + "\n" + secondSection + "\n" + thirdSection;
+  }
+
+  function copyContentLuuNien(laso, namXemTieuVan) {
+    const { thienBan, thapNhiCung } = laso;
+    const { namDuong, canNamTen, ten, chiNamTen, namNu } = thienBan;
+    thapNhiCung.shift();
+    const sapXepCungTheoCungSo = [...thapNhiCung].sort(
+      (a, b) => a.cungSo - b.cungSo
+    );
+    const sapXepCungTheoTuoi = [...thapNhiCung].sort(
+      (a, b) => a.cungDaiHan - b.cungDaiHan
+    );
+    const { cungCach, cungCachThan, cungChuThan, tamHopCungAnThan } =
+      getBasicInfo(sapXepCungTheoTuoi);
+
+    let tamHopList = [
+      ["Mệnh", "Tài Bạch", "Quan lộc"],
+      ["Phúc đức", "Phu thê", "Thiên di"],
+      ["Huynh đệ", "Tật Ách", "Điền trạch"],
+      ["Phụ mẫu", "Tử tức", "Nô bộc"],
+    ];
+    let tuoiDaiVan = namXemTieuVan - namDuong;
+    let cungTieuVan = null;
+    let cungDaiVan = null;
+    thapNhiCung.forEach((cung) => {
+      if (cung.namTieuVanTen) {
+        cungTieuVan = cung;
+      }
+    });
+
+    thapNhiCung.forEach((cung) => {
+      if (
+        (tuoiDaiVan < 10 && cung.cungDaiHan < 10) ||
+        (cung.cungDaiHan <= tuoiDaiVan && cung.cungDaiHan + 10 > tuoiDaiVan)
+      ) {
+        cungDaiVan = cung;
+      }
+    });
+    const tamHopCungSaoText = getTamHopCungSaoText({
+      tamHopList,
+      cungCach,
+      cungChuThan,
+      ten,
+      namDuong,
+      sapXepCungTheoTuoi,
+      cungTieuVan: cungTieuVan,
+      cungDaiVan: cungDaiVan,
+      daiVanIndex: Math.ceil(cungDaiVan.cungDaiHan / 10),
+      namXemTieuVan: namXemTieuVan,
+    });
+
+    const firstSection = `Cung chức Nô Bộc kiêm nhiệm chức năng là cung tiểu vận, quản lý thông tin tiểu vận ${
+      cungTieuVan.namTieuVanTen
+    } ${namXemTieuVan}, trong khoảng thời gian tuổi ${
+      namXemTieuVan - namDuong
+    } của ${ten} ${namDuong}
+Bản đồ lưu động các sao theo tiểu vận của ${ten} ${namDuong} (Y.) sẽ được căn cứ vào mã can chi ${
+      cungTieuVan.namTieuVanTen
+    }.
+Lá số Tử Vi gốc của ${ten} ${namDuong}, ${namNu.toLowerCase()} mệnh để luận giải tiểu vận năm ${namXemTieuVan}
+`;
+    const secondSection = `Quy tắc luận giải tiểu vận của đặc vụ AGI
+  Tam hợp cung tiểu vận này thuộc dạng nào trong 8 cách cục cơ bản? Tương tác với “tệp thông tin nền tảng về đương số” như thế nào?
+  Luận giải tiểu vận ưu tiên xem xét ý nghĩa tổ hợp sao đồng cung tại cung tiểu vận, tam hợp với cung tiểu vận, đối xung với cung tiểu vận để luận giải ngoại cảnh. Ưu tiên nội dung các sao Y, tiếp theo là sao De.
+  Bắt buộc phải luận giải lần lượt Y.Hóa Lộc, Y.Hóa Quyền, Y.Hóa Khoa, Y.Hóa Kỵ. 
+  Bắt buộc phải luận giải tính chất Không Vong trong tiểu vận bằng việc xem xét Y.Tuần và Y.Triệt
+  Chủ động sáng tạo, phản hồi linh hoạt bằng cách luận giải lần lượt các trường hợp sao Y. bay vào cung đại vận và các cung chức năng gốc.
+  Mọi phản hồi luôn phải được suy luận theo hướng tương tác với “tệp thông tin nền tảng của đương số” để tạo thành 2 kết quả tương phản: cát hóa (tích cực/tài phú/danh vọng) và hung hóa (tiêu cực/nghèo/hèn)
+
+`;
+    const thirdSection = `III. Danh sách các ngôi sao được sử dụng để luận giải tiểu vận ${cungTieuVan.namTieuVanTen} ${namXemTieuVan}\n${tamHopCungSaoText}`;
+    return firstSection + "\n" + secondSection + "\n" + thirdSection;
+  }
+
+  function copyContentLuuNguyet(laso, thangLuuNguyet, namXemTieuVan) {
+    const { thienBan, thapNhiCung } = laso;
+    const { namDuong, canNamTen, ten, chiNamTen, namNu } = thienBan;
+    thapNhiCung.shift();
+    const sapXepCungTheoCungSo = [...thapNhiCung].sort(
+      (a, b) => a.cungSo - b.cungSo
+    );
+    const sapXepCungTheoTuoi = [...thapNhiCung].sort(
+      (a, b) => a.cungDaiHan - b.cungDaiHan
+    );
+    const { cungCach, cungCachThan, cungChuThan, tamHopCungAnThan } =
+      getBasicInfo(sapXepCungTheoTuoi);
+
+    let tamHopList = [
+      ["Mệnh", "Tài Bạch", "Quan lộc"],
+      ["Phúc đức", "Phu thê", "Thiên di"],
+      ["Huynh đệ", "Tật Ách", "Điền trạch"],
+      ["Phụ mẫu", "Tử tức", "Nô bộc"],
+    ];
+    let tuoiDaiVan = namXemTieuVan - namDuong;
+    let cungTieuVan = null;
+    let cungDaiVan = null;
+    thapNhiCung.forEach((cung) => {
+      if (cung.namTieuVanTen) {
+        cungTieuVan = cung;
+      }
+    });
+
+    thapNhiCung.forEach((cung) => {
+      if (
+        (tuoiDaiVan < 10 && cung.cungDaiHan < 10) ||
+        (cung.cungDaiHan <= tuoiDaiVan && cung.cungDaiHan + 10 > tuoiDaiVan)
+      ) {
+        cungDaiVan = cung;
+      }
+    });
+    const tamHopCungSaoText = getTamHopCungSaoText({
+      tamHopList,
+      cungCach,
+      cungChuThan,
+      ten,
+      namDuong,
+      sapXepCungTheoTuoi,
+      cungTieuVan: cungTieuVan,
+      cungDaiVan: cungDaiVan,
+      daiVanIndex: Math.ceil(cungDaiVan.cungDaiHan / 10),
+      namXemTieuVan: namXemTieuVan,
+    });
+
+    const firstSection = `Cung chức Nô Bộc kiêm nhiệm chức năng là cung tiểu vận, quản lý thông tin tiểu vận ${
+      cungTieuVan.namTieuVanTen
+    } ${namXemTieuVan}, trong khoảng thời gian tuổi ${
+      namXemTieuVan - namDuong
+    } của ${ten} ${namDuong}
+Bản đồ lưu động các sao theo tiểu vận của ${ten} ${namDuong} (Y.) sẽ được căn cứ vào mã can chi ${
+      cungTieuVan.namTieuVanTen
+    }.
+Lá số Tử Vi gốc của ${ten} ${namDuong}, ${namNu.toLowerCase()} mệnh để luận giải tiểu vận năm ${namXemTieuVan}
+`;
+    const secondSection = `Quy tắc luận giải tiểu vận của đặc vụ AGI
+  Tam hợp cung tiểu vận này thuộc dạng nào trong 8 cách cục cơ bản? Tương tác với “tệp thông tin nền tảng về đương số” như thế nào?
+  Luận giải tiểu vận ưu tiên xem xét ý nghĩa tổ hợp sao đồng cung tại cung tiểu vận, tam hợp với cung tiểu vận, đối xung với cung tiểu vận để luận giải ngoại cảnh. Ưu tiên nội dung các sao Y, tiếp theo là sao De.
+  Bắt buộc phải luận giải lần lượt Y.Hóa Lộc, Y.Hóa Quyền, Y.Hóa Khoa, Y.Hóa Kỵ. 
+  Bắt buộc phải luận giải tính chất Không Vong trong tiểu vận bằng việc xem xét Y.Tuần và Y.Triệt
+  Chủ động sáng tạo, phản hồi linh hoạt bằng cách luận giải lần lượt các trường hợp sao Y. bay vào cung đại vận và các cung chức năng gốc.
+  Mọi phản hồi luôn phải được suy luận theo hướng tương tác với “tệp thông tin nền tảng của đương số” để tạo thành 2 kết quả tương phản: cát hóa (tích cực/tài phú/danh vọng) và hung hóa (tiêu cực/nghèo/hèn)
+
+`;
+    const thirdSection = `III. Danh sách các ngôi sao được sử dụng để luận giải tiểu vận ${cungTieuVan.namTieuVanTen} ${namXemTieuVan}\n${tamHopCungSaoText}`;
+    return firstSection + "\n" + secondSection + "\n" + thirdSection;
   }
 
   function downloadTxtFile(content, title) {
@@ -754,31 +975,44 @@ $(document).ready(function () {
     let checkedValues = $("#luunien").serialize();
     if (checkedValues) {
       $("#namxemtieuvan").css("display", "flex");
+      $("#daivan").prop("checked", false);
+      $("#namxemdaivan").css("display", "none");
     } else {
       $("#namxemtieuvan").css("display", "none");
     }
   });
 
-  $("input#laplaso").click(function () {
-    $("#laso").removeClass("anlaso");
-    $("#urlLaso").val("");
-    $.ajax({
-      url: "api",
-      type: "GET",
-      dataType: "json",
-      data: $("form#lstv").serialize(),
-      success: function (thienBandiaBan) {
-        lapLaSo(thienBandiaBan);
-        $("#btn-copy-content").css("display", "block");
-        $("#valueAnhHuong").css("display", "block");
-        const contentCopy = copyContent(thienBandiaBan);
-        $("#contentCopy").text(contentCopy);
-      },
-      error: function (thienBandiaBan) {
-        console.log("AJAX error callback called");
-      },
-    });
+  $("#daivan").click(function () {
+    let checkedValues = $("#daivan").serialize();
+    if (checkedValues) {
+      $("#namxemdaivan").css("display", "flex");
+      $("#luunien").prop("checked", false);
+      $("#namxemtieuvan").css("display", "none");
+    } else {
+      $("#namxemdaivan").css("display", "none");
+    }
   });
+
+  // $("input#laplaso").click(function () {
+  //   $("#laso").removeClass("anlaso");
+  //   $("#urlLaso").val("");
+  //   $.ajax({
+  //     url: "api",
+  //     type: "GET",
+  //     dataType: "json",
+  //     data: $("form#lstv").serialize(),
+  //     success: function (thienBandiaBan) {
+  //       lapLaSo(thienBandiaBan);
+  //       $("#btn-copy-content").css("display", "block");
+  //       $("#valueAnhHuong").css("display", "block");
+  //       const contentCopy = copyContent(thienBandiaBan);
+  //       $("#contentCopy").text(contentCopy);
+  //     },
+  //     error: function (thienBandiaBan) {
+  //       console.log("AJAX error callback called");
+  //     },
+  //   });
+  // });
 
   $("input#laplaso").click(function () {
     $("#laso").removeClass("anlaso");
@@ -792,14 +1026,26 @@ $(document).ready(function () {
         lapLaSo(thienBandiaBan);
         $("#btn-copy-content").css("display", "block");
         $("#btn-download-content").css("display", "block");
-        const contentCopy = copyContent(thienBandiaBan);
-        const contentCopyLuuNien = copyContentLuuNien(thienBandiaBan);
-        console.log($("form#lstv").serialize());
-        if ($("form#lstv").serialize().includes("luunien=on")) {
+        if ($("form#lstv").serialize().includes("daivan=on")) {
+          let namXemDaiVan = $("#namxemdaivan").val();
+          const contentCopyDaiVan = copyContentDaiVan(
+            thienBandiaBan,
+            namXemDaiVan ? parseInt(namXemDaiVan) : new Date().getFullYear()
+          );
+          $("#contentCopy").text(contentCopyDaiVan);
+          // $("#note").css("display", "flex");
+          $("#valueAnhHuong").css("display", "none");
+        } else if ($("form#lstv").serialize().includes("luunien=on")) {
+          let namXemTieuVan = $("#namxemtieuvan").val();
+          const contentCopyLuuNien = copyContentLuuNien(
+            thienBandiaBan,
+            namXemTieuVan ? parseInt(namXemTieuVan) : new Date().getFullYear()
+          );
           $("#contentCopy").text(contentCopyLuuNien);
           // $("#note").css("display", "flex");
           $("#valueAnhHuong").css("display", "none");
         } else {
+          const contentCopy = copyContent(thienBandiaBan);
           $("#contentCopy").text(contentCopy);
           $("#valueAnhHuong").css("display", "block");
         }

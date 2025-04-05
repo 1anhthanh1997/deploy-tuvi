@@ -167,6 +167,22 @@ cung-bottom {
     margin: 2px 2px 0 0;
 }
 
+.de{
+    color:#2c3e50!important;
+}
+
+.year{
+    color:#c0392b!important;
+}
+
+.month{
+    color:#27ae60!important;
+}
+
+.day{
+    color:#f39c12 !important;
+}
+
 .cung-middle {
     height: 240px;
 }
@@ -397,7 +413,7 @@ input.primary {
     display: inline-block;
     white-space: nowrap;
     vertical-align: top;
-    max-height: 120px;
+    max-height: 180px;
     font-weight: bold;
 }
 
@@ -409,6 +425,7 @@ input.primary {
     white-space: nowrap;
     vertical-align: top;
     font-weight: bold;
+    max-height: 180px;
 }
 
 .blocks {

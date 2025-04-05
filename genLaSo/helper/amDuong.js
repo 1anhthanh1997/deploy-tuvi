@@ -1,5 +1,5 @@
 const { S2L, L2S, jdFromDate } = require("./handleTime.js");
-
+const moment = require("moment");
 const thienCan = [
   {
     id: 0,
@@ -202,7 +202,7 @@ const diaChi = [
   },
 ];
 
-function ngayThangNam(nn, tt, nnnn, duongLich = true, timeZone = 7) {
+function ngayThangNam(nn = 15, tt = 5, nnnn, duongLich = true, timeZone = 7) {
   let thangNhuan = 0;
   if (nn > 0 && nn < 32 && tt < 13 && tt > 0) {
     if (duongLich) {
@@ -235,7 +235,13 @@ function canChiNgay(
 
 function canChiGio(canNgay, gio) {}
 
-function ngayThangNamCanChi(nn, tt, nnnn, duongLich = true, timeZone = 7) {
+function ngayThangNamCanChi(
+  nn = 15,
+  tt = 5,
+  nnnn,
+  duongLich = true,
+  timeZone = 7
+) {
   let thangNhuan = 0;
   if (duongLich) {
     [nn, tt, nnnn, thangNhuan] = ngayThangNam(nn, tt, nnnn, timeZone);
@@ -295,7 +301,6 @@ function nguHanh(tenHanh) {
     },
     O: { id: 5, tenHanh: "Thổ", cuc: 5, tenCuc: "Thổ ngũ Cục", css: "hanhTho" },
   };
-
   if (hanhMap[tenHanh]) {
     return hanhMap[tenHanh];
   } else {
@@ -565,6 +570,21 @@ function timLuuTru(canNam) {
   }
 }
 
+function getNextDay(ngaySinh, thangSinh, namSinh, duongLich) {
+  if (!duongLich) {
+    [ngaySinh, thangSinh, namSinh] = L2S(ngaySinh, thangSinh, namSinh, 0, 7);
+  }
+  const date = moment({ year: namSinh, month: thangSinh - 1, day: ngaySinh });
+  const nextDay = date.add(1, "days");
+  let ngay = nextDay.date();
+  let thang = nextDay.month() + 1;
+  let nam = nextDay.year();
+  if (!duongLich) {
+    [ngay, thang, nam] = S2L(ngay, thang, nam, 7);
+  }
+  return [ngay, thang, nam];
+}
+
 module.exports = {
   thienCan,
   diaChi,
@@ -588,4 +608,5 @@ module.exports = {
   timPhaToai,
   timTriet,
   timLuuTru,
+  getNextDay,
 };

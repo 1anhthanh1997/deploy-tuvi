@@ -11,21 +11,35 @@ app.use(express.json());
 const { lapDiaBan } = require("./helper/lapDiaBan");
 const LapThienBan = require("./helper/thienban");
 const diaBan = require("./helper/diaBan");
-const { getLuuNhat, getLuuNguyet } = require("./helper/luuNguyetNhat");
+const { getNextDay } = require("./helper/amDuong");
 
 app.get("/api", (req, res) => {
   try {
     const now = moment();
     const hoTen = req.query.hoten || "";
-    const ngaySinh = parseInt(req.query.ngaysinh) || now.date();
-    const thangSinh = parseInt(req.query.thangsinh) || now.month() + 1;
-    const namSinh = parseInt(req.query.namsinh) || now.year();
-    const gioiTinh = req.query.gioitinh === "nam" ? 1 : -1;
-    const gioSinh = parseInt(req.query.giosinh) || 1;
-    const timeZone = parseInt(req.query.muigio) || 7;
+    let gioSinh = parseInt(req.query.giosinh) || 1;
+    let ngaySinh = parseInt(req.query.ngaysinh) || now.date();
+    let thangSinh = parseInt(req.query.thangsinh) || now.month() + 1;
+    let namSinh = parseInt(req.query.namsinh) || now.year();
     const duongLich = req.query.amlich === "on" ? false : true;
+
+    if (gioSinh === 13) {
+      gioSinh = 1;
+      [ngaySinh, thangSinh, namSinh] = getNextDay(
+        ngaySinh,
+        thangSinh,
+        namSinh,
+        duongLich
+      );
+    }
+    const gioiTinh = req.query.gioitinh === "nam" ? 1 : -1;
+    const timeZone = parseInt(req.query.muigio) || 7;
     const luunien = req.query.luunien === "on" ? true : false;
     const namXemTieuVan = parseInt(req.query.namxemtieuvan) || now.year();
+    const thangLuuNguyet = parseInt(req.query.thangluunguyet) || null;
+    const ngayLuuNhat = parseInt(req.query.ngayluunhat) || null;
+    const daivan = req.query.daivan === "on" ? true : false;
+    const namXemDaiVan = parseInt(req.query.namxemdaivan) || now.year();
     // Gọi các hàm xử lý
     const data = lapDiaBan(
       diaBan,
@@ -36,7 +50,10 @@ app.get("/api", (req, res) => {
       gioiTinh,
       duongLich,
       timeZone,
-      luunien ? namXemTieuVan : 0
+      luunien ? namXemTieuVan : 0,
+      daivan ? namXemDaiVan : 0,
+      thangLuuNguyet,
+      ngayLuuNhat
     );
     const thienBan = new LapThienBan(
       ngaySinh,
@@ -52,36 +69,10 @@ app.get("/api", (req, res) => {
     );
     let luuNguyet = [];
     let luuNhat = [];
-    if (luunien) {
-      luuNguyet = getLuuNguyet(
-        diaBan,
-        ngaySinh,
-        thangSinh,
-        namSinh,
-        gioSinh,
-        gioiTinh,
-        duongLich,
-        timeZone,
-        namXemTieuVan
-      );
-      luuNhat = getLuuNhat(
-        diaBan,
-        ngaySinh,
-        thangSinh,
-        namSinh,
-        gioSinh,
-        gioiTinh,
-        duongLich,
-        timeZone,
-        namXemTieuVan
-      );
-    }
 
     const laso = {
       thienBan: thienBan,
       thapNhiCung: data.thapNhiCung,
-      luuNguyet: luunien ? luuNguyet : [],
-      luuNhat: luunien ? luuNhat : [],
     };
 
     res.json(laso);

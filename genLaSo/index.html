@@ -103,12 +103,16 @@
                 Xem tiểu vận?
                 <input type="checkbox" id="luunien" name="luunien" />
               </div>
+              <div class="col col-4">
+                Xem đại vận?
+                <input type="checkbox" id="daivan" name="daivan" />
+              </div>
             </div>
             <div class="grid thongtin">
               <div class="col col-3">Giờ sinh</div>
               <div class="col col-3">
                 <select name="giosinh" id="giosinh">
-                  <option selected="selected" value="1">Tí (23g - 1g)</option>
+                  <option selected="selected" value="1">Tí (0g - 1g)</option>
                   <option value="2">Sửu (1g - 3g)</option>
                   <option value="3">Dần (3g - 5g)</option>
                   <option value="4">Mão (5g - 7g)</option>
@@ -120,6 +124,7 @@
                   <option value="10">Dậu (17g - 19g)</option>
                   <option value="11">Tuất (19g - 21g)</option>
                   <option value="12">Hợi (21g - 23g)</option>
+                  <option value="13">Tí (23g - 24g)</option>
                 </select>
               </div>
               <div class="col col-3">
@@ -157,11 +162,34 @@
               class="grid thongtin"
               style="display: none; align-items: center"
             >
-              <div class="col col-3">Năm xem tiểu vận</div>
+              <div class="col col-3">Ngày, tháng, năm xem tiểu vận</div>
               <div class="col col-9">
-                <input type="text" id="namxemtieuvan" name="namxemtieuvan" />
+               <!-- <input
+                  type="text"
+                  id="ngayluunhat"
+                  name="ngayluunhat"
+                  placeholder="Ngày"
+                /> -->
+                <input
+                  type="text"
+                  id="thangluunguyet"
+                  name="thangluunguyet"
+                  placeholder="Tháng"
+                />
+                <input type="text" id="namxemtieuvan" name="namxemtieuvan" placeholder="Năm" defaultValue=new Date().getFullYear() />
               </div>
             </div>
+
+            <div
+            id="namxemdaivan"
+            class="grid thongtin"
+            style="display: none; align-items: center"
+          >
+            <div class="col col-3">Năm xem đại vận</div>
+            <div class="col col-9">           
+              <input type="text" id="namxemdaivan" name="namxemdaivan" placeholder="Năm" defaultValue=new Date().getFullYear() />
+            </div>
+          </div>
 
             <div class="grid">
               <input
@@ -298,7 +326,7 @@
               <div class="saotot">
                   {{for cungSao}} {{if vongTrangSinh === 0 && saoLoai !==1 && saoLoai < 10}}
                   <div class="grid">
-                      <div class="{{:cssSao}}">
+                      <div class="{{:cssSao}}{{:saoTen.includes("De.")? " de":saoTen.includes("Y.")? " year":saoTen.includes("M.")? " month":saoTen.includes("D.")? " day":""}}">
                           {{:saoTen}} 
                       </div>
                   </div>
@@ -307,7 +335,7 @@
               <div class="saoxau">
                   {{for cungSao}} {{if vongTrangSinh === 0 && saoLoai !==1 && saoLoai > 10}}
                   <div class="grid">
-                      <div class="{{:cssSao}}">
+                      <div class="{{:cssSao}}{{:saoTen.includes("De.")? " de":saoTen.includes("Y.")? " year":saoTen.includes("M.")? " month":saoTen.includes("D.")? " day":""}}">
                           {{:saoTen}} 
                       </div>
                   </div>
@@ -317,9 +345,15 @@
                   {{if trietLo == true}}
                   <span class="label label-triet">Triệt</span> {{/if}} {{if tuanTrung == true}}
                   <span class="label label-tuan">Tuần</span> {{/if}}
-                  {{if luuTrietLo == true}}
-                  <span class="label label-triet">L.Triệt</span> {{/if}} {{if luuTuanTrung == true}}
-                  <span class="label label-tuan">L.Tuần</span> {{/if}}
+                  {{if daiVanTrietLo == true}}
+                  <span class="label label-triet">De.Triệt</span> {{/if}} {{if daiVanTuanTrung == true}}
+                  <span class="label label-tuan">De.Tuần</span> {{/if}}
+                  {{if luuNienTrietLo == true}}
+                  <span class="label label-triet">Y.Triệt</span> {{/if}} {{if luuNienTuanTrung == true}}
+                  <span class="label label-tuan">Y.Tuần</span> {{/if}}
+                  {{if luuNguyetTrietLo == true}}
+                  <span class="label label-triet">M.Triệt</span> {{/if}} {{if luuNguyetTuanTrung == true}}
+                  <span class="label label-tuan">M.Tuần</span> {{/if}}
               </div>
           </div>
       </div>
