@@ -868,7 +868,7 @@ $(document).ready(function () {
       ["Huynh đệ", "Tật Ách", "Điền trạch"],
       ["Phụ mẫu", "Tử tức", "Nô bộc"],
     ];
-    let tuoiDaiVan = (namXemDaiVan ? namXemDaiVan : namXemTieuVan) - namDuong;
+    let tuoiDaiVan = namXemDaiVan - namDuong;
     let cungTieuVan = null;
     let cungDaiVan = null;
     thapNhiCung.forEach((cung) => {
@@ -903,9 +903,12 @@ $(document).ready(function () {
     const tamHopDaiVanIndex = tamHopList.findIndex((tamHop) =>
       tamHop.includes(cungDaiVan.cungChu)
     );
-    const tamHopTieuVanIndex = tamHopList.findIndex((tamHop) =>
-      tamHop.includes(cungTieuVan.cungChu)
-    );
+    let tamHopTieuVanIndex = "";
+    if (namXemTieuVan) {
+      tamHopTieuVanIndex = tamHopList.findIndex((tamHop) =>
+        tamHop.includes(cungTieuVan.cungChu)
+      );
+    }
 
     const firstSection = `I.Lá số luận giải vận cho ${ten}, ${namNu.toLowerCase()} giới sinh năm ${namDuong}
     1.Mã can chi\nĐại vận: mã can chi ${maCanChiDaiVan}${
@@ -916,13 +919,11 @@ $(document).ready(function () {
       maCanChiNhatVan ? `\nNhật vận: mã can chi ${maCanChiNhatVan}` : ""
     }\n    2. Cung đại vận = cung ${
       cungDaiVan.cungChu
-    }, thuộc dạng cách cục cơ bản ${
-      cungCach[tamHopDaiVanIndex]
-    }\nCung tiểu vận = cung ${
-      cungTieuVan.cungChu
-    }, thuộc dạng cách cục cơ bản ${cungCach[tamHopTieuVanIndex]}${
-      "\n    3. " + baseInfoText
-    }
+    }, thuộc dạng cách cục cơ bản ${cungCach[tamHopDaiVanIndex]}\n${
+      namXemTieuVan
+        ? `Cung tiểu vận = cung ${cungTieuVan.cungChu}, thuộc dạng cách cục cơ bản ${cungCach[tamHopTieuVanIndex]}`
+        : ""
+    }${"\n    3. " + baseInfoText}
     `;
     const secondSection = `II. Bản đồ ${getNumberCanChi(
       ngayLuuNhat,
@@ -1049,7 +1050,11 @@ $(document).ready(function () {
             ngayLuuNhat,
             thangLuuNguyet,
             namXemTieuVan ? parseInt(namXemTieuVan) : new Date().getFullYear(),
-            namXemDaiVan ? parseInt(namXemDaiVan) : new Date().getFullYear()
+            namXemDaiVan
+              ? parseInt(namXemDaiVan)
+              : namXemTieuVan
+              ? parseInt(namXemTieuVan)
+              : new Date().getFullYear()
           );
           $("#contentCopy").text(contentCopyLuuNien);
           // $("#note").css("display", "flex");

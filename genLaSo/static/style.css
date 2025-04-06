@@ -507,6 +507,29 @@ input.primary {
     background-color: #263238;
 }
 
+.label-tuan-de {
+    background-color: #2c3e50!important;;
+}
+
+.label-triet-de {
+    background-color: #2c3e50!important;;
+}
+
+.label-tuan-y {
+    background-color: #c0392b!important
+}
+
+.label-triet-y {
+    background-color: #c0392b!important
+}
+
+.label-tuan-m {
+    background-color: #27ae60!important
+}
+
+.label-triet-m {
+    background-color: #27ae60!important
+}
 .tuanTriet {
     padding-top: 0.5rem;
 }
