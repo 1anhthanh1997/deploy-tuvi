@@ -449,7 +449,7 @@ $(document).ready(function () {
     return saoTen.includes("D.");
   }
 
-  function getSao(cungChu, thapNhiCung) {
+  function getSao(cungChu, thapNhiCung, tamHop = false) {
     cungArr = thapNhiCung.filter((c) => {
       return c.cungChu === cungChu;
     });
@@ -472,6 +472,9 @@ $(document).ready(function () {
       let tuan = cung.tuanTrung;
       let triet = cung.trietLo;
       let chinhTinh = [...chinhTinhGoc, ...chinhTinhMoi];
+      if (tamHop) {
+        chinhTinh = [...chinhTinhMoi];
+      }
       if (tuan) {
         chinhTinh = [...chinhTinh, { saoTen: "Tuần" }];
       }
@@ -586,15 +589,17 @@ $(document).ready(function () {
                 : ""
             }${
               cungDaiVan
-                ? `\n        Lưu động theo đại vận thứ ${daiVanIndex}: ${
-                    getSao(cung, sapXepCungTheoTuoi).daiVan
-                  }`
+                ? `\n        Lưu động theo đại vận thứ ${daiVanIndex} (${
+                    cungDaiVan.cungDaiHan - 1
+                  } đến ${cungDaiVan.cungDaiHan + 8} tuổi)${
+                    cung === "Mệnh" ? ", bổ sung thêm vào cung Mệnh gốc" : ""
+                  }: ${getSao(cung, sapXepCungTheoTuoi).daiVan}`
                 : ""
             }${
               cungTieuVan
-                ? `\n        Lưu động theo tiểu vận ${namXemTieuVan}: ${
-                    getSao(cung, sapXepCungTheoTuoi).luuNien
-                  }`
+                ? `\n        Lưu động theo tiểu vận ${namXemTieuVan}${
+                    cung === "Mệnh" ? ", bổ sung thêm vào cung Mệnh gốc" : ""
+                  }: ${getSao(cung, sapXepCungTheoTuoi).luuNien}`
                 : ""
             }${
               thangLuuNguyet
@@ -629,7 +634,6 @@ $(document).ready(function () {
     );
     const { cungCach, cungCachThan, cungChuThan, tamHopCungAnThan } =
       getBasicInfo(sapXepCungTheoTuoi);
-    const baseInfoText = getBaseInfoText(thapNhiCung, thienBan);
 
     let tamHopList = [
       ["Mệnh", "Tài Bạch", "Quan lộc"],
@@ -637,6 +641,8 @@ $(document).ready(function () {
       ["Huynh đệ", "Tật Ách", "Điền trạch"],
       ["Phụ mẫu", "Tử tức", "Nô bộc"],
     ];
+
+    const baseInfoText = getBaseInfoText(thapNhiCung, thienBan);
     const tamHopCungSaoText = getTamHopCungSaoText({
       tamHopList,
       cungCach,
@@ -646,9 +652,7 @@ $(document).ready(function () {
       namNu,
       sapXepCungTheoTuoi,
     });
-    const firstSection = `Thông tin lá số Tử Vi gốc của ${
-      namNu == "Nam" ? "anh" : "chị"
-    } ${ten}, ${namNu.toLowerCase()} mệnh ${namDuong}`;
+    const firstSection = `Thông tin lá số Tử Vi gốc của ${ten}, ${namNu.toLowerCase()} giới sinh năm ${namDuong}`;
 
     const secondSection = `${tamHopCungSaoText}`;
     const contentCopy = `${firstSection}\n${baseInfoText}\n${secondSection}`;
@@ -757,13 +761,52 @@ $(document).ready(function () {
   }
 
   function getBaseInfoText(thapNhiCung, thienBan) {
+    let tamHopList = [
+      ["Mệnh", "Tài Bạch", "Quan lộc"],
+      ["Phúc đức", "Phu thê", "Thiên di"],
+      ["Huynh đệ", "Tật Ách", "Điền trạch"],
+      ["Phụ mẫu", "Tử tức", "Nô bộc"],
+    ];
     const { namDuong, canNamTen, ten, chiNamTen, namNu } = thienBan;
     const { cungCach, cungCachThan, cungChuThan, tamHopCungAnThan } =
       getBasicInfo(thapNhiCung);
-    let tamHopFilter = tamHopCungAnThan.filter(
-      (tamHop) => tamHop !== cungChuThan
+    const tamHopThanIndex = tamHopList.findIndex((tamHop) =>
+      tamHop.includes(cungChuThan)
     );
-    return `Giới tính: ${namNu}\nTệp thông tin B của ${namNu == "Nam" ? "anh" : "chị"} ${ten} sinh năm ${namDuong}. Cung an Thân được kiêm nhiệm bởi cung chức ${cungChuThan} = tam hợp cung Mệnh - Tài Bạch - Quan Lộc là dạng cách cục ${cungCach[0]} + tam hợp cung an Thân là cung an Thân - cung chức ${tamHopFilter[0]}  - cung chức ${tamHopFilter[1]} là dạng cách cục ${cungCachThan}`;
+
+    let chinhTinhTamHopCungMenh =
+      getSao("Mệnh", thapNhiCung, true).chinhTinh +
+      " + " +
+      getSao("Tài Bạch", thapNhiCung, true).chinhTinh +
+      " + " +
+      getSao("Quan lộc", thapNhiCung, true).chinhTinh;
+    let phuTinhTamHopCungMenh =
+      getSao("Mệnh", thapNhiCung).phuTinh +
+      " + " +
+      getSao("Tài Bạch", thapNhiCung).phuTinh +
+      " + " +
+      getSao("Quan lộc", thapNhiCung).phuTinh;
+    let firstSection = `Cung ${cungChuThan} kiêm nhiệm cung an Thân\nNền tảng thông tin của ${ten} ${namDuong} = ý nghĩa tổ hợp sao trong (tam hợp cung Mệnh + tam hợp cung an Thân)`;
+    let secondSection = "";
+    if (!tamHopThanIndex) {
+      secondSection = `Chính tinh: Dạng ${cungCach[0]} + ${chinhTinhTamHopCungMenh}\nPhụ tinh: ${phuTinhTamHopCungMenh}`;
+    } else {
+      let chinhTinhTamHopCungThan =
+        getSao(tamHopCungAnThan[0], thapNhiCung, true).chinhTinh +
+        " + " +
+        getSao(tamHopCungAnThan[1], thapNhiCung, true).chinhTinh +
+        " + " +
+        getSao(tamHopCungAnThan[2], thapNhiCung, true).chinhTinh;
+      let phuTinhTamHopCungThan =
+        getSao(tamHopCungAnThan[0], thapNhiCung).phuTinh +
+        " + " +
+        getSao(tamHopCungAnThan[1], thapNhiCung).phuTinh +
+        " + " +
+        getSao(tamHopCungAnThan[2], thapNhiCung).phuTinh;
+      secondSection = `Tam hợp cung Mệnh:\nChính tinh: Dạng ${cungCach[0]} + ${chinhTinhTamHopCungMenh}\nPhụ tinh: ${phuTinhTamHopCungMenh}\nTam hợp cung an Thân:\nChính tinh: Dạng ${cungCachThan} + ${chinhTinhTamHopCungThan}\nPhụ tinh: ${phuTinhTamHopCungThan}
+      `;
+    }
+    return firstSection + "\n" + secondSection;
   }
 
   function getNumberCanChi(
@@ -851,14 +894,29 @@ $(document).ready(function () {
       ngayLuuNhat: ngayLuuNhat,
       thangLuuNguyet: thangLuuNguyet,
     });
-    const firstSection = `I.Lá số luận giải vận cho ${
-      namNu == "Nam" ? "anh" : "chị"
-    } ${ten} ${namDuong}
-    1.Mã can chi
-      Đại vận: mã can chi ${maCanChiDaiVan}
-      ${maCanChiTieuVan ? `Tiểu vận: mã can chi ${maCanChiTieuVan}` : ""}
-      ${maCanChiNguyetVan ? `Nguyệt vận: mã can chi ${maCanChiNguyetVan}` : ""}
-      ${maCanChiNhatVan ? `Nhật vận: mã can chi ${maCanChiNhatVan}` : ""}
+    const tamHopDaiVanIndex = tamHopList.findIndex((tamHop) =>
+      tamHop.includes(cungDaiVan.cungChu)
+    );
+    const tamHopTieuVanIndex = tamHopList.findIndex((tamHop) =>
+      tamHop.includes(cungTieuVan.cungChu)
+    );
+
+    const firstSection = `I.Lá số luận giải vận cho ${ten}, ${namNu.toLowerCase()} giới sinh năm ${namDuong}
+    1.Mã can chi\nĐại vận: mã can chi ${maCanChiDaiVan}${
+      maCanChiTieuVan ? `\nTiểu vận: mã can chi ${maCanChiTieuVan}` : ""
+    }${
+      maCanChiNguyetVan ? `\nNguyệt vận: mã can chi ${maCanChiNguyetVan}` : ""
+    }${
+      maCanChiNhatVan ? `\nNhật vận: mã can chi ${maCanChiNhatVan}` : ""
+    }\n    2. Cung đại vận = cung ${
+      cungDaiVan.cungChu
+    }, thuộc dạng cách cục cơ bản ${
+      cungCach[tamHopDaiVanIndex]
+    }\nCung tiểu vận = cung ${
+      cungTieuVan.cungChu
+    }, thuộc dạng cách cục cơ bản ${cungCach[tamHopTieuVanIndex]}${
+      "\n    3. " + baseInfoText
+    }
     `;
     const secondSection = `II. Bản đồ ${getNumberCanChi(
       ngayLuuNhat,
@@ -870,7 +928,7 @@ $(document).ready(function () {
       thangLuuNguyet,
       namXemTieuVan,
       namXemDaiVan
-    )} mã can chi\n${baseInfoText}\n${tamHopCungSaoText}`;
+    )} mã can chi${tamHopCungSaoText}`;
     return firstSection + "\n" + secondSection;
   }
 
