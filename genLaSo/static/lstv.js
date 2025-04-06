@@ -998,7 +998,7 @@ $(document).ready(function () {
     if (checkedValues) {
       $("#namxemdaivan").css("display", "flex");
       $("#luunien").prop("checked", false);
-      $("#namxemtieuvan").css("display", "none");
+      $("#namxemtieuvandiv").css("display", "none");
     } else {
       $("#namxemdaivan").css("display", "none");
     }
