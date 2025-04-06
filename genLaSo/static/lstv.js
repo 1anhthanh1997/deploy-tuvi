@@ -1037,10 +1037,9 @@ $(document).ready(function () {
         lapLaSo(thienBandiaBan);
         $("#btn-copy-content").css("display", "block");
         $("#btn-download-content").css("display", "block");
-        if (
-          $("form#lstv").serialize().includes("luunien=on") ||
-          $("form#lstv").serialize().includes("daivan=on")
-        ) {
+        let checkDaiVan = $("form#lstv").serialize().includes("daivan=on");
+        let checkTieuVan = $("form#lstv").serialize().includes("luunien=on");
+        if (checkTieuVan || checkDaiVan) {
           let namXemDaiVan = $("#namxemdaivan").val();
           let namXemTieuVan = $("#namxemtieuvan").val();
           let thangLuuNguyet = $("#thangluunguyet").val();
@@ -1049,8 +1048,8 @@ $(document).ready(function () {
             thienBandiaBan,
             ngayLuuNhat,
             thangLuuNguyet,
-            namXemTieuVan ? parseInt(namXemTieuVan) : new Date().getFullYear(),
-            namXemDaiVan
+            checkTieuVan && namXemTieuVan ? parseInt(namXemTieuVan) : null,
+            checkDaiVan && namXemDaiVan
               ? parseInt(namXemDaiVan)
               : namXemTieuVan
               ? parseInt(namXemTieuVan)
