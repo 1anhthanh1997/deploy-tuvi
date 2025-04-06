@@ -984,11 +984,11 @@ $(document).ready(function () {
   $("#luunien").click(function () {
     let checkedValues = $("#luunien").serialize();
     if (checkedValues) {
-      $("#namxemtieuvan").css("display", "flex");
+      $("#namxemtieuvandiv").css("display", "flex");
       $("#daivan").prop("checked", false);
       $("#namxemdaivan").css("display", "none");
     } else {
-      $("#namxemtieuvan").css("display", "none");
+      $("#namxemtieuvandiv").css("display", "none");
     }
   });
 
