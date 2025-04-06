@@ -774,35 +774,41 @@ $(document).ready(function () {
       tamHop.includes(cungChuThan)
     );
 
-    let chinhTinhTamHopCungMenh =
-      getSao("Mệnh", thapNhiCung, true).chinhTinh +
-      " + " +
-      getSao("Tài Bạch", thapNhiCung, true).chinhTinh +
-      " + " +
-      getSao("Quan lộc", thapNhiCung, true).chinhTinh;
-    let phuTinhTamHopCungMenh =
-      getSao("Mệnh", thapNhiCung).phuTinh +
-      " + " +
-      getSao("Tài Bạch", thapNhiCung).phuTinh +
-      " + " +
-      getSao("Quan lộc", thapNhiCung).phuTinh;
-    let firstSection = `Cung ${cungChuThan} kiêm nhiệm cung an Thân\nNền tảng thông tin của ${ten} ${namDuong} = ý nghĩa tổ hợp sao trong (tam hợp cung Mệnh + tam hợp cung an Thân)`;
+    let chinhTinhTamHopCungMenh = [
+      getSao("Mệnh", thapNhiCung, true).chinhTinh,
+      getSao("Tài Bạch", thapNhiCung, true).chinhTinh,
+      getSao("Quan lộc", thapNhiCung, true).chinhTinh,
+    ]
+      .filter((value) => value)
+      .join(" + ");
+
+    let phuTinhTamHopCungMenh = [
+      getSao("Mệnh", thapNhiCung, true).phuTinh,
+      getSao("Tài Bạch", thapNhiCung, true).phuTinh,
+      getSao("Quan lộc", thapNhiCung, true).phuTinh,
+    ]
+      .filter((value) => value)
+      .join(" + ");
+    let firstSection = `Nền tảng thông tin của ${ten} ${namDuong} = ý nghĩa tổ hợp sao trong (tam hợp cung Mệnh + tam hợp cung an Thân). Cung an Thân được kiêm nhiệm bởi cung chức ${cungChuThan}`;
     let secondSection = "";
     if (!tamHopThanIndex) {
       secondSection = `Chính tinh: Dạng ${cungCach[0]} + ${chinhTinhTamHopCungMenh}\nPhụ tinh: ${phuTinhTamHopCungMenh}`;
     } else {
-      let chinhTinhTamHopCungThan =
-        getSao(tamHopCungAnThan[0], thapNhiCung, true).chinhTinh +
-        " + " +
-        getSao(tamHopCungAnThan[1], thapNhiCung, true).chinhTinh +
-        " + " +
-        getSao(tamHopCungAnThan[2], thapNhiCung, true).chinhTinh;
-      let phuTinhTamHopCungThan =
-        getSao(tamHopCungAnThan[0], thapNhiCung).phuTinh +
-        " + " +
-        getSao(tamHopCungAnThan[1], thapNhiCung).phuTinh +
-        " + " +
-        getSao(tamHopCungAnThan[2], thapNhiCung).phuTinh;
+      let chinhTinhTamHopCungThan = [
+        getSao(tamHopCungAnThan[0], thapNhiCung, true).chinhTinh,
+        getSao(tamHopCungAnThan[1], thapNhiCung, true).chinhTinh,
+        getSao(tamHopCungAnThan[2], thapNhiCung, true).chinhTinh,
+      ]
+        .filter((value) => value)
+        .join(" + ");
+      let phuTinhTamHopCungThan = [
+        getSao(tamHopCungAnThan[0], thapNhiCung).phuTinh,
+        getSao(tamHopCungAnThan[1], thapNhiCung).phuTinh,
+        getSao(tamHopCungAnThan[2], thapNhiCung).phuTinh,
+      ]
+        .filter((value) => value)
+        .join(" + ");
+      getSao(tamHopCungAnThan[2], thapNhiCung).phuTinh;
       secondSection = `Tam hợp cung Mệnh:\nChính tinh: Dạng ${cungCach[0]} + ${chinhTinhTamHopCungMenh}\nPhụ tinh: ${phuTinhTamHopCungMenh}\nTam hợp cung an Thân:\nChính tinh: Dạng ${cungCachThan} + ${chinhTinhTamHopCungThan}\nPhụ tinh: ${phuTinhTamHopCungThan}
       `;
     }
