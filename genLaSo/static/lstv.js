@@ -763,9 +763,7 @@ $(document).ready(function () {
     let tamHopFilter = tamHopCungAnThan.filter(
       (tamHop) => tamHop !== cungChuThan
     );
-    return `Tệp thông tin B của ${
-      namNu == "Nam" ? "anh" : "chị"
-    } ${ten} sinh năm ${namDuong}. Cung an Thân được kiêm nhiệm bởi cung chức ${cungChuThan} = tam hợp cung Mệnh - Tài Bạch - Quan Lộc là dạng cách cục ${cungCach[0]} + tam hợp cung an Thân là cung an Thân - cung chức ${tamHopFilter[0]}  - cung chức ${tamHopFilter[1]} là dạng cách cục ${cungCachThan}`;
+    return `Giới tính: ${namNu}\nTệp thông tin B của ${namNu == "Nam" ? "anh" : "chị"} ${ten} sinh năm ${namDuong}. Cung an Thân được kiêm nhiệm bởi cung chức ${cungChuThan} = tam hợp cung Mệnh - Tài Bạch - Quan Lộc là dạng cách cục ${cungCach[0]} + tam hợp cung an Thân là cung an Thân - cung chức ${tamHopFilter[0]}  - cung chức ${tamHopFilter[1]} là dạng cách cục ${cungCachThan}`;
   }
 
   function getNumberCanChi(
