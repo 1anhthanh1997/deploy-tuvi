@@ -326,7 +326,7 @@
               <div class="saotot">
                   {{for cungSao}} {{if vongTrangSinh === 0 && saoLoai !==1 && saoLoai < 10}}
                   <div class="grid">
-                      <div class="{{:saoTen.includes("De.")? " de":saoTen.includes("Y.")? " year":saoTen.includes("M.")? " month":saoTen.includes("D.")? " day":""}}">
+                      <div class="{{:saoTen.includes("X.")? " de":saoTen.includes("Y.")? " year":saoTen.includes("M.")? " month":saoTen.includes("D.")? " day":""}}">
                           {{:saoTen}} 
                       </div>
                   </div>
@@ -335,7 +335,7 @@
               <div class="saoxau">
                   {{for cungSao}} {{if (vongTrangSinh === 0 && saoLoai !==1 && saoLoai > 10) ||saoID==73 || saoID==74 || saoID==75}}
                   <div class="grid">
-                      <div class="{{:saoTen.includes("De.")? " de":saoTen.includes("Y.")? " year":saoTen.includes("M.")? " month":saoTen.includes("D.")? " day":""}}">
+                      <div class="{{:saoTen.includes("X.")? " de":saoTen.includes("Y.")? " year":saoTen.includes("M.")? " month":saoTen.includes("D.")? " day":""}}">
                           {{:saoTen}} 
                       </div>
                   </div>
@@ -346,8 +346,8 @@
                   <span class="label label-triet">Triệt</span> {{/if}} {{if tuanTrung == true}}
                   <span class="label label-tuan">Tuần</span> {{/if}}
                   {{if daiVanTrietLo == true}}
-                  <span class="label label-triet-de">De.Triệt</span> {{/if}} {{if daiVanTuanTrung == true}}
-                  <span class="label label-tuan-de">De.Tuần</span> {{/if}}
+                  <span class="label label-triet-de">X.Triệt</span> {{/if}} {{if daiVanTuanTrung == true}}
+                  <span class="label label-tuan-de">X.Tuần</span> {{/if}}
                   {{if luuNienTrietLo == true}}
                   <span class="label label-triet-y">Y.Triệt</span> {{/if}} {{if luuNienTuanTrung == true}}
                   <span class="label label-tuan-y">Y.Tuần</span> {{/if}}

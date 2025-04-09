@@ -198,7 +198,7 @@ function lapDiaBan(
   thangLuuNguyet,
   ngayLuuNhat
 ) {
-  const SAO_DAI_VAN_TYPE = "De. ";
+  const SAO_DAI_VAN_TYPE = "X. ";
   const SAO_LUU_NIEN_TYPE = "Y. ";
   const SAO_LUU_NGUYET_TYPE = "M. ";
   const SAO_LUU_NHAT_TYPE = "D. ";

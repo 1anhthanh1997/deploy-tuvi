@@ -482,10 +482,10 @@ $(document).ready(function () {
         chinhTinh = [...chinhTinh, { saoTen: "Triệt" }];
       }
       if (cung.daiVanTuanTrung) {
-        saoDaiVan = [...saoDaiVan, { saoTen: "De. Tuần" }];
+        saoDaiVan = [...saoDaiVan, { saoTen: "X. Tuần" }];
       }
       if (cung.daiVanTrietLo) {
-        saoDaiVan = [...saoDaiVan, { saoTen: "De. Triệt" }];
+        saoDaiVan = [...saoDaiVan, { saoTen: "X. Triệt" }];
       }
       if (cung.luuNienTuanTrung) {
         saoLuuNien = [...saoLuuNien, { saoTen: "Y. Tuần" }];
@@ -525,6 +525,7 @@ $(document).ready(function () {
         luuNhat: saoLuuNhat
           .map((sao) => capitalizeWords(sao.saoTen))
           .join(" + "),
+        cungDaiHan: cung.cungDaiHan,
       };
     }
     return {
@@ -562,8 +563,15 @@ $(document).ready(function () {
           namNu == "Nam" ? "anh" : "chị"
         } ${ten} ${namDuong} ${tamHop
           .map((cung) => {
+            let cungDaiHan = getSao(cung, sapXepCungTheoTuoi).cungDaiHan;
             return `\nCung ${cung} ${
               cung === cungChuThan ? "kiêm nhiệm cung an Thân " : ""
+            }${
+              !cungDaiVan && !cungTieuVan
+                ? `(kiêm nhiệm cung đại vận thứ ${Math.ceil(
+                    cungDaiHan / 10
+                  )}, từ ${cungDaiHan - 1} đến ${cungDaiHan + 8} tuổi)`
+                : ""
             }${
               cungTieuVan &&
               cung.toLowerCase() === cungTieuVan.cungChu.toLowerCase()
