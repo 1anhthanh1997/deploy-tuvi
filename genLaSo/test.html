@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Binary Star Simulation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden">
+    <script>
+      let star1, star2;
+      let G = 1;
+      let trails = [];
+      let backgroundImg;
+
+      function preload() {
+        backgroundImg = loadImage(
+          "https://cdn.eso.org/images/wallpaper5/eso0932a.jpg"
+        );
+      }
+
+      function setup() {
+        createCanvas(windowWidth, windowHeight);
+        star1 = new Star(width / 3, height / 2, 20, color(255, 255, 0), 10);
+        star2 = new Star(
+          (width * 2) / 3,
+          height / 2,
+          30,
+          color(255, 100, 100),
+          30
+        );
+        for (let i = 0; i < 2; i++) trails.push([]);
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+      }
+
+      function draw() {
+        background(backgroundImg);
+        updateGravity(star1, star2);
+
+        star1.update();
+        star2.update();
+
+        updateTrails();
+
+        star1.display();
+        star2.display();
+
+        drawTrails();
+        drawCenterOfMass();
+        drawForceVector(star1, star2);
+      }
+
+      function updateGravity(a, b) {
+        let dx = b.pos.x - a.pos.x;
+        let dy = b.pos.y - a.pos.y;
+        let distance = constrain(sqrt(dx * dx + dy * dy), 20, 1000);
+        let force = (G * a.mass * b.mass) / (distance * distance);
+        let angle = atan2(dy, dx);
+        let fx = cos(angle) * force;
+        let fy = sin(angle) * force;
+
+        a.applyForce(fx, fy);
+        b.applyForce(-fx, -fy);
+      }
+
+      class Star {
+        constructor(x, y, r, c, mass) {
+          this.pos = createVector(x, y);
+          this.vel = createVector(random(-1, 1), random(-1, 1));
+          this.acc = createVector(0, 0);
+          this.r = r;
+          this.c = c;
+          this.mass = mass;
+        }
+
+        applyForce(fx, fy) {
+          this.acc.add(createVector(fx / this.mass, fy / this.mass));
+        }
+
+        update() {
+          this.vel.add(this.acc);
+          this.pos.add(this.vel);
+          this.acc.mult(0);
+        }
+
+        display() {
+          push();
+          noStroke();
+
+          // Enhanced shadow effect
+          drawingContext.shadowOffsetX = 8;
+          drawingContext.shadowOffsetY = 8;
+          drawingContext.shadowBlur = 30;
+          drawingContext.shadowColor = color(0, 0, 0, 200);
+
+          // Add a gradient for more realistic planet appearance
+          let gradient = drawingContext.createRadialGradient(
+            this.pos.x - this.r / 2,
+            this.pos.y - this.r / 2,
+            0,
+            this.pos.x,
+            this.pos.y,
+            this.r
+          );
+
+          // Create a slightly darker version of the star's color
+          let darkerColor = color(
+            red(this.c) * 0.8,
+            green(this.c) * 0.8,
+            blue(this.c) * 0.8
+          );
+
+          gradient.addColorStop(0, this.c);
+          gradient.addColorStop(1, darkerColor);
+
+          drawingContext.fillStyle = gradient;
+          ellipse(this.pos.x, this.pos.y, this.r * 2);
+
+          pop();
+        }
+      }
+
+      function updateTrails() {
+        trails[0].push(star1.pos.copy());
+        trails[1].push(star2.pos.copy());
+        if (trails[0].length > 200) trails[0].shift();
+        if (trails[1].length > 200) trails[1].shift();
+      }
+
+      function drawTrails() {
+        noFill();
+        stroke(255, 255, 0, 100);
+        beginShape();
+        for (let p of trails[0]) vertex(p.x, p.y);
+        endShape();
+
+        stroke(255, 100, 100, 100);
+        beginShape();
+        for (let p of trails[1]) vertex(p.x, p.y);
+        endShape();
+      }
+
+      function drawCenterOfMass() {
+        let x =
+          (star1.pos.x * star1.mass + star2.pos.x * star2.mass) /
+          (star1.mass + star2.mass);
+        let y =
+          (star1.pos.y * star1.mass + star2.pos.y * star2.mass) /
+          (star1.mass + star2.mass);
+        fill(255);
+        ellipse(x, y, 10);
+      }
+
+      function drawForceVector(a, b) {
+        stroke(0, 255, 255);
+        strokeWeight(2);
+        let forceLine = p5.Vector.sub(b.pos, a.pos).setMag(30);
+        line(a.pos.x, a.pos.y, a.pos.x + forceLine.x, a.pos.y + forceLine.y);
+        line(b.pos.x, b.pos.y, b.pos.x - forceLine.x, b.pos.y - forceLine.y);
+      }
+
+      function mouseDragged() {
+        if (dist(mouseX, mouseY, star1.pos.x, star1.pos.y) < star1.r) {
+          star1.pos.set(mouseX, mouseY);
+          star1.vel.set(0, 0);
+          trails[0] = [];
+        }
+        if (dist(mouseX, mouseY, star2.pos.x, star2.pos.y) < star2.r) {
+          star2.pos.set(mouseX, mouseY);
+          star2.vel.set(0, 0);
+          trails[1] = [];
+        }
+      }
+    </script>
+  </body>
+</html>

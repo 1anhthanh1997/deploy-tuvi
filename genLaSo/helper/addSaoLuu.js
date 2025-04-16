@@ -202,8 +202,7 @@ function addSaoLuu(
   const viTriHuuBat = dichCung(2, 2 - viTriTaPhu);
   const viTriVanKhuc = dichCung(5, gioSinh - 1);
   const viTriVanXuong = dichCung(2, 2 - viTriVanKhuc);
-
-  if (luuNguyet) {
+  if (type === SAO_LUU_NGUYET_TYPE) {
     diaBan.nhapSao(viTriTaPhu, cloneSaoLuu(saoTaPhu, type));
     diaBan.nhapSao(viTriHuuBat, cloneSaoLuu(saoHuuBat, type));
     diaBan.nhapSao(viTriVanKhuc, cloneSaoLuu(saoVanKhuc, type));

@@ -768,7 +768,7 @@ $(document).ready(function () {
     return { cungCach, cungCachThan, cungChuThan, tamHopCungAnThan };
   }
 
-  function getBaseInfoText(thapNhiCung, thienBan) {
+  function getBaseInfoText(thapNhiCung, thienBan, tangVan = false) {
     let tamHopList = [
       ["Mệnh", "Tài Bạch", "Quan lộc"],
       ["Phúc đức", "Phu thê", "Thiên di"],
@@ -797,7 +797,9 @@ $(document).ready(function () {
     ]
       .filter((value) => value)
       .join(" + ");
-    let firstSection = `Nền tảng thông tin của ${ten} ${namDuong} = ý nghĩa tổ hợp sao trong (tam hợp cung Mệnh + tam hợp cung an Thân). Cung an Thân được kiêm nhiệm bởi cung chức ${cungChuThan}`;
+    let firstSection = `Nền tảng thông tin ${
+      tangVan ? "đại vận " : ""
+    }của ${ten} ${namDuong} = ý nghĩa tổ hợp sao trong (tam hợp cung Mệnh + tam hợp cung an Thân). Cung an Thân được kiêm nhiệm bởi cung chức ${cungChuThan}`;
     let secondSection = "";
     if (!tamHopThanIndex) {
       secondSection = `Chính tinh: Dạng ${cungCach[0]} + ${chinhTinhTamHopCungMenh}\nPhụ tinh: ${phuTinhTamHopCungMenh}`;

@@ -530,6 +530,14 @@ input.primary {
 .label-triet-m {
     background-color: #27ae60!important
 }
+
+.label-tuan-d {
+    background-color: #f39c12!important
+}
+
+.label-triet-d {
+    background-color: #f39c12!important
+}
 .tuanTriet {
     padding-top: 0.5rem;
 }
