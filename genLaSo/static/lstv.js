@@ -870,7 +870,7 @@ $(document).ready(function () {
     );
     const { cungCach, cungCachThan, cungChuThan, tamHopCungAnThan } =
       getBasicInfo(sapXepCungTheoTuoi);
-    const baseInfoText = getBaseInfoText(thapNhiCung, thienBan);
+    const baseInfoText = getBaseInfoText(thapNhiCung, thienBan, true);
 
     let tamHopList = [
       ["Mệnh", "Tài Bạch", "Quan lộc"],
