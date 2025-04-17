@@ -164,7 +164,7 @@
             >
               <div class="col col-3">Ngày, tháng, năm xem tiểu vận</div>
               <div class="col col-9">
-               <input
+                <input
                   type="text"
                   id="ngayluunhat"
                   name="ngayluunhat"
@@ -176,20 +176,34 @@
                   name="thangluunguyet"
                   placeholder="Tháng"
                 />
-                <input type="text" id="namxemtieuvan" name="namxemtieuvan" placeholder="Năm" defaultValue=new Date().getFullYear() />
+                <input
+                  type="text"
+                  id="namxemtieuvan"
+                  name="namxemtieuvan"
+                  placeholder="Năm"
+                  defaultValue="new"
+                  Date().getFullYear()
+                />
               </div>
             </div>
 
             <div
-            id="namxemdaivan"
-            class="grid thongtin"
-            style="display: none; align-items: center"
-          >
-            <div class="col col-3">Năm xem đại vận</div>
-            <div class="col col-9">           
-              <input type="text" id="namxemdaivan" name="namxemdaivan" placeholder="Năm" defaultValue=new Date().getFullYear() />
+              id="namxemdaivandiv"
+              class="grid thongtin"
+              style="display: none; align-items: center"
+            >
+              <div class="col col-3">Năm xem đại vận</div>
+              <div class="col col-9">
+                <input
+                  type="text"
+                  id="namxemdaivan"
+                  name="namxemdaivan"
+                  placeholder="Năm"
+                  defaultValue="new"
+                  Date().getFullYear()
+                />
+              </div>
             </div>
-          </div>
 
             <div class="grid">
               <input
@@ -317,7 +331,7 @@
       <div class="grid cung-middle">
           <div class="chinhTinh">
               {{for cungSao}} {{if saoLoai == 1 && saoID!==73 && saoID!==74 && saoID!==75}}
-              <li>{{:saoTen}} 
+              <li>{{:saoTen}}
               </li>
               {{/if}} {{/for}}
           </div>
@@ -327,7 +341,7 @@
                   {{for cungSao}} {{if vongTrangSinh === 0 && saoLoai !==1 && saoLoai < 10}}
                   <div class="grid">
                       <div class="{{:saoTen.includes("X.")? " de":saoTen.includes("Y.")? " year":saoTen.includes("M.")? " month":saoTen.includes("D.")? " day":""}}">
-                          {{:saoTen}} 
+                          {{:saoTen}}
                       </div>
                   </div>
                   {{/if}} {{/for}}
@@ -336,7 +350,7 @@
                   {{for cungSao}} {{if (vongTrangSinh === 0 && saoLoai !==1 && saoLoai > 10) ||saoID==73 || saoID==74 || saoID==75}}
                   <div class="grid">
                       <div class="{{:saoTen.includes("X.")? " de":saoTen.includes("Y.")? " year":saoTen.includes("M.")? " month":saoTen.includes("D.")? " day":""}}">
-                          {{:saoTen}} 
+                          {{:saoTen}}
                       </div>
                   </div>
                   {{/if}} {{/for}}

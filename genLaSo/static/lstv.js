@@ -890,7 +890,7 @@ $(document).ready(function () {
     thapNhiCung.forEach((cung) => {
       if (
         (tuoiDaiVan < 10 && cung.cungDaiHan < 10) ||
-        (cung.cungDaiHan <= tuoiDaiVan && cung.cungDaiHan + 10 > tuoiDaiVan)
+        (cung.cungDaiHan - 1 <= tuoiDaiVan && cung.cungDaiHan + 9 > tuoiDaiVan)
       ) {
         cungDaiVan = cung;
       }
@@ -997,7 +997,7 @@ $(document).ready(function () {
     if (checkedValues) {
       $("#namxemtieuvandiv").css("display", "flex");
       $("#daivan").prop("checked", false);
-      $("#namxemdaivan").css("display", "none");
+      $("#namxemdaivandiv").css("display", "none");
     } else {
       $("#namxemtieuvandiv").css("display", "none");
     }
@@ -1006,11 +1006,11 @@ $(document).ready(function () {
   $("#daivan").click(function () {
     let checkedValues = $("#daivan").serialize();
     if (checkedValues) {
-      $("#namxemdaivan").css("display", "flex");
+      $("#namxemdaivandiv").css("display", "flex");
       $("#luunien").prop("checked", false);
       $("#namxemtieuvandiv").css("display", "none");
     } else {
-      $("#namxemdaivan").css("display", "none");
+      $("#namxemdaivandiv").css("display", "none");
     }
   });
 
