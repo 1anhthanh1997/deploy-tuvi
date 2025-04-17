@@ -434,7 +434,7 @@ $(document).ready(function () {
   ];
 
   function checkSaoDaiVan(saoTen) {
-    return saoTen.includes("De.");
+    return saoTen.includes("X.");
   }
 
   function checkSaoLuuNien(saoTen) {
