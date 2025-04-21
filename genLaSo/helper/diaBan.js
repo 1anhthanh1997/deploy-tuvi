@@ -151,18 +151,22 @@ class DiaBan {
     let cungHuynhDe = dichCung(this.cungMenh, 11);
 
     return [
-      { cungId: 1, tenCung: "Mệnh", cungSoDiaBan: this.cungMenh },
-      { cungId: 2, tenCung: "Phụ mẫu", cungSoDiaBan: cungPhuMau },
-      { cungId: 3, tenCung: "Phúc đức", cungSoDiaBan: cungPhucDuc },
-      { cungId: 4, tenCung: "Điền trạch", cungSoDiaBan: cungDienTrach },
-      { cungId: 5, tenCung: "Quan lộc", cungSoDiaBan: cungQuanLoc },
-      { cungId: 6, tenCung: "Nô bộc", cungSoDiaBan: this.cungNoboc },
-      { cungId: 7, tenCung: "Thiên di", cungSoDiaBan: cungThienDi },
-      { cungId: 8, tenCung: "Tật Ách", cungSoDiaBan: this.cungTatAch },
-      { cungId: 9, tenCung: "Tài Bạch", cungSoDiaBan: cungTaiBach },
-      { cungId: 10, tenCung: "Tử tức", cungSoDiaBan: cungTuTuc },
-      { cungId: 11, tenCung: "Phu thê", cungSoDiaBan: cungTheThiep },
-      { cungId: 12, tenCung: "Huynh đệ", cungSoDiaBan: cungHuynhDe },
+      { cungId: 1, tenCung: "Destiny / Soul", cungSoDiaBan: this.cungMenh },
+      { cungId: 2, tenCung: "Senior", cungSoDiaBan: cungPhuMau },
+      { cungId: 3, tenCung: "Spiritual Value", cungSoDiaBan: cungPhucDuc },
+      { cungId: 4, tenCung: "Material Legacy", cungSoDiaBan: cungDienTrach },
+      { cungId: 5, tenCung: "Career", cungSoDiaBan: cungQuanLoc },
+      { cungId: 6, tenCung: "Friends/Peers", cungSoDiaBan: this.cungNoboc },
+      { cungId: 7, tenCung: "External", cungSoDiaBan: cungThienDi },
+      { cungId: 8, tenCung: "Karma", cungSoDiaBan: this.cungTatAch },
+      { cungId: 9, tenCung: "Resources", cungSoDiaBan: cungTaiBach },
+      { cungId: 10, tenCung: "Junior", cungSoDiaBan: cungTuTuc },
+      { cungId: 11, tenCung: "Soulmate", cungSoDiaBan: cungTheThiep },
+      {
+        cungId: 12,
+        tenCung: "Brothers and Sisters",
+        cungSoDiaBan: cungHuynhDe,
+      },
     ];
   }
 

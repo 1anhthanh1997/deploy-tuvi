@@ -328,99 +328,118 @@ $(document).ready(function () {
       .join(" "); //
   }
 
+  let enToViData = {
+    "Destiny / Soul": "Mệnh",
+    Senior: "Phụ mẫu",
+    "Spiritual Value": "Phúc đức",
+    "Material Legacy": "Điền trạch",
+    Career: "Quan lộc",
+    "Friends/Peers": "Nô bộc",
+    External: "Thiên Di",
+    Karma: "Tật Ách",
+    Resources: "Tài Bạch",
+    Junior: "Tử tức",
+    Soulmate: "Phu thê",
+    "Brothers and Sisters": "Huynh đệ",
+  };
+
+  const viToEnData = {};
+  // Create viToEnData by reversing enToViData key-value pairs
+  Object.entries(enToViData).forEach(([key, value]) => {
+    viToEnData[value] = key;
+  });
+
   function getCungChuInfo(cungChu) {
-    switch (cungChu) {
+    switch (enToViData[cungChu]) {
       case "Mệnh": {
         return {
-          description: "bản chất, lý tưởng, cốt lõi, ý chí, cá tính",
+          description: "nature, ideals, core, willpower, personality.",
           shortName: "",
-          doiXung: "Thiên Di",
+          doiXung: viToEnData["Thiên Di"],
         };
       }
       case "Phụ mẫu": {
         return {
           description:
-            "cha mẹ, cha mẹ vợ/chồng, những người có vai trò như cha mẹ, thế hệ đi trước (quá khứ), bề trên (sếp, thủ trưởng, tiền bối…)",
+            "parents, parents-in-law, those who play parental roles, previous generations (past), superiors (bosses, leaders, seniors...).",
           shortName: "Phụ",
-          doiXung: "Tật Ách",
+          doiXung: viToEnData["Tật Ách"],
         };
       }
       case "Phúc đức": {
         return {
           description:
-            "phước báu/may mắn, giá trị tinh thần, gia tộc (nội/ngoại), quan điểm về hạnh phúc",
+            "blessings/luck, spiritual values, family clan (paternal/maternal), views on happiness",
           shortName: "Phúc",
-          doiXung: "Tài Bạch",
+          doiXung: viToEnData["Tài Bạch"],
         };
       }
       case "Điền trạch": {
         return {
           description:
-            "tích lũy tài sản, cơ sở hạ tầng, thói quen sinh hoạt hằng ngày, di sản giá trị vật chất để lại cho đời",
+            "asset accumulation, infrastructure, daily living habits, material legacy left for the world.",
           shortName: "Điền",
-          doiXung: "Tử tức",
+          doiXung: viToEnData["Tử tức"],
         };
       }
       case "Quan lộc": {
         return {
-          description: "công việc/sự nghiệp, tác phong/năng lực làm việc",
+          description: "work/career, work style/capability",
           shortName: "Quan",
-          doiXung: "Phu thê",
+          doiXung: viToEnData["Phu thê"],
         };
       }
       case "Nô bộc": {
         return {
           description:
-            "thế hệ đồng trang lứa (hiện tại), các mối quan hệ xã giao không sâu sắc, các mối quan hệ chỉ chia sẻ lợi ích mà không chia sẻ rủi ro",
+            "peer generation (present), superficial social relationships, relationships that only share benefits without sharing risks.",
           shortName: "Nô",
-          doiXung: "Huynh đệ",
+          doiXung: viToEnData["Huynh đệ"],
         };
       }
-      case "Thiên di": {
+      case "Thiên Di": {
         return {
-          description:
-            "góc nhìn của xã hội về đương số, ngoại cảnh của “Mệnh”, đối tác/đối thủ/đối phương, cách đối nhân xử thế & tương tác xã hội",
+          description: `society's view of the native, external environment of the "Destiny", partners/competitors/counterparts, interpersonal skills & social interaction.`,
           shortName: "Di",
-          doiXung: "Mệnh",
+          doiXung: viToEnData["Mệnh"],
         };
       }
       case "Tật Ách": {
         return {
-          description: "sức khỏe, bệnh tật, nghiệp quả",
+          description: "health, illness, karmic consequences.",
           shortName: "Tật",
-          doiXung: "Phụ mẫu",
+          doiXung: viToEnData["Phụ mẫu"],
         };
       }
       case "Tài Bạch": {
         return {
           description:
-            "tài năng/tài nguyên/tài chính, tiền, kinh tế, giá trị vật chất",
+            "talents/resources/finances, money, economy, material values",
           shortName: "Tài",
-          doiXung: "Phúc đức",
+          doiXung: viToEnData["Phúc đức"],
         };
       }
       case "Tử tức": {
         return {
           description:
-            "thế hệ sau (tương lai), con cháu/đệ tử/học trò/thú cưng, di sản giá trị tinh thần để lại cho đời",
+            "future generations (future), children/disciples/students/pets, spiritual legacy left for the world.",
           shortName: "Tử",
-          doiXung: "Điền trạch",
+          doiXung: viToEnData["Điền trạch"],
         };
       }
       case "Phu thê": {
         return {
-          description:
-            "Vợ/chồng, người yêu/người tình, mối quan hệ mật thiết cá nhân",
+          description: "Spouse, lover/partner, close personal relationships",
           shortName: "Phối",
-          doiXung: "Quan lộc",
+          doiXung: viToEnData["Quan lộc"],
         };
       }
       case "Huynh đệ": {
         return {
           description:
-            "anh chị em trong gia tộc, các mối quan hệ chia sẻ cả lợi ích lẫn rủi ro, anh chị em kết nghĩa, anh chị em xã hội tri kỷ…",
+            "siblings in the family clan, relationships sharing both benefits and risks, sworn siblings, close social siblings...",
           shortName: "Bào",
-          doiXung: "Nô bộc",
+          doiXung: viToEnData["Nô bộc"],
         };
       }
       default: {
@@ -476,28 +495,28 @@ $(document).ready(function () {
         chinhTinh = [...chinhTinhMoi];
       }
       if (tuan) {
-        chinhTinh = [...chinhTinh, { saoTen: "Tuần" }];
+        chinhTinh = [...chinhTinh, { saoTen: "Void Zone" }];
       }
       if (triet) {
-        chinhTinh = [...chinhTinh, { saoTen: "Triệt" }];
+        chinhTinh = [...chinhTinh, { saoTen: "Void Cut" }];
       }
       if (cung.daiVanTuanTrung) {
-        saoDaiVan = [...saoDaiVan, { saoTen: "X. Tuần" }];
+        saoDaiVan = [...saoDaiVan, { saoTen: "X. Void Zone" }];
       }
       if (cung.daiVanTrietLo) {
-        saoDaiVan = [...saoDaiVan, { saoTen: "X. Triệt" }];
+        saoDaiVan = [...saoDaiVan, { saoTen: "X. Void Cut" }];
       }
       if (cung.luuNienTuanTrung) {
-        saoLuuNien = [...saoLuuNien, { saoTen: "Y. Tuần" }];
+        saoLuuNien = [...saoLuuNien, { saoTen: "Y. Void Zone" }];
       }
       if (cung.luuNienTrietLo) {
-        saoLuuNien = [...saoLuuNien, { saoTen: "Y. Triệt" }];
+        saoLuuNien = [...saoLuuNien, { saoTen: "Y. Void Cut" }];
       }
       if (cung.luuNguyetTuanTrung) {
-        saoLuuNguyet = [...saoLuuNguyet, { saoTen: "M. Tuần" }];
+        saoLuuNguyet = [...saoLuuNguyet, { saoTen: "M. Void Zone" }];
       }
       if (cung.luuNguyetTrietLo) {
-        saoLuuNguyet = [...saoLuuNguyet, { saoTen: "M. Triệt" }];
+        saoLuuNguyet = [...saoLuuNguyet, { saoTen: "M. Void Cut" }];
       }
 
       const phuTinh = cungSao.filter(
@@ -534,6 +553,68 @@ $(document).ready(function () {
     };
   }
 
+  const getNumberIndex = (daiVanIndex) => {
+    switch (daiVanIndex) {
+      case 1:
+        return "1st";
+      case 2:
+        return "2nd";
+      case 3:
+        return "3rd";
+      case 4:
+        return "4th";
+      case 5:
+        return "5th";
+      case 6:
+        return "6th";
+      case 7:
+        return "7th";
+      case 8:
+        return "8th";
+      case 9:
+        return "9th";
+      case 10:
+        return "10th";
+      case 11:
+        return "11th";
+      case 12:
+        return "12th";
+      default:
+        return "";
+    }
+  };
+
+  const getMonthName = (thangLuuNguyet) => {
+    switch (thangLuuNguyet) {
+      case 1:
+        return "January";
+      case 2:
+        return "February";
+      case 3:
+        return "March";
+      case 4:
+        return "April";
+      case 5:
+        return "May";
+      case 6:
+        return "June";
+      case 7:
+        return "July";
+      case 8:
+        return "August";
+      case 9:
+        return "September";
+      case 10:
+        return "October";
+      case 11:
+        return "November";
+      case 12:
+        return "December";
+      default:
+        return "";
+    }
+  };
+
   const getTamHopCungSaoText = ({
     tamHopList,
     cungCach,
@@ -550,76 +631,96 @@ $(document).ready(function () {
     ngayLuuNhat,
   }) => {
     const textIndex = [
-      "tam hợp mà đương số có khả năng chủ động cát hóa mạnh nhất",
-      "đương số có khả năng chủ động cát hóa mạnh",
-      "đương số có khả năng chủ động cát hóa hạn chế",
-      "đương số có khả năng chủ động cát hóa yếu nhất",
+      "Trine where the native has the strongest ability to actively manifest auspiciousness",
+      "Trine where the native has a strong ability to actively manifest auspiciousness",
+      "Trine where the native has a limited ability to actively manifest auspiciousness",
+      "Trine where the native has the weakest ability to actively manifest auspiciousness",
     ];
     const tamHopCungSaoText = tamHopList
       .map((tamHop, index) => {
-        return `\n${index + 1}. Tam hợp ${tamHop[0]} - ${tamHop[1]} - ${
+        return `\n${index + 1}. Trine of ${tamHop[0]} - ${tamHop[1]} - ${
           tamHop[2]
-        } (${textIndex[index]}) thuộc dạng cách cục ${cungCach[index]}, ${
-          namNu == "Nam" ? "anh" : "chị"
-        } ${ten} ${namDuong} ${tamHop
+        } (${textIndex[index]}) belongs to ${
+          cungCach[index]
+        } formation type, for ${
+          namNu == "Nam" ? "Mr." : "Ms."
+        }${ten} ${namDuong} ${tamHop
           .map((cung) => {
             let cungDaiHan = getSao(cung, sapXepCungTheoTuoi).cungDaiHan;
-            return `\nCung ${cung} ${
-              cung === cungChuThan ? "kiêm nhiệm cung an Thân " : ""
+            return `\n${cung} Point ${
+              cung === cungChuThan
+                ? "concurrently holding the Identity Point "
+                : ""
             }${
               !cungDaiVan && !cungTieuVan
-                ? `(kiêm nhiệm cung đại vận thứ ${Math.ceil(
-                    cungDaiHan / 10
-                  )}, từ ${cungDaiHan - 1} đến ${cungDaiHan + 8} tuổi)`
+                ? `(concurrently holding the ${getNumberIndex(
+                    Math.ceil(cungDaiHan / 10)
+                  )} Decade timeline Point, age ${cungDaiHan - 1} to ${
+                    cungDaiHan + 8
+                  })`
                 : ""
             }${
               cungTieuVan &&
               cung.toLowerCase() === cungTieuVan.cungChu.toLowerCase()
-                ? `kiêm nhiệm cung tiểu vận ${namXemTieuVan} `
+                ? `concurrently holding Annual ${namXemTieuVan} timeline Point`
                 : ""
-            }của ${
-              namNu == "Nam" ? "anh" : "chị"
-            } ${ten} ${namDuong} chủ quản thông tin về: ${
+            } of ${
+              namNu == "Nam" ? "Mr." : "Ms."
+            } ${ten} ${namDuong} governs information about: ${
               getCungChuInfo(cung).description
             }
-        Chính tinh: ${getSao(cung, sapXepCungTheoTuoi).chinhTinh}
-        Phụ tinh: ${getSao(cung, sapXepCungTheoTuoi).phuTinh}
-        Cung chức mang ý nghĩa đối xung ngoại cảnh với cung ${cung} là cung ${
+        Major Energies: ${getSao(cung, sapXepCungTheoTuoi).chinhTinh}
+        Auxiliary Stars: ${getSao(cung, sapXepCungTheoTuoi).phuTinh}
+        The Point in external opposition to the ${cung} is the ${
               getCungChuInfo(cung).doiXung
             }${
               cungDaiVan &&
               cungDaiVan.cungChu.toLowerCase() === cung.toLowerCase()
-                ? `\n        Cung ${cung} kiêm nhiệm cung đại vận thứ ${daiVanIndex} của ${
-                    namNu == "Nam" ? "anh" : "chị"
-                  } ${ten} ${namDuong} từ ${cungDaiVan.cungDaiHan - 1} đến ${
+                ? `\n        Point ${cung} concurrently holding ${getNumberIndex(
+                    daiVanIndex
+                  )} Decade timeline Point of ${
+                    namNu == "Nam" ? "Mr." : "Ms."
+                  }${ten} ${namDuong} age ${cungDaiVan.cungDaiHan - 1} to ${
                     cungDaiVan.cungDaiHan + 8
-                  } tuổi`
+                  }`
                 : ""
             }${
               cungDaiVan
-                ? `\n        Lưu động theo đại vận thứ ${daiVanIndex} (${
-                    cungDaiVan.cungDaiHan - 1
-                  } đến ${cungDaiVan.cungDaiHan + 8} tuổi)${
-                    cung === "Mệnh" ? ", bổ sung thêm vào cung Mệnh gốc" : ""
+                ? `\n        Flowing with the ${getNumberIndex(
+                    daiVanIndex
+                  )} Decade timeline (age ${cungDaiVan.cungDaiHan - 1} to ${
+                    cungDaiVan.cungDaiHan + 8
+                  })${
+                    cung === viToEnData["Mệnh"]
+                      ? ", adding to the original Destiny Point"
+                      : ""
                   }: ${getSao(cung, sapXepCungTheoTuoi).daiVan}`
                 : ""
             }${
               cungTieuVan
-                ? `\n        Lưu động theo tiểu vận ${namXemTieuVan}${
-                    cung === "Mệnh" ? ", bổ sung thêm vào cung Mệnh gốc" : ""
+                ? `\n        Flowing with the ${namXemTieuVan} Annual timeline${
+                    cung === viToEnData["Mệnh"]
+                      ? ", adding to the original Destiny Point"
+                      : ""
                   }: ${getSao(cung, sapXepCungTheoTuoi).luuNien}`
                 : ""
             }${
               thangLuuNguyet
-                ? `\n        Lưu động theo nguyệt vận tháng ${
-                    thangLuuNguyet - 1 + "/" + namXemTieuVan
-                  }: ${getSao(cung, sapXepCungTheoTuoi).luuNguyet}`
+                ? `\n        Flowing with the ${
+                    getMonthName(thangLuuNguyet - 1) + " " + namXemTieuVan
+                  } Monthly timeline : ${
+                    getSao(cung, sapXepCungTheoTuoi).luuNguyet
+                  }`
                 : ""
             }${
               ngayLuuNhat && getSao(cung, sapXepCungTheoTuoi).luuNhat
-                ? `\n        Lưu động theo ngày ${
-                    ngayLuuNhat + "/" + thangLuuNguyet + "/" + namXemTieuVan
-                  }: ${getSao(cung, sapXepCungTheoTuoi).luuNhat}`
+                ? `\n        Flowing with the ${
+                    getMonthName(thangLuuNguyet - 1) +
+                    " " +
+                    ngayLuuNhat +
+                    ", " +
+                    namXemTieuVan
+                  } Daily timeline: ${getSao(cung, sapXepCungTheoTuoi).luuNhat}`
                 : ""
             }`;
           })
@@ -642,12 +743,11 @@ $(document).ready(function () {
     );
     const { cungCach, cungCachThan, cungChuThan, tamHopCungAnThan } =
       getBasicInfo(sapXepCungTheoTuoi);
-
     let tamHopList = [
-      ["Mệnh", "Tài Bạch", "Quan lộc"],
-      ["Phúc đức", "Phu thê", "Thiên di"],
-      ["Huynh đệ", "Tật Ách", "Điền trạch"],
-      ["Phụ mẫu", "Tử tức", "Nô bộc"],
+      [viToEnData["Mệnh"], viToEnData["Tài Bạch"], viToEnData["Quan lộc"]],
+      [viToEnData["Phúc đức"], viToEnData["Phu thê"], viToEnData["Thiên Di"]],
+      [viToEnData["Huynh đệ"], viToEnData["Tật Ách"], viToEnData["Điền trạch"]],
+      [viToEnData["Phụ mẫu"], viToEnData["Tử tức"], viToEnData["Nô bộc"]],
     ];
 
     const baseInfoText = getBaseInfoText(thapNhiCung, thienBan);
@@ -660,7 +760,9 @@ $(document).ready(function () {
       namNu,
       sapXepCungTheoTuoi,
     });
-    const firstSection = `Thông tin lá số Tử Vi gốc của ${ten}, ${namNu.toLowerCase()} giới sinh năm ${namDuong}`;
+    const firstSection = `Destiny Analysis Chart for ${ten}, ${
+      namNu == "Nam" ? "male" : "female"
+    } born in ${namDuong}`;
 
     const secondSection = `${tamHopCungSaoText}`;
     const contentCopy = `${firstSection}\n${baseInfoText}\n${secondSection}`;
@@ -689,50 +791,50 @@ $(document).ready(function () {
     const cungCachList = [
       {
         id: 0,
-        name: "Tử Phủ Vũ Tướng Liêm",
+        name: "The Master + Guardian + Captialist + Hero + Executive",
         saoList: [1, 2, 4, 7, 11],
       },
       {
         id: 1,
-        name: "Tử Vũ Liêm Sát Phá Tham",
+        name: "The Master + Capitalist + Executive + Breaker + Taker + Seeker",
         saoList: [1, 2, 4, 9, 13, 14],
       },
       {
         id: 2,
-        name: "Sát Phá Tham",
+        name: " The Breaker + Taker + Seeker",
         saoList: [9, 13, 14],
       },
       {
         id: 3,
-        name: "Phủ Tướng",
+        name: "The Guardian + Hero",
         saoList: [7, 11],
       },
       {
         id: 4,
-        name: "Cơ Nguyệt Đồng Lương",
+        name: "The Thinker + Listener + Linker + Fortuner",
         saoList: [3, 6, 8, 12],
       },
       {
         id: 5,
-        name: "Cự Đồng Cơ",
+        name: "The Thinker + Linker + Disruptor",
         saoList: [3, 6, 10],
       },
       {
         id: 6,
-        name: "Cự Nhật",
+        name: "The Disruptor + Visionary",
         saoList: [5, 10],
       },
       {
         id: 7,
-        name: "Âm Lương Dương",
+        name: "The Listener + Visionary + Fortuner",
         saoList: [5, 8, 12],
       },
     ];
     let tamHopList = [
-      ["Mệnh", "Tài Bạch", "Quan lộc"],
-      ["Phúc đức", "Phu thê", "Thiên di"],
-      ["Huynh đệ", "Tật Ách", "Điền trạch"],
-      ["Phụ mẫu", "Tử tức", "Nô bộc"],
+      [viToEnData["Mệnh"], viToEnData["Tài Bạch"], viToEnData["Quan lộc"]],
+      [viToEnData["Phúc đức"], viToEnData["Phu thê"], viToEnData["Thiên Di"]],
+      [viToEnData["Huynh đệ"], viToEnData["Tật Ách"], viToEnData["Điền trạch"]],
+      [viToEnData["Phụ mẫu"], viToEnData["Tử tức"], viToEnData["Nô bộc"]],
     ];
     let tamHopCungAnThan = [];
     let toHopSao = [[], [], [], []];
@@ -770,10 +872,10 @@ $(document).ready(function () {
 
   function getBaseInfoText(thapNhiCung, thienBan, tangVan = false) {
     let tamHopList = [
-      ["Mệnh", "Tài Bạch", "Quan lộc"],
-      ["Phúc đức", "Phu thê", "Thiên di"],
-      ["Huynh đệ", "Tật Ách", "Điền trạch"],
-      ["Phụ mẫu", "Tử tức", "Nô bộc"],
+      [viToEnData["Mệnh"], viToEnData["Tài Bạch"], viToEnData["Quan lộc"]],
+      [viToEnData["Phúc đức"], viToEnData["Phu thê"], viToEnData["Thiên Di"]],
+      [viToEnData["Huynh đệ"], viToEnData["Tật Ách"], viToEnData["Điền trạch"]],
+      [viToEnData["Phụ mẫu"], viToEnData["Tử tức"], viToEnData["Nô bộc"]],
     ];
     const { namDuong, canNamTen, ten, chiNamTen, namNu } = thienBan;
     const { cungCach, cungCachThan, cungChuThan, tamHopCungAnThan } =
@@ -783,26 +885,28 @@ $(document).ready(function () {
     );
 
     let chinhTinhTamHopCungMenh = [
-      getSao("Mệnh", thapNhiCung, true).chinhTinh,
-      getSao("Tài Bạch", thapNhiCung, true).chinhTinh,
-      getSao("Quan lộc", thapNhiCung, true).chinhTinh,
+      getSao(viToEnData["Mệnh"], thapNhiCung, true).chinhTinh,
+      getSao(viToEnData["Tài Bạch"], thapNhiCung, true).chinhTinh,
+      getSao(viToEnData["Quan lộc"], thapNhiCung, true).chinhTinh,
     ]
       .filter((value) => value)
       .join(" + ");
 
     let phuTinhTamHopCungMenh = [
-      getSao("Mệnh", thapNhiCung, true).phuTinh,
-      getSao("Tài Bạch", thapNhiCung, true).phuTinh,
-      getSao("Quan lộc", thapNhiCung, true).phuTinh,
+      getSao(viToEnData["Mệnh"], thapNhiCung, true).phuTinh,
+      getSao(viToEnData["Tài Bạch"], thapNhiCung, true).phuTinh,
+      getSao(viToEnData["Quan lộc"], thapNhiCung, true).phuTinh,
     ]
       .filter((value) => value)
       .join(" + ");
-    let firstSection = `Nền tảng thông tin ${
-      tangVan ? "đại vận " : ""
-    }của ${ten} ${namDuong} = ý nghĩa tổ hợp sao trong (tam hợp cung Mệnh + tam hợp cung an Thân). Cung an Thân được kiêm nhiệm bởi cung chức ${cungChuThan}`;
+    let firstSection = `Foundational Information for ${ten} ${
+      tangVan ? "'s" : ""
+    } (born ${namDuong}) ${
+      tangVan ? "Decade Timeline" : ""
+    } = Meaning of the star combinations within (Trine of Destiny Point + Trine of Identity Point). The Identity Point is concurrently held by ${cungChuThan} Point`;
     let secondSection = "";
     if (!tamHopThanIndex) {
-      secondSection = `Chính tinh: Dạng ${cungCach[0]} + ${chinhTinhTamHopCungMenh}\nPhụ tinh: ${phuTinhTamHopCungMenh}`;
+      secondSection = `Major Energies: ${cungCach[0]} + ${chinhTinhTamHopCungMenh}\nAuxiliary Stars: ${phuTinhTamHopCungMenh}`;
     } else {
       let chinhTinhTamHopCungThan = [
         getSao(tamHopCungAnThan[0], thapNhiCung, true).chinhTinh,
@@ -819,7 +923,7 @@ $(document).ready(function () {
         .filter((value) => value)
         .join(" + ");
       getSao(tamHopCungAnThan[2], thapNhiCung).phuTinh;
-      secondSection = `Tam hợp cung Mệnh:\nChính tinh: Dạng ${cungCach[0]} + ${chinhTinhTamHopCungMenh}\nPhụ tinh: ${phuTinhTamHopCungMenh}\nTam hợp cung an Thân:\nChính tinh: Dạng ${cungCachThan} + ${chinhTinhTamHopCungThan}\nPhụ tinh: ${phuTinhTamHopCungThan}
+      secondSection = `Trine of Destiny Point:\nMajor Energies: ${cungCach[0]} + ${chinhTinhTamHopCungMenh}\nAuxiliary Stars: ${phuTinhTamHopCungMenh}\nTrine of Identity Point:\nChính tinh: Dạng ${cungCachThan} + ${chinhTinhTamHopCungThan}\nPhụ tinh: ${phuTinhTamHopCungThan}
       `;
     }
     return firstSection + "\n" + secondSection;
@@ -873,10 +977,10 @@ $(document).ready(function () {
     const baseInfoText = getBaseInfoText(thapNhiCung, thienBan, true);
 
     let tamHopList = [
-      ["Mệnh", "Tài Bạch", "Quan lộc"],
-      ["Phúc đức", "Phu thê", "Thiên di"],
-      ["Huynh đệ", "Tật Ách", "Điền trạch"],
-      ["Phụ mẫu", "Tử tức", "Nô bộc"],
+      [viToEnData["Mệnh"], viToEnData["Tài Bạch"], viToEnData["Quan lộc"]],
+      [viToEnData["Phúc đức"], viToEnData["Phu thê"], viToEnData["Thiên Di"]],
+      [viToEnData["Huynh đệ"], viToEnData["Tật Ách"], viToEnData["Điền trạch"]],
+      [viToEnData["Phụ mẫu"], viToEnData["Tử tức"], viToEnData["Nô bộc"]],
     ];
     let tuoiDaiVan = namXemDaiVan - namDuong;
     let cungTieuVan = null;
@@ -920,32 +1024,38 @@ $(document).ready(function () {
       );
     }
 
-    const firstSection = `I.Lá số luận giải vận cho ${ten}, ${namNu.toLowerCase()} giới sinh năm ${namDuong}
-    1.Mã can chi\nĐại vận: mã can chi ${maCanChiDaiVan}${
-      maCanChiTieuVan ? `\nTiểu vận: mã can chi ${maCanChiTieuVan}` : ""
+    const firstSection = `I.Destiny Analysis Chart for ${ten}, ${
+      namNu === "Nam" ? "male" : "female"
+    }, born in ${namDuong}
+    1. Celestial Stem and Earthly Branch Codes:\nDecade Timeline: ${maCanChiDaiVan} code${
+      maCanChiTieuVan
+        ? `\nAnnual ${namXemTieuVan} timeline: ${maCanChiTieuVan} code`
+        : ""
     }${
-      maCanChiNguyetVan ? `\nNguyệt vận: mã can chi ${maCanChiNguyetVan}` : ""
+      maCanChiNguyetVan ? `\nMonthly Timeline: ${maCanChiNguyetVan} code` : ""
     }${
-      maCanChiNhatVan ? `\nNhật vận: mã can chi ${maCanChiNhatVan}` : ""
-    }\n    2. Cung đại vận = cung ${
+      maCanChiNhatVan ? `\nDaily Timeline: ${maCanChiNhatVan} code` : ""
+    }\n    2. Timeline Palaces:\nDecade Timeline Point: ${
       cungDaiVan.cungChu
-    }, thuộc dạng cách cục cơ bản ${cungCach[tamHopDaiVanIndex]}\n${
+    } Point, belongs to the basic ${
+      cungCach[tamHopDaiVanIndex]
+    } formation type\n${
       namXemTieuVan
-        ? `Cung tiểu vận = cung ${cungTieuVan.cungChu}, thuộc dạng cách cục cơ bản ${cungCach[tamHopTieuVanIndex]}`
+        ? `Annual Timeline Palace = ${cungTieuVan.cungChu} Point, belongs to the basic  ${cungCach[tamHopTieuVanIndex]} formation type`
         : ""
     }${"\n    3. " + baseInfoText}
     `;
-    const secondSection = `II. Bản đồ ${getNumberCanChi(
+    const secondSection = `II. Map of ${getNumberCanChi(
       ngayLuuNhat,
       thangLuuNguyet,
       namXemTieuVan,
       namXemDaiVan
-    )} tầng sao lưu động theo yêu cầu căn cứ vào ${getNumberCanChi(
+    )} Layers of Transient Stars Based on the ${getNumberCanChi(
       ngayLuuNhat,
       thangLuuNguyet,
       namXemTieuVan,
       namXemDaiVan
-    )} mã can chi${tamHopCungSaoText}`;
+    )} Stem-Branch Codes as Requested${tamHopCungSaoText}`;
     return firstSection + "\n" + secondSection;
   }
 
