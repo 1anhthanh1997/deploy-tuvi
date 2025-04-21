@@ -1026,16 +1026,8 @@ $(document).ready(function () {
 
     const firstSection = `I.Destiny Analysis Chart for ${ten}, ${
       namNu === "Nam" ? "male" : "female"
-    }, born in ${namDuong}
-    1. Celestial Stem and Earthly Branch Codes:\nDecade Timeline: ${maCanChiDaiVan} code${
-      maCanChiTieuVan
-        ? `\nAnnual ${namXemTieuVan} timeline: ${maCanChiTieuVan} code`
-        : ""
-    }${
-      maCanChiNguyetVan ? `\nMonthly Timeline: ${maCanChiNguyetVan} code` : ""
-    }${
-      maCanChiNhatVan ? `\nDaily Timeline: ${maCanChiNhatVan} code` : ""
-    }\n    2. Timeline Palaces:\nDecade Timeline Point: ${
+    }, born in ${namDuong}   
+    1. Timeline Palaces:\nDecade Timeline Point: ${
       cungDaiVan.cungChu
     } Point, belongs to the basic ${
       cungCach[tamHopDaiVanIndex]
@@ -1043,7 +1035,7 @@ $(document).ready(function () {
       namXemTieuVan
         ? `Annual Timeline Palace = ${cungTieuVan.cungChu} Point, belongs to the basic  ${cungCach[tamHopTieuVanIndex]} formation type`
         : ""
-    }${"\n    3. " + baseInfoText}
+    }${"\n    2. " + baseInfoText}
     `;
     const secondSection = `II. Map of ${getNumberCanChi(
       ngayLuuNhat,
