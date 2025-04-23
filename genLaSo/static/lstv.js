@@ -651,15 +651,11 @@ $(document).ready(function () {
               cung === cungChuThan
                 ? "concurrently holding the Identity Point "
                 : ""
-            }${
-              !cungDaiVan && !cungTieuVan
-                ? `(concurrently holding the ${getNumberIndex(
-                    Math.ceil(cungDaiHan / 10)
-                  )} Decade timeline Point, age ${cungDaiHan - 1} to ${
-                    cungDaiHan + 8
-                  })`
-                : ""
-            }${
+            }${`(concurrently holding the ${getNumberIndex(
+              Math.ceil(cungDaiHan / 10)
+            )} Decade timeline Point, age ${cungDaiHan - 1} to ${
+              cungDaiHan + 8
+            })`}${
               cungTieuVan &&
               cung.toLowerCase() === cungTieuVan.cungChu.toLowerCase()
                 ? `concurrently holding Annual ${namXemTieuVan} timeline Point`
@@ -670,7 +666,7 @@ $(document).ready(function () {
               getCungChuInfo(cung).description
             }
         Major Energies: ${getSao(cung, sapXepCungTheoTuoi).chinhTinh}
-        Auxiliary Stars: ${getSao(cung, sapXepCungTheoTuoi).phuTinh}
+        Auxiliary Energies: ${getSao(cung, sapXepCungTheoTuoi).phuTinh}
         The Point in external opposition to the ${cung} is the ${
               getCungChuInfo(cung).doiXung
             }${
@@ -903,10 +899,10 @@ $(document).ready(function () {
       tangVan ? "'s" : ""
     } (born ${namDuong}) ${
       tangVan ? "Decade Timeline" : ""
-    } = Meaning of the star combinations within (Trine of Destiny Point + Trine of Identity Point). The Identity Point is concurrently held by ${cungChuThan} Point`;
+    } = Meaning of the energy combinations within (Trine of Destiny Point + Trine of Identity Point). The Identity Point is concurrently held by ${cungChuThan} Point`;
     let secondSection = "";
     if (!tamHopThanIndex) {
-      secondSection = `Major Energies: ${cungCach[0]} + ${chinhTinhTamHopCungMenh}\nAuxiliary Stars: ${phuTinhTamHopCungMenh}`;
+      secondSection = `Major Energies: ${cungCach[0]} + ${chinhTinhTamHopCungMenh}\nAuxiliary Energies: ${phuTinhTamHopCungMenh}`;
     } else {
       let chinhTinhTamHopCungThan = [
         getSao(tamHopCungAnThan[0], thapNhiCung, true).chinhTinh,
@@ -923,7 +919,7 @@ $(document).ready(function () {
         .filter((value) => value)
         .join(" + ");
       getSao(tamHopCungAnThan[2], thapNhiCung).phuTinh;
-      secondSection = `Trine of Destiny Point:\nMajor Energies: ${cungCach[0]} + ${chinhTinhTamHopCungMenh}\nAuxiliary Stars: ${phuTinhTamHopCungMenh}\nTrine of Identity Point:\nChính tinh: Dạng ${cungCachThan} + ${chinhTinhTamHopCungThan}\nPhụ tinh: ${phuTinhTamHopCungThan}
+      secondSection = `Trine of Destiny Point:\nMajor Energies: ${cungCach[0]} + ${chinhTinhTamHopCungMenh}\nAuxiliary Energies: ${phuTinhTamHopCungMenh}\nTrine of Identity Point:\nChính tinh: Dạng ${cungCachThan} + ${chinhTinhTamHopCungThan}\nPhụ tinh: ${phuTinhTamHopCungThan}
       `;
     }
     return firstSection + "\n" + secondSection;
@@ -1024,16 +1020,16 @@ $(document).ready(function () {
       );
     }
 
-    const firstSection = `I.Destiny Analysis Chart for ${ten}, ${
+    const firstSection = `I. Destiny Analysis Chart for ${ten}, ${
       namNu === "Nam" ? "male" : "female"
     }, born in ${namDuong}   
-    1. Timeline Palaces:\nDecade Timeline Point: ${
+    1. Timeline Points:\nDecade Timeline Point: ${
       cungDaiVan.cungChu
     } Point, belongs to the basic ${
       cungCach[tamHopDaiVanIndex]
     } formation type\n${
       namXemTieuVan
-        ? `Annual Timeline Palace = ${cungTieuVan.cungChu} Point, belongs to the basic  ${cungCach[tamHopTieuVanIndex]} formation type`
+        ? `Annual Timeline Point = ${cungTieuVan.cungChu} Point, belongs to the basic  ${cungCach[tamHopTieuVanIndex]} formation type`
         : ""
     }${"\n    2. " + baseInfoText}
     `;
@@ -1042,7 +1038,7 @@ $(document).ready(function () {
       thangLuuNguyet,
       namXemTieuVan,
       namXemDaiVan
-    )} Layers of Transient Stars Based on the ${getNumberCanChi(
+    )} Layers of Transient Energies Based on the ${getNumberCanChi(
       ngayLuuNhat,
       thangLuuNguyet,
       namXemTieuVan,
