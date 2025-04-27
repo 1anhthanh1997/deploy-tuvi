@@ -961,22 +961,22 @@ Can manage and exploit resources well, build a solid financial foundation
     Potential Weaknesses (if in an overloaded state) 
 Easily become extremely stubborn, conservative, unwilling to change, inflexible.
 Can be autocratic, lack tact, disregard others' feelings.
-When facing excessive pressure (like extremely prosperous Metal), may "break" rather than "bend". Prone to issues with the liver, gallbladder, head, neck, and shoulders.
+When facing excessive pressure , may "break" rather than "bend". Prone to issues with the liver, gallbladder, head, neck, and shoulders.
 
 Observed Tendencies of Passive Body/Identity Wood Yang:
     Energy & Endurance: 
 Feel their energy is insufficient, like a weak sapling or a large tree lacking nutrients, lacking the strength to surge upwards. Easily fatigued.
 Lower endurance under pressure than Strong Jia Wood, easily feel overwhelmed, difficult to withstand.
-Overall health may be weaker, need to pay attention to the liver, gallbladder, and nervous system. (-> Likely inauspicious outcome regarding Health if unbalanced)
     Psychology & Behavior: 
 Lack confidence in their autonomy and leadership abilities. Dare not set overly high goals.
-Less decisive, easily swayed, need support and nurturing (from Resource - Water element) or companionship (Friend/Rob Wealth - Wood element).
+Less decisive, easily swayed, need support and nurturing  or companionship.
 Difficult to take on leading roles or jobs requiring independence and strength.
-Difficulty managing large assets or resources (Wealth - Earth element). (-> May encounter inauspicious outcomes regarding Reputation/Money if without help)
+Difficulty managing large assets or resources 
     Potential Strengths (if fortunate to receive external support and companionship): 
-Less rigid, more receptive than Strong Jia Wood. Straightforward but more humble.
-If Resource (Water) is strong, they are intelligent, wise, learn well, know how to think things through.
-Can achieve success through persistent learning or the help of others.`;
+Less rigid, more receptive. Straightforward but more humble.
+Intelligent, wise, learn well, know how to think things through.
+Can achieve success through persistent learning or the help of others.
+`;
       case "Ất":
         return `${ten}’s Body/Identity Wood Yin - Represented by Grass, Vines, Flowers, Leaves…
 Observed Tendencies of Proactive Body/Identity Wood Yin:
@@ -1036,8 +1036,7 @@ Difficulty seizing and managing financial opportunities.
     Potential Strengths (if fortunate to receive external support and companionship):
 Less hot-tempered, know how to restrain themselves more, more humble and approachable.
 Intelligent, eager to learn, better prepared before acting.
-Can achieve success through persistent study or good cooperation.
-`;
+Can achieve success through persistent study or good cooperation.`;
       case "Đinh":
         return `${ten}’s Body/Identity Fire Yin - Represented by: Lamps, candles, forge fire, volcanoes, household fire…
 Observed Tendencies of Proactive Body/Identity Fire Yin:
@@ -1090,9 +1089,9 @@ Poor endurance under pressure, prone to silent stress and anxiety.
 Health may be sensitive in the digestive system and muscles.
     Psychology & Behavior:
 Less confident, easily swayed by circumstances or others' opinions despite trying to appear stable externally.
-More cautious, need support, recognition (from Seal - Fire element) or direct help (from Friend/Rob Wealth - Earth element) to act.
+More cautious, need support, recognition or direct help to act.
 Difficult to handle excessive responsibility alone, may feel burdened if placed in a position beyond their capacity.
-Difficulty managing large finances if Wealth (Water element) is strong but the self is weak. (-> May encounter negative outcomes regarding Reputation/Money if without help).
+Difficulty managing large finances 
     Potential Strengths (if fortunate to receive external support and companionship):
 Less rigid, more receptive and willing to learn.
 Still retain loyalty and reliability but are more flexible.
@@ -1103,12 +1102,11 @@ Observed Tendencies of Proactive Body/Identity Earth Yin:
     Energy & Endurance:
 Often possess resilient health, flexible and enduring energy like fertile soil.
 Good endurance in a flexible manner, adept at adapting to pressure and changing environments. Rarely confront directly but have underlying endurance.
-Good recovery and adaptability. (-> Likely auspicious outcome regarding Health).
     Psychology & Behavior:
 Confident in their ability to manage and adapt. Intelligent, skillful, talented in nurturing and management.
 Good at caring for and nurturing (people, work, assets). Have an organizational mind, arranging things meticulously.
-Capable of handling responsibilities requiring skill and flexibility. Good at gathering and coordinating small resources. (-> Likely auspicious outcome regarding Reputation/Status).
-Can earn money and accumulate assets well from multiple sources, good at managing expenses. (-> Likely auspicious outcome regarding Money).
+Capable of handling responsibilities requiring skill and flexibility. Good at gathering and coordinating small resources. 
+Can earn money and accumulate assets well from multiple sources, good at managing expenses. 
     Potential Passive Points (if in an overloaded state):
 Can become overly calculating, nitpicky, sometimes a bit selfish or worry too much about trivial matters.
 Sometimes lack foresight, or are not decisive enough, stance changes easily.
@@ -1190,7 +1188,7 @@ Success often comes from a protected environment or developing special talents.`
       case "Nhâm":
         return `${ten}’s Body/Identity Water Yang - Represented by: Moving water - Oceans, large rivers, streams, waterfalls…
 Observed Tendencies of Proactive Body/Identity Water Yang:
-  Energy & Endurance:
+    Energy & Endurance:
 Often appear healthy, abundant energy like the great ocean, very dynamic and lively.
 Good endurance with change and fluctuation, high adaptability. Not afraid of difficulties and challenges.
     Psychology & Behavior:
@@ -1207,14 +1205,13 @@ Observed Tendencies of Passive Body/Identity Water Yang:
     Energy & Endurance:
 Feel their energy is not strong enough, like a shallow river or calm sea, lacking vitality, easily fatigued when facing fluctuations.
 Lower endurance under pressure than Proactive Water Yang, easily feel directionless, exhausted.
-Overall health may be weaker, need to pay attention to the excretory and endocrine systems. (-> Likely negative outcome regarding Health if unbalanced).
     Psychology & Behavior:
 Lack confidence in their ability to create significant influence, dare not set high goals.
 Less decisive, easily swept away by circumstances or others, lack a firm stance. Need support.
 Difficult to take on leadership roles or jobs requiring strength and decisiveness.
 Difficulty seizing and managing large financial opportunities.
     Potential Strengths (if fortunate to receive external support and companionship):
-Less fierce, more controllable than Proactive Water Yang, know how to listen and are more humble.
+Less fierce, more controllable, know how to listen and are more humble.
 Intelligent, possess depth of thought, learn well.
 Can achieve success through persistent study or following correct guidance.`;
       case "Quý":
