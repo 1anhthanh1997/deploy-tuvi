@@ -881,7 +881,12 @@ $(document).ready(function () {
     return { cungCach, cungCachThan, cungChuThan, tamHopCungAnThan };
   }
 
-  function getBaseInfoText(thapNhiCung, thienBan, tangVan = false) {
+  function getBaseInfoText(
+    thapNhiCung,
+    thienBan,
+    tangVan = false,
+    daiVanIndex = 1
+  ) {
     let tamHopList = [
       [viToEnData["Mệnh"], viToEnData["Tài Bạch"], viToEnData["Quan lộc"]],
       [viToEnData["Phúc đức"], viToEnData["Phu thê"], viToEnData["Thiên Di"]],
@@ -929,8 +934,8 @@ $(document).ready(function () {
     let firstSection = `Foundational Information for ${ten} ${
       tangVan ? "'s" : ""
     } (born ${namDuong}) ${
-      tangVan ? "Decade Timeline" : ""
-    } = Meaning of the energy combinations within (Trine of Destiny Point + Trine of Identity Point). The Identity Point is concurrently held by ${cungChuThan} Point`;
+      tangVan ? `for the ${getNumberIndex(daiVanIndex)} Decade Timeline` : ""
+    } = Meaning of the energy combinations within (Trine of Destiny Point + Trine of Identity Point) + X.Energies within foundation information's points. The Identity Point is concurrently held by ${cungChuThan} Point`;
     let secondSection = "";
     if (!tamHopThanIndex) {
       secondSection = `Major Energies: ${
@@ -1335,7 +1340,6 @@ Success often comes from the help of benefactors or a protected environment.`;
     );
     const { cungCach, cungCachThan, cungChuThan, tamHopCungAnThan } =
       getBasicInfo(sapXepCungTheoTuoi);
-    const baseInfoText = getBaseInfoText(thapNhiCung, thienBan, true);
 
     let tamHopList = [
       [viToEnData["Mệnh"], viToEnData["Tài Bạch"], viToEnData["Quan lộc"]],
@@ -1360,6 +1364,12 @@ Success often comes from the help of benefactors or a protected environment.`;
         cungDaiVan = cung;
       }
     });
+    const baseInfoText = getBaseInfoText(
+      thapNhiCung,
+      thienBan,
+      true,
+      Math.ceil(cungDaiVan.cungDaiHan / 10)
+    );
     const tamHopCungSaoText = getTamHopCungSaoText({
       tamHopList,
       cungCach,

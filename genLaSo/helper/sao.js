@@ -113,13 +113,13 @@ const saoLocTon = new Sao(27, "Holdings", "O", 3, "Bắc đẩu tinh");
 const saoBacSy = new Sao(109, "Bác sỹ", "T", 5);
 const saoLucSi = new Sao(28, "Fortitude / Persevere", "H", 2);
 const saoThanhLong = new Sao(29, "Cleanse", "T", 5);
-const saoTieuHao = new Sao(30, "Small Depreciation", "H", 12);
+const saoTieuHao = new Sao(30, "Micro Economic", "H", 12);
 const saoTuongQuan = new Sao(31, "Loyal", "M", 4);
 const saoTauThu = new Sao(32, "Correspondence", "K", 3);
 const saoPhiLiem = new Sao(33, "Split / Rush", "H", 2);
 const saoHyThan = new Sao(34, "Inheritance / Gifted", "H", 5);
 const saoBenhPhu = new Sao(35, "Sick / Shame", "O", 12);
-const saoDaiHao = new Sao(36, "Great Depreciation", "H", 12);
+const saoDaiHao = new Sao(36, "Macro Economic", "H", 12);
 const saoPhucBinh = new Sao(37, "Services / Return", "H", 13);
 const saoQuanPhu2 = new Sao(38, "Officers", "H", 12);
 
