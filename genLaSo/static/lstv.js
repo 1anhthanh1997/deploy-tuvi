@@ -488,6 +488,13 @@ $(document).ready(function () {
       let saoLuuNien = cungSao.filter((sao) => checkSaoLuuNien(sao.saoTen));
       let saoLuuNguyet = cungSao.filter((sao) => checkSaoLuuNguyet(sao.saoTen));
       let saoLuuNhat = cungSao.filter((sao) => checkSaoLuuNhat(sao.saoTen));
+      let chinhTinhDaiVanId = [92, 93, 94, 95];
+      let chinhTinhDaiVan = saoDaiVan.filter((sao) =>
+        chinhTinhDaiVanId.includes(sao.saoID)
+      );
+      let phuTinhDaiVan = saoDaiVan.filter(
+        (sao) => !chinhTinhDaiVanId.includes(sao.saoID)
+      );
       let tuan = cung.tuanTrung;
       let triet = cung.trietLo;
       let chinhTinh = [...chinhTinhGoc, ...chinhTinhMoi];
@@ -502,9 +509,11 @@ $(document).ready(function () {
       }
       if (cung.daiVanTuanTrung) {
         saoDaiVan = [...saoDaiVan, { saoTen: "X. Void Zone" }];
+        chinhTinhDaiVan = [...chinhTinhDaiVan, { saoTen: "X. Void Zone" }];
       }
       if (cung.daiVanTrietLo) {
         saoDaiVan = [...saoDaiVan, { saoTen: "X. Void Cut" }];
+        chinhTinhDaiVan = [...chinhTinhDaiVan, { saoTen: "X. Void Cut" }];
       }
       if (cung.luuNienTuanTrung) {
         saoLuuNien = [...saoLuuNien, { saoTen: "Y. Void Zone" }];
@@ -535,6 +544,12 @@ $(document).ready(function () {
           .join(" + "),
         phuTinh: phuTinh.map((sao) => capitalizeWords(sao.saoTen)).join(" + "),
         daiVan: saoDaiVan.map((sao) => capitalizeWords(sao.saoTen)).join(" + "),
+        chinhTinhDaiVan: chinhTinhDaiVan
+          .map((sao) => capitalizeWords(sao.saoTen))
+          .join(" + "),
+        phuTinhDaiVan: phuTinhDaiVan
+          .map((sao) => capitalizeWords(sao.saoTen))
+          .join(" + "),
         luuNien: saoLuuNien
           .map((sao) => capitalizeWords(sao.saoTen))
           .join(" + "),
@@ -880,6 +895,22 @@ $(document).ready(function () {
       tamHop.includes(cungChuThan)
     );
 
+    let chinhTinhDaiVanMenh = [
+      getSao(viToEnData["Mệnh"], thapNhiCung, true).chinhTinhDaiVan,
+      getSao(viToEnData["Tài Bạch"], thapNhiCung, true).chinhTinhDaiVan,
+      getSao(viToEnData["Quan lộc"], thapNhiCung, true).chinhTinhDaiVan,
+    ]
+      .filter((value) => value)
+      .join(" + ");
+
+    let phuTinhDaiVanMenh = [
+      getSao(viToEnData["Mệnh"], thapNhiCung, true).phuTinhDaiVan,
+      getSao(viToEnData["Tài Bạch"], thapNhiCung, true).phuTinhDaiVan,
+      getSao(viToEnData["Quan lộc"], thapNhiCung, true).phuTinhDaiVan,
+    ]
+      .filter((value) => value)
+      .join(" + ");
+
     let chinhTinhTamHopCungMenh = [
       getSao(viToEnData["Mệnh"], thapNhiCung, true).chinhTinh,
       getSao(viToEnData["Tài Bạch"], thapNhiCung, true).chinhTinh,
@@ -902,8 +933,29 @@ $(document).ready(function () {
     } = Meaning of the energy combinations within (Trine of Destiny Point + Trine of Identity Point). The Identity Point is concurrently held by ${cungChuThan} Point`;
     let secondSection = "";
     if (!tamHopThanIndex) {
-      secondSection = `Major Energies: ${cungCach[0]} + ${chinhTinhTamHopCungMenh}\nAuxiliary Energies: ${phuTinhTamHopCungMenh}`;
+      secondSection = `Major Energies: ${
+        cungCach[0]
+      } + ${chinhTinhTamHopCungMenh}${
+        tangVan ? `+ ${chinhTinhDaiVanMenh}` : ""
+      }\nAuxiliary Energies: ${phuTinhTamHopCungMenh}${
+        tangVan ? `+ ${phuTinhDaiVanMenh}` : ""
+      }`;
     } else {
+      let chinhTinhDaiVanThan = [
+        getSao(tamHopCungAnThan[0], thapNhiCung, true).chinhTinhDaiVan,
+        getSao(tamHopCungAnThan[1], thapNhiCung, true).chinhTinhDaiVan,
+        getSao(tamHopCungAnThan[2], thapNhiCung, true).chinhTinhDaiVan,
+      ]
+        .filter((value) => value)
+        .join(" + ");
+      let phuTinhDaiVanThan = [
+        getSao(tamHopCungAnThan[0], thapNhiCung, true).phuTinhDaiVan,
+        getSao(tamHopCungAnThan[1], thapNhiCung, true).phuTinhDaiVan,
+        getSao(tamHopCungAnThan[2], thapNhiCung, true).phuTinhDaiVan,
+      ]
+        .filter((value) => value)
+        .join(" + ");
+
       let chinhTinhTamHopCungThan = [
         getSao(tamHopCungAnThan[0], thapNhiCung, true).chinhTinh,
         getSao(tamHopCungAnThan[1], thapNhiCung, true).chinhTinh,
@@ -919,7 +971,17 @@ $(document).ready(function () {
         .filter((value) => value)
         .join(" + ");
       getSao(tamHopCungAnThan[2], thapNhiCung).phuTinh;
-      secondSection = `Trine of Destiny Point:\nMajor Energies: ${cungCach[0]} + ${chinhTinhTamHopCungMenh}\nAuxiliary Energies: ${phuTinhTamHopCungMenh}\nTrine of Identity Point:\nChính tinh: Dạng ${cungCachThan} + ${chinhTinhTamHopCungThan}\nPhụ tinh: ${phuTinhTamHopCungThan}
+      secondSection = `Trine of Destiny Point:\nMajor Energies: ${
+        cungCach[0]
+      } + ${chinhTinhTamHopCungMenh}${
+        tangVan ? `+ ${chinhTinhDaiVanMenh}` : ""
+      }\nAuxiliary Energies: ${phuTinhTamHopCungMenh}${
+        tangVan ? `+ ${phuTinhDaiVanMenh}` : ""
+      }\nTrine of Identity Point:\nChính tinh: Dạng ${cungCachThan} + ${chinhTinhTamHopCungThan}${
+        tangVan ? `+ ${chinhTinhDaiVanThan}` : ""
+      }\nPhụ tinh: ${phuTinhTamHopCungThan}${
+        tangVan ? `+ ${phuTinhDaiVanThan}` : ""
+      }
       `;
     }
     return firstSection + "\n" + secondSection;
@@ -950,7 +1012,7 @@ $(document).ready(function () {
       case "Giáp":
         return `${ten}’s Body/Identity Wood Yang - Represented by big trees, plant
 Observed Tendencies of Proactive Body/Identity Wood Yang:
-    Energy & Endurance: 
+    Energy: 
 Often appear healthy, with vigorous vitality like a great tree, abundant energy, always tending to grow upwards.
 Good endurance under pressure, very steadfast, straightforward, difficult to subdue or bend. Rarely complain.
     Psychology & Behavior: 
@@ -964,7 +1026,7 @@ Can be autocratic, lack tact, disregard others' feelings.
 When facing excessive pressure , may "break" rather than "bend". Prone to issues with the liver, gallbladder, head, neck, and shoulders.
 
 Observed Tendencies of Passive Body/Identity Wood Yang:
-    Energy & Endurance: 
+    Energy: 
 Feel their energy is insufficient, like a weak sapling or a large tree lacking nutrients, lacking the strength to surge upwards. Easily fatigued.
 Lower endurance under pressure than Strong Jia Wood, easily feel overwhelmed, difficult to withstand.
     Psychology & Behavior: 
@@ -980,7 +1042,7 @@ Can achieve success through persistent learning or the help of others.
       case "Ất":
         return `${ten}’s Body/Identity Wood Yin - Represented by Grass, Vines, Flowers, Leaves…
 Observed Tendencies of Proactive Body/Identity Wood Yin:
-    Energy & Endurance: 
+    Energy: 
 Resilient, flexible energy, enduring vitality like weeds or vines.
 Good endurance in harsh environments due to adaptability, ability to maneuver, avoiding direct confrontation. Possess underlying persistence.
     Psychology & Behavior: 
@@ -994,7 +1056,7 @@ Can be somewhat scheming, opportunistic, or emotionally weak.
 Sometimes lack straightforwardness and integrity.
 
 Observed Tendencies of Passive Body/Identity Wood Yi:
-    Energy & Endurance: 
+    Energy: 
 Feel their energy is very weak, like flowers and grass that easily wither, a dried-up vine, lacking vitality.
 Extremely poor endurance under pressure, very easily harmed by the surrounding environment 
 Health is very sensitive, prone to issues with the liver, gallbladder, digestive system, autonomic nervous system. 
@@ -1010,7 +1072,7 @@ Success often comes from the help and protection of others or a favorable enviro
       case "Bính":
         return `${ten}’s Body/Identity Fire Yang - Represented by: The Sun, sunlight, solar energy, thunderbolts…
 Observed Tendencies of Proactive Body/Identity Fire Yang:
-    Energy & Endurance:
+    Energy:
 Often appear very healthy, full of energy, lively, and enthusiastic like the brilliant sun.
 Good endurance for high-intensity, vibrant work, enjoy activity. Rarely seem lethargic.
 Optimistic spirit, radiate positive energy.
@@ -1025,7 +1087,7 @@ Can be impulsive, reckless, disregarding details or consequences.
 Overly frank words can offend others.
 
 Observed Tendencies of Passive Body/Identity Fire Yang:
-    Energy & Endurance:
+    Energy:
 Feel their energy is unstable, sometimes bright, sometimes dim like the sun obscured by clouds, easily exhausted, lacking their usual enthusiasm.
 Lower endurance under pressure, easily stressed, lose direction.
     Psychology & Behavior:
@@ -1040,7 +1102,7 @@ Can achieve success through persistent study or good cooperation.`;
       case "Đinh":
         return `${ten}’s Body/Identity Fire Yin - Represented by: Lamps, candles, forge fire, volcanoes, household fire…
 Observed Tendencies of Proactive Body/Identity Fire Yin:
-    Energy & Endurance:
+    Energy:
 Warm, focused, and enduring energy like a brightly burning lamp flame. Not overly ostentatious but possess good endurance.
 Good endurance for work requiring meticulousness, persistence, and deep thought.
     Psychology & Behavior:
@@ -1054,7 +1116,7 @@ Can be somewhat slow, indecisive due to overthinking.
 Sometimes difficult to approach, reserved, or somewhat scheming. Can hold grudges.
 
 Observed Tendencies of Passive Body/Identity Fire Yin:
-    Energy & Endurance:
+    Energy:
 Feel their energy is weak, like a flickering lamp in the wind, lacking warmth, easily feel pessimistic, cold.
 Very poor endurance under pressure, easily strongly affected by the environment or others.
     Psychology & Behavior:
@@ -1069,7 +1131,7 @@ Can succeed through the help of benefactors or by persistently pursuing a narrow
       case "Mậu":
         return `${ten}’s Body/Identity Earth Yang - Represented by: Mountains, large tracts of land, walls, structures built from earth, stone, sand, gravel…
 Observed Tendencies of Proactive Body/Identity Earth Yang
-    Energy & Endurance:
+    Energy:
 Often appear solid and strong like a mountain, with stable and enduring energy.
 Possess extraordinary endurance under work pressure and harsh environments. Very steadfast, hard to sway, rarely complain.
     Psychology & Behavior:
@@ -1083,7 +1145,7 @@ May become overly controlling, patriarchal, lacking flexibility.
 Sometimes conceal emotions, find it difficult to show gentleness.
 
 Observed Tendencies of Passive Body/Identity Earth Yang
-    Energy & Endurance:
+    Energy:
 Although they may appear solid externally, internally they feel their energy is insufficient, easily overloaded when facing continuous or excessive pressure.
 Poor endurance under pressure, prone to silent stress and anxiety.
 Health may be sensitive in the digestive system and muscles.
@@ -1099,7 +1161,7 @@ Can achieve success through persistent learning or good cooperation with others.
       case "Kỷ":
         return `${ten}’s Body/Identity Earth Yin - Represented by: The Earth (as a planet), mineral soil, agricultural/forestry land, clouds in the sky…
 Observed Tendencies of Proactive Body/Identity Earth Yin:
-    Energy & Endurance:
+    Energy:
 Often possess resilient health, flexible and enduring energy like fertile soil.
 Good endurance in a flexible manner, adept at adapting to pressure and changing environments. Rarely confront directly but have underlying endurance.
     Psychology & Behavior:
@@ -1113,7 +1175,7 @@ Sometimes lack foresight, or are not decisive enough, stance changes easily.
 May take on too many petty tasks.
 
 Observed Tendencies of Passive Body/Identity Earth Yin:
-    Energy & Endurance:
+    Energy:
 Often feel their energy is erratic, easily fatigued, low endurance. Like barren or overly damp soil, lacking vitality.
 Poor endurance under pressure, easily stressed and anxious, especially with tasks requiring high responsibility or direct confrontation.
     Psychology & Behavior:
@@ -1128,7 +1190,7 @@ Can be very persistent in tasks requiring meticulousness and care when in a favo
       case "Canh":
         return `${ten}’s Body/Identity Metal Yang - Represented by: Hard, raw Metal - Swords, axes, iron, steel, ore…
 Observed Tendencies of Proactive Body/Identity Metal Yang:
-    Energy & Endurance:
+    Energy:
 Often appear healthy, tough, strong energy, resolute like solid Metal.
 Possess extraordinary endurance under pressure and difficulties; very steadfast, not easily deterred. Have persistence in action.
     Psychology & Behavior:
@@ -1142,7 +1204,7 @@ Actions can be hasty, ill-considered, easily causing conflict or hurting others.
 Words are overly blunt and cutting. Prone to issues with lungs, large intestine, bones, and joints.
 
 Observed Tendencies of Passive Body/Identity Metal Yang:
-    Energy & Endurance:
+    Energy:
 Feel their energy is not strong enough, like weak Metal, easily deformed or broken, lacking their inherent toughness.
 Lower endurance under pressure, easily feel tired, lack willpower when facing difficulties.
 Overall health may be weaker, need to pay attention to the respiratory system and bones.
@@ -1158,7 +1220,7 @@ Can achieve success through persistent effort or timely support.`;
       case "Tân":
         return `${ten}’s Body/Identity Metal Yin - Represented by: Soft or refined metal (precious metals) - Gold, silver, jewels…
 Observed Tendencies of Proactive Body/Identity Metal Yin:
-    Energy & Endurance:
+    Energy:
 Refined, sharp energy, possessing intrinsic value like precious gems. Good endurance for work requiring meticulousness and precision.
 Good endurance for intellectual or artistic work, maintain stability and long-term value.
     Psychology & Behavior:
@@ -1172,7 +1234,7 @@ Very sensitive to words, easily offended pride, hurt self-esteem.
 Can be somewhat cold, aloof, overly focused on external appearance.
 
 Observed Tendencies of Passive Body/Identity Metal Yin:
-    Energy & Endurance:
+    Energy:
 Feel their energy is weak, like tarnished precious metal, easily broken, lacking shine and value.
 Very poor endurance under pressure, extremely sensitive to the surrounding environment.
     Psychology & Behavior:
@@ -1188,7 +1250,7 @@ Success often comes from a protected environment or developing special talents.`
       case "Nhâm":
         return `${ten}’s Body/Identity Water Yang - Represented by: Moving water - Oceans, large rivers, streams, waterfalls…
 Observed Tendencies of Proactive Body/Identity Water Yang:
-    Energy & Endurance:
+    Energy:
 Often appear healthy, abundant energy like the great ocean, very dynamic and lively.
 Good endurance with change and fluctuation, high adaptability. Not afraid of difficulties and challenges.
     Psychology & Behavior:
@@ -1202,7 +1264,7 @@ Can be arbitrary, lack discipline, easily change goals, find it hard to persist 
 Fierce, unpredictable temperament, may harm others without realizing it.
 
 Observed Tendencies of Passive Body/Identity Water Yang:
-    Energy & Endurance:
+    Energy:
 Feel their energy is not strong enough, like a shallow river or calm sea, lacking vitality, easily fatigued when facing fluctuations.
 Lower endurance under pressure than Proactive Water Yang, easily feel directionless, exhausted.
     Psychology & Behavior:
@@ -1217,7 +1279,7 @@ Can achieve success through persistent study or following correct guidance.`;
       case "Quý":
         return `${ten}’s Body/Identity Water Yin - Represented by: Still water - Rain, dew, ponds, lakes…
 Observed Tendencies of Proactive Body/Identity Water Yin:
-    Energy & Endurance:
+    Energy:
 Gentle but persistent energy like steady rain soaking in, possess latent vitality.
 Good endurance for work requiring patience, deep penetration, good at enduring silently.
     Psychology & Behavior:
@@ -1231,7 +1293,7 @@ Can be somewhat scheming, hard to predict, or lack decisiveness in major actions
 Easily swayed by emotions. Can be overly dependent in relationships.
 
 Observed Tendencies of Passive Body/Identity Water Yin:
-    Energy & Endurance:
+    Energy:
 Feel their energy is very weak, like easily evaporating morning dew, a single drop of water, easily depleted.
 Extremely poor endurance under pressure, very easily hurt by the environment.
     Psychology & Behavior:
