@@ -938,12 +938,12 @@ $(document).ready(function () {
     } = Meaning of the energy combinations within (Trine of Destiny Point + Trine of Identity Point) + X.Energies within foundation information's points. The Identity Point is concurrently held by ${cungChuThan} Point`;
     let secondSection = "";
     if (!tamHopThanIndex) {
-      secondSection = `Major Energies: ${
-        cungCach[0]
-      } + ${chinhTinhTamHopCungMenh}${
-        tangVan ? `+ ${chinhTinhDaiVanMenh}` : ""
+      secondSection = `Major Energies: ${cungCach[0]}${
+        chinhTinhTamHopCungMenh ? ` + ${chinhTinhTamHopCungMenh}` : ""
+      }${
+        tangVan && chinhTinhDaiVanMenh ? ` + ${chinhTinhDaiVanMenh}` : ""
       }\nAuxiliary Energies: ${phuTinhTamHopCungMenh}${
-        tangVan ? `+ ${phuTinhDaiVanMenh}` : ""
+        tangVan && phuTinhDaiVanMenh ? ` + ${phuTinhDaiVanMenh}` : ""
       }`;
     } else {
       let chinhTinhDaiVanThan = [
@@ -976,16 +976,18 @@ $(document).ready(function () {
         .filter((value) => value)
         .join(" + ");
       getSao(tamHopCungAnThan[2], thapNhiCung).phuTinh;
-      secondSection = `Trine of Destiny Point:\nMajor Energies: ${
-        cungCach[0]
-      } + ${chinhTinhTamHopCungMenh}${
-        tangVan ? `+ ${chinhTinhDaiVanMenh}` : ""
+      secondSection = `Trine of Destiny Point:\nMajor Energies: ${cungCach[0]}${
+        chinhTinhTamHopCungMenh ? `+ ${chinhTinhTamHopCungMenh}` : ""
+      }${
+        tangVan && chinhTinhDaiVanMenh ? ` + ${chinhTinhDaiVanMenh}` : ""
       }\nAuxiliary Energies: ${phuTinhTamHopCungMenh}${
-        tangVan ? `+ ${phuTinhDaiVanMenh}` : ""
-      }\nTrine of Identity Point:\nChính tinh: Dạng ${cungCachThan} + ${chinhTinhTamHopCungThan}${
-        tangVan ? `+ ${chinhTinhDaiVanThan}` : ""
+        tangVan && phuTinhDaiVanMenh ? ` + ${phuTinhDaiVanMenh}` : ""
+      }\nTrine of Identity Point:\nChính tinh: Dạng ${cungCachThan}${
+        chinhTinhTamHopCungThan ? ` + ${chinhTinhTamHopCungThan}` : ""
+      }${
+        tangVan && chinhTinhDaiVanThan ? ` + ${chinhTinhDaiVanThan}` : ""
       }\nPhụ tinh: ${phuTinhTamHopCungThan}${
-        tangVan ? `+ ${phuTinhDaiVanThan}` : ""
+        tangVan && phuTinhDaiVanThan ? ` + ${phuTinhDaiVanThan}` : ""
       }
       `;
     }
