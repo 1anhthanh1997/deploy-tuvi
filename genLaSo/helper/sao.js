@@ -143,7 +143,7 @@ const saoDaLa = new Sao(51, "Shield/Passive/Trap", "K", 11);
 const saoKinhDuong = new Sao(52, "Spear/Active/Hit", "K", 11);
 
 //    Địa không - Địa kiếp
-const saoDiaKhong = new Sao(53, "Infinite/Unpredictable", "H", 11);
+const saoDiaKhong = new Sao(53, "Black Swan", "H", 11);
 const saoDiaKiep = new Sao(54, "Disaster Star", "H", 11);
 
 //    Hỏa tinh - Linh tinh
