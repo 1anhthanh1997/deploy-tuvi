@@ -773,7 +773,7 @@ $(document).ready(function () {
     });
     const firstSection = `Destiny Analysis Chart for ${ten}, ${
       namNu == "Nam" ? "male" : "female"
-    } born in ${namDuong}`;
+    } born in ${namDuong}\n${getDayYangYinInfo(canNamTen, ten)}`;
 
     const secondSection = `${tamHopCungSaoText}`;
     const contentCopy = `${firstSection}\n${baseInfoText}\n${secondSection}`;
