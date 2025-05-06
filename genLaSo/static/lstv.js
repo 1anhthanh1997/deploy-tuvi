@@ -1062,7 +1062,7 @@ Easily become overly reliant, lack their own opinions, unstable stance, "bend wi
 Can be somewhat scheming, opportunistic, or emotionally weak.
 Sometimes lack straightforwardness and integrity.
 
-Observed Tendencies of Passive Body/Identity Wood Yi:
+Observed Tendencies of Passive Body/Identity Wood Yin:
     Energy: 
 Feel their energy is very weak, like flowers and grass that easily wither, a dried-up vine, lacking vitality.
 Extremely poor endurance under pressure, very easily harmed by the surrounding environment 
