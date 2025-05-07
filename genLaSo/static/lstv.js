@@ -744,7 +744,7 @@ $(document).ready(function () {
 
   function copyContent(laso) {
     const { thienBan, thapNhiCung } = laso;
-    const { namDuong, canNamTen, ten, chiNamTen, namNu } = thienBan;
+    const { namDuong, canNamTen, ten, chiNamTen, namNu, canNgayTen } = thienBan;
     thapNhiCung.shift();
     const sapXepCungTheoCungSo = [...thapNhiCung].sort(
       (a, b) => a.cungSo - b.cungSo
@@ -773,7 +773,7 @@ $(document).ready(function () {
     });
     const firstSection = `Destiny Analysis Chart for ${ten}, ${
       namNu == "Nam" ? "male" : "female"
-    } born in ${namDuong}\n${getDayYangYinInfoBasic(canNamTen, ten)}`;
+    } born in ${namDuong}\n${getDayYangYinInfoBasic(canNgayTen, ten)}`;
 
     const secondSection = `${tamHopCungSaoText}`;
     const contentCopy = `${firstSection}\n${baseInfoText}\n${secondSection}`;
@@ -935,7 +935,11 @@ $(document).ready(function () {
       tangVan ? "'s" : ""
     } (born ${namDuong}) ${
       tangVan ? `for the ${getNumberIndex(daiVanIndex)} Decade Timeline` : ""
-    } = Meaning of the energy combinations within (Trine of Destiny Point + Trine of Identity Point) + X.Energies within foundation information's points. The Identity Point is concurrently held by ${cungChuThan} Point`;
+    } = Meaning of the energy combinations within (Trine of Destiny Point + Trine of Identity Point)${
+      tangVan
+        ? ` + X.Energies within foundation information's points. The Identity Point is concurrently held by ${cungChuThan} Point`
+        : ""
+    }`;
     let secondSection = "";
     if (!tamHopThanIndex) {
       secondSection = `Major Energies: ${cungCach[0]}${
