@@ -1,3 +1,5 @@
+const { SolarDate, LunarDate } = require("@nghiavuive/lunar_date_vi");
+
 function jdFromDate(dd, mm, yy) {
   let a = Math.floor((14 - mm) / 12);
   let y = yy + 4800 - a;
@@ -151,80 +153,94 @@ function S2L(dd, mm, yy, timeZone = 7) {
    * @returns {Array} [lunarDay, lunarMonth, lunarYear, lunarLeap]
    */
 
-  let dayNumber = jdFromDate(dd, mm, yy);
-  let k = Math.floor((dayNumber - 2415021.076998695) / 29.530588853);
-  let monthStart = getNewMoonDay(k + 1, timeZone);
+  const solar = new SolarDate({ day: dd, month: mm, year: yy }); // Tháng 1 là February
+  const lunar = solar.toLunarDate();
+  // let dayNumber = jdFromDate(dd, mm, yy);
+  // let k = Math.floor((dayNumber - 2415021.076998695) / 29.530588853);
+  // let monthStart = getNewMoonDay(k + 1, timeZone);
 
-  if (monthStart > dayNumber) {
-    monthStart = getNewMoonDay(k, timeZone);
-  }
+  // if (monthStart > dayNumber) {
+  //   monthStart = getNewMoonDay(k, timeZone);
+  // }
 
-  let a11 = getLunarMonth11(yy, timeZone);
-  let b11 = a11;
-  let lunarYear;
+  // let a11 = getLunarMonth11(yy, timeZone);
+  // let b11 = a11;
+  // let lunarYear;
 
-  if (a11 >= monthStart) {
-    lunarYear = yy;
-    a11 = getLunarMonth11(yy - 1, timeZone);
-  } else {
-    lunarYear = yy + 1;
-    b11 = getLunarMonth11(yy + 1, timeZone);
-  }
+  // if (a11 >= monthStart) {
+  //   lunarYear = yy;
+  //   a11 = getLunarMonth11(yy - 1, timeZone);
+  // } else {
+  //   lunarYear = yy + 1;
+  //   b11 = getLunarMonth11(yy + 1, timeZone);
+  // }
 
-  let lunarDay = dayNumber - monthStart + 1;
-  let diff = Math.floor((monthStart - a11) / 29);
-  let lunarLeap = 0;
-  let lunarMonth = diff + 11;
+  // let lunarDay = dayNumber - monthStart + 1;
+  // let diff = Math.floor((monthStart - a11) / 29);
+  // let lunarLeap = 0;
+  // let lunarMonth = diff + 11;
 
-  if (b11 - a11 > 365) {
-    let leapMonthDiff = getLeapMonthOffset(a11, timeZone);
-    if (diff >= leapMonthDiff) {
-      lunarMonth = diff + 10;
-      if (diff === leapMonthDiff) {
-        lunarLeap = 1;
-      }
-    }
-  }
+  // if (b11 - a11 > 365) {
+  //   let leapMonthDiff = getLeapMonthOffset(a11, timeZone);
+  //   if (diff >= leapMonthDiff) {
+  //     lunarMonth = diff + 10;
+  //     if (diff === leapMonthDiff) {
+  //       lunarLeap = 1;
+  //     }
+  //   }
+  // }
 
-  if (lunarMonth > 12) {
-    lunarMonth -= 12;
-  }
+  // if (lunarMonth > 12) {
+  //   lunarMonth -= 12;
+  // }
 
-  if (lunarMonth >= 11 && diff < 4) {
-    lunarYear -= 1;
-  }
+  // if (lunarMonth >= 11 && diff < 4) {
+  //   lunarYear -= 1;
+  // }
+  let lunarDay = lunar.day;
+  let lunarMonth = lunar.month;
+  let lunarYear = lunar.year;
+  let lunarLeap = lunar.leap_month;
 
   return [lunarDay, lunarMonth, lunarYear, lunarLeap];
 }
 
 function L2S(lunarD, lunarM, lunarY, lunarLeap, tZ = 7) {
-  let a11, b11;
-  if (lunarM < 11) {
-    a11 = getLunarMonth11(lunarY - 1, tZ);
-    b11 = getLunarMonth11(lunarY, tZ);
-  } else {
-    a11 = getLunarMonth11(lunarY, tZ);
-    b11 = getLunarMonth11(lunarY + 1, tZ);
-  }
+  const lunar = new LunarDate({
+    day: lunarD,
+    month: lunarM,
+    year: lunarY,
+    isLeapMonth: lunarLeap ? true : false,
+  });
+  lunar.init();
 
-  let k = Math.floor(0.5 + (a11 - 2415021.076998695) / 29.530588853);
-  let off = lunarM - 11;
-  if (off < 0) off += 12;
-
-  if (b11 - a11 > 365) {
-    let leapOff = getLeapMonthOffset(a11, tZ);
-    let leapM = leapOff - 2;
-    if (leapM < 0) leapM += 12;
-
-    if (lunarLeap !== 0 && lunarM !== leapM) {
-      return [0, 0, 0]; // Invalid leap month
-    } else if (lunarLeap !== 0 || off >= leapOff) {
-      off += 1;
-    }
-  }
-
-  let monthStart = getNewMoonDay(k + off, tZ);
-  return jdToDate(monthStart + lunarD - 1);
+  // Chuyển sang dương lịch
+  const solar = lunar.toSolarDate();
+  let data = solar.get();
+  return [data.day, data.month, data.year];
+  // let a11, b11;
+  // if (lunarM < 11) {
+  //   a11 = getLunarMonth11(lunarY - 1, tZ);
+  //   b11 = getLunarMonth11(lunarY, tZ);
+  // } else {
+  //   a11 = getLunarMonth11(lunarY, tZ);
+  //   b11 = getLunarMonth11(lunarY + 1, tZ);
+  // }
+  // let k = Math.floor(0.5 + (a11 - 2415021.076998695) / 29.530588853);
+  // let off = lunarM - 11;
+  // if (off < 0) off += 12;
+  // if (b11 - a11 > 365) {
+  //   let leapOff = getLeapMonthOffset(a11, tZ);
+  //   let leapM = leapOff - 2;
+  //   if (leapM < 0) leapM += 12;
+  //   if (lunarLeap !== 0 && lunarM !== leapM) {
+  //     return [0, 0, 0]; // Invalid leap month
+  //   } else if (lunarLeap !== 0 || off >= leapOff) {
+  //     off += 1;
+  //   }
+  // }
+  // let monthStart = getNewMoonDay(k + off, tZ);
+  // return jdToDate(monthStart + lunarD - 1);
 }
 
 module.exports = {
