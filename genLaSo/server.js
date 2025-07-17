@@ -118,13 +118,10 @@ app.get("/api/get-bazi", (req, res) => {
 });
 // Serve the main HTML file
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "test.html"));
 });
 
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
-
-
-

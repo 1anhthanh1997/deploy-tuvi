@@ -32,7 +32,7 @@ const convertHourInfo = (baseInfo) => {
       duongLich
     );
   }
-  gioSinh = getGioSinhIndex(gioSinh);
+  // gioSinh = getGioSinhIndex(gioSinh);
   baseInfo.gioSinh = gioSinh;
   baseInfo.ngaySinh = ngaySinh;
   baseInfo.thangSinh = thangSinh;
@@ -92,8 +92,9 @@ const getBaziData = (baseInfo) => {
   let ngayAmTen = canNgayTen + " " + chiNgayTen;
   let thangAmTen = canThangTen + " " + chiThangTen;
   let namAmTen = canNamTen + " " + chiNamTen;
-  let canThaiNguyen = canThang + 1;
+  let canThaiNguyen = getIndex(canThang + 1, 10);
   let chiThaiNguyen = getIndex(chiThang + 5);
+  console.log(canThaiNguyen, chiThaiNguyen);
   let canThaiNguyenTen = thienCan[canThaiNguyen].tenCan;
   let chiThaiNguyenTen = diaChi[chiThaiNguyen].tenChi;
   let canThaiTuc = hopCan(canNgay);
@@ -105,7 +106,6 @@ const getBaziData = (baseInfo) => {
   let canCungMenh = getIndex(canThangGieng + chiCungMenh - 1, 10);
   let canCungMenhTen = thienCan[canCungMenh].tenCan;
   let chiCungMenhTen = diaChi[chiCungMenh].tenChi;
-
   return {
     hour: {
       name: gioAmTen,
@@ -133,7 +133,7 @@ const getBaziData = (baseInfo) => {
         chiThang + 2,
         canNam,
         chiNam
-      ),
+      ).join(", "),
     },
     day: {
       name: ngayAmTen,
@@ -153,7 +153,7 @@ const getBaziData = (baseInfo) => {
         chiThang + 2,
         canNam,
         chiNam
-      ),
+      ).join(", "),
     },
     month: {
       name: thangAmTen,
@@ -181,7 +181,7 @@ const getBaziData = (baseInfo) => {
         chiThang + 2,
         canNam,
         chiNam
-      ),
+      ).join(", "),
     },
     year: {
       name: namAmTen,
@@ -205,7 +205,7 @@ const getBaziData = (baseInfo) => {
         chiThang + 2,
         canNam,
         chiNam
-      ),
+      ).join(", "),
     },
     thaiNguyen: {
       name: canThaiNguyenTen + " " + chiThaiNguyenTen,

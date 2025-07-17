@@ -11,7 +11,7 @@
     <link href="/static/style.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.11/jsrender.min.js"></script>
-    <script src="/static/lstv.js"></script>
+    <script src="/static/lstv_2.js"></script>
   </head>
 
   <body>
@@ -218,340 +218,731 @@
       </div>
     </div>
 
-    <div class="anlaso laso border" id="laso">
-      <div class="grid">
-        <div class="col col-3">
-          <div class="container">
-            <div class="grid diaCung border-bottom" cung-id="6" id="cungTy5">
-              Tỵ
-            </div>
-            <div class="grid diaCung border-bottom" cung-id="5" id="cungThin">
-              Thìn
-            </div>
-            <div
-              class="grid diaCung border-bottom inset-border"
-              cung-id="4"
-              id="cungMao"
-            >
-              Mão
-            </div>
-            <div class="grid diaCung" cung-id="3" id="cungDan">Dần</div>
-          </div>
-        </div>
-        <div class="col col-6">
-          <div class="container">
-            <div class="grid">
-              <div
-                class="col col-6 diaCung border-left"
-                cung-id="7"
-                id="cungNgo"
+    <!-- Three Tables Section -->
+    <div class="container" style="margin: 20px auto; max-width: 1200px">
+      <!-- Table 1: Thông tin Âm - Dương Lịch -->
+      <div style="margin-bottom: 30px">
+        <h3 style="text-align: center; margin-bottom: 15px; color: #333">
+          Bảng: Thông tin Âm - Dương Lịch
+        </h3>
+        <table
+          style="width: 100%; border-collapse: collapse; border: 2px solid #333"
+        >
+          <thead>
+            <tr style="background-color: #f0f0f0">
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
               >
-                Ngọ
-              </div>
-              <div
-                class="col col-6 diaCung border-left"
-                cung-id="8"
-                id="cungMui"
+                Tên cột
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
               >
-                Mùi
-              </div>
-            </div>
-
-            <div
-              class="grid thienBan border-top border-left border-bottom border-right"
-              id="thienBan"
-            ></div>
-            <div class="grid">
-              <div
-                class="col col-6 diaCung border-left"
-                cung-id="2"
-                id="cungSuu"
+                Năm
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
               >
-                Sửu
-              </div>
-              <div
-                class="col col-6 diaCung border-left"
-                cung-id="1"
-                id="cungTy1"
-              ></div>
-            </div>
-          </div>
-        </div>
-        <div class="col col-3">
-          <div class="container">
-            <div
-              class="grid diaCung border-left border-bottom"
-              cung-id="9"
-              id="cungThan"
-            >
-              Thân
-            </div>
-            <div class="grid diaCung border-bottom" cung-id="10" id="cungDau">
-              Dậu
-            </div>
-            <div class="grid diaCung border-bottom" cung-id="11" id="cungTuat">
-              Tuất
-            </div>
-            <div class="grid diaCung border-left" cung-id="12" id="cungHoi">
-              Hợi
-            </div>
-          </div>
-        </div>
+                Tháng
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Ngày
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Giờ
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Dương lịch
+              </td>
+              <td
+                id="namDuongLich"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                1997
+              </td>
+              <td
+                id="thangDuongLich"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                8
+              </td>
+              <td
+                id="ngayDuongLich"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                16
+              </td>
+              <td
+                id="gioDuongLich"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Thân
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Âm lịch
+              </td>
+              <td
+                id="namAmLich"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                1997
+              </td>
+              <td
+                id="thangAmLich"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                7
+              </td>
+              <td
+                id="ngayAmLich"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                14
+              </td>
+              <td
+                id="gioAmLich"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Thân
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Ngày âm
+              </td>
+              <td
+                id="tenNamAm"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Đinh Sửu
+              </td>
+              <td
+                id="tenThangAm"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Mậu Thân
+              </td>
+              <td
+                id="tenNgayAm"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Canh Dần
+              </td>
+              <td
+                id="tenGioAm"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Giáp Thân
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Nạp âm
+              </td>
+              <td
+                id="napAmNam"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                GIÁNG HẠ THỦY
+              </td>
+              <td
+                id="napAmThang"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                ĐẠI TRẠCH THỔ
+              </td>
+              <td
+                id="napAmNgay"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                TÒNG BÁ MỘC
+              </td>
+              <td
+                id="napAmGio"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                TRUYỀN TRUNG THỦY
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Table 2: Thông tin Bát Tự -->
+      <div style="margin-bottom: 30px">
+        <h3 style="text-align: center; margin-bottom: 15px; color: #333">
+          Bảng: Thông tin Bát Tự
+        </h3>
+        <table
+          style="width: 100%; border-collapse: collapse; border: 2px solid #333"
+        >
+          <thead>
+            <tr style="background-color: #e8f4f8">
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Tên cột
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Bát tự
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Nạp âm
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Hành can
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Hành chi
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Năm
+              </td>
+              <td
+                id="tenNamBatTu"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Đinh Sửu
+              </td>
+              <td
+                id="napAmNamBatTu"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                GIÁNG HẠ THỦY
+              </td>
+              <td
+                id="nguHanhCanNamBatTu"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                HỎA
+              </td>
+              <td
+                id="nguHanhChiNamBatTu"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                THỔ
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Tháng
+              </td>
+              <td
+                id="tenThangBatTu"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Mậu Thân
+              </td>
+              <td
+                id="napAmThangBatTu"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                ĐẠI TRẠCH THỔ
+              </td>
+              <td
+                id="nguHanhCanThangBatTu"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                THỔ
+              </td>
+              <td
+                id="nguHanhChiThangBatTu"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                KIM
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Ngày
+              </td>
+              <td
+                id="tenNgayBatTu"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Canh Dần
+              </td>
+              <td
+                id="napAmNgayBatTu"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                TÒNG BÁ MỘC
+              </td>
+              <td
+                id="nguHanhCanNgayBatTu"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                KIM
+              </td>
+              <td
+                id="nguHanhChiNgayBatTu"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                MỘC
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Giờ
+              </td>
+              <td
+                id="tenGioBatTu"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Giáp Thân
+              </td>
+              <td
+                id="napAmGioBatTu"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                TRUYỀN TRUNG THỦY
+              </td>
+              <td
+                id="nguHanhCanGioBatTu"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                MỘC
+              </td>
+              <td
+                id="nguHanhChiGioBatTu"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                KIM
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Thai nguyên
+              </td>
+              <td
+                id="tenThaiNguyen"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Kỷ Hợi
+              </td>
+              <td
+                id="napAmThaiNguyen"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                BÌNH ĐỊNH MỘC
+              </td>
+              <td
+                id="nguHanhCanThaiNguyen"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                THỔ
+              </td>
+              <td
+                id="nguHanhChiThaiNguyen"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                THỦY
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Thai tức
+              </td>
+              <td
+                id="tenThaiTuc"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Ất Hợi
+              </td>
+              <td
+                id="napAmThaiTuc"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                SƠN ĐẦU HỎA
+              </td>
+              <td
+                id="nguHanhCanThaiTuc"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                MỘC
+              </td>
+              <td
+                id="nguHanhChiThaiTuc"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                THỦY
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Cung Mệnh
+              </td>
+              <td
+                id="tenCungMenh"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Đinh Mùi
+              </td>
+              <td
+                id="napAmCungMenh"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                THIÊN HÀ THỦY
+              </td>
+              <td
+                id="nguHanhCanCungMenh"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                HỎA
+              </td>
+              <td
+                id="nguHanhChiCungMenh"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                THỔ
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Table 3: Lá số Tứ Trụ -->
+      <div style="margin-bottom: 30px">
+        <h3 style="text-align: center; margin-bottom: 15px; color: #333">
+          Bảng: Lá số Tứ Trụ
+        </h3>
+        <table
+          style="width: 100%; border-collapse: collapse; border: 2px solid #333"
+        >
+          <thead>
+            <tr style="background-color: #f5f5f5">
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Tên cột
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Năm
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Tháng
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Ngày
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Giờ
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Tứ trụ
+              </td>
+              <td
+                id="tenNamTru"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Đinh Sửu
+              </td>
+              <td
+                id="tenThangTru"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Mậu Thân
+              </td>
+              <td
+                id="tenNgayTru"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Canh Dần
+              </td>
+              <td
+                id="tenGioTru"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Giáp Thân
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Can tàng
+              </td>
+              <td
+                id="canTangNam"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Kỷ - Tân - Quý
+              </td>
+              <td
+                id="canTangThang"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Canh - Nhâm - Mậu
+              </td>
+              <td
+                id="canTangNgay"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Giáp - Bính - Mậu
+              </td>
+              <td
+                id="canTangGio"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Canh - Nhâm - Mậu
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Thập thần
+              </td>
+              <td
+                id="thapThanNam"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Chính quan
+              </td>
+              <td
+                id="thapThanThang"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Thiên ấn
+              </td>
+              <td
+                id="thapThanNgay"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Nhật chủ
+              </td>
+              <td
+                id="thapThanGio"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Thiên tài
+              </td>
+            </tr>
+            <!-- <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Thập thần tàng
+              </td>
+              <td
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Chính ấn, Kiếp tài, Thương quan
+              </td>
+              <td
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Thiên ấn, Thực thần, Tỉ kiên
+              </td>
+              <td
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Thất sát, Thiên ấn, Thiên tài
+              </td>
+              <td
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Thiên ấn, Thực thần, Tỉ kiên
+              </td>
+            </tr> -->
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Thần sát
+              </td>
+              <td
+                id="thanSatNam"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Hoa cái, Thiên ất
+              </td>
+              <td
+                id="thanSatThang"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Dịch mã, Kim tỏa quan, Lộc thần, Vô tinh sát
+              </td>
+              <td
+                id="thanSatNgay"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Kiếp sát, Phú quý, Phú quý học đường, Thập linh
+              </td>
+              <td
+                id="thanSatGio"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Dịch mã, Lộc thần
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Trường sinh
+              </td>
+              <td
+                id="truongSinhNam"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Mộ
+              </td>
+              <td
+                id="truongSinhThang"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Lâm quan
+              </td>
+              <td
+                id="truongSinhNgay"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Tuyệt
+              </td>
+              <td
+                id="truongSinhGio"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              >
+                Lâm quan
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-
-    <div
-      style="display: flex; justify-content: center; margin: 20px; gap: 10px"
-    >
-      <button id="btn-copy-content" style="display: none">Copy content</button>
-      <button id="btn-download-content" style="display: none">Download</button>
-    </div>
-    <!-- <div id="note" style="display: none; margin: 20px; gap: 10px; text-align: left">
-      Note: <br />Các sao lưu niên: Bạch hổ, Đà la, Thiên khôi, Hóa lộc,
-      Lộc tồn, Thiên khốc, Thiên mã, Kình dương, Thái tuế, Hóa
-      quyền, Hóa khoa, Tang môn, Hóa kỵ, Thiên việt, Đào hoa, Thiên
-      hư, Hồng loan</br> Link: https://www.youtube.com/watch?v=4iuLEtCN7DM&ab_channel=T%E1%BB%ADViDi%E1%BB%87uXu%C3%A2n
-    </div> -->
-
-    <div style="display: flex; justify-content: center; margin: 40px">
-      <p id="contentCopy" style="white-space: pre-wrap; text-align: left"></p>
-    </div>
-
-    <!-- New table section -->
-    <div class="container" style="margin: 20px auto; max-width: 1200px;">
-      <h2 style="text-align: center; margin-bottom: 20px;">Thông tin chi tiết</h2>
-      
-      <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
-        <thead>
-          <tr style="background-color: #f5f5f5;">
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Thông tin</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Giá trị</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Mô tả</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="border: 1px solid #ddd; padding: 12px;">Họ tên</td>
-            <td style="border: 1px solid #ddd; padding: 12px;" id="table-hoten">-</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Tên đầy đủ của người xem</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid #ddd; padding: 12px;">Ngày sinh</td>
-            <td style="border: 1px solid #ddd; padding: 12px;" id="table-ngaysinh">-</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Ngày tháng năm sinh</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid #ddd; padding: 12px;">Giờ sinh</td>
-            <td style="border: 1px solid #ddd; padding: 12px;" id="table-giosinh">-</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Giờ sinh theo can chi</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid #ddd; padding: 12px;">Bát tự</td>
-            <td style="border: 1px solid #ddd; padding: 12px;" id="table-battu">-</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Tứ trụ mệnh</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid #ddd; padding: 12px;">Mệnh chủ</td>
-            <td style="border: 1px solid #ddd; padding: 12px;" id="table-menhchu">-</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Chủ mệnh trong tử vi</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid #ddd; padding: 12px;">Cục</td>
-            <td style="border: 1px solid #ddd; padding: 12px;" id="table-cuc">-</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Cục trong tử vi</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <!-- Additional table for astrological elements -->
-      <table style="width: 100%; border-collapse: collapse;">
-        <thead>
-          <tr style="background-color: #e8f4f8;">
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Ngũ hành</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Màu sắc</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Hướng</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Mùa</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="border: 1px solid #ddd; padding: 12px;">Kim</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Trắng, xám</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Tây</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Thu</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid #ddd; padding: 12px;">Thủy</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Đen, xanh dương</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Bắc</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Đông</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid #ddd; padding: 12px;">Hỏa</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Đỏ, cam</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Nam</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Hạ</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid #ddd; padding: 12px;">Thổ</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Vàng, nâu</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Trung tâm</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Chuyển mùa</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid #ddd; padding: 12px;">Mộc</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Xanh lá</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Đông</td>
-            <td style="border: 1px solid #ddd; padding: 12px;">Xuân</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <script id="cungDiaBan" type="text/x-jsrender">
-      <div class="grid cung-top">
-          <div class="col col-2 tooltips" title="Địa chi cung {{:cungTen}}">{{:cungTen}}</div>
-          <div class="col col-8">
-              <span class="cungChu">
-              {{:cungChu}}
-          </span> {{if cungThan == true}}
-              <span class="cungThan label">Thân</span> {{/if}}
-          </div>
-          <div class="col col-2 tooltips" title="Đại hạn {{:cungDaiHan-1}} - {{:(cungDaiHan+8)}}">{{:(cungDaiHan - 1)}}</div>
-      </div>
-      <div class="grid cung-middle">
-          <div class="chinhTinh">
-              {{for cungSao}} {{if saoLoai == 1 && saoID!==73 && saoID!==74 && saoID!==75}}
-              <li>{{:saoTen}}
-              </li>
-              {{/if}} {{/for}}
-          </div>
-
-          <div class="phuTinh">
-              <div class="saotot">
-                  {{for cungSao}} {{if vongTrangSinh === 0 && saoLoai !==1 && saoLoai < 10}}
-                  <div class="grid">
-                      <div class="{{:saoTen.includes("X.")? " de":saoTen.includes("Y.")? " year":saoTen.includes("M.")? " month":saoTen.includes("D.")? " day":""}}">
-                          {{:saoTen}}
-                      </div>
-                  </div>
-                  {{/if}} {{/for}}
-              </div>
-              <div class="saoxau">
-                  {{for cungSao}} {{if (vongTrangSinh === 0 && saoLoai !==1 && saoLoai > 10) ||saoID==73 || saoID==74 || saoID==75}}
-                  <div class="grid">
-                      <div class="{{:saoTen.includes("X.")? " de":saoTen.includes("Y.")? " year":saoTen.includes("M.")? " month":saoTen.includes("D.")? " day":""}}">
-                          {{:saoTen}}
-                      </div>
-                  </div>
-                  {{/if}} {{/for}}
-              </div>
-              <div class="tuanTriet">
-                  {{if trietLo == true}}
-                  <span class="label label-triet">Triệt</span> {{/if}} {{if tuanTrung == true}}
-                  <span class="label label-tuan">Tuần</span> {{/if}}
-                  {{if daiVanTrietLo == true}}
-                  <span class="label label-triet-de">X.Triệt</span> {{/if}} {{if daiVanTuanTrung == true}}
-                  <span class="label label-tuan-de">X.Tuần</span> {{/if}}
-                  {{if luuNienTrietLo == true}}
-                  <span class="label label-triet-y">Y.Triệt</span> {{/if}} {{if luuNienTuanTrung == true}}
-                  <span class="label label-tuan-y">Y.Tuần</span> {{/if}}
-                  {{if luuNguyetTrietLo == true}}
-                  <span class="label label-triet-m">M.Triệt</span> {{/if}} {{if luuNguyetTuanTrung == true}}
-                  <span class="label label-tuan-m">M.Tuần</span> {{/if}}
-                  {{if luuNhatTrietLo == true}}
-                  <span class="label label-triet-d">D.Triệt</span> {{/if}} {{if luuNhatTuanTrung == true}}
-                  <span class="label label-tuan-d">D.Tuần</span> {{/if}}
-              </div>
-          </div>
-      </div>
-      <div class="grid cung-bottom">
-          <div class="col col-3 tooltips" title="Tiểu hạn của năm {{:cungTieuHan}}">{{:cungTieuHan}}</div>
-          {{for cungSao}} {{if vongTrangSinh == 1}}
-          <div class="col col-6 {{:cssSao}}">
-              {{:saoTen}}
-          </div>
-          {{/if}} {{/for}}
-          <div class="col col-3 tooltips" title="Cung ({{if cungAmDuong == -1}}âm{{else}}dương{{/if}}), ngũ hành {{:hanhCung}}">
-              {{if cungAmDuong == -1}}-{{else}}+{{/if}}{{:hanhCung}}
-          </div>
-          {{if nguyetHan}}
-            <div class="col col-3 tooltips" title="Cung ({{if cungAmDuong == -1}}âm{{else}}dương{{/if}}), ngũ hành {{:hanhCung}}">
-              {{:nguyetHan}}
-            </div>
-          {{/if}}
-      </div>
-    </script>
-
-    <script id="vungThienBan" type="text/x-jsrender">
-      <div class="noidung">
-          <div class="header">Ngày xem: {{:today}}</div>
-          <div class="grid">
-              <div class="col col-3 cotTrai">Họ tên</div>
-              <div class="col col-9 cotPhai">{{:ten}}</div>
-          </div>
-
-          <div class="grid">
-              <div class="col col-3 cotTrai">Bát tự</div>
-              <div class="col col-9 cotPhai">Năm {{:canNamTen}} {{:chiNamTen}}, tháng {{:canThangTen}} {{:chiThangTen}} {{if thangNhuan == 1}} (nhuận) {{/if}}, ngày {{:canNgayTen}} {{:chiNgayTen}}, giờ {{:gioSinh}}</div>
-          </div>
-
-          <div class="grid">
-              <div class="col col-3 cotTrai">Tuổi</div>
-              <div class="col col-9 cotPhai">{{:amDuongNamSinh}} {{:namNu}} ({{:amDuongMenh}})</div>
-          </div>
-
-          <div class="grid">
-              <div class="col col-3 cotTrai">Ngày sinh</div>
-              <div class="col col-9 cotPhai">
-                  <div>{{:ngayAm}}/{{:thangAm}}/{{:canNamTen}} {{:chiNamTen}} (Âm lịch)</div>
-                  <div>{{:ngayDuong}}/{{:thangDuong}}/{{:namDuong}} (Dương lịch)</div>
-              </div>
-          </div>
-
-          <div class="grid">
-              <div class="col col-3 cotTrai">Bản mệnh</div>
-              <div class="col col-9 cotPhai">
-                  {{:banMenh}}
-              </div>
-          </div>
-
-          <div class="grid">
-              <div class="col col-3 cotTrai">Cục</div>
-              <div class="col col-9 cotPhai">
-                  {{:tenCuc}}
-              </div>
-          </div>
-
-          <div class="grid">
-              <div class="col col-3 cotTrai">Mệnh chủ</div>
-              <div class="col col-9 cotPhai">
-                  {{:menhChu}}
-              </div>
-          </div>
-
-          <div class="grid">
-              <div class="col col-3 cotTrai">Thân chủ</div>
-              <div class="col col-9 cotPhai">
-                  {{:thanChu}}
-              </div>
-          </div>
-
-          <div class="grid sinhkhac">
-              {{:sinhKhac}}
-          </div>
-
-          <div class="mausac">
-              <div class="grid">
-                  <span class="col col-2">Màu sắc</span>
-                  <span class="col col-2 hanhKim gioithieuhanh">Kim</span>
-                  <span class="col col-2 hanhThuy gioithieuhanh">Thủy</span>
-                  <span class="col col-2 hanhHoa gioithieuhanh">Hỏa</span>
-                  <span class="col col-2 hanhTho gioithieuhanh">Thổ</span>
-                  <span class="col col-2 hanhMoc gioithieuhanh">Mộc</span>
-              </div>
-          </div>
-      </div>
-    </script>
   </body>
 </html>
