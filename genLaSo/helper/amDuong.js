@@ -1,5 +1,6 @@
 const { S2L, L2S, jdFromDate } = require("./handleTime.js");
 const moment = require("moment");
+
 const thienCan = [
   {
     id: 0,
@@ -313,11 +314,11 @@ function nguHanh(tenHanh) {
 function sinhKhac(hanh1, hanh2) {
   const matranSinhKhac = [
     [null, null, null, null, null, null],
-    [null, 0, -1, 1, -1, 1],
-    [null, -1, 0, 1, 1, -1],
-    [null, 1, 1, 0, 1, -1],
-    [null, -1, 1, -1, 0, 1],
-    [null, 1, -1, -1, 1, 0],
+    [null, 0, 2, 1, 2, 1],
+    [null, -2, 0, 1, 1, -2],
+    [null, -1, -1, 0, 1, 2],
+    [null, -2, -1, -1, 0, 1],
+    [null, -1, 2, 2, -1, 0],
   ];
   return matranSinhKhac[hanh1][hanh2];
 }
@@ -585,9 +586,627 @@ function getNextDay(ngaySinh, thangSinh, namSinh, duongLich) {
   return [ngay, thang, nam];
 }
 
+function getGioSinhIndex(hour) {
+  // Direct mapping of hours to indices
+  if (hour === 23 || hour === 0) return 1; // Tí (23:00 - 1:00)
+  if (hour === 1 || hour === 2) return 2; // Sửu (1:00 - 3:00)
+  if (hour === 3 || hour === 4) return 3; // Dần (3:00 - 5:00)
+  if (hour === 5 || hour === 6) return 4; // Mão (5:00 - 7:00)
+  if (hour === 7 || hour === 8) return 5; // Thìn (7:00 - 9:00)
+  if (hour === 9 || hour === 10) return 6; // Tị (9:00 - 11:00)
+  if (hour === 11 || hour === 12) return 7; // Ngọ (11:00 - 13:00)
+  if (hour === 13 || hour === 14) return 8; // Mùi (13:00 - 15:00)
+  if (hour === 15 || hour === 16) return 9; // Thân (15:00 - 17:00)
+  if (hour === 17 || hour === 18) return 10; // Dậu (17:00 - 19:00)
+  if (hour === 19 || hour === 20) return 11; // Tuất (19:00 - 21:00)
+  return 12; // Hợi (21:00 - 23:00)
+}
+
+function hopCan(canNgay) {
+  let hopCan = {
+    1: 6,
+    2: 7,
+    3: 8,
+    4: 9,
+    5: 10,
+    6: 1,
+    7: 2,
+    8: 3,
+    9: 4,
+    10: 5,
+  };
+  return hopCan[canNgay];
+}
+
+function hopChi(chiNgay) {
+  let hopChi = {
+    1: 2,
+    2: 1,
+    3: 12,
+    4: 11,
+    5: 10,
+    6: 9,
+    7: 8,
+    8: 7,
+    9: 6,
+    10: 5,
+    11: 4,
+    12: 3,
+  };
+  return hopChi[chiNgay];
+}
+
+const getCanTang = (diaChi) => {
+  let canTang = {
+    1: ["Quý"], // Tý
+    2: ["Kỷ", "Tân", "Quý"], // Sửu
+    3: ["Giáp", "Bính", "Mậu"], // Dần
+    4: ["Ất"], // Mão
+    5: ["Mậu", "Ất", "Quý"], // Thìn
+    6: ["Bính", "Canh", "Mậu"], // Tỵ
+    7: ["Đinh", "Kỷ"], // Ngọ
+    8: ["Kỷ", "Ất", "Đinh"], // Mùi
+    9: ["Canh", "Nhâm", "Mậu"], // Thân
+    10: ["Tân"], // Dậu
+    11: ["Mậu", "Đinh", "Tân"], // Tuất
+    12: ["Nhâm", "Giáp"], // Hợi
+  };
+  return canTang[diaChi];
+};
+
+const getThapThan = (nguHanhThienCan, nguHanhNhatChu, cungDau) => {
+  console.log(nguHanhThienCan, nguHanhNhatChu, cungDau);
+  let relationship = checkNguHanhRelationshipDetailed(
+    nguHanhNhatChu,
+    nguHanhThienCan
+  );
+
+  // Bảng thập thần dựa trên mối quan hệ ngũ hành và âm dương
+  const thapThanMap = {
+    "Ngang nhau": {
+      cungDau: { tenDayDu: "Tỷ Kiên", goiTat: "Tỷ" },
+      khacDau: { tenDayDu: "Kiếp Tài", goiTat: "Kiếp" },
+    },
+    Sinh: {
+      cungDau: { tenDayDu: "Thực Thần", goiTat: "Thực" },
+      khacDau: { tenDayDu: "Thương Quan", goiTat: "Thương" },
+    },
+    "Được sinh": {
+      cungDau: { tenDayDu: "Thiên Ấn", goiTat: "Kiêu" },
+      khacDau: { tenDayDu: "Chính Ấn", goiTat: "Ấn" },
+    },
+    Khắc: {
+      cungDau: { tenDayDu: "Thiên Tài", goiTat: "Thiên" },
+      khacDau: { tenDayDu: "Chính Tài", goiTat: "Tài" },
+    },
+    "Bị khắc": {
+      cungDau: { tenDayDu: "Thiên Quan", goiTat: "Sát" },
+      khacDau: { tenDayDu: "Chính Quan", goiTat: "Quan" },
+    },
+  };
+
+  const thapThan = thapThanMap[relationship];
+  if (!thapThan) {
+    throw new Error(
+      `Không xác định được thập thần cho mối quan hệ: ${relationship}`
+    );
+  }
+
+  return cungDau ? thapThan.cungDau.tenDayDu : thapThan.khacDau.tenDayDu;
+};
+
+/**
+ * Kiểm tra tương sinh tương khắc của ngũ hành
+ * @param {string} hanh1 - Ngũ hành thứ nhất (K, M, T, H, O)
+ * @param {string} hanh2 - Ngũ hành thứ hai (K, M, T, H, O)
+ * @returns {string} - Kết quả: "Ngang nhau", "Sinh", "Được sinh", "Khắc", "Bị khắc"
+ */
+function checkNguHanhRelationship(hanh1, hanh2) {
+  // Chuyển đổi tên ngũ hành sang ID
+  const hanhToId = {
+    K: 1, // Kim
+    M: 2, // Mộc
+    T: 3, // Thủy
+    H: 4, // Hỏa
+    O: 5, // Thổ
+  };
+
+  const id1 = hanhToId[hanh1];
+  const id2 = hanhToId[hanh2];
+
+  if (!id1 || !id2) {
+    throw new Error("Ngũ hành phải là K, M, T, H, hoặc O");
+  }
+
+  // Nếu cùng ngũ hành
+  if (id1 === id2) {
+    return "Ngang nhau";
+  }
+
+  // Ma trận tương sinh tương khắc
+  // 1: Kim, 2: Mộc, 3: Thủy, 4: Hỏa, 5: Thổ
+  // 0: Ngang nhau, 1: Sinh, -1: Được sinh, 2: Khắc, -2: Bị khắc
+  const relationshipMatrix = [
+    [null, null, null, null, null, null],
+    [null, 0, 2, 1, 2, 1], // Kim
+    [null, -2, 0, 1, 1, -2], // Mộc
+    [null, -1, -1, 0, 1, 2], // Thủy
+    [null, -2, -1, -1, 0, 1], // Hỏa
+    [null, -1, 2, 2, -1, 0], // Thổ
+  ];
+
+  const relationship = relationshipMatrix[id1][id2];
+
+  switch (relationship) {
+    case 0:
+      return "Ngang nhau";
+    case 1:
+      return "Sinh";
+    case -1:
+      return "Được sinh";
+    case 2:
+      return "Khắc";
+    case -2:
+      return "Bị khắc";
+    default:
+      return "Ngang nhau";
+  }
+}
+
+/**
+ * Kiểm tra tương sinh tương khắc của ngũ hành (phiên bản chi tiết)
+ * @param {string} hanh1 - Ngũ hành thứ nhất (K, M, T, H, O)
+ * @param {string} hanh2 - Ngũ hành thứ hai (K, M, T, H, O)
+ * @returns {string} - Kết quả: "Ngang nhau", "Sinh", "Được sinh", "Khắc", "Bị khắc"
+ */
+function checkNguHanhRelationshipDetailed(hanh1, hanh2) {
+  // Chuyển đổi tên ngũ hành sang ID
+  const hanhToId = {
+    K: 1, // Kim
+    M: 2, // Mộc
+    T: 3, // Thủy
+    H: 4, // Hỏa
+    O: 5, // Thổ
+  };
+
+  const id1 = hanhToId[hanh1];
+  const id2 = hanhToId[hanh2];
+
+  if (!id1 || !id2) {
+    throw new Error("Ngũ hành phải là K, M, T, H, hoặc O");
+  }
+
+  // Nếu cùng ngũ hành
+  if (id1 === id2) {
+    return "Ngang nhau";
+  }
+
+  // Ma trận tương sinh tương khắc
+  // 1: Kim, 2: Mộc, 3: Thủy, 4: Hỏa, 5: Thổ
+  // 0: Ngang nhau, 1: Sinh, -1: Được sinh, 2: Khắc, -2: Bị khắc
+  const relationshipMatrix = [
+    [null, null, null, null, null, null],
+    [null, 0, 2, 1, -2, -1], // Kim
+    [null, -2, 0, -1, 1, 2], // Mộc
+    [null, -1, 1, 0, 2, -2], // Thủy
+    [null, 2, -1, -2, 0, 1], // Hỏa
+    [null, 1, -2, 2, -1, 0], // Thổ
+  ];
+
+  const rel12 = relationshipMatrix[id1][id2];
+
+  if (rel12 === 1) return "Sinh"; // hanh1 sinh hanh2
+  if (rel12 === -1) return "Được sinh"; // hanh2 sinh hanh1 (hanh1 được sinh)
+  if (rel12 === 2) return "Khắc"; // hanh1 khắc hanh2
+  if (rel12 === -2) return "Bị khắc"; // hanh2 khắc hanh1 (hanh1 bị khắc)
+  return "Ngang nhau";
+}
+
+const getViTriTruongSinh = (thienCan) => {
+  // Bảng Trường sinh theo thiên can (dựa vào ảnh)
+  const truongSinhMap = {
+    1: 12, // Giáp - Trường sinh ở Hợi (12)
+    2: 6, // Ất - Trường sinh ở Tỵ (6)
+    3: 3, // Bính - Trường sinh ở Dần (3)
+    4: 9, // Đinh - Trường sinh ở Thân (9)
+    5: 3, // Mậu - Trường sinh ở Dần (3)
+    6: 9, // Kỷ - Trường sinh ở Thân (9)
+    7: 6, // Canh - Trường sinh ở Tỵ (6)
+    8: 12, // Tân - Trường sinh ở Hợi (12)
+    9: 3, // Nhâm - Trường sinh ở Dần (3)
+    10: 9, // Quý - Trường sinh ở Thân (9)
+  };
+
+  if (thienCan >= 1 && thienCan <= 10) {
+    return truongSinhMap[thienCan];
+  } else {
+    throw new Error("Thiên can phải từ 1-10");
+  }
+};
+
+const getTruongSinh = (thienCan, diaChi, amDuong) => {
+  let viTriTruongSinh = getViTriTruongSinh(thienCan);
+  let trangThaiTruongSinh = [
+    "Trường sinh", // 1
+    "Mộc dục", // 2
+    "Quan đới", // 3
+    "Lâm quan", // 4
+    "Đế vượng", // 5
+    "Suy", // 6
+    "Bệnh", // 7
+    "Tử", // 8
+    "Mộ", // 9
+    "Tuyệt", // 10
+    "Thai", // 11
+    "Dưỡng", // 12
+  ];
+
+  // Tính khoảng cách từ vị trí Trường sinh đến địa chi hiện tại
+  let khoangCach = khoangCachCung(diaChi, viTriTruongSinh, amDuong ? 1 : -1);
+
+  // Trả về trạng thái tương ứng
+  if (khoangCach >= 1 && khoangCach <= 12) {
+    return trangThaiTruongSinh[khoangCach];
+  } else {
+    throw new Error("Không xác định được trạng thái trường sinh");
+  }
+};
+const checkThienAt = (thienCan, diaChi) => {
+  // Thiên Ất quý nhân mapping based on the table
+  const thienAtMapping = {
+    1: [2, 8], // Giáp: Sửu, Mùi
+    2: [1, 9], // Ất: Tý, Thân
+    3: [10, 12], // Bính: Dậu, Hợi
+    4: [10, 12], // Đinh: Dậu, Hợi
+    5: [2, 8], // Mậu: Sửu, Mùi
+    6: [1, 9], // Kỷ: Tý, Thân
+    7: [3, 7], // Canh: Dần, Ngọ
+    8: [3, 7], // Tân: Dần, Ngọ
+    9: [4, 6], // Nhâm: Mão, Tị
+    10: [4, 6], // Quý: Mão, Tị
+  };
+
+  // Check if the given diaChi is in the thienAt mapping for the given canNgay
+  return thienAtMapping[thienCan] && thienAtMapping[thienCan].includes(diaChi);
+};
+
+const checkVanXuong = (thienCan, diaChi) => {
+  // Văn Xương quý nhân mapping based on the table
+  const vanXuongMapping = {
+    1: 6, // Giáp: Tị
+    2: 7, // Ất: Ngọ
+    3: 9, // Bính: Thân
+    4: 10, // Đinh: Dậu
+    5: 9, // Mậu: Thân
+    6: 10, // Kỷ: Dậu
+    7: 12, // Canh: Hợi
+    8: 1, // Tân: Tý
+    9: 3, // Nhâm: Dần
+    10: 4, // Quý: Mão
+  };
+  // Check if the given diaChi matches the vanXuong mapping for the given thienCan
+  return vanXuongMapping[thienCan] === diaChi;
+};
+
+const checkHocDuong = (nguHanhNam, diaChi) => {
+  // Học đường mapping based on the Five Elements table
+  const hocDuongMapping = {
+    M: 12, // Mộc: Hợi
+    H: 3, // Hỏa: Dần
+    O: 9, // Thổ: Thân
+    K: 6, // Kim: Tị
+    T: 9, // Thủy: Thân
+  };
+  // Return the Earthly Branch (Chi) for Học đường based on the Five Elements
+  return hocDuongMapping[nguHanhNam] === diaChi;
+};
+
+const checkTuQuan = (nguHanhNam, diaChi) => {
+  // Từ quán mapping based on the Five Elements table
+  const tuQuanMapping = {
+    M: 3, // Mộc: Dần
+    H: 6, // Hỏa: Tị
+    O: 12, // Thổ: Hợi
+    K: 9, // Kim: Thân
+    T: 12, // Thủy: Hợi
+  };
+  // Return the Earthly Branch (Chi) for Từ quán based on the Five Elements
+  return tuQuanMapping[nguHanhNam] === diaChi;
+};
+
+const checkKimDu = (thienCan, diaChi) => {
+  // Kim đú mapping based on the Five Elements table
+  const kimDuMapping = {
+    1: 5, // Giáp: Thìn
+    2: 6, // Ất: Tị
+    3: 8, // Bính: Mùi
+    4: 9, // Đinh: Thân
+    5: 4, // Mậu: Mão
+    6: 9, // Kỷ: Thân
+    7: 11, // Canh: Tuất
+    8: 12, // Tân: Hợi
+    9: 2, // Nhâm: Sửu
+    10: 3, // Quý: Dần
+  };
+
+  // Check if the given diaChi matches the kimDu mapping for the given thienCan
+  return kimDuMapping[thienCan] === diaChi;
+};
+
+const checkThienDuc = (chiThang, thienCan) => {
+  // Thiên Đức mapping based on the table
+  const thienDucMapping = {
+    3: 4, // Dần: Đinh
+    4: 8, // Mão: Tân
+    5: 9, // Thìn: Nhâm
+    6: 8, // Tị: Tân
+    7: 12, // Ngọ: Hợi
+    8: 1, // Mùi: Giáp
+    9: 10, // Thân: Quý
+    10: 3, // Dậu: Dần
+    11: 3, // Tuất: Bính
+    12: 2, // Hợi: Ất
+    1: 6, // Tý: Tị
+    2: 7, // Sửu: Canh
+  };
+
+  // Check if the given diaChi matches the thienDuc mapping for the given chiThang
+  return thienDucMapping[chiThang] === thienCan;
+};
+
+const checkNguyetDuc = (chiThang, thienCan) => {
+  // Nguyệt Đức mapping based on the table
+  const nguyetDucMapping = {
+    3: 3, // Dần: Bính
+    4: 1, // Mão: Giáp
+    5: 9, // Thìn: Nhâm
+    6: 7, // Tị: Canh
+    7: 3, // Ngọ: Bính
+    8: 1, // Mùi: Giáp
+    9: 9, // Thân: Nhâm
+    10: 7, // Dậu: Canh
+    11: 3, // Tuất: Bính
+    12: 1, // Hợi: Giáp
+    1: 9, // Tý: Nhâm
+    2: 7, // Sửu: Canh
+  };
+
+  // Check if the given diaChi matches the nguyetDuc mapping for the given chiThang
+  return nguyetDucMapping[chiThang] === thienCan;
+};
+
+const checkLocThan = (canNgay, diaChi) => {
+  // Lộc Thần mapping based on the table
+  const locThanMapping = {
+    1: 3, // Giáp: Dần
+    2: 4, // Ất: Mão
+    3: 6, // Bính: Tị
+    4: 7, // Đinh: Ngọ
+    5: 6, // Mậu: Tị
+    6: 7, // Kỷ: Ngọ
+    7: 9, // Canh: Thân
+    8: 10, // Tân: Dậu
+    9: 12, // Nhâm: Hợi
+    10: 1, // Quý: Tý
+  };
+
+  // Check if the given diaChi matches the locThan mapping for the given thienCan
+  return locThanMapping[canNgay] === diaChi;
+};
+
+const checkTuongTinh = (chiNamOrNgay, diaChi) => {
+  // Tướng Tinh (Hoa Cái) mapping based on the table
+  const tuongTinhMapping = {
+    1: 1, // Tý: Tý
+    2: 10, // Sửu: Dậu
+    3: 7, // Dần: Ngọ
+    4: 4, // Mão: Mão
+    5: 1, // Thìn: Tý
+    6: 10, // Tị: Dậu
+    7: 7, // Ngọ: Ngọ
+    8: 4, // Mùi: Mão
+    9: 1, // Thân: Tý
+    10: 10, // Dậu: Dậu
+    11: 7, // Tuất: Ngọ
+    12: 4, // Hợi: Mão
+  };
+
+  // Check if the given diaChi matches the tuongTinh mapping for the given chiNamOrNgay
+  return tuongTinhMapping[chiNamOrNgay] === diaChi;
+};
+
+const checkHoaCai = (chiNamOrNgay, diaChi) => {
+  // Hoa Cái mapping based on the table
+  const hoaCaiMapping = {
+    1: 5, // Tý: Thìn
+    2: 2, // Sửu: Sửu
+    3: 11, // Dần: Tuất
+    4: 8, // Mão: Mùi
+    5: 5, // Thìn: Thìn
+    6: 2, // Tị: Sửu
+    7: 11, // Ngọ: Tuất
+    8: 8, // Mùi: Mùi
+    9: 5, // Thân: Thìn
+    10: 2, // Dậu: Sửu
+    11: 11, // Tuất: Tuất
+    12: 8, // Hợi: Mùi
+  };
+
+  // Check if the given diaChi matches the hoaCai mapping for the given chiNamOrNgay
+  return hoaCaiMapping[chiNamOrNgay] === diaChi;
+};
+
+const checkHongDiem = (thienCan, diaChi) => {
+  // Hồng Diễm mapping based on the table
+  const hongDiemMapping = {
+    1: 7, // Giáp: Ngọ
+    2: 9, // Ất: Thân
+    3: 3, // Bính: Dần
+    4: 8, // Đinh: Mùi
+    5: 5, // Mậu: Thìn
+    6: 5, // Kỷ: Thìn
+    7: 9, // Canh: Thân
+    8: 10, // Tân: Dậu
+    9: 1, // Nhâm: Tý
+    10: 11, // Quý: Tuất
+  };
+
+  // Check if the given diaChi matches the hongDiem mapping for the given thienCan
+  return hongDiemMapping[thienCan] === diaChi;
+};
+
+const checkDichMa = (chiNam, diaChi) => {
+  // Dịch Mã mapping based on traditional astrology
+  const dichMaMapping = {
+    1: 7, // Tý: Ngọ
+    2: 8, // Sửu: Mùi
+    3: 9, // Dần: Thân
+    4: 10, // Mão: Dậu
+    5: 11, // Thìn: Tuất
+    6: 12, // Tị: Hợi
+    7: 1, // Ngọ: Tý
+    8: 2, // Mùi: Sửu
+    9: 3, // Thân: Dần
+    10: 4, // Dậu: Mão
+    11: 5, // Tuất: Thìn
+    12: 6, // Hợi: Tị
+  };
+
+  // Check if the given diaChi matches the dichMa mapping for the given chiNam
+  return dichMaMapping[chiNam] === diaChi;
+};
+
+const checkPhucTinh = (canNgay, chiNgay) => {
+  // Phúc Tinh Quý Nhân mapping based on the image
+  // People born on these Can-Chi combinations have Phúc Tinh Quý Nhân
+  const phucTinhMapping = [
+    [1, 3], // Giáp Dần
+    [2, 2], // Ất Sửu
+    [3, 1], // Bính Tý
+    [4, 10], // Đinh Dậu
+    [5, 9], // Mậu Thân
+    [6, 8], // Kỷ Mùi
+    [7, 7], // Canh Ngọ
+    [8, 6], // Tân Tị
+    [9, 5], // Nhâm Thìn
+    [10, 4], // Quý Mão
+  ];
+
+  // Check if the given canNgay and chiNgay combination exists in the phucTinh mapping
+  return phucTinhMapping.some(
+    ([can, chi]) => can === canNgay && chi === chiNgay
+  );
+};
+
+const checkThienY = (chiThang, diaChi) => {
+  // Thiên Y quý nhân mapping based on the image
+  // Use the month branch to determine the Noble Person of Heavenly Doctor
+  const thienYMapping = {
+    1: 12, // Tý: Hợi
+    2: 1, // Sửu: Tý
+    3: 2, // Dần: Sửu
+    4: 3, // Mão: Dần
+    5: 4, // Thìn: Mão
+    6: 5, // Tị: Thìn
+    7: 6, // Ngọ: Tị
+    8: 7, // Mùi: Ngọ
+    9: 8, // Thân: Mùi
+    10: 9, // Dậu: Thân
+    11: 10, // Tuất: Dậu
+    12: 11, // Hợi: Tuất
+  };
+
+  // Check if the given diaChi matches the thienY mapping for the given chiThang
+  return thienYMapping[chiThang] === diaChi;
+};
+
+const checkDaoHoa = (chiNamOrNgay, diaChi) => {
+  // Đào Hoa (Peach Blossom) mapping based on the image
+  // Use Year Branch or Day Branch to determine Peach Blossom
+  const daoHoaMapping = {
+    1: 10, // Tý: Dậu
+    2: 7, // Sửu: Ngọ
+    3: 4, // Dần: Mão
+    4: 1, // Mão: Tý
+    5: 10, // Thìn: Dậu
+    6: 7, // Tị: Ngọ
+    7: 4, // Ngọ: Mão
+    8: 1, // Mùi: Tý
+    9: 10, // Thân: Dậu
+    10: 7, // Dậu: Ngọ
+    11: 4, // Tuất: Mão
+    12: 1, // Hợi: Tý
+  };
+
+  // Check if the given diaChi matches the daoHoa mapping for the given chiNamOrNgay
+  return daoHoaMapping[chiNamOrNgay] === diaChi;
+};
+
+const getThanSat = (
+  thienCanTru,
+  diaChiTru,
+  canNgay,
+  chiNgay,
+  chiThang,
+  canNam,
+  chiNam,
+  nhatTru
+) => {
+  let thanSat = [];
+  if (checkThienAt(canNgay, diaChiTru) || checkThienAt(canNam, diaChiTru)) {
+    thanSat.push("Thiên Ất");
+  }
+  if (checkVanXuong(canNgay, diaChiTru) || checkVanXuong(canNam, diaChiTru)) {
+    thanSat.push("Văn Xương");
+  }
+  if (checkHocDuong(thienCan[canNam].nguHanh, diaChiTru)) {
+    thanSat.push("Học đường");
+  }
+  if (checkKimDu(canNgay, diaChiTru) || checkKimDu(canNam, diaChiTru)) {
+    thanSat.push("Kim Dư");
+  }
+  if (checkThienDuc(chiThang, thienCanTru)) {
+    thanSat.push("Thiên Đức");
+  }
+  if (checkNguyetDuc(chiThang, thienCanTru)) {
+    thanSat.push("Nguyệt Đức");
+  }
+  if (checkLocThan(canNgay, diaChiTru)) {
+    thanSat.push("Lộc Thần");
+  }
+  if (checkTuongTinh(chiNam, diaChiTru) || checkTuongTinh(chiNgay, diaChiTru)) {
+    thanSat.push("Tướng Tinh");
+  }
+  if (checkHoaCai(chiNam, diaChiTru) || checkHoaCai(chiNgay, diaChiTru)) {
+    thanSat.push("Hoa Cái");
+  }
+  if (checkHongDiem(canNgay, diaChiTru) || checkHongDiem(canNam, diaChiTru)) {
+    thanSat.push("Hồng Diễm");
+  }
+  if (checkDichMa(chiNam, diaChiTru) || checkDichMa(chiNgay, diaChiTru)) {
+    thanSat.push("Dịch Mã");
+  }
+  if (nhatTru && checkPhucTinh(canNgay, chiNgay)) {
+    thanSat.push("Phúc Tinh");
+  }
+  if (checkThienY(chiThang, diaChiTru)) {
+    thanSat.push("Thiên Y");
+  }
+  if (checkDaoHoa(chiNam, diaChiTru) || checkDaoHoa(chiNgay, diaChiTru)) {
+    thanSat.push("Đào Hoa");
+  }
+
+  // if(checkTuQuan(thienCan[canNam].nguHanh,diaChiData)){
+  //   thanSat.push("Từ quán")
+  // }
+
+  return thanSat;
+};
+
 module.exports = {
   thienCan,
   diaChi,
+  getTruongSinh,
   ngayThangNam,
   canChiNgay,
   canChiGio,
@@ -609,4 +1228,24 @@ module.exports = {
   timTriet,
   timLuuTru,
   getNextDay,
+  getGioSinhIndex,
+  hopCan,
+  hopChi,
+  getCanTang,
+  getThapThan,
+  checkNguHanhRelationship,
+  checkNguHanhRelationshipDetailed,
+  checkThienAt,
+  checkKimDu,
+  checkThienDuc,
+  checkNguyetDuc,
+  checkLocThan,
+  checkTuongTinh,
+  checkHoaCai,
+  checkHongDiem,
+  checkDichMa,
+  checkPhucTinh,
+  checkThienY,
+  checkDaoHoa,
+  getThanSat,
 };

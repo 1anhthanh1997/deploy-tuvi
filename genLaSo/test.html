@@ -1,178 +1,466 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Binary Star Simulation</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lá số tử vi</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Serif"
+      rel="stylesheet"
+    />
+    <link href="/static/style.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.11/jsrender.min.js"></script>
+    <script src="/static/lstv.js"></script>
   </head>
-  <body style="margin: 0; overflow: hidden">
-    <script>
-      let star1, star2;
-      let G = 1;
-      let trails = [];
-      let backgroundImg;
 
-      function preload() {
-        backgroundImg = loadImage(
-          "https://cdn.eso.org/images/wallpaper5/eso0932a.jpg"
-        );
-      }
+  <body>
+    <div class="masthead">
+      <div class="container">
+        <h1 class="wordmark">Chương trình lập lá số tử vi</h1>
+        <div class="formborder">
+          <form id="lstv">
+            <div class="grid thongtin">
+              <div class="col col-3">Họ tên</div>
+              <div class="col col-9">
+                <input type="text" name="hoten" id="hoten" />
+              </div>
+            </div>
+            <div class="grid thongtin">
+              <div class="col col-3">Giới tính</div>
+              <div class="col col-9">
+                <select name="gioitinh" id="gioitinh">
+                  <option value="nam">Nam</option>
+                  <option value="nu">Nữ</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid thongtin">
+              <div class="col col-3">Ngày tháng năm sinh</div>
+              <div class="col col-5">
+                <select name="ngaysinh" id="ngaysinh">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                </select>
+                /
+                <select name="thangsinh" id="thangsinh">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+                /
+                <input
+                  type="text"
+                  id="namsinh"
+                  name="namsinh"
+                  placeholder="Năm sinh"
+                />
+              </div>
 
-      function setup() {
-        createCanvas(windowWidth, windowHeight);
-        star1 = new Star(width / 3, height / 2, 20, color(255, 255, 0), 10);
-        star2 = new Star(
-          (width * 2) / 3,
-          height / 2,
-          30,
-          color(255, 100, 100),
-          30
-        );
-        for (let i = 0; i < 2; i++) trails.push([]);
-      }
+              <div class="col col-4">
+                Âm lịch?
+                <input type="checkbox" name="amlich" />
+              </div>
+              <div class="col col-4">
+                Xem tiểu vận?
+                <input type="checkbox" id="luunien" name="luunien" />
+              </div>
+              <div class="col col-4">
+                Xem đại vận?
+                <input type="checkbox" id="daivan" name="daivan" />
+              </div>
+            </div>
+            <div class="grid thongtin">
+              <div class="col col-3">Giờ sinh</div>
+              <div class="col col-3">
+                <select name="giosinh" id="giosinh">
+                  <option selected="selected" value="1">Tí (0g - 1g)</option>
+                  <option value="2">Sửu (1g - 3g)</option>
+                  <option value="3">Dần (3g - 5g)</option>
+                  <option value="4">Mão (5g - 7g)</option>
+                  <option value="5">Thìn (7g - 9g)</option>
+                  <option value="6">Tị (9g - 11g)</option>
+                  <option value="7">Ngọ (11g - 13g)</option>
+                  <option value="8">Mùi (13g - 15g)</option>
+                  <option value="9">Thân (15g - 17g)</option>
+                  <option value="10">Dậu (17g - 19g)</option>
+                  <option value="11">Tuất (19g - 21g)</option>
+                  <option value="12">Hợi (21g - 23g)</option>
+                  <option value="13">Tí (23g - 24g)</option>
+                </select>
+              </div>
+              <div class="col col-3">
+                Múi giờ:
+                <select name="muigio" id="muigio">
+                  <option value="-12">-12</option>
+                  <option value="-11">-11</option>
+                  <option value="-10">-10</option>
+                  <option value="-9">-9</option>
+                  <option value="-8">-8</option>
+                  <option value="-7">-7</option>
+                  <option value="-6">-6</option>
+                  <option value="-5">-5</option>
+                  <option value="-4">-4</option>
+                  <option value="-3">-3</option>
+                  <option value="-2">-2</option>
+                  <option value="-1">-1</option>
+                  <option value="0">0</option>
+                  <option value="1">+1</option>
+                  <option value="2">+2</option>
+                  <option value="3">+3</option>
+                  <option value="4">+4</option>
+                  <option value="5">+5</option>
+                  <option value="6">+6</option>
+                  <option value="7" selected>+7 (Vietnam)</option>
+                  <option value="8">+8</option>
+                  <option value="9">+9</option>
+                  <option value="10">+10</option>
+                  <option value="11">+11</option>
+                </select>
+              </div>
+            </div>
+            <div
+              id="namxemtieuvandiv"
+              class="grid thongtin"
+              style="display: none; align-items: center"
+            >
+              <div class="col col-3">Ngày, tháng, năm xem tiểu vận</div>
+              <div class="col col-9">
+                <input
+                  type="text"
+                  id="ngayluunhat"
+                  name="ngayluunhat"
+                  placeholder="Ngày"
+                />
+                <input
+                  type="text"
+                  id="thangluunguyet"
+                  name="thangluunguyet"
+                  placeholder="Tháng"
+                />
+                <input
+                  type="text"
+                  id="namxemtieuvan"
+                  name="namxemtieuvan"
+                  placeholder="Năm"
+                  defaultValue="new"
+                  Date().getFullYear()
+                />
+              </div>
+            </div>
 
-      function windowResized() {
-        resizeCanvas(windowWidth, windowHeight);
-      }
+            <div
+              id="namxemdaivandiv"
+              class="grid thongtin"
+              style="display: none; align-items: center"
+            >
+              <div class="col col-3">Năm xem đại vận</div>
+              <div class="col col-9">
+                <input
+                  type="text"
+                  id="namxemdaivan"
+                  name="namxemdaivan"
+                  placeholder="Năm"
+                  defaultValue="new"
+                  Date().getFullYear()
+                />
+              </div>
+            </div>
 
-      function draw() {
-        background(backgroundImg);
-        updateGravity(star1, star2);
+            <div class="grid">
+              <input
+                type="button"
+                class="button primary"
+                value="Lập lá số"
+                id="laplaso"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
-        star1.update();
-        star2.update();
+    <div class="anlaso laso border" id="laso">
+      <div class="grid">
+        <div class="col col-3">
+          <div class="container">
+            <div class="grid diaCung border-bottom" cung-id="6" id="cungTy5">
+              Tỵ
+            </div>
+            <div class="grid diaCung border-bottom" cung-id="5" id="cungThin">
+              Thìn
+            </div>
+            <div
+              class="grid diaCung border-bottom inset-border"
+              cung-id="4"
+              id="cungMao"
+            >
+              Mão
+            </div>
+            <div class="grid diaCung" cung-id="3" id="cungDan">Dần</div>
+          </div>
+        </div>
+        <div class="col col-6">
+          <div class="container">
+            <div class="grid">
+              <div
+                class="col col-6 diaCung border-left"
+                cung-id="7"
+                id="cungNgo"
+              >
+                Ngọ
+              </div>
+              <div
+                class="col col-6 diaCung border-left"
+                cung-id="8"
+                id="cungMui"
+              >
+                Mùi
+              </div>
+            </div>
 
-        updateTrails();
+            <div
+              class="grid thienBan border-top border-left border-bottom border-right"
+              id="thienBan"
+            ></div>
+            <div class="grid">
+              <div
+                class="col col-6 diaCung border-left"
+                cung-id="2"
+                id="cungSuu"
+              >
+                Sửu
+              </div>
+              <div
+                class="col col-6 diaCung border-left"
+                cung-id="1"
+                id="cungTy1"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="col col-3">
+          <div class="container">
+            <div
+              class="grid diaCung border-left border-bottom"
+              cung-id="9"
+              id="cungThan"
+            >
+              Thân
+            </div>
+            <div class="grid diaCung border-bottom" cung-id="10" id="cungDau">
+              Dậu
+            </div>
+            <div class="grid diaCung border-bottom" cung-id="11" id="cungTuat">
+              Tuất
+            </div>
+            <div class="grid diaCung border-left" cung-id="12" id="cungHoi">
+              Hợi
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        star1.display();
-        star2.display();
+    <div
+      style="display: flex; justify-content: center; margin: 20px; gap: 10px"
+    >
+      <button id="btn-copy-content" style="display: none">Copy content</button>
+      <button id="btn-download-content" style="display: none">Download</button>
+    </div>
+    <!-- <div id="note" style="display: none; margin: 20px; gap: 10px; text-align: left">
+      Note: <br />Các sao lưu niên: Bạch hổ, Đà la, Thiên khôi, Hóa lộc,
+      Lộc tồn, Thiên khốc, Thiên mã, Kình dương, Thái tuế, Hóa
+      quyền, Hóa khoa, Tang môn, Hóa kỵ, Thiên việt, Đào hoa, Thiên
+      hư, Hồng loan</br> Link: https://www.youtube.com/watch?v=4iuLEtCN7DM&ab_channel=T%E1%BB%ADViDi%E1%BB%87uXu%C3%A2n
+    </div> -->
 
-        drawTrails();
-        drawCenterOfMass();
-        drawForceVector(star1, star2);
-      }
+    <div style="display: flex; justify-content: center; margin: 40px">
+      <p id="contentCopy" style="white-space: pre-wrap; text-align: left"></p>
+    </div>
 
-      function updateGravity(a, b) {
-        let dx = b.pos.x - a.pos.x;
-        let dy = b.pos.y - a.pos.y;
-        let distance = constrain(sqrt(dx * dx + dy * dy), 20, 1000);
-        let force = (G * a.mass * b.mass) / (distance * distance);
-        let angle = atan2(dy, dx);
-        let fx = cos(angle) * force;
-        let fy = sin(angle) * force;
+    <script id="cungDiaBan" type="text/x-jsrender">
+      <div class="grid cung-top">
+          <div class="col col-2 tooltips" title="Địa chi cung {{:cungTen}}">{{:cungTen}}</div>
+          <div class="col col-8">
+              <span class="cungChu">
+              {{:cungChu}}
+          </span> {{if cungThan == true}}
+              <span class="cungThan label">Thân</span> {{/if}}
+          </div>
+          <div class="col col-2 tooltips" title="Đại hạn {{:cungDaiHan-1}} - {{:(cungDaiHan+8)}}">{{:(cungDaiHan - 1)}}</div>
+      </div>
+      <div class="grid cung-middle">
+          <div class="chinhTinh">
+              {{for cungSao}} {{if saoLoai == 1 && saoID!==73 && saoID!==74 && saoID!==75}}
+              <li>{{:saoTen}}
+              </li>
+              {{/if}} {{/for}}
+          </div>
 
-        a.applyForce(fx, fy);
-        b.applyForce(-fx, -fy);
-      }
+          <div class="phuTinh">
+              <div class="saotot">
+                  {{for cungSao}} {{if vongTrangSinh === 0 && saoLoai !==1 && saoLoai < 10}}
+                  <div class="grid">
+                      <div class="{{:saoTen.includes("X.")? " de":saoTen.includes("Y.")? " year":saoTen.includes("M.")? " month":saoTen.includes("D.")? " day":""}}">
+                          {{:saoTen}}
+                      </div>
+                  </div>
+                  {{/if}} {{/for}}
+              </div>
+              <div class="saoxau">
+                  {{for cungSao}} {{if (vongTrangSinh === 0 && saoLoai !==1 && saoLoai > 10) ||saoID==73 || saoID==74 || saoID==75}}
+                  <div class="grid">
+                      <div class="{{:saoTen.includes("X.")? " de":saoTen.includes("Y.")? " year":saoTen.includes("M.")? " month":saoTen.includes("D.")? " day":""}}">
+                          {{:saoTen}}
+                      </div>
+                  </div>
+                  {{/if}} {{/for}}
+              </div>
+              <div class="tuanTriet">
+                  {{if trietLo == true}}
+                  <span class="label label-triet">Triệt</span> {{/if}} {{if tuanTrung == true}}
+                  <span class="label label-tuan">Tuần</span> {{/if}}
+                  {{if daiVanTrietLo == true}}
+                  <span class="label label-triet-de">X.Triệt</span> {{/if}} {{if daiVanTuanTrung == true}}
+                  <span class="label label-tuan-de">X.Tuần</span> {{/if}}
+                  {{if luuNienTrietLo == true}}
+                  <span class="label label-triet-y">Y.Triệt</span> {{/if}} {{if luuNienTuanTrung == true}}
+                  <span class="label label-tuan-y">Y.Tuần</span> {{/if}}
+                  {{if luuNguyetTrietLo == true}}
+                  <span class="label label-triet-m">M.Triệt</span> {{/if}} {{if luuNguyetTuanTrung == true}}
+                  <span class="label label-tuan-m">M.Tuần</span> {{/if}}
+                  {{if luuNhatTrietLo == true}}
+                  <span class="label label-triet-d">D.Triệt</span> {{/if}} {{if luuNhatTuanTrung == true}}
+                  <span class="label label-tuan-d">D.Tuần</span> {{/if}}
+              </div>
+          </div>
+      </div>
+      <div class="grid cung-bottom">
+          <div class="col col-3 tooltips" title="Tiểu hạn của năm {{:cungTieuHan}}">{{:cungTieuHan}}</div>
+          {{for cungSao}} {{if vongTrangSinh == 1}}
+          <div class="col col-6 {{:cssSao}}">
+              {{:saoTen}}
+          </div>
+          {{/if}} {{/for}}
+          <div class="col col-3 tooltips" title="Cung ({{if cungAmDuong == -1}}âm{{else}}dương{{/if}}), ngũ hành {{:hanhCung}}">
+              {{if cungAmDuong == -1}}-{{else}}+{{/if}}{{:hanhCung}}
+          </div>
+          {{if nguyetHan}}
+            <div class="col col-3 tooltips" title="Cung ({{if cungAmDuong == -1}}âm{{else}}dương{{/if}}), ngũ hành {{:hanhCung}}">
+              {{:nguyetHan}}
+            </div>
+          {{/if}}
+      </div>
+    </script>
 
-      class Star {
-        constructor(x, y, r, c, mass) {
-          this.pos = createVector(x, y);
-          this.vel = createVector(random(-1, 1), random(-1, 1));
-          this.acc = createVector(0, 0);
-          this.r = r;
-          this.c = c;
-          this.mass = mass;
-        }
+    <script id="vungThienBan" type="text/x-jsrender">
+      <div class="noidung">
+          <div class="header">Ngày xem: {{:today}}</div>
+          <div class="grid">
+              <div class="col col-3 cotTrai">Họ tên</div>
+              <div class="col col-9 cotPhai">{{:ten}}</div>
+          </div>
 
-        applyForce(fx, fy) {
-          this.acc.add(createVector(fx / this.mass, fy / this.mass));
-        }
+          <div class="grid">
+              <div class="col col-3 cotTrai">Bát tự</div>
+              <div class="col col-9 cotPhai">Năm {{:canNamTen}} {{:chiNamTen}}, tháng {{:canThangTen}} {{:chiThangTen}} {{if thangNhuan == 1}} (nhuận) {{/if}}, ngày {{:canNgayTen}} {{:chiNgayTen}}, giờ {{:gioSinh}}</div>
+          </div>
 
-        update() {
-          this.vel.add(this.acc);
-          this.pos.add(this.vel);
-          this.acc.mult(0);
-        }
+          <div class="grid">
+              <div class="col col-3 cotTrai">Tuổi</div>
+              <div class="col col-9 cotPhai">{{:amDuongNamSinh}} {{:namNu}} ({{:amDuongMenh}})</div>
+          </div>
 
-        display() {
-          push();
-          noStroke();
+          <div class="grid">
+              <div class="col col-3 cotTrai">Ngày sinh</div>
+              <div class="col col-9 cotPhai">
+                  <div>{{:ngayAm}}/{{:thangAm}}/{{:canNamTen}} {{:chiNamTen}} (Âm lịch)</div>
+                  <div>{{:ngayDuong}}/{{:thangDuong}}/{{:namDuong}} (Dương lịch)</div>
+              </div>
+          </div>
 
-          // Enhanced shadow effect
-          drawingContext.shadowOffsetX = 8;
-          drawingContext.shadowOffsetY = 8;
-          drawingContext.shadowBlur = 30;
-          drawingContext.shadowColor = color(0, 0, 0, 200);
+          <div class="grid">
+              <div class="col col-3 cotTrai">Bản mệnh</div>
+              <div class="col col-9 cotPhai">
+                  {{:banMenh}}
+              </div>
+          </div>
 
-          // Add a gradient for more realistic planet appearance
-          let gradient = drawingContext.createRadialGradient(
-            this.pos.x - this.r / 2,
-            this.pos.y - this.r / 2,
-            0,
-            this.pos.x,
-            this.pos.y,
-            this.r
-          );
+          <div class="grid">
+              <div class="col col-3 cotTrai">Cục</div>
+              <div class="col col-9 cotPhai">
+                  {{:tenCuc}}
+              </div>
+          </div>
 
-          // Create a slightly darker version of the star's color
-          let darkerColor = color(
-            red(this.c) * 0.8,
-            green(this.c) * 0.8,
-            blue(this.c) * 0.8
-          );
+          <div class="grid">
+              <div class="col col-3 cotTrai">Mệnh chủ</div>
+              <div class="col col-9 cotPhai">
+                  {{:menhChu}}
+              </div>
+          </div>
 
-          gradient.addColorStop(0, this.c);
-          gradient.addColorStop(1, darkerColor);
+          <div class="grid">
+              <div class="col col-3 cotTrai">Thân chủ</div>
+              <div class="col col-9 cotPhai">
+                  {{:thanChu}}
+              </div>
+          </div>
 
-          drawingContext.fillStyle = gradient;
-          ellipse(this.pos.x, this.pos.y, this.r * 2);
+          <div class="grid sinhkhac">
+              {{:sinhKhac}}
+          </div>
 
-          pop();
-        }
-      }
-
-      function updateTrails() {
-        trails[0].push(star1.pos.copy());
-        trails[1].push(star2.pos.copy());
-        if (trails[0].length > 200) trails[0].shift();
-        if (trails[1].length > 200) trails[1].shift();
-      }
-
-      function drawTrails() {
-        noFill();
-        stroke(255, 255, 0, 100);
-        beginShape();
-        for (let p of trails[0]) vertex(p.x, p.y);
-        endShape();
-
-        stroke(255, 100, 100, 100);
-        beginShape();
-        for (let p of trails[1]) vertex(p.x, p.y);
-        endShape();
-      }
-
-      function drawCenterOfMass() {
-        let x =
-          (star1.pos.x * star1.mass + star2.pos.x * star2.mass) /
-          (star1.mass + star2.mass);
-        let y =
-          (star1.pos.y * star1.mass + star2.pos.y * star2.mass) /
-          (star1.mass + star2.mass);
-        fill(255);
-        ellipse(x, y, 10);
-      }
-
-      function drawForceVector(a, b) {
-        stroke(0, 255, 255);
-        strokeWeight(2);
-        let forceLine = p5.Vector.sub(b.pos, a.pos).setMag(30);
-        line(a.pos.x, a.pos.y, a.pos.x + forceLine.x, a.pos.y + forceLine.y);
-        line(b.pos.x, b.pos.y, b.pos.x - forceLine.x, b.pos.y - forceLine.y);
-      }
-
-      function mouseDragged() {
-        if (dist(mouseX, mouseY, star1.pos.x, star1.pos.y) < star1.r) {
-          star1.pos.set(mouseX, mouseY);
-          star1.vel.set(0, 0);
-          trails[0] = [];
-        }
-        if (dist(mouseX, mouseY, star2.pos.x, star2.pos.y) < star2.r) {
-          star2.pos.set(mouseX, mouseY);
-          star2.vel.set(0, 0);
-          trails[1] = [];
-        }
-      }
+          <div class="mausac">
+              <div class="grid">
+                  <span class="col col-2">Màu sắc</span>
+                  <span class="col col-2 hanhKim gioithieuhanh">Kim</span>
+                  <span class="col col-2 hanhThuy gioithieuhanh">Thủy</span>
+                  <span class="col col-2 hanhHoa gioithieuhanh">Hỏa</span>
+                  <span class="col col-2 hanhTho gioithieuhanh">Thổ</span>
+                  <span class="col col-2 hanhMoc gioithieuhanh">Mộc</span>
+              </div>
+          </div>
+      </div>
     </script>
   </body>
 </html>
