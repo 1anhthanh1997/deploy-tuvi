@@ -78,7 +78,7 @@ $(document).ready(function () {
     $("#thangAmLich").text(thang.lunarValue);
     $("#ngayAmLich").text(ngay.lunarValue);
     $("#gioAmLich").text(gio.lunarValue);
-    $("#tenNamAm").text(gio.name);
+    $("#tenNamAm").text(nam.name);
     $("#tenThangAm").text(thang.name);
     $("#tenNgayAm").text(ngay.name);
     $("#tenGioAm").text(gio.name);

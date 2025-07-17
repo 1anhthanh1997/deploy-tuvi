@@ -78,6 +78,7 @@ const getBaziData = (baseInfo) => {
     amLich[2],
     amLich[3]
   );
+  console.log("Can chi:", canChiAmLich);
   let canThang = canChiAmLich[0];
   let chiThang = amLich[1];
   let canNam = canChiAmLich[1];
