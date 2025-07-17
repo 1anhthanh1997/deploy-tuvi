@@ -326,14 +326,14 @@ function sinhKhac(hanh1, hanh2) {
 function nguHanhNapAm(diaChi, thienCan, xuatBanMenh = false) {
   const banMenh = {
     K1: "HẢI TRUNG KIM",
-    T1: "GIÁNG HẠ THỦY",
+    T1: "GIANG HẠ THỦY",
     H1: "TÍCH LỊCH HỎA",
     O1: "BÍCH THƯỢNG THỔ",
-    M1: "TANG ÐỐ MỘC",
+    M1: "TĂNG ÐỐ MỘC",
     T2: "ÐẠI KHÊ THỦY",
     H2: "LƯ TRUNG HỎA",
     O2: "THÀNH ÐẦU THỔ",
-    M2: "TÒNG BÁ MỘC",
+    M2: "TÙNG BÁ MỘC",
     K2: "KIM BẠCH KIM",
     H3: "PHÚ ÐĂNG HỎA",
     O3: "SA TRUNG THỔ",
@@ -343,9 +343,9 @@ function nguHanhNapAm(diaChi, thienCan, xuatBanMenh = false) {
     K4: "SA TRUNG KIM",
     T4: "THIÊN HÀ THỦY",
     H4: "THIÊN THƯỢNG HỎA",
-    O4: "LỘ BÀN THỔ",
+    O4: "LỘ BÀNG THỔ",
     M4: "DƯƠNG LIỄU MỘC",
-    T5: "TRUYỀN TRUNG THỦY",
+    T5: "TUYỀN TRUNG THỦY",
     H5: "SƠN HẠ HỎA",
     O5: "ÐẠI TRẠCH THỔ",
     M5: "THẠCH LỰU MỘC",
@@ -353,7 +353,7 @@ function nguHanhNapAm(diaChi, thienCan, xuatBanMenh = false) {
     H6: "SƠN ÐẦU HỎA",
     O6: "ỐC THƯỢNG THỔ",
     M6: "BÌNH ÐỊA MỘC",
-    K6: "XOA XUYẾN KIM",
+    K6: "THOA XUYẾN KIM",
     T6: "ÐẠI HẢI THỦY",
   };
 
