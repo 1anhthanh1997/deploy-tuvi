@@ -160,9 +160,9 @@ const getBaziData = (baseInfo) => {
       name: thangAmTen,
       solarValue: baseInfo.thangSinh,
       lunarValue: amLich[1],
-      nguHanhNapAm: nguHanhNapAm(chiThang + 2, canThang, true),
+      nguHanhNapAm: nguHanhNapAm(getIndex(chiThang + 2), canThang, true),
       nguHanhCan: nguHanh(thienCan[canThang].nguHanh).tenHanh,
-      nguHanhChi: nguHanh(diaChi[chiThang + 2].tenHanh).tenHanh,
+      nguHanhChi: nguHanh(diaChi[getIndex(chiThang + 2)].tenHanh).tenHanh,
       canTang: getCanTang(getIndex(chiThang + 2)),
       thapThan: getThapThan(
         thienCan[canThang].nguHanh,
