@@ -642,7 +642,7 @@ const getCanTang = (diaChi) => {
     2: ["Kỷ", "Tân", "Quý"], // Sửu
     3: ["Giáp", "Bính", "Mậu"], // Dần
     4: ["Ất"], // Mão
-    5: ["Mậu", "Ất", "Quý"], // Thìn
+    5: ["Mậu", "Quý", "Ất"], // Thìn
     6: ["Bính", "Canh", "Mậu"], // Tỵ
     7: ["Đinh", "Kỷ"], // Ngọ
     8: ["Kỷ", "Ất", "Đinh"], // Mùi

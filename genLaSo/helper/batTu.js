@@ -21,6 +21,115 @@ const getIndex = (index, period = 12) => {
   return index % period ? index % period : period;
 };
 
+const calculateEnergyScore = (can, score, nguHanhScore) => {
+  let nguHanhCan = thienCan[can].nguHanhID;
+  let amDuong = thienCan[can].amDuong;
+  console.log(nguHanhCan, amDuong);
+  let duong = nguHanhScore.find((item) => item.id === nguHanhCan);
+  if (amDuong === -1) {
+    duong.scoreAm += score;
+  } else {
+    duong.scoreDuong += score;
+  }
+  return nguHanhScore;
+};
+
+const getCanTangScore = (diaChi, nguHanhScore) => {
+  let canTangIndex = {
+    1: [
+      { id: 10, score: 46.65 },
+      { id: 9, score: 3.35 },
+    ], // Tý: Quý,Nhâm
+    2: [
+      { id: 6, score: 30 },
+      { id: 8, score: 15 },
+      { id: 10, score: 5 },
+    ], // Sửu: Kỷ, Tân, Quý
+    3: [
+      { id: 1, score: 30 },
+      { id: 3, score: 15 },
+      { id: 5, score: 5 },
+    ], // Dần: Giáp, Bính, Mậu
+    4: [
+      { id: 2, score: 46.35 },
+      { id: 1, score: 3.35 },
+    ], // Mão: Ất,Giáp
+    5: [
+      { id: 5, score: 46.65 },
+      { id: 10, score: 5 },
+      { id: 2, score: 3.35 },
+    ], // Thìn: Mậu, Quý, Ất
+    6: [
+      { id: 3, score: 30 },
+      { id: 7, score: 15 },
+      { id: 5, score: 5 },
+    ], // Tỵ: Bính, Canh, Mậu
+    7: [
+      { id: 4, score: 30 },
+      { id: 6, score: 20 },
+    ], // Ngọ: Đinh, Kỷ
+    8: [
+      { id: 6, score: 30 },
+      { id: 2, score: 15 },
+      { id: 4, score: 5 },
+    ], // Mùi: Kỷ, Ất, Đinh
+    9: [
+      { id: 7, score: 30 },
+      { id: 9, score: 15 },
+      { id: 5, score: 5 },
+    ], // Thân: Canh, Nhâm, Mậu
+    10: [
+      { id: 8, score: 46.65 },
+      { id: 7, score: 3.35 },
+    ], // Dậu: Tân
+    11: [
+      { id: 5, score: 30 },
+      { id: 4, score: 15 },
+      { id: 8, score: 5 },
+    ], // Tuất: Mậu, Đinh, Tân
+    12: [
+      { id: 9, score: 30 },
+      { id: 1, score: 20 },
+    ], // Hợi: Nhâm, Giáp
+  };
+  let canTang = canTangIndex[diaChi];
+  canTang.forEach((item) => {
+    nguHanhScore = calculateEnergyScore(item.id, item.score, nguHanhScore);
+  });
+  return nguHanhScore;
+};
+
+const calcNguHanhScore = (bazi) => {
+  let nguHanhScore = [
+    { id: 1, name: "Kim", scoreAm: 0, scoreDuong: 0 },
+    { id: 2, name: "Mộc", scoreAm: 0, scoreDuong: 0 },
+    { id: 3, name: "Thủy", scoreAm: 0, scoreDuong: 0 },
+    { id: 4, name: "Hỏa", scoreAm: 0, scoreDuong: 0 },
+    { id: 5, name: "Thổ", scoreAm: 0, scoreDuong: 0 },
+  ];
+  let { gio, ngay, thang, nam } = bazi;
+  let canGio = gio.can;
+  let chiGio = gio.chi;
+  let canNgay = ngay.can;
+  let chiNgay = ngay.chi;
+  let canThang = thang.can;
+  let chiThang = thang.chi;
+  let canNam = nam.can;
+  let chiNam = nam.chi;
+  nguHanhScore = calculateEnergyScore(canGio, 40, nguHanhScore);
+  nguHanhScore = calculateEnergyScore(canNgay, 40, nguHanhScore);
+  nguHanhScore = calculateEnergyScore(canThang, 40, nguHanhScore);
+  nguHanhScore = calculateEnergyScore(canNam, 40, nguHanhScore);
+  nguHanhScore = getCanTangScore(chiGio, nguHanhScore);
+  console.log("Can tang gio:", nguHanhScore);
+  nguHanhScore = getCanTangScore(chiNgay, nguHanhScore);
+  console.log("Can tang ngay:", nguHanhScore);
+  nguHanhScore = getCanTangScore(chiThang, nguHanhScore);
+  console.log("Can tang thang:", nguHanhScore);
+  nguHanhScore = getCanTangScore(chiNam, nguHanhScore);
+  console.log("Can tang nam:", nguHanhScore);
+  return nguHanhScore;
+};
 // Helper function to convert hour info
 const convertHourInfo = (baseInfo) => {
   let { ngaySinh, thangSinh, namSinh, gioSinh, duongLich } = baseInfo;
@@ -107,7 +216,14 @@ const getBaziData = (baseInfo) => {
   let canCungMenh = getIndex(canThangGieng + chiCungMenh - 1, 10);
   let canCungMenhTen = thienCan[canCungMenh].tenCan;
   let chiCungMenhTen = diaChi[chiCungMenh].tenChi;
+  let nguHanhScore = calcNguHanhScore({
+    gio: { can: canGioSinh, chi: baseInfo.gioSinh },
+    ngay: { can: canNgay, chi: chiNgay },
+    thang: { can: canThang, chi: getIndex(chiThang + 2) },
+    nam: { can: canNam, chi: chiNam },
+  });
   return {
+    nguHanhScore,
     hour: {
       name: gioAmTen,
       solarValue: originHour,
