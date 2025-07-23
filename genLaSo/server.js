@@ -98,6 +98,18 @@ app.get("/api/get-bazi", (req, res) => {
     const duongLich = req.query.amlich === "on" ? false : true;
     const gioiTinh = req.query.gioitinh === "nam" ? 1 : -1;
     const timeZone = parseInt(req.query.muigio) || 7;
+    const namXemTieuVan = req.query.namxemtieuvan
+      ? parseInt(req.query.namxemtieuvan)
+      : undefined;
+    const thangLuuNguyet = req.query.thangluunguyet
+      ? parseInt(req.query.thangluunguyet)
+      : undefined;
+    const ngayLuuNhat = req.query.ngayluunhat
+      ? parseInt(req.query.ngayluunhat)
+      : undefined;
+    const gioThoiVan = req.query.gioThoiVan
+      ? parseInt(req.query.gioThoiVan)
+      : undefined;
     let baseInfo = {
       hoTen,
       ngaySinh,
@@ -107,8 +119,11 @@ app.get("/api/get-bazi", (req, res) => {
       gioiTinh,
       duongLich,
       timeZone,
+      namXemTieuVan,
+      thangLuuNguyet,
+      ngayLuuNhat,
+      gioThoiVan,
     };
-
     let baziResult = getBaziData(baseInfo);
     res.json(baziResult);
   } catch (error) {
