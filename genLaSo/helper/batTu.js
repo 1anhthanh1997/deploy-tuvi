@@ -23,10 +23,23 @@ const getIndex = (index, period = 12) => {
 };
 
 const calculateEnergyScore = (can, score, nguHanhScore) => {
+  if (!can) return nguHanhScore;
   let nguHanhCan = thienCan[can].nguHanhID;
   let amDuong = thienCan[can].amDuong;
-  console.log(nguHanhCan, amDuong);
   let duong = nguHanhScore.find((item) => item.id === nguHanhCan);
+  if (amDuong === -1) {
+    duong.scoreAm += score;
+  } else {
+    duong.scoreDuong += score;
+  }
+  return nguHanhScore;
+};
+
+const calculateEnergyScoreByChi = (chi, score, nguHanhScore) => {
+  if (!chi) return nguHanhScore;
+  let nguHanhChi = diaChi[chi].tenHanh;
+  let amDuong = diaChi[chi].amDuong;
+  let duong = nguHanhScore.find((item) => item.shortName === nguHanhChi);
   if (amDuong === -1) {
     duong.scoreAm += score;
   } else {
@@ -43,6 +56,7 @@ const calculateFromNguHanhId = (nguHanhId, score, nguHanhScore) => {
 };
 
 const getCanTangScore = (diaChi, nguHanhScore) => {
+  if (!diaChi) return nguHanhScore;
   let canTangIndex = {
     1: [
       { id: 10, score: 46.65 },
@@ -108,6 +122,7 @@ const getCanTangScore = (diaChi, nguHanhScore) => {
 };
 
 const getDacViScore = (can, chi, nguHanhScore) => {
+  if (!can || !chi) return nguHanhScore;
   let nguHanhCan = thienCan[can].nguHanh;
   let nguHanhChi = diaChi[chi].tenHanh;
   if (
@@ -126,6 +141,36 @@ const isSubset = (subset, superset) => {
 const getDacTheScore = (bazi, nguHanhScore) => {
   let chiList = [bazi.gio.chi, bazi.ngay.chi, bazi.thang.chi, bazi.nam.chi];
   let canList = [bazi.gio.can, bazi.ngay.can, bazi.thang.can, bazi.nam.can];
+  if (bazi.thoiVan.can) {
+    canList.push(bazi.thoiVan.can);
+  }
+  if (bazi.nhatVan.can) {
+    canList.push(bazi.nhatVan.can);
+  }
+  if (bazi.nguyetVan.can) {
+    canList.push(bazi.nguyetVan.can);
+  }
+  if (bazi.tieuVan.can) {
+    canList.push(bazi.tieuVan.can);
+  }
+  if (bazi.daiVan.can) {
+    canList.push(bazi.daiVan.can);
+  }
+  if (bazi.thoiVan.chi) {
+    chiList.push(bazi.thoiVan.chi);
+  }
+  if (bazi.nhatVan.chi) {
+    chiList.push(bazi.nhatVan.chi);
+  }
+  if (bazi.nguyetVan.chi) {
+    chiList.push(bazi.nguyetVan.chi);
+  }
+  if (bazi.tieuVan.chi) {
+    chiList.push(bazi.tieuVan.chi);
+  }
+  if (bazi.daiVan.chi) {
+    chiList.push(bazi.daiVan.chi);
+  }
   const dacTheChiScore = [
     { id: 0, chiList: [1, 2], nguHanhId: 5, score: 40 },
     { id: 1, chiList: [3, 12], nguHanhId: 2, score: 40 },
@@ -172,12 +217,13 @@ const getDacTheScore = (bazi, nguHanhScore) => {
 };
 
 const calculateWithCoefficient = (chiThang, nguHanhScore) => {
+  if(!chiThang) return nguHanhScore;
   const coefficient = [
     {
       id: 1, // Tháng 1 (Dần)
       scale: [
         { nguHanhId: 2, coefficient: 1.5 }, // Mộc
-        { nguHanhId: 5, coefficient: 0.4 }, // Thổ
+        { nguHanhId: 5, coefficient: 0.5 }, // Thổ
         { nguHanhId: 3, coefficient: 0.9 }, // Thủy
         { nguHanhId: 4, coefficient: 1.3 }, // Hỏa
         { nguHanhId: 1, coefficient: 0.7 }, // Kim
@@ -187,7 +233,7 @@ const calculateWithCoefficient = (chiThang, nguHanhScore) => {
       id: 2, // Tháng 2 (Mão)
       scale: [
         { nguHanhId: 2, coefficient: 1.5 },
-        { nguHanhId: 5, coefficient: 0.4 },
+        { nguHanhId: 5, coefficient: 0.5 },
         { nguHanhId: 3, coefficient: 0.9 },
         { nguHanhId: 4, coefficient: 1.3 },
         { nguHanhId: 1, coefficient: 0.7 },
@@ -198,7 +244,7 @@ const calculateWithCoefficient = (chiThang, nguHanhScore) => {
       scale: [
         { nguHanhId: 2, coefficient: 1.3 },
         { nguHanhId: 5, coefficient: 1.5 },
-        { nguHanhId: 3, coefficient: 0.4 },
+        { nguHanhId: 3, coefficient: 0.5 },
         { nguHanhId: 4, coefficient: 0.9 },
         { nguHanhId: 1, coefficient: 0.7 },
       ],
@@ -210,7 +256,7 @@ const calculateWithCoefficient = (chiThang, nguHanhScore) => {
         { nguHanhId: 5, coefficient: 1.3 },
         { nguHanhId: 3, coefficient: 0.7 },
         { nguHanhId: 4, coefficient: 1.5 },
-        { nguHanhId: 1, coefficient: 0.4 },
+        { nguHanhId: 1, coefficient: 0.5 },
       ],
     },
     {
@@ -220,7 +266,7 @@ const calculateWithCoefficient = (chiThang, nguHanhScore) => {
         { nguHanhId: 5, coefficient: 1.3 },
         { nguHanhId: 3, coefficient: 0.7 },
         { nguHanhId: 4, coefficient: 1.5 },
-        { nguHanhId: 1, coefficient: 0.4 },
+        { nguHanhId: 1, coefficient: 0.5 },
       ],
     },
     {
@@ -236,7 +282,7 @@ const calculateWithCoefficient = (chiThang, nguHanhScore) => {
     {
       id: 7, // Tháng 7 (Thân)
       scale: [
-        { nguHanhId: 2, coefficient: 0.4 },
+        { nguHanhId: 2, coefficient: 0.5 },
         { nguHanhId: 5, coefficient: 0.9 },
         { nguHanhId: 3, coefficient: 1.3 },
         { nguHanhId: 4, coefficient: 0.7 },
@@ -246,7 +292,7 @@ const calculateWithCoefficient = (chiThang, nguHanhScore) => {
     {
       id: 8, // Tháng 8 (Dậu)
       scale: [
-        { nguHanhId: 2, coefficient: 0.4 },
+        { nguHanhId: 2, coefficient: 0.5 },
         { nguHanhId: 5, coefficient: 0.9 },
         { nguHanhId: 3, coefficient: 1.3 },
         { nguHanhId: 4, coefficient: 0.7 },
@@ -259,7 +305,7 @@ const calculateWithCoefficient = (chiThang, nguHanhScore) => {
         { nguHanhId: 2, coefficient: 0.7 },
         { nguHanhId: 5, coefficient: 1.5 },
         { nguHanhId: 3, coefficient: 0.9 },
-        { nguHanhId: 4, coefficient: 0.4 },
+        { nguHanhId: 4, coefficient: 0.5 },
         { nguHanhId: 1, coefficient: 1.5 },
       ],
     },
@@ -269,7 +315,7 @@ const calculateWithCoefficient = (chiThang, nguHanhScore) => {
         { nguHanhId: 2, coefficient: 1.3 },
         { nguHanhId: 5, coefficient: 0.7 },
         { nguHanhId: 3, coefficient: 1.5 },
-        { nguHanhId: 4, coefficient: 0.4 },
+        { nguHanhId: 4, coefficient: 0.5 },
         { nguHanhId: 1, coefficient: 0.9 },
       ],
     },
@@ -279,7 +325,7 @@ const calculateWithCoefficient = (chiThang, nguHanhScore) => {
         { nguHanhId: 2, coefficient: 1.3 },
         { nguHanhId: 5, coefficient: 0.7 },
         { nguHanhId: 3, coefficient: 1.5 },
-        { nguHanhId: 4, coefficient: 0.4 },
+        { nguHanhId: 4, coefficient: 0.5 },
         { nguHanhId: 1, coefficient: 0.9 },
       ],
     },
@@ -290,7 +336,7 @@ const calculateWithCoefficient = (chiThang, nguHanhScore) => {
         { nguHanhId: 5, coefficient: 1.5 },
         { nguHanhId: 3, coefficient: 1.3 },
         { nguHanhId: 4, coefficient: 0.7 },
-        { nguHanhId: 1, coefficient: 0.4 },
+        { nguHanhId: 1, coefficient: 0.5 },
       ],
     },
   ];
@@ -308,13 +354,54 @@ const calculateWithCoefficient = (chiThang, nguHanhScore) => {
 
 const calcNguHanhScore = (bazi) => {
   let nguHanhScore = [
-    { id: 1, name: "Kim", scoreAm: 0, scoreDuong: 0, total: 0, scale: 1 },
-    { id: 2, name: "Mộc", scoreAm: 0, scoreDuong: 0, total: 0, scale: 1 },
-    { id: 3, name: "Thủy", scoreAm: 0, scoreDuong: 0, total: 0, scale: 1 },
-    { id: 4, name: "Hỏa", scoreAm: 0, scoreDuong: 0, total: 0, scale: 1 },
-    { id: 5, name: "Thổ", scoreAm: 0, scoreDuong: 0, total: 0, scale: 1 },
+    {
+      id: 1,
+      name: "Kim",
+      shortName: "K",
+      scoreAm: 0,
+      scoreDuong: 0,
+      total: 0,
+      scale: 1,
+    },
+    {
+      id: 2,
+      name: "Mộc",
+      shortName: "M",
+      scoreAm: 0,
+      scoreDuong: 0,
+      total: 0,
+      scale: 1,
+    },
+    {
+      id: 3,
+      name: "Thủy",
+      shortName: "T",
+      scoreAm: 0,
+      scoreDuong: 0,
+      total: 0,
+      scale: 1,
+    },
+    {
+      id: 4,
+      name: "Hỏa",
+      shortName: "H",
+      scoreAm: 0,
+      scoreDuong: 0,
+      total: 0,
+      scale: 1,
+    },
+    {
+      id: 5,
+      name: "Thổ",
+      shortName: "O",
+      scoreAm: 0,
+      scoreDuong: 0,
+      total: 0,
+      scale: 1,
+    },
   ];
-  let { gio, ngay, thang, nam } = bazi;
+  let { gio, ngay, thang, nam, thoiVan, nhatVan, nguyetVan, tieuVan, daiVan } =
+    bazi;
   let canGio = gio.can;
   let chiGio = gio.chi;
   let canNgay = ngay.can;
@@ -323,25 +410,60 @@ const calcNguHanhScore = (bazi) => {
   let chiThang = thang.chi;
   let canNam = nam.can;
   let chiNam = nam.chi;
+  let canThoiVan = thoiVan.can;
+  let chiThoiVan = thoiVan.chi;
+  let canNhatVan = nhatVan.can;
+  let chiNhatVan = nhatVan.chi;
+  let canNguyetVan = nguyetVan.can;
+  let chiNguyetVan = nguyetVan.chi;
+  let canTieuVan = tieuVan.can;
+  let chiTieuVan = tieuVan.chi;
+  let canDaiVan = daiVan.can;
+  let chiDaiVan = daiVan.chi;
   //calculate energy score
   nguHanhScore = calculateEnergyScore(canGio, 40, nguHanhScore);
   nguHanhScore = calculateEnergyScore(canNgay, 40, nguHanhScore);
   nguHanhScore = calculateEnergyScore(canThang, 40, nguHanhScore);
   nguHanhScore = calculateEnergyScore(canNam, 40, nguHanhScore);
+  nguHanhScore = calculateEnergyScore(canThoiVan, 40, nguHanhScore);
+  nguHanhScore = calculateEnergyScore(canNhatVan, 40, nguHanhScore);
+  nguHanhScore = calculateEnergyScore(canNguyetVan, 40, nguHanhScore);
+  nguHanhScore = calculateEnergyScore(canTieuVan, 40, nguHanhScore);
+  nguHanhScore = calculateEnergyScore(canDaiVan, 40, nguHanhScore);
+  //calculate energy score by chi
+  nguHanhScore = calculateEnergyScoreByChi(chiThoiVan, 50, nguHanhScore);
+  nguHanhScore = calculateEnergyScoreByChi(chiNhatVan, 50, nguHanhScore);
+  nguHanhScore = calculateEnergyScoreByChi(chiNguyetVan, 50, nguHanhScore);
+  nguHanhScore = calculateEnergyScoreByChi(chiTieuVan, 50, nguHanhScore);
+  nguHanhScore = calculateEnergyScoreByChi(chiDaiVan, 50, nguHanhScore);
   //calculate can tang score
   nguHanhScore = getCanTangScore(chiGio, nguHanhScore);
   nguHanhScore = getCanTangScore(chiNgay, nguHanhScore);
   nguHanhScore = getCanTangScore(chiThang, nguHanhScore);
   nguHanhScore = getCanTangScore(chiNam, nguHanhScore);
+  nguHanhScore = getCanTangScore(chiThoiVan, nguHanhScore);
+  nguHanhScore = getCanTangScore(chiNhatVan, nguHanhScore);
+  nguHanhScore = getCanTangScore(chiNguyetVan, nguHanhScore);
+  nguHanhScore = getCanTangScore(chiTieuVan, nguHanhScore);
+  nguHanhScore = getCanTangScore(chiDaiVan, nguHanhScore);
   //calculate dac vi score
   nguHanhScore = getDacViScore(canGio, chiGio, nguHanhScore);
   nguHanhScore = getDacViScore(canNgay, chiNgay, nguHanhScore);
   nguHanhScore = getDacViScore(canThang, chiThang, nguHanhScore);
   nguHanhScore = getDacViScore(canNam, chiNam, nguHanhScore);
+  nguHanhScore = getDacViScore(canThoiVan, chiThoiVan, nguHanhScore);
+  nguHanhScore = getDacViScore(canNhatVan, chiNhatVan, nguHanhScore);
+  nguHanhScore = getDacViScore(canNguyetVan, chiNguyetVan, nguHanhScore);
+  nguHanhScore = getDacViScore(canTieuVan, chiTieuVan, nguHanhScore);
+  nguHanhScore = getDacViScore(canDaiVan, chiDaiVan, nguHanhScore);
   //calculate dac the score
   nguHanhScore = getDacTheScore(bazi, nguHanhScore);
+  console.log(nguHanhScore)
   //calculate with coefficient
-  nguHanhScore = calculateWithCoefficient(chiThang, nguHanhScore);
+  // nguHanhScore = calculateWithCoefficient(chiThang, nguHanhScore);
+  //calculate with coeficient nguyet van
+  nguHanhScore = calculateWithCoefficient(chiNguyetVan, nguHanhScore);
+
   //calculate by percent
   nguHanhScore = calcNguHanhPercent(nguHanhScore);
   return nguHanhScore;
@@ -395,7 +517,7 @@ const convertHourInfo = (baseInfo) => {
   return baseInfo;
 };
 
-const getBaziData = (baseInfo) => {
+const getBaziData = (baseInfo, thapNhiCung) => {
   let originHour = baseInfo.gioSinh;
   baseInfo = convertHourInfo(baseInfo);
   let amLich = S2L(
@@ -433,15 +555,77 @@ const getBaziData = (baseInfo) => {
     amLich[2],
     amLich[3]
   );
-
-  let amLichVan = S2L(
-    baseInfo.ngayLuuNhat,
-    baseInfo.thangLuuNguyet,
-    baseInfo.namXemTieuVan,
-    baseInfo.timeZone
-  );
-
-  let chiThoiVan = diaChi[baseInfo.gioThoiVan];
+  let canThoiVan;
+  let chiThoiVan;
+  let canNhatVan;
+  let chiNhatVan;
+  let canNguyetVan;
+  let chiNguyetVan;
+  let canTieuVan;
+  let chiTieuVan;
+  let canDaiVan;
+  let chiDaiVan;
+  if (baseInfo.namXemTieuVan) {
+    let amLichVan = S2L(
+      baseInfo.ngayLuuNhat ? baseInfo.ngayLuuNhat : 15,
+      baseInfo.thangLuuNguyet ? baseInfo.thangLuuNguyet : 5,
+      baseInfo.namXemTieuVan ? baseInfo.namXemTieuVan : 1,
+      baseInfo.timeZone
+    );
+    if (baseInfo.gioThoiVan) {
+      chiThoiVan = diaChi[baseInfo.gioThoiVan];
+      canThoiVan =
+        ((((jdFromDate(
+          baseInfo.ngayLuuNhat,
+          baseInfo.thangLuuNguyet,
+          baseInfo.namXemTieuVan
+        ) -
+          1) *
+          2) %
+          10) +
+          baseInfo.gioThoiVan) %
+        10;
+      if (canThoiVan === 0) {
+        canThoiVan = 10;
+      }
+    }
+    chiThoiVan = diaChi[baseInfo.gioThoiVan];
+    if (baseInfo.gioNhatVan) {
+      const nhatVanResult = canChiNgay(
+        baseInfo.ngayLuuNhat,
+        baseInfo.thangLuuNguyet,
+        baseInfo.namXemTieuVan,
+        baseInfo.duongLich,
+        baseInfo.timeZone
+      );
+      canNhatVan = nhatVanResult[0];
+      chiNhatVan = nhatVanResult[1];
+    }
+    let canChiAmLichVan = ngayThangNamCanChi(
+      amLichVan[0],
+      amLichVan[1],
+      amLichVan[2],
+      amLichVan[3]
+    );
+    if (baseInfo.thangLuuNguyet) {
+      canNguyetVan = canChiAmLichVan[0];
+      chiNguyetVan = amLichVan[1];
+    }
+    canTieuVan = canChiAmLichVan[1];
+    chiTieuVan = canChiAmLichVan[2];
+    let tuoi = baseInfo.namXemTieuVan - baseInfo.namSinh + 1;
+    let cungDaiVan = null;
+    for (let cung of thapNhiCung) {
+      if (
+        (cung.cungDaiHan < 10 && tuoi < 10) ||
+        (cung.cungDaiHan <= tuoi && cung.cungDaiHan + 10 > tuoi)
+      ) {
+        cungDaiVan = cung;
+      }
+    }
+    canDaiVan = cungDaiVan.cungCan;
+    chiDaiVan = cungDaiVan.cungSo;
+  }
 
   let canThang = canChiAmLich[0];
   let chiThang = amLich[1];
@@ -457,11 +641,17 @@ const getBaziData = (baseInfo) => {
   let ngayAmTen = canNgayTen + " " + chiNgayTen;
   let thangAmTen = canThangTen + " " + chiThangTen;
   let namAmTen = canNamTen + " " + chiNamTen;
+  console.log(chiNguyetVan)
   let nguHanhScore = calcNguHanhScore({
     gio: { can: canGioSinh, chi: baseInfo.gioSinh },
     ngay: { can: canNgay, chi: chiNgay },
     thang: { can: canThang, chi: getIndex(chiThang + 2) },
     nam: { can: canNam, chi: chiNam },
+    thoiVan: { can: canThoiVan, chi: chiThoiVan },
+    nhatVan: { can: canNhatVan, chi: chiNhatVan },
+    nguyetVan: { can: canNguyetVan, chi: getIndex(chiNguyetVan + 2) },
+    tieuVan: { can: canTieuVan, chi: chiTieuVan },
+    daiVan: { can: canDaiVan, chi: chiDaiVan },
   });
 
   return {
