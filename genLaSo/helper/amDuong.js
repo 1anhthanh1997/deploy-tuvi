@@ -326,7 +326,7 @@ function sinhKhac(hanh1, hanh2) {
 function nguHanhNapAm(diaChi, thienCan, xuatBanMenh = false) {
   const banMenh = {
     K1: "HẢI TRUNG KIM",
-    T1: "GIANG HẠ THỦY",
+    T1: "GIẢN HẠ THỦY",
     H1: "TÍCH LỊCH HỎA",
     O1: "BÍCH THƯỢNG THỔ",
     M1: "TĂNG ÐỐ MỘC",
@@ -638,16 +638,16 @@ function hopChi(chiNgay) {
 
 const getCanTang = (diaChi) => {
   let canTang = {
-    1: ["Quý"], // Tý
+    1: ["Quý", "Nhâm"], // Tý
     2: ["Kỷ", "Tân", "Quý"], // Sửu
     3: ["Giáp", "Bính", "Mậu"], // Dần
-    4: ["Ất"], // Mão
+    4: ["Ất", "Giáp"], // Mão
     5: ["Mậu", "Quý", "Ất"], // Thìn
     6: ["Bính", "Canh", "Mậu"], // Tỵ
     7: ["Đinh", "Kỷ"], // Ngọ
     8: ["Kỷ", "Ất", "Đinh"], // Mùi
     9: ["Canh", "Nhâm", "Mậu"], // Thân
-    10: ["Tân"], // Dậu
+    10: ["Tân", "Canh"], // Dậu
     11: ["Mậu", "Đinh", "Tân"], // Tuất
     12: ["Nhâm", "Giáp"], // Hợi
   };

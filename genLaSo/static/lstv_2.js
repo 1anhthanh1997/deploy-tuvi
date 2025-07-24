@@ -67,9 +67,7 @@ $(document).ready(function () {
     let thang = bazi.month;
     let ngay = bazi.day;
     let gio = bazi.hour;
-    let thaiNguyen = bazi.thaiNguyen;
-    let thaiTuc = bazi.thaiTuc;
-    let cungMenh = bazi.cungMenh;
+    let nguHanhScore = bazi.nguHanhScore;
     $("#namDuongLich").text(nam.solarValue);
     $("#thangDuongLich").text(thang.solarValue);
     $("#ngayDuongLich").text(ngay.solarValue);
@@ -82,7 +80,7 @@ $(document).ready(function () {
     $("#tenThangAm").text(thang.name);
     $("#tenNgayAm").text(ngay.name);
     $("#tenGioAm").text(gio.name);
-    $("#napAmNam").text(gio.nguHanhNapAm);
+    $("#napAmNam").text(nam.nguHanhNapAm);
     $("#napAmThang").text(thang.nguHanhNapAm);
     $("#napAmNgay").text(ngay.nguHanhNapAm);
     $("#napAmGio").text(gio.nguHanhNapAm);
@@ -102,18 +100,6 @@ $(document).ready(function () {
     $("#napAmGioBatTu").text(gio.nguHanhNapAm);
     $("#nguHanhCanGioBatTu").text(gio.nguHanhCan);
     $("#nguHanhChiGioBatTu").text(gio.nguHanhChi);
-    $("#tenThaiNguyen").text(thaiNguyen.name);
-    $("#napAmThaiNguyen").text(thaiNguyen.nguHanhNapAm);
-    $("#nguHanhCanThaiNguyen").text(thaiNguyen.nguHanhCan);
-    $("#nguHanhChiThaiNguyen").text(thaiNguyen.nguHanhChi);
-    $("#tenThaiTuc").text(thaiTuc.name);
-    $("#napAmThaiTuc").text(thaiTuc.nguHanhNapAm);
-    $("#nguHanhCanThaiTuc").text(thaiTuc.nguHanhCan);
-    $("#nguHanhChiThaiTuc").text(thaiTuc.nguHanhChi);
-    $("#tenCungMenh").text(cungMenh.name);
-    $("#napAmCungMenh").text(cungMenh.nguHanhNapAm);
-    $("#nguHanhCanCungMenh").text(cungMenh.nguHanhCan);
-    $("#nguHanhChiCungMenh").text(cungMenh.nguHanhChi);
     $("#tenNamTru").text(nam.name);
     $("#tenThangTru").text(thang.name);
     $("#tenNgayTru").text(ngay.name);
@@ -126,15 +112,78 @@ $(document).ready(function () {
     $("#thapThanThang").text(thang.thapThan);
     $("#thapThanNgay").text(ngay.thapThan);
     $("#thapThanGio").text(gio.thapThan);
-    $("#thanSatNam").text(nam.thanSat);
-    $("#thanSatThang").text(thang.thanSat);
-    $("#thanSatNgay").text(ngay.thanSat);
-    $("#thanSatGio").text(gio.thanSat);
-    $("#truongSinhNam").text(nam.truongSinh);
-    $("#truongSinhThang").text(thang.truongSinh);
-    $("#truongSinhNgay").text(ngay.truongSinh);
-    $("#truongSinhGio").text(gio.truongSinh);
+    $("#nangLuongAmKim").text(
+      nguHanhScore.find((item) => item.id === 1).scoreAm
+    );
+    $("#nangLuongAmMoc").text(
+      nguHanhScore.find((item) => item.id === 2).scoreAm
+    );
+    $("#nangLuongAmThuy").text(
+      nguHanhScore.find((item) => item.id === 3).scoreAm
+    );
+    $("#nangLuongAmHoa").text(
+      nguHanhScore.find((item) => item.id === 4).scoreAm
+    );
+    $("#nangLuongAmTho").text(
+      nguHanhScore.find((item) => item.id === 5).scoreAm
+    );
+    $("#nangLuongDuongKim").text(
+      nguHanhScore.find((item) => item.id === 1).scoreDuong
+    );
+    $("#nangLuongDuongMoc").text(
+      nguHanhScore.find((item) => item.id === 2).scoreDuong
+    );
+    $("#nangLuongDuongThuy").text(
+      nguHanhScore.find((item) => item.id === 3).scoreDuong
+    );
+    $("#nangLuongDuongHoa").text(
+      nguHanhScore.find((item) => item.id === 4).scoreDuong
+    );
+    $("#nangLuongDuongTho").text(
+      nguHanhScore.find((item) => item.id === 5).scoreDuong
+    );
+    $("#tongNangLuongKim").text(
+      nguHanhScore.find((item) => item.id === 1).total
+    );
+    $("#tongNangLuongMoc").text(
+      nguHanhScore.find((item) => item.id === 2).total
+    );
+    $("#tongNangLuongThuy").text(
+      nguHanhScore.find((item) => item.id === 3).total
+    );
+    $("#tongNangLuongHoa").text(
+      nguHanhScore.find((item) => item.id === 4).total
+    );
+    $("#tongNangLuongTho").text(
+      nguHanhScore.find((item) => item.id === 5).total
+    );
+    $("#phanTramNangLuongKim").text(
+      nguHanhScore.find((item) => item.id === 1).percent
+    );
+    $("#phanTramNangLuongMoc").text(
+      nguHanhScore.find((item) => item.id === 2).percent
+    );
+    $("#phanTramNangLuongThuy").text(
+      nguHanhScore.find((item) => item.id === 3).percent
+    );
+    $("#phanTramNangLuongHoa").text(
+      nguHanhScore.find((item) => item.id === 4).percent
+    );
+    $("#phanTramNangLuongTho").text(
+      nguHanhScore.find((item) => item.id === 5).percent
+    );
   }
+
+  $("#luunien").click(function () {
+    let checkedValues = $("#luunien").serialize();
+    if (checkedValues) {
+      $("#namxemtieuvandiv").css("display", "flex");
+      $("#daivan").prop("checked", false);
+      $("#namxemdaivandiv").css("display", "none");
+    } else {
+      $("#namxemtieuvandiv").css("display", "none");
+    }
+  });
 
   $("input#laplaso").click(function () {
     $("#laso").removeClass("anlaso");

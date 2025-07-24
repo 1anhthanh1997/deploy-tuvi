@@ -164,6 +164,21 @@
             >
               <div class="col col-3">Ngày, tháng, năm xem tiểu vận</div>
               <div class="col col-9">
+                <select name="giothoivan" id="giothoivan">
+                  <option selected="selected" value="1">Tí (0g - 1g)</option>
+                  <option value="2">Sửu (1g - 3g)</option>
+                  <option value="3">Dần (3g - 5g)</option>
+                  <option value="4">Mão (5g - 7g)</option>
+                  <option value="5">Thìn (7g - 9g)</option>
+                  <option value="6">Tị (9g - 11g)</option>
+                  <option value="7">Ngọ (11g - 13g)</option>
+                  <option value="8">Mùi (13g - 15g)</option>
+                  <option value="9">Thân (15g - 17g)</option>
+                  <option value="10">Dậu (17g - 19g)</option>
+                  <option value="11">Tuất (19g - 21g)</option>
+                  <option value="12">Hợi (21g - 23g)</option>
+                  <option value="13">Tí (23g - 24g)</option>
+                </select>
                 <input
                   type="text"
                   id="ngayluunhat"
@@ -221,7 +236,7 @@
     <!-- Three Tables Section -->
     <div class="container" style="margin: 20px auto; max-width: 1200px">
       <!-- Table 1: Thông tin Âm - Dương Lịch -->
-      <div style="margin-bottom: 30px">
+      <!-- <div style="margin-bottom: 30px">
         <h3 style="text-align: center; margin-bottom: 15px; color: #333">
           Bảng: Thông tin Âm - Dương Lịch
         </h3>
@@ -409,7 +424,7 @@
             </tr>
           </tbody>
         </table>
-      </div>
+      </div> -->
 
       <!-- Table 2: Thông tin Bát Tự -->
       <div style="margin-bottom: 30px">
@@ -784,6 +799,190 @@
                 Thiên ấn, Thực thần, Tỉ kiên
               </td>
             </tr> -->
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-bottom: 30px">
+        <h3 style="text-align: center; margin-bottom: 15px; color: #333">
+          Bảng: Điểm năng lượng ngũ hành
+        </h3>
+        <table
+          style="width: 100%; border-collapse: collapse; border: 2px solid #333"
+        >
+          <thead>
+            <tr style="background-color: #f5f5f5">
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Tên cột
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Kim
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Mộc
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Thuỷ
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Hoả
+              </th>
+              <th
+                style="
+                  border: 1px solid #333;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                "
+              >
+                Thổ
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Âm(-)
+              </td>
+              <td
+                id="nangLuongAmKim"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+              <td
+                id="nangLuongAmMoc"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+              <td
+                id="nangLuongAmThuy"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+              <td
+                id="nangLuongAmHoa"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+              <td
+                id="nangLuongAmTho"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Dương(+)
+              </td>
+              <td
+                id="nangLuongDuongKim"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+              <td
+                id="nangLuongDuongMoc"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+              <td
+                id="nangLuongDuongThuy"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+              <td
+                id="nangLuongDuongHoa"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+              <td
+                id="nangLuongDuongTho"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                Tổng
+              </td>
+              <td
+                id="tongNangLuongKim"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+              <td
+                id="tongNangLuongMoc"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+              <td
+                id="tongNangLuongThuy"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+              <td
+                id="tongNangLuongHoa"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+              <td
+                id="tongNangLuongTho"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #333; padding: 8px; font-weight: bold"
+              >
+                %
+              </td>
+              <td
+                id="phanTramNangLuongKim"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+              <td
+                id="phanTramNangLuongMoc"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+              <td
+                id="phanTramNangLuongThuy"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+              <td
+                id="phanTramNangLuongHoa"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+              <td
+                id="phanTramNangLuongTho"
+                style="border: 1px solid #333; padding: 8px; text-align: center"
+              ></td>
+            </tr>
           </tbody>
         </table>
       </div>

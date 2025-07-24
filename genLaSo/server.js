@@ -107,8 +107,8 @@ app.get("/api/get-bazi", (req, res) => {
     const ngayLuuNhat = req.query.ngayluunhat
       ? parseInt(req.query.ngayluunhat)
       : undefined;
-    const gioThoiVan = req.query.gioThoiVan
-      ? parseInt(req.query.gioThoiVan)
+    const gioThoiVan = req.query.giothoivan
+      ? parseInt(req.query.giothoivan)
       : undefined;
 
     const data = lapDiaBan(

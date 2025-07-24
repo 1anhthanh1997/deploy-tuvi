@@ -103,7 +103,7 @@ const getCanTangScore = (diaChi, nguHanhScore) => {
     10: [
       { id: 8, score: 46.65 },
       { id: 7, score: 3.35 },
-    ], // Dậu: Tân
+    ], // Dậu: Tân,Canh
     11: [
       { id: 5, score: 30 },
       { id: 4, score: 15 },
@@ -217,7 +217,7 @@ const getDacTheScore = (bazi, nguHanhScore) => {
 };
 
 const calculateWithCoefficient = (chiThang, nguHanhScore) => {
-  if(!chiThang) return nguHanhScore;
+  if (!chiThang) return nguHanhScore;
   const coefficient = [
     {
       id: 1, // Tháng 1 (Dần)
@@ -347,7 +347,13 @@ const calculateWithCoefficient = (chiThang, nguHanhScore) => {
   scaleMonth.scale.forEach((scale) => {
     let nguHanh = nguHanhScore.find((item) => item.id === scale.nguHanhId);
     nguHanh.scale = scale.coefficient;
-    nguHanh.total = (nguHanh.scoreAm + nguHanh.scoreDuong) * scale.coefficient;
+    nguHanh.total =
+      ((nguHanh.scoreAm + nguHanh.scoreDuong) *
+        parseInt(scale.coefficient * 10)) /
+      10;
+    nguHanh.scoreAm = (nguHanh.scoreAm * parseInt(scale.coefficient * 10)) / 10;
+    nguHanh.scoreDuong =
+      (nguHanh.scoreDuong * parseInt(scale.coefficient * 10)) / 10;
   });
   return nguHanhScore;
 };
@@ -431,11 +437,17 @@ const calcNguHanhScore = (bazi) => {
   nguHanhScore = calculateEnergyScore(canTieuVan, 40, nguHanhScore);
   nguHanhScore = calculateEnergyScore(canDaiVan, 40, nguHanhScore);
   //calculate energy score by chi
+  console.log("chiThoiVan", chiThoiVan);
+
   nguHanhScore = calculateEnergyScoreByChi(chiThoiVan, 50, nguHanhScore);
   nguHanhScore = calculateEnergyScoreByChi(chiNhatVan, 50, nguHanhScore);
+  console.log("chiNhatVan", chiNhatVan);
   nguHanhScore = calculateEnergyScoreByChi(chiNguyetVan, 50, nguHanhScore);
+  console.log("chiNguyetVan", chiNguyetVan);
   nguHanhScore = calculateEnergyScoreByChi(chiTieuVan, 50, nguHanhScore);
+  console.log("chiTieuVan", chiTieuVan);
   nguHanhScore = calculateEnergyScoreByChi(chiDaiVan, 50, nguHanhScore);
+  console.log("chiDaiVan", chiDaiVan);
   //calculate can tang score
   nguHanhScore = getCanTangScore(chiGio, nguHanhScore);
   nguHanhScore = getCanTangScore(chiNgay, nguHanhScore);
@@ -458,9 +470,8 @@ const calcNguHanhScore = (bazi) => {
   nguHanhScore = getDacViScore(canDaiVan, chiDaiVan, nguHanhScore);
   //calculate dac the score
   nguHanhScore = getDacTheScore(bazi, nguHanhScore);
-  console.log(nguHanhScore)
   //calculate with coefficient
-  // nguHanhScore = calculateWithCoefficient(chiThang, nguHanhScore);
+  nguHanhScore = calculateWithCoefficient(chiThang, nguHanhScore);
   //calculate with coeficient nguyet van
   nguHanhScore = calculateWithCoefficient(chiNguyetVan, nguHanhScore);
 
@@ -473,7 +484,7 @@ const calcNguHanhPercent = (nguHanhScore) => {
   const total = nguHanhScore.reduce((sum, nh) => sum + nh.total, 0);
   return nguHanhScore.map((nh) => ({
     ...nh,
-    percent: total === 0 ? 0 : (nh.total / total) * 100,
+    percent: (total === 0 ? 0 : (nh.total / total) * 100).toFixed(2),
   }));
 };
 // Helper function to convert hour info
@@ -641,15 +652,17 @@ const getBaziData = (baseInfo, thapNhiCung) => {
   let ngayAmTen = canNgayTen + " " + chiNgayTen;
   let thangAmTen = canThangTen + " " + chiThangTen;
   let namAmTen = canNamTen + " " + chiNamTen;
-  console.log(chiNguyetVan)
   let nguHanhScore = calcNguHanhScore({
     gio: { can: canGioSinh, chi: baseInfo.gioSinh },
     ngay: { can: canNgay, chi: chiNgay },
     thang: { can: canThang, chi: getIndex(chiThang + 2) },
     nam: { can: canNam, chi: chiNam },
-    thoiVan: { can: canThoiVan, chi: chiThoiVan },
+    thoiVan: { can: canThoiVan, chi: chiThoiVan.id },
     nhatVan: { can: canNhatVan, chi: chiNhatVan },
-    nguyetVan: { can: canNguyetVan, chi: getIndex(chiNguyetVan + 2) },
+    nguyetVan: {
+      can: canNguyetVan,
+      chi: chiNguyetVan ? getIndex(chiNguyetVan + 2) : undefined,
+    },
     tieuVan: { can: canTieuVan, chi: chiTieuVan },
     daiVan: { can: canDaiVan, chi: chiDaiVan },
   });
