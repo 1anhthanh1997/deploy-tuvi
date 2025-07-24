@@ -62,6 +62,62 @@ $(document).ready(function () {
     }
   }
 
+  const getThapThanh = (nhatChuName) => {
+    let thapThan = [{ name: "Giáp", thapThan: [] }];
+  };
+
+  const getTuTruData = (bazi) => {
+    let nhatChu = bazi.day;
+    let nhatChuName = nhatChu.name.split(" ")[0];
+    let tuTru = `
+Nhật Chủ: ${nhatChuName}. File Thập Thần của Nhật Chủ ${nhatChu.name}
+Mười Thiên Can khi tương tác với Nhật Chủ ${nhatChuName} ${nhatChu.nguHanhCan} sẽ tạo ra mười thực thể (Thập Thần) với những biểu hiện riêng biệt.
+Tỷ Kiên (Kỷ Thổ): Đại diện cho bản thân, bạn bè, đồng nghiệp cùng giới tính.
+Tích cực: Có kế hoạch, bao dung, giỏi quản lý và sắp xếp.
+Tiêu cực: Hay lo nghĩ, vụn vặt, bao bọc quá mức.
+Kiếp Tài (Mậu Thổ): Đại diện cho anh em, bạn bè khác giới, đối thủ cạnh tranh.
+Tích cực: Vững chãi, uy tín, hào sảng, trung thành, đáng tin cậy.
+Tiêu cực: Bảo thủ, trì trệ, cố chấp, thiếu linh hoạt.
+Thực Thần (Tân Kim): Đại diện cho sự hưởng thụ, tài năng nghệ thuật, con gái.
+Tích cực: Tinh tế, sắc sảo, chỉn chu, có nguyên tắc, coi trọng danh dự.
+Tiêu cực: Khó tính, hay chỉ trích, kiêu ngạo, lời nói sắc bén gây tổn thương.
+Thương Quan (Canh Kim): Đại diện cho sự thông minh, phản kháng, sáng tạo, con trai.
+Tích cực: Quyết đoán, dũng cảm, nghĩa khí, thẳng thắn, bảo vệ lẽ phải.
+Tiêu cực: Hiếu thắng, cứng nhắc, nóng vội, độc đoán.
+Chính Quan (Giáp Mộc): Đại diện cho công danh, sự nghiệp, kỷ luật, chồng (đối với nữ).
+Tích cực: Có khí chất lãnh đạo, chính trực, độc lập, kiên định và đáng tin cậy.
+Tiêu cực: Độc đoán, gia trưởng, cứng nhắc, tự cao.
+Thất Sát (Ất Mộc): Đại diện cho áp lực, thử thách, quyền lực, người tình (đối với nữ).
+Tích cực: Khéo léo, linh hoạt, nhẫn nại, giỏi giao tiếp, tùy cơ ứng biến.
+Tiêu cực: Dựa dẫm, thiếu chính kiến, gió chiều nào theo chiều ấy, thao túng ngầm.
+Chính Ấn (Bính Hỏa): Đại diện cho mẹ, sự che chở, kiến thức, lòng nhân hậu.
+Tích cực: Hào phóng, nhiệt tình, lạc quan, truyền cảm hứng, quang minh chính đại.
+Tiêu cực: Nóng nảy, bốc đồng, phô trương, háo danh, cả thèm chóng chán.
+Thiên Ấn (Đinh Hỏa): Đại diện cho mẹ kế, kiến thức độc đáo, trực giác, sự cô độc.
+Tích cực: Ấm áp, tinh tế, sâu sắc, lễ phép, chu đáo, có khả năng soi sáng cho người khác.
+Tiêu cực: Hay ghen tuông, đa nghi, giữ thù, nhạy cảm quá mức, nóng giận ngầm.
+Chính Tài (Nhâm Thủy): Đại diện cho tài sản ổn định, thu nhập chính, vợ (đối với nam).
+Tích cực: Thông minh, linh hoạt, hào sảng, có tầm nhìn rộng, giỏi giao tiếp xã hội.
+Tiêu cực: Hay thay đổi, không ổn định, cả thèm chóng chán, phóng túng.
+Thiên Tài (Quý Thủy): Đại diện cho tài sản bất ngờ, đầu tư, kinh doanh, cha, người tình (đối với nam).
+Tích cực: Sâu sắc, tinh tế, khiêm tốn, nhẫn nại, giỏi lắng nghe, thấu cảm, có trực giác tốt.
+Tiêu cực: Hay lo nghĩ, bi quan, u uất, nhạy cảm quá mức, hay suy diễn.
+`;
+    return tuTru;
+  };
+
+  function getBatTuTemplate(bazi) {
+    let nam = bazi.year;
+    let thang = bazi.month;
+    let ngay = bazi.day;
+    let gio = bazi.hour;
+    let nguHanhScore = bazi.nguHanhScore;
+    let batTuTemplate = `Hồ sơ AGI của Hoàng sinh năm 1994
+    Phần 1: Tứ Trụ
+    ${getTuTruData(bazi)}
+     `;
+  }
+
   function lapBatTu(bazi) {
     let nam = bazi.year;
     let thang = bazi.month;
