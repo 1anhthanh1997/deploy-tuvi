@@ -16,6 +16,7 @@ const {
   getGioSinhIndex,
   checkNguHanhRelationshipDetailed,
 } = require("./amDuong.js");
+const Decimal = require("decimal.js");
 
 // Helper function to get index with modulo
 const getIndex = (index, period = 12) => {
@@ -216,6 +217,13 @@ const getDacTheScore = (bazi, nguHanhScore) => {
   return nguHanhScore;
 };
 
+function safeMultiply(a, b) {
+  let score = new Decimal(a);
+  let coefficient = new Decimal(b);
+  let result = score.mul(coefficient);
+  return result.toNumber();
+}
+
 const calculateWithCoefficient = (chiThang, nguHanhScore) => {
   if (!chiThang) return nguHanhScore;
   const coefficient = [
@@ -347,13 +355,12 @@ const calculateWithCoefficient = (chiThang, nguHanhScore) => {
   scaleMonth.scale.forEach((scale) => {
     let nguHanh = nguHanhScore.find((item) => item.id === scale.nguHanhId);
     nguHanh.scale = scale.coefficient;
-    nguHanh.total =
-      ((nguHanh.scoreAm + nguHanh.scoreDuong) *
-        parseInt(scale.coefficient * 10)) /
-      10;
-    nguHanh.scoreAm = (nguHanh.scoreAm * parseInt(scale.coefficient * 10)) / 10;
-    nguHanh.scoreDuong =
-      (nguHanh.scoreDuong * parseInt(scale.coefficient * 10)) / 10;
+    nguHanh.total = safeMultiply(
+      nguHanh.scoreAm + nguHanh.scoreDuong,
+      scale.coefficient
+    );
+    nguHanh.scoreAm = safeMultiply(nguHanh.scoreAm, scale.coefficient);
+    nguHanh.scoreDuong = safeMultiply(nguHanh.scoreDuong, scale.coefficient);
   });
   return nguHanhScore;
 };
@@ -657,7 +664,7 @@ const getBaziData = (baseInfo, thapNhiCung) => {
     ngay: { can: canNgay, chi: chiNgay },
     thang: { can: canThang, chi: getIndex(chiThang + 2) },
     nam: { can: canNam, chi: chiNam },
-    thoiVan: { can: canThoiVan, chi: chiThoiVan.id },
+    thoiVan: { can: canThoiVan, chi: chiThoiVan?.id },
     nhatVan: { can: canNhatVan, chi: chiNhatVan },
     nguyetVan: {
       can: canNguyetVan,
