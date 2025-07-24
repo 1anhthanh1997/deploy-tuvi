@@ -16,7 +16,6 @@ const {
   getGioSinhIndex,
   checkNguHanhRelationshipDetailed,
 } = require("./amDuong.js");
-const Decimal = require("decimal.js");
 
 // Helper function to get index with modulo
 const getIndex = (index, period = 12) => {
@@ -218,10 +217,10 @@ const getDacTheScore = (bazi, nguHanhScore) => {
 };
 
 function safeMultiply(a, b) {
-  let score = new Decimal(a);
-  let coefficient = new Decimal(b);
-  let result = score.mul(coefficient);
-  return result.toNumber();
+  const scale = 10000; // scale càng lớn thì độ chính xác càng cao
+  let aScale = a * scale;
+  let bScale = b * scale;
+  return (aScale * bScale) / (scale * scale);
 }
 
 const calculateWithCoefficient = (chiThang, nguHanhScore) => {
