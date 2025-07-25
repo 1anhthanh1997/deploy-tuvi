@@ -333,7 +333,7 @@ function nguHanhNapAm(diaChi, thienCan, xuatBanMenh = false) {
     T2: "ÐẠI KHÊ THỦY",
     H2: "LƯ TRUNG HỎA",
     O2: "THÀNH ÐẦU THỔ",
-    M2: "TÙNG BÁ MỘC",
+    M2: "TÙNG BÁCH MỘC",
     K2: "KIM BẠCH KIM",
     H3: "PHÚ ÐĂNG HỎA",
     O3: "SA TRUNG THỔ",
