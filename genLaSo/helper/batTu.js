@@ -443,17 +443,11 @@ const calcNguHanhScore = (bazi) => {
   nguHanhScore = calculateEnergyScore(canTieuVan, 40, nguHanhScore);
   nguHanhScore = calculateEnergyScore(canDaiVan, 40, nguHanhScore);
   //calculate energy score by chi
-  console.log("chiThoiVan", chiThoiVan);
-
   nguHanhScore = calculateEnergyScoreByChi(chiThoiVan, 50, nguHanhScore);
   nguHanhScore = calculateEnergyScoreByChi(chiNhatVan, 50, nguHanhScore);
-  console.log("chiNhatVan", chiNhatVan);
   nguHanhScore = calculateEnergyScoreByChi(chiNguyetVan, 50, nguHanhScore);
-  console.log("chiNguyetVan", chiNguyetVan);
   nguHanhScore = calculateEnergyScoreByChi(chiTieuVan, 50, nguHanhScore);
-  console.log("chiTieuVan", chiTieuVan);
   nguHanhScore = calculateEnergyScoreByChi(chiDaiVan, 50, nguHanhScore);
-  console.log("chiDaiVan", chiDaiVan);
   //calculate can tang score
   nguHanhScore = getCanTangScore(chiGio, nguHanhScore);
   nguHanhScore = getCanTangScore(chiNgay, nguHanhScore);
@@ -506,7 +500,7 @@ const convertHourInfo = (baseInfo) => {
     ngayLuuNhat,
     gioThoiVan,
   } = baseInfo;
-  if (gioSinh === 23) {
+  if (gioSinh === 13) {
     [ngaySinh, thangSinh, namSinh] = getNextDay(
       ngaySinh,
       thangSinh,
@@ -514,7 +508,7 @@ const convertHourInfo = (baseInfo) => {
       duongLich
     );
   }
-  if (gioThoiVan === 23) {
+  if (gioThoiVan === 13) {
     [ngayLuuNhat, thangLuuNguyet, namXemTieuVan] = getNextDay(
       ngayLuuNhat,
       thangLuuNguyet,
@@ -570,7 +564,7 @@ const getBaziData = (baseInfo, thapNhiCung) => {
     amLich[0],
     amLich[1],
     amLich[2],
-    amLich[3]
+    false
   );
   let canThoiVan;
   let chiThoiVan;
@@ -582,15 +576,16 @@ const getBaziData = (baseInfo, thapNhiCung) => {
   let chiTieuVan;
   let canDaiVan;
   let chiDaiVan;
+  let amLichVan;
   if (baseInfo.namXemTieuVan) {
-    let amLichVan = S2L(
+    amLichVan = S2L(
       baseInfo.ngayLuuNhat ? baseInfo.ngayLuuNhat : 15,
       baseInfo.thangLuuNguyet ? baseInfo.thangLuuNguyet : 5,
       baseInfo.namXemTieuVan ? baseInfo.namXemTieuVan : 1,
       baseInfo.timeZone
     );
     if (baseInfo.gioThoiVan) {
-      chiThoiVan = diaChi[baseInfo.gioThoiVan];
+      chiThoiVan = diaChi[baseInfo.gioThoiVan].id;
       canThoiVan =
         ((((jdFromDate(
           baseInfo.ngayLuuNhat,
@@ -606,8 +601,7 @@ const getBaziData = (baseInfo, thapNhiCung) => {
         canThoiVan = 10;
       }
     }
-    chiThoiVan = diaChi[baseInfo.gioThoiVan];
-    if (baseInfo.gioNhatVan) {
+    if (baseInfo.ngayLuuNhat) {
       const nhatVanResult = canChiNgay(
         baseInfo.ngayLuuNhat,
         baseInfo.thangLuuNguyet,
@@ -673,6 +667,8 @@ const getBaziData = (baseInfo, thapNhiCung) => {
     daiVan: { can: canDaiVan, chi: chiDaiVan },
   });
 
+  console.log(canChiAmLich,getIndex(chiThang + 2), canThang, nguHanhNapAm(getIndex(chiThang + 2), canThang, true))
+
   return {
     nguHanhScore,
     hour: {
@@ -727,6 +723,85 @@ const getBaziData = (baseInfo, thapNhiCung) => {
         thienCan[canNam].amDuong === thienCan[canNgay].amDuong
       ),
     },
+    daiVan: baseInfo.namXemTieuVan
+      ? {
+          name: thienCan[canDaiVan].tenCan + " " + diaChi[chiDaiVan].tenChi,
+          nguHanhNapAm: nguHanhNapAm(chiDaiVan, canDaiVan, true),
+          nguHanhCan: nguHanh(thienCan[canDaiVan].nguHanh).tenHanh,
+          nguHanhChi: nguHanh(diaChi[chiDaiVan].tenHanh).tenHanh,
+          canTang: getCanTang(chiDaiVan),
+          thapThan: getThapThan(
+            thienCan[canDaiVan].nguHanh,
+            thienCan[canNgay].nguHanh,
+            thienCan[canDaiVan].amDuong === thienCan[canNgay].amDuong
+          ),
+        }
+      : undefined,
+    tieuVan: baseInfo.namXemTieuVan
+      ? {
+          name: thienCan[canTieuVan].tenCan + " " + diaChi[chiTieuVan].tenChi,
+          nguHanhNapAm: nguHanhNapAm(chiTieuVan, canTieuVan, true),
+          nguHanhCan: nguHanh(thienCan[canTieuVan].nguHanh).tenHanh,
+          nguHanhChi: nguHanh(diaChi[chiTieuVan].tenHanh).tenHanh,
+          canTang: getCanTang(chiTieuVan),
+          thapThan: getThapThan(
+            thienCan[canTieuVan].nguHanh,
+            thienCan[canNgay].nguHanh,
+            thienCan[canTieuVan].amDuong === thienCan[canNgay].amDuong
+          ),
+        }
+      : undefined,
+    nguyetVan: baseInfo.thangLuuNguyet
+      ? {
+          name:
+            thienCan[canNguyetVan].tenCan +
+            " " +
+            diaChi[getIndex(chiNguyetVan + 2)].tenChi,
+          nguHanhNapAm: nguHanhNapAm(
+            getIndex(chiNguyetVan + 2),
+            canNguyetVan,
+            true
+          ),
+          nguHanhCan: nguHanh(thienCan[canNguyetVan].nguHanh).tenHanh,
+          nguHanhChi: nguHanh(diaChi[getIndex(chiNguyetVan + 2)].tenHanh)
+            .tenHanh,
+          canTang: getCanTang(getIndex(chiNguyetVan + 2)),
+          thapThan: getThapThan(
+            thienCan[canNguyetVan].nguHanh,
+            thienCan[canNgay].nguHanh,
+            thienCan[canNguyetVan].amDuong === thienCan[canNgay].amDuong
+          ),
+        }
+      : undefined,
+    nhatVan: baseInfo.ngayLuuNhat
+      ? {
+          name: thienCan[canNhatVan].tenCan + " " + diaChi[chiNhatVan].tenChi,
+          nguHanhNapAm: nguHanhNapAm(chiNhatVan, canNhatVan, true),
+          nguHanhCan: nguHanh(thienCan[canNhatVan].nguHanh).tenHanh,
+          nguHanhChi: nguHanh(diaChi[chiNhatVan].tenHanh).tenHanh,
+          canTang: getCanTang(chiNhatVan),
+          thapThan: getThapThan(
+            thienCan[canNhatVan].nguHanh,
+            thienCan[canNgay].nguHanh,
+            thienCan[canNhatVan].amDuong === thienCan[canNgay].amDuong
+          ),
+        }
+      : undefined,
+    thoiVan:
+      baseInfo.gioThoiVan && baseInfo.namXemTieuVan
+        ? {
+            name: thienCan[canThoiVan].tenCan + " " + diaChi[chiThoiVan].tenChi,
+            nguHanhNapAm: nguHanhNapAm(chiThoiVan, canThoiVan, true),
+            nguHanhCan: nguHanh(thienCan[canThoiVan].nguHanh).tenHanh,
+            nguHanhChi: nguHanh(diaChi[chiThoiVan].tenHanh).tenHanh,
+            canTang: getCanTang(chiThoiVan),
+            thapThan: getThapThan(
+              thienCan[canThoiVan].nguHanh,
+              thienCan[canNgay].nguHanh,
+              thienCan[canThoiVan].amDuong === thienCan[canNgay].amDuong
+            ),
+          }
+        : undefined,
   };
 };
 
