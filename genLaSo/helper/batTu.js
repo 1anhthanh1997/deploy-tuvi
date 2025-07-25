@@ -217,10 +217,8 @@ const getDacTheScore = (bazi, nguHanhScore) => {
 };
 
 function safeMultiply(a, b) {
-  const scale = 10000; // scale càng lớn thì độ chính xác càng cao
-  let aScale = a * scale;
-  let bScale = b * scale;
-  return (aScale * bScale) / (scale * scale);
+  const scale = 100000000; // scale càng lớn thì độ chính xác càng cao
+  return Math.round(a * b * scale) / scale;
 }
 
 const calculateWithCoefficient = (chiThang, nguHanhScore) => {
@@ -560,12 +558,7 @@ const getBaziData = (baseInfo, thapNhiCung) => {
   let canNgay = ngayResult[0];
   let chiNgay = ngayResult[1];
 
-  let canChiAmLich = ngayThangNamCanChi(
-    amLich[0],
-    amLich[1],
-    amLich[2],
-    false
-  );
+  let canChiAmLich = ngayThangNamCanChi(amLich[0], amLich[1], amLich[2], false);
   let canThoiVan;
   let chiThoiVan;
   let canNhatVan;
@@ -666,8 +659,6 @@ const getBaziData = (baseInfo, thapNhiCung) => {
     tieuVan: { can: canTieuVan, chi: chiTieuVan },
     daiVan: { can: canDaiVan, chi: chiDaiVan },
   });
-
-  console.log(canChiAmLich,getIndex(chiThang + 2), canThang, nguHanhNapAm(getIndex(chiThang + 2), canThang, true))
 
   return {
     nguHanhScore,
