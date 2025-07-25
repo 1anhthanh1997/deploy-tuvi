@@ -616,7 +616,7 @@ const getBaziData = (baseInfo, thapNhiCung) => {
       amLichVan[0],
       amLichVan[1],
       amLichVan[2],
-      amLichVan[3]
+      false
     );
     if (baseInfo.thangLuuNguyet) {
       canNguyetVan = canChiAmLichVan[0];

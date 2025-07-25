@@ -180,14 +180,29 @@ Tiêu cực: Hay lo nghĩ, bi quan, u uất, nhạy cảm quá mức, hay suy di
     $("#tenThangTru").text(thang.name);
     $("#tenNgayTru").text(ngay.name);
     $("#tenGioTru").text(gio.name);
+    $("#tenDaiVanTru").text(bazi.daiVan ? bazi.daiVan.name : "");
+    $("#tenTieuVanTru").text(bazi.tieuVan ? bazi.tieuVan.name : "");
+    $("#tenNguyetVanTru").text(bazi.nguyetVan ? bazi.nguyetVan.name : "");
+    $("#tenNhatVanTru").text(bazi.nhatVan ? bazi.nhatVan.name : "");
+    $("#tenThoiVanTru").text(bazi.thoiVan ? bazi.thoiVan.name : "");
     $("#canTangNam").text(nam.canTang);
     $("#canTangThang").text(thang.canTang);
     $("#canTangNgay").text(ngay.canTang);
     $("#canTangGio").text(gio.canTang);
+    $("#canTangDaiVan").text(bazi.daiVan ? bazi.daiVan.canTang : "");
+    $("#canTangTieuVan").text(bazi.tieuVan ? bazi.tieuVan.canTang : "");
+    $("#canTangNguyetVan").text(bazi.nguyetVan ? bazi.nguyetVan.canTang : "");
+    $("#canTangNhatVan").text(bazi.nhatVan ? bazi.nhatVan.canTang : "");
+    $("#canTangThoiVan").text(bazi.thoiVan ? bazi.thoiVan.canTang : "");
     $("#thapThanNam").text(nam.thapThan);
     $("#thapThanThang").text(thang.thapThan);
     $("#thapThanNgay").text(ngay.thapThan);
     $("#thapThanGio").text(gio.thapThan);
+    $("#thapThanDaiVan").text(bazi.daiVan ? bazi.daiVan.thapThan : "");
+    $("#thapThanTieuVan").text(bazi.tieuVan ? bazi.tieuVan.thapThan : "");
+    $("#thapThanNguyetVan").text(bazi.nguyetVan ? bazi.nguyetVan.thapThan : "");
+    $("#thapThanNhatVan").text(bazi.nhatVan ? bazi.nhatVan.thapThan : "");
+    $("#thapThanThoiVan").text(bazi.thoiVan ? bazi.thoiVan.thapThan : "");
     $("#nangLuongAmKim").text(
       nguHanhScore.find((item) => item.id === 1).scoreAm
     );
