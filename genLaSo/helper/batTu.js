@@ -55,8 +55,6 @@ const calculateFromNguHanhId = (nguHanhId, score, nguHanhScore) => {
   return nguHanhScore;
 };
 
-const getCanTangThapThan = () => {};
-
 const getCanTangPercent = (diaChi, canNgay = null) => {
   let canTangIndex = {
     1: [
@@ -122,8 +120,8 @@ const getCanTangPercent = (diaChi, canNgay = null) => {
         ...item,
         thapThan: getThapThan(
           thienCan[canNgay].nguHanh,
-          thienCan[diaChi].nguHanh,
-          thienCan[diaChi].amDuong === thienCan[canNgay].amDuong
+          thienCan[item.id].nguHanh,
+          thienCan[item.id].amDuong === thienCan[canNgay].amDuong
         ),
       }));
     });
@@ -330,7 +328,7 @@ const calculateWithCoefficient = (chiThang, nguHanhScore) => {
         { nguHanhId: 5, coefficient: 1.5 },
         { nguHanhId: 3, coefficient: 0.9 },
         { nguHanhId: 4, coefficient: 0.5 },
-        { nguHanhId: 1, coefficient: 1.5 },
+        { nguHanhId: 1, coefficient: 1.3 },
       ],
     },
     {
