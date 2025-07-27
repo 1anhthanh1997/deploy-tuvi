@@ -55,66 +55,85 @@ const calculateFromNguHanhId = (nguHanhId, score, nguHanhScore) => {
   return nguHanhScore;
 };
 
-const getCanTangScore = (diaChi, nguHanhScore) => {
-  if (!diaChi) return nguHanhScore;
+const getCanTangThapThan = () => {};
+
+const getCanTangPercent = (diaChi, canNgay = null) => {
   let canTangIndex = {
     1: [
-      { id: 10, score: 46.65 },
-      { id: 9, score: 3.35 },
+      { id: 10, name: "Quý", score: 46.65 },
+      { id: 9, name: "Nhâm", score: 3.35 },
     ], // Tý: Quý,Nhâm
     2: [
-      { id: 6, score: 30 },
-      { id: 8, score: 15 },
-      { id: 10, score: 5 },
+      { id: 6, name: "Kỷ", score: 30 },
+      { id: 8, name: "Tân", score: 15 },
+      { id: 10, name: "Quý", score: 5 },
     ], // Sửu: Kỷ, Tân, Quý
     3: [
-      { id: 1, score: 30 },
-      { id: 3, score: 15 },
-      { id: 5, score: 5 },
+      { id: 1, name: "Giáp", score: 30 },
+      { id: 3, name: "Bính", score: 15 },
+      { id: 5, name: "Mậu", score: 5 },
     ], // Dần: Giáp, Bính, Mậu
     4: [
-      { id: 2, score: 46.35 },
-      { id: 1, score: 3.35 },
+      { id: 2, name: "Ất", score: 46.35 },
+      { id: 1, name: "Giáp", score: 3.35 },
     ], // Mão: Ất,Giáp
     5: [
-      { id: 5, score: 46.65 },
-      { id: 10, score: 5 },
-      { id: 2, score: 3.35 },
+      { id: 5, name: "Mậu", score: 46.65 },
+      { id: 10, name: "Quý", score: 5 },
+      { id: 2, name: "Ất", score: 3.35 },
     ], // Thìn: Mậu, Quý, Ất
     6: [
-      { id: 3, score: 30 },
-      { id: 7, score: 15 },
-      { id: 5, score: 5 },
+      { id: 3, name: "Bính", score: 30 },
+      { id: 7, name: "Canh", score: 15 },
+      { id: 5, name: "Mậu", score: 5 },
     ], // Tỵ: Bính, Canh, Mậu
     7: [
-      { id: 4, score: 30 },
-      { id: 6, score: 20 },
+      { id: 4, name: "Đinh", score: 30 },
+      { id: 6, name: "Kỷ", score: 20 },
     ], // Ngọ: Đinh, Kỷ
     8: [
-      { id: 6, score: 30 },
-      { id: 2, score: 15 },
-      { id: 4, score: 5 },
+      { id: 6, name: "Kỷ", score: 30 },
+      { id: 2, name: "Ất", score: 15 },
+      { id: 4, name: "Đinh", score: 5 },
     ], // Mùi: Kỷ, Ất, Đinh
     9: [
-      { id: 7, score: 30 },
-      { id: 9, score: 15 },
-      { id: 5, score: 5 },
+      { id: 7, name: "Canh", score: 30 },
+      { id: 9, name: "Nhâm", score: 15 },
+      { id: 5, name: "Mậu", score: 5 },
     ], // Thân: Canh, Nhâm, Mậu
     10: [
-      { id: 8, score: 46.65 },
-      { id: 7, score: 3.35 },
+      { id: 8, name: "Tân", score: 46.65 },
+      { id: 7, name: "Canh", score: 3.35 },
     ], // Dậu: Tân,Canh
     11: [
-      { id: 5, score: 30 },
-      { id: 4, score: 15 },
-      { id: 8, score: 5 },
+      { id: 5, name: "Mậu", score: 30 },
+      { id: 4, name: "Đinh", score: 15 },
+      { id: 8, name: "Tân", score: 5 },
     ], // Tuất: Mậu, Đinh, Tân
     12: [
-      { id: 9, score: 30 },
-      { id: 1, score: 20 },
+      { id: 9, name: "Nhâm", score: 30 },
+      { id: 1, name: "Giáp", score: 20 },
     ], // Hợi: Nhâm, Giáp
   };
-  let canTang = canTangIndex[diaChi];
+  if (canNgay) {
+    // Add thapThan field to each object in canTangIndex
+    Object.keys(canTangIndex).forEach((key) => {
+      canTangIndex[key] = canTangIndex[key].map((item) => ({
+        ...item,
+        thapThan: getThapThan(
+          thienCan[canNgay].nguHanh,
+          thienCan[diaChi].nguHanh,
+          thienCan[diaChi].amDuong === thienCan[canNgay].amDuong
+        ),
+      }));
+    });
+  }
+  return canTangIndex[diaChi];
+};
+
+const getCanTangScore = (diaChi, nguHanhScore) => {
+  if (!diaChi) return nguHanhScore;
+  let canTang = getCanTangPercent(diaChi);
   canTang.forEach((item) => {
     nguHanhScore = calculateEnergyScore(item.id, item.score, nguHanhScore);
   });
@@ -363,53 +382,6 @@ const calculateWithCoefficient = (chiThang, nguHanhScore) => {
 };
 
 const calcNguHanhScore = (bazi) => {
-  let nguHanhScore = [
-    {
-      id: 1,
-      name: "Kim",
-      shortName: "K",
-      scoreAm: 0,
-      scoreDuong: 0,
-      total: 0,
-      scale: 1,
-    },
-    {
-      id: 2,
-      name: "Mộc",
-      shortName: "M",
-      scoreAm: 0,
-      scoreDuong: 0,
-      total: 0,
-      scale: 1,
-    },
-    {
-      id: 3,
-      name: "Thủy",
-      shortName: "T",
-      scoreAm: 0,
-      scoreDuong: 0,
-      total: 0,
-      scale: 1,
-    },
-    {
-      id: 4,
-      name: "Hỏa",
-      shortName: "H",
-      scoreAm: 0,
-      scoreDuong: 0,
-      total: 0,
-      scale: 1,
-    },
-    {
-      id: 5,
-      name: "Thổ",
-      shortName: "O",
-      scoreAm: 0,
-      scoreDuong: 0,
-      total: 0,
-      scale: 1,
-    },
-  ];
   let { gio, ngay, thang, nam, thoiVan, nhatVan, nguyetVan, tieuVan, daiVan } =
     bazi;
   let canGio = gio.can;
@@ -430,6 +402,114 @@ const calcNguHanhScore = (bazi) => {
   let chiTieuVan = tieuVan.chi;
   let canDaiVan = daiVan.can;
   let chiDaiVan = daiVan.chi;
+
+  let nguHanhScore = [
+    {
+      id: 1,
+      name: "Kim",
+      shortName: "K",
+      scoreAm: 0,
+      scoreDuong: 0,
+      total: 0,
+      scale: 1,
+      thapThan: [
+        getThapThan(
+          "K",
+          thienCan[canNgay].nguHanh,
+          thienCan[canNgay].amDuong === -1
+        ),
+        getThapThan(
+          "K",
+          thienCan[canNgay].nguHanh,
+          thienCan[canNgay].amDuong === 1
+        ),
+      ],
+    },
+    {
+      id: 2,
+      name: "Mộc",
+      shortName: "M",
+      scoreAm: 0,
+      scoreDuong: 0,
+      total: 0,
+      scale: 1,
+      thapThan: [
+        getThapThan(
+          "M",
+          thienCan[canNgay].nguHanh,
+          thienCan[canNgay].amDuong === -1
+        ),
+        getThapThan(
+          "M",
+          thienCan[canNgay].nguHanh,
+          thienCan[canNgay].amDuong === 1
+        ),
+      ],
+    },
+    {
+      id: 3,
+      name: "Thủy",
+      shortName: "T",
+      scoreAm: 0,
+      scoreDuong: 0,
+      total: 0,
+      scale: 1,
+      thapThan: [
+        getThapThan(
+          "T",
+          thienCan[canNgay].nguHanh,
+          thienCan[canNgay].amDuong === -1
+        ),
+        getThapThan(
+          "T",
+          thienCan[canNgay].nguHanh,
+          thienCan[canNgay].amDuong === 1
+        ),
+      ],
+    },
+    {
+      id: 4,
+      name: "Hỏa",
+      shortName: "H",
+      scoreAm: 0,
+      scoreDuong: 0,
+      total: 0,
+      scale: 1,
+      thapThan: [
+        getThapThan(
+          "H",
+          thienCan[canNgay].nguHanh,
+          thienCan[canNgay].amDuong === -1
+        ),
+        getThapThan(
+          "H",
+          thienCan[canNgay].nguHanh,
+          thienCan[canNgay].amDuong === 1
+        ),
+      ],
+    },
+    {
+      id: 5,
+      name: "Thổ",
+      shortName: "O",
+      scoreAm: 0,
+      scoreDuong: 0,
+      total: 0,
+      scale: 1,
+      thapThan: [
+        getThapThan(
+          "O",
+          thienCan[canNgay].nguHanh,
+          thienCan[canNgay].amDuong === -1
+        ),
+        getThapThan(
+          "O",
+          thienCan[canNgay].nguHanh,
+          thienCan[canNgay].amDuong === 1
+        ),
+      ],
+    },
+  ];
   //calculate energy score
   nguHanhScore = calculateEnergyScore(canGio, 40, nguHanhScore);
   nguHanhScore = calculateEnergyScore(canNgay, 40, nguHanhScore);
@@ -482,6 +562,8 @@ const calcNguHanhPercent = (nguHanhScore) => {
   const total = nguHanhScore.reduce((sum, nh) => sum + nh.total, 0);
   return nguHanhScore.map((nh) => ({
     ...nh,
+    percentAm: (total === 0 ? 0 : (nh.scoreAm / total) * 100).toFixed(2),
+    percentDuong: (total === 0 ? 0 : (nh.scoreDuong / total) * 100).toFixed(2),
     percent: (total === 0 ? 0 : (nh.total / total) * 100).toFixed(2),
   }));
 };
@@ -661,8 +743,11 @@ const getBaziData = (baseInfo, thapNhiCung) => {
   });
 
   return {
+    baseInfo: baseInfo,
     nguHanhScore,
     hour: {
+      can: canGioSinhTen,
+      chi: chiGioSinhTen,
       name: gioAmTen,
       solarValue: originHour,
       lunarValue: chiGioSinhTen,
@@ -670,6 +755,7 @@ const getBaziData = (baseInfo, thapNhiCung) => {
       nguHanhCan: nguHanh(thienCan[canGioSinh].nguHanh).tenHanh,
       nguHanhChi: nguHanh(diaChi[baseInfo.gioSinh].tenHanh).tenHanh,
       canTang: getCanTang(baseInfo.gioSinh),
+      canTangPercent: getCanTangPercent(baseInfo.gioSinh, canNgay),
       thapThan: getThapThan(
         thienCan[canGioSinh].nguHanh,
         thienCan[canNgay].nguHanh,
@@ -677,6 +763,8 @@ const getBaziData = (baseInfo, thapNhiCung) => {
       ),
     },
     day: {
+      can: canNgayTen,
+      chi: chiNgayTen,
       name: ngayAmTen,
       solarValue: baseInfo.ngaySinh,
       lunarValue: amLich[0],
@@ -684,9 +772,12 @@ const getBaziData = (baseInfo, thapNhiCung) => {
       nguHanhCan: nguHanh(thienCan[canNgay].nguHanh).tenHanh,
       nguHanhChi: nguHanh(diaChi[chiNgay].tenHanh).tenHanh,
       canTang: getCanTang(chiNgay),
+      canTangPercent: getCanTangPercent(chiNgay, canNgay),
       thapThan: "Nhật chủ",
     },
     month: {
+      can: canThangTen,
+      chi: chiThangTen,
       name: thangAmTen,
       solarValue: baseInfo.thangSinh,
       lunarValue: amLich[1],
@@ -694,6 +785,7 @@ const getBaziData = (baseInfo, thapNhiCung) => {
       nguHanhCan: nguHanh(thienCan[canThang].nguHanh).tenHanh,
       nguHanhChi: nguHanh(diaChi[getIndex(chiThang + 2)].tenHanh).tenHanh,
       canTang: getCanTang(getIndex(chiThang + 2)),
+      canTangPercent: getCanTangPercent(getIndex(chiThang + 2), canNgay),
       thapThan: getThapThan(
         thienCan[canThang].nguHanh,
         thienCan[canNgay].nguHanh,
@@ -701,6 +793,8 @@ const getBaziData = (baseInfo, thapNhiCung) => {
       ),
     },
     year: {
+      can: canNamTen,
+      chi: chiNamTen,
       name: namAmTen,
       solarValue: baseInfo.namSinh,
       lunarValue: amLich[2],
@@ -708,6 +802,7 @@ const getBaziData = (baseInfo, thapNhiCung) => {
       nguHanhCan: nguHanh(thienCan[canNam].nguHanh).tenHanh,
       nguHanhChi: nguHanh(diaChi[chiNam].tenHanh).tenHanh,
       canTang: getCanTang(chiNam),
+      canTangPercent: getCanTangPercent(chiNam, canNgay),
       thapThan: getThapThan(
         thienCan[canNam].nguHanh,
         thienCan[canNgay].nguHanh,
