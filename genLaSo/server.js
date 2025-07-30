@@ -147,6 +147,10 @@ app.get("/api/get-bazi", (req, res) => {
   }
 });
 // Serve the main HTML file
+app.get("/horoscope", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "test.html"));
 });
