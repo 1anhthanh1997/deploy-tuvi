@@ -781,19 +781,341 @@ ${getNapAm(gio.nguHanhNapAm)}
     return tuTru;
   };
 
+  function isChildArray(parentArray, childArray) {
+    // Handle edge cases
+    if (!Array.isArray(parentArray) || !Array.isArray(childArray)) {
+      return false;
+    }
+
+    // Check if every element in child array exists in parent array
+    return childArray.every((element) => parentArray.includes(element));
+  }
+
+  function getCungCachName(cungCachList, toHopSao) {
+    for (let cungCach of cungCachList) {
+      let saoCungCach = cungCach.saoList;
+      if (isChildArray(toHopSao, saoCungCach)) {
+        return cungCach.name;
+      }
+    }
+  }
+
+  function getBasicInfo(thapNhiCung) {
+    const cungCachList = [
+      {
+        id: 0,
+        name: "The Master + Guardian + Captialist + Hero + Executive",
+        saoList: [1, 2, 4, 7, 11],
+      },
+      {
+        id: 1,
+        name: "The Master + Capitalist + Executive + Breaker + Taker + Seeker",
+        saoList: [1, 2, 4, 9, 13, 14],
+      },
+      {
+        id: 2,
+        name: " The Breaker + Taker + Seeker",
+        saoList: [9, 13, 14],
+      },
+      {
+        id: 3,
+        name: "The Guardian + Hero",
+        saoList: [7, 11],
+      },
+      {
+        id: 4,
+        name: "The Thinker + Listener + Linker + Fortuner",
+        saoList: [3, 6, 8, 12],
+      },
+      {
+        id: 5,
+        name: "The Thinker + Linker + Disruptor",
+        saoList: [3, 6, 10],
+      },
+      {
+        id: 6,
+        name: "The Disruptor + Visionary",
+        saoList: [5, 10],
+      },
+      {
+        id: 7,
+        name: "The Listener + Visionary + Fortuner",
+        saoList: [5, 8, 12],
+      },
+    ];
+    let tamHopList = [
+      ["Mệnh", "Tài Bạch", "Quan lộc"],
+      ["Phúc đức", "Phu thê", "Thiên Di"],
+      ["Phụ mẫu", "Tử tức", "Nô bộc"],
+      ["Huynh đệ", "Tật Ách", "Điền trạch"],
+    ];
+    let tamHopCungAnThan = [];
+    let toHopSao = [[], [], [], []];
+    let toHopSaoThan = [];
+    let cungChuThan = "";
+    let cungCach = [];
+    let cungCachThan = "";
+    tamHopList.forEach((tamHop, index) => {
+      thapNhiCung.forEach((cung) => {
+        if (cung.cungThan) {
+          cungChuThan = cung.cungChu;
+        }
+        if (tamHop.includes(cung.cungChu)) {
+          toHopSao[index] = [
+            ...toHopSao[index],
+            ...cung.cungSao
+              .filter((sao) => sao.saoID && !sao.saoTen.includes("De."))
+              .map((sao) => sao.saoID),
+          ];
+        }
+      });
+    });
+    tamHopList.map((tamHop, index) => {
+      if (tamHop.includes(cungChuThan)) {
+        tamHopCungAnThan = tamHop;
+        toHopSaoThan = toHopSao[index];
+      }
+    });
+    tamHopList.forEach((tamHop, index) => {
+      cungCach.push(getCungCachName(cungCachList, toHopSao[index]));
+    });
+    cungCachThan = getCungCachName(cungCachList, toHopSaoThan);
+    return { cungCach, cungCachThan, cungChuThan, tamHopCungAnThan };
+  }
+
+  const getNguHanhChi = (chi) => {
+    switch (chi) {
+      case "Tí":
+        return "+Thổ";
+      case "Sửu":
+        return "-Thủy";
+      case "Dần":
+        return "+Mộc";
+      case "Mão":
+        return "-Mộc";
+      case "Thìn":
+        return "+Thổ";
+      case "Tỵ":
+        return "-Hỏa";
+      case "Ngọ":
+        return "+Hỏa";
+      case "Mùi":
+        return "-Thổ";
+      case "Thân":
+        return "+Kim";
+      case "Dậu":
+        return "-Kim";
+      case "Tuất":
+        return "+Thổ";
+      case "Hợi":
+        return "-Thủy";
+      default:
+        return "";
+    }
+  };
+  // Tử Vi Base chỉ còn: 14 chính tinh, Tả Hữu Xương Khúc, Không Kiếp, Hỏa Linh, Tuần Triệt, Kình Đà
+
+  function capitalizeWords(str = "") {
+    return str
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" "); //
+  }
+
+  function getSao(cungChu, thapNhiCung, tamHop = false) {
+    const newChinhTinh = [51, 52, 53, 54, 55, 56, 57, 58, 61, 62];
+    cungArr = thapNhiCung.filter((c) => {
+      return c.cungChu === cungChu;
+    });
+    if (cungArr.length > 0) {
+      let cung = cungArr[0];
+      const { cungSao, cungSo } = cung;
+      const chinhTinhGoc = cungSao.filter((sao) => sao.saoAmDuong !== "");
+      let chinhTinhMoi = cungSao.filter(
+        (sao) => newChinhTinh.includes(sao.saoID)
+        // !checkSaoDaiVan(sao.saoTen) &&
+        // !checkSaoLuuNien(sao.saoTen) &&
+        // !checkSaoLuuNguyet(sao.saoTen) &&
+        // !checkSaoLuuNhat(sao.saoTen)
+      );
+      // let saoDaiVan = cungSao.filter((sao) => checkSaoDaiVan(sao.saoTen));
+      // let saoLuuNien = cungSao.filter((sao) => checkSaoLuuNien(sao.saoTen));
+      // let saoLuuNguyet = cungSao.filter((sao) => checkSaoLuuNguyet(sao.saoTen));
+      // let saoLuuNhat = cungSao.filter((sao) => checkSaoLuuNhat(sao.saoTen));
+      // let chinhTinhDaiVanId = [92, 93, 94, 95];
+      // let chinhTinhDaiVan = saoDaiVan.filter((sao) =>
+      //   chinhTinhDaiVanId.includes(sao.saoID)
+      // );
+      // let phuTinhDaiVan = saoDaiVan.filter(
+      //   (sao) => !chinhTinhDaiVanId.includes(sao.saoID)
+      // );
+      let tuan = cung.tuanTrung;
+      let triet = cung.trietLo;
+      let chinhTinh = [...chinhTinhGoc, ...chinhTinhMoi];
+      if (tamHop) {
+        chinhTinh = [...chinhTinhMoi];
+      }
+      if (tuan) {
+        chinhTinh = [...chinhTinh, { saoTen: "Tuần" }];
+        chinhTinhMoi = [...chinhTinhMoi, { saoTen: "Tuần" }];
+      }
+      if (triet) {
+        chinhTinh = [...chinhTinh, { saoTen: "Triệt" }];
+        chinhTinhMoi = [...chinhTinhMoi, { saoTen: "Triệt" }];
+      }
+      // if (cung.daiVanTuanTrung) {
+      //   saoDaiVan = [...saoDaiVan, { saoTen: "X. Void Zone" }];
+      //   chinhTinhDaiVan = [...chinhTinhDaiVan, { saoTen: "X. Void Zone" }];
+      // }
+      // if (cung.daiVanTrietLo) {
+      //   saoDaiVan = [...saoDaiVan, { saoTen: "X. Void Cut" }];
+      //   chinhTinhDaiVan = [...chinhTinhDaiVan, { saoTen: "X. Void Cut" }];
+      // }
+      // if (cung.luuNienTuanTrung) {
+      //   saoLuuNien = [...saoLuuNien, { saoTen: "Y. Void Zone" }];
+      // }
+      // if (cung.luuNienTrietLo) {
+      //   saoLuuNien = [...saoLuuNien, { saoTen: "Y. Void Cut" }];
+      // }
+      // if (cung.luuNguyetTuanTrung) {
+      //   saoLuuNguyet = [...saoLuuNguyet, { saoTen: "M. Void Zone" }];
+      // }
+      // if (cung.luuNguyetTrietLo) {
+      //   saoLuuNguyet = [...saoLuuNguyet, { saoTen: "M. Void Cut" }];
+      // }
+
+      const phuTinh = cungSao.filter(
+        (sao) => sao.saoAmDuong === "" && !newChinhTinh.includes(sao.saoID)
+        // !checkSaoDaiVan(sao.saoTen) &&
+        // !checkSaoLuuNien(sao.saoTen) &&
+        // !checkSaoLuuNguyet(sao.saoTen) &&
+        // !checkSaoLuuNhat(sao.saoTen)
+      );
+
+      return {
+        voChinhDieu: chinhTinhGoc.length === 0,
+        chinhTinhGoc: chinhTinhGoc.map((sao) => sao.saoTen).join(" + "),
+        newChinhTinh: chinhTinhMoi.map((sao) => sao.saoTen).join(" + "),
+        chinhTinh: chinhTinh
+          .map((sao) => capitalizeWords(sao.saoTen))
+          .join(" + "),
+        phuTinh: phuTinh.map((sao) => capitalizeWords(sao.saoTen)).join(" + "),
+        // daiVan: saoDaiVan.map((sao) => capitalizeWords(sao.saoTen)).join(" + "),
+        // chinhTinhDaiVan: chinhTinhDaiVan
+        //   .map((sao) => capitalizeWords(sao.saoTen))
+        //   .join(" + "),
+        // phuTinhDaiVan: phuTinhDaiVan
+        //   .map((sao) => capitalizeWords(sao.saoTen))
+        //   .join(" + "),
+        // luuNien: saoLuuNien
+        //   .map((sao) => capitalizeWords(sao.saoTen))
+        //   .join(" + "),
+        // luuNguyet: saoLuuNguyet
+        //   .map((sao) => capitalizeWords(sao.saoTen))
+        //   .join(" + "),
+        // luuNhat: saoLuuNhat
+        //   .map((sao) => capitalizeWords(sao.saoTen))
+        //   .join(" + "),
+        // cungDaiHan: cung.cungDaiHan,
+      };
+    }
+    return {
+      chinhTinh: "",
+      phuTinh: "",
+    };
+  }  
+
+  const getXungChieu = (cungChu) => {
+    switch (cungChu) {
+      case "Mệnh":
+        return "Thiên Di";
+      case "Tài Bạch":
+        return "Phúc đức";
+      case "Phúc đức":
+        return "Tài Bạch";
+      case "Phu thê":
+        return "Quan lộc";
+      case "Thiên Di":
+        return "Mệnh";
+      case "Quan lộc":
+        return "Phu thê";
+      case "Phụ mẫu":
+        return "Tật Ách";
+      case "Tật Ách":
+        return "Phụ mẫu";
+      case "Tử tức":
+        return "Điền trạch";
+      case "Điền trạch":
+        return "Tử tức";
+      case "Nô bộc":
+        return "Huynh đệ";
+      case "Huynh đệ":
+        return "Nô bộc";
+      default:
+        return "";
+    }    
+  }
+
+  const getCungInfo = (cungChu, thapNhiCung) => {
+    let cung = thapNhiCung.find((cung) => cung.cungChu === cungChu);
+
+    return `Cung chức: ${cungChu}${
+      cung.cungThan ? " kiêm nhiệm cung an Thân" : ""
+    }, cung Địa Chi: ${cung.cungTen} (${getNguHanhChi(
+      cung.cungTen
+    )}), Sao gốc trong cung: ${
+      getSao(cung.cungChu, thapNhiCung).chinhTinhGoc
+        ? getSao(cung.cungChu, thapNhiCung).chinhTinh
+        : `Vô Chính Diệu có ${getSao(getXungChieu(cung.cungChu), thapNhiCung).chinhTinhGoc} xung chiếu, ${getSao(getXungChieu(cung.cungChu), thapNhiCung).newChinhTinh}`
+    }`;
+  };
+
+  const getTamHopData = (thapNhiCung) => {
+    let tamHopList = [
+      {
+        id: 1,
+        name: "Mệnh Tài Quan",
+        cung: ["Mệnh", "Tài Bạch", "Quan lộc"],
+      },
+      {
+        id: 2,
+        name: "Phúc Phối Di",
+        cung: ["Phúc đức", "Phu thê", "Thiên Di"],
+      },
+      { id: 3, name: "Phụ Tử Nô", cung: ["Phụ mẫu", "Tử tức", "Nô bộc"] },
+      {
+        id: 4,
+        name: "Huynh Tật Điền",
+        cung: ["Huynh đệ", "Tật Ách", "Điền trạch"],
+      },
+    ];
+    const cungCachList = getBasicInfo(thapNhiCung).cungCach;
+    let tamHopData = tamHopList.map((item, index) => {
+      return `${item.id}. Tam hợp ${item.name}: Dạng cách cục ${cungCachList[index]}
+      ${item.cung
+        .map((cungChu) => getCungInfo(cungChu, thapNhiCung))
+        .join("\n")}
+      `;
+    });
+    return tamHopData.join("\n");
+  };
+
   function getBatTuTemplate(bazi) {
     // let nam = bazi.year;
     // let thang = bazi.month;
     // let ngay = bazi.day;
     // let gio = bazi.hour;
     // let nguHanhScore = bazi.nguHanhScore;
+    let thapNhiCung = bazi.thapNhiCung;
     let baseInfo = bazi.baseInfo;
     let batTuTemplate = `Hồ sơ AGI của ${baseInfo.hoTen} sinh năm ${
       baseInfo.namSinh
     }
     Phần 1: Tứ Trụ
     ${getTuTruData(bazi)}
-     `;
+    Phần 2: Tử Vi
+    ${getTamHopData(thapNhiCung)}`;
     return batTuTemplate;
   }
 

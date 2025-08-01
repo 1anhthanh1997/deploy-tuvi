@@ -448,9 +448,7 @@ $(document).ready(function () {
     }
   }
 
-  const newChinhTinh = [
-    51, 52, 53, 54, 55, 56, 57, 58, 61, 62, 73, 92, 93, 94, 95,
-  ];
+  const newChinhTinh = [51, 52, 53, 54, 55, 56, 57, 58, 61, 62];
 
   function checkSaoDaiVan(saoTen) {
     return saoTen.includes("X.");

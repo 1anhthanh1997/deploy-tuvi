@@ -151,20 +151,21 @@ class DiaBan {
     let cungHuynhDe = dichCung(this.cungMenh, 11);
 
     return [
-      { cungId: 1, tenCung: "Destiny / Soul", cungSoDiaBan: this.cungMenh },
-      { cungId: 2, tenCung: "Senior", cungSoDiaBan: cungPhuMau },
-      { cungId: 3, tenCung: "Spiritual Value", cungSoDiaBan: cungPhucDuc },
-      { cungId: 4, tenCung: "Material Legacy", cungSoDiaBan: cungDienTrach },
-      { cungId: 5, tenCung: "Career", cungSoDiaBan: cungQuanLoc },
-      { cungId: 6, tenCung: "Friends/Peers", cungSoDiaBan: this.cungNoboc },
-      { cungId: 7, tenCung: "External", cungSoDiaBan: cungThienDi },
-      { cungId: 8, tenCung: "Karma", cungSoDiaBan: this.cungTatAch },
-      { cungId: 9, tenCung: "Resources", cungSoDiaBan: cungTaiBach },
-      { cungId: 10, tenCung: "Junior", cungSoDiaBan: cungTuTuc },
-      { cungId: 11, tenCung: "Soulmate", cungSoDiaBan: cungTheThiep },
+      { cungId: 1,tenCung:"Mệnh", tenCungEn: "Destiny / Soul", cungSoDiaBan: this.cungMenh },
+      { cungId: 2,tenCung:"Phụ mẫu", tenCungEn: "Senior", cungSoDiaBan: cungPhuMau },
+      { cungId: 3,tenCung:"Phúc đức", tenCungEn: "Spiritual Value", cungSoDiaBan: cungPhucDuc },
+      { cungId: 4,tenCung:"Điền trạch", tenCungEn: "Material Legacy", cungSoDiaBan: cungDienTrach },
+      { cungId: 5,tenCung:"Quan lộc", tenCungEn: "Career", cungSoDiaBan: cungQuanLoc },
+      { cungId: 6,tenCung:"Nô bộc", tenCungEn: "Friends/Peers", cungSoDiaBan: this.cungNoboc },
+      { cungId: 7,tenCung:"Thiên Di", tenCungEn: "External", cungSoDiaBan: cungThienDi },
+      { cungId: 8,tenCung:"Tật Ách", tenCungEn: "Karma", cungSoDiaBan: this.cungTatAch },
+      { cungId: 9,tenCung:"Tài Bạch", tenCungEn: "Resources", cungSoDiaBan: cungTaiBach },
+      { cungId: 10,tenCung:"Tử tức", tenCungEn: "Junior", cungSoDiaBan: cungTuTuc },
+      { cungId: 11,tenCung:"Phu thê", tenCungEn: "Soulmate", cungSoDiaBan: cungTheThiep },
       {
         cungId: 12,
-        tenCung: "Brothers and Sisters",
+        tenCung: "Huynh đệ",
+        tenCungEn: "Brothers and Sisters",
         cungSoDiaBan: cungHuynhDe,
       },
     ];

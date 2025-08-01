@@ -742,6 +742,7 @@ const getBaziData = (baseInfo, thapNhiCung) => {
 
   return {
     baseInfo: baseInfo,
+    thapNhiCung:thapNhiCung,
     nguHanhScore,
     hour: {
       can: canGioSinhTen,

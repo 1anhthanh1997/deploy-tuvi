@@ -304,58 +304,58 @@ function lapDiaBan(
   // sao Bác sỹ ở cùng cung với Lộc tồn
   const viTriLocTon = thienCan[canNam].vitriDiaBan;
 
-  diaBan.nhapSao(viTriLocTon, saoLocTon);
+  // diaBan.nhapSao(viTriLocTon, saoLocTon);
   // diaBan.nhapSao(viTriLocTon, saoBacSy);
 
   const amDuongNamNu = gioiTinh * amDuongNamSinh;
   const viTriLucSi = dichCung(viTriLocTon, 1 * amDuongNamNu);
-  diaBan.nhapSao(viTriLucSi, saoLucSi);
+  // diaBan.nhapSao(viTriLucSi, saoLucSi);
 
   const viTriThanhLong = dichCung(viTriLocTon, 2 * amDuongNamNu);
-  diaBan.nhapSao(viTriThanhLong, saoThanhLong);
+  // diaBan.nhapSao(viTriThanhLong, saoThanhLong);
 
   const viTriTieuHao = dichCung(viTriLocTon, 3 * amDuongNamNu);
-  diaBan.nhapSao(viTriTieuHao, saoTieuHao);
+  // diaBan.nhapSao(viTriTieuHao, saoTieuHao);
 
   const viTriTuongQuan = dichCung(viTriLocTon, 4 * amDuongNamNu);
-  diaBan.nhapSao(viTriTuongQuan, saoTuongQuan);
+  // diaBan.nhapSao(viTriTuongQuan, saoTuongQuan);
 
   const viTriTauThu = dichCung(viTriLocTon, 5 * amDuongNamNu);
-  diaBan.nhapSao(viTriTauThu, saoTauThu);
+  // diaBan.nhapSao(viTriTauThu, saoTauThu);
 
   const viTriPhiLiem = dichCung(viTriLocTon, 6 * amDuongNamNu);
-  diaBan.nhapSao(viTriPhiLiem, saoPhiLiem);
+  // diaBan.nhapSao(viTriPhiLiem, saoPhiLiem);
 
   const viTriHyThan = dichCung(viTriLocTon, 7 * amDuongNamNu);
-  diaBan.nhapSao(viTriHyThan, saoHyThan);
+  // diaBan.nhapSao(viTriHyThan, saoHyThan);
 
   const viTriBenhPhu = dichCung(viTriLocTon, 8 * amDuongNamNu);
-  diaBan.nhapSao(viTriBenhPhu, saoBenhPhu);
+  // diaBan.nhapSao(viTriBenhPhu, saoBenhPhu);
 
   const viTriDaiHao = dichCung(viTriLocTon, 9 * amDuongNamNu);
-  diaBan.nhapSao(viTriDaiHao, saoDaiHao);
+  // diaBan.nhapSao(viTriDaiHao, saoDaiHao);
 
   const viTriPhucBinh = dichCung(viTriLocTon, 10 * amDuongNamNu);
-  diaBan.nhapSao(viTriPhucBinh, saoPhucBinh);
+  // diaBan.nhapSao(viTriPhucBinh, saoPhucBinh);
 
   const viTriQuanPhu2 = dichCung(viTriLocTon, 11 * amDuongNamNu);
-  diaBan.nhapSao(viTriQuanPhu2, saoQuanPhu2);
+  // diaBan.nhapSao(viTriQuanPhu2, saoQuanPhu2);
 
   // Vòng Địa chi - Thái tuế
   const viTriThaiTue = chiNam;
-  diaBan.nhapSao(viTriThaiTue, saoThaiTue);
+  // diaBan.nhapSao(viTriThaiTue, saoThaiTue);
 
   const viTriThieuDuong = dichCung(viTriThaiTue, 1);
   // diaBan.nhapSao(viTriThieuDuong, saoThieuDuong, saoThienKhong);
 
   const viTriTangMon = dichCung(viTriThaiTue, 2);
-  diaBan.nhapSao(viTriTangMon, saoTangMon);
+  // diaBan.nhapSao(viTriTangMon, saoTangMon);
 
   // const viTriThieuAm = dichCung(viTriThaiTue, 3);
   // diaBan.nhapSao(viTriThieuAm, saoThieuAm);
 
   const viTriQuanPhu3 = dichCung(viTriThaiTue, 4);
-  diaBan.nhapSao(viTriQuanPhu3, saoQuanPhu3);
+  // diaBan.nhapSao(viTriQuanPhu3, saoQuanPhu3);
 
   // const viTriTuPhu = dichCung(viTriThaiTue, 5);
   // diaBan.nhapSao(viTriTuPhu, saoTuPhu, saoNguyetDuc);
@@ -367,14 +367,14 @@ function lapDiaBan(
   // diaBan.nhapSao(viTriLongDuc, saoLongDuc);
 
   const viTriBachHo = dichCung(viTriThaiTue, 8);
-  diaBan.nhapSao(viTriBachHo, saoBachHo);
+  // diaBan.nhapSao(viTriBachHo, saoBachHo);
 
   // const viTriPhucDuc = dichCung(viTriThaiTue, 9);
   // diaBan.nhapSao(viTriPhucDuc, saoPhucDuc);
   // diaBan.nhapSao(viTriPhucDuc, saoThienDuc);
 
   const viTriDieuKhach = dichCung(viTriThaiTue, 10);
-  diaBan.nhapSao(viTriDieuKhach, saoDieuKhach);
+  // diaBan.nhapSao(viTriDieuKhach, saoDieuKhach);
 
   // const viTriTrucPhu = dichCung(viTriThaiTue, 11);
   // diaBan.nhapSao(viTriTrucPhu, saoTrucPhu);
@@ -450,7 +450,7 @@ function lapDiaBan(
   // diaBan.nhapSao(viTriLongTri, saoLongTri);
 
   const viTriPhuongCac = dichCung(2, 2 - viTriLongTri);
-  diaBan.nhapSao(viTriPhuongCac, saoPhuongCac);
+  // diaBan.nhapSao(viTriPhuongCac, saoPhuongCac);
   // diaBan.nhapSao(viTriPhuongCac, saoGiaiThan);
 
   const viTriTaPhu = dichCung(5, tt - 1);
@@ -495,16 +495,16 @@ function lapDiaBan(
   // diaBan.nhapSao(viTriThienQuy, saoThienQuy);
 
   const viTriThienKhoi = timThienKhoi(canNam);
-  diaBan.nhapSao(viTriThienKhoi, saoThienKhoi);
+  // diaBan.nhapSao(viTriThienKhoi, saoThienKhoi);
 
   const viTriThienViet = dichCung(5, 5 - viTriThienKhoi);
-  diaBan.nhapSao(viTriThienViet, saoThienViet);
+  // diaBan.nhapSao(viTriThienViet, saoThienViet);
 
   const viTriThienHu = dichCung(7, chiNam - 1);
-  diaBan.nhapSao(viTriThienHu, saoThienHu);
+  // diaBan.nhapSao(viTriThienHu, saoThienHu);
 
   const viTriThienKhoc = dichCung(7, -chiNam + 1);
-  diaBan.nhapSao(viTriThienKhoc, saoThienKhoc);
+  // diaBan.nhapSao(viTriThienKhoc, saoThienKhoc);
 
   // const viTriThienTai = dichCung(diaBan.cungMenh, chiNam - 1);
   // diaBan.nhapSao(viTriThienTai, saoThienTai);
@@ -513,10 +513,10 @@ function lapDiaBan(
   // diaBan.nhapSao(viTriThienTho, saoThienTho);
 
   const viTriHongLoan = dichCung(4, -chiNam + 1);
-  diaBan.nhapSao(viTriHongLoan, saoHongLoan);
+  // diaBan.nhapSao(viTriHongLoan, saoHongLoan);
 
   const viTriThienHy = dichCung(viTriHongLoan, 6);
-  diaBan.nhapSao(viTriThienHy, saoThienHy);
+  // diaBan.nhapSao(viTriThienHy, saoThienHy);
 
   // Thiên Quan - Thiên Phúc
   // const [viTriThienQuan, viTriThienPhuc] = timThienQuanThienPhuc(canNam);
@@ -524,25 +524,25 @@ function lapDiaBan(
   // diaBan.nhapSao(viTriThienPhuc, saoThienPhuc);
 
   const viTriThienHinh = dichCung(10, tt - 1);
-  diaBan.nhapSao(viTriThienHinh, saoThienHinh);
+  // diaBan.nhapSao(viTriThienHinh, saoThienHinh);
 
   const viTriThienRieu = dichCung(viTriThienHinh, 4);
-  diaBan.nhapSao(viTriThienRieu, saoThienRieu, saoThienY);
+  // diaBan.nhapSao(viTriThienRieu, saoThienRieu, saoThienY);
 
   const viTriCoThan = timCoThan(chiNam);
-  diaBan.nhapSao(viTriCoThan, saoCoThan);
+  // diaBan.nhapSao(viTriCoThan, saoCoThan);
 
   const viTriQuaTu = dichCung(viTriCoThan, -4);
-  diaBan.nhapSao(viTriQuaTu, saoQuaTu);
+  // diaBan.nhapSao(viTriQuaTu, saoQuaTu);
 
   const viTriVanTinh = dichCung(viTriKinhDuong, 2);
   // diaBan.nhapSao(viTriVanTinh, saoVanTinh);
 
   const viTriDuongPhu = dichCung(viTriVanTinh, 2);
-  diaBan.nhapSao(viTriDuongPhu, saoDuongPhu);
+  // diaBan.nhapSao(viTriDuongPhu, saoDuongPhu);
 
   const viTriQuocAn = dichCung(viTriDuongPhu, 3);
-  diaBan.nhapSao(viTriQuocAn, saoQuocAn);
+  // diaBan.nhapSao(viTriQuocAn, saoQuocAn);
 
   // Thai phụ - Phong Cáo
   // const viTriThaiPhu = dichCung(viTriVanKhuc, 2);
@@ -576,16 +576,16 @@ function lapDiaBan(
 
   // Vòng Thiên mã
   const viTriThienMa = timThienMa(chiNam);
-  diaBan.nhapSao(viTriThienMa, saoThienMa);
+  // diaBan.nhapSao(viTriThienMa, saoThienMa);
 
   const viTriHoaCai = dichCung(viTriThienMa, 2);
-  diaBan.nhapSao(viTriHoaCai, saoHoaCai);
+  // diaBan.nhapSao(viTriHoaCai, saoHoaCai);
 
   const viTriKiepSat = dichCung(viTriThienMa, 3);
   // diaBan.nhapSao(viTriKiepSat, saoKiepSat);
 
   const viTriDaoHoa = dichCung(viTriKiepSat, 4);
-  diaBan.nhapSao(viTriDaoHoa, saoDaoHoa);
+  // diaBan.nhapSao(viTriDaoHoa, saoDaoHoa);
 
   // Phá toái
   // const viTriPhaToai = timPhaToai(chiNam);
@@ -664,14 +664,14 @@ function lapDiaBan(
       break;
   }
 
-  diaBan.nhapSao(viTriHoaLoc, saoHoaLoc);
-  diaBan.nhapSao(viTriHoaQuyen, saoHoaQuyen);
-  diaBan.nhapSao(viTriHoaKhoa, saoHoaKhoa);
-  diaBan.nhapSao(viTriHoaKy, saoHoaKy);
+  // diaBan.nhapSao(viTriHoaLoc, saoHoaLoc);
+  // diaBan.nhapSao(viTriHoaQuyen, saoHoaQuyen);
+  // diaBan.nhapSao(viTriHoaKhoa, saoHoaKhoa);
+  // diaBan.nhapSao(viTriHoaKy, saoHoaKy);
 
   // An Lưu Hà - Thiên Trù
   let [viTriLuuHa, viTriThienTru] = timLuuTru(canNam);
-  diaBan.nhapSao(viTriLuuHa, saoLuuHa);
+  // diaBan.nhapSao(viTriLuuHa, saoLuuHa);
   // diaBan.nhapSao(viTriThienTru, saoThienTru);
 
   // An Tuần, Triệt
