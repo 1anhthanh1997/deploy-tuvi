@@ -804,42 +804,51 @@ ${getNapAm(gio.nguHanhNapAm)}
     const cungCachList = [
       {
         id: 0,
-        name: "The Master + Guardian + Captialist + Hero + Executive",
+        name: "Tử Phủ Vũ Tướng Liêm",
+        nameEn: "The Master + Guardian + Captialist + Hero + Executive",
         saoList: [1, 2, 4, 7, 11],
       },
       {
         id: 1,
-        name: "The Master + Capitalist + Executive + Breaker + Taker + Seeker",
+        name: "Tử Vũ Liêm Sát Phá Tham",
+        nameEn:
+          "The Master + Capitalist + Executive + Breaker + Taker + Seeker",
         saoList: [1, 2, 4, 9, 13, 14],
       },
       {
         id: 2,
-        name: " The Breaker + Taker + Seeker",
+        name: "Sát Phá Tham",
+        nameEn: "The Breaker + Taker + Seeker",
         saoList: [9, 13, 14],
       },
       {
         id: 3,
-        name: "The Guardian + Hero",
+        name: "Phủ Tướng",
+        nameEn: "The Guardian + Hero",
         saoList: [7, 11],
       },
       {
         id: 4,
-        name: "The Thinker + Listener + Linker + Fortuner",
+        name: "Cơ Đồng Cự",
+        nameEn: "The Thinker + Listener + Linker + Fortuner",
         saoList: [3, 6, 8, 12],
       },
       {
         id: 5,
-        name: "The Thinker + Linker + Disruptor",
+        name: "Âm Lương Dương",
+        nameEn: "The Thinker + Linker + Disruptor",
         saoList: [3, 6, 10],
       },
       {
         id: 6,
-        name: "The Disruptor + Visionary",
+        name: "Cự Nhật",
+        nameEn: "The Disruptor + Visionary",
         saoList: [5, 10],
       },
       {
         id: 7,
-        name: "The Listener + Visionary + Fortuner",
+        name: "Cơ Nguyệt Đồng Lương",
+        nameEn: "The Listener + Visionary + Fortuner",
         saoList: [5, 8, 12],
       },
     ];
@@ -1024,7 +1033,7 @@ ${getNapAm(gio.nguHanhNapAm)}
       chinhTinh: "",
       phuTinh: "",
     };
-  }  
+  }
 
   const getXungChieu = (cungChu) => {
     switch (cungChu) {
@@ -1054,8 +1063,8 @@ ${getNapAm(gio.nguHanhNapAm)}
         return "Nô bộc";
       default:
         return "";
-    }    
-  }
+    }
+  };
 
   const getCungInfo = (cungChu, thapNhiCung) => {
     let cung = thapNhiCung.find((cung) => cung.cungChu === cungChu);
@@ -1067,7 +1076,11 @@ ${getNapAm(gio.nguHanhNapAm)}
     )}), Sao gốc trong cung: ${
       getSao(cung.cungChu, thapNhiCung).chinhTinhGoc
         ? getSao(cung.cungChu, thapNhiCung).chinhTinh
-        : `Vô Chính Diệu có ${getSao(getXungChieu(cung.cungChu), thapNhiCung).chinhTinhGoc} xung chiếu, ${getSao(getXungChieu(cung.cungChu), thapNhiCung).newChinhTinh}`
+        : `Vô Chính Diệu có ${
+            getSao(getXungChieu(cung.cungChu), thapNhiCung).chinhTinhGoc
+          } xung chiếu, ${
+            getSao(getXungChieu(cung.cungChu), thapNhiCung).newChinhTinh
+          }`
     }`;
   };
 
@@ -1092,7 +1105,9 @@ ${getNapAm(gio.nguHanhNapAm)}
     ];
     const cungCachList = getBasicInfo(thapNhiCung).cungCach;
     let tamHopData = tamHopList.map((item, index) => {
-      return `${item.id}. Tam hợp ${item.name}: Dạng cách cục ${cungCachList[index]}
+      return `${item.id}. Tam hợp ${item.name}: Dạng cách cục ${
+        cungCachList[index]
+      }
       ${item.cung
         .map((cungChu) => getCungInfo(cungChu, thapNhiCung))
         .join("\n")}
