@@ -894,10 +894,10 @@ ${getNapAm(gio.nguHanhNapAm)}
 
   const getNguHanhChi = (chi) => {
     switch (chi) {
-      case "Tí":
-        return "+Thổ";
+      case "Tý":
+        return "+Thủy";
       case "Sửu":
-        return "-Thủy";
+        return "-Thổ";
       case "Dần":
         return "+Mộc";
       case "Mão":
@@ -1079,7 +1079,7 @@ ${getNapAm(gio.nguHanhNapAm)}
         : `Vô Chính Diệu có ${
             getSao(getXungChieu(cung.cungChu), thapNhiCung).chinhTinhGoc
           } xung chiếu, ${
-            getSao(getXungChieu(cung.cungChu), thapNhiCung).newChinhTinh
+            getSao(cung.cungChu, thapNhiCung).newChinhTinh
           }`
     }`;
   };
