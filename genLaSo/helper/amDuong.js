@@ -655,7 +655,6 @@ const getCanTang = (diaChi) => {
 };
 
 const getThapThan = (nguHanhThienCan, nguHanhNhatChu, cungDau) => {
-  console.log(nguHanhThienCan, nguHanhNhatChu, cungDau);
   let relationship = checkNguHanhRelationshipDetailed(
     nguHanhNhatChu,
     nguHanhThienCan
@@ -694,6 +693,32 @@ const getThapThan = (nguHanhThienCan, nguHanhNhatChu, cungDau) => {
 
   return cungDau ? thapThan.cungDau.tenDayDu : thapThan.khacDau.tenDayDu;
 };
+
+const getThapThanNapAm = (nguHanhNapAm, nguHanhNhatChu) => {
+  console.log(nguHanhNapAm, nguHanhNhatChu)
+  let relationship = checkNguHanhRelationshipDetailed(
+    nguHanhNhatChu,
+    nguHanhNapAm
+  );
+  console.log(relationship)
+
+  // Bảng thập thần dựa trên mối quan hệ ngũ hành và âm dương
+  const thapThanMap = {
+    "Ngang nhau": "Tỷ Kiên + Kiếp Tài",
+    Sinh: "Thực Thần + Thương Quan",
+    "Được sinh": "Thiên Ấn + Chính Ấn",
+    Khắc: "Thiên Tài + Chính Tài",
+    "Bị khắc": "Thiên Quan + Chính Quan",
+  };
+
+  const thapThan = thapThanMap[relationship];
+  if (!thapThan) {
+    throw new Error(
+      `Không xác định được thập thần cho mối quan hệ: ${relationship}`
+    );
+  }
+  return thapThan
+}
 
 /**
  * Kiểm tra tương sinh tương khắc của ngũ hành
@@ -1248,4 +1273,5 @@ module.exports = {
   checkThienY,
   checkDaoHoa,
   getThanSat,
+  getThapThanNapAm
 };

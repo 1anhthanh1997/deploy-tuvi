@@ -15,6 +15,7 @@ const {
   getNextDay,
   getGioSinhIndex,
   checkNguHanhRelationshipDetailed,
+  getThapThanNapAm,
 } = require("./amDuong.js");
 
 // Helper function to get index with modulo
@@ -742,7 +743,7 @@ const getBaziData = (baseInfo, thapNhiCung) => {
 
   return {
     baseInfo: baseInfo,
-    thapNhiCung:thapNhiCung,
+    thapNhiCung: thapNhiCung,
     nguHanhScore,
     hour: {
       can: canGioSinhTen,
@@ -751,6 +752,10 @@ const getBaziData = (baseInfo, thapNhiCung) => {
       solarValue: originHour,
       lunarValue: chiGioSinhTen,
       nguHanhNapAm: nguHanhNapAm(baseInfo.gioSinh, canGioSinh, true),
+      nguHanhNapAmThapThan: getThapThanNapAm(
+        nguHanhNapAm(baseInfo.gioSinh, canGioSinh, false),
+        thienCan[canNgay].nguHanh
+      ),
       nguHanhCan: nguHanh(thienCan[canGioSinh].nguHanh).tenHanh,
       nguHanhChi: nguHanh(diaChi[baseInfo.gioSinh].tenHanh).tenHanh,
       canTang: getCanTang(baseInfo.gioSinh),
@@ -768,6 +773,12 @@ const getBaziData = (baseInfo, thapNhiCung) => {
       solarValue: baseInfo.ngaySinh,
       lunarValue: amLich[0],
       nguHanhNapAm: nguHanhNapAm(chiNgay, canNgay, true),
+      nguHanhNapAmThapThan:
+        "Nhật chủ, " +
+        getThapThanNapAm(
+          nguHanhNapAm(chiNgay, canNgay, false),
+          thienCan[canNgay].nguHanh
+        ),
       nguHanhCan: nguHanh(thienCan[canNgay].nguHanh).tenHanh,
       nguHanhChi: nguHanh(diaChi[chiNgay].tenHanh).tenHanh,
       canTang: getCanTang(chiNgay),
@@ -781,6 +792,10 @@ const getBaziData = (baseInfo, thapNhiCung) => {
       solarValue: baseInfo.thangSinh,
       lunarValue: amLich[1],
       nguHanhNapAm: nguHanhNapAm(getIndex(chiThang + 2), canThang, true),
+      nguHanhNapAmThapThan: getThapThanNapAm(
+        nguHanhNapAm(getIndex(chiThang + 2), canThang, false),
+        thienCan[canNgay].nguHanh
+      ),
       nguHanhCan: nguHanh(thienCan[canThang].nguHanh).tenHanh,
       nguHanhChi: nguHanh(diaChi[getIndex(chiThang + 2)].tenHanh).tenHanh,
       canTang: getCanTang(getIndex(chiThang + 2)),
@@ -798,6 +813,10 @@ const getBaziData = (baseInfo, thapNhiCung) => {
       solarValue: baseInfo.namSinh,
       lunarValue: amLich[2],
       nguHanhNapAm: nguHanhNapAm(chiNam, canNam, true),
+      nguHanhNapAmThapThan: getThapThanNapAm(
+        nguHanhNapAm(chiNam, canNam, false),
+        thienCan[canNgay].nguHanh
+      ),
       nguHanhCan: nguHanh(thienCan[canNam].nguHanh).tenHanh,
       nguHanhChi: nguHanh(diaChi[chiNam].tenHanh).tenHanh,
       canTang: getCanTang(chiNam),
