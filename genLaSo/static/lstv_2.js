@@ -66,6 +66,19 @@ $(document).ready(function () {
     let thapThan = [
       {
         name: "Giáp",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Giáp Mộc
+Giáp Mộc là hình ảnh của cây cổ thụ to lớn, vững chãi, luôn vươn thẳng lên trời (Dương Mộc). Đặc tính cốt lõi là sự kiên định, chính trực, có lòng nhân ái và luôn có ý chí vươn lên làm người dẫn đầu. Người Giáp Mộc có tố chất của một nhà lãnh đạo, thẳng thắn, đáng tin cậy nhưng đôi khi khá cứng nhắc và thiếu linh hoạt. Để phát triển, Giáp Mộc cần đất (Thổ) để bén rễ, nước (Thủy) để nuôi dưỡng và ánh nắng (Hỏa) để quang hợp.
+  •	Khi cân bằng:
+      Đặc điểm: Họ là người có ý chí mạnh mẽ, lòng tự trọng cao và tinh thần trách nhiệm. Luôn đặt ra mục tiêu rõ ràng và kiên trì theo đuổi. Họ chính trực, nhân hậu, sẵn sàng che chở, bảo vệ cho người khác. Họ là những nhà lãnh đạo, người tiên phong đáng tin cậy.
+      Dấu hiệu nhận biết: Dáng người cao, thẳng. Tác phong đĩnh đạc, chững chạc. Lời nói thẳng thắn, có trọng lượng. Không thích những chuyện vụn vặt, tiểu tiết.
+  •	Khi mất cân bằng (Quá Cường / Quá Nhược):
+      - Quá Cường (Mộc quá vượng):
+        Đặc điểm: Một khu rừng quá rậm rạp, cây cối tranh giành ánh sáng và chất dinh dưỡng. Họ trở nên cực kỳ cố chấp, bướng bỉnh, không chịu lắng nghe ai. Thiếu sự linh hoạt, không biết tùy cơ ứng biến. Có thể trở nên độc đoán, chỉ biết đến mình.
+        Dấu hiệu nhận biết: Cứng đầu, bảo thủ. Khó chấp nhận sự thay đổi. Thiếu sự tinh tế, dễ làm người khác khó chịu vì sự thẳng thắn quá mức.
+      - Quá Nhược (Mộc bị suy):
+        Đặc điểm: Cây cối còi cọc, không thể phát triển. Họ thiếu tự tin, lập trường không vững vàng, dễ bị người khác lôi kéo, chi phối. Thiếu ý chí, dễ bỏ cuộc giữa chừng. Không có khả năng tự bảo vệ mình.
+        Dấu hiệu nhận biết: Do dự, thiếu quyết đoán. Dễ dựa dẫm vào người khác. Thiếu đi khí phách và sự mạnh mẽ vốn có.
+`,
         data: [
           {
             name: "Giáp",
@@ -117,33 +130,33 @@ $(document).ready(function () {
           },
           {
             name: "Mậu",
-            thapThan: "Chính Tài",
+            thapThan: "Thiên Tài",
             nguHanh: "Thổ",
             amDuong: "Dương",
             description:
-              "Đại diện cho thu nhập ổn định từ công việc, người vợ (đối vớu cơ hội tiếp xúc với những nguồn tài chính lớn, ổn định. Nam mệnh có thể lấy được vợ hiền, có gia thế tốt.",
+              "Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam)",
             tichCuc:
-              "Giáp Kỷ hợp hóa Thổ. Cây lớn cắm rễ vào mảnh đất màu mỡ. Mang lại tài lộc ổn định, bền vững. Nam mệnh có vợ hiền, là người biết vun vén, hỗ trợ chồng.",
-            tieuCuc:
-              "Hình ảnh hoa cỏ yếu ớt mọc trên núi cao. Kiếm tiền rất vất vả, khó khăn. Dễ bị các vấn đề tài chính làm cho mệt mỏi.",
-          },
-          {
-            name: "Kỷ",
-            thapThan: "Thiên Tài",
-            nguHanh: "Thổ",
-            amDuong: "Âm",
-            description:
-              "Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).",
-            tichCuc:
-              "Hình ảnh cây cổ thụ mọc trên ngọn núi lớn. Có cơ hội kiếm nững khoản tiền lớn, tham gia vào các dự án tầm cỡ, đặc biệt là bất động sản.",
+              "Hình ảnh cây cổ thụ mọc trên ngọn núi lớn. Có cơ hội kiếm những khoản tiền lớn, tham gia vào các dự án tầm cỡ, đặc biệt là bất động sản.",
             tieuCuc:
               "Kiếm tiền rất vất vả, phải đối mặt với thử thách lớn. Cần nỗ lực rất nhiều mới có thể thành công.",
           },
           {
-            name: "Canh",
+            name: "Kỷ",
+            thapThan: "Chính Tài",
+            nguHanh: "Thổ",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.",
+            tichCuc:
+              "Giáp Kỷ hợp hóa Thổ. Cây lớn cắm rễ vào mảnh đất màu mỡ. Mang lại tài lộc ổn định, bền vững. Nam mệnh có vợ hiền, là người biết vun vén, hỗ trợ chồng.",
+            tieuCuc:
+              "Dễ trở nên quá thực tế, chỉ quan tâm đến tiền bạc. Có thể vì gia đình, vợ con mà mất đi chí lớn.",
+          },
+          {
+            name: "Tân",
             thapThan: "Chính Quan",
             nguHanh: "Kim",
-            amDuong: "Dương",
+            amDuong: "Âm",
             description:
               "Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).",
             tichCuc:
@@ -152,10 +165,10 @@ $(document).ready(function () {
               'Luôn cảm thấy bị gò bó, kiểm soát bởi những quy tắc nhỏ nhặt. Dễ bị cấp trên hoặc chồng "chỉnh đốn" gây khó chịu.',
           },
           {
-            name: "Tân",
+            name: "Canh",
             thapThan: "Thiên Quan",
             nguHanh: "Kim",
-            amDuong: "Âm",
+            amDuong: "Dương",
             description:
               "Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).",
             tichCuc:
@@ -164,10 +177,10 @@ $(document).ready(function () {
               "Đây là kẻ thù nguy hiểm nhất của Giáp Mộc. Hình ảnh rìu lớn (Canh) chặt đổ cây cổ thụ. Gây ra tai họa, tai nạn, bệnh tật nặng, kiện tụng. Nữ mệnh tình duyên cực kỳ trắc trở.",
           },
           {
-            name: "Nhâm",
+            name: "Quý",
             thapThan: "Thiên Ấn",
             nguHanh: "Thủy",
-            amDuong: "Dương",
+            amDuong: "Âm",
             description:
               "Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.",
             tichCuc:
@@ -176,10 +189,10 @@ $(document).ready(function () {
               "Nguồn hỗ trợ này không đủ mạnh để Giáp Mộc phát triển thành cây đại thụ. Có thể chỉ có bằng cấp nhưng kiến thức không quá sâu sắc.",
           },
           {
-            name: "Quý",
+            name: "Nhâm",
             thapThan: "Thiên Ấn",
             nguHanh: "Thủy",
-            amDuong: "Âm",
+            amDuong: "Dương",
             description:
               "Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.",
             tichCuc:
@@ -188,39 +201,22 @@ $(document).ready(function () {
               "Khi Thủy quá cường, cây sẽ bị úng rễ hoặc bị cuốn trôi. Sự giúp đỡ quá mức có thể làm hại. Dễ trở nên lười biếng, suy nghĩ viển vông.",
           },
         ],
-        thapThanText: `- Giáp (+Mộc) - Tỷ Kiên: Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.
-    Tích cực: Tăng cường sự tự tin, ý chí độc lập. Có nhiều bạn bè tốt, cùng chí hướng, hỗ trợ nhau trong việc lớn.
-    Tiêu cực: Cạnh tranh cực kỳ gay gắt để giành vị trí dẫn đầu. Dễ xảy ra mâu thuẫn, xung đột với bạn bè, đồng nghiệp. Không ai chịu nhường ai.
-- Ất (-Mộc) - Kiếp Tài: Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.
-    Tích cực: Đây là sự kết hợp tốt nhất cho Ất Mộc. Hình ảnh dây leo (Ất) quấn quanh cây lớn (Giáp) để vươn lên. Có quý nhân, người có năng lực che chở, giúp đỡ để thăng tiến.
-    Tiêu cực: Dễ trở nên quá phụ thuộc, ỷ lại. Nếu không có Giáp Mộc, sẽ cảm thấy mất phương hướng.
-- Bính (+Hỏa) - Thực Thần: Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).
-    Tích cực: Đây là hình ảnh đẹp nhất của Giáp Mộc (Mộc Hỏa thông minh). Cây lớn được mặt trời chiếu rọi, phát triển rực rỡ. Mang lại trí thông minh, sự lạc quan, tài năng sáng tạo và khả năng biểu đạt xuất sắc.
-    Tiêu cực: Dễ trở nên quá khoe khoang, thích thể hiện. Có thể vì quá tập trung vào việc thể hiện mà trở nên thiếu thực tế.
-- Đinh (-Hỏa) - Thương Quan: Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).
-    Tích cực: Mang lại sự sáng tạo tinh tế, khả năng đi sâu vào chi tiết. Có tài năng trong các lĩnh vực nghệ thuật, kỹ thuật đòi hỏi sự tỉ mỉ.
-    Tiêu cực: Hình ảnh cây lớn (Giáp) làm nhiên liệu cho ngọn lửa nhỏ (Đinh). Sự sáng tạo này làm tiêu hao rất nhiều năng lượng. Dễ bị kiệt sức, lao tâm khổ tứ.
-- Mậu (+Thổ) - Chính Tài: Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.
-    Tích cực: Giáp Kỷ hợp hóa Thổ. Cây lớn cắm rễ vào mảnh đất màu mỡ. Mang lại tài lộc ổn định, bền vững. Nam mệnh có vợ hiền, là người biết vun vén, hỗ trợ chồng.
-    Tiêu cực: Dễ trở nên quá thực tế, chỉ quan tâm đến tiền bạc. Có thể vì gia đình, vợ con mà mất đi chí lớn.
-- Kỷ (-Thổ) - Thiên Tài: Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).
-    Tích cực: Hình ảnh cây cổ thụ mọc trên ngọn núi lớn. Có cơ hội kiếm những khoản tiền lớn, tham gia vào các dự án tầm cỡ, đặc biệt là bất động sản.
-    Tiêu cực: Kiếm tiền rất vất vả, phải đối mặt với thử thách lớn. Cần nỗ lực rất nhiều mới có thể thành công.
-- Canh (+Kim) - Chính Quan: Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).
-    Tích cực: Hình ảnh dao kéo (Tân) tỉa bớt cành lá cho cây (Giáp). Giúp Giáp Mộc trở nên gọn gàng, hữu dụng hơn. Mang lại danh tiếng, địa vị, sự nghiệp ổn định. Nữ mệnh có chồng khéo léo, biết cách góp ý.
-    Tiêu cực: Luôn cảm thấy bị gò bó, kiểm soát bởi những quy tắc nhỏ nhặt. Dễ bị cấp trên hoặc chồng "chỉnh đốn" gây khó chịu.
-- Tân (-Kim) - Thiên Quan: Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).
-    Tích cực: Khi Giáp Mộc cực cường và có Hỏa để chế ngự Kim, có thể mang lại quyền lực tối cao trong các môi trường khắc nghiệt. Có khả năng đảm đương trọng trách lớn.
-    Tiêu cực: Đây là kẻ thù nguy hiểm nhất của Giáp Mộc. Hình ảnh rìu lớn (Canh) chặt đổ cây cổ thụ. Gây ra tai họa, tai nạn, bệnh tật nặng, kiện tụng. Nữ mệnh tình duyên cực kỳ trắc trở.
-- Nhâm (+Thủy) - Chính Ấn: Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.
-    Tích cực: Hình ảnh mưa nhỏ, sương mai (Quý) tưới cho cây. Mang lại sự hỗ trợ từ mẹ, quý nhân một cách nhẹ nhàng, tinh tế. Có trí thông minh, lòng nhân ái, ham học hỏi.
-    Tiêu cực: Nguồn hỗ trợ này không đủ mạnh để Giáp Mộc phát triển thành cây đại thụ. Có thể chỉ có bằng cấp nhưng kiến thức không quá sâu sắc.
-- Quý (-Thủy) - Thiên Ấn: Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.
-    Tích cực: Hình ảnh sông lớn (Nhâm) bồi đắp phù sa cho cây. Mang lại nguồn hỗ trợ mạnh mẽ, kiến thức uyên bác, tư duy độc đáo. Có quý nhân quyền thế giúp đỡ.
-    Tiêu cực: Khi Thủy quá cường, cây sẽ bị úng rễ hoặc bị cuốn trôi. Sự giúp đỡ quá mức có thể làm hại. Dễ trở nên lười biếng, suy nghĩ viển vông.`,
       },
       {
         name: "Ất",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Ất Mộc
+Ất Mộc là hình ảnh của các loài cây thân mềm như hoa, cỏ, dây leo (Âm Mộc). Đặc tính cốt lõi là sự mềm dẻo, linh hoạt, khả năng thích ứng cao và có sức sống mãnh liệt. Người Ất Mộc không đối đầu trực diện mà biết luồn lách, nương theo hoàn cảnh để tồn tại và phát triển. Họ khéo léo, giỏi giao tiếp và có khả năng xây dựng các mối quan hệ xã hội. Để phát triển tốt nhất, Ất Mộc cần có cây lớn (Giáp Mộc) để nương tựa, ánh nắng (Bính Hỏa) và mưa (Quý Thủy).
+•	Khi cân bằng:
+	Đặc điểm: Họ là người vô cùng khéo léo, tinh tế và giỏi ngoại giao. Họ có khả năng thích nghi với mọi môi trường, dễ dàng kết bạn và tạo dựng mạng lưới quan hệ. Họ mềm mỏng, ôn hòa nhưng bên trong lại có một sức sống bền bỉ, kiên cường, có thể vượt qua mọi nghịch cảnh.
+	Dấu hiệu nhận biết: Dáng người mềm mại, uyển chuyển. Lời nói nhẹ nhàng, dễ nghe. Giỏi lắng nghe và thấu hiểu. Có khả năng thuyết phục người khác một cách khéo léo.
+•	Khi mất cân bằng (Quá Cường / Quá Nhược):
+	- Quá Cường (Mộc quá vượng):
+	Đặc điểm: Cỏ dại mọc um tùm, tranh giành chất dinh dưỡng. Họ trở nên hay đố kỵ, ganh ghét, có nhiều toan tính, mưu mẹo. Dễ thay đổi, lập trường không vững vàng, hay dựa dẫm và có thể trở nên phiền phức.
+	Dấu hiệu nhận biết: Hay nói xấu sau lưng. Dễ thay đổi ý kiến, không đáng tin cậy. Thích dựa dẫm, phụ thuộc vào người khác.
+	- Quá Nhược (Mộc bị suy):
+	Đặc điểm: Hoa cỏ héo úa, thiếu sức sống. Họ thiếu tự tin, nhút nhát, dễ bị người khác chi phối, bắt nạt. Không có khả năng tự bảo vệ mình, dễ bị cuốn theo số phận, không có định hướng rõ ràng.
+	Dấu hiệu nhận biết: Yếu đuối, dễ bị tổn thương. Thiếu chủ kiến, ai nói gì cũng nghe theo. Cuộc sống không ổn định, hay gặp khó khăn.
+`,
         data: [
           {
             name: "Ất",
@@ -312,8 +308,7 @@ $(document).ready(function () {
             amDuong: "Âm",
             description:
               "Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).",
-            tichCuc:
-              "Rất hiếm khi tích cực, trừ khi có Hỏa mạnh để chế ngự.",
+            tichCuc: "Rất hiếm khi tích cực, trừ khi có Hỏa mạnh để chế ngự.",
             tieuCuc:
               "Đây là kẻ thù nguy hiểm nhất của Ất Mộc. Hình ảnh dao kéo (Tân) cắt nát hoa cỏ. Gây ra tai họa, bệnh tật, thị phi, tiểu nhân hãm hại. Nữ mệnh có tình duyên cực kỳ đau khổ, dễ bị bạo hành.",
           },
@@ -323,7 +318,7 @@ $(document).ready(function () {
             nguHanh: "Thủy",
             amDuong: "Dương",
             description:
-              "Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.",  
+              "Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.",
             tichCuc:
               "Có sự hỗ trợ mạnh mẽ từ mẹ, quý nhân. Có nền tảng học vấn tốt, kiến thức sâu rộng.",
             tieuCuc:
@@ -342,27 +337,22 @@ $(document).ready(function () {
               "Nguồn hỗ trợ này không ổn định. Dễ 'cả thèm chóng chán' trong học tập. Suy nghĩ có phần kỳ lạ, khó hòa đồng, dễ cảm thấy cô độc.",
           },
         ],
-        thapThanText: `- Ất (-Mộc) - Tỷ Kiên: Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.
-  Tích cực: Có nhiều bạn bè, mối quan hệ xã hội tốt. Giỏi hợp tác, làm việc nhóm.
-  Tiêu cực: Cạnh tranh ngầm rất gay gắt. Dễ bị bạn bè lôi kéo vào những chuyện thị phi, bè phái. Hay đố kỵ, so bì với nhau.
-- Giáp (+Mộc) - Kiếp Tài: Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.
-  Tích cực: Đây là sự kết hợp tốt nhất cho Ất Mộc. Hình ảnh dây leo (Ất) quấn quanh cây lớn (Giáp) để vươn lên. Có quý nhân, người có năng lực che chở, giúp đỡ để thăng tiến.
-  Tiêu cực: Dễ trở nên quá phụ thuộc, ỷ lại. Nếu không có Giáp Mộc, sẽ cảm thấy mất phương hướng.
-- Đinh (-Hỏa) - Thực Thần: Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).
-  Tích cực: Mang lại sự sáng tạo tinh tế, khả năng biểu đạt nghệ thuật. Lời nói duyên dáng, có sức thuyết phục. Có tài năng trong lĩnh vực ẩm thực, thời trang, làm đẹp.
-  Tiêu cực: Dễ trở nên quá đam mê hưởng thụ, thiếu ý chí phấn đấu. Sự sáng tạo có phần nhỏ bé, không tạo ra đột phá lớn.
-- Bính (+Hỏa) - Thương Quan: Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).
-  Tích cực: Đây là Thần quan trọng nhất của Ất Mộc. Hình ảnh hoa cỏ (Ất) hướng về mặt trời (Bính). Mang lại sự lạc quan, trí thông minh, khả năng sáng tạo và danh tiếng. Giúp Ất Mộc trở nên nổi bật và được công nhận.
-  Tiêu cực: Dễ trở nên quá khoe khoang, thích thể hiện. Có thể hơi phù phiếm, chỉ chú trọng đến vẻ bề ngoài.
-- Mậu (+Thổ) - Chính Tài: Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.
-  Tích cực: Có cơ hội tiếp xúc với những nguồn tài chính lớn, ổn định. Nam mệnh có thể lấy được vợ hiền, có gia thế tốt.
-  Tiêu cực: Hình ảnh hoa cỏ yếu ớt mọc trên núi cao. Kiếm tiền rất vất vả, khó khăn. Dễ bị các vấn đề tài chính làm cho mệt mỏi.
-- Kỷ (-Thổ) - Thiên Tài: Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).
-  Tích cực: Hình ảnh hoa cỏ mọc trên đất vườn màu mỡ. Có nhiều cơ hội kiếm tiền, kinh doanh thuận lợi. Tài lộc dồi dào.
-  Tiêu cực: Dễ trở nên quá thực dụng, chỉ quan tâm đến tiền bạc.`,
       },
       {
         name: "Bính",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Bính Hỏa
+Bính Hỏa là hình ảnh của mặt trời (Dương Hỏa). Đặc tính cốt lõi là sự nhiệt tình, hào phóng, quang minh lỗi lạc và năng lượng dồi dào. Người Bính Hỏa giống như mặt trời, luôn tỏa sáng, ban phát ánh sáng và hơi ấm cho vạn vật. Họ thẳng thắn, lạc quan, thích là trung tâm của sự chú ý và có khả năng truyền cảm hứng. Họ ghét sự che lấp, đặc biệt là bởi nước lớn (Nhâm Thủy).
+•	Khi cân bằng:
+	Đặc điểm: Họ là người vô cùng hào phóng, cởi mở và đầy nhiệt huyết. Luôn lạc quan, nhìn thấy mặt tích cực của vấn đề và lan tỏa năng lượng đó đến mọi người. Họ thẳng thắn, chính trực, không thích mưu mẹo hay dối trá. Họ là những nhà lãnh đạo bẩm sinh, có sức ảnh hưởng lớn và được mọi người yêu quý.
+	Dấu hiệu nhận biết: Luôn tươi cười, tràn đầy năng lượng. Nói to, rõ ràng, tác phong nhanh nhẹn. Thích giao du, kết bạn và là tâm điểm của các cuộc vui.
+•	Khi mất cân bằng (Quá Cường / Quá Nhược):
+	- Quá Cường (Hỏa quá vượng):
+	Đặc điểm: Mặt trời quá gay gắt sẽ thiêu đốt vạn vật. Họ trở nên nóng nảy, thiếu kiên nhẫn, dễ nổi giận vô cớ. Tự cho mình là đúng, kiêu ngạo, không nghe lời khuyên. Hành động bộc phát, vội vàng, dễ dẫn đến sai lầm.
+	Dấu hiệu nhận biết: Nóng tính, bộp chộp. Thích khoe khoang, lấn át người khác. Không chịu được sự chỉ trích, dễ gây xung đột.
+	- Quá Nhược (Hỏa bị suy):
+	Đặc điểm: Mặt trời bị mây đen che khuất. Họ mất đi sự nhiệt tình và lạc quan vốn có. Trở nên thiếu tự tin, do dự, đầu voi đuôi chuột. Dễ bi quan, chán nản, thiếu năng lượng để theo đuổi mục tiêu.
+	Dấu hiệu nhận biết: Thiếu sức sống, hay thở dài. Khởi đầu mọi việc rất hăng hái nhưng nhanh chóng bỏ cuộc. Dễ thay đổi, không kiên định.
+`,
         data: [
           {
             name: "Bính",
@@ -482,45 +472,25 @@ $(document).ready(function () {
             tichCuc:
               "Đây là nguồn năng lượng tốt nhất cho Bính Hỏa. Hình ảnh cây đại thụ (Giáp) làm nhiên liệu cho mặt trời. Mang lại sự hỗ trợ mạnh mẽ, quý nhân quyền thế. Có trí tuệ uyên bác, tư duy đột phá, giúp Bính Hỏa tỏa sáng tột độ.",
             tieuCuc:
-              "Nếu Mộc quá cường mà Hỏa quá yếu, sẽ gây ra tình trạng 'Mộc đa Hỏa tức' (củi nhiều lửa tắt). Dễ trở nên quá ỷ lại, thiếu nỗ lực cá nhân.",
+              "Nếu Mộc quá vượng có thể làm Hỏa bị nghẹt. Dễ trở nên quá tự tin vào kiến thức của mình mà thành ra kiêu ngạo.",
           },
         ],
-        thapThanText: `- Bính (+Hỏa) - Tỷ Kiên: Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.
-  Tích cực: Tăng cường sự tự tin, ý chí và tinh thần độc lập. Có nhiều bạn bè cùng chí hướng, nhiệt tình giúp đỡ lẫn nhau.
-  Tiêu cực: Hình ảnh hai mặt trời trên trời, cạnh tranh gay gắt. Dễ xảy ra xung đột, tranh giành vị trí dẫn đầu. Không ai chịu nhường ai.
-- Đinh (-Hỏa) - Kiếp Tài: Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.
-    Tích cực: Giúp Bính Hỏa trở nên tinh tế, có chiều sâu hơn. Có khả năng kết hợp giữa sự quảng đại và sự tỉ mỉ.
-    Tiêu cực: Hình ảnh ánh nến (Đinh) tranh sáng với mặt trời (Bính). Dễ bị cạnh tranh ngầm, bị người khác cướp công. Sự giúp đỡ nhận được thường không thực chất.
-- Mậu (+Thổ) - Thực Thần: Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).
-    Tích cực: Mang lại sự ổn định, đôn hậu. Giúp Bính Hỏa biến sự nhiệt tình thành những kết quả thực tế, vững chắc. Có khả năng lãnh đạo và quản lý tốt.
-    Tiêu cực: Hình ảnh mặt trời bị núi cao che khuất. Làm giảm đi sự tỏa sáng và nhiệt huyết. Dễ trở nên lười biếng, chỉ thích an nhàn, thiếu đi chí tiến thủ.
-- Kỷ (-Thổ) - Thương Quan: Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).
-  Tích cực: Mang lại sự mềm mỏng, khéo léo. Có khả năng sáng tạo tinh tế.
-  Tiêu cực: Hình ảnh mây mù (Kỷ) che lấp mặt trời (Bính). Khiến tài năng bị che khuất, khó được công nhận. Dễ vướng vào thị phi, bị người khác nói xấu, hiểu lầm.
-- Tân (-Kim) - Chính Tài: Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.
-  Tích cực: Bính Tân hợp hóa Thủy. Có khả năng quản lý tài chính tốt. Nam mệnh có vợ đẹp, tài giỏi và có thể hợp tác tốt với vợ. Có thể kiếm tiền từ các tài sản có giá trị cao.
-  Tiêu cực: Dễ vì tiền bạc, tình cảm mà mất đi lý trí, sự quang minh của mình.
-- Canh (+Kim) - Thiên Tài: Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).
-  Tích cực: Hình ảnh mặt trời luyện kim loại thô. Có khả năng kiếm những khoản tiền lớn, làm chủ các dự án lớn, đặc biệt trong lĩnh vực công nghiệp, tài chính.
-  Tiêu cực: Kiếm tiền rất vất vả, đòi hỏi phải đầu tư nhiều công sức. Dễ gặp cạnh tranh lớn về tài chính.
-- Quý (-Thủy) - Chính Quan: Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).
-  Tích cực: Khi Bính Hỏa cường, Quý Thủy giúp điều hòa, mang lại danh tiếng và địa vị. Giúp Bính Hỏa biết kiềm chế, trở nên có chiều sâu hơn.
-  Tiêu cực: Hình ảnh mưa, sương (Quý) che lấp mặt trời. Gây ra phiền phức, khó chịu từ cấp trên. Dễ bị mất danh dự vì những chuyện nhỏ nhặt. Nữ mệnh có chồng hay γèm pha, kiểm soát.
-- Nhâm (+Thủy) - Thiên Quan: Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).
-  Tích cực: Khi Bính Hỏa cực cường có Mộc tương sinh, có thể tạo nên cách cục "Thủy quang tương chiếu", mang lại quyền lực và danh tiếng vang dội. Có khả năng đảm đương trọng trách lớn.
-  Tiêu cực: Đây là kẻ thù lớn nhất của Bính Hỏa. Hình ảnh biển cả (Nhâm) nhấn chìm mặt trời. Gây ra tai họa, bệnh tật hiểm nghèo, kiện tụng, tù tội. Nữ mệnh có tình duyên cực kỳ trắc trở.
-- Ất (-Mộc) - Chính Ấn: Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.
-  Tích cực: Hình ảnh cỏ cây, hoa lá hướng về mặt trời. Mang lại sự hỗ trợ từ mẹ, quý nhân một cách tận tình. Có lòng nhân hậu, ham học hỏi kiến thức truyền thống.
-  Tiêu cực: Sự hỗ trợ này có phần yếu ớt, không đủ để Bính Hỏa tỏa sáng rực rỡ. Dễ trở nên hơi ỷ lại, thiếu đi sự quyết đoán.
-- Giáp (+Mộc) - Thiên Ấn: Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.
-  Tích cực: Đây là nguồn năng lượng tốt nhất cho Bính Hỏa. Hình ảnh cây đại thụ (Giáp) làm nhiên liệu cho mặt trời. Mang lại sự hỗ trợ mạnh mẽ, quý nhân quyền thế. Có trí tuệ uyên bác, tư duy đột phá, giúp Bính Hỏa tỏa sáng tột độ.
-  Tiêu cực: Nếu Mộc quá cường mà Hỏa quá yếu, sẽ gây ra tình trạng "Mộc đa Hỏa tức" (củi nhiều lửa tắt). Dễ trở nên quá ỷ lại, thiếu nỗ lực cá nhân.
-- Đinh (-Hỏa) - Thiên Ấn: Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.
-    Tích cực: Có trực giác vô cùng nhạy bén, khả năng cảm nhận tâm linh cao. Có tài năng đặc biệt trong các lĩnh vực độc đáo, huyền bí, nghệ thuật. Tư duy khác biệt, sâu sắc.
-    Tiêu cực: Tính cách kỳ lạ, khó hiểu, dễ bị cô lập. Suy nghĩ tiêu cực, hay đa nghi. Mối quan hệ với mẹ không được tốt hoặc mẹ vất vả.`,
       },
       {
         name: "Đinh",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Đinh Hỏa
+Đinh Hỏa là hình ảnh của ngọn lửa từ cây nến, ánh sao, hoặc lửa trong lò rèn (Âm Hỏa). Đặc tính cốt lõi là sự ấm áp, soi sáng, tinh tế và có khả năng soi rọi vào chi tiết. Khác với Bính Hỏa tỏa sáng ra bên ngoài, Đinh Hỏa cháy âm ỉ, hướng vào bên trong, mang nội tâm sâu sắc, suy nghĩ chu đáo. Họ có khả năng dẫn đường, truyền đạt kiến thức và "rèn giũa" người khác. Để tồn tại, Đinh Hỏa cần nhiên liệu (Mộc) và sợ nhất bị dập tắt bởi nước (Thủy).
+•	Khi cân bằng:
+	Đặc điểm: Họ là người vô cùng tinh tế, nhạy bén và có óc quan sát sắc sảo. Họ ấm áp, lịch sự, biết cách quan tâm đến người khác một cách thầm lặng. Họ là những nhà tư tưởng, người thầy, người cố vấn xuất sắc, có khả năng nhìn thấu bản chất vấn đề và đưa ra những lời khuyên giá trị.
+	Dấu hiệu nhận biết: Ánh mắt có thần, sâu sắc. Thái độ ôn hòa, từ tốn. Có khả năng tập trung cao độ và giỏi trong các công việc đòi hỏi sự tỉ mỉ, kiên nhẫn.
+•	Khi mất cân bằng (Quá Cường / Quá Nhược):
+	- Quá Cường (Hỏa quá vượng):
+	Đặc điểm: Ngọn lửa quá lớn sẽ trở nên khó kiểm soát. Họ trở nên nóng vội, thiếu kiên nhẫn, hay lo âu, suy nghĩ tiêu cực. Nội tâm đầy mâu thuẫn, dễ nghi ngờ và hay để bụng, thù dai.
+	Dấu hiệu nhận biết: Dễ bị stress, căng thẳng thần kinh. Hay suy diễn, có thể hơi cực đoan trong suy nghĩ. Tâm trạng thất thường.
+	- Quá Nhược (Hỏa bị suy):
+	Đặc điểm: Ngọn nến leo lét trước gió. Họ thiếu tự tin, yếu đuối, dễ bị bi quan và chán nản. Thiếu năng lượng, khó theo đuổi mục tiêu đến cùng. Dễ bị người khác tác động, không có chính kiến rõ ràng.
+	Dấu hiệu nhận biết: Hay lo sợ, thiếu cảm giác an toàn. Dễ mệt mỏi, thiếu sức sống. Hành động do dự, không dứt khoát.
+`,
         data: [
           {
             name: "Đinh",
@@ -547,10 +517,10 @@ $(document).ready(function () {
               "Hình ảnh mặt trời (Bính) làm lu mờ ánh nến (Đinh). Đây là sự cạnh tranh không cân sức. Dễ bị người khác cướp công, chiếm đoạt thành quả. Tài năng và công sức không được công nhận.",
           },
           {
-            name: "Mậu",
+            name: "Kỷ",
             thapThan: "Thực Thần",
             nguHanh: "Thổ",
-            amDuong: "Dương",
+            amDuong: "Âm",
             description:
               "Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).",
             tichCuc:
@@ -559,10 +529,10 @@ $(document).ready(function () {
               "Hình ảnh ngọn nến nhỏ soi sáng cả ngọn núi lớn, là sự tiêu hao quá sức. Dễ có những ý tưởng viển vông, khó thực hiện. Dễ bị kiệt sức vì tham vọng.",
           },
           {
-            name: "Kỷ",
+            name: "Mậu",
             thapThan: "Thương Quan",
             nguHanh: "Thổ",
-            amDuong: "Âm",
+            amDuong: "Dương",
             description:
               "Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).",
             tichCuc:
@@ -643,39 +613,22 @@ $(document).ready(function () {
               "Hình ảnh cỏ cây, cành lá nhỏ (Ất) làm nhiên liệu. Lửa cháy bùng lên nhanh nhưng cũng chóng tàn và tạo ra nhiều khói. Sự hỗ trợ nhận được không bền vững, kiến thức học được không sâu.",
           },
         ],
-        thapThanText: `- Đinh (-Hỏa) - Tỷ Kiên: Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.
-Tích cực: "Nhiều ngọn nến sẽ tạo thành đám cháy lớn". Tăng cường sức mạnh, sự tự tin, có nhiều bạn bè, đồng nghiệp cùng chung sức, hỗ trợ nhau để tạo ra kết quả lớn hơn.
-Tiêu cực: Dễ tụ tập thành bè phái, gây ra sự đố kỵ, cạnh tranh ngầm. Có thể trở nên quá nóng nảy khi có nhiều người kích động.
-- Bính (+Hỏa) - Kiếp Tài: Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.
-Tích cực: Có thể nhận được sự giúp đỡ từ những người có quyền thế, có sức ảnh hưởng lớn. Giúp Đinh Hỏa trở nên hướng ngoại, quảng giao hơn.
-Tiêu cực: Hình ảnh mặt trời (Bính) làm lu mờ ánh nến (Đinh). Đây là sự cạnh tranh không cân sức. Dễ bị người khác cướp công, chiếm đoạt thành quả. Tài năng và công sức không được công nhận.
-- Mậu (+Thổ) - Thực Thần: Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).
-Tích cực: Mang lại những ý tưởng, tham vọng lớn. Có khả năng sáng tạo trong các lĩnh vực lớn như kiến trúc, quy hoạch.
-Tiêu cực: Hình ảnh ngọn nến nhỏ soi sáng cả ngọn núi lớn, là sự tiêu hao quá sức. Dễ có những ý tưởng viển vông, khó thực hiện. Dễ bị kiệt sức vì tham vọng.
-- Kỷ (-Thổ) - Thương Quan: Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).
-Tích cực: Mang lại sự mềm mỏng, nhân hậu và khả năng sáng tạo tinh tế. Giỏi trong các công việc thủ công, nghệ thuật.
-Tiêu cực: Hình ảnh tro tàn (Kỷ) làm lửa (Đinh) yếu đi. Làm tiêu hao năng lượng, khiến Đinh Hỏa mất đi sự sắc bén. Dễ trở nên lười biếng, chỉ thích an nhàn.
-- Canh (+Kim) - Chính Tài: Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.
-Tích cực: Đây là mục tiêu ưa thích nhất của Đinh Hỏa (lửa rèn kim loại thô). Có khả năng kiếm tiền từ chính tài năng, chuyên môn của mình. Biến những thứ thô sơ thành sản phẩm có giá trị.
-Tiêu cực: Kiếm tiền rất vất vả, phải lao tâm khổ tứ. Nếu Hỏa yếu không đủ sức rèn Kim, sẽ bị công việc và tiền bạc làm cho kiệt sức.
-- Tân (-Kim) - Thiên Tài: Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).
-Tích cực: Có khả năng kiếm tiền từ các lĩnh vực đòi hỏi sự tinh xảo, làm đẹp, trang sức. Có gu thẩm mỹ tốt trong việc đầu tư.
-Tiêu cực: Hình ảnh lửa nến (Đinh) khó làm tan chảy trang sức (Tân). Kiếm tiền khó khăn, tài lộc không lớn.
-- Nhâm (+Thủy) - Chính Quan: Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).
-Tích cực: Đinh Nhâm hợp hóa Mộc. Nếu trong mệnh có Mộc, sự kết hợp này mang lại danh vị và quyền lực cao quý. Nữ mệnh có chồng tài giỏi, có địa vị, vợ chồng yêu thương nhau.
-Tiêu cực: Nếu không có Mộc, đây là sự kết hợp nguy hiểm. Hình ảnh sông lớn dập tắt ngọn nến. Gây ra áp lực lớn, rủi ro trong công việc. Dễ bị cấp trên chèn ép.
-- Quý (-Thủy) - Thiên Quan: Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).
-Tích cực: Rất hiếm khi tích cực, trừ khi Đinh Hỏa cực cường có Mộc và Thổ mạnh để chống đỡ.
-Tiêu cực: Đây là kẻ thù nguy hiểm nhất của Đinh Hỏa. Hình ảnh mưa dông (Quý) dập tắt ngọn nến. Gây ra tai họa, bệnh tật, thị phi, tiểu nhân hãm hại. Nữ mệnh có tình duyên cực kỳ đau khổ.
-- Giáp (+Mộc) - Chính Ấn: Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.
-Tích cực: Đây là Thần quan trọng nhất của Đinh Hỏa. Hình ảnh cây gỗ lớn (Giáp) làm nhiên liệu cho ngọn lửa (Đinh). Mang lại nguồn năng lượng dồi dào, bền bỉ. Có quý nhân quyền thế giúp đỡ, học vấn uyên bác, trí tuệ sâu sắc.
-Tiêu cực: Nếu Mộc quá cường mà Hỏa quá yếu, sẽ gây ra tình trạng "Mộc đa Hỏa tức" (củi nhiều lửa tắt). Dễ trở nên quá ỷ lại, thiếu nỗ lực cá nhân.
-- Ất (-Mộc) - Thiên Ấn: Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.
-Tích cực: Mang lại sự khéo léo, tư duy nhạy bén và khả năng học hỏi các lĩnh vực độc đáo, nghệ thuật.
-Tiêu cực: Hình ảnh cỏ cây, cành lá nhỏ (Ất) làm nhiên liệu. Lửa cháy bùng lên nhanh nhưng cũng chóng tàn và tạo ra nhiều khói. Sự hỗ trợ nhận được không bền vững, kiến thức học được không sâu.`,
       },
       {
         name: "Mậu",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Mậu Thổ
+Mậu Thổ là hình ảnh của ngọn núi cao, tảng đá lớn, bức tường thành vững chãi (Dương Thổ). Đặc tính cốt lõi là sự vững chãi, đáng tin cậy, trọng chữ tín và có sức chịu đựng cao. Người Mậu Thổ thường trầm ổn, không dễ thay đổi và là điểm tựa cho người khác.
+•	Khi cân bằng:
+	Đặc điểm: Họ là người chính trực, trung hậu, và cực kỳ đáng tin cậy. Một khi đã hứa, họ sẽ làm bằng được. Họ có tầm nhìn xa, thái độ điềm tĩnh và khả năng bao dung lớn như núi cao. Họ là những người lãnh đạo hoặc người trụ cột trầm lặng, mang lại cảm giác an toàn và ổn định cho một tập thể.
+	Dấu hiệu nhận biết: Thái độ vững vàng, không dễ bị lung lay. Lời nói và hành động nhất quán. Luôn mang lại cảm giác an toàn, là người mà người khác tìm đến khi gặp khó khăn.
+•	Khi mất cân bằng (Quá Cường / Quá Nhược):
+	- Quá Cường (Thổ quá vượng):
+	Đặc điểm: Ngọn núi quá lớn sẽ trở nên trơ trọi và cách biệt. Họ trở nên cực kỳ cố chấp, bảo thủ, không chịu tiếp thu ý kiến của người khác. Phản ứng chậm chạp, thiếu linh hoạt, đôi khi lười biếng và không muốn thay đổi. Có xu hướng tự cho mình là trung tâm, thiếu sự tinh tế trong giao tiếp.
+	Dấu hiệu nhận biết: Sự bướng bỉnh đến mức cực đoan, không chịu thay đổi dù biết là sai. Thiếu linh hoạt trong xử lý tình huống, dễ bị cô lập.
+	- Quá Nhược (Thổ bị suy):
+	Đặc điểm: Bề ngoài có vẻ vững chắc nhưng bên trong lại trống rỗng, thiếu tự tin. Họ có lòng tự trọng cao nhưng lại không có đủ năng lực để theo đuổi, dẫn đến tự ti. Dễ bị cô lập, không có sự hỗ trợ, cảm thấy đơn độc trong các quyết định của mình.
+	Dấu hiệu nhận biết: Hay do dự, lo được lo mất. Bề ngoài tỏ ra mạnh mẽ nhưng thực chất dễ bị tổn thương và thiếu cảm giác an toàn.
+`,
         data: [
           {
             name: "Mậu",
@@ -745,92 +698,75 @@ Tiêu cực: Hình ảnh cỏ cây, cành lá nhỏ (Ất) làm nhiên liệu. L
             description:
               "Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).",
             tichCuc:
-              "Mang lại sự khéo léo, linh hoạt trong việc kiếm tiền. Có khả năng kinh doanh, đầu tư, nhìn ra những cơ hội mà người khác không thấy. Hào phóng, giỏi xã giao.",
+              "Có khả năng kiếm những khoản tiền khổng lồ, giống như ngọn núi ngăn sông lớn. Có khí phách, hào phóng, giỏi kinh doanh và có tầm nhìn xa. Thích hợp làm những việc lớn",
             tieuCuc:
-              "Tài chính bấp bênh, lúc có lúc không. Dễ chi tiêu hoang phí, không biết giữ tiền. Nam mệnh dễ có nhiều mối quan hệ ngoài luồng.",
+              "Tài chính cực kỳ bấp bênh, có thể phất lên rất nhanh và phá sản cũng rất nhanh. Tiêu tiền như nước, khó kiểm soát chi tiêu. Nam mệnh đào hoa, dễ có nhiều mối quan hệ phức tạp.",
           },
           {
             name: "Giáp",
-            thapThan: "Chính Quan",
-            nguHanh: "Mộc",
-            amDuong: "Dương",
-            description:
-              "Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).",
-            tichCuc:
-              "Mang lại sự chính trực, tinh thần trách nhiệm và khả năng lãnh đạo. Có công danh, địa vị trong xã hội, được mọi người tôn trọng. Nữ mệnh có chồng tốt, là người có năng lực.",
-            tieuCuc:
-              "Khi quá cường dễ trở nên cứng nhắc, bảo thủ, quá tuân thủ quy tắc một cách máy móc. Gặp nhiều áp lực, căng thẳng trong công việc.",
-          },
-          {
-            name: "Ất",
             thapThan: "Thiên Quan",
             nguHanh: "Mộc",
-            amDuong: "Âm",
+            amDuong: "Dương",
             description:
               "Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh (quân đội, cảnh sát), người tình (đối với nữ).",
             tichCuc:
-              "Khi được chế hóa, mang lại sự nhanh nhạy, quyết đoán phi thường. Có khả năng giải quyết các vấn đề khó khăn, phức tạp. Có uy quyền và khả năng xử lý khủng hoảng.",
+              "Khi Mậu Thổ đủ mạnh, Giáp Mộc mang lại quyền lực tối cao, khả năng lãnh đạo phi thường. Họ dũng cảm, quyết đoán, có thể đảm đương những trọng trách lớn lao, thành công trong các lĩnh vực như quân sự, chính trị.",
             tieuCuc:
-              "Gặp nhiều áp lực, thị phi, tiểu nhân hãm hại. Sức khỏe dễ bị ảnh hưởng, dễ gặp tai nạn. Nữ mệnh dễ lận đận trong chuyện tình cảm, gặp phải người không phù hợp.",
+              "Khi Mậu Thổ yếu, đây là áp lực khủng khiếp. Gặp nhiều khó khăn, thử thách, tiểu nhân hãm hại, sức khỏe suy kiệt. Nữ mệnh dễ có tình duyên trắc trở, vất vả.",
+          },
+          {
+            name: "Ất",
+            thapThan: "Chính Quan",
+            nguHanh: "Mộc",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).",
+            tichCuc:
+              "Giúp Mậu Thổ trở nên có danh tiếng và địa vị. Họ là người có tinh thần trách nhiệm, tuân thủ kỷ luật, được cấp trên tin tưởng. Nữ mệnh có chồng là người tài giỏi, nho nhã.",
+            tieuCuc:
+              "Dễ bị gò bó, mất tự do bởi các quy tắc. Lo sợ mất danh tiếng, không dám mạo hiểm. Dễ bị căng thẳng vì áp lực từ công việc.",
           },
           {
             name: "Bính",
-            thapThan: "Chính Ấn",
+            thapThan: "Thiên Ấn",
             nguHanh: "Hỏa",
             amDuong: "Dương",
             description:
-              "Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.",
+              "Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.",
             tichCuc:
-              "Mang lại sự ấm áp, lạc quan và lòng nhân từ. Thông minh, ham học hỏi, có kiến thức sâu rộng. Luôn có quý nhân giúp đỡ, được cấp trên nâng đỡ.",
+              "Mang lại danh tiếng và sự công nhận rộng rãi. Có trực giác cực tốt, tư duy đột phá và khả năng học hỏi các lĩnh vực độc đáo, huyền học. Được quý nhân quyền thế giúp đỡ.",
             tieuCuc:
-              "Dễ trở nên ỷ lại, thiếu tính độc lập. Đôi khi lý thuyết suông, thiếu tính thực tế. Suy nghĩ quá nhiều mà không hành động.",
+              'Dễ "cả thèm chóng chán" trong học tập, hứng thú nhất thời. Tính cách thất thường, khó đoán. Dễ cảm thấy cô độc, không được thấu hiểu.',
           },
           {
             name: "Đinh",
-            thapThan: "Thiên Ấn",
+            thapThan: "Chính Ấn",
             nguHanh: "Hỏa",
             amDuong: "Âm",
             description:
-              "Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.",
+              "Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.",
             tichCuc:
-              "Có trực giác vô cùng nhạy bén, khả năng cảm nhận tâm linh cao. Có tài năng đặc biệt trong các lĩnh vực độc đáo, huyền bí, nghệ thuật. Tư duy khác biệt, sâu sắc.",
+              "Mang lại tư duy sâu sắc, sự thông thái và khả năng học hỏi bền bỉ. Họ có kiến thức vững chắc, được mẹ hoặc quý nhân hết lòng che chở, giúp đỡ.",
             tieuCuc:
-              "Tính cách kỳ lạ, khó hiểu, dễ bị cô lập. Suy nghĩ tiêu cực, hay đa nghi. Mối quan hệ với mẹ không được tốt hoặc mẹ vất vả.",
+              "Dễ trở nên quá dựa dẫm, thiếu tính độc lập. Đôi khi bảo thủ, chỉ tin vào những gì mình đã học mà thiếu đi sự sáng tạo.",
           },
         ],
-        thapThanText: `- Mậu (+Thổ) - Tỷ Kiên: Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.
-    Tích cực: Tăng cường sự tự chủ, lập trường vững vàng và khả năng chịu đựng áp lực. Rất coi trọng chữ tín, là người bạn đồng hành đáng tin cậy, sẵn sàng gánh vác trách nhiệm.
-    Tiêu cực: Khi quá cường sẽ trở nên cực kỳ cố chấp, độc đoán, không ai có thể thay đổi được suy nghĩ của họ. Thiếu linh hoạt, dễ bỏ lỡ cơ hội.
-- Kỷ (-Thổ) - Kiếp Tài: Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.
-    Tích cực: Giúp Mậu Thổ trở nên mềm mỏng, khéo léo và tinh tế hơn. Có khả năng kết nối với nhiều người, giỏi hợp tác trong các hội nhóm nhỏ.
-    Tiêu cực: Dễ bị bạn bè hoặc người thân lợi dụng, lôi kéo vào những chuyện không đâu. Có thể bị cạnh tranh ngầm mà không hay biết, gây hao tài tốn của.
-- Canh (+Kim) - Thực Thần: Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).
-    Tích cực: Hành động mạnh mẽ, quyết đoán. Có tài năng trong các lĩnh vực kỹ thuật, sản xuất. Tư duy khoáng đạt, thẳng thắn, không thích vòng vo. Mang lại sự giàu có, sung túc.
-    Tiêu cực: Dễ trở nên lười biếng, chỉ thích hưởng thụ. Lời nói quá thẳng, đôi khi thiếu suy nghĩ. Có thể hành động bộc phát, thiếu kế hoạch dài hạn.
-- Tân (-Kim) - Thương Quan: Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).
-    Tích cực: Có tài năng nghệ thuật, văn chương, gu thẩm mỹ tinh tế. Lời nói sắc sảo, có sức thuyết phục cao. Có khả năng kiếm tiền từ tài năng đặc biệt của mình.
-    Tiêu cực: Kiêu ngạo, thích thể hiện, hay xem thường người khác. Lời nói sắc bén dễ làm tổn thương người khác. Dễ xung đột với cấp trên, cơ quan quyền lực.
-- Quý (-Thủy) - Chính Tài: Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.
-    Tích cực: Mậu và Quý là cặp trời sinh (Mậu Quý hợp Hỏa), mang lại sự may mắn về tiền bạc và tình duyên. Họ là người cẩn thận, biết cách quản lý tài chính và có một cuộc sống ổn định. Nam mệnh có vợ hiền, là trợ thủ đắc lực.
-    Tiêu cực: Đôi khi quá cẩn thận, tính toán chi li thành ra bỏ lỡ cơ hội lớn. Vì quá tập trung vào công việc và tiền bạc mà trở nên khô khan, thiếu lãng mạn. Lo lắng quá nhiều về tài chính.
-- Nhâm (+Thủy) - Thiên Tài: Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).
-    Tích cực: Mang lại sự khéo léo, linh hoạt trong việc kiếm tiền. Có khả năng kinh doanh, đầu tư, nhìn ra những cơ hội mà người khác không thấy. Hào phóng, giỏi xã giao.
-    Tiêu cực: Tài chính bấp bênh, lúc có lúc không. Dễ chi tiêu hoang phí, không biết giữ tiền. Nam mệnh dễ có nhiều mối quan hệ ngoài luồng.
-- Giáp (+Mộc) - Chính Quan: Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).
-    Tích cực: Mang lại sự chính trực, tinh thần trách nhiệm và khả năng lãnh đạo. Có công danh, địa vị trong xã hội, được mọi người tôn trọng. Nữ mệnh có chồng tốt, là người có năng lực.
-    Tiêu cực: Khi quá cường dễ trở nên cứng nhắc, bảo thủ, quá tuân thủ quy tắc một cách máy móc. Gặp nhiều áp lực, căng thẳng trong công việc.
-- Ất (-Mộc) - Thiên Quan: Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh (quân đội, cảnh sát), người tình (đối với nữ).
-    Tích cực: Khi được chế hóa, mang lại sự nhanh nhạy, quyết đoán phi thường. Có khả năng giải quyết các vấn đề khó khăn, phức tạp. Có uy quyền và khả năng xử lý khủng hoảng.
-    Tiêu cực: Gặp nhiều áp lực, thị phi, tiểu nhân hãm hại. Sức khỏe dễ bị ảnh hưởng, dễ gặp tai nạn. Nữ mệnh dễ lận đận trong chuyện tình cảm, gặp phải người không phù hợp.
-- Bính (+Hỏa) - Chính Ấn: Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.
-    Tích cực: Mang lại sự ấm áp, lạc quan và lòng nhân từ. Thông minh, ham học hỏi, có kiến thức sâu rộng. Luôn có quý nhân giúp đỡ, được cấp trên nâng đỡ.
-    Tiêu cực: Dễ trở nên ỷ lại, thiếu tính độc lập. Đôi khi lý thuyết suông, thiếu tính thực tế. Suy nghĩ quá nhiều mà không hành động.
-- Đinh (-Hỏa) - Thiên Ấn: Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.
-    Tích cực: Có trực giác vô cùng nhạy bén, khả năng cảm nhận tâm linh cao. Có tài năng đặc biệt trong các lĩnh vực độc đáo, huyền bí, nghệ thuật. Tư duy khác biệt, sâu sắc.
-    Tiêu cực: Tính cách kỳ lạ, khó hiểu, dễ bị cô lập. Suy nghĩ tiêu cực, hay đa nghi. Mối quan hệ với mẹ không được tốt hoặc mẹ vất vả.`,
       },
       {
         name: "Kỷ",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Kỷ Thổ
+Kỷ Thổ là hình ảnh của đất vườn, đất phù sa (Âm Thổ), bản chất là nuôi dưỡng, bao dung và tích trữ. Người Kỷ Thổ có nội tâm phức tạp, suy nghĩ chu đáo, giỏi trong việc vun trồng và phát triển một cách thầm lặng.
+  •	Khi cân bằng:
+    Đặc điểm: Họ là người ôn hòa, mềm mỏng, có lòng trắc ẩn và tinh thần trách nhiệm cao. Giống như mảnh đất màu mỡ, họ là nền tảng vững chắc, luôn sẵn sàng hỗ trợ, chăm sóc và mang lại giá trị cho những người xung quanh. Họ có khả năng lập kế hoạch, sắp xếp mọi thứ ngăn nắp, giỏi quản lý và có uy tín một cách tự nhiên.
+    Dấu hiệu nhận biết: Thái độ điềm tĩnh, đáng tin cậy. Khả năng lắng nghe và thấu hiểu sâu sắc. Hành động có tính xây dựng, luôn hướng tới sự ổn định và lợi ích lâu dài.
+  •	Khi mất cân bằng (Quá Cường / Quá Nhược):
+    - Quá Cường (Thổ quá vượng):
+    Đặc điểm: Đất quá nhiều sẽ trở nên đặc quánh, gây trì trệ. Họ trở nên cố chấp, bảo thủ, khó tiếp thu cái mới. Suy nghĩ nhiều, lo nghĩ vẩn vơ, dễ bị sa đà vào những chi tiết vụn vặt. Sự bao bọc trở thành kiểm soát, khiến người khác ngột ngạt. Dễ bị nghi ngờ, thiếu sự phóng khoáng.
+    Dấu hiệu nhận biết: Cứng đầu, bướng bỉnh, khư khư giữ ý kiến của mình. Hay lo âu, tâm trạng nặng nề, thiếu linh hoạt.
+    - Quá Nhược (Thổ bị suy):
+    Đặc điểm: Đất đai cằn cỗi, thiếu sức sống. Họ thiếu tự tin, lập trường không vững, dễ bị người khác tác động, lôi kéo. Hay do dự, thiếu quyết đoán, không dám chịu trách nhiệm. Cảm giác an toàn thấp, dễ bi quan và hay có cảm giác bị bỏ rơi.
+    Dấu hiệu nhận biết: Thiếu chủ kiến, dễ phụ thuộc vào người khác. Hay tự ti, nhu nhược, dễ bỏ cuộc khi gặp khó khăn.
+`,
         data: [
           {
             name: "Kỷ",
@@ -890,7 +826,7 @@ Tiêu cực: Hình ảnh cỏ cây, cành lá nhỏ (Ất) làm nhiên liệu. L
             tichCuc:
               "Mang lại cho Kỷ Thổ cơ hội tài chính lớn và ổn định. Người có Nhâm Tài thường chăm chỉ, có kế hoạch tài chính rõ ràng, biết cách tích lũy. Nam mệnh có vợ tài giỏi, đảm đang.",
             tieuCuc:
-              "Dễ trở nên quá coi trọng tiền bạc. Có thể vì tình cảm mà trở nên thiếu quyết đoán, mất đi sự mạnh mẽ vốn có.",
+              "Dễ trở nên quá coi trọng tiền bạc, keo kiệt, bủn xỉn. Đôi khi quá thực dụng, thiếu lãng mạn. Lo lắng quá nhiều về tài chính.",
           },
           {
             name: "Quý",
@@ -953,39 +889,22 @@ Tiêu cực: Hình ảnh cỏ cây, cành lá nhỏ (Ất) làm nhiên liệu. L
               "Tính cách kỳ lạ, khó hiểu, dễ bị cô lập. Suy nghĩ tiêu cực, hay đa nghi. Mối quan hệ với mẹ không được tốt hoặc mẹ vất vả.",
           },
         ],
-        thapThanText: `- Kỷ (-Thổ) - Tỷ Kiên: Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.
-    Tích cực: Tăng cường sự tự tin, tính độc lập. Rất bao dung, giỏi lập kế hoạch và sắp xếp công việc một cách logic, có đầu có cuối. Là người bạn đáng tin cậy.
-    Tiêu cực: Khi quá cường dễ trở nên cố chấp, tự cho mình là đúng. Hay lo nghĩ những chuyện nhỏ nhặt, bao bọc người khác quá mức cần thiết.
-- Mậu (+Thổ) - Kiếp Tài: Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; cũng là sự cạnh tranh, lòng tự tôn.
-    Tích cực: Mang lại sự mạnh mẽ, quyết đoán và tầm nhìn lớn cho Kỷ Thổ. Giúp họ trở nên phóng khoáng, quảng giao hơn. Có chí tiến thủ, không ngại cạnh tranh.
-    Tiêu cực: Có xu hướng lấn át, áp đặt người khác. Tính chiếm hữu cao, dễ gây ra tranh đoạt (tiền bạc, tình cảm). Đôi khi hành động liều lĩnh, thiếu suy xét kỹ càng.
-- Tân (-Kim) - Thực Thần: Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).
-    Tích cực: Tinh tế, có năng khiếu nghệ thuật và gu thẩm mỹ cao. Lời nói nhẹ nhàng, duyên dáng. Tư duy sắc sảo, thích tìm tòi, khám phá. Tận hưởng cuộc sống một cách tao nhã.
-    Tiêu cực: Cầu kỳ, khó tính, đôi khi quá kén chọn. Dễ trở nên lười biếng, chỉ thích hưởng thụ mà không muốn làm việc vất vả.
-- Canh (+Kim) - Thương Quan: Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).
-    Tích cực: Vô cùng thông minh, sắc bén, có khả năng nhìn thấu vấn đề. Dám nghĩ dám làm, có tài năng cải cách, sáng tạo đột phá. Phản ứng nhanh nhạy.
-    Tiêu cực: Kiêu ngạo, thích thể hiện, dễ xem thường người khác. Lời nói sắc bén có thể làm tổn thương người khác. Không thích bị gò bó, dễ chống đối cấp trên và quy tắc.
-- Nhâm (+Thủy) - Chính Tài: Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.
-    Tích cực: Mang lại cho Kỷ Thổ cơ hội tài chính lớn và ổn định. Người có Nhâm Tài thường chăm chỉ, có kế hoạch tài chính rõ ràng, biết cách tích lũy. Nam mệnh có vợ tài giỏi, đảm đang.
-    Tiêu cực: Dễ trở nên quá coi trọng tiền bạc. Có thể vì tình cảm mà trở nên thiếu quyết đoán, mất đi sự mạnh mẽ vốn có.
-- Quý (-Thủy) - Thiên Tài: Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).
-    Tích cực: Mang lại sự khéo léo, linh hoạt trong việc kiếm tiền. Có khả năng kinh doanh, đầu tư, nhìn ra những cơ hội mà người khác không thấy. Hào phóng, giỏi xã giao.
-    Tiêu cực: Tài chính bấp bênh, lúc có lúc không. Dễ chi tiêu hoang phí, không biết giữ tiền. Nam mệnh dễ có nhiều mối quan hệ ngoài luồng.
-- Giáp (+Mộc) - Chính Quan: Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).
-    Tích cực: Mang lại sự chính trực, tinh thần trách nhiệm và khả năng lãnh đạo. Có công danh, địa vị trong xã hội, được mọi người tôn trọng. Nữ mệnh có chồng tốt, là người có năng lực.
-    Tiêu cực: Khi quá cường dễ trở nên cứng nhắc, bảo thủ, quá tuân thủ quy tắc một cách máy móc. Gặp nhiều áp lực, căng thẳng trong công việc.
-- Ất (-Mộc) - Thiên Quan: Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh (quân đội, cảnh sát), người tình (đối với nữ).
-    Tích cực: Khi được chế hóa, mang lại sự nhanh nhạy, quyết đoán phi thường. Có khả năng giải quyết các vấn đề khó khăn, phức tạp. Có uy quyền và khả năng xử lý khủng hoảng.
-    Tiêu cực: Gặp nhiều áp lực, thị phi, tiểu nhân hãm hại. Sức khỏe dễ bị ảnh hưởng, dễ gặp tai nạn. Nữ mệnh dễ lận đận trong chuyện tình cảm, gặp phải người không phù hợp.
-- Bính (+Hỏa) - Chính Ấn: Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.
-    Tích cực: Mang lại sự ấm áp, lạc quan và lòng nhân từ. Thông minh, ham học hỏi, có kiến thức sâu rộng. Luôn có quý nhân giúp đỡ, được cấp trên nâng đỡ.
-    Tiêu cực: Dễ trở nên ỷ lại, thiếu tính độc lập. Đôi khi lý thuyết suông, thiếu tính thực tế. Suy nghĩ quá nhiều mà không hành động.
-- Đinh (-Hỏa) - Thiên Ấn: Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.
-    Tích cực: Có trực giác vô cùng nhạy bén, khả năng cảm nhận tâm linh cao. Có tài năng đặc biệt trong các lĩnh vực độc đáo, huyền bí, nghệ thuật. Tư duy khác biệt, sâu sắc.
-    Tiêu cực: Tính cách kỳ lạ, khó hiểu, dễ bị cô lập. Suy nghĩ tiêu cực, hay đa nghi. Mối quan hệ với mẹ không được tốt hoặc mẹ vất vả.`,
       },
       {
         name: "Canh",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Canh Kim
+Canh Kim là hình ảnh của kim loại thô, quặng mỏ, hoặc vũ khí như gươm, đao (Dương Kim). Đặc tính cốt lõi là sự cương trực, nghĩa khí, quyết đoán và mạnh mẽ. Người Canh Kim có tinh thần của một chiến binh, trọng tình nghĩa, sẵn sàng bảo vệ bạn bè và lẽ phải. Để trở nên hữu dụng, Canh Kim cần được lửa (Hỏa) tôi luyện.
+•	Khi cân bằng (được tôi luyện và có môi trường thể hiện):
+	Đặc điểm: Họ là người vô cùng nghĩa khí, dũng cảm và quyết đoán. Một khi đã đặt ra mục tiêu, họ sẽ hành động nhanh chóng và mạnh mẽ để đạt được. Họ là người bạn, người đồng đội trung thành, đáng tin cậy, luôn đứng ra gánh vác trách nhiệm và bảo vệ kẻ yếu.
+	Dấu hiệu nhận biết: Phong thái dứt khoát, mạnh mẽ. Lời nói thẳng thắn, không vòng vo. Luôn thể hiện tinh thần trượng nghĩa, sẵn sàng giúp đỡ người khác.
+•	Khi mất cân bằng (Quá Cường / Quá Nhược):
+	- Quá Cường (Kim quá vượng, không được tôi luyện):
+	Đặc điểm: Kim loại thô không được rèn giũa sẽ trở nên vô dụng và phá phách. Họ trở nên khô khan, cứng nhắc, hiếu thắng và thích dùng bạo lực để giải quyết vấn đề. Lời nói và hành động thiếu suy nghĩ, sắc bén như dao, dễ gây tổn thương cho người khác.
+	Dấu hiệu nhận biết: Nóng nảy, cố chấp. Hành động liều lĩnh, thiếu sự tinh tế. Dễ gây gổ và có xu hướng áp đặt người khác.
+	- Quá Nhược (Kim bị suy):
+	Đặc điểm: Kim loại yếu ớt, dễ bị bẻ gãy. Họ thiếu quyết đoán, do dự, không dám đối mặt với khó khăn. Dù có lòng nghĩa khí nhưng không đủ sức mạnh để hành động. Dễ bị khuất phục, không có khả năng bảo vệ bản thân hay người khác.
+	Dấu hiệu nhận biết: Thiếu tự tin, hay do dự. Dễ bị bắt nạt hoặc bị lấn át. Thiếu đi sự mạnh mẽ, dứt khoát vốn có của Canh Kim.
+`,
         data: [
           {
             name: "Canh",
@@ -1108,39 +1027,22 @@ Tiêu cực: Hình ảnh cỏ cây, cành lá nhỏ (Ất) làm nhiên liệu. L
               "Hình ảnh núi lớn chôn vùi kim loại. Khi Thổ quá cường sẽ khiến Canh Kim trở nên ngu dốt, cứng nhắc, không chịu học hỏi, tài năng bị chôn vùi hoàn toàn. Dễ bị cô lập và không được công nhận.",
           },
         ],
-        thapThanText: `- Canh (+Kim) - Tỷ Kiên: Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.
-    Tích cực: Tăng cường ý chí, sự tự chủ và tinh thần đồng đội. Có nhiều bạn bè trung thành, cùng nhau kề vai sát cánh vượt qua khó khăn.
-    Tiêu cực: Khi quá cường sẽ trở nên cực kỳ bướng bỉnh, hiếu chiến. Dễ xảy ra xung đột, tranh chấp với bạn bè vì quá thẳng tính và thiếu linh hoạt.
-- Tân (-Kim) - Kiếp Tài: Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.
-    Tích cực: Giúp Canh Kim trở nên tinh tế, khéo léo và sắc sảo hơn trong lời nói. Có khả năng kết hợp giữa sức mạnh và sự tinh tế để đạt mục tiêu.
-    Tiêu cực: Cạnh tranh cực kỳ gay gắt. Dễ bị bạn bè hoặc người thân phản bội, đâm sau lưng. Lòng tự tôn quá cao, dễ tự ái và gây ra mâu thuẫn.
-- Nhâm (+Thủy) - Thực Thần: Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).
-    Tích cực: Đây là hình ảnh "Kim bạch thủy thanh" (Kim trắng được nước trong rửa sạch), mang lại sự thông minh, tài hoa và khả năng biểu đạt xuất chúng. Có tài năng lãnh đạo và sáng tạo lớn.
-    Tiêu cực: Dễ trở nên quá tự do, phóng túng. Có thể vì hưởng thụ mà trở nên lười biếng. Cần có định hướng rõ ràng để không lãng phí tài năng.
-- Quý (-Thủy) - Thương Quan: Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).
-    Tích cực: Mang lại sự sắc bén trong tư duy, khả năng phản biện và phân tích vấn đề sâu sắc. Có tài năng đặc biệt trong các lĩnh vực kỹ thuật, công nghệ cao.
-    Tiêu cực: Rất kiêu ngạo, hay chỉ trích và dễ xem thường người khác. Dễ xung đột với cấp trên và các quy tắc xã hội. Lời nói lạnh lùng có thể làm tổn thương người khác.
-- Ất (-Mộc) - Chính Tài: Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.
-    Tích cực: Canh và Ất là cặp hợp hóa Kim, mang lại sự may mắn về tài lộc và tình duyên. Giúp Canh Kim trở nên mềm mỏng, tình cảm hơn. Nam mệnh có vợ hiền, khéo léo và rất yêu thương chồng.
-    Tiêu cực: Dễ trở nên quá coi trọng tiền bạc. Có thể vì tình cảm mà trở nên thiếu quyết đoán, mất đi sự mạnh mẽ vốn có.
-- Giáp (+Mộc) - Thiên Tài: Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).
-    Tích cực: Đây là mục tiêu ưa thích nhất của Canh Kim (dùng rìu chặt cây lớn). Mang lại cơ hội kiếm những khoản tiền lớn, tham gia vào các dự án lớn. Rất quyết đoán và mạnh mẽ trong việc theo đuổi tài lộc.
-    Tiêu cực: Kiếm tiền rất vất vả, phải cạnh tranh và nỗ lực rất nhiều. Dễ bị các vấn đề về xương khớp, gân cốt do làm việc quá sức.
-- Đinh (-Hỏa) - Chính Quan: Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).
-    Tích cực: Đây là Thần quan trọng nhất của Canh Kim, là lửa trong lò rèn luyện Canh Kim thành vũ khí sắc bén. Mang lại công danh, địa vị, sự nghiệp vẻ vang và sự tôn trọng của xã hội. Giúp Canh Kim trở nên có kỷ luật và hữu dụng. Nữ mệnh có chồng tài giỏi.
-    Tiêu cực: Gặp nhiều áp lực, phải trải qua nhiều rèn giũa, thử thách mới có thể thành công. Nếu Hỏa quá yếu thì không đủ sức rèn Canh, sự nghiệp khó thành.
-- Bính (+Hỏa) - Thiên Quan: Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).
-    Tích cực: Khi Canh Kim đủ mạnh, Bính Hỏa mang lại quyền lực tối cao trong các môi trường khắc nghiệt như quân đội, cảnh sát, chính trị. Có khả năng đảm đương trọng trách lớn, lập nên đại nghiệp.
-    Tiêu cực: Khi Canh Kim yếu, đây là áp lực khủng khiếp, gây ra tai họa, bệnh tật nặng, các vấn đề nghiêm trọng về pháp luật. Cuộc sống luôn đầy rẫy nguy hiểm và kẻ thù. Nữ mệnh có tình duyên trắc trở.
-- Kỷ (-Thổ) - Chính Ấn: Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.
-    Tích cực: Mang lại sự ổn định, có người che chở, giúp đỡ. Có nền tảng gia đình tốt.
-    Tiêu cực: Hình ảnh đất bùn làm bẩn kim loại (Thổ hậu mai kim). Khiến Canh Kim trở nên lười biếng, ỷ lại, mất đi sự sắc bén và ý chí chiến đấu. Tài năng bị chôn vùi, khó phát huy.
-- Mậu (+Thổ) - Thiên Ấn: Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.
-    Tích cực: Mang lại một nền tảng vững chắc, sự hỗ trợ mạnh mẽ từ quý nhân có quyền lực. Giúp Canh Kim trở nên kiên định và có sức chịu đựng tốt hơn.
-    Tiêu cực: Hình ảnh núi lớn chôn vùi kim loại. Khi Thổ quá cường sẽ khiến Canh Kim trở nên ngu dốt, cứng nhắc, không chịu học hỏi, tài năng bị chôn vùi hoàn toàn. Dễ bị cô lập và không được công nhận.`,
       },
       {
         name: "Tân",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Tân Kim
+Tân Kim là hình ảnh của kim loại đã qua chế tác, là trang sức, châu báu, ngọc ngà (Âm Kim). Đặc tính cốt lõi là sự tinh tế, thanh lịch, sang trọng và giá trị. Người Tân Kim có lòng tự trọng cao, yêu cái đẹp, thích sự chú ý và công nhận. Họ giống như một viên ngọc quý, khao khát được nước (Thủy) rửa sạch để tỏa sáng và sợ nhất bị đất (Thổ) làm vẩn đục.
+•	Khi cân bằng (được Thủy rửa và có Hỏa chiếu):
+	Đặc điểm: Họ là người vô cùng tinh tế, thanh lịch và có gu thẩm mỹ cao. Lời nói và hành động duyên dáng, có sức hấp dẫn đặc biệt. Họ thông minh, sắc sảo và luôn nổi bật trong đám đông. Họ là những nghệ sĩ, nhà ngoại giao, hoặc những chuyên gia trong các lĩnh vực đòi hỏi sự tỉ mỉ và sang trọng.
+	Dấu hiệu nhận biết: Khí chất sang trọng, dù ăn mặc đơn giản. Chú trọng đến hình thức, ngoại hình. Lời nói nhẹ nhàng nhưng sắc bén. Có sức hút tự nhiên.
+•	Khi mất cân bằng (Quá Cường / Quá Nhược):
+	- Quá Cường (Kim quá vượng):
+	Đặc điểm: Nhiều món trang sức quý giá để cùng một chỗ sẽ tranh giành sự chú ý, làm giảm giá trị của nhau. Họ trở nên quá kiêu kỳ, khó gần, hay chỉ trích và phán xét người khác. Lời nói chua ngoa, sắc lẹm, dễ gây tổn thương sâu sắc. Lòng tự tôn quá cao dẫn đến tự phụ và cô độc.
+	Dấu hiệu nhận biết: Kiêu ngạo, thích khoe khoang. Hay chê bai, chỉ trích. Luôn cho mình là trung tâm và khó chấp nhận ý kiến trái chiều.
+	-Quá Nhược (Kim bị suy):
+	Đặc điểm: Trang sức bị hư hỏng, mất đi giá trị. Họ thiếu tự tin, nhạy cảm quá mức, dễ bị tổn thương bởi những lời nói dù là vô tình. Không có khả năng tự bảo vệ mình, dễ bị người khác xem thường hoặc lợi dụng.
+	Dấu hiệu nhận biết: Tự ti, hay mặc cảm về bản thân. Rất nhạy cảm, dễ khóc hoặc tự ái. Thiếu đi sự tỏa sáng và sức hút vốn có.
+`,
         data: [
           {
             name: "Tân",
@@ -1263,39 +1165,22 @@ Tiêu cực: Hình ảnh cỏ cây, cành lá nhỏ (Ất) làm nhiên liệu. L
               "Hình ảnh bùn đất (Kỷ) làm vấy bẩn trang sức (Tân). Sự hỗ trợ nhận được thường đi kèm phiền phức, hoặc sự giúp đỡ không đúng cách làm hỏng việc. Gây ra cảm giác khó chịu, bực bội.",
           },
         ],
-        thapThanText: `- Tân (-Kim) - Tỷ Kiên: Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.
-Tích cực: Tăng cường sự tự tin, giúp họ trở nên sắc sảo và tinh tế hơn. Có những người bạn cùng đẳng cấp, có thể hỗ trợ nhau trong việc xây dựng hình ảnh.
-Tiêu cực: Cạnh tranh gay gắt. Luôn có sự so bì, đố kỵ với bạn bè. Dễ bị bạn bè nói xấu, chơi không đẹp. Cái tôi quá lớn, khó hợp tác.
-- Canh (+Kim) - Kiếp Tài: Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.
-Tích cực: Mang lại cho Tân Kim sự mạnh mẽ, quyết đoán và can đảm hơn. Có thể nhận được sự giúp đỡ từ những người bạn mạnh mẽ, thẳng thắn.
-Tiêu cực: Hình ảnh kim loại thô (Canh) làm trầy xước trang sức (Tân). Dễ bị bạn bè, người thân làm tổn thương hoặc gây phiền phức. Dễ bị hao tài, mất mát vì sự cạnh tranh thô bạo.
-- Quý (-Thủy) - Thực Thần: Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).
-Tích cực: Hình ảnh sương, mưa nhỏ rửa sạch bụi trên trang sức. Mang lại sự thông minh, tinh tế và khả năng biểu đạt nghệ thuật. Lời nói nhẹ nhàng, duyên dáng.
-Tiêu cực: Dễ trở nên quá nhạy cảm, đa sầu đa cảm. Tư duy có phần mơ mộng, thiếu tính thực tế. Sự sáng tạo chỉ ở mức độ nhỏ, khó tạo ra đột phá lớn.
-- Nhâm (+Thủy) - Thương Quan: Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).
-Tích cực: Đây là Thần quan trọng và được yêu thích nhất của Tân Kim. Hình ảnh sông lớn (Nhâm) rửa sạch ngọc quý (Tân), giúp Tân Kim tỏa sáng rực rỡ. Mang lại trí thông minh tuyệt đỉnh, tài hoa xuất chúng, danh tiếng lẫy lừng.
-Tiêu cực: Khi Thủy quá cường có thể cuốn trôi Kim. Dễ trở nên quá kiêu ngạo, tự mãn. Có thể vì tài năng mà coi thường mọi quy tắc, gây ra rắc rối.
-- Giáp (+Mộc) - Chính Tài: Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.
-Tích cực: Có mục tiêu tài chính lớn, có tham vọng về tiền bạc. Có thể kiếm được tiền từ các dự án lớn, đối tác lớn.
-Tiêu cực: Hình ảnh dao nhỏ (Tân) chặt cây lớn (Giáp). Kiếm tiền rất vất vả, lao tâm khổ tứ. Dễ bị các vấn đề về tài chính làm cho mệt mỏi, kiệt sức.
-- Ất (-Mộc) - Thiên Tài: Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).
-Tích cực: Hình ảnh dao nhỏ tỉa cành lá (Ất). Có khả năng kiếm tiền từ các công việc đòi hỏi sự khéo léo, tinh tế như nghệ thuật, làm đẹp, thời trang.
-Tiêu cực: Tài lộc không lớn, chỉ đủ chi tiêu. Dễ bị hao tán vì các sở thích cá nhân, mua sắm.
-- Bính (+Hỏa) - Chính Quan: Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).
-Tích cực: Đây là cặp Bính Tân hợp hóa Thủy. Hình ảnh mặt trời (Bính) chiếu rọi làm trang sức (Tân) thêm lấp lánh. Mang lại danh tiếng, địa vị cao quý, được xã hội công nhận. Nữ mệnh có chồng tài giỏi, có địa vị.
-Tiêu cực: Dễ vì danh tiếng mà đánh mất bản thân. Luôn phải sống dưới sự chú ý của người khác, gây ra áp lực.
-- Đinh (-Hỏa) - Thiên Quan: Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).
-Tích cực: Khi được chế hóa, có thể mang lại quyền lực trong các lĩnh vực đặc thù, đòi hỏi sự chính xác cao như y tế (dao mổ), kỹ thuật.
-Tiêu cực: Hình ảnh lửa lò (Đinh) làm tan chảy trang sức (Tân). Đây là áp lực hủy diệt. Gặp nhiều khó khăn, thử thách, sức khỏe suy yếu (đặc biệt là hệ hô hấp). Nữ mệnh tình duyên cực kỳ trắc trở.
-- Mậu (+Thổ) - Chính Ấn: Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.
-Tích cực: Có sự che chở, giúp đỡ từ người lớn tuổi, có quyền lực. Có nền tảng gia đình vững chắc.
-Tiêu cực: Đây là Thần mà Tân Kim sợ nhất. Hình ảnh núi lớn (Mậu) chôn vùi hoàn toàn trang sức (Tân). Khiến tài năng, vẻ đẹp bị che lấp, không được công nhận. Dễ bị trầm cảm, suy nghĩ tiêu cực, cuộc sống tù túng.
-- Kỷ (-Thổ) - Thiên Ấn: Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.
-Tích cực: Có sự hỗ trợ nhỏ, không đáng kể. Có thể có chút năng khiếu về nghệ thuật, thủ công.
-Tiêu cực: Hình ảnh bùn đất (Kỷ) làm vấy bẩn trang sức (Tân). Sự hỗ trợ nhận được thường đi kèm phiền phức, hoặc sự giúp đỡ không đúng cách làm hỏng việc. Gây ra cảm giác khó chịu, bực bội.`,
       },
       {
         name: "Nhâm",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Nhâm Thủy
+Nhâm Thủy là hình ảnh của dòng nước mạnh mẽ như biển cả, sông lớn (Dương Thủy). Đặc tính cốt lõi là sự năng động, thông minh, khoáng đạt và khả năng thích ứng vô biên. Người Nhâm Thủy có tầm nhìn lớn, tư duy tự do và luôn chứa đựng một nguồn năng lượng mạnh mẽ, không ngừng chuyển động.
+•	Khi cân bằng:
+	Đặc điểm: Họ là người thông minh, hào phóng, có khả năng bao dung như biển cả. Họ thích ứng nhanh với mọi hoàn cảnh, giỏi giao tiếp và có khả năng dẫn dắt, kết nối mọi người. Với tầm nhìn xa và tư duy linh hoạt, họ có thể tạo ra những thành tựu to lớn.
+	Dấu hiệu nhận biết: Phong thái tự tin, phóng khoáng. Khả năng xử lý nhiều vấn đề cùng lúc. Luôn tràn đầy năng lượng và có sức ảnh hưởng lớn đến những người xung quanh.
+•	Khi mất cân bằng (Quá Cường / Quá Nhược):
+	- Quá Cường (Thủy quá vượng):
+	Đặc điểm: Dòng nước quá mạnh sẽ trở thành trận lụt tàn phá. Họ trở nên hung hãn, thiếu kiểm soát, hành động bộc phát và dễ gây ra hậu quả lớn. Tính tình thất thường, khó lường, dễ buông thả, thiếu kỷ luật và không nghe theo lời khuyên của ai.
+	Dấu hiệu nhận biết: Bất cần, liều lĩnh. Dễ thay đổi, không kiên định. Có xu hướng lấn át người khác và khó kiểm soát được cảm xúc của chính mình.
+	- Quá Nhược (Thủy bị suy):
+	Đặc điểm: Sông lớn cạn kiệt, mất đi sức mạnh. Họ có nhiều ý tưởng nhưng thiếu ý chí và động lực để thực hiện. Dễ bị người khác dẫn dắt, không có định hướng rõ ràng cho cuộc đời. Trở nên do dự, thiếu tự tin và dễ bỏ cuộc.
+	Dấu hiệu nhận biết: Thiếu quyết đoán, hay thay đổi mục tiêu. Bề ngoài có vẻ năng động nhưng thực chất không có thành tựu gì cụ thể. Dễ cảm thấy lạc lõng, mất phương hướng.
+`,
         data: [
           {
             name: "Nhâm",
@@ -1418,39 +1303,22 @@ Tiêu cực: Hình ảnh bùn đất (Kỷ) làm vấy bẩn trang sức (Tân).
               "Dễ trở nên lười biếng vì có người chống lưng. Có thể có những suy nghĩ kỳ lạ, khác người, dẫn đến bị cô lập. Nếu Kim quá cường sẽ làm Thủy bị đục.",
           },
         ],
-        thapThanText: `- Nhâm (+Thủy) - Tỷ Kiên: Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.
-Tích cực: Tăng cường sự tự tin, khí phách và khả năng cạnh tranh. Có nhiều bạn bè, mối quan hệ xã hội rộng, giỏi hợp tác để cùng nhau phát triển.
-Tiêu cực: Khi quá cường sẽ trở nên cực kỳ liều lĩnh, bất cần. Dễ bị cuốn vào các cuộc cạnh tranh không lành mạnh, dẫn đến hao tài, tốn của.
-- Quý (-Thủy) - Kiếp Tài: Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.
-Tích cực: Giúp Nhâm Thủy trở nên tinh tế, sâu sắc và có chiều sâu hơn. Có khả năng thấu hiểu nội tâm người khác, biết cách dùng cả sự mềm mỏng và cứng rắn.
-Tiêu cực: Dễ bị cạnh tranh ngầm, bị người khác đâm sau lưng mà không biết. Nội tâm phức tạp, dễ che giấu những toan tính riêng.
-- Giáp (+Mộc) - Thực Thần: Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).
-Tích cực: Hình ảnh sông lớn nuôi cây đại thụ. Mang lại tài năng, sự sáng tạo ở quy mô lớn. Có khả năng lãnh đạo, tầm nhìn xa và tạo ra những thành quả to lớn, vững chắc.
-Tiêu cực: Dễ trở nên quá lý tưởng hóa, đôi khi hành động mà không tính đến chi tiết. Có xu hướng thích chỉ huy hơn là tự tay làm.
-- Ất (-Mộc) - Thương Quan: Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).
-Tích cực: Mang lại sự khéo léo, tinh tế trong giao tiếp và kinh doanh. Có tài ăn nói, khả năng thuyết phục và năng khiếu nghệ thuật. Rất giỏi trong việc kiếm tiền.
-Tiêu cực: Dễ thay đổi, không ổn định. Có xu hướng hơi phù phiếm, thích những thứ hào nhoáng bề ngoài. Dễ vướng vào các mối quan hệ phức tạp.
-- Đinh (-Hỏa) - Chính Tài: Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.
-Tích cực: Nhâm và Đinh là cặp hợp hóa Mộc, mang lại sự may mắn về tài lộc và tình duyên. Họ có khả năng kiếm tiền tốt và có kế hoạch tài chính rõ ràng. Nam mệnh có vợ đẹp, tài năng, là trợ thủ đắc lực.
-Tiêu cực: Dễ bị cuốn vào tình cảm, có thể vì tình yêu mà quên đi lý trí. Đôi khi quá tập trung vào mục tiêu mà trở nên toan tính.
-- Bính (+Hỏa) - Thiên Tài: Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).
-Tích cực: Đây là hình ảnh đẹp nhất của Nhâm Thủy (Thủy quang tương chiếu - ánh mặt trời chiếu rọi mặt biển), mang lại sự giàu có, danh tiếng và thành công rực rỡ. Có tầm nhìn lớn, hào phóng, có khả năng làm những việc kinh thiên động địa.
-Tiêu cực: Dễ trở nên quá phô trương, khoe khoang. Chi tiêu hoang phí, không biết tiết kiệm. Cần cẩn thận kẻo thành công đến nhanh rồi đi cũng nhanh.
-- Kỷ (-Thổ) - Chính Quan: Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).
-Tích cực: Giúp Nhâm Thủy trở nên có kỷ luật, nguyên tắc và định hướng rõ ràng hơn. Có cơ hội thăng tiến trong sự nghiệp, được cấp trên công nhận.
-Tiêu cực: Hình ảnh đất bùn làm vẩn đục sông lớn. Dễ gặp phải những quy định phiền phức, bị cấp trên gây khó dễ. Cảm thấy bị gò bó, mất tự do, khó phát huy hết khả năng. Nữ mệnh dễ có chồng không tương xứng.
-- Mậu (+Thổ) - Thiên Quan: Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).
-Tích cực: Hình ảnh con đê lớn ngăn chặn dòng lũ. Khi Nhâm Thủy đủ mạnh, Mậu Thổ mang lại quyền lực tối cao, khả năng quản lý và đảm đương những trọng trách vĩ đại. Thành công vang dội trong quân đội, chính trị hoặc làm chủ doanh nghiệp lớn.
-Tiêu cực: Khi Nhâm Thủy yếu, đây là áp lực khủng khiếp, gây ra tai họa, bệnh tật, các vấn đề về pháp luật. Cuộc sống luôn đầy rẫy khó khăn, thử thách. Nữ mệnh có tình duyên vất vả, dễ gặp người chồng vũ phu, độc đoán.
-- Tân (-Kim) - Chính Ấn: Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.
-Tích cực: Mang lại tư duy sắc bén, tinh tế và khả năng học hỏi sâu sắc. Có gu thẩm mỹ tốt, được mẹ hoặc quý nhân là nữ giới hết lòng giúp đỡ.
-Tiêu cực: Dễ trở nên quá nhạy cảm, suy nghĩ nhiều. Có thể hơi dựa dẫm, thiếu đi sự mạnh mẽ vốn có của Nhâm Thủy.
-- Canh (+Kim) - Thiên Ấn: Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.
-Tích cực: Là nguồn năng lượng vô tận cho Nhâm Thủy. Mang lại trực giác phi thường, tư duy đột phá và khả năng học hỏi các lĩnh vực độc đáo. Có quý nhân mạnh mẽ nâng đỡ.
-Tiêu cực: Dễ trở nên lười biếng vì có người chống lưng. Có thể có những suy nghĩ kỳ lạ, khác người, dẫn đến bị cô lập. Nếu Kim quá cường sẽ làm Thủy bị đục.`,
       },
       {
         name: "Quý",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Quý Thủy
+Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, suối nhỏ (Âm Thủy). Đặc tính cốt lõi là sự linh hoạt, thông tuệ, khả năng thẩm thấu và nội tâm sâu sắc. Người Quý Thủy có tư duy nhanh nhạy, khả năng thích ứng cao và một sức mạnh tiềm tàng khó lường.
+•	Khi cân bằng:
+	Đặc điểm: Họ là người thông minh, hiền hòa, khiêm tốn và có khả năng thấu hiểu người khác. Giống như mưa tưới cho vạn vật, họ mang lại sự nuôi dưỡng một cách thầm lặng. Họ có trí tưởng tượng phong phú, tư duy chiến lược và khả năng vượt qua khó khăn bằng sự mềm mỏng, linh hoạt.
+	Dấu hiệu nhận biết: Thái độ ôn hòa, dễ gần. Khả năng thích ứng với mọi hoàn cảnh. Tư duy sắc bén và có chiều sâu, luôn nhìn ra những khía cạnh mà người khác bỏ qua.
+•	Khi mất cân bằng (Quá Cường / Quá Nhược):
+	- Quá Cường (Thủy quá vượng):
+	Đặc điểm: Dòng nước quá lớn sẽ trở thành lũ lụt. Họ trở nên hay suy nghĩ vẩn vơ, đa nghi, nội tâm luôn biến động. Tâm trạng thất thường, khó đoán, dễ bị cuốn theo cảm xúc tiêu cực. Có thể trở nên âm mưu, toan tính, dùng sự thông minh của mình vào những việc không chính đáng.
+	Dấu hiệu nhận biết: Hay thay đổi, thiếu kiên định. Suy nghĩ quá nhiều dẫn đến do dự. Dễ che giấu cảm xúc thật, tạo cảm giác bí ẩn, khó lường.
+	- Quá Nhược (Thủy bị suy):
+	Đặc điểm: Dòng nước quá yếu sẽ dễ dàng bốc hơi. Họ thiếu chủ kiến, dễ bị người khác chi phối và lợi dụng. Yếu đuối, nhạy cảm quá mức, dễ bị tổn thương bởi những lời nói hay hành động nhỏ nhặt. Thiếu khả năng tự bảo vệ bản thân.
+	Dấu hiệu nhận biết: Nhút nhát, thiếu tự tin. Dễ bị động trong mọi việc, không dám đưa ra quyết định. Thường xuyên cảm thấy bất an.
+`,
         data: [
           {
             name: "Quý",
@@ -1573,42 +1441,9 @@ Tiêu cực: Dễ trở nên lười biếng vì có người chống lưng. Có
               "Lạnh lùng, khó gần, hay chỉ trích. Dễ cảm thấy cô độc, không được thấu hiểu. Mối quan hệ với mẹ có thể xa cách hoặc mẹ hay ốm đau.",
           },
         ],
-        thapThanText: `- Quý (-Thủy) - Tỷ Kiên: Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.
-Tích cực: Tăng cường sức mạnh nội tâm, sự kiên trì và khả năng tập trung. Giúp họ có thêm sự đồng cảm và thấu hiểu. Là người bạn đồng hành tinh tế, sâu sắc.
-Tiêu cực: Khi quá cường sẽ trở nên rất cố chấp một cách thầm lặng. Dễ bị chìm đắm trong suy nghĩ của bản thân, hướng nội quá mức và trở nên u uất, bi quan.
-- Nhâm (+Thủy) - Kiếp Tài: Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.
-Tích cực: Mang lại cho Quý Thủy sự mạnh mẽ, dũng cảm và khả năng hành động. Giúp họ trở nên quảng giao, hướng ngoại hơn. Có thể hợp tác để làm những việc lớn.
-Tiêu cực: Dễ bị bạn bè lôi kéo, ảnh hưởng xấu. Có xu hướng bị người mạnh hơn lấn át, che mờ. Dễ bị hao tài vì các mối quan hệ xã hội.
-- Ất (-Mộc) - Thực Thần: Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).
-Tích cực: Đây là hình ảnh đẹp nhất của Quý Thủy (mưa tưới hoa). Mang lại tài năng nghệ thuật, sự lãng mạn, tinh tế và lòng nhân ái. Lời nói nhẹ nhàng, duyên dáng, có khả năng chữa lành.
-Tiêu cực: Dễ trở nên yếu đuối, mơ mộng, thiếu thực tế. Dễ bị lụy trong tình cảm. Có thể hơi lười biếng, chỉ thích an nhàn.
-- Giáp (+Mộc) - Thương Quan: Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).
-Tích cực: Vô cùng thông minh, có tài năng và tham vọng lớn. Có khả năng lãnh đạo, sáng tạo đột phá, mang lại những thành tựu lớn lao. Dám nghĩ dám làm.
-Tiêu cực: Kiêu ngạo, thích thể hiện, dễ xem thường người khác. Không tuân thủ quy tắc, dễ xung đột với cấp trên. Lời nói thẳng thắn có thể gây mất lòng.
-- Bính (+Hỏa) - Chính Tài: Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.
-Tích cực: Hình ảnh mặt trời (Bính) và màn sương (Quý) tạo nên cầu vồng, mang lại sự may mắn và tài lộc. Có thu nhập ổn định, cuộc sống sung túc. Nam mệnh có vợ đẹp, tài giỏi.
-Tiêu cực: Dễ quá coi trọng vật chất, tiền bạc. Có thể vì công việc mà bỏ bê các khía cạnh khác của cuộc sống.
-- Đinh (-Hỏa) - Thiên Tài: Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).
-Tích cực: Mang lại sự nhạy bén với các cơ hội kinh doanh, đầu tư. Có thể kiếm được những khoản tiền bất ngờ. Có sức hấp dẫn, lãng mạn trong tình cảm.
-Tiêu cực: Tài chính bấp bênh, khó đoán. Dễ bị cuốn vào các mối quan hệ tình cảm phức tạp. Đam mê nhất thời, khó duy trì lâu dài.
-- Mậu (+Thổ) - Chính Quan: Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).
-Tích cực: Đây là cặp Mậu Quý hợp Hỏa, mang lại danh vọng và địa vị. Giúp Quý Thủy trở nên có nguyên tắc, đáng tin cậy. Sự nghiệp thăng tiến. Nữ mệnh có chồng tài giỏi, là chỗ dựa vững chắc.
-Tiêu cực: Khi Thổ quá cường, Quý Thủy sẽ bị áp chế, gây ra sự căng thẳng, mất tự do. Dễ bị gò bó trong các quy tắc, không phát huy được sự sáng tạo.
-- Kỷ (-Thổ) - Thiên Quan: Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).
-Tích cực: Khi được chế hóa, giúp Quý Thủy trở nên kiên cường, có khả năng chịu đựng áp lực và giải quyết các vấn đề phức tạp.
-Tiêu cực: Hình ảnh đất bùn làm vẩn đục dòng nước. Gặp nhiều thị phi, tiểu nhân quấy phá. Sức khỏe dễ bị ảnh hưởng, đặc biệt là hệ tiêu hóa. Nữ mệnh dễ lận đận tình duyên, gặp phải người không phù hợp.
-- Canh (+Kim) - Chính Ấn: Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.
-Tích cực: Hình ảnh kim loại lớn tạo ra dòng nước trong lành. Mang lại tư duy logic, sáng suốt, khả năng học hỏi tốt. Luôn có quý nhân là người lớn tuổi, có chức quyền giúp đỡ.
-Tiêu cực: Dễ trở nên lười biếng, ỷ lại vào sự giúp đỡ của người khác. Thiếu động lực để tự mình phấn đấu.
-- Tân (-Kim) - Thiên Ấn: Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.
-Tích cực: Mang lại sự tinh tế, sắc bén và trực giác nhạy bén phi thường. Có năng khiếu đặc biệt trong các lĩnh vực nghệ thuật, triết học, huyền học.
-Tiêu cực: Lạnh lùng, khó gần, hay chỉ trích. Dễ cảm thấy cô độc, không được thấu hiểu. Mối quan hệ với mẹ có thể xa cách hoặc mẹ hay ốm đau.`,
       },
-    ];
-    let thapThanText = thapThan.find(
-      (item) => item.name === nhatChuName
-    ).thapThanText;
-    let data = thapThan.find((item) => item.name === nhatChuName).data;
+    ]; 
+    let data = thapThan.find((item) => item.name === nhatChuName);
     return data;
   };
 
@@ -2102,8 +1937,33 @@ Tiêu cực: Lạnh lùng, khó gần, hay chỉ trích. Dễ cảm thấy cô �
   };
 
   const getThapThanInfo = (thapThan, nhatChu) => {
-    let data = getThapThanThienCan(nhatChu);
+    let data = getThapThanThienCan(nhatChu).data;
     let thapThanInfo = data.find((info) => info.thapThan === thapThan);
+    return thapThanInfo;
+  };
+
+  const renderThapThanSection = (thapThan, nhatChuName) => {
+    const info = getThapThanInfo(thapThan, nhatChuName);
+    return `
+    ${info.description}
+      •	Can ${info.name} (${info.amDuong} ${info.nguHanh}):
+      Tích cực: ${info.tichCuc}
+      Tiêu cực: ${info.tieuCuc}`;
+  };
+
+  const renderThapThan = ( nhatChuName,nguHanhCan) => {
+    let thapThanData = [
+      ["Tỷ Kiên", "Kiếp Tài"],
+      ["Thực Thần", "Thương Quan"],
+      ["Chính Tài", "Thiên Tài"],
+      ["Chính Quan", "Thiên Quan"],
+      ["Chính Ấn", "Thiên Ấn"],
+    ];
+    let thapThanInfo = thapThanData.map((thapThanGroup,groupIndex)=>{
+      return `3.${groupIndex+1}. ${thapThanGroup[0]} - ${thapThanGroup[1]} (Ngũ hành ${getNguHanhThapThan(nguHanhCan)[groupIndex]})
+    a. ${thapThanGroup[0]}${renderThapThanSection(thapThanGroup[0], nhatChuName)}
+    b. ${thapThanGroup[1]}${renderThapThanSection(thapThanGroup[1], nhatChuName)}`;
+    }).join("\n\n");
     return thapThanInfo;
   };
 
@@ -2115,7 +1975,7 @@ Tiêu cực: Lạnh lùng, khó gần, hay chỉ trích. Dễ cảm thấy cô �
     let nhatChuName = nhatChu.name.split(" ")[0];
     let nguHanhScore = bazi.nguHanhScore;
     let tuTru = `
-    1. Lá Số Tứ Trụ của ${baseInfo.gioiTinh === "Nam" ? "anh" : "chị"} ${
+    1. Lá Số Tứ Trụ của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
       baseInfo.hoTen
     } sinh năm ${baseInfo.namSinh}
 Trụ Năm
@@ -2150,99 +2010,12 @@ Trụ Giờ
       .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
       .join(" + ")}
 •	Ngũ Hành Nạp Âm: ${gio.nguHanhNapAm}. (${gio.nguHanhNapAmThapThan})
-2. Đặc Tính Cơ Bản Của Nhật Chủ ${nhatChu.can} ${nhatChu.nguHanhCan}
 
+2. ${getThapThanThienCan(nhatChu.can).characteristic}
 3. Nhóm Thập Thần
-  3.1. Tỷ Kiên - Kiếp Tài (Ngũ hành ${
-    getNguHanhThapThan(nhatChu.nguHanhCan)[0]
-  })
-    a. Tỷ Kiên
-    ${getThapThanInfo("Tỷ Kiên", nhatChuName).description}
-      •	Can ${getThapThanInfo("Tỷ Kiên", nhatChuName).name} (${
-      getThapThanInfo("Tỷ Kiên", nhatChuName).amDuong
-    } ${getThapThanInfo("Tỷ Kiên", nhatChuName).nguHanh}):
-      Tích cực: ${getThapThanInfo("Tỷ Kiên", nhatChuName).tichCuc}
-      Tiêu cực: ${getThapThanInfo("Tỷ Kiên", nhatChuName).tieuCuc}
-    b. Kiếp Tài
-    ${getThapThanInfo("Kiếp Tài", nhatChuName).description}
-      •	Can ${getThapThanInfo("Kiếp Tài", nhatChuName).name} (${
-      getThapThanInfo("Kiếp Tài", nhatChuName).amDuong
-    } ${getThapThanInfo("Kiếp Tài", nhatChuName).nguHanh}):
-      Tích cực: ${getThapThanInfo("Kiếp Tài", nhatChuName).tichCuc}
-      Tiêu cực: ${getThapThanInfo("Kiếp Tài", nhatChuName).tieuCuc}
-  3.2. Thực Thần - Thương Quan (Ngũ hành ${
-    getNguHanhThapThan(nhatChu.nguHanhCan)[1]
-  })
-    a. Thực Thần
-    ${getThapThanInfo("Thực Thần", nhatChuName).description}
-      •	Can ${getThapThanInfo("Thực Thần", nhatChuName).name} (${
-      getThapThanInfo("Thực Thần", nhatChuName).amDuong
-    } ${getThapThanInfo("Thực Thần", nhatChuName).nguHanh}):
-      Tích cực: ${getThapThanInfo("Thực Thần", nhatChuName).tichCuc}
-      Tiêu cực: ${getThapThanInfo("Thực Thần", nhatChuName).tieuCuc}    
-    b. Thương Quan
-    ${getThapThanInfo("Thương Quan", nhatChuName).description}
-      •	Can ${getThapThanInfo("Thương Quan", nhatChuName).name} (${
-      getThapThanInfo("Thương Quan", nhatChuName).amDuong
-    } ${getThapThanInfo("Thương Quan", nhatChuName).nguHanh}):
-      Tích cực: ${getThapThanInfo("Thương Quan", nhatChuName).tichCuc}
-      Tiêu cực: ${getThapThanInfo("Thương Quan", nhatChuName).tieuCuc}
-  })
-  3.3. Chính Tài - Thiên Tài (Ngũ hành ${
-    getNguHanhThapThan(nhatChu.nguHanhCan)[2]
-  })
-    a. Chính Tài
-    ${getThapThanInfo("Chính Tài", nhatChuName).description}
-      •	Can ${getThapThanInfo("Chính Tài", nhatChuName).name} (${
-      getThapThanInfo("Chính Tài", nhatChuName).amDuong
-    } ${getThapThanInfo("Chính Tài", nhatChuName).nguHanh}):
-      Tích cực: ${getThapThanInfo("Chính Tài", nhatChuName).tichCuc}
-      Tiêu cực: ${getThapThanInfo("Chính Tài", nhatChuName).tieuCuc}
-    b. Thiên Tài
-    ${getThapThanInfo("Thiên Tài", nhatChuName).description}
-      •	Can ${getThapThanInfo("Thiên Tài", nhatChuName).name} (${
-      getThapThanInfo("Thiên Tài", nhatChuName).amDuong
-    } ${getThapThanInfo("Thiên Tài", nhatChuName).nguHanh}):
-      Tích cực: ${getThapThanInfo("Thiên Tài", nhatChuName).tichCuc}
-      Tiêu cực: ${getThapThanInfo("Thiên Tài", nhatChuName).tieuCuc}
-  })
-  3.4. Chính Quan - Thiên Quan (Ngũ hành ${
-    getNguHanhThapThan(nhatChu.nguHanhCan)[3]
-  })
-    a. Chính Quan
-    ${getThapThanInfo("Chính Quan", nhatChuName).description}
-      •	Can ${getThapThanInfo("Chính Quan", nhatChuName).name} (${
-      getThapThanInfo("Chính Quan", nhatChuName).amDuong
-    } ${getThapThanInfo("Chính Quan", nhatChuName).nguHanh}):
-      Tích cực: ${getThapThanInfo("Chính Quan", nhatChuName).tichCuc}
-      Tiêu cực: ${getThapThanInfo("Chính Quan", nhatChuName).tieuCuc}
-    b. Thiên Quan
-    ${getThapThanInfo("Thiên Quan", nhatChuName).description}
-      •	Can ${getThapThanInfo("Thiên Quan", nhatChuName).name} (${
-      getThapThanInfo("Thiên Quan", nhatChuName).amDuong
-    } ${getThapThanInfo("Thiên Quan", nhatChuName).nguHanh}):
-      Tích cực: ${getThapThanInfo("Thiên Quan", nhatChuName).tichCuc}
-      Tiêu cực: ${getThapThanInfo("Thiên Quan", nhatChuName).tieuCuc}
-  })
-  3.5. Chính Ấn - Thiên Ấn (Ngũ hành ${
-    getNguHanhThapThan(nhatChu.nguHanhCan)[4]
-  })
-    a. Chính Ấn
-    ${getThapThanInfo("Chính Ấn", nhatChuName).description}
-      •	Can ${getThapThanInfo("Chính Ấn", nhatChuName).name} (${
-      getThapThanInfo("Chính Ấn", nhatChuName).amDuong
-    } ${getThapThanInfo("Chính Ấn", nhatChuName).nguHanh}):
-      Tích cực: ${getThapThanInfo("Chính Ấn", nhatChuName).tichCuc}
-      Tiêu cực: ${getThapThanInfo("Chính Ấn", nhatChuName).tieuCuc} 
-    b. Thiên Ấn
-    ${getThapThanInfo("Thiên Ấn", nhatChuName).description}
-      •	Can ${getThapThanInfo("Thiên Ấn", nhatChuName).name} (${
-      getThapThanInfo("Thiên Ấn", nhatChuName).amDuong
-    } ${getThapThanInfo("Thiên Ấn", nhatChuName).nguHanh}):
-      Tích cực: ${getThapThanInfo("Thiên Ấn", nhatChuName).tichCuc}
-      Tiêu cực: ${getThapThanInfo("Thiên Ấn", nhatChuName).tieuCuc}
-  })
-4. Tỷ Trọng Ngũ Hành gốc của ${baseInfo.gioiTinh === "Nam" ? "anh" : "chị"} ${
+  ${renderThapThan(nhatChuName,nhatChu.nguHanhCan)}
+
+4. Tỷ Trọng Ngũ Hành gốc của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
       baseInfo.hoTen
     } sinh năm ${baseInfo.namSinh}
   ${nguHanhScore
@@ -2258,6 +2031,7 @@ Tạm kết luận: Đây là hồ sơ AGI có Nhật Chủ (gốc) ${getCuongNh
     )}. Trợ lý AGI lưu ý đây cũng là tỷ trọng Ngũ Hành của các Cung Chức/Cung Địa Chi (trùng tên) trong Tử Vi. Đây chỉ là Tỷ trọng năng lượng gốc có độ chính xác tương đối trên lý thuyết (độ chính xác min ~80%). 
 Tỷ trọng Ngũ Hành luôn luôn thay đổi do tác động của Tam Tài Thiên Địa Nhân. Bởi vậy, trợ lý AGI luôn luôn phải suy xét Ngũ Hành Nạp Âm và Lá số Tử Vi để xác định “tiềm năng” đột biến của hồ sơ là cao hay thấp.
 Trợ lý AGI luôn luôn phải báo cáo các trường hợp có khả năng cao gây ra đột biến.
+
 5. Ngũ Hành Nạp Âm
 •	Trụ Năm:  ${nam.nguHanhNapAm}
 •	Trụ Tháng: ${thang.nguHanhNapAm}
@@ -2719,7 +2493,7 @@ ${getNapAm(gio.nguHanhNapAm)}
   const getThapThan = (nguHanhThienCan, nguHanhNhatChu, cungDau) => {
     let relationship = checkNguHanhRelationshipDetailed(
       nguHanhNhatChu,
-      nguHanhThienCan,      
+      nguHanhThienCan
     );
 
     // Bảng thập thần dựa trên mối quan hệ ngũ hành và âm dương
@@ -2759,11 +2533,6 @@ ${getNapAm(gio.nguHanhNapAm)}
   const getCungInfo = (cungChu, thapNhiCung, nhatChu) => {
     let cung = thapNhiCung.find((cung) => cung.cungChu === cungChu);
     let canTangData = getCanTangData(cung.cungSo);
-    console.log("Thap than:", getThapThan(
-      "H",
-      "M",
-      true
-    ))
 
     return `Cung ${cungChu}${
       cung.cungThan ? " kiêm nhiệm cung an Thân" : ""
@@ -2833,7 +2602,7 @@ ${getNapAm(gio.nguHanhNapAm)}
     let thapNhiCung = bazi.thapNhiCung;
     let baseInfo = bazi.baseInfo;
     let batTuTemplate = `Hồ sơ AGI của ${
-      baseInfo.gioiTinh === "Nam" ? "anh" : "chị"
+      baseInfo.gioiTinh === 1 ? "anh" : "chị"
     } ${baseInfo.hoTen} sinh năm ${baseInfo.namSinh}
     Phần 1: Tứ Trụ
     ${getTuTruData(bazi, baseInfo)}
