@@ -656,8 +656,8 @@ const getCanTang = (diaChi) => {
 
 const getThapThan = (nguHanhThienCan, nguHanhNhatChu, cungDau) => {
   let relationship = checkNguHanhRelationshipDetailed(
-    nguHanhThienCan,
-    nguHanhNhatChu
+    nguHanhNhatChu,
+    nguHanhThienCan
   );
 
   // Bảng thập thần dựa trên mối quan hệ ngũ hành và âm dương
