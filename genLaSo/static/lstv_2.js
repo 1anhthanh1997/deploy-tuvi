@@ -1442,7 +1442,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
           },
         ],
       },
-    ]; 
+    ];
     let data = thapThan.find((item) => item.name === nhatChuName);
     return data;
   };
@@ -1951,7 +1951,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
       Tiêu cực: ${info.tieuCuc}`;
   };
 
-  const renderThapThan = ( nhatChuName,nguHanhCan) => {
+  const renderThapThan = (nhatChuName, nguHanhCan) => {
     let thapThanData = [
       ["Tỷ Kiên", "Kiếp Tài"],
       ["Thực Thần", "Thương Quan"],
@@ -1959,11 +1959,21 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
       ["Chính Quan", "Thiên Quan"],
       ["Chính Ấn", "Thiên Ấn"],
     ];
-    let thapThanInfo = thapThanData.map((thapThanGroup,groupIndex)=>{
-      return `3.${groupIndex+1}. ${thapThanGroup[0]} - ${thapThanGroup[1]} (Ngũ hành ${getNguHanhThapThan(nguHanhCan)[groupIndex]})
-    a. ${thapThanGroup[0]}${renderThapThanSection(thapThanGroup[0], nhatChuName)}
-    b. ${thapThanGroup[1]}${renderThapThanSection(thapThanGroup[1], nhatChuName)}`;
-    }).join("\n\n");
+    let thapThanInfo = thapThanData
+      .map((thapThanGroup, groupIndex) => {
+        return `3.${groupIndex + 1}. ${thapThanGroup[0]} - ${
+          thapThanGroup[1]
+        } (Ngũ hành ${getNguHanhThapThan(nguHanhCan)[groupIndex]})
+    a. ${thapThanGroup[0]}${renderThapThanSection(
+          thapThanGroup[0],
+          nhatChuName
+        )}
+    b. ${thapThanGroup[1]}${renderThapThanSection(
+          thapThanGroup[1],
+          nhatChuName
+        )}`;
+      })
+      .join("\n\n");
     return thapThanInfo;
   };
 
@@ -1981,7 +1991,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 Trụ Năm
 •	Trụ Chính: ${nam.name}
 •	Can: ${nam.can} (${nam.thapThan})
-•	Chi: ${nam.chi} (${nam.thapThan})
+•	Chi: ${nam.chi} 
 •	Can Tàng (100%): ${nam.canTangPercent
       .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
       .join(" + ")}
@@ -1989,7 +1999,7 @@ Trụ Năm
 Trụ Tháng
 •	Trụ Chính: ${thang.name}
 •	Can: ${thang.can} (${thang.thapThan})
-•	Chi: ${thang.chi} (${thang.thapThan})
+•	Chi: ${thang.chi} 
 •	Can Tàng (100%): ${thang.canTangPercent
       .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
       .join(" + ")}
@@ -1997,7 +2007,7 @@ Trụ Tháng
 Trụ Ngày
 •	Trụ Chính: ${nhatChu.name}
 •	Can: ${nhatChu.can} (${nhatChu.thapThan})
-•	Chi: ${nhatChu.chi} (${nhatChu.thapThan})
+•	Chi: ${nhatChu.chi} 
 •	Can Tàng (100%): ${nhatChu.canTangPercent
       .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
       .join(" + ")}
@@ -2005,7 +2015,7 @@ Trụ Ngày
 Trụ Giờ
 •	Trụ Chính: ${gio.name}
 •	Can: ${gio.can} (${gio.thapThan})
-•	Chi: ${gio.chi} (${gio.thapThan})
+•	Chi: ${gio.chi}
 •	Can Tàng (100%): ${gio.canTangPercent
       .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
       .join(" + ")}
@@ -2013,7 +2023,7 @@ Trụ Giờ
 
 2. ${getThapThanThienCan(nhatChu.can).characteristic}
 3. Nhóm Thập Thần
-  ${renderThapThan(nhatChuName,nhatChu.nguHanhCan)}
+  ${renderThapThan(nhatChuName, nhatChu.nguHanhCan)}
 
 4. Tỷ Trọng Ngũ Hành gốc của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
       baseInfo.hoTen
@@ -2480,12 +2490,12 @@ ${getNapAm(gio.nguHanhNapAm)}
       case "Nhâm":
         return {
           nguHanh: "T",
-          amDuong: -1,
+          amDuong: 1,
         };
       case "Quý":
         return {
           nguHanh: "T",
-          amDuong: 1,
+          amDuong: -1,
         };
     }
   };
@@ -2539,8 +2549,15 @@ ${getNapAm(gio.nguHanhNapAm)}
     }: Địa Chi: ${cung.cungTen} (${getNguHanhChi(
       cung.cungTen
     )}), Can Tàng: ${canTangData
-      .map(
-        (item) =>
+      .map((item) => {
+        console.log(
+          cung.cungChu,
+          item.name,
+          getNguHanhCan(item.name).nguHanh,
+          getNguHanhCan(nhatChu).nguHanh,
+          getNguHanhCan(item.name).amDuong === getNguHanhCan(nhatChu).amDuong
+        );
+        return (
           item.name +
           " " +
           item.score * 2 +
@@ -2551,7 +2568,8 @@ ${getNapAm(gio.nguHanhNapAm)}
             getNguHanhCan(item.name).amDuong === getNguHanhCan(nhatChu).amDuong
           ) +
           ")"
-      )
+        );
+      })
       .join(" + ")}, Sao gốc: ${
       getSao(cung.cungChu, thapNhiCung).chinhTinhGoc
         ? getSao(cung.cungChu, thapNhiCung).chinhTinh
