@@ -18,6 +18,30 @@ const {
   getThapThanNapAm,
 } = require("./amDuong.js");
 
+const tietData = require("../tiet.json");
+
+// Helper function to calculate days between two dates
+const calculateDaysBetween = (
+  startDay,
+  startMonth,
+  startYear,
+  endDay,
+  endMonth,
+  endYear
+) => {
+  // Create Date objects for both dates
+  const startDate = new Date(startYear, startMonth - 1, startDay); // Month is 0-indexed in Date constructor
+  const endDate = new Date(endYear, endMonth - 1, endDay);
+
+  // Calculate the difference in milliseconds
+  const timeDiff = endDate.getTime() - startDate.getTime();
+
+  // Convert milliseconds to days
+  const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+  return daysDiff;
+};
+
 // Helper function to get index with modulo
 const getIndex = (index, period = 12) => {
   return index % period ? index % period : period;
@@ -157,8 +181,14 @@ const isSubset = (subset, superset) => {
 };
 
 const getDacTheScore = (bazi, nguHanhScore) => {
-  let chiList = [bazi.gio.chi, bazi.ngay.chi, bazi.thang.chi, bazi.nam.chi];
-  let canList = [bazi.gio.can, bazi.ngay.can, bazi.thang.can, bazi.nam.can];
+  let chiList = [bazi.ngay.chi, bazi.thang.chi, bazi.nam.chi];
+  let canList = [bazi.ngay.can, bazi.thang.can, bazi.nam.can];
+  if (bazi.gio.can) {
+    canList.push(bazi.gio.can);
+  }
+  if (bazi.gio.chi) {
+    chiList.push(bazi.gio.chi);
+  }
   if (bazi.thoiVan.can) {
     canList.push(bazi.thoiVan.can);
   }
@@ -566,6 +596,17 @@ const calcNguHanhPercent = (nguHanhScore) => {
     percent: (total === 0 ? 0 : (nh.total / total) * 100).toFixed(2),
   }));
 };
+
+const dichCanChi = (index, space, period) => {
+  let newIndex = index + space;
+  if (newIndex <= 0) {
+    newIndex = newIndex + period;
+  } else if (newIndex > period) {
+    newIndex = newIndex - period;
+  }
+  return newIndex;
+};
+
 // Helper function to convert hour info
 const convertHourInfo = (baseInfo) => {
   let {
@@ -607,28 +648,31 @@ const convertHourInfo = (baseInfo) => {
   return baseInfo;
 };
 
-const getBaziData = (baseInfo, thapNhiCung) => {
-  let originHour = baseInfo.gioSinh;
-  baseInfo = convertHourInfo(baseInfo);
+const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
+  let originHour, canGioSinh, chiGioSinh, canGioSinhTen, chiGioSinhTen;
+  if (!boTruGio) {
+    originHour = baseInfo.gioSinh;
+    baseInfo = convertHourInfo(baseInfo);
+    chiGioSinh = diaChi[baseInfo.gioSinh];
+    canGioSinh =
+      ((((jdFromDate(baseInfo.ngaySinh, baseInfo.thangSinh, baseInfo.namSinh) -
+        1) *
+        2) %
+        10) +
+        baseInfo.gioSinh) %
+      10;
+    if (canGioSinh === 0) {
+      canGioSinh = 10;
+    }
+    canGioSinhTen = thienCan[canGioSinh].tenCan;
+    chiGioSinhTen = chiGioSinh.tenChi;
+  }
   let amLich = S2L(
     baseInfo.ngaySinh,
     baseInfo.thangSinh,
     baseInfo.namSinh,
     baseInfo.timeZone
   );
-  const chiGioSinh = diaChi[baseInfo.gioSinh];
-  let canGioSinh =
-    ((((jdFromDate(baseInfo.ngaySinh, baseInfo.thangSinh, baseInfo.namSinh) -
-      1) *
-      2) %
-      10) +
-      baseInfo.gioSinh) %
-    10;
-  if (canGioSinh === 0) {
-    canGioSinh = 10;
-  }
-  let canGioSinhTen = thienCan[canGioSinh].tenCan;
-  let chiGioSinhTen = chiGioSinh.tenChi;
   const ngayResult = canChiNgay(
     baseInfo.ngaySinh,
     baseInfo.thangSinh,
@@ -651,6 +695,10 @@ const getBaziData = (baseInfo, thapNhiCung) => {
   let canDaiVan;
   let chiDaiVan;
   let amLichVan;
+  let canThang = canChiAmLich[0];
+  let chiThang = amLich[1];
+  let canNam = canChiAmLich[1];
+  let chiNam = canChiAmLich[2];
   if (baseInfo.namXemTieuVan) {
     amLichVan = S2L(
       baseInfo.ngayLuuNhat ? baseInfo.ngayLuuNhat : 15,
@@ -699,23 +747,62 @@ const getBaziData = (baseInfo, thapNhiCung) => {
     canTieuVan = canChiAmLichVan[1];
     chiTieuVan = canChiAmLichVan[2];
     let tuoi = baseInfo.namXemTieuVan - baseInfo.namSinh + 1;
-    let cungDaiVan = null;
-    for (let cung of thapNhiCung) {
-      if (
-        (cung.cungDaiHan < 10 && tuoi < 10) ||
-        (cung.cungDaiHan <= tuoi && cung.cungDaiHan + 10 > tuoi)
-      ) {
-        cungDaiVan = cung;
+    if (!boTruGio) {
+      let cungDaiVan = null;
+      for (let cung of thapNhiCung) {
+        if (
+          (cung.cungDaiHan < 10 && tuoi < 10) ||
+          (cung.cungDaiHan <= tuoi && cung.cungDaiHan + 10 > tuoi)
+        ) {
+          cungDaiVan = cung;
+        }
+      }
+      canDaiVan = cungDaiVan.cungCan;
+      chiDaiVan = cungDaiVan.cungSo;
+    } else {
+      const yearData = tietData.find((item) => item.year === baseInfo.namSinh);
+      if (yearData) {
+        let amDuongNamSinh = thienCan[canChiAmLich[1]].amDuong;
+        const amDuongNamNu = baseInfo.gioiTinh * amDuongNamSinh;
+        let tietInYear = yearData.canhTiet;
+        let nextTietIndex = tietInYear.findIndex(
+          (item) => item.month === baseInfo.thangSinh
+        );
+        if (amDuongNamNu === 1) {
+          if (baseInfo.ngaySinh > tietInYear[nextTietIndex].startDate) {
+            nextTietIndex = (nextTietIndex + 1) % 12;
+          }
+        } else {
+          if (baseInfo.ngaySinh < tietInYear[nextTietIndex].startDate) {
+            nextTietIndex = (nextTietIndex - 1 + 12) % 12;
+          }
+        }
+
+        let tietData = tietInYear[nextTietIndex];
+        let daysBetween = calculateDaysBetween(
+          baseInfo.ngaySinh,
+          baseInfo.thangSinh,
+          baseInfo.namSinh,
+          tietData.startDate,
+          tietData.month,
+          baseInfo.namSinh
+        );
+        let ageStartDecade = Math.floor(daysBetween / 3);
+        let decadeIndex =
+          Math.floor(
+            (tuoi - ageStartDecade < 0 ? 0 : tuoi - ageStartDecade) / 10
+          ) + 1;
+        canDaiVan =
+          amDuongNamNu === 1
+            ? dichCanChi(canThang, decadeIndex, 10)
+            : dichCanChi(canThang, -decadeIndex, 10);
+        chiDaiVan =
+          amDuongNamNu === 1
+            ? dichCanChi(chiThang + 2, decadeIndex, 12)
+            : dichCanChi(chiThang + 2, -decadeIndex, 12);
       }
     }
-    canDaiVan = cungDaiVan.cungCan;
-    chiDaiVan = cungDaiVan.cungSo;
   }
-
-  let canThang = canChiAmLich[0];
-  let chiThang = amLich[1];
-  let canNam = canChiAmLich[1];
-  let chiNam = canChiAmLich[2];
   let canNgayTen = thienCan[canNgay].tenCan;
   let chiNgayTen = diaChi[chiNgay].tenChi;
   let canThangTen = thienCan[canThang].tenCan;
@@ -727,7 +814,7 @@ const getBaziData = (baseInfo, thapNhiCung) => {
   let thangAmTen = canThangTen + " " + chiThangTen;
   let namAmTen = canNamTen + " " + chiNamTen;
   let nguHanhScore = calcNguHanhScore({
-    gio: { can: canGioSinh, chi: baseInfo.gioSinh },
+    gio: { can: canGioSinh, chi: boTruGio ? undefined : baseInfo.gioSinh },
     ngay: { can: canNgay, chi: chiNgay },
     thang: { can: canThang, chi: getIndex(chiThang + 2) },
     nam: { can: canNam, chi: chiNam },
@@ -745,27 +832,29 @@ const getBaziData = (baseInfo, thapNhiCung) => {
     baseInfo: baseInfo,
     thapNhiCung: thapNhiCung,
     nguHanhScore,
-    hour: {
-      can: canGioSinhTen,
-      chi: chiGioSinhTen,
-      name: gioAmTen,
-      solarValue: originHour,
-      lunarValue: chiGioSinhTen,
-      nguHanhNapAm: nguHanhNapAm(baseInfo.gioSinh, canGioSinh, true),
-      nguHanhNapAmThapThan: getThapThanNapAm(
-        nguHanhNapAm(baseInfo.gioSinh, canGioSinh, false),
-        thienCan[canNgay].nguHanh
-      ),
-      nguHanhCan: nguHanh(thienCan[canGioSinh].nguHanh).tenHanh,
-      nguHanhChi: nguHanh(diaChi[baseInfo.gioSinh].tenHanh).tenHanh,
-      canTang: getCanTang(baseInfo.gioSinh),
-      canTangPercent: getCanTangPercent(baseInfo.gioSinh, canNgay),
-      thapThan: getThapThan(
-        thienCan[canGioSinh].nguHanh,
-        thienCan[canNgay].nguHanh,
-        thienCan[canGioSinh].amDuong === thienCan[canNgay].amDuong
-      ),
-    },
+    hour: !boTruGio
+      ? {
+          can: canGioSinhTen,
+          chi: chiGioSinhTen,
+          name: gioAmTen,
+          solarValue: originHour,
+          lunarValue: chiGioSinhTen,
+          nguHanhNapAm: nguHanhNapAm(baseInfo.gioSinh, canGioSinh, true),
+          nguHanhNapAmThapThan: getThapThanNapAm(
+            nguHanhNapAm(baseInfo.gioSinh, canGioSinh, false),
+            thienCan[canNgay].nguHanh
+          ),
+          nguHanhCan: nguHanh(thienCan[canGioSinh].nguHanh).tenHanh,
+          nguHanhChi: nguHanh(diaChi[baseInfo.gioSinh].tenHanh).tenHanh,
+          canTang: getCanTang(baseInfo.gioSinh),
+          canTangPercent: getCanTangPercent(baseInfo.gioSinh, canNgay),
+          thapThan: getThapThan(
+            thienCan[canGioSinh].nguHanh,
+            thienCan[canNgay].nguHanh,
+            thienCan[canGioSinh].amDuong === thienCan[canNgay].amDuong
+          ),
+        }
+      : undefined,
     day: {
       can: canNgayTen,
       chi: chiNgayTen,

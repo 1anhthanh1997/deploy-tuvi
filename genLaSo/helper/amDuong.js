@@ -695,12 +695,10 @@ const getThapThan = (nguHanhThienCan, nguHanhNhatChu, cungDau) => {
 };
 
 const getThapThanNapAm = (nguHanhNapAm, nguHanhNhatChu) => {
-  console.log(nguHanhNapAm, nguHanhNhatChu)
   let relationship = checkNguHanhRelationshipDetailed(
     nguHanhNhatChu,
     nguHanhNapAm
   );
-  console.log(relationship)
 
   // Bảng thập thần dựa trên mối quan hệ ngũ hành và âm dương
   const thapThanMap = {

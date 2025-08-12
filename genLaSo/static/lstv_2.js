@@ -1442,7 +1442,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
           },
         ],
       },
-    ]; 
+    ];
     let data = thapThan.find((item) => item.name === nhatChuName);
     return data;
   };
@@ -1600,6 +1600,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
   };
 
   const getNapAm = (napAm) => {
+    if(!napAm) return "";
     let napAmData = [
       {
         name: "KIẾM PHONG KIM",
@@ -1951,7 +1952,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
       Tiêu cực: ${info.tieuCuc}`;
   };
 
-  const renderThapThan = ( nhatChuName,nguHanhCan) => {
+  const renderThapThan = (nhatChuName, nguHanhCan) => {
     let thapThanData = [
       ["Tỷ Kiên", "Kiếp Tài"],
       ["Thực Thần", "Thương Quan"],
@@ -1959,11 +1960,21 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
       ["Chính Quan", "Thiên Quan"],
       ["Chính Ấn", "Thiên Ấn"],
     ];
-    let thapThanInfo = thapThanData.map((thapThanGroup,groupIndex)=>{
-      return `3.${groupIndex+1}. ${thapThanGroup[0]} - ${thapThanGroup[1]} (Ngũ hành ${getNguHanhThapThan(nguHanhCan)[groupIndex]})
-    a. ${thapThanGroup[0]}${renderThapThanSection(thapThanGroup[0], nhatChuName)}
-    b. ${thapThanGroup[1]}${renderThapThanSection(thapThanGroup[1], nhatChuName)}`;
-    }).join("\n\n");
+    let thapThanInfo = thapThanData
+      .map((thapThanGroup, groupIndex) => {
+        return `3.${groupIndex + 1}. ${thapThanGroup[0]} - ${
+          thapThanGroup[1]
+        } (Ngũ hành ${getNguHanhThapThan(nguHanhCan)[groupIndex]})
+    a. ${thapThanGroup[0]}${renderThapThanSection(
+          thapThanGroup[0],
+          nhatChuName
+        )}
+    b. ${thapThanGroup[1]}${renderThapThanSection(
+          thapThanGroup[1],
+          nhatChuName
+        )}`;
+      })
+      .join("\n\n");
     return thapThanInfo;
   };
 
@@ -2003,17 +2014,23 @@ Trụ Ngày
       .join(" + ")}
 •	Ngũ Hành Nạp Âm: ${nhatChu.nguHanhNapAm}. (${nhatChu.nguHanhNapAmThapThan})
 Trụ Giờ
-•	Trụ Chính: ${gio.name}
-•	Can: ${gio.can} (${gio.thapThan})
-•	Chi: ${gio.chi} (${gio.thapThan})
-•	Can Tàng (100%): ${gio.canTangPercent
-      .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
-      .join(" + ")}
-•	Ngũ Hành Nạp Âm: ${gio.nguHanhNapAm}. (${gio.nguHanhNapAmThapThan})
+•	Trụ Chính: ${gio ? gio.name : ""}
+•	Can: ${gio ? gio.can : ""} (${gio ? gio.thapThan : ""})
+•	Chi: ${gio ? gio.chi : ""} (${gio ? gio.thapThan : ""})
+•	Can Tàng (100%): ${
+      gio
+        ? gio.canTangPercent
+            .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
+            .join(" + ")
+        : ""
+    }
+•	Ngũ Hành Nạp Âm: ${gio ? gio.nguHanhNapAm : ""}. (${
+      gio ? gio.nguHanhNapAmThapThan : ""
+    })
 
 2. ${getThapThanThienCan(nhatChu.can).characteristic}
 3. Nhóm Thập Thần
-  ${renderThapThan(nhatChuName,nhatChu.nguHanhCan)}
+  ${renderThapThan(nhatChuName, nhatChu.nguHanhCan)}
 
 4. Tỷ Trọng Ngũ Hành gốc của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
       baseInfo.hoTen
@@ -2036,12 +2053,12 @@ Trợ lý AGI luôn luôn phải báo cáo các trường hợp có khả năng 
 •	Trụ Năm:  ${nam.nguHanhNapAm}
 •	Trụ Tháng: ${thang.nguHanhNapAm}
 •	Trụ Ngày: ${nhatChu.nguHanhNapAm}
-•	Trụ Giờ: ${gio.nguHanhNapAm}
+•	Trụ Giờ: ${gio ? gio.nguHanhNapAm : ""}
 
 ${getNapAm(nam.nguHanhNapAm)}\n
 ${getNapAm(thang.nguHanhNapAm)}\n
 ${getNapAm(nhatChu.nguHanhNapAm)}\n
-${getNapAm(gio.nguHanhNapAm)}
+${getNapAm(gio ? gio.nguHanhNapAm : "")}
 `;
     return tuTru;
   };
@@ -2645,10 +2662,10 @@ ${getNapAm(gio.nguHanhNapAm)}
     $("#napAmNgayBatTu").text(ngay.nguHanhNapAm);
     $("#nguHanhCanNgayBatTu").text(ngay.nguHanhCan);
     $("#nguHanhChiNgayBatTu").text(ngay.nguHanhChi);
-    $("#tenGioBatTu").text(gio.name);
-    $("#napAmGioBatTu").text(gio.nguHanhNapAm);
-    $("#nguHanhCanGioBatTu").text(gio.nguHanhCan);
-    $("#nguHanhChiGioBatTu").text(gio.nguHanhChi);
+    $("#tenGioBatTu").text(gio ? gio.name : "");
+    $("#napAmGioBatTu").text(gio ? gio.nguHanhNapAm : "");
+    $("#nguHanhCanGioBatTu").text(gio ? gio.nguHanhCan : "");
+    $("#nguHanhChiGioBatTu").text(gio ? gio.nguHanhChi : "");
     $("#tenDaiVanBatTu").text(bazi.daiVan ? bazi.daiVan.name : "");
     $("#napAmDaiVanBatTu").text(bazi.daiVan ? bazi.daiVan.nguHanhNapAm : "");
     $("#nguHanhCanDaiVanBatTu").text(bazi.daiVan ? bazi.daiVan.nguHanhCan : "");
@@ -2690,7 +2707,7 @@ ${getNapAm(gio.nguHanhNapAm)}
     $("#tenNamTru").text(nam.name);
     $("#tenThangTru").text(thang.name);
     $("#tenNgayTru").text(ngay.name);
-    $("#tenGioTru").text(gio.name);
+    $("#tenGioTru").text(gio ? gio.name : "");
     $("#tenDaiVanTru").text(bazi.daiVan ? bazi.daiVan.name : "");
     $("#tenTieuVanTru").text(bazi.tieuVan ? bazi.tieuVan.name : "");
     $("#tenNguyetVanTru").text(bazi.nguyetVan ? bazi.nguyetVan.name : "");
@@ -2699,7 +2716,7 @@ ${getNapAm(gio.nguHanhNapAm)}
     $("#canTangNam").text(nam.canTang);
     $("#canTangThang").text(thang.canTang);
     $("#canTangNgay").text(ngay.canTang);
-    $("#canTangGio").text(gio.canTang);
+    $("#canTangGio").text(gio ? gio.canTang : "");
     $("#canTangDaiVan").text(bazi.daiVan ? bazi.daiVan.canTang : "");
     $("#canTangTieuVan").text(bazi.tieuVan ? bazi.tieuVan.canTang : "");
     $("#canTangNguyetVan").text(bazi.nguyetVan ? bazi.nguyetVan.canTang : "");
@@ -2708,7 +2725,7 @@ ${getNapAm(gio.nguHanhNapAm)}
     $("#thapThanNam").text(nam.thapThan);
     $("#thapThanThang").text(thang.thapThan);
     $("#thapThanNgay").text(ngay.thapThan);
-    $("#thapThanGio").text(gio.thapThan);
+    $("#thapThanGio").text(gio ? gio.thapThan : "");
     $("#thapThanDaiVan").text(bazi.daiVan ? bazi.daiVan.thapThan : "");
     $("#thapThanTieuVan").text(bazi.tieuVan ? bazi.tieuVan.thapThan : "");
     $("#thapThanNguyetVan").text(bazi.nguyetVan ? bazi.nguyetVan.thapThan : "");
