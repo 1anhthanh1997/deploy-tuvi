@@ -1992,7 +1992,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 Trụ Năm
 •	Trụ Chính: ${nam.name}
 •	Can: ${nam.can} (${nam.thapThan})
-•	Chi: ${nam.chi} (${nam.thapThan})
+•	Chi: ${nam.chi} 
 •	Can Tàng (100%): ${nam.canTangPercent
       .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
       .join(" + ")}
@@ -2000,7 +2000,7 @@ Trụ Năm
 Trụ Tháng
 •	Trụ Chính: ${thang.name}
 •	Can: ${thang.can} (${thang.thapThan})
-•	Chi: ${thang.chi} (${thang.thapThan})
+•	Chi: ${thang.chi} 
 •	Can Tàng (100%): ${thang.canTangPercent
       .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
       .join(" + ")}
@@ -2008,7 +2008,7 @@ Trụ Tháng
 Trụ Ngày
 •	Trụ Chính: ${nhatChu.name}
 •	Can: ${nhatChu.can} (${nhatChu.thapThan})
-•	Chi: ${nhatChu.chi} (${nhatChu.thapThan})
+•	Chi: ${nhatChu.chi} 
 •	Can Tàng (100%): ${nhatChu.canTangPercent
       .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
       .join(" + ")}
@@ -2497,12 +2497,12 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
       case "Nhâm":
         return {
           nguHanh: "T",
-          amDuong: -1,
+          amDuong: 1,
         };
       case "Quý":
         return {
           nguHanh: "T",
-          amDuong: 1,
+          amDuong: -1,
         };
     }
   };
@@ -2556,8 +2556,15 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
     }: Địa Chi: ${cung.cungTen} (${getNguHanhChi(
       cung.cungTen
     )}), Can Tàng: ${canTangData
-      .map(
-        (item) =>
+      .map((item) => {
+        console.log(
+          cung.cungChu,
+          item.name,
+          getNguHanhCan(item.name).nguHanh,
+          getNguHanhCan(nhatChu).nguHanh,
+          getNguHanhCan(item.name).amDuong === getNguHanhCan(nhatChu).amDuong
+        );
+        return (
           item.name +
           " " +
           item.score * 2 +
@@ -2568,7 +2575,8 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
             getNguHanhCan(item.name).amDuong === getNguHanhCan(nhatChu).amDuong
           ) +
           ")"
-      )
+        );
+      })
       .join(" + ")}, Sao gốc: ${
       getSao(cung.cungChu, thapNhiCung).chinhTinhGoc
         ? getSao(cung.cungChu, thapNhiCung).chinhTinh

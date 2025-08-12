@@ -715,8 +715,8 @@ const getThapThanNapAm = (nguHanhNapAm, nguHanhNhatChu) => {
       `Không xác định được thập thần cho mối quan hệ: ${relationship}`
     );
   }
-  return thapThan
-}
+  return thapThan;
+};
 
 /**
  * Kiểm tra tương sinh tương khắc của ngũ hành
@@ -1271,5 +1271,5 @@ module.exports = {
   checkThienY,
   checkDaoHoa,
   getThanSat,
-  getThapThanNapAm
+  getThapThanNapAm,
 };

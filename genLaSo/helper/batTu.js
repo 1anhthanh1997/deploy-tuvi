@@ -144,8 +144,8 @@ const getCanTangPercent = (diaChi, canNgay = null) => {
       canTangIndex[key] = canTangIndex[key].map((item) => ({
         ...item,
         thapThan: getThapThan(
-          thienCan[canNgay].nguHanh,
           thienCan[item.id].nguHanh,
+          thienCan[canNgay].nguHanh,
           thienCan[item.id].amDuong === thienCan[canNgay].amDuong
         ),
       }));
