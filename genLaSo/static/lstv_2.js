@@ -1600,7 +1600,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
   };
 
   const getNapAm = (napAm) => {
-    if(!napAm) return "";
+    if (!napAm) return "";
     let napAmData = [
       {
         name: "KIẾM PHONG KIM",
@@ -2557,13 +2557,6 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
       cung.cungTen
     )}), Can Tàng: ${canTangData
       .map((item) => {
-        console.log(
-          cung.cungChu,
-          item.name,
-          getNguHanhCan(item.name).nguHanh,
-          getNguHanhCan(nhatChu).nguHanh,
-          getNguHanhCan(item.name).amDuong === getNguHanhCan(nhatChu).amDuong
-        );
         return (
           item.name +
           " " +
