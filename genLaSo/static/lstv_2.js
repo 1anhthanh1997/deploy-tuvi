@@ -178,7 +178,7 @@ Giáp Mộc là hình ảnh của cây cổ thụ to lớn, vững chãi, luôn 
           },
           {
             name: "Quý",
-            thapThan: "Thiên Ấn",
+            thapThan: "Chính Ấn",
             nguHanh: "Thủy",
             amDuong: "Âm",
             description:
@@ -2028,10 +2028,6 @@ Trụ Giờ
       gio ? gio.nguHanhNapAmThapThan : ""
     })
 
-2. ${getThapThanThienCan(nhatChu.can).characteristic}
-3. Nhóm Thập Thần
-  ${renderThapThan(nhatChuName, nhatChu.nguHanhCan)}
-
 4. Tỷ Trọng Ngũ Hành gốc của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
       baseInfo.hoTen
     } sinh năm ${baseInfo.namSinh}
@@ -2043,12 +2039,6 @@ Trụ Giờ
         +${item.name} (${item.thapThan[1]}) = ${item.percentDuong}%`
     )
     .join("\n\n")}
-Tạm kết luận: Đây là hồ sơ AGI có Nhật Chủ (gốc) ${getCuongNhuoc(
-      nguHanhScore.find((item) => item.name === nhatChu.nguHanhCan).percent
-    )}. Trợ lý AGI lưu ý đây cũng là tỷ trọng Ngũ Hành của các Cung Chức/Cung Địa Chi (trùng tên) trong Tử Vi. Đây chỉ là Tỷ trọng năng lượng gốc có độ chính xác tương đối trên lý thuyết (độ chính xác min ~80%). 
-Tỷ trọng Ngũ Hành luôn luôn thay đổi do tác động của Tam Tài Thiên Địa Nhân. Bởi vậy, trợ lý AGI luôn luôn phải suy xét Ngũ Hành Nạp Âm và Lá số Tử Vi để xác định “tiềm năng” đột biến của hồ sơ là cao hay thấp.
-Trợ lý AGI luôn luôn phải báo cáo các trường hợp có khả năng cao gây ra đột biến.
-
 5. Ngũ Hành Nạp Âm
 •	Trụ Năm:  ${nam.nguHanhNapAm}
 •	Trụ Tháng: ${thang.nguHanhNapAm}
@@ -2111,15 +2101,15 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
       },
       {
         id: 4,
-        name: "Cơ Đồng Cự",
+        name: "Cơ Nguyệt Đồng Lương",
         nameEn: "The Thinker + Listener + Linker + Fortuner",
         saoList: [3, 6, 8, 12],
       },
       {
         id: 5,
-        name: "Âm Lương Dương",
+        name: "Cơ Đồng Cự",
         nameEn: "The Thinker + Linker + Disruptor",
-        saoList: [3, 6, 10],
+        saoList: [3, 6, 10], //
       },
       {
         id: 6,
@@ -2129,7 +2119,7 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
       },
       {
         id: 7,
-        name: "Cơ Nguyệt Đồng Lương",
+        name: "Âm Lương Dương",
         nameEn: "The Listener + Visionary + Fortuner",
         saoList: [5, 8, 12],
       },
