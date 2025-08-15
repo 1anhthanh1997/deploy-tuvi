@@ -1600,7 +1600,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
   };
 
   const getNapAm = (napAm) => {
-    if(!napAm) return "";
+    if (!napAm) return "";
     let napAmData = [
       {
         name: "KIẾM PHONG KIM",
@@ -1978,6 +1978,72 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
     return thapThanInfo;
   };
 
+  const getSupportForces = (can) => {
+    let forceData = [
+      {
+        nguHanh: "Đinh",
+        forceRanges: [
+          {
+            id: 0,
+            title: "Đinh Hỏa Cực Cường (Extremely Strong): > 74%",
+            data: `•	Luận giải: Ngọn nến ấm áp đã biến thành một dòng dung nham thiêu đốt. Sự soi sáng dẫn dắt trở thành sự soi mói, đa nghi. Nội tâm sâu sắc của họ biến thành những suy nghĩ cực đoan, hay dằn vặt. Cảm xúc của họ âm ỉ và có thể bùng nổ bất ngờ với sức hủy diệt lớn.
+•	Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival).
+•	Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Áp lực từ bên ngoài sẽ kích nổ những cảm xúc bị dồn nén, gây ra hậu quả khôn lường. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+`,
+          },
+          {
+            id: 1,
+            title: "Đinh Hỏa Cân Bằng (thiên Cường): 65% – 74%",
+            data: `•	Luận giải: Đây là phiên bản Canh Kim chủ động và có mục đích rõ ràng. Họ dùng sức mạnh của mình để bảo vệ công lý, thực thi kỷ luật. Họ là những nhà lãnh đạo hành động, những người thực thi pháp luật, những người tiên phong dọn đường.
+•	Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+•	Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+`,
+          },
+          {
+            id: 2,
+            title: "Đinh Hỏa Cường (Strong): 55% – 65%",
+            data: `•	Luận giải: Đây là phiên bản Canh Kim chủ động và có mục đích rõ ràng. Họ dùng sức mạnh của mình để bảo vệ công lý, thực thi kỷ luật. Họ là những nhà lãnh đạo hành động, những người thực thi pháp luật, những người tiên phong dọn đường.
+•	Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+•	Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+`,
+          },
+          {
+            id: 3,
+            title: "Đinh Hỏa Nhược (Weak): 45% – 55%",
+            data: `•	Luận giải: Đây là phiên bản Canh Kim chủ động và có mục đích rõ ràng. Họ dùng sức mạnh của mình để bảo vệ công lý, thực thi kỷ luật. Họ là những nhà lãnh đạo hành động, những người thực thi pháp luật, những người tiên phong dọn đường.
+•	Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+•	Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+`,
+          },
+          {
+            id: 4,
+            title: "Đinh Hỏa Cực Nhược (Extremely Weak): 35% – 45%",
+            data: `•	Luận giải: Đây là phiên bản Canh Kim chủ động và có mục đích rõ ràng. Họ dùng sức mạnh của mình để bảo vệ công lý, thực thi kỷ luật. Họ là những nhà lãnh đạo hành động, những người thực thi pháp luật, những người tiên phong dọn đường.
+•	Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+•	Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+`,
+          },
+          {
+            id: 5,
+            title: "Đinh Hỏa Cực Nhược (Extremely Weak): 25% – 35%",
+            data: `•	Luận giải: Đây là phiên bản Canh Kim chủ động và có mục đích rõ ràng. Họ dùng sức mạnh của mình để bảo vệ công lý, thực thi kỷ luật. Họ là những nhà lãnh đạo hành động, những người thực thi pháp luật, những người tiên phong dọn đường.
+•	Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+•	Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+`,
+          },
+          {
+            id: 6,
+            title: "Đinh Hỏa Cực Nhược (Extremely Weak): <25%",
+            data: `•	Luận giải: Đây là phiên bản Canh Kim chủ động và có mục đích rõ ràng. Họ dùng sức mạnh của mình để bảo vệ công lý, thực thi kỷ luật. Họ là những nhà lãnh đạo hành động, những người thực thi pháp luật, những người tiên phong dọn đường.
+•	Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+•	Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+`,
+          },
+        ],
+      },
+    ];
+  };
+
   const getTuTruData = (bazi, baseInfo) => {
     let nam = bazi.year;
     let thang = bazi.month;
@@ -2043,11 +2109,39 @@ Trụ Giờ
         +${item.name} (${item.thapThan[1]}) = ${item.percentDuong}%`
     )
     .join("\n\n")}
-Tạm kết luận: Đây là hồ sơ AGI có Nhật Chủ (gốc) ${getCuongNhuoc(
-      nguHanhScore.find((item) => item.name === nhatChu.nguHanhCan).percent
-    )}. Trợ lý AGI lưu ý đây cũng là tỷ trọng Ngũ Hành của các Cung Chức/Cung Địa Chi (trùng tên) trong Tử Vi. Đây chỉ là Tỷ trọng năng lượng gốc có độ chính xác tương đối trên lý thuyết (độ chính xác min ~80%). 
-Tỷ trọng Ngũ Hành luôn luôn thay đổi do tác động của Tam Tài Thiên Địa Nhân. Bởi vậy, trợ lý AGI luôn luôn phải suy xét Ngũ Hành Nạp Âm và Lá số Tử Vi để xác định “tiềm năng” đột biến của hồ sơ là cao hay thấp.
-Trợ lý AGI luôn luôn phải báo cáo các trường hợp có khả năng cao gây ra đột biến.
+  
+Tỷ lệ Lực lượng đồng hành/Lực lượng hỗ trợ = 2.25, vậy 
+lực lượng đồng hành có vai trò hạn chế trong việc hình thành sức mạnh của Nhật 
+Chủ. 
+Canh Kim Cường (Strong): 65% – 74% 
+
+Luận giải: Đây 
+là hình mẫu Canh Kim của chiến binh, của vị tướng quân. Họ trọng nghĩa 
+khí, công bằng, và hành động. Họ là người bạn trung thành nhưng cũng là đối 
+thủ đáng gờm. Với họ, vấn đề được giải quyết bằng hành động trực diện và dứt 
+khoát, không phải bằng mưu mẹo hay lời nói. 
+
+Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để được tôi luyện. Power 
+Forces (the Leader & the Warrior) để biến kim loại thô thành vũ 
+khí hữu dụng; Economic Forces (the Provider & the Venturer) để 
+có mục tiêu chinh phục; Creation Forces (the Creator & the 
+Innovator) để thể hiện sức mạnh. 
+
+Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the 
+Maverick) và Companion Forces (the Companion & the Rival), 
+vì chúng khiến kim loại trở nên quá cứng và giòn, dễ gãy. 
+3. Canh Kim Cân Bằng (thiên Cường): 55% – 65% 
+
+Luận giải: Đây 
+là phiên bản Canh Kim chủ động và có mục đích rõ ràng. Họ dùng sức mạnh của 
+mình để bảo vệ công lý, thực thi kỷ luật. Họ là những nhà lãnh đạo hành động, 
+những người thực thi pháp luật, những người tiên phong dọn đường. 
+
+Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và 
+Creation Forces. 
+
+Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces. 
+
 
 5. Ngũ Hành Nạp Âm
 •	Trụ Năm:  ${nam.nguHanhNapAm}

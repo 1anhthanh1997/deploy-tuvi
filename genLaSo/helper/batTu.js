@@ -648,6 +648,169 @@ const convertHourInfo = (baseInfo) => {
   return baseInfo;
 };
 
+const getViTriSao = (saoID, thapNhiCung) => {
+  let cungSaoIndex = thapNhiCung.findIndex((cung) =>
+    cung.cungSao.some((sao) => sao.saoID === saoID)
+  );
+  return cungSaoIndex;
+};
+
+const getTuHoaBazi = (can, thapNhiCung, endName) => {
+  let viTriHoaLoc, viTriHoaQuyen, viTriHoaKhoa, viTriHoaKy;
+  let viTriLiemTrinh = getViTriSao(2, thapNhiCung);
+  let viTriPhaQuan = getViTriSao(14, thapNhiCung);
+  let viTriVuKhuc = getViTriSao(4, thapNhiCung);
+  let vitriThaiDuong = getViTriSao(5, thapNhiCung);
+  let viTriThienCo = getViTriSao(6, thapNhiCung);
+  let viTriThienLuong = getViTriSao(12, thapNhiCung);
+  let viTriTuVi = getViTriSao(1, thapNhiCung);
+  let viTriThaiAm = getViTriSao(8, thapNhiCung);
+  let viTriThamLang = getViTriSao(9, thapNhiCung);
+  let viTriCuMon = getViTriSao(10, thapNhiCung);
+  let viTriThienDong = getViTriSao(3, thapNhiCung);
+  let viTriVanKhuc = getViTriSao(58, thapNhiCung);
+  let viTriVanXuong = getViTriSao(57, thapNhiCung);
+  let viTriTaPhu = getViTriSao(61, thapNhiCung);
+  let viTriHuuBat = getViTriSao(62, thapNhiCung);
+   
+  switch (can) {
+    case 1:
+      viTriHoaLoc = viTriLiemTrinh;
+      viTriHoaQuyen = viTriPhaQuan;
+      viTriHoaKhoa = viTriVuKhuc;
+      viTriHoaKy = vitriThaiDuong;
+      break;
+    case 2:
+      viTriHoaLoc = viTriThienCo;
+      viTriHoaQuyen = viTriThienLuong;
+      viTriHoaKhoa = viTriTuVi;
+      viTriHoaKy = viTriThaiAm;
+      break;
+    case 3:
+      viTriHoaLoc = viTriThienDong;
+      viTriHoaQuyen = viTriThienCo;
+      viTriHoaKhoa = viTriVanXuong;
+      viTriHoaKy = viTriLiemTrinh;
+      break;
+    case 4:
+      viTriHoaLoc = viTriThaiAm;
+      viTriHoaQuyen = viTriThienDong;
+      viTriHoaKhoa = viTriThienCo;
+      viTriHoaKy = viTriCuMon;
+      break;
+    case 5:
+      viTriHoaLoc = viTriThamLang;
+      viTriHoaQuyen = viTriThaiAm;
+      viTriHoaKhoa = viTriHuuBat;
+      viTriHoaKy = viTriThienCo;
+      break;
+    case 6:
+      viTriHoaLoc = viTriVuKhuc;
+      viTriHoaQuyen = viTriThamLang;
+      viTriHoaKhoa = viTriThienLuong;
+      viTriHoaKy = viTriVanKhuc;
+      break;
+    case 7:
+      viTriHoaLoc = vitriThaiDuong;
+      viTriHoaQuyen = viTriVuKhuc;
+      viTriHoaKhoa = viTriThaiAm;
+      viTriHoaKy = viTriThienDong;
+      break;
+    case 8:
+      viTriHoaLoc = viTriCuMon;
+      viTriHoaQuyen = vitriThaiDuong;
+      viTriHoaKhoa = viTriVanKhuc;
+      viTriHoaKy = viTriVanXuong;
+      break;
+    case 9:
+      viTriHoaLoc = viTriThienLuong;
+      viTriHoaQuyen = viTriTuVi;
+      viTriHoaKhoa = viTriTaPhu;
+      viTriHoaKy = viTriVuKhuc;
+      break;
+    case 10:
+      viTriHoaLoc = viTriPhaQuan;
+      viTriHoaQuyen = viTriCuMon;
+      viTriHoaKhoa = viTriThaiAm;
+      viTriHoaKy = viTriThamLang;
+      break;
+  }
+
+  thapNhiCung[viTriHoaLoc].cungSao.push({
+    saoID: 94,
+    saoTen: `Hóa lộc (từ Can Trụ ${endName})`,
+  });
+  thapNhiCung[viTriHoaQuyen].cungSao.push({
+    saoID: 93,
+    saoTen: `Hóa quyền (từ Can Trụ ${endName})`,
+  });
+  thapNhiCung[viTriHoaKhoa].cungSao.push({
+    saoID: 92,
+    saoTen: `Hóa khoa (từ Can Trụ ${endName})`,
+  });
+  thapNhiCung[viTriHoaKy].cungSao.push({
+    saoID: 95,
+    saoTen: `Hóa kỵ (từ Can Trụ ${endName})`,
+  });
+};
+
+const addTuHoaBazi = (
+  canGio,
+  canNgay,
+  canThang,
+  canNam,
+  canDaiVan,
+  canTieuVan,
+  canNguyetVan,
+  canNhatVan,
+  canThoiVan,
+  thapNhiCung
+) => {
+  let data = [
+    {
+      can: canGio,
+      endName: "Giờ/Chính",
+    },
+    {
+      can: canNgay,
+      endName: "Ngày/Chính",
+    },
+    {
+      can: canThang,
+      endName: "Tháng/Chính",
+    },
+    {
+      can: canNam,
+      endName: "Năm/Chính",
+    },
+    {
+      can: canDaiVan,
+      endName: "Đại Vận/Biến",
+    },
+    {
+      can: canTieuVan,
+      endName: "Năm/Biến",
+    },
+    {
+      can: canNguyetVan,
+      endName: "Tháng/Biến",
+    },
+    {
+      can: canNhatVan,
+      endName: "Ngày/Biến",
+    },
+    {
+      can: canThoiVan,
+      endName: "Giờ/Biến",
+    },
+  ];
+  for (let item of data) {
+    if(item.can){
+      getTuHoaBazi(item.can, thapNhiCung, item.endName);
+    }
+  }
+};
+
 const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
   let originHour, canGioSinh, chiGioSinh, canGioSinhTen, chiGioSinhTen;
   if (!boTruGio) {
@@ -827,6 +990,18 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
     tieuVan: { can: canTieuVan, chi: chiTieuVan },
     daiVan: { can: canDaiVan, chi: chiDaiVan },
   });
+  addTuHoaBazi(
+    canGioSinh,
+    canNgay,
+    canThang,
+    canNam,
+    canDaiVan,
+    canTieuVan,
+    canNguyetVan,
+    canNhatVan,
+    canThoiVan,
+    thapNhiCung
+  );
 
   return {
     baseInfo: baseInfo,
