@@ -178,7 +178,7 @@ Giáp Mộc là hình ảnh của cây cổ thụ to lớn, vững chãi, luôn 
           },
           {
             name: "Quý",
-            thapThan: "Thiên Ấn",
+            thapThan: "Chính Ấn",
             nguHanh: "Thủy",
             amDuong: "Âm",
             description:
@@ -2094,10 +2094,6 @@ Trụ Giờ
       gio ? gio.nguHanhNapAmThapThan : ""
     })
 
-2. ${getThapThanThienCan(nhatChu.can).characteristic}
-3. Nhóm Thập Thần
-  ${renderThapThan(nhatChuName, nhatChu.nguHanhCan)}
-
 4. Tỷ Trọng Ngũ Hành gốc của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
       baseInfo.hoTen
     } sinh năm ${baseInfo.namSinh}
@@ -2205,15 +2201,15 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
       },
       {
         id: 4,
-        name: "Cơ Đồng Cự",
+        name: "Cơ Nguyệt Đồng Lương",
         nameEn: "The Thinker + Listener + Linker + Fortuner",
         saoList: [3, 6, 8, 12],
       },
       {
         id: 5,
-        name: "Âm Lương Dương",
+        name: "Cơ Đồng Cự",
         nameEn: "The Thinker + Linker + Disruptor",
-        saoList: [3, 6, 10],
+        saoList: [3, 6, 10], //
       },
       {
         id: 6,
@@ -2223,7 +2219,7 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
       },
       {
         id: 7,
-        name: "Cơ Nguyệt Đồng Lương",
+        name: "Âm Lương Dương",
         nameEn: "The Listener + Visionary + Fortuner",
         saoList: [5, 8, 12],
       },
@@ -2651,13 +2647,6 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
       cung.cungTen
     )}), Can Tàng: ${canTangData
       .map((item) => {
-        console.log(
-          cung.cungChu,
-          item.name,
-          getNguHanhCan(item.name).nguHanh,
-          getNguHanhCan(nhatChu).nguHanh,
-          getNguHanhCan(item.name).amDuong === getNguHanhCan(nhatChu).amDuong
-        );
         return (
           item.name +
           " " +
