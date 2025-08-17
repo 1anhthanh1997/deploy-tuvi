@@ -1981,63 +1981,612 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
   const getSupportForces = (can) => {
     let forceData = [
       {
+        nguHanh: "Giáp",
+        forceRanges: [
+          {
+            id: 0,
+            title: "Nhật Chủ Giáp Mộc Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Ở trạng thái này, cây cổ thụ đã phát triển thành cả một khu rừng, che lấp mọi ánh sáng. Tham vọng trở thành sự thống trị tàn nhẫn, và nguyên tắc trở thành giáo điều không thể lay chuyển. Họ trở nên độc đoán, áp đảo và tạo ra một môi trường ngột ngạt, kìm hãm sự phát triển của những người xung quanh.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng có nhiều nước và cây cối, khu rừng càng trở nên bất khả xâm phạm.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút kim loại (Kim) cố gắng đốn hạ khu rừng sẽ bị "nuốt chửng" và gây ra sự phản kháng dữ dội. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+          },
+          {
+            id: 1,
+            title: "Nhật Chủ Giáp Mộc Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Nhật Chủ Giáp Mộc của người lãnh đạo bẩm sinh. Họ kiên định, có nguyên tắc, thẳng thắn và luôn có khát vọng vươn lên. Giống như cây đại thụ, họ là trụ cột cho cộng đồng, là nơi che chở cho những người yếu thế hơn. Họ truyền cảm hứng bằng sự chính trực và ý chí không khuất phục.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để được tôi luyện. Power Forces (the Leader & the Warrior) để cắt tỉa cành lá, tạo nên hình dáng hữu dụng; Economic Forces (the Provider & the Venturer) để có đất đai cắm rễ; Creation Forces (the Creator & the Innovator) để Mộc sinh Hỏa, thể hiện tài năng.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng tạo ra sự cạnh tranh về không gian và ánh sáng.
+            `,
+          },
+          {
+            id: 2,
+            title: "Nhật Chủ Giáp Mộc Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Nhật Chủ Giáp Mộc chủ động và đầy sức sống. Họ tự tin vào con đường của mình, sẵn sàng dẫn dắt và bảo vệ quan điểm. Họ là những nhà lãnh đạo có tầm nhìn, những người đặt ra nền móng và định hướng cho cả một tập thể.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+          },
+          {
+            id: 3,
+            title:
+              "Nhật Chủ Giáp Mộc Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Nhật Chủ Giáp Mộc. Họ vừa giữ được sự thẳng thắn, kiên định của mình, vừa có được sự dẻo dai cần thiết. Giống như cây tre, họ "cứng mà không giòn, mềm mà không yếu". Họ là những nhà lãnh đạo khôn ngoan, biết khi nào cần vươn lên và khi nào cần uốn mình theo gió.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Power Forces (the Leader/Warrior) để có kỷ luật và sự công nhận, và Creation Forces (the Creator/Innovator) để thể hiện tài năng một cách hiệu quả.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
+            `,
+          },
+          {
+            id: 4,
+            title: "Nhật Chủ Giáp Mộc Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Nhật Chủ Giáp Mộc khiêm tốn và có tinh thần hợp tác hơn. Họ vẫn giữ được sự chính trực, nhưng hiểu rằng sức mạnh của mình sẽ được phát huy tốt nhất khi là một phần của một cấu trúc lớn hơn. Họ là những người quản lý dự án, những trụ cột đáng tin cậy trong một đội nhóm.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp họ có nền tảng vững chắc.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+          },
+          {
+            id: 5,
+            title: "Nhật Chủ Giáp Mộc Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Bản năng của họ là muốn vươn lên thẳng tắp, nhưng lại thiếu "nước" (hỗ trợ) và "đất" (nguồn lực) để làm điều đó. Điều này tạo ra cảm giác bất lực, hoài bão lớn nhưng không thể thực hiện. Họ sợ bị "chặt hạ" bởi áp lực và chỉ trích.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để cây có thể lớn lên.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như rìu chặt cây non. Creation Forces và Economic Forces cũng làm họ kiệt sức.
+            `,
+          },
+          {
+            id: 6,
+            title: "Nhật Chủ Giáp Mộc Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Nhật Chủ Giáp Mộc phải từ bỏ hoàn toàn bản năng lãnh đạo và ý chí vươn lên của mình để "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải học cách trở thành nhiên liệu cho một ngọn lửa khác, hoặc trở thành vật trang trí trong một khu vườn.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút nước hay cây khác cũng sẽ "đánh thức" bản năng Nhật Chủ Giáp Mộc, phá vỡ cấu trúc Tòng cách và gây ra tai họa.
+            `,
+          },
+        ],
+      },
+      {
+        nguHanh: "Ất",
+        forceRanges: [
+          {
+            id: 0,
+            title: "Ất Mộc Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Lúc này, dây leo không còn mềm mại mà trở nên xâm lấn, bóp nghẹt mọi thứ nó quấn lấy. Sự linh hoạt biến thành sự luồn lách, cơ hội vô nguyên tắc. Khả năng kết nối trở thành những mạng lưới bè phái phức tạp. Họ tạo ra một môi trường hỗn loạn, rối rắm để sinh tồn và thống trị.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival).
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút kim loại (Kim) cố gắng cắt tỉa sẽ khiến chúng càng phản ứng mạnh mẽ hơn. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+          },
+          {
+            id: 1,
+            title: "Ất Mộc Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Ất Mộc của nhà ngoại giao, người kết nối bậc thầy. Họ mềm dẻo, khéo léo và có khả năng thích ứng phi thường. Họ không đối đầu trực diện mà đạt được mục tiêu bằng cách "leo" lên những cấu trúc có sẵn (một công ty, một người có quyền lực), và làm đẹp cho chính cấu trúc đó.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập. Power Forces (the Leader & the Warrior) để có giàn leo; Economic Forces (the Provider & the Venturer) để có đất bám; Creation Forces (the Creator & the Innovator) để Mộc sinh Hỏa, giúp hoa nở rực rỡ.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng tạo ra một mớ dây leo hỗn loạn, tranh giành nhau.
+            `,
+          },
+          {
+            id: 2,
+            title: "Ất Mộc Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Ất Mộc chủ động và có sức sống mãnh liệt. Họ tự tin vào khả năng sinh tồn và thích ứng của mình, không ngại khó khăn và luôn tìm được cách để vươn lên. Họ là những người giải quyết vấn đề một cách sáng tạo và linh hoạt.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+          },
+          {
+            id: 3,
+            title: "Ất Mộc Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Ất Mộc. Họ vừa mềm mại, duyên dáng, vừa có sức sống riêng. Họ khéo léo trong giao tiếp, tinh tế trong cảm nhận và có khả năng mang lại vẻ đẹp, sự hòa hợp cho môi trường xung quanh. Họ là những nghệ sĩ, nhà ngoại giao, người hòa giải bẩm sinh.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để thể hiện vẻ đẹp của mình và Economic Forces (the Provider/Venturer) để vẻ đẹp đó được công nhận và có giá trị.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
+            `,
+          },
+          {
+            id: 4,
+            title: "Ất Mộc Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Ất Mộc khiêm tốn và cần sự che chở. Họ có khả năng thích ứng nhưng cần một môi trường thuận lợi để phát triển. Họ giỏi làm việc nhóm, biết cách nương theo người khác để cùng đi lên.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là rất quan trọng.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+          },
+          {
+            id: 5,
+            title: "Ất Mộc Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Họ có sức sống tiềm tàng nhưng môi trường quá khắc nghiệt. Họ cảm thấy mình nhỏ bé, yếu ớt và dễ bị tổn thương. Họ luôn trong trạng thái phòng thủ, cố gắng tìm một kẽ hở, một sự giúp đỡ nhỏ nhất để tồn tại.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) - như nước tưới - là quan trọng nhất. Companion Forces (the Companion & the Rival) cũng rất cần thiết.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như dao cắt cỏ. Creation Forces và Economic Forces cũng làm họ kiệt quệ.
+            `,
+          },
+          {
+            id: 6,
+            title: "Ất Mộc Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Ất Mộc phải từ bỏ hoàn toàn bản chất sinh trưởng của mình để "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải học cách tìm thấy vẻ đẹp và mục đích của mình trong sự tàn phai hoặc trở thành một phần của một thứ khác.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút nước hay cây khác cũng sẽ "đánh thức" bản năng sinh tồn, phá vỡ cấu trúc Tòng cách và gây ra khủng hoảng.
+            `,
+          },
+        ],
+      },
+      {
+        nguHanh: "Bính",
+        forceRanges: [
+          {
+            id: 0,
+            title: "Bính Hỏa Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Lúc này, Mặt Trời không còn tỏa sáng mà trở nên thiêu đốt. Sự nhiệt tình, hào phóng biến thành sự áp đảo, ngột ngạt, làm lu mờ tất cả những người xung quanh. Họ trở nên cực kỳ tự cao, cho mình là trung tâm vũ trụ, không thể lắng nghe hay chấp nhận sự khác biệt. Sự thẳng thắn của họ trở thành sự thiếu tinh tế, dễ gây tổn thương.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng có nhiều nhiên liệu và đồng minh, ngọn lửa càng bùng cháy rực rỡ.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút nước (Thủy) cũng có thể gây ra một vụ nổ hơi nước dữ dội, dẫn đến sự sụp đổ thảm khốc. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+          },
+          {
+            id: 1,
+            title: "Bính Hỏa Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Bính Hỏa của người lãnh đạo bẩm sinh. Họ tỏa ra năng lượng tích cực, sự hào phóng và lòng nhiệt thành một cách tự nhiên. Sức hút của họ khiến mọi người muốn đi theo. Họ là trung tâm của mọi sự chú ý, luôn công khai, minh bạch và đầy đam mê.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập. Power Forces (the Leader & the Warrior) giúp họ có được quyền lực và sự tôn trọng; Economic Forces (the Provider & the Venturer) cho họ mục tiêu để chinh phục; Creation Forces (the Creator & the Innovator) để họ thể hiện năng lượng của mình.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng khiến ngọn lửa trở nên quá nóng và khó kiểm soát.
+            `,
+          },
+          {
+            id: 2,
+            title: "Bính Hỏa Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Bính Hỏa đầy năng lượng và chủ động. Họ tự tin vào sức hút của mình, sẵn sàng đứng ra dẫn dắt và lan tỏa sự tích cực. Họ là những người khởi xướng, những nhà lãnh đạo truyền cảm hứng một cách mạnh mẽ và rõ ràng.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces để tối ưu hóa tiềm năng.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+          },
+          {
+            id: 3,
+            title: "Bính Hỏa Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Nhật Chủ Giáp Mộc. Họ vừa giữ được sự thẳng thắn, kiên định của mình, vừa có được sự dẻo dai cần thiết. Giống như cây tre, họ "cứng mà không giòn, mềm mà không yếu". Họ là những nhà lãnh đạo khôn ngoan, biết khi nào cần vươn lên và khi nào cần uốn mình theo gió.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Power Forces (the Leader/Warrior) để có kỷ luật và sự công nhận, và Creation Forces (the Creator/Innovator) để thể hiện tài năng một cách hiệu quả.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
+            `,
+          },
+          {
+            id: 4,
+            title: "Bính Hỏa Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Bính Hỏa mềm mại và khéo léo hơn. Họ vẫn có sức hút và sự ấm áp, nhưng thể hiện nó một cách khiêm tốn và tinh tế hơn. Họ tỏa sáng thông qua việc hỗ trợ và làm nổi bật người khác.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp Nhật Chủ tự tin tỏa sáng.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+          },
+          {
+            id: 5,
+            title: "Bính Hỏa Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Bản chất của họ là muốn tỏa sáng nhưng lại thiếu năng lượng để làm điều đó. Điều này tạo ra sự mâu thuẫn nội tâm, khiến họ có thể trở nên thiếu tự tin hoặc hay ghen tị với thành công của người khác. Họ có hoài bão lớn nhưng lực bất tòng tâm.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để "thổi bùng" ngọn lửa.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như nước dập tắt lửa. Economic Forces và Creation Forces cũng làm họ kiệt sức.
+            `,
+          },
+          {
+            id: 6,
+            title: "Bính Hỏa Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Bính Hỏa phải từ bỏ bản chất "Mặt Trời" của mình để "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải học cách sống mà không phải là trung tâm của vũ trụ.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút hỗ trợ cũng sẽ "đánh thức" bản năng Mặt Trời, phá vỡ cấu trúc Tòng cách và gây ra tai họa.
+            `,
+          },
+        ],
+      },
+      {
         nguHanh: "Đinh",
         forceRanges: [
           {
             id: 0,
             title: "Đinh Hỏa Cực Cường (Extremely Strong): > 74%",
-            data: `•	Luận giải: Ngọn nến ấm áp đã biến thành một dòng dung nham thiêu đốt. Sự soi sáng dẫn dắt trở thành sự soi mói, đa nghi. Nội tâm sâu sắc của họ biến thành những suy nghĩ cực đoan, hay dằn vặt. Cảm xúc của họ âm ỉ và có thể bùng nổ bất ngờ với sức hủy diệt lớn.
-•	Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival).
-•	Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Áp lực từ bên ngoài sẽ kích nổ những cảm xúc bị dồn nén, gây ra hậu quả khôn lường. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
-`,
+            data: `• Luận giải: Ngọn nến ấm áp đã biến thành một dòng dung nham thiêu đốt. Sự soi sáng dẫn dắt trở thành sự soi mói, đa nghi. Nội tâm sâu sắc của họ biến thành những suy nghĩ cực đoan, hay dằn vặt. Cảm xúc của họ âm ỉ và có thể bùng nổ bất ngờ với sức hủy diệt lớn.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival).
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Áp lực từ bên ngoài sẽ kích nổ những cảm xúc bị dồn nén, gây ra hậu quả khôn lường. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
           },
           {
             id: 1,
-            title: "Đinh Hỏa Cân Bằng (thiên Cường): 65% – 74%",
-            data: `•	Luận giải: Đây là phiên bản Canh Kim chủ động và có mục đích rõ ràng. Họ dùng sức mạnh của mình để bảo vệ công lý, thực thi kỷ luật. Họ là những nhà lãnh đạo hành động, những người thực thi pháp luật, những người tiên phong dọn đường.
-•	Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
-•	Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
-`,
+            title: "Đinh Hỏa Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Đinh Hỏa của người thầy, người dẫn dắt tinh thần. Ánh sáng của họ không chói lóa mà tập trung, soi rõ con đường cho những người cần nó. Họ sâu sắc, tinh tế, có khả năng truyền cảm hứng bằng trí tuệ và sự ấm áp. Họ là những nhà tư tưởng, những chuyên gia thầm lặng nhưng có sức ảnh hưởng lớn.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập. Power Forces (the Leader & the Warrior) giúp họ có được sự công nhận; Economic Forces (the Provider & the Venturer) để họ hiện thực hóa các ý tưởng; Creation Forces (the Creator & the Innovator) để trí tuệ của họ được tuôn chảy.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng khiến họ trở nên quá tự mãn với kiến thức của mình và không muốn thay đổi.
+            `,
           },
           {
             id: 2,
-            title: "Đinh Hỏa Cường (Strong): 55% – 65%",
-            data: `•	Luận giải: Đây là phiên bản Canh Kim chủ động và có mục đích rõ ràng. Họ dùng sức mạnh của mình để bảo vệ công lý, thực thi kỷ luật. Họ là những nhà lãnh đạo hành động, những người thực thi pháp luật, những người tiên phong dọn đường.
-•	Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
-•	Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
-`,
+            title: "Đinh Hỏa Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Đinh Hỏa tự tin và chủ động hơn trong việc dẫn dắt. Họ sẵn sàng dùng trí tuệ và sự nhiệt thành của mình để soi đường cho một nhóm, một dự án. Họ là những người lãnh đạo truyền cảm hứng bằng chiều sâu kiến thức.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
           },
           {
             id: 3,
-            title: "Đinh Hỏa Nhược (Weak): 45% – 55%",
-            data: `•	Luận giải: Đây là phiên bản Canh Kim chủ động và có mục đích rõ ràng. Họ dùng sức mạnh của mình để bảo vệ công lý, thực thi kỷ luật. Họ là những nhà lãnh đạo hành động, những người thực thi pháp luật, những người tiên phong dọn đường.
-•	Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
-•	Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
-`,
+            title: "Đinh Hỏa Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Đinh Hỏa. Họ ấm áp, tinh tế, sâu sắc và đầy thấu cảm. Ánh sáng của họ vừa đủ để soi rọi con đường cho bản thân và những người xung quanh mà không gây áp lực. Họ là người bạn tâm giao, người chữa lành, người nghệ sĩ tài hoa.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để thể hiện nội tâm phong phú, hoặc Power Forces (the Leader/Warrior) để ánh sáng của họ có mục đích và được định hướng rõ ràng.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng tinh tế.
+            `,
           },
           {
             id: 4,
-            title: "Đinh Hỏa Cực Nhược (Extremely Weak): 35% – 45%",
-            data: `•	Luận giải: Đây là phiên bản Canh Kim chủ động và có mục đích rõ ràng. Họ dùng sức mạnh của mình để bảo vệ công lý, thực thi kỷ luật. Họ là những nhà lãnh đạo hành động, những người thực thi pháp luật, những người tiên phong dọn đường.
-•	Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
-•	Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
-`,
+            title: "Đinh Hỏa Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Đinh Hỏa khiêm tốn và cần sự hỗ trợ. Ánh sáng của họ rất đẹp nhưng không ổn định, cần có bầu trời đêm (sự hỗ trợ) để trở nên nổi bật. Họ giỏi lắng nghe và tiếp thu kiến thức, tỏa sáng trong một tập thể.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là rất quan trọng.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
           },
           {
             id: 5,
-            title: "Đinh Hỏa Cực Nhược (Extremely Weak): 25% – 35%",
-            data: `•	Luận giải: Đây là phiên bản Canh Kim chủ động và có mục đích rõ ràng. Họ dùng sức mạnh của mình để bảo vệ công lý, thực thi kỷ luật. Họ là những nhà lãnh đạo hành động, những người thực thi pháp luật, những người tiên phong dọn đường.
-•	Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
-•	Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
-`,
+            title: "Đinh Hỏa Nhược (Weak): 25% – 35%",
+            data: `Luận giải: Ánh sáng của họ rất yếu ớt và leo lét. Họ có những ý tưởng, những suy nghĩ sâu sắc nhưng không đủ năng lượng để thể hiện ra ngoài hoặc theo đuổi chúng. Nội tâm thường cảm thấy cô đơn, bất an và dễ bi quan.
+Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) - như thêm dầu vào đèn - là quan trọng nhất. Companion Forces (the Companion & the Rival) cũng rất cần thiết.
+Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như một cơn gió mạnh có thể thổi tắt ngọn đèn. Economic Forces và Creation Forces cũng làm họ kiệt quệ.
+            `,
           },
           {
             id: 6,
-            title: "Đinh Hỏa Cực Nhược (Extremely Weak): <25%",
-            data: `•	Luận giải: Đây là phiên bản Canh Kim chủ động và có mục đích rõ ràng. Họ dùng sức mạnh của mình để bảo vệ công lý, thực thi kỷ luật. Họ là những nhà lãnh đạo hành động, những người thực thi pháp luật, những người tiên phong dọn đường.
-•	Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
-•	Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
-`,
+            title: "Đinh Hỏa Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Đinh Hỏa phải từ bỏ bản chất soi sáng của mình để "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải học cách tồn tại bằng cách nương theo một năng lượng khác mạnh mẽ hơn.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút "dầu" hay "củi" cũng sẽ phá vỡ cấu trúc Tòng cách, gây ra sự giằng xé nội tâm và thất bại.`,
+          },
+        ],
+      },
+      {
+        nguHanh: "Mậu",
+        forceRanges: [
+          {
+            id: 0,
+            title: "Mậu Thổ Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Ở trạng thái này, Mậu Thổ không còn là một ngọn núi mà là cả một dãy núi. Sự vững chãi và kiên định biến thành sự bảo thủ tuyệt đối, không thể lay chuyển. Họ giống như một pháo đài bất khả xâm phạm, mọi ý kiến từ bên ngoài đều bị chặn lại. Sự bảo vệ của họ trở nên ngột ngạt, và sự ổn định của họ trở thành lực cản cho mọi sự thay đổi.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng được sinh trợ và có đồng minh, mệnh cục càng trở nên thịnh vượng.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút áp lực hay kỷ luật cũng có thể "chọc giận" toàn bộ cấu trúc Vượng, gây ra sụp đổ thảm khốc. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+          },
+          {
+            id: 1,
+            title: "Mậu Thổ Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Mậu Thổ kinh điển: đáng tin cậy, trung thành, trọng chữ tín và có những nguyên tắc sống không thể lay chuyển. Họ là điểm tựa vững chắc cho người khác, là người lãnh đạo bảo vệ tập thể bằng sự kiên định của mình. Họ không mưu mẹo, hành động thẳng thắn và quang minh chính đại.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để tiết chế bớt năng lượng. Power Forces (the Leader & the Warrior) mang lại kỷ luật và quyền lực; Economic Forces (the Provider & the Venturer) cho mục tiêu phấn đấu; Creation Forces (the Creator & the Innovator) để thể hiện tài năng.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng làm cho Mậu Thổ càng thêm mạnh và mất cân bằng.
+            `,
+          },
+          {
+            id: 2,
+            title: "Mậu Thổ Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Mậu Thổ chủ động trong việc bảo vệ và xây dựng. Họ không chỉ đứng yên mà còn tích cực tạo ra các quy tắc, hệ thống và cấu trúc để mang lại sự an toàn cho mọi người. Họ là người lãnh đạo tạo ra một môi trường ổn định và đáng tin cậy.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces để tối ưu hóa tiềm năng.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+          },
+          {
+            id: 3,
+            title: "Mậu Thổ Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Mậu Thổ. Họ vững chãi nhưng không hề cứng nhắc. Họ có nguyên tắc mạnh mẽ nhưng cũng đủ trí tuệ để thấu hiểu và bao dung cho sự khác biệt. Họ giống như một vị thẩm phán công tâm hay một người trưởng lão thông thái, biết khi nào cần đứng yên và khi nào cần để dòng chảy cuộc sống đi qua.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa các lực lượng giúp lưu thông khí trong lá số như the Creator/Innovator (Creation Forces). Tùy vào cấu trúc, có thể cần một chút Power Forces để có định hướng hoặc Economic Forces để có mục tiêu.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ thế cân bằng tinh tế sẵn có.
+            `,
+          },
+          {
+            id: 4,
+            title: "Mậu Thổ Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Mậu Thổ dễ tiếp cận và hòa đồng hơn. Họ vẫn giữ được sự đáng tin cậy và lòng trung thành, nhưng cởi mở hơn trong việc lắng nghe và hợp tác. Họ lãnh đạo bằng cách tạo dựng sự đồng thuận thay vì dùng uy quyền.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp Mậu Thổ vững vàng hơn.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+          },
+          {
+            id: 5,
+            title: "Mậu Thổ Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Ngọn núi đã bị bào mòn thành cát. Bản năng muốn ổn định vẫn còn đó, nhưng họ thiếu nội lực để duy trì nó. Họ thường cảm thấy bất an và luôn tìm kiếm sự công nhận từ bên ngoài. Vẻ ngoài có thể tỏ ra cứng rắn như một cơ chế phòng vệ, nhưng bên trong lại đầy dao động.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để sinh trợ và hỗ trợ.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior), Economic Forces (the Provider & the Venturer), và Creation Forces (the Creator & the Innovator), vì chúng làm Mậu Thổ càng thêm suy yếu.
+            `,
+          },
+          {
+            id: 6,
+            title: "Mậu Thổ Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Mậu Thổ phải từ bỏ bản chất kiên định của mình để "Tòng" (Follow) theo hành vượng nhất trong lá số. Sự đấu tranh nội tâm giữa bản năng muốn ổn định và thực tế phải thuận theo dòng chảy có thể rất lớn.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Mậu Thổ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó. Ví dụ, nếu Tòng theo Power Forces, thì Economic Forces cũng trở nên thuận lợi.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Sự xuất hiện của chúng sẽ phá vỡ thế "Tòng cách", gây ra xung đột và khủng hoảng định mệnh.
+            `,
+          },
+        ],
+      },
+      {
+        nguHanh: "Kỷ",
+        forceRanges: [
+          {
+            id: 0,
+            title: "Kỷ Thổ Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Ở trạng thái này, đất vườn đã tích tụ đến mức trở nên quá dày và đặc. Tính linh hoạt và nuôi dưỡng bị thay thế bởi sự bảo thủ, cố chấp và ì ở mức độ cực đoan. Họ quá tin vào bản thân đến mức từ chối mọi sự góp ý. Lòng tốt và mong muốn chăm sóc có thể biến thành sự kiểm soát và áp đặt.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng được sinh trợ và có đồng minh, mệnh cục càng trở nên thịnh vượng.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút áp lực hay kỷ luật cũng có thể "chọc giận" toàn bộ cấu trúc Vượng, gây ra sụp đổ thảm khốc. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+          },
+          {
+            id: 1,
+            title: "Kỷ Thổ Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là một Kỷ Thổ mạnh mẽ và tích cực. Họ có đủ nội lực để trở thành một trụ cột vững chắc cho gia đình và tổ chức. Họ đáng tin cậy, có trách nhiệm, và khả năng hỗ trợ, vun trồng của họ được phát huy tối đa.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để tiết chế bớt năng lượng. Power Forces (the Leader & the Warrior) mang lại kỷ luật và quyền lực; Economic Forces (the Provider & the Venturer) cho mục tiêu phấn đấu; Creation Forces (the Creator & the Innovator) để thể hiện tài năng.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng làm cho Kỷ Thổ càng thêm mạnh và mất cân bằng.
+            `,
+          },
+          {
+            id: 2,
+            title: "Kỷ Thổ Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Kỷ Thổ vững vàng và chủ động hơn. Họ tự tin vào khả năng của mình, sẵn sàng đứng ra dẫn dắt, che chở và hỗ trợ người khác một cách mạnh mẽ. Họ là người bảo trợ đáng tin cậy.
+• Lực lượng thuận lợi (Favorable Forces): Tương tự như Cường, ưu tiên Power Forces, Economic Forces, và Creation Forces để đạt đến sự cân bằng hoàn hảo.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+          },
+          {
+            id: 3,
+            title: "Kỷ Thổ Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Kỷ Thổ. Mọi phẩm chất tốt đẹp nhất được thể hiện một cách hài hòa. Họ giàu lòng nhân ái, kiên nhẫn, linh hoạt, khéo léo và có khả năng kiến tạo sự hòa hợp. Đây là mẫu người có thể phát triển ổn định và bền vững nhất.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa các lực lượng giúp lưu thông khí trong lá số như the Creator/Innovator (Creation Forces). Tùy vào cấu trúc, có thể cần một chút Power Forces để có định hướng hoặc Economic Forces để có mục tiêu.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ thế cân bằng tinh tế sẵn có
+            `,
+          },
+          {
+            id: 4,
+            title: "Kỷ Thổ Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Kỷ Thổ khéo léo và linh hoạt hơn. Thay vì áp đặt, họ dùng sự lắng nghe sâu sắc và khả năng hợp tác tuyệt vời để vun trồng các mối quan hệ và dự án. Họ là nhà ngoại giao và người hòa giải tài tình.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp Nhật Chủ vững vàng hơn.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+          },
+          {
+            id: 5,
+            title: "Kỷ Thổ Nhược (Weak): 25% – 35%",
+            data: `Luận giải: Đất vườn lúc này thiếu dưỡng chất. Sự linh hoạt biến thành sự do dự, thiếu chính kiến. Họ dễ bị môi trường và người khác tác động. Họ có xu hướng lo lắng nhiều, thiếu tự tin, và lòng tốt dễ bị lợi dụng.
+Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để sinh trợ và hỗ trợ.
+Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior), Economic Forces (the Provider & the Venturer), và Creation Forces (the Creator & the Innovator), vì chúng làm Nhật Chủ càng thêm suy yếu.
+            `,
+          },
+          {
+            id: 6,
+            title: "Kỷ Thổ Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Kỷ Thổ gần như mất đi bản chất của mình và phải "Tòng" (Follow) theo lực lượng đối lập vượng nhất trong lá số. Họ trở thành một người cực kỳ chuyên biệt, dồn hết năng lượng vào một hướng duy nhất.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó. Ví dụ, nếu Tòng theo Economic Forces, thì Creation Forces cũng trở nên thuận lợi.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Sự xuất hiện của chúng sẽ phá vỡ thế "Tòng cách", khiến Nhật Chủ cố gắng trở lại bản chất yếu ớt của mình và gây ra xung đột nội tâm dữ dội.`,
+          },
+        ],
+      },
+      {
+        nguHanh: "Canh",
+        forceRanges: [
+          {
+            id: 0,
+            title: "Canh Kim Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Lúc này, thanh kiếm đã trở thành một vũ khí hủy diệt không thể kiểm soát. Sự quyết đoán biến thành sự liều lĩnh, phá phách. Lòng nghĩa khí trở thành sự cố chấp cực đoan, sẵn sàng "chém" phăng mọi thứ cản đường mà không cần suy xét hậu quả. Họ là một lực lượng của sự thay đổi dữ dội, một cuộc cách mạng không khoan nhượng.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng được bồi đắp và có đồng minh, sức mạnh càng trở nên áp đảo.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Lửa (Hỏa) rèn Kim lúc này sẽ gây ra một sự chống trả dữ dội, dẫn đến cả hai cùng bị hủy diệt. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+          },
+          {
+            id: 1,
+            title: "Canh Kim Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Canh Kim của chiến binh, của vị tướng quân. Họ trọng nghĩa khí, công bằng, và hành động. Họ là người bạn trung thành nhưng cũng là đối thủ đáng gờm. Với họ, vấn đề được giải quyết bằng hành động trực diện và dứt khoát, không phải bằng mưu mẹo hay lời nói.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để được tôi luyện. Power Forces (the Leader & the Warrior) để biến kim loại thô thành vũ khí hữu dụng; Economic Forces (the Provider & the Venturer) để có mục tiêu chinh phục; Creation Forces (the Creator & the Innovator) để thể hiện sức mạnh.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng khiến kim loại trở nên quá cứng và giòn, dễ gãy.
+            `,
+          },
+          {
+            id: 2,
+            title: "Canh Kim Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Canh Kim chủ động và có mục đích rõ ràng. Họ dùng sức mạnh của mình để bảo vệ công lý, thực thi kỷ luật. Họ là những nhà lãnh đạo hành động, những người thực thi pháp luật, những người tiên phong dọn đường.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+          },
+          {
+            id: 3,
+            title: "Canh Kim Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Canh Kim. Sự cứng rắn của họ được cân bằng bởi trí tuệ và sự công tâm. Họ là người phân xử, người đàm phán, người có khả năng nhìn nhận vấn đề một cách khách quan và đưa ra quyết định dựa trên lẽ phải.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Power Forces (the Leader/Warrior) để có được thẩm quyền chính thức, và Creation Forces (the Creator/Innovator) để thể hiện sự khôn ngoan của mình.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
+            `,
+          },
+          {
+            id: 4,
+            title: "Canh Kim Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Canh Kim có tiềm năng nhưng cần sự định hướng. Họ vẫn có sự cứng rắn và nghĩa khí, nhưng cởi mở hơn trong việc hợp tác và tuân theo một khuôn khổ. Họ là những người đồng đội trung thành, sẵn sàng cống hiến cho một mục tiêu lớn hơn.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp họ trở nên mạnh mẽ hơn.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+          },
+          {
+            id: 5,
+            title: "Canh Kim Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Bản chất của họ là muốn hành động, muốn quyết đoán, nhưng lại thiếu sức mạnh và sự tự tin để làm điều đó. Điều này tạo ra sự ức chế và bất mãn lớn. Họ sợ xung đột, sợ phải đưa ra quyết định và thường trì hoãn hành động.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để "mài sắc" lại thanh kiếm.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như lửa nung chảy kim loại yếu. Economic Forces và Creation Forces cũng làm họ kiệt sức.
+            `,
+          },
+          {
+            id: 6,
+            title: "Canh Kim Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Canh Kim phải từ bỏ bản chất "chiến binh" của mình để "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải học cách tồn tại bằng cách trở thành công cụ cho một sức mạnh khác.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút hỗ trợ cũng sẽ "đánh thức" bản năng chiến binh, phá vỡ cấu trúc Tòng cách và gây ra tai họa.
+            `,
+          },
+        ],
+      },
+      {
+        nguHanh: "Tân",
+        forceRanges: [
+          {
+            id: 0,
+            title: "Tân Kim Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Lúc này, viên kim cương không còn tỏa sáng mà trở nên sắc lạnh và nguy hiểm. Sự tinh tế biến thành sự chỉ trích, phán xét cực đoan. Lòng tự tôn trở thành sự kiêu ngạo và tự mãn tột độ. Lời nói của họ sắc như dao, làm tổn thương tất cả những ai đến gần. Họ tự cô lập mình trong một thế giới hoàn hảo nhưng không có sự ấm áp.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival).
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Lửa (Hỏa) nung chảy món trang sức tinh xảo sẽ hủy hoại hoàn toàn giá trị của nó. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+          },
+          {
+            id: 1,
+            title: "Tân Kim Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Tân Kim của người nổi bật bằng giá trị và sự tinh xảo. Họ là những chuyên gia hàng đầu, những nhà phê bình sắc sảo, những nghệ sĩ theo đuổi sự hoàn mỹ. Họ có lòng tự tôn cao, yêu cái đẹp và luôn đòi hỏi chất lượng tốt nhất trong mọi việc. Lời nói của họ rất có trọng lượng.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập. Power Forces (the Leader & the Warrior) để định hình giá trị; Creation Forces (the Creator & the Innovator) để tỏa sáng lấp lánh; Economic Forces (the Provider & the Venturer) để giá trị của họ được công nhận.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) - như đất bùn làm bẩn viên ngọc. Companion Forces (the Companion & the Rival) - vì kim cương không muốn bị so sánh với những viên đá khác.
+            `,
+          },
+          {
+            id: 2,
+            title: "Tân Kim Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Tân Kim chủ động dùng sự sắc bén của mình để tạo ra giá trị. Họ là những chuyên gia có khả năng phân tích, mổ xẻ vấn đề một cách chính xác. Họ lãnh đạo bằng kiến thức chuyên môn và tiêu chuẩn cao.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+          },
+          {
+            id: 3,
+            title: "Tân Kim Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Tân Kim. Sự sắc bén của họ được cân bằng bởi sự duyên dáng và tinh tế. Họ vừa có giá trị nội tại, vừa biết cách thể hiện ra ngoài một cách thu hút. Họ là những người có gu thẩm mỹ cao, những nhà ngoại giao thanh lịch.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để thể hiện vẻ đẹp của mình và Power Forces (the Leader/Warrior) để được đặt trong một bối cảnh xứng đáng.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
+            `,
+          },
+          {
+            id: 4,
+            title: "Tân Kim Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Tân Kim khiêm tốn và cần được nâng đỡ. Giá trị của họ vẫn ở đó, nhưng họ cần một môi trường, một bối cảnh phù hợp để tỏa sáng. Họ giỏi lắng nghe và hoàn thiện bản thân thông qua góp ý.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp họ tự tin hơn vào giá trị của mình.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+          },
+          {
+            id: 5,
+            title: "Tân Kim Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Họ cảm nhận được giá trị tiềm ẩn của bản thân nhưng lại thiếu sự hỗ trợ (Đất) để được khai phá và ngọn lửa (Lửa) để được mài giũa. Điều này tạo ra cảm giác tự ti, mặc cảm, cảm thấy mình bị đánh giá thấp hoặc không được công nhận.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) - như đất mang khoáng sản - là quan trọng nhất. Companion Forces (the Companion & the Rival) cũng rất cần thiết.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như lửa nung chảy món trang sức yếu ớt. Economic Forces và Creation Forces cũng làm họ kiệt sức.
+
+            `,
+          },
+          {
+            id: 6,
+            title: "Tân Kim Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Tân Kim phải từ bỏ hoàn toàn lòng tự tôn và giá trị cá nhân để "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải tìm thấy giá trị của mình thông qua việc phục vụ cho một mục đích hoặc một sức mạnh khác.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút hỗ trợ cũng sẽ "đánh thức" lòng tự tôn, phá vỡ cấu trúc Tòng cách và gây ra khủng hoảng.
+            `,
+          },
+        ],
+      },
+      {
+        nguHanh: "Nhâm",
+        forceRanges: [
+          {
+            id: 0,
+            title: "Nhâm Thủy Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Ở trạng thái này, đại dương không còn hiền hòa mà trở thành một cơn lũ không thể kiểm soát. Sự thông minh và tự do biến thành sự liều lĩnh, ngông cuồng và kiêu ngạo. Giống như một cơn sóng thần, họ cuốn phăng mọi thứ trên đường đi, tạo ra sự hỗn loạn và không tuân theo bất kỳ quy tắc nào.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng có nhiều Kim sinh và Thủy trợ, dòng chảy càng trở nên mạnh mẽ vô địch.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút đất (Thổ) cố gắng ngăn chặn dòng lũ sẽ chỉ khiến nó trở nên hung tợn và phá vỡ tất cả. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+          },
+          {
+            id: 1,
+            title: "Nhâm Thủy Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Nhâm Thủy của nhà chiến lược, nhà thám hiểm, hoặc thương nhân lớn. Họ thông minh, có tầm nhìn xa, linh hoạt và luôn chuyển động. Giống như một dòng sông lớn, họ có khả năng kết nối các vùng đất, tạo ra các tuyến giao thương và mang lại sự thịnh vượng. Sức mạnh của họ rất lớn và có tầm ảnh hưởng rộng.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để năng lượng được hữu dụng. Power Forces (the Leader & the Warrior) để xây đê, tạo ra phương hướng; Economic Forces (the Provider & the Venturer) là mục tiêu để chinh phục; Creation Forces (the Creator & the Innovator) để Thủy sinh Mộc, thể hiện trí tuệ.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng khiến dòng chảy trở nên quá mạnh và mất kiểm soát.
+            `,
+          },
+          {
+            id: 2,
+            title: "Nhâm Thủy Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Nhâm Thủy chủ động và đầy tham vọng. Họ tự tin vào khả năng của mình để chinh phục những mục tiêu lớn. Họ là những người tiên phong, không ngại dấn thân vào những lĩnh vực mới mẻ và đầy thách thức.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+          },
+          {
+            id: 3,
+            title: "Nhâm Thủy Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Nhâm Thủy. Trí tuệ của họ sâu sắc nhưng tĩnh lặng. Họ có khả năng nhìn thấu vấn đề mà không bị cuốn theo sự hỗn loạn bên ngoài. Họ linh hoạt nhưng không dễ dao động, mạnh mẽ nhưng không áp đảo. Họ là những nhà tư tưởng, nhà hoạch định chính sách khôn ngoan.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để trí tuệ của họ được thể hiện ra ngoài, và Power Forces (the Leader/Warrior) để có được sự ổn định và định hướng.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
+            `,
+          },
+          {
+            id: 4,
+            title: "Nhâm Thủy Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Nhâm Thủy khéo léo và có mục đích. Họ hiểu rằng sức mạnh của mình sẽ được phát huy tốt nhất khi chảy trong một hệ thống có sẵn. Họ giỏi tận dụng các nguồn lực và làm việc hiệu quả trong một tập thể.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp dòng chảy không bao giờ cạn.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+          },
+          {
+            id: 5,
+            title: "Nhật Chủ Giáp Mộc Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Bản năng của họ là muốn vươn lên thẳng tắp, nhưng lại thiếu "nước" (hỗ trợ) và "đất" (nguồn lực) để làm điều đó. Điều này tạo ra cảm giác bất lực, hoài bão lớn nhưng không thể thực hiện. Họ sợ bị "chặt hạ" bởi áp lực và chỉ trích.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để cây có thể lớn lên.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như rìu chặt cây non. Creation Forces và Economic Forces cũng làm họ kiệt sức.
+            `,
+          },
+          {
+            id: 6,
+            title: "Nhâm Thủy Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Bản chất của họ là muốn chảy, muốn được tự do, nhưng lại thiếu nguồn (Kim) và đồng minh (Thủy) để tạo thành dòng. Điều này tạo ra cảm giác bị mắc kẹt, tù túng và bất mãn. Trí thông minh của họ không được sử dụng, gây ra sự trì trệ.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để tạo ra dòng chảy.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như đất đắp ngăn vũng nước nhỏ. Creation Forces và Economic Forces cũng làm họ khô cạn.
+            `,
+          },
+        ],
+      },
+      {
+        nguHanh: "Quý",
+        forceRanges: [
+          {
+            id: 0,
+            title: "Quý Thủy Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Lúc này, cơn mưa nuôi dưỡng vạn vật đã trở thành một trận mưa dai dẳng, lạnh lẽo và u ám, gây ra ngập úng. Sự thâm nhập tinh tế biến thành sự soi mói, đa nghi. Nội tâm sâu sắc trở thành sự u uất, trầm cảm. Họ tạo ra một môi trường cảm xúc tiêu cực, làm "thối rữa" mọi sự sống.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival).
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Đất (Thổ) cố gắng ngăn chặn cơn mưa dầm sẽ chỉ biến thành bùn lầy. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+          },
+          {
+            id: 1,
+            title: "Quý Thủy Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Quý Thủy của người thầy, người chữa lành, người nuôi dưỡng tinh thần. Trí tuệ của họ không phô trương mà thấm nhuần một cách nhẹ nhàng, từ tốn. Họ kiên nhẫn, thấu cảm và có khả năng dùng lời nói, kiến thức của mình để tưới tẩm cho tâm hồn người khác.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập. Power Forces (the Leader & the Warrior) để dòng suối chảy trong русло; Economic Forces (the Provider & the Venturer) để chinh phục ngọn lửa; Creation Forces (the Creator & the Innovator) để nuôi dưỡng cây cối.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng khiến dòng suối trở nên quá lớn và mất đi sự trong trẻo.
+            `,
+          },
+          {
+            id: 2,
+            title: "Quý Thủy Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Quý Thủy chủ động hơn trong việc lan tỏa ảnh hưởng. Giống như sương mù, họ thâm nhập vào mọi ngóc ngách một cách thầm lặng nhưng hiệu quả. Họ là những nhà chiến lược, những người có khả năng gây ảnh hưởng mà không cần đối đầu trực diện.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+          },
+          {
+            id: 3,
+            title: "Quý Thủy Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Quý Thủy. Họ tinh khiết, trong trẻo và mang trong mình cả một thế giới. Trí tuệ của họ cô đọng và quý giá. Họ là những nghệ sĩ, nhà thơ, những người có khả năng nhìn thấy vẻ đẹp và sự thật trong những điều nhỏ bé nhất.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để nuôi dưỡng và thể hiện sự sáng tạo, và Economic Forces (the Provider/Venturer) để mang lại giá trị thực tế.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
+            `,
+          },
+          {
+            id: 4,
+            title: "Quý Thủy Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Quý Thủy khiêm tốn, mang lại sự an ủi và chữa lành. Họ không chủ động gây ảnh hưởng mà chờ đợi được tìm đến. Họ là những người bạn tâm giao, người biết lắng nghe và đưa ra lời khuyên chân thành.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là rất quan trọng.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+          },
+          {
+            id: 5,
+            title: "Quý Thủy Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Năng lượng của họ rất yếu ớt, dễ bay hơi. Họ cảm thấy mình nhỏ bé và bất lực trước cuộc sống. Nội tâm của họ đầy lo âu và nhạy cảm. Họ dễ bị tổn thương và thường nhìn cuộc sống qua lăng kính bi quan.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) - như nguồn nước - là quan trọng nhất. Companion Forces (the Companion & the Rival) cũng rất cần thiết.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như đất hút cạn nước. Creation Forces và Economic Forces cũng làm họ kiệt quệ.
+            `,
+          },
+          {
+            id: 6,
+            title: "Quý Thủy Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Quý Thủy gần như vô hình và phải "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải học cách tồn tại bằng cách hòa tan hoàn toàn vào một năng lượng khác.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút hỗ trợ cũng sẽ khiến "hơi thở" ngưng tụ, phá vỡ cấu trúc Tòng cách và gây ra khủng hoảng.
+            `,
           },
         ],
       },
