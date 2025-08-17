@@ -627,6 +627,7 @@ const convertHourInfo = (baseInfo) => {
       namSinh,
       duongLich
     );
+    gioSinh = 1;
   }
   if (gioThoiVan === 13) {
     [ngayLuuNhat, thangLuuNguyet, namXemTieuVan] = getNextDay(
@@ -672,7 +673,7 @@ const getTuHoaBazi = (can, thapNhiCung, endName) => {
   let viTriVanXuong = getViTriSao(57, thapNhiCung);
   let viTriTaPhu = getViTriSao(61, thapNhiCung);
   let viTriHuuBat = getViTriSao(62, thapNhiCung);
-   
+
   switch (can) {
     case 1:
       viTriHoaLoc = viTriLiemTrinh;
@@ -805,7 +806,7 @@ const addTuHoaBazi = (
     },
   ];
   for (let item of data) {
-    if(item.can){
+    if (item.can) {
       getTuHoaBazi(item.can, thapNhiCung, item.endName);
     }
   }
@@ -816,6 +817,7 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
   if (!boTruGio) {
     originHour = baseInfo.gioSinh;
     baseInfo = convertHourInfo(baseInfo);
+    console.log(baseInfo);
     chiGioSinh = diaChi[baseInfo.gioSinh];
     canGioSinh =
       ((((jdFromDate(baseInfo.ngaySinh, baseInfo.thangSinh, baseInfo.namSinh) -
@@ -828,6 +830,7 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
       canGioSinh = 10;
     }
     canGioSinhTen = thienCan[canGioSinh].tenCan;
+    console.log(chiGioSinh);
     chiGioSinhTen = chiGioSinh.tenChi;
   }
   let amLich = S2L(
