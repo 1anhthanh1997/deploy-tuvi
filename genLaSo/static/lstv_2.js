@@ -1981,7 +1981,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
   const getSupportForces = (can) => {
     let forceData = [
       {
-        nguHanh: "Giáp",
+        can: "Giáp",
         forceRanges: [
           {
             id: 0,
@@ -2043,7 +2043,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
         ],
       },
       {
-        nguHanh: "Ất",
+        can: "Ất",
         forceRanges: [
           {
             id: 0,
@@ -2104,7 +2104,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
         ],
       },
       {
-        nguHanh: "Bính",
+        can: "Bính",
         forceRanges: [
           {
             id: 0,
@@ -2165,7 +2165,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
         ],
       },
       {
-        nguHanh: "Đinh",
+        can: "Đinh",
         forceRanges: [
           {
             id: 0,
@@ -2225,7 +2225,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         ],
       },
       {
-        nguHanh: "Mậu",
+        can: "Mậu",
         forceRanges: [
           {
             id: 0,
@@ -2286,7 +2286,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         ],
       },
       {
-        nguHanh: "Kỷ",
+        can: "Kỷ",
         forceRanges: [
           {
             id: 0,
@@ -2331,9 +2331,9 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
           {
             id: 5,
             title: "Kỷ Thổ Nhược (Weak): 25% – 35%",
-            data: `Luận giải: Đất vườn lúc này thiếu dưỡng chất. Sự linh hoạt biến thành sự do dự, thiếu chính kiến. Họ dễ bị môi trường và người khác tác động. Họ có xu hướng lo lắng nhiều, thiếu tự tin, và lòng tốt dễ bị lợi dụng.
-Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để sinh trợ và hỗ trợ.
-Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior), Economic Forces (the Provider & the Venturer), và Creation Forces (the Creator & the Innovator), vì chúng làm Nhật Chủ càng thêm suy yếu.
+            data: `• Luận giải: Đất vườn lúc này thiếu dưỡng chất. Sự linh hoạt biến thành sự do dự, thiếu chính kiến. Họ dễ bị môi trường và người khác tác động. Họ có xu hướng lo lắng nhiều, thiếu tự tin, và lòng tốt dễ bị lợi dụng.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để sinh trợ và hỗ trợ.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior), Economic Forces (the Provider & the Venturer), và Creation Forces (the Creator & the Innovator), vì chúng làm Nhật Chủ càng thêm suy yếu.
             `,
           },
           {
@@ -2346,7 +2346,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         ],
       },
       {
-        nguHanh: "Canh",
+        can: "Canh",
         forceRanges: [
           {
             id: 0,
@@ -2407,7 +2407,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         ],
       },
       {
-        nguHanh: "Tân",
+        can: "Tân",
         forceRanges: [
           {
             id: 0,
@@ -2469,7 +2469,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         ],
       },
       {
-        nguHanh: "Nhâm",
+        can: "Nhâm",
         forceRanges: [
           {
             id: 0,
@@ -2530,7 +2530,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         ],
       },
       {
-        nguHanh: "Quý",
+        can: "Quý",
         forceRanges: [
           {
             id: 0,
@@ -2591,6 +2591,110 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         ],
       },
     ];
+    console.log(forceData.find((item) => item.can === can).forceRanges);
+    return forceData.find((item) => item.can === can).forceRanges;
+  };
+
+  const getNguHanhHoTro = (nguHanh) => {
+    switch (nguHanh) {
+      case "Thủy":
+        return "Kim";
+      case "Thổ":
+        return "Hỏa";
+      case "Mộc":
+        return "Thủy";
+      case "Kim":
+        return "Thổ";
+      case "Hỏa":
+        return "Mộc";
+      default:
+        return "";
+    }
+  };
+
+  const getSupportPercent = (nhatChu, nguHanhScore) => {
+    let dongHanhPercent = 0;
+    let hoTroPercent = 0;
+    let nhatChuNguHanh = nhatChu.nguHanhCan;
+
+    for (let nguHanh of nguHanhScore) {
+      if (nguHanh.name === nhatChuNguHanh) {
+        dongHanhPercent = nguHanh.percent;
+      }
+      if (nguHanh.name === getNguHanhHoTro(nhatChuNguHanh)) {
+        hoTroPercent = nguHanh.percent;
+      }
+    }
+    return {
+      dongHanhPercent: parseFloat(dongHanhPercent),
+      hoTroPercent: parseFloat(hoTroPercent),
+      ratio: parseFloat(dongHanhPercent / hoTroPercent).toFixed(2),
+    };
+  };
+
+  const getRoleText = (dongHanhPercent, hoTroPercent) => {
+    if (dongHanhPercent > hoTroPercent) {
+      return "Lực Lượng Đồng Hành có vai trò quan trọng hơn Lực Lượng Hỗ Trợ trong việc cấu thành Sức Mạnh của Nhật Chủ";
+    } else if (dongHanhPercent < hoTroPercent) {
+      return "Lực Lượng Hỗ Trợ có vai trò quan trọng hơn Lực Lượng Đồng Hành trong việc cấu thành Sức Mạnh của Nhật Chủ";
+    } else {
+      return "Lực Lượng Đồng Hành và Lực Lượng Hỗ Trợ có vai trò tương đương trong việc cấu thành Sức Mạnh Nhật Chủ";
+    }
+  };
+
+  const getForcesDetail = (nhatChu, dongHanhPercent, hoTroPercent) => {
+    let forces = getSupportForces(nhatChu.can);
+    let totalPercent = dongHanhPercent + hoTroPercent;
+    console.log(totalPercent);
+    let majorForcesIndex = 0;
+    if (totalPercent > 74) {
+      majorForcesIndex = 0;
+    } else if (totalPercent >= 65) {
+      majorForcesIndex = 1;
+    } else if (totalPercent >= 55) {
+      majorForcesIndex = 2;
+    } else if (totalPercent >= 45) {
+      majorForcesIndex = 3;
+    } else if (totalPercent >= 35) {
+      majorForcesIndex = 4;
+    } else if (totalPercent >= 25) {
+      majorForcesIndex = 5;
+    } else {
+      majorForcesIndex = 6;
+    }
+    let minorForcesIndex = null;
+    if (
+      Math.round(dongHanhPercent / totalPercent) !==
+      Math.round(hoTroPercent / totalPercent)
+    ) {
+      if (majorForcesIndex == 0) {
+        minorForcesIndex = 1;
+      } else if (majorForcesIndex == 6) {
+        minorForcesIndex = 5;
+      } else if (Math.round(dongHanhPercent) > Math.round(hoTroPercent)) {
+        minorForcesIndex = majorForcesIndex - 1;
+      } else if (
+        Math.round(dongHanhPercent / totalPercent) <
+        Math.round(hoTroPercent / totalPercent)
+      ) {
+        minorForcesIndex = majorForcesIndex + 1;
+      }
+    }
+    console.log(majorForcesIndex, minorForcesIndex);
+
+    return {
+      majorForces: {
+        title: forces[majorForcesIndex].title,
+        data: forces[majorForcesIndex].data,
+      },
+      minorForces:
+        minorForcesIndex || minorForcesIndex == 0
+          ? {
+              title: forces[minorForcesIndex].title,
+              data: forces[minorForcesIndex].data,
+            }
+          : {title:"",data:""},
+    };
   };
 
   const getTuTruData = (bazi, baseInfo) => {
@@ -2655,39 +2759,41 @@ Trụ Giờ
     )
     .join("\n\n")}
   
-Tỷ lệ Lực lượng đồng hành/Lực lượng hỗ trợ = 2.25, vậy 
-lực lượng đồng hành có vai trò hạn chế trong việc hình thành sức mạnh của Nhật 
-Chủ. 
-Canh Kim Cường (Strong): 65% – 74% 
-
-Luận giải: Đây 
-là hình mẫu Canh Kim của chiến binh, của vị tướng quân. Họ trọng nghĩa 
-khí, công bằng, và hành động. Họ là người bạn trung thành nhưng cũng là đối 
-thủ đáng gờm. Với họ, vấn đề được giải quyết bằng hành động trực diện và dứt 
-khoát, không phải bằng mưu mẹo hay lời nói. 
-
-Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để được tôi luyện. Power 
-Forces (the Leader & the Warrior) để biến kim loại thô thành vũ 
-khí hữu dụng; Economic Forces (the Provider & the Venturer) để 
-có mục tiêu chinh phục; Creation Forces (the Creator & the 
-Innovator) để thể hiện sức mạnh. 
-
-Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the 
-Maverick) và Companion Forces (the Companion & the Rival), 
-vì chúng khiến kim loại trở nên quá cứng và giòn, dễ gãy. 
-3. Canh Kim Cân Bằng (thiên Cường): 55% – 65% 
-
-Luận giải: Đây 
-là phiên bản Canh Kim chủ động và có mục đích rõ ràng. Họ dùng sức mạnh của 
-mình để bảo vệ công lý, thực thi kỷ luật. Họ là những nhà lãnh đạo hành động, 
-những người thực thi pháp luật, những người tiên phong dọn đường. 
-
-Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và 
-Creation Forces. 
-
-Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces. 
-
-
+Tỷ lệ Lực lượng đồng hành/Lực lượng hỗ trợ = ${
+      getSupportPercent(nhatChu, nguHanhScore).ratio
+    }, vậy ${getRoleText(
+      getSupportPercent(nhatChu, nguHanhScore).dongHanhPercent,
+      getSupportPercent(nhatChu, nguHanhScore).hoTroPercent
+    )}. 
+    
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScore).dongHanhPercent,
+    getSupportPercent(nhatChu, nguHanhScore).hoTroPercent
+  ).majorForces.title
+}
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScore).dongHanhPercent,
+    getSupportPercent(nhatChu, nguHanhScore).hoTroPercent
+  ).majorForces.data
+}
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScore).dongHanhPercent,
+    getSupportPercent(nhatChu, nguHanhScore).hoTroPercent
+  ).minorForces?.title
+}
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScore).dongHanhPercent,
+    getSupportPercent(nhatChu, nguHanhScore).hoTroPercent
+  ).minorForces?.data
+}
 5. Ngũ Hành Nạp Âm
 •	Trụ Năm:  ${nam.nguHanhNapAm}
 •	Trụ Tháng: ${thang.nguHanhNapAm}

@@ -817,7 +817,6 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
   if (!boTruGio) {
     originHour = baseInfo.gioSinh;
     baseInfo = convertHourInfo(baseInfo);
-    console.log(baseInfo);
     chiGioSinh = diaChi[baseInfo.gioSinh];
     canGioSinh =
       ((((jdFromDate(baseInfo.ngaySinh, baseInfo.thangSinh, baseInfo.namSinh) -
@@ -830,7 +829,6 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
       canGioSinh = 10;
     }
     canGioSinhTen = thienCan[canGioSinh].tenCan;
-    console.log(chiGioSinh);
     chiGioSinhTen = chiGioSinh.tenChi;
   }
   let amLich = S2L(
