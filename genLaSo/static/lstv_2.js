@@ -2693,7 +2693,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
               title: forces[minorForcesIndex].title,
               data: forces[minorForcesIndex].data,
             }
-          : {title:"",data:""},
+          : { title: "", data: "" },
     };
   };
 
