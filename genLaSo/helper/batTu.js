@@ -977,6 +977,17 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
   let ngayAmTen = canNgayTen + " " + chiNgayTen;
   let thangAmTen = canThangTen + " " + chiThangTen;
   let namAmTen = canNamTen + " " + chiNamTen;
+  let nguHanhScoreGoc = calcNguHanhScore({
+    gio: { can: canGioSinh, chi: boTruGio ? undefined : baseInfo.gioSinh },
+    ngay: { can: canNgay, chi: chiNgay },
+    thang: { can: canThang, chi: getIndex(chiThang + 2) },
+    nam: { can: canNam, chi: chiNam },
+    thoiVan: {},
+    nhatVan: {},
+    nguyetVan: {},
+    tieuVan: {},
+    daiVan: {},
+  });
   let nguHanhScore = calcNguHanhScore({
     gio: { can: canGioSinh, chi: boTruGio ? undefined : baseInfo.gioSinh },
     ngay: { can: canNgay, chi: chiNgay },
@@ -1007,6 +1018,7 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
   return {
     baseInfo: baseInfo,
     thapNhiCung: thapNhiCung,
+    nguHanhScoreGoc,
     nguHanhScore,
     hour: !boTruGio
       ? {
@@ -1095,10 +1107,13 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
     daiVan: baseInfo.namXemTieuVan
       ? {
           name: thienCan[canDaiVan].tenCan + " " + diaChi[chiDaiVan].tenChi,
+          can: thienCan[canDaiVan].tenCan,
+          chi: diaChi[chiDaiVan].tenChi,
           nguHanhNapAm: nguHanhNapAm(chiDaiVan, canDaiVan, true),
           nguHanhCan: nguHanh(thienCan[canDaiVan].nguHanh).tenHanh,
           nguHanhChi: nguHanh(diaChi[chiDaiVan].tenHanh).tenHanh,
           canTang: getCanTang(chiDaiVan),
+          canTangPercent: getCanTangPercent(chiDaiVan, canNgay),
           thapThan: getThapThan(
             thienCan[canDaiVan].nguHanh,
             thienCan[canNgay].nguHanh,
@@ -1109,10 +1124,13 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
     tieuVan: baseInfo.namXemTieuVan
       ? {
           name: thienCan[canTieuVan].tenCan + " " + diaChi[chiTieuVan].tenChi,
+          can: thienCan[canTieuVan].tenCan,
+          chi: diaChi[chiTieuVan].tenChi,
           nguHanhNapAm: nguHanhNapAm(chiTieuVan, canTieuVan, true),
           nguHanhCan: nguHanh(thienCan[canTieuVan].nguHanh).tenHanh,
           nguHanhChi: nguHanh(diaChi[chiTieuVan].tenHanh).tenHanh,
           canTang: getCanTang(chiTieuVan),
+          canTangPercent: getCanTangPercent(chiTieuVan, canNgay),
           thapThan: getThapThan(
             thienCan[canTieuVan].nguHanh,
             thienCan[canNgay].nguHanh,
@@ -1127,6 +1145,8 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
               thienCan[canNguyetVan].tenCan +
               " " +
               diaChi[getIndex(chiNguyetVan + 2)].tenChi,
+            can: thienCan[canNguyetVan].tenCan,
+            chi: diaChi[getIndex(chiNguyetVan + 2)].tenChi,
             nguHanhNapAm: nguHanhNapAm(
               getIndex(chiNguyetVan + 2),
               canNguyetVan,
@@ -1136,6 +1156,10 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
             nguHanhChi: nguHanh(diaChi[getIndex(chiNguyetVan + 2)].tenHanh)
               .tenHanh,
             canTang: getCanTang(getIndex(chiNguyetVan + 2)),
+            canTangPercent: getCanTangPercent(
+              getIndex(chiNguyetVan + 2),
+              canNgay
+            ),
             thapThan: getThapThan(
               thienCan[canNguyetVan].nguHanh,
               thienCan[canNgay].nguHanh,
@@ -1147,10 +1171,13 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
       baseInfo.ngayLuuNhat && baseInfo.thangLuuNguyet && baseInfo.namXemTieuVan
         ? {
             name: thienCan[canNhatVan].tenCan + " " + diaChi[chiNhatVan].tenChi,
+            can: thienCan[canNhatVan].tenCan,
+            chi: diaChi[chiNhatVan].tenChi,
             nguHanhNapAm: nguHanhNapAm(chiNhatVan, canNhatVan, true),
             nguHanhCan: nguHanh(thienCan[canNhatVan].nguHanh).tenHanh,
             nguHanhChi: nguHanh(diaChi[chiNhatVan].tenHanh).tenHanh,
             canTang: getCanTang(chiNhatVan),
+            canTangPercent: getCanTangPercent(chiNhatVan, canNgay),
             thapThan: getThapThan(
               thienCan[canNhatVan].nguHanh,
               thienCan[canNgay].nguHanh,
@@ -1165,10 +1192,13 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
       baseInfo.namXemTieuVan
         ? {
             name: thienCan[canThoiVan].tenCan + " " + diaChi[chiThoiVan].tenChi,
+            can: thienCan[canThoiVan].tenCan,
+            chi: diaChi[chiThoiVan].tenChi,
             nguHanhNapAm: nguHanhNapAm(chiThoiVan, canThoiVan, true),
             nguHanhCan: nguHanh(thienCan[canThoiVan].nguHanh).tenHanh,
             nguHanhChi: nguHanh(diaChi[chiThoiVan].tenHanh).tenHanh,
             canTang: getCanTang(chiThoiVan),
+            canTangPercent: getCanTangPercent(chiThoiVan, canNgay),
             thapThan: getThapThan(
               thienCan[canThoiVan].nguHanh,
               thienCan[canNgay].nguHanh,

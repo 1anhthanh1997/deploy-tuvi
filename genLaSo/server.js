@@ -98,18 +98,23 @@ app.get("/api/get-bazi", (req, res) => {
     const duongLich = req.query.amlich === "on" ? false : true;
     const gioiTinh = req.query.gioitinh === "nam" ? 1 : -1;
     const timeZone = parseInt(req.query.muigio) || 7;
-    const namXemTieuVan = req.query.namxemtieuvan
-      ? parseInt(req.query.namxemtieuvan)
-      : undefined;
-    const thangLuuNguyet = req.query.thangluunguyet
-      ? parseInt(req.query.thangluunguyet)
-      : undefined;
-    const ngayLuuNhat = req.query.ngayluunhat
-      ? parseInt(req.query.ngayluunhat)
-      : undefined;
-    const gioThoiVan = req.query.giothoivan
-      ? parseInt(req.query.giothoivan)
-      : undefined;
+    const luunien = req.query.luunien === "on" ? true : false;
+    const namXemTieuVan =
+      req.query.namxemtieuvan && luunien
+        ? parseInt(req.query.namxemtieuvan)
+        : undefined;
+    const thangLuuNguyet =
+      req.query.thangluunguyet && luunien
+        ? parseInt(req.query.thangluunguyet)
+        : undefined;
+    const ngayLuuNhat =
+      req.query.ngayluunhat && luunien
+        ? parseInt(req.query.ngayluunhat)
+        : undefined;
+    const gioThoiVan =
+      req.query.giothoivan && luunien
+        ? parseInt(req.query.giothoivan)
+        : undefined;
     const boTruGio = req.query.boTruGio === "on" ? true : false;
 
     const data = lapDiaBan(

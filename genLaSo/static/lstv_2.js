@@ -2697,43 +2697,53 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     };
   };
 
+  const getAdditionPercent = (nguHanh, nguHanhScore, nguHanhScoreGoc) => {
+    let nguHanhIndex = nguHanhScore.findIndex((item) => item.name === nguHanh);
+    let additionPercent =
+      nguHanhScore[nguHanhIndex].percent -
+      nguHanhScoreGoc[nguHanhIndex].percent;
+    return (additionPercent > 0 ? "+" : "") + additionPercent.toFixed(2) + "%";
+  };
+
   const getTuTruData = (bazi, baseInfo) => {
     let nam = bazi.year;
     let thang = bazi.month;
     let nhatChu = bazi.day;
     let gio = bazi.hour;
-    let nhatChuName = nhatChu.name.split(" ")[0];
+    let nguHanhScoreGoc = bazi.nguHanhScoreGoc;
     let nguHanhScore = bazi.nguHanhScore;
+    let daiVan = bazi.daiVan;
+    let tieuVan = bazi.tieuVan;
+    let nguyetVan = bazi.nguyetVan;
+    let nhatVan = bazi.nhatVan;
+    let thoiVan = bazi.thoiVan;
+
     let tuTru = `
     1. Lá Số Tứ Trụ của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
       baseInfo.hoTen
     } sinh năm ${baseInfo.namSinh}
-Trụ Năm
-•	Trụ Chính: ${nam.name}
+Trụ Năm Chính:${nam.name}
 •	Can: ${nam.can} (${nam.thapThan})
 •	Chi: ${nam.chi} 
 •	Can Tàng (100%): ${nam.canTangPercent
       .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
       .join(" + ")}
 •	Ngũ Hành Nạp Âm: ${nam.nguHanhNapAm}. (${nam.nguHanhNapAmThapThan})
-Trụ Tháng
-•	Trụ Chính: ${thang.name}
+Trụ Tháng Chính:${thang.name}
 •	Can: ${thang.can} (${thang.thapThan})
 •	Chi: ${thang.chi} 
 •	Can Tàng (100%): ${thang.canTangPercent
       .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
       .join(" + ")}
 •	Ngũ Hành Nạp Âm: ${thang.nguHanhNapAm}. (${thang.nguHanhNapAmThapThan})
-Trụ Ngày
-•	Trụ Chính: ${nhatChu.name}
+Trụ Ngày Chính:${nhatChu.name}
 •	Can: ${nhatChu.can} (${nhatChu.thapThan})
 •	Chi: ${nhatChu.chi} 
 •	Can Tàng (100%): ${nhatChu.canTangPercent
       .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
       .join(" + ")}
 •	Ngũ Hành Nạp Âm: ${nhatChu.nguHanhNapAm}. (${nhatChu.nguHanhNapAmThapThan})
-Trụ Giờ
-•	Trụ Chính: ${gio ? gio.name : ""}
+Trụ Giờ Chính:${gio ? gio.name : ""}
 •	Can: ${gio ? gio.can : ""} (${gio ? gio.thapThan : ""})
 •	Chi: ${gio ? gio.chi : ""} (${gio ? gio.thapThan : ""})
 •	Can Tàng (100%): ${
@@ -2746,14 +2756,126 @@ Trụ Giờ
 •	Ngũ Hành Nạp Âm: ${gio ? gio.nguHanhNapAm : ""}. (${
       gio ? gio.nguHanhNapAmThapThan : ""
     })
+    ${
+      daiVan
+        ? `\nThông tin các Trụ Thời Gian (Biến) của ${
+            baseInfo.gioiTinh === 1 ? "anh" : "chị"
+          } ${baseInfo.hoTen} sinh năm ${
+            baseInfo.namSinh
+          } tại thời điểm Giờ, Ngày, Tháng, Năm`
+        : ""
+    }
+    ${
+      daiVan
+        ? `Trụ Đại Vận Biến: ${daiVan.name}
+•	Can: ${daiVan.can} (${daiVan.thapThan})
+•	Chi: ${daiVan.chi}
+•	Can Tàng: ${daiVan.canTangPercent
+            .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
+            .join(" + ")}
+•	Trụ biến không nạp dữ liệu Ngũ Hành Nạp Âm`
+        : ""
+    }
+${
+  tieuVan
+    ? `Trụ Năm Biến: ${tieuVan.name} 
+•	Can: ${tieuVan.can} (${tieuVan.thapThan})
+•	Chi: ${tieuVan.chi}
+•	Can Tàng: ${tieuVan.canTangPercent
+        .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
+        .join(" + ")}
+•	Trụ biến không nạp dữ liệu Ngũ Hành Nạp Âm`
+    : ""
+}${
+      nguyetVan
+        ? `Trụ Tháng Biến: ${nguyetVan.name}
+•	Can: ${nguyetVan.can} (${nguyetVan.thapThan})
+•	Chi: ${nguyetVan.chi}
+•	Can Tàng: ${nguyetVan.canTangPercent
+            .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
+            .join(" + ")}
+•	Trụ biến không nạp dữ liệu Ngũ Hành Nạp Âm`
+        : ""
+    }${
+      nhatVan
+        ? `Trụ Ngày Biến: ${nhatVan.name}
+•	Can: ${nhatVan.can} (${nhatVan.thapThan})
+•	Chi: ${nhatVan.chi}
+•	Can Tàng: ${nhatVan.canTangPercent
+            .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
+            .join(" + ")}
+•	Trụ biến không nạp dữ liệu Ngũ Hành Nạp Âm`
+        : ""
+    }${
+      thoiVan
+        ? `Trụ Giờ Biến: ${thoiVan.name}
+•	Can: ${thoiVan.can} (${thoiVan.thapThan})
+•	Chi: ${thoiVan.chi}
+•	Can Tàng: ${thoiVan.canTangPercent
+            .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
+            .join(" + ")}
+•	Trụ biến không nạp dữ liệu Ngũ Hành Nạp Âm`
+        : ""
+    }    
 
 4. Tỷ Trọng Ngũ Hành gốc của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
+      baseInfo.hoTen
+    } sinh năm ${baseInfo.namSinh}
+  ${nguHanhScoreGoc
+    .map(
+      (item) =>
+        `• ${item.name}(${getCuongNhuoc(item.percent)}) = ${item.percent}%.
+        -${item.name} (${item.thapThan[0]}) = ${item.percentAm}%, 
+        +${item.name} (${item.thapThan[1]}) = ${item.percentDuong}%`
+    )
+    .join("\n\n")}
+  
+Tỷ lệ Lực lượng đồng hành/Lực lượng hỗ trợ = ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).ratio
+    }, vậy ${getRoleText(
+      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanhPercent,
+      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTroPercent
+    )}. 
+    
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanhPercent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTroPercent
+  ).majorForces.title
+}
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanhPercent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTroPercent
+  ).majorForces.data
+}
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanhPercent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTroPercent
+  ).minorForces?.title
+}
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanhPercent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTroPercent
+  ).minorForces?.data
+}
+${daiVan ? `Tỷ Trọng Ngũ Hành của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
       baseInfo.hoTen
     } sinh năm ${baseInfo.namSinh}
   ${nguHanhScore
     .map(
       (item) =>
-        `• ${item.name}(${getCuongNhuoc(item.percent)}) = ${item.percent}%.
+        `• ${item.name}(${getCuongNhuoc(item.percent)}) = ${item.percent}% (${
+          daiVan
+            ? getAdditionPercent(item.name, nguHanhScore, nguHanhScoreGoc)
+            : ""
+        }).
         -${item.name} (${item.thapThan[0]}) = ${item.percentAm}%, 
         +${item.name} (${item.thapThan[1]}) = ${item.percentDuong}%`
     )
@@ -2793,7 +2915,7 @@ ${
     getSupportPercent(nhatChu, nguHanhScore).dongHanhPercent,
     getSupportPercent(nhatChu, nguHanhScore).hoTroPercent
   ).minorForces?.data
-}
+}` : ""}
 5. Ngũ Hành Nạp Âm
 •	Trụ Năm:  ${nam.nguHanhNapAm}
 •	Trụ Tháng: ${thang.nguHanhNapAm}
@@ -3362,6 +3484,7 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
     // let ngay = bazi.day;
     // let gio = bazi.hour;
     // let nguHanhScore = bazi.nguHanhScore;
+    console.log(bazi);
     let thapNhiCung = bazi.thapNhiCung;
     let baseInfo = bazi.baseInfo;
     let batTuTemplate = `Hồ sơ AGI của ${
