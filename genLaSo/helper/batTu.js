@@ -636,6 +636,7 @@ const convertHourInfo = (baseInfo) => {
       namXemTieuVan,
       duongLich
     );
+    gioThoiVan = 1;
   }
   // gioSinh = getGioSinhIndex(gioSinh);
   baseInfo.gioSinh = gioSinh;

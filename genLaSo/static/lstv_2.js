@@ -2590,7 +2590,6 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         ],
       },
     ];
-    console.log(forceData.find((item) => item.can === can).forceRanges);
     return forceData.find((item) => item.can === can).forceRanges;
   };
 
@@ -2624,6 +2623,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         hoTroPercent = nguHanh.percent;
       }
     }
+
     return {
       dongHanh: {
         name: nhatChuNguHanh,
@@ -2670,7 +2670,6 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
   };
 
   const getForcesDetail = (nhatChu, dongHanhPercent, hoTroPercent) => {
-    console.log(dongHanhPercent, hoTroPercent);
     let forces = getSupportForces(nhatChu.can);
     let totalPercent = dongHanhPercent + hoTroPercent;
     let majorForcesIndex = 0;
@@ -2707,7 +2706,6 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         minorForcesIndex = majorForcesIndex + 1;
       }
     }
-    console.log(majorForcesIndex, minorForcesIndex);
 
     return {
       majorForces: {
@@ -2784,66 +2782,58 @@ Trụ Giờ Chính:${gio ? gio.name : ""}
     }
 •	Ngũ Hành Nạp Âm: ${gio ? gio.nguHanhNapAm : ""}. (${
       gio ? gio.nguHanhNapAmThapThan : ""
-    })
-    ${
+    })${
       daiVan
-        ? `\nThông tin các Trụ Thời Gian (Biến) của ${
+        ? `\n\nThông tin các Trụ Thời Gian (Biến) của ${
             baseInfo.gioiTinh === 1 ? "anh" : "chị"
           } ${baseInfo.hoTen} sinh năm ${
             baseInfo.namSinh
           } tại thời điểm Giờ, Ngày, Tháng, Năm`
         : ""
-    }
-    ${
+    }${
       daiVan
-        ? `Trụ Đại Vận Biến: ${daiVan.name}
+        ? `\nTrụ Đại Vận Biến: ${daiVan.name}
 •	Can: ${daiVan.can} (${daiVan.thapThan})
 •	Chi: ${daiVan.chi}
 •	Can Tàng: ${daiVan.canTangPercent
             .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
-            .join(" + ")}
-•	Trụ biến không nạp dữ liệu Ngũ Hành Nạp Âm`
+            .join(" + ")}`
         : ""
-    }
-${
-  tieuVan
-    ? `Trụ Năm Biến: ${tieuVan.name} 
+    }${
+      tieuVan
+        ? `\nTrụ Năm Biến: ${tieuVan.name} 
 •	Can: ${tieuVan.can} (${tieuVan.thapThan})
 •	Chi: ${tieuVan.chi}
 •	Can Tàng: ${tieuVan.canTangPercent
-        .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
-        .join(" + ")}
-•	Trụ biến không nạp dữ liệu Ngũ Hành Nạp Âm`
-    : ""
-}${
+            .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
+            .join(" + ")}`
+        : ""
+    }${
       nguyetVan
-        ? `Trụ Tháng Biến: ${nguyetVan.name}
+        ? `\nTrụ Tháng Biến: ${nguyetVan.name}
 •	Can: ${nguyetVan.can} (${nguyetVan.thapThan})
 •	Chi: ${nguyetVan.chi}
 •	Can Tàng: ${nguyetVan.canTangPercent
             .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
-            .join(" + ")}
-•	Trụ biến không nạp dữ liệu Ngũ Hành Nạp Âm`
+            .join(" + ")}`
         : ""
     }${
       nhatVan
-        ? `Trụ Ngày Biến: ${nhatVan.name}
+        ? `\nTrụ Ngày Biến: ${nhatVan.name}
 •	Can: ${nhatVan.can} (${nhatVan.thapThan})
 •	Chi: ${nhatVan.chi}
 •	Can Tàng: ${nhatVan.canTangPercent
             .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
-            .join(" + ")}
-•	Trụ biến không nạp dữ liệu Ngũ Hành Nạp Âm`
+            .join(" + ")}`
         : ""
     }${
       thoiVan
-        ? `Trụ Giờ Biến: ${thoiVan.name}
+        ? `\nTrụ Giờ Biến: ${thoiVan.name}
 •	Can: ${thoiVan.can} (${thoiVan.thapThan})
 •	Chi: ${thoiVan.chi}
 •	Can Tàng: ${thoiVan.canTangPercent
             .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
-            .join(" + ")}
-•	Trụ biến không nạp dữ liệu Ngũ Hành Nạp Âm`
+            .join(" + ")}`
         : ""
     }    
 
@@ -2859,44 +2849,83 @@ ${
     )
     .join("\n\n")}
   
-Tỷ lệ Lực lượng đồng hành/Lực lượng hỗ trợ = ${
-      getSupportPercent(nhatChu, nguHanhScoreGoc).ratio
-    }, vậy ${getRoleText(
-      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanhPercent,
-      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTroPercent
-    )}. 
-    
+Cấp độ sức mạnh của Nhật Chủ (Chính): Hành ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.name
+    } (Đồng Hành) ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent
+    }% + Hành ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.name
+    } (Hỗ Trợ) ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+    }% = ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).totalPercent
+    }%. Tuy nhiên do ${getRoleText(
+      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+    )} nên Sức Mạnh của Nhật Chủ được AGI xác định tương đối tại ${
+      !getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+      ).minorForces.name
+        ? ""
+        : "2"
+    } cấp độ ${
+      getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+      ).majorForces.name
+    }${
+      getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+      ).minorForces.name
+        ? " và " +
+          getForcesDetail(
+            nhatChu,
+            getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+            getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+          ).minorForces.name
+        : ""
+    }     
 ${
   getForcesDetail(
     nhatChu,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanhPercent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTroPercent
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
   ).majorForces.title
 }
 ${
   getForcesDetail(
     nhatChu,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanhPercent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTroPercent
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
   ).majorForces.data
 }
 ${
   getForcesDetail(
     nhatChu,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanhPercent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTroPercent
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
   ).minorForces?.title
 }
 ${
   getForcesDetail(
     nhatChu,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanhPercent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTroPercent
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
   ).minorForces?.data
-}
-${daiVan ? `Tỷ Trọng Ngũ Hành của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
-      baseInfo.hoTen
-    } sinh năm ${baseInfo.namSinh}
+}${
+      daiVan
+        ? `\nTỷ Trọng Ngũ Hành của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
+            baseInfo.hoTen
+          } sinh năm ${baseInfo.namSinh} tại thời điểm ${
+            (baseInfo.gioThoiVan - 1) * 2 + "h"
+          } ngày ${baseInfo.ngayLuuNhat}/${baseInfo.thangLuuNguyet}/${
+            baseInfo.namXemTieuVan
+          } (đính kèm dữ liệu tăng/giảm so với tỷ trọng chính)
   ${nguHanhScore
     .map(
       (item) =>
@@ -2909,43 +2938,47 @@ ${daiVan ? `Tỷ Trọng Ngũ Hành của ${baseInfo.gioiTinh === 1 ? "anh" : "c
         +${item.name} (${item.thapThan[1]}) = ${item.percentDuong}%`
     )
     .join("\n\n")}
-Hành ${getSupportPercent(nhatChu, nguHanhScore).dongHanh.name} (Đồng Hành) ${
-      getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent
-    }% + Hành ${getSupportPercent(nhatChu, nguHanhScore).hoTro.name} (Hỗ Trợ) ${
-      getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
-    }% = ${
-      getSupportPercent(nhatChu, nguHanhScore).totalPercent
-    }%. Tuy nhiên do ${getRoleText(
-      getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-      getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
-    )} nên Sức Mạnh của Nhật Chủ được AGI xác định tương đối tại ${
-      !getForcesDetail(
-        nhatChu,
-        getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-        getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
-      ).minorForces.name
-        ? ""
-        : "2"
-    } cấp độ ${
-      getForcesDetail(
-        nhatChu,
-        getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-        getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
-      ).majorForces.name
-    }${
-      getForcesDetail(
-        nhatChu,
-        getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-        getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
-      ).minorForces.name
-        ? " và " +
-          getForcesDetail(
-            nhatChu,
+Cấp độ sức mạnh của Nhật Chủ (Biến): Hành ${
+            getSupportPercent(nhatChu, nguHanhScore).dongHanh.name
+          } (Đồng Hành) ${
+            getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent
+          }% + Hành ${
+            getSupportPercent(nhatChu, nguHanhScore).hoTro.name
+          } (Hỗ Trợ) ${
+            getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+          }% = ${
+            getSupportPercent(nhatChu, nguHanhScore).totalPercent
+          }%. Tuy nhiên do ${getRoleText(
             getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
             getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
-          ).minorForces.name
-        : ""
-    } 
+          )} nên Sức Mạnh của Nhật Chủ được AGI xác định tương đối tại ${
+            !getForcesDetail(
+              nhatChu,
+              getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+            ).minorForces.name
+              ? ""
+              : "2"
+          } cấp độ ${
+            getForcesDetail(
+              nhatChu,
+              getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+            ).majorForces.name
+          }${
+            getForcesDetail(
+              nhatChu,
+              getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+            ).minorForces.name
+              ? " và " +
+                getForcesDetail(
+                  nhatChu,
+                  getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+                  getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+                ).minorForces.name
+              : ""
+          } 
 ${
   getForcesDetail(
     nhatChu,
@@ -2973,7 +3006,9 @@ ${
     getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
     getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
   ).minorForces?.data
-}` : ""}
+}`
+        : ""
+    }
 5. Ngũ Hành Nạp Âm
 •	Trụ Năm:  ${nam.nguHanhNapAm}
 •	Trụ Tháng: ${thang.nguHanhNapAm}
@@ -3546,7 +3581,6 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
     // let ngay = bazi.day;
     // let gio = bazi.hour;
     // let nguHanhScore = bazi.nguHanhScore;
-    console.log(bazi);
     let thapNhiCung = bazi.thapNhiCung;
     let baseInfo = bazi.baseInfo;
     let batTuTemplate = `Hồ sơ AGI của ${
