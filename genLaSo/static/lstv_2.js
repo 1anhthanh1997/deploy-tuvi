@@ -1985,7 +1985,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
         forceRanges: [
           {
             id: 0,
-            title: "Nhật Chủ Giáp Mộc Cực Cường (Extremely Strong): > 74%",
+            title: "Giáp Mộc Cực Cường (Extremely Strong): > 74%",
             data: `• Luận giải: Ở trạng thái này, cây cổ thụ đã phát triển thành cả một khu rừng, che lấp mọi ánh sáng. Tham vọng trở thành sự thống trị tàn nhẫn, và nguyên tắc trở thành giáo điều không thể lay chuyển. Họ trở nên độc đoán, áp đảo và tạo ra một môi trường ngột ngạt, kìm hãm sự phát triển của những người xung quanh.
 • Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng có nhiều nước và cây cối, khu rừng càng trở nên bất khả xâm phạm.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút kim loại (Kim) cố gắng đốn hạ khu rừng sẽ bị "nuốt chửng" và gây ra sự phản kháng dữ dội. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
@@ -1993,7 +1993,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
           },
           {
             id: 1,
-            title: "Nhật Chủ Giáp Mộc Cường (Strong): 65% – 74%",
+            title: "Giáp Mộc Cường (Strong): 65% – 74%",
             data: `• Luận giải: Đây là hình mẫu Nhật Chủ Giáp Mộc của người lãnh đạo bẩm sinh. Họ kiên định, có nguyên tắc, thẳng thắn và luôn có khát vọng vươn lên. Giống như cây đại thụ, họ là trụ cột cho cộng đồng, là nơi che chở cho những người yếu thế hơn. Họ truyền cảm hứng bằng sự chính trực và ý chí không khuất phục.
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để được tôi luyện. Power Forces (the Leader & the Warrior) để cắt tỉa cành lá, tạo nên hình dáng hữu dụng; Economic Forces (the Provider & the Venturer) để có đất đai cắm rễ; Creation Forces (the Creator & the Innovator) để Mộc sinh Hỏa, thể hiện tài năng.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng tạo ra sự cạnh tranh về không gian và ánh sáng.
@@ -2001,7 +2001,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
           },
           {
             id: 2,
-            title: "Nhật Chủ Giáp Mộc Cân Bằng (thiên Cường): 55% – 65%",
+            title: "Giáp Mộc Cân Bằng (thiên Cường): 55% – 65%",
             data: `• Luận giải: Đây là phiên bản Nhật Chủ Giáp Mộc chủ động và đầy sức sống. Họ tự tin vào con đường của mình, sẵn sàng dẫn dắt và bảo vệ quan điểm. Họ là những nhà lãnh đạo có tầm nhìn, những người đặt ra nền móng và định hướng cho cả một tập thể.
 • Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
@@ -2009,8 +2009,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
           },
           {
             id: 3,
-            title:
-              "Nhật Chủ Giáp Mộc Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            title: "Giáp Mộc Cân Bằng Thực Sự (True Balance): 45% – 55%",
             data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Nhật Chủ Giáp Mộc. Họ vừa giữ được sự thẳng thắn, kiên định của mình, vừa có được sự dẻo dai cần thiết. Giống như cây tre, họ "cứng mà không giòn, mềm mà không yếu". Họ là những nhà lãnh đạo khôn ngoan, biết khi nào cần vươn lên và khi nào cần uốn mình theo gió.
 • Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Power Forces (the Leader/Warrior) để có kỷ luật và sự công nhận, và Creation Forces (the Creator/Innovator) để thể hiện tài năng một cách hiệu quả.
 • Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
@@ -2018,7 +2017,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
           },
           {
             id: 4,
-            title: "Nhật Chủ Giáp Mộc Cân Bằng (thiên Nhược): 35% – 45%",
+            title: "Giáp Mộc Cân Bằng (thiên Nhược): 35% – 45%",
             data: `• Luận giải: Đây là phiên bản Nhật Chủ Giáp Mộc khiêm tốn và có tinh thần hợp tác hơn. Họ vẫn giữ được sự chính trực, nhưng hiểu rằng sức mạnh của mình sẽ được phát huy tốt nhất khi là một phần của một cấu trúc lớn hơn. Họ là những người quản lý dự án, những trụ cột đáng tin cậy trong một đội nhóm.
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp họ có nền tảng vững chắc.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
@@ -2026,7 +2025,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
           },
           {
             id: 5,
-            title: "Nhật Chủ Giáp Mộc Nhược (Weak): 25% – 35%",
+            title: "Giáp Mộc Nhược (Weak): 25% – 35%",
             data: `• Luận giải: Bản năng của họ là muốn vươn lên thẳng tắp, nhưng lại thiếu "nước" (hỗ trợ) và "đất" (nguồn lực) để làm điều đó. Điều này tạo ra cảm giác bất lực, hoài bão lớn nhưng không thể thực hiện. Họ sợ bị "chặt hạ" bởi áp lực và chỉ trích.
 • Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để cây có thể lớn lên.
 • Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như rìu chặt cây non. Creation Forces và Economic Forces cũng làm họ kiệt sức.
@@ -2034,7 +2033,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
           },
           {
             id: 6,
-            title: "Nhật Chủ Giáp Mộc Cực Nhược (Extremely Weak): < 25%",
+            title: "Giáp Mộc Cực Nhược (Extremely Weak): < 25%",
             data: `• Luận giải: Ở trạng thái này, Nhật Chủ Giáp Mộc phải từ bỏ hoàn toàn bản năng lãnh đạo và ý chí vươn lên của mình để "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải học cách trở thành nhiên liệu cho một ngọn lửa khác, hoặc trở thành vật trang trí trong một khu vườn.
 • Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút nước hay cây khác cũng sẽ "đánh thức" bản năng Nhật Chủ Giáp Mộc, phá vỡ cấu trúc Tòng cách và gây ra tai họa.
@@ -2626,9 +2625,18 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
       }
     }
     return {
-      dongHanhPercent: parseFloat(dongHanhPercent),
-      hoTroPercent: parseFloat(hoTroPercent),
+      dongHanh: {
+        name: nhatChuNguHanh,
+        percent: parseFloat(dongHanhPercent),
+      },
+      hoTro: {
+        name: getNguHanhHoTro(nhatChuNguHanh),
+        percent: parseFloat(hoTroPercent),
+      },
       ratio: parseFloat(dongHanhPercent / hoTroPercent).toFixed(2),
+      totalPercent: (
+        parseFloat(dongHanhPercent) + parseFloat(hoTroPercent)
+      ).toFixed(2),
     };
   };
 
@@ -2642,10 +2650,29 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     }
   };
 
+  const getNameFromIndex = (index) => {
+    switch (index) {
+      case 0:
+        return "Cực Cường";
+      case 1:
+        return "Cường";
+      case 2:
+        return "Cân Bằng Thiên Cường";
+      case 3:
+        return "Cân Bằng Thực Sự";
+      case 4:
+        return "Cân Bằng Thiên Nhược";
+      case 5:
+        return "Nhược";
+      case 6:
+        return "Cực Nhược";
+    }
+  };
+
   const getForcesDetail = (nhatChu, dongHanhPercent, hoTroPercent) => {
+    console.log(dongHanhPercent, hoTroPercent);
     let forces = getSupportForces(nhatChu.can);
     let totalPercent = dongHanhPercent + hoTroPercent;
-    console.log(totalPercent);
     let majorForcesIndex = 0;
     if (totalPercent > 74) {
       majorForcesIndex = 0;
@@ -2667,15 +2694,15 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
       Math.round(dongHanhPercent / totalPercent) !==
       Math.round(hoTroPercent / totalPercent)
     ) {
-      if (majorForcesIndex == 0) {
-        minorForcesIndex = 1;
-      } else if (majorForcesIndex == 6) {
-        minorForcesIndex = 5;
-      } else if (Math.round(dongHanhPercent) > Math.round(hoTroPercent)) {
+      if (
+        Math.round(dongHanhPercent) > Math.round(hoTroPercent) &&
+        majorForcesIndex !== 0
+      ) {
         minorForcesIndex = majorForcesIndex - 1;
       } else if (
         Math.round(dongHanhPercent / totalPercent) <
-        Math.round(hoTroPercent / totalPercent)
+          Math.round(hoTroPercent / totalPercent) &&
+        majorForcesIndex !== 6
       ) {
         minorForcesIndex = majorForcesIndex + 1;
       }
@@ -2684,16 +2711,18 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 
     return {
       majorForces: {
+        name: getNameFromIndex(majorForcesIndex),
         title: forces[majorForcesIndex].title,
         data: forces[majorForcesIndex].data,
       },
       minorForces:
         minorForcesIndex || minorForcesIndex == 0
           ? {
+              name: getNameFromIndex(minorForcesIndex),
               title: forces[minorForcesIndex].title,
               data: forces[minorForcesIndex].data,
             }
-          : { title: "", data: "" },
+          : { name: "", title: "", data: "" },
     };
   };
 
@@ -2880,40 +2909,69 @@ ${daiVan ? `Tỷ Trọng Ngũ Hành của ${baseInfo.gioiTinh === 1 ? "anh" : "c
         +${item.name} (${item.thapThan[1]}) = ${item.percentDuong}%`
     )
     .join("\n\n")}
-  
-Tỷ lệ Lực lượng đồng hành/Lực lượng hỗ trợ = ${
-      getSupportPercent(nhatChu, nguHanhScore).ratio
-    }, vậy ${getRoleText(
-      getSupportPercent(nhatChu, nguHanhScore).dongHanhPercent,
-      getSupportPercent(nhatChu, nguHanhScore).hoTroPercent
-    )}. 
-    
+Hành ${getSupportPercent(nhatChu, nguHanhScore).dongHanh.name} (Đồng Hành) ${
+      getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent
+    }% + Hành ${getSupportPercent(nhatChu, nguHanhScore).hoTro.name} (Hỗ Trợ) ${
+      getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+    }% = ${
+      getSupportPercent(nhatChu, nguHanhScore).totalPercent
+    }%. Tuy nhiên do ${getRoleText(
+      getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+      getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+    )} nên Sức Mạnh của Nhật Chủ được AGI xác định tương đối tại ${
+      !getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+      ).minorForces.name
+        ? ""
+        : "2"
+    } cấp độ ${
+      getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+      ).majorForces.name
+    }${
+      getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+      ).minorForces.name
+        ? " và " +
+          getForcesDetail(
+            nhatChu,
+            getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+            getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+          ).minorForces.name
+        : ""
+    } 
 ${
   getForcesDetail(
     nhatChu,
-    getSupportPercent(nhatChu, nguHanhScore).dongHanhPercent,
-    getSupportPercent(nhatChu, nguHanhScore).hoTroPercent
+    getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
   ).majorForces.title
 }
 ${
   getForcesDetail(
     nhatChu,
-    getSupportPercent(nhatChu, nguHanhScore).dongHanhPercent,
-    getSupportPercent(nhatChu, nguHanhScore).hoTroPercent
+    getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
   ).majorForces.data
 }
 ${
   getForcesDetail(
     nhatChu,
-    getSupportPercent(nhatChu, nguHanhScore).dongHanhPercent,
-    getSupportPercent(nhatChu, nguHanhScore).hoTroPercent
+    getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
   ).minorForces?.title
 }
 ${
   getForcesDetail(
     nhatChu,
-    getSupportPercent(nhatChu, nguHanhScore).dongHanhPercent,
-    getSupportPercent(nhatChu, nguHanhScore).hoTroPercent
+    getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
   ).minorForces?.data
 }` : ""}
 5. Ngũ Hành Nạp Âm
@@ -3082,14 +3140,18 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
   }
 
   function getSao(cungChu, thapNhiCung, tamHop = false) {
-    const newChinhTinh = [51, 52, 53, 54, 55, 56, 57, 58, 61, 62];
+    const newChinhTinh = [
+      51, 52, 53, 54, 55, 56, 57, 58, 61, 62, 92, 93, 94, 95,
+    ];
     cungArr = thapNhiCung.filter((c) => {
       return c.cungChu === cungChu;
     });
     if (cungArr.length > 0) {
       let cung = cungArr[0];
       const { cungSao, cungSo } = cung;
-      const chinhTinhGoc = cungSao.filter((sao) => sao.saoAmDuong !== "");
+      const chinhTinhGoc = cungSao.filter(
+        (sao) => sao.saoAmDuong && sao.saoAmDuong !== ""
+      );
       let chinhTinhMoi = cungSao.filter(
         (sao) => newChinhTinh.includes(sao.saoID)
         // !checkSaoDaiVan(sao.saoTen) &&
