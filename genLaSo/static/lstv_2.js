@@ -2797,9 +2797,25 @@ Trụ Giờ Chính:${gio ? gio.name : ""}
       daiVan
         ? `\n\nThông tin các Trụ Thời Gian (Biến) của ${
             baseInfo.gioiTinh === 1 ? "anh" : "chị"
-          } ${baseInfo.hoTen} sinh năm ${
-            baseInfo.namSinh
-          } tại thời điểm Giờ, Ngày, Tháng, Năm`
+          } ${baseInfo.hoTen} sinh năm ${baseInfo.namSinh} tại đại vận thứ ${
+            daiVan.decadeIndex
+          }${
+            baseInfo.gioThoiVan && !baseInfo.onlyDecade
+              ? " thời điểm " + (baseInfo.gioThoiVan - 1) * 2 + "h"
+              : ""
+          }${
+            baseInfo.ngayLuuNhat && !baseInfo.onlyDecade
+              ? " ngày " + baseInfo.ngayLuuNhat
+              : ""
+          }${
+            baseInfo.thangLuuNguyet && !baseInfo.onlyDecade
+              ? " tháng " + baseInfo.thangLuuNguyet
+              : ""
+          }${
+            baseInfo.namXemTieuVan && !baseInfo.onlyDecade
+              ? " năm " + baseInfo.namXemTieuVan
+              : ""
+          }`
         : ""
     }${
       daiVan
@@ -2933,13 +2949,21 @@ ${
         ? `\nTỷ Trọng Ngũ Hành của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
             baseInfo.hoTen
           } sinh năm ${baseInfo.namSinh} tại đại vận thứ ${daiVan.decadeIndex}${
-            baseInfo.gioThoiVan
+            baseInfo.gioThoiVan && !baseInfo.onlyDecade
               ? " thời điểm " + (baseInfo.gioThoiVan - 1) * 2 + "h"
               : ""
-          }${baseInfo.ngayLuuNhat ? " ngày " + baseInfo.ngayLuuNhat : ""}${
-            baseInfo.thangLuuNguyet ? " tháng " + baseInfo.thangLuuNguyet : ""
           }${
-            baseInfo.namXemTieuVan ? " năm " + baseInfo.namXemTieuVan : ""
+            baseInfo.ngayLuuNhat && !baseInfo.onlyDecade
+              ? " ngày " + baseInfo.ngayLuuNhat
+              : ""
+          }${
+            baseInfo.thangLuuNguyet && !baseInfo.onlyDecade
+              ? " tháng " + baseInfo.thangLuuNguyet
+              : ""
+          }${
+            baseInfo.namXemTieuVan && !baseInfo.onlyDecade
+              ? " năm " + baseInfo.namXemTieuVan
+              : ""
           } (đính kèm dữ liệu tăng/giảm so với tỷ trọng chính)
   ${nguHanhScore
     .map(

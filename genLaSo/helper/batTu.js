@@ -1022,7 +1022,7 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio, onlyDecade) => {
   );
 
   return {
-    baseInfo: baseInfo,
+    baseInfo: { ...baseInfo, onlyDecade },
     thapNhiCung: thapNhiCung,
     nguHanhScoreGoc,
     nguHanhScore,
