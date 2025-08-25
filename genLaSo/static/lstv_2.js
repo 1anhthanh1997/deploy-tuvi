@@ -2729,7 +2729,18 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     let additionPercent =
       nguHanhScore[nguHanhIndex].percent -
       nguHanhScoreGoc[nguHanhIndex].percent;
-    return (additionPercent > 0 ? "+" : "") + additionPercent.toFixed(2) + "%";
+    let percentAm =
+      nguHanhScore[nguHanhIndex].percentAm -
+      nguHanhScoreGoc[nguHanhIndex].percentAm;
+    let percentDuong =
+      nguHanhScore[nguHanhIndex].percentDuong -
+      nguHanhScoreGoc[nguHanhIndex].percentDuong;
+    return {
+      total:
+        (additionPercent > 0 ? "+" : "") + additionPercent.toFixed(2) + "%",
+      am: (percentAm > 0 ? "+" : "") + percentAm.toFixed(2) + "%",
+      duong: (percentDuong > 0 ? "+" : "") + percentDuong.toFixed(2) + "%",
+    };
   };
 
   const getTuTruData = (bazi, baseInfo) => {
@@ -2921,21 +2932,33 @@ ${
       daiVan
         ? `\nTỷ Trọng Ngũ Hành của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
             baseInfo.hoTen
-          } sinh năm ${baseInfo.namSinh} tại thời điểm ${
-            (baseInfo.gioThoiVan - 1) * 2 + "h"
-          } ngày ${baseInfo.ngayLuuNhat}/${baseInfo.thangLuuNguyet}/${
-            baseInfo.namXemTieuVan
+          } sinh năm ${baseInfo.namSinh} tại đại vận thứ ${daiVan.decadeIndex}${
+            baseInfo.gioThoiVan
+              ? " thời điểm " + (baseInfo.gioThoiVan - 1) * 2 + "h"
+              : ""
+          }${baseInfo.ngayLuuNhat ? " ngày " + baseInfo.ngayLuuNhat : ""}${
+            baseInfo.thangLuuNguyet ? " tháng " + baseInfo.thangLuuNguyet : ""
+          }${
+            baseInfo.namXemTieuVan ? " năm " + baseInfo.namXemTieuVan : ""
           } (đính kèm dữ liệu tăng/giảm so với tỷ trọng chính)
   ${nguHanhScore
     .map(
       (item) =>
         `• ${item.name}(${getCuongNhuoc(item.percent)}) = ${item.percent}% (${
           daiVan
-            ? getAdditionPercent(item.name, nguHanhScore, nguHanhScoreGoc)
+            ? getAdditionPercent(item.name, nguHanhScore, nguHanhScoreGoc).total
             : ""
         }).
-        -${item.name} (${item.thapThan[0]}) = ${item.percentAm}%, 
-        +${item.name} (${item.thapThan[1]}) = ${item.percentDuong}%`
+        -${item.name} (${item.thapThan[0]}) = ${item.percentAm}% (${
+          daiVan
+            ? getAdditionPercent(item.name, nguHanhScore, nguHanhScoreGoc).am
+            : ""
+        }), 
+        +${item.name} (${item.thapThan[1]}) = ${item.percentDuong}% (${
+          daiVan
+            ? getAdditionPercent(item.name, nguHanhScore, nguHanhScoreGoc).duong
+            : ""
+        })`
     )
     .join("\n\n")}
 Cấp độ sức mạnh của Nhật Chủ (Biến): Hành ${
@@ -3588,8 +3611,12 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
     } ${baseInfo.hoTen} sinh năm ${baseInfo.namSinh}
     Phần 1: Tứ Trụ
     ${getTuTruData(bazi, baseInfo)}
-    Phần 2: Tử Vi. Trợ lý AGI bắt buộc phải suy xét Ngũ Hành Cung, Thập Thần tàng trong Cung
-    ${getTamHopData(thapNhiCung, bazi.day.can)}`;
+    ${
+      !baseInfo.boTruGio
+        ? `Phần 2: Tử Vi. Trợ lý AGI bắt buộc phải suy xét Ngũ Hành Cung, Thập Thần tàng trong Cung
+    ${getTamHopData(thapNhiCung, bazi.day.can)}`
+        : ""
+    }`;
     return batTuTemplate;
   }
 

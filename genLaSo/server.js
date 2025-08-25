@@ -116,6 +116,7 @@ app.get("/api/get-bazi", (req, res) => {
         ? parseInt(req.query.giothoivan)
         : undefined;
     const boTruGio = req.query.boTruGio === "on" ? true : false;
+    const onlyDecade = req.query.onlyDecade === "on" ? true : false;
 
     const data = lapDiaBan(
       diaBan,
@@ -145,7 +146,12 @@ app.get("/api/get-bazi", (req, res) => {
       ngayLuuNhat,
       gioThoiVan,
     };
-    let baziResult = getBaziData(baseInfo, data.thapNhiCung, boTruGio);
+    let baziResult = getBaziData(
+      baseInfo,
+      data.thapNhiCung,
+      boTruGio,
+      onlyDecade
+    );
     res.json(baziResult);
   } catch (error) {
     console.error(error);

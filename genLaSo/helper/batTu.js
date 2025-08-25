@@ -813,8 +813,9 @@ const addTuHoaBazi = (
   }
 };
 
-const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
+const getBaziData = (baseInfo, thapNhiCung, boTruGio, onlyDecade) => {
   let originHour, canGioSinh, chiGioSinh, canGioSinhTen, chiGioSinhTen;
+  baseInfo.boTruGio = boTruGio;
   if (!boTruGio) {
     originHour = baseInfo.gioSinh;
     baseInfo = convertHourInfo(baseInfo);
@@ -859,58 +860,61 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
   let chiTieuVan;
   let canDaiVan;
   let chiDaiVan;
+  let decadeIndex;
   let amLichVan;
   let canThang = canChiAmLich[0];
   let chiThang = amLich[1];
   let canNam = canChiAmLich[1];
   let chiNam = canChiAmLich[2];
   if (baseInfo.namXemTieuVan) {
-    amLichVan = S2L(
-      baseInfo.ngayLuuNhat ? baseInfo.ngayLuuNhat : 15,
-      baseInfo.thangLuuNguyet ? baseInfo.thangLuuNguyet : 5,
-      baseInfo.namXemTieuVan ? baseInfo.namXemTieuVan : 1,
-      baseInfo.timeZone
-    );
-    if (baseInfo.gioThoiVan) {
-      chiThoiVan = diaChi[baseInfo.gioThoiVan].id;
-      canThoiVan =
-        ((((jdFromDate(
-          baseInfo.ngayLuuNhat,
-          baseInfo.thangLuuNguyet,
-          baseInfo.namXemTieuVan
-        ) -
-          1) *
-          2) %
-          10) +
-          baseInfo.gioThoiVan) %
-        10;
-      if (canThoiVan === 0) {
-        canThoiVan = 10;
-      }
-    }
-    if (baseInfo.ngayLuuNhat) {
-      const nhatVanResult = canChiNgay(
-        baseInfo.ngayLuuNhat,
-        baseInfo.thangLuuNguyet,
-        baseInfo.namXemTieuVan,
-        baseInfo.duongLich,
+    if (!onlyDecade) {
+      amLichVan = S2L(
+        baseInfo.ngayLuuNhat ? baseInfo.ngayLuuNhat : 15,
+        baseInfo.thangLuuNguyet ? baseInfo.thangLuuNguyet : 5,
+        baseInfo.namXemTieuVan ? baseInfo.namXemTieuVan : 1,
         baseInfo.timeZone
       );
-      canNhatVan = nhatVanResult[0];
-      chiNhatVan = nhatVanResult[1];
+      if (baseInfo.gioThoiVan) {
+        chiThoiVan = diaChi[baseInfo.gioThoiVan].id;
+        canThoiVan =
+          ((((jdFromDate(
+            baseInfo.ngayLuuNhat,
+            baseInfo.thangLuuNguyet,
+            baseInfo.namXemTieuVan
+          ) -
+            1) *
+            2) %
+            10) +
+            baseInfo.gioThoiVan) %
+          10;
+        if (canThoiVan === 0) {
+          canThoiVan = 10;
+        }
+      }
+      if (baseInfo.ngayLuuNhat) {
+        const nhatVanResult = canChiNgay(
+          baseInfo.ngayLuuNhat,
+          baseInfo.thangLuuNguyet,
+          baseInfo.namXemTieuVan,
+          baseInfo.duongLich,
+          baseInfo.timeZone
+        );
+        canNhatVan = nhatVanResult[0];
+        chiNhatVan = nhatVanResult[1];
+      }
+      let canChiAmLichVan = ngayThangNamCanChi(
+        amLichVan[0],
+        amLichVan[1],
+        amLichVan[2],
+        false
+      );
+      if (baseInfo.thangLuuNguyet) {
+        canNguyetVan = canChiAmLichVan[0];
+        chiNguyetVan = amLichVan[1];
+      }
+      canTieuVan = canChiAmLichVan[1];
+      chiTieuVan = canChiAmLichVan[2];
     }
-    let canChiAmLichVan = ngayThangNamCanChi(
-      amLichVan[0],
-      amLichVan[1],
-      amLichVan[2],
-      false
-    );
-    if (baseInfo.thangLuuNguyet) {
-      canNguyetVan = canChiAmLichVan[0];
-      chiNguyetVan = amLichVan[1];
-    }
-    canTieuVan = canChiAmLichVan[1];
-    chiTieuVan = canChiAmLichVan[2];
     let tuoi = baseInfo.namXemTieuVan - baseInfo.namSinh + 1;
     if (!boTruGio) {
       let cungDaiVan = null;
@@ -920,6 +924,7 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
           (cung.cungDaiHan <= tuoi && cung.cungDaiHan + 10 > tuoi)
         ) {
           cungDaiVan = cung;
+          decadeIndex = Math.ceil(cung.cungDaiHan / 10);
         }
       }
       canDaiVan = cungDaiVan.cungCan;
@@ -953,7 +958,7 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
           baseInfo.namSinh
         );
         let ageStartDecade = Math.floor(daysBetween / 3);
-        let decadeIndex =
+        decadeIndex =
           Math.floor(
             (tuoi - ageStartDecade < 0 ? 0 : tuoi - ageStartDecade) / 10
           ) + 1;
@@ -1120,27 +1125,29 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
             thienCan[canNgay].nguHanh,
             thienCan[canDaiVan].amDuong === thienCan[canNgay].amDuong
           ),
+          decadeIndex,
         }
       : undefined,
-    tieuVan: baseInfo.namXemTieuVan
-      ? {
-          name: thienCan[canTieuVan].tenCan + " " + diaChi[chiTieuVan].tenChi,
-          can: thienCan[canTieuVan].tenCan,
-          chi: diaChi[chiTieuVan].tenChi,
-          nguHanhNapAm: nguHanhNapAm(chiTieuVan, canTieuVan, true),
-          nguHanhCan: nguHanh(thienCan[canTieuVan].nguHanh).tenHanh,
-          nguHanhChi: nguHanh(diaChi[chiTieuVan].tenHanh).tenHanh,
-          canTang: getCanTang(chiTieuVan),
-          canTangPercent: getCanTangPercent(chiTieuVan, canNgay),
-          thapThan: getThapThan(
-            thienCan[canTieuVan].nguHanh,
-            thienCan[canNgay].nguHanh,
-            thienCan[canTieuVan].amDuong === thienCan[canNgay].amDuong
-          ),
-        }
-      : undefined,
+    tieuVan:
+      baseInfo.namXemTieuVan && !onlyDecade
+        ? {
+            name: thienCan[canTieuVan].tenCan + " " + diaChi[chiTieuVan].tenChi,
+            can: thienCan[canTieuVan].tenCan,
+            chi: diaChi[chiTieuVan].tenChi,
+            nguHanhNapAm: nguHanhNapAm(chiTieuVan, canTieuVan, true),
+            nguHanhCan: nguHanh(thienCan[canTieuVan].nguHanh).tenHanh,
+            nguHanhChi: nguHanh(diaChi[chiTieuVan].tenHanh).tenHanh,
+            canTang: getCanTang(chiTieuVan),
+            canTangPercent: getCanTangPercent(chiTieuVan, canNgay),
+            thapThan: getThapThan(
+              thienCan[canTieuVan].nguHanh,
+              thienCan[canNgay].nguHanh,
+              thienCan[canTieuVan].amDuong === thienCan[canNgay].amDuong
+            ),
+          }
+        : undefined,
     nguyetVan:
-      baseInfo.thangLuuNguyet && baseInfo.namXemTieuVan
+      baseInfo.thangLuuNguyet && baseInfo.namXemTieuVan && !onlyDecade
         ? {
             name:
               thienCan[canNguyetVan].tenCan +
@@ -1169,7 +1176,10 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
           }
         : undefined,
     nhatVan:
-      baseInfo.ngayLuuNhat && baseInfo.thangLuuNguyet && baseInfo.namXemTieuVan
+      baseInfo.ngayLuuNhat &&
+      baseInfo.thangLuuNguyet &&
+      baseInfo.namXemTieuVan &&
+      !onlyDecade
         ? {
             name: thienCan[canNhatVan].tenCan + " " + diaChi[chiNhatVan].tenChi,
             can: thienCan[canNhatVan].tenCan,
@@ -1190,7 +1200,8 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio) => {
       baseInfo.gioThoiVan &&
       baseInfo.ngayLuuNhat &&
       baseInfo.thangLuuNguyet &&
-      baseInfo.namXemTieuVan
+      baseInfo.namXemTieuVan &&
+      !onlyDecade
         ? {
             name: thienCan[canThoiVan].tenCan + " " + diaChi[chiThoiVan].tenChi,
             can: thienCan[canThoiVan].tenCan,
