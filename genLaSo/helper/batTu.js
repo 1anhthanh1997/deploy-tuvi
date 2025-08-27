@@ -34,7 +34,8 @@ const calculateDaysBetween = (
   const endDate = new Date(endYear, endMonth - 1, endDay);
 
   // Calculate the difference in milliseconds
-  const timeDiff = endDate.getTime() - startDate.getTime();
+  let timeDiff = endDate.getTime() - startDate.getTime();
+  timeDiff = timeDiff >= 0 ? timeDiff : -timeDiff;
 
   // Convert milliseconds to days
   const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
@@ -813,6 +814,84 @@ const addTuHoaBazi = (
   }
 };
 
+const getChiThangBatTu = (ngaySinh, thangSinh, yearData) => {
+  let tietIndex = yearData.canhTiet.findIndex(
+    (item) => item.month === thangSinh
+  );
+  if (ngaySinh < yearData.canhTiet[tietIndex].startDate) {
+    tietIndex = (tietIndex - 1 + 12) % 12;
+  }
+  let thang = yearData.canhTiet[tietIndex].month;
+  switch (thang) {
+    case 1:
+      return 2;
+    case 2:
+      return 3;
+    case 3:
+      return 4;
+    case 4:
+      return 5;
+    case 5:
+      return 6;
+    case 6:
+      return 7;
+    case 7:
+      return 8;
+    case 8:
+      return 9;
+    case 9:
+      return 10;
+    case 10:
+      return 11;
+    case 11:
+      return 12;
+    case 12:
+      return 1;
+  }
+};
+
+const getCanThangBatTu = (chiThang, canNam) => {
+  let canThangDan;
+  switch (canNam) {
+    case 1:
+    case 6:
+      canThangDan = 3;
+      break;
+    case 2:
+    case 7:
+      canThangDan = 5;
+      break;
+    case 3:
+    case 8:
+      canThangDan = 7;
+      break;
+    case 4:
+    case 9:
+      canThangDan = 9;
+      break;
+    case 5:
+    case 10:
+      canThangDan = 1;
+      break;
+  }
+  let khoangCach = (chiThang - 3 + 12) % 12;
+  let canThang = (khoangCach + canThangDan) % 10 || 10;
+  return canThang;
+};
+
+const calculateCanChiThangBatTu = (baseInfo, canNam, yearData) => {
+  let chiThang = getChiThangBatTu(
+    baseInfo.ngaySinh,
+    baseInfo.thangSinh,
+    yearData
+  );
+  let canThang = getCanThangBatTu(chiThang, canNam);
+  return {
+    canThang,
+    chiThang: (chiThang - 2 + 12) % 12 || 12,
+  };
+};
+
 const getBaziData = (baseInfo, thapNhiCung, boTruGio, onlyDecade) => {
   let originHour, canGioSinh, chiGioSinh, canGioSinhTen, chiGioSinhTen;
   baseInfo.boTruGio = boTruGio;
@@ -866,6 +945,9 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio, onlyDecade) => {
   let chiThang = amLich[1];
   let canNam = canChiAmLich[1];
   let chiNam = canChiAmLich[2];
+  const yearData = tietData.find((item) => item.year === baseInfo.namSinh);
+  canThang = calculateCanChiThangBatTu(baseInfo, canNam, yearData).canThang;
+  chiThang = calculateCanChiThangBatTu(baseInfo, canNam, yearData).chiThang;
   if (baseInfo.namXemTieuVan) {
     if (!onlyDecade) {
       amLichVan = S2L(
@@ -915,7 +997,7 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio, onlyDecade) => {
       canTieuVan = canChiAmLichVan[1];
       chiTieuVan = canChiAmLichVan[2];
     }
-    let tuoi = baseInfo.namXemTieuVan - baseInfo.namSinh + 1;
+    let tuoi = baseInfo.namXemTieuVan - baseInfo.namSinh;
     if (!boTruGio) {
       let cungDaiVan = null;
       for (let cung of thapNhiCung) {
@@ -930,7 +1012,6 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio, onlyDecade) => {
       canDaiVan = cungDaiVan.cungCan;
       chiDaiVan = cungDaiVan.cungSo;
     } else {
-      const yearData = tietData.find((item) => item.year === baseInfo.namSinh);
       if (yearData) {
         let amDuongNamSinh = thienCan[canChiAmLich[1]].amDuong;
         const amDuongNamNu = baseInfo.gioiTinh * amDuongNamSinh;
@@ -949,6 +1030,7 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio, onlyDecade) => {
         }
 
         let tietData = tietInYear[nextTietIndex];
+
         let daysBetween = calculateDaysBetween(
           baseInfo.ngaySinh,
           baseInfo.thangSinh,
