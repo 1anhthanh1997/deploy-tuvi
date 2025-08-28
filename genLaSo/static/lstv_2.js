@@ -3600,6 +3600,10 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
     // let nguHanhScore = bazi.nguHanhScore;
     let thapNhiCung = bazi.thapNhiCung;
     let baseInfo = bazi.baseInfo;
+    let daiVan = bazi.daiVan;
+    if (daiVan?.decadeIndex === 0) {
+      return `Chưa thể xác định vận hạn cho đến năm ${daiVan.yearStartDecade}`;
+    }
     let batTuTemplate = `Hồ sơ AGI của ${
       baseInfo.gioiTinh === 1 ? "anh" : "chị"
     } ${baseInfo.hoTen} sinh năm ${baseInfo.namSinh}

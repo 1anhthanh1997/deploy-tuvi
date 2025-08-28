@@ -948,6 +948,7 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio, onlyDecade) => {
   const yearData = tietData.find((item) => item.year === baseInfo.namSinh);
   canThang = calculateCanChiThangBatTu(baseInfo, canNam, yearData).canThang;
   chiThang = calculateCanChiThangBatTu(baseInfo, canNam, yearData).chiThang;
+  let yearStartDecade;
   if (baseInfo.namXemTieuVan) {
     if (!onlyDecade) {
       amLichVan = S2L(
@@ -1011,6 +1012,10 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio, onlyDecade) => {
       }
       canDaiVan = cungDaiVan.cungCan;
       chiDaiVan = cungDaiVan.cungSo;
+      if (tuoi < cungDaiVan.cungDaiHan % 10) {
+        decadeIndex = 0;
+      }
+      yearStartDecade = baseInfo.namSinh + (cungDaiVan.cungDaiHan % 10);
     } else {
       if (yearData) {
         let amDuongNamSinh = thienCan[canChiAmLich[1]].amDuong;
@@ -1040,10 +1045,8 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio, onlyDecade) => {
           baseInfo.namSinh
         );
         let ageStartDecade = Math.floor(daysBetween / 3);
-        decadeIndex =
-          Math.floor(
-            (tuoi - ageStartDecade < 0 ? 0 : tuoi - ageStartDecade) / 10
-          ) + 1;
+        decadeIndex = Math.floor((tuoi - ageStartDecade) / 10) + 1;
+        yearStartDecade = ageStartDecade + baseInfo.namSinh;
         canDaiVan =
           amDuongNamNu === 1
             ? dichCanChi(canThang, decadeIndex, 10)
@@ -1208,6 +1211,7 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio, onlyDecade) => {
             thienCan[canDaiVan].amDuong === thienCan[canNgay].amDuong
           ),
           decadeIndex,
+          yearStartDecade,
         }
       : undefined,
     tieuVan:
