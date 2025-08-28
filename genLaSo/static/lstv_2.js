@@ -1604,303 +1604,273 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
     let napAmData = [
       {
         name: "KIẾM PHONG KIM",
-        description:
-          "KIẾM PHONG KIM (Kim loại Vũ Khí-Kiếm)\n" +
-          "• Nguồn Gốc Can Chi: Nhâm Thân, Quý Dậu\n" +
-          "• Hình Tượng & Bản Chất: Là kim loại đã được tôi luyện đến độ cứng rắn và sắc bén cao nhất. Nó là biểu tượng của vũ khí, quyền lực, kỷ luật thép và sự quyết đoán. Mang sát khí mạnh, có công năng chặt, chém và phân định rạch ròi.\n" +
-          "• Đặc tính đột biến (Tổng quát): Cần Hỏa để tôi luyện nên không sợ Hỏa ở mức độ vừa phải. Cần Thủy để mài dũa cho thêm sắc bén. Gặp Mộc thì thể hiện được hết công năng của mình.\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này cương trực, ý chí sắt đá, quyết đoán, có tài năng lãnh đạo và giỏi thực thi. Họ sống có mục tiêu rõ ràng, không ngại va chạm để bảo vệ quan điểm. Tuy nhiên, họ có thể quá cứng nhắc, lạnh lùng, dễ gây tổn thương cho người khác.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự sắc bén & Nguy cơ của sự tàn phá.",
+        description: `KIẾM PHONG KIM (Vũ Khí)
+•	Nguồn Gốc Can Chi: Nhâm Thân, Quý Dậu
+•	Hình Tượng & Bản Chất: Là kim loại đã được tôi luyện đến độ cứng rắn và sắc bén cao nhất. Nó là biểu tượng của vũ khí, quyền lực, kỷ luật thép và sự quyết đoán. Mang sát khí mạnh, có công năng chặt, chém và phân định rạch ròi.
+•	Đặc tính đột biến (Tổng quát): Cần Hỏa để tôi luyện nên không sợ Hỏa ở mức độ vừa phải. Cần Thủy để mài dũa cho thêm sắc bén. Gặp Mộc thì thể hiện được hết công năng của mình.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này cương trực, ý chí sắt đá, quyết đoán, có tài năng lãnh đạo và giỏi thực thi. Họ sống có mục tiêu rõ ràng, không ngại va chạm để bảo vệ quan điểm. Tuy nhiên, họ có thể quá cứng nhắc, lạnh lùng, dễ gây tổn thương cho người khác.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự sắc bén & Nguy cơ của sự tàn phá. Đây là dạng Kim đã đạt đến đỉnh cao của công năng và sức mạnh. Nó đã được tôi luyện (qua Hỏa) và mài dũa (qua Thủy) để trở nên cứng rắn và sắc bén nhất. Sức mạnh của nó là khả năng thực thi, phân định rõ ràng, mang tính quyết đoán và có tác động mạnh mẽ nhất.`,
       },
       {
         name: "KIM BẠCH KIM",
-        description:
-          "KIM BẠCH KIM (Kim Loại Tinh Khiết)\n" +
-          "• Nguồn Gốc Can Chi: Nhâm Dần, Quý Mão\n" +
-          '• Hình Tượng & Bản Chất: "Bạch" nghĩa là trắng, tinh khiết. Đây là hình tượng kim loại đã được luyện, tách khỏi tạp chất, trở thành vàng nén, thỏi bạc, kim loại nguyên chất. Nó là biểu tượng của giá trị nội tại, sự cô đọng, tinh túy và thanh khiết.\n' +
-          "• Đặc tính đột biến (Tổng quát): Là Kim duy nhất không có gốc từ Thổ. Nó là sự kết tinh từ quá trình Thủy sinh Mộc. Do đã tinh khiết nên rất kỵ Hỏa (lửa làm ô tạp). Không ưa Thổ (đất làm vẩn đục).\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này thường có phẩm chất trong sạch, cốt cách thanh cao, ít nói nhưng lời nói có trọng lượng. Họ là những người có giá trị thực chất. Tuy nhiên, họ có thể cô độc, khó hòa hợp với môi trường xô bồ.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Giá trị của sự tinh khiết & Sự cao quý, xa cách của lý tưởng.",
+        description: `KIM BẠCH KIM (Kim Loại Thuần Khiết)
+•	Nguồn Gốc Can Chi: Nhâm Dần, Quý Mão
+•	Hình Tượng & Bản Chất: "Bạch" nghĩa là trắng, tinh khiết. Đây là hình tượng kim loại đã được luyện, tách khỏi tạp chất, trở thành vàng nén, thỏi bạc, kim loại nguyên chất. Nó là biểu tượng của giá trị nội tại, sự cô đọng, tinh túy và thanh khiết.
+•	Đặc tính đột biến (Tổng quát): Là Kim duy nhất không có gốc từ Thổ. Nó là sự kết tinh từ quá trình Thủy sinh Mộc. Do đã tinh khiết nên rất kỵ Hỏa (lửa làm ô tạp). Không ưa Thổ (đất làm vẩn đục).
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có phẩm chất trong sạch, cốt cách thanh cao, ít nói nhưng lời nói có trọng lượng. Họ là những người có giá trị thực chất. Tuy nhiên, họ có thể cô độc, khó hòa hợp với môi trường xô bồ.
+•	Ngữ Nghĩa Cốt Lõi: Giá trị của sự tinh khiết & Sự cao quý, xa cách của lý tưởng. Đây là kim loại ở dạng nguyên chất, cô đọng (vàng thỏi, bạc nén). Sức mạnh của nó là giá trị nội tại, sự tinh khiết và là nền tảng để tạo ra các dạng Kim khác. Nó rất mạnh về bản chất nhưng chưa có công năng cụ thể như vũ khí hay trang sức.`,
       },
       {
         name: "SA TRUNG KIM",
-        description:
-          "SA TRUNG KIM (Kim Loại Trong Cát)\n" +
-          "• Nguồn Gốc Can Chi: Giáp Ngọ, Ất Mùi\n" +
-          "• Hình Tượng & Bản Chất: Là khoáng sản, quặng kim loại còn lẫn trong đất cát. Nó là biểu tượng của tiềm năng lớn lao nhưng còn ẩn giấu, cần sự khai phá, sàng lọc và tôi luyện mới có thể trở thành vật phẩm có giá trị.\n" +
-          "• Đặc tính đột biến (Tổng quát): Bị Thổ vùi lấp. Cần Thủy để đãi lọc. Cần Hỏa để luyện. Khi chưa khai thác thì không khắc được Mộc.\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này có nhiều tài năng tiềm ẩn, kiên nhẫn, có nội lực. Tuy nhiên, nếu không gặp thời, tài năng có thể bị chôn vùi, đôi khi thiếu quyết đoán.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Sức mạnh của tiềm năng ẩn giấu & Nguy cơ của sự mai một.",
+        description: `SA TRUNG KIM (Kim Loại Trong Cát)
+•	Nguồn Gốc Can Chi: Giáp Ngọ, Ất Mùi
+•	Hình Tượng & Bản Chất: Là khoáng sản, quặng kim loại còn lẫn trong đất cát. Nó là biểu tượng của tiềm năng lớn lao nhưng còn ẩn giấu, cần sự khai phá, sàng lọc và tôi luyện mới có thể trở thành vật phẩm có giá trị.
+•	Đặc tính đột biến (Tổng quát): Bị Thổ vùi lấp. Cần Thủy để đãi lọc. Cần Hỏa để luyện. Khi chưa khai thác thì không khắc được Mộc.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có nhiều tài năng tiềm ẩn, kiên nhẫn, có nội lực. Tuy nhiên, nếu không gặp thời, tài năng có thể bị chôn vùi, đôi khi thiếu quyết đoán.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của tiềm năng ẩn giấu & Nguy cơ của sự mai một. Sức mạnh của nó nằm ở dạng tiềm năng. Đây là quặng kim loại, là vàng trong cát, có giá trị lớn nhưng còn bị che lấp và cần được khai phá. Nó mạnh hơn các dạng Kim chưa định hình khác vì đã là khoáng sản rắn chắc, chỉ chờ được khám phá.`,
       },
       {
         name: "THOA XUYẾN KIM",
-        description:
-          "THOA XUYẾN KIM (Trang Sức Kim Loại)\n" +
-          "• Nguồn Gốc Can Chi: Canh Tuất, Tân Hợi\n" +
-          "• Hình Tượng & Bản Chất: Là vàng bạc đã được chế tác tinh xảo thành đồ trang sức quý giá. Nó là biểu tượng của sự cao sang, quyền quý, vẻ đẹp, địa vị xã hội và sự giàu có. Không có công năng thực chiến nhưng có giá trị cao về mặt phẩm chất.\n" +
-          "• Đặc tính đột biến (Tổng quát): Vì đã là thành phẩm tinh xảo nên rất kỵ Hỏa, gặp lửa sẽ bị hư hoại. Cần nhất là Thủy để gột rửa, làm cho sáng bóng, tăng thêm vẻ đẹp.\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này thường có khí chất thanh cao, tao nhã, có gu thẩm mỹ tốt và coi trọng danh dự. Họ có số được người khác kính trọng, thường có địa vị trong xã hội. Tuy nhiên, họ có thể kiêu kỳ, xa rời thực tế, thiếu khả năng chịu đựng gian khổ.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự cao quý & Sự yếu đuối khi thiếu thực chiến.",
+        description: `THOA XUYẾN KIM (Trang Sức)
+•	Nguồn Gốc Can Chi: Canh Tuất, Tân Hợi
+•	Hình Tượng & Bản Chất: Là vàng bạc đã được chế tác tinh xảo thành đồ trang sức quý giá. Nó là biểu tượng của sự cao sang, quyền quý, vẻ đẹp, địa vị xã hội và sự giàu có. Không có công năng thực chiến nhưng có giá trị cao về mặt phẩm chất.
+•	Đặc tính đột biến (Tổng quát): Vì đã là thành phẩm tinh xảo nên rất kỵ Hỏa, gặp lửa sẽ bị hư hoại. Cần nhất là Thủy để gột rửa, làm cho sáng bóng, tăng thêm vẻ đẹp.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có khí chất thanh cao, tao nhã, có gu thẩm mỹ tốt và coi trọng danh dự. Họ có số được người khác kính trọng, thường có địa vị trong xã hội. Tuy nhiên, họ có thể kiêu kỳ, xa rời thực tế, thiếu khả năng chịu đựng gian khổ.
+•	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự cao quý & Sự yếu đuối khi thiếu thực chiến. Sức mạnh của nó nằm ở giá trị và sự cao quý. Dù không có sức công phá như vũ khí, nó là dạng Kim đã được chế tác tinh xảo, đạt đến đỉnh cao của vẻ đẹp và phẩm chất. Sức mạnh của nó là sự sang trọng, địa vị và giá trị được xã hội công nhận.`,
       },
       {
         name: "HẢI TRUNG KIM",
-        description:
-          "HẢI TRUNG KIM (Kim Loại Dưới Biển)\n" +
-          "• Nguồn Gốc Can Chi: Giáp Tý, Ất Sửu\n" +
-          "• Hình Tượng & Bản Chất: Là kim loại, châu báu chìm sâu dưới đáy đại dương. Nó là biểu tượng của sự tĩnh lặng, thâm trầm, của kho tàng tri thức và của cải lớn nhưng khó tiếp cận, xa rời thực tế.\n" +
-          "• Đặc tính đột biến (Tổng quát): Bị Thủy bao bọc và che lấp hoàn toàn nên không thể sinh thêm Thủy và cũng không sợ Hỏa (mặt trời). Không thể khắc Mộc vì ở dưới biển sâu.\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này có nội tâm sâu sắc, tư duy thâm trầm, thường là người có học vấn, có kho tàng kiến thức riêng. Tuy nhiên, họ có thể sống nội tâm, khép kín, thiếu sự năng động.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Sự giàu có của chiều sâu & Sự thụ động vì xa cách.",
+        description: `HẢI TRUNG KIM (Kim Loại dưới Biển)
+•	Nguồn Gốc Can Chi: Giáp Tý, Ất Sửu
+•	Hình Tượng & Bản Chất: Là kho tàng kim loại, vàng bạc, châu báu khổng lồ lắng đọng dưới đáy đại dương. Nó là biểu tượng của tiềm năng vĩ đại nhất, của sự giàu có và trí tuệ ở dạng thuần túy, nguyên sơ, được bảo tồn trong sự tĩnh lặng của biển sâu.
+•	Đặc tính đột biến (Tổng quát): Bị Thủy bao bọc, không phải là kìm hãm mà là che chở, bảo tồn giá trị. Do đó, nó không sợ Hỏa vì nước biển đã cách ly. Không thể khắc Mộc vì chưa được khai phá. Sức mạnh của nó là nội tại, không phụ thuộc vào các yếu tố bên ngoài.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có nội lực thâm sâu, trí tuệ uyên bác và tiềm năng cực lớn. Họ giống như một kho báu chưa được khám phá. Cuộc sống của họ thường an tĩnh, không phô trương, nhưng một khi đã gặp được môi trường hoặc con người phù hợp để "khai phá", họ sẽ tạo ra những giá trị phi thường.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của tiềm năng vô hạn & Thử thách của sự khai phá. Đại diện cho tiềm năng và giá trị nội tại lớn nhất. Đây là kho báu nguyên sơ, khổng lồ. Tuy chưa được khai phá nhưng trữ lượng và giá trị tiềm ẩn của nó vượt xa các dạng Kim khác. Sức mạnh của nó là sức mạnh của chiều sâu và sự giàu có vô tận.`,
       },
       {
         name: "BẠCH LẠP KIM",
-        description:
-          "BẠCH LẠP KIM (Kim Loại Nóng Chảy/Thể Lỏng)\n" +
-          "• Nguồn Gốc Can Chi: Canh Thìn, Tân Tỵ\n" +
-          "• Hình Tượng & Bản Chất: Là kim loại ở trạng thái ban sơ, đang nóng chảy hoặc chưa thành hình khối rõ ràng, còn lẫn tạp chất. Nó là biểu tượng của sự khởi đầu, khả năng thay đổi nhưng còn non nớt, chưa có giá trị cụ thể.\n" +
-          "• Đặc tính đột biến (Tổng quát): Cần nhất là Hỏa để loại bỏ tạp chất và định hình. Kỵ Thủy mạnh làm nguội lạnh, mất đi khả năng biến đổi. Không có khả năng khắc Mộc.\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này có khả năng thích nghi tốt, dễ học hỏi, có tiềm năng lớn. Họ cần một môi trường tốt, một người thầy để định hướng phát triển. Tuy nhiên, họ thiếu tự chủ và khó thành công khi đứng một mình.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự biến đổi & Sự yếu đuối vì chưa định hình.",
+        description: `BẠCH LẠP KIM (Kim Loại Lỏng)
+•	Nguồn Gốc Can Chi: Canh Thìn, Tân Tỵ
+•	Hình Tượng & Bản Chất: Là kim loại ở trạng thái ban sơ, đang nóng chảy hoặc chưa thành hình khối rõ ràng, còn lẫn tạp chất. Nó là biểu tượng của sự khởi đầu, khả năng thay đổi nhưng còn non nớt, chưa có giá trị cụ thể.
+•	Đặc tính đột biến (Tổng quát): Cần nhất là Hỏa để loại bỏ tạp chất và định hình. Kỵ Thủy mạnh làm nguội lạnh, mất đi khả năng biến đổi. Không có khả năng khắc Mộc.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có khả năng thích nghi tốt, dễ học hỏi, có tiềm năng lớn. Họ cần một môi trường tốt, một người thầy để định hướng phát triển. Tuy nhiên, họ thiếu tự chủ và khó thành công khi đứng một mình.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự biến đổi & Sự yếu đuối vì chưa định hình. Đây là dạng Kim ở trạng thái yếu và không ổn định nhất. Nó chưa được định hình, còn lẫn tạp chất và dễ bị tác động bởi các yếu tố bên ngoài (cần Hỏa để duy trì, sợ Thủy làm nguội). Sức mạnh duy nhất của nó là khả năng biến đổi, nhưng ở trạng thái hiện tại, nó không có sức mạnh nội tại.`,
       },
       {
         name: "THIÊN THƯỢNG HỎA",
-        description:
-          "THIÊN THƯỢNG HỎA (Lửa Trên Trời)\n" +
-          "• Nguồn Gốc Can Chi: Mậu Ngọ, Kỷ Mùi\n" +
-          "• Hình Tượng & Bản Chất: Là hình tượng lửa của mặt trời lúc ban trưa, nguồn sáng lớn nhất, rực rỡ và quang minh nhất, bao trùm vạn vật. Nó là biểu tượng của quyền lực tối cao, sự công bằng, chính trực và năng lượng sống dồi dào.\n" +
-          "• Đặc tính đột biến (Tổng quát): Là vua của các loại Hỏa, không sợ lửa khác. Có thể làm bốc hơi các loại Thủy nhỏ, chỉ có Đại Hải Thủy mới có thể cân bằng lại. Mang lại lợi ích và sự sống cho Mộc và Thổ.\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này quang minh, lỗi lạc, có tầm ảnh hưởng lớn và tố chất lãnh đạo. Họ sống công bằng, chính trực và có tấm lòng rộng mở. Tuy nhiên, nếu năng lượng quá mạnh, họ có thể trở nên độc đoán, thiêu đốt những người xung quanh.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự quang minh & Nguy cơ của sự thiêu đốt.",
+        description: `THIÊN THƯỢNG HỎA (Mặt Trời)
+•	Nguồn Gốc Can Chi: Mậu Ngọ, Kỷ Mùi
+•	Hình Tượng & Bản Chất: Là hình tượng lửa của mặt trời lúc ban trưa, nguồn sáng lớn nhất, rực rỡ và quang minh nhất, bao trùm vạn vật. Nó là biểu tượng của quyền lực tối cao, sự công bằng, chính trực và năng lượng sống dồi dào.
+•	Đặc tính đột biến (Tổng quát): Là vua của các loại Hỏa, không sợ lửa khác. Có thể làm bốc hơi các loại Thủy nhỏ, chỉ có Đại Hải Thủy mới có thể cân bằng lại. Mang lại lợi ích và sự sống cho Mộc và Thổ.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này quang minh, lỗi lạc, có tầm ảnh hưởng lớn và tố chất lãnh đạo. Họ sống công bằng, chính trực và có tấm lòng rộng mở. Tuy nhiên, nếu năng lượng quá mạnh, họ có thể trở nên độc đoán, thiêu đốt những người xung quanh.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự quang minh & Nguy cơ của sự thiêu đốt. Đây là "vua của các loại Hỏa". Sức mạnh của nó là tuyệt đối, bao trùm vạn vật và là nguồn năng lượng của sự sống.`,
       },
       {
         name: "TÍCH LỊCH HỎA",
-        description:
-          "TÍCH LỊCH HỎA (Lửa Sấm Sét)\n" +
-          "• Nguồn Gốc Can Chi: Mậu Tý, Kỷ Sửu\n" +
-          "• Hình Tượng & Bản Chất: Là lửa sinh ra từ sự va chạm của âm dương trong vũ trụ, là sấm sét vang trời. Nó là biểu tượng của sức mạnh đột phá, sự thay đổi chớp nhoáng, quyền uy của tạo hóa và những biến cố bất ngờ.\n" +
-          "• Đặc tính đột biến (Tổng quát): Là loại Hỏa duy nhất sinh ra từ Thủy (sự giao tranh của mây mưa). Do đó không kỵ Thủy mà còn cần Thủy để xuất hiện. Lửa này có thể mang mưa đến tưới cho Mộc và Thổ.\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này có tính cách mạnh mẽ, quyết liệt, có khả năng tạo ra những thay đổi lớn. Họ có thể thành công rất nhanh nhưng cuộc đời cũng đầy biến động. Họ hợp với các ngành nghề đòi hỏi sự táo bạo, đột phá.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự đột phá & Nguy cơ của sự hủy diệt.",
+        description: `TÍCH LỊCH HỎA (Sấm Sét)
+•	Nguồn Gốc Can Chi: Mậu Tý, Kỷ Sửu
+•	Hình Tượng & Bản Chất: Là lửa sinh ra từ sự va chạm của âm dương trong vũ trụ, là sấm sét vang trời. Nó là biểu tượng của sức mạnh đột phá, sự thay đổi chớp nhoáng, quyền uy của tạo hóa và những biến cố bất ngờ.
+•	Đặc tính đột biến (Tổng quát): Là loại Hỏa duy nhất sinh ra từ Thủy (sự giao tranh của mây mưa). Do đó không kỵ Thủy mà còn cần Thủy để xuất hiện. Lửa này có thể mang mưa đến tưới cho Mộc và Thổ.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tính cách mạnh mẽ, quyết liệt, có khả năng tạo ra những thay đổi lớn. Họ có thể thành công rất nhanh nhưng cuộc đời cũng đầy biến động. Họ hợp với các ngành nghề đòi hỏi sự táo bạo, đột phá.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự đột phá & Nguy cơ của sự hủy diệt. Tượng trưng cho sức mạnh đột phá, chớp nhoáng và quyền uy của tạo hóa. Sức mạnh của nó mang tính hủy diệt và tái tạo trong khoảnh khắc.`,
       },
       {
         name: "LƯ TRUNG HỎA",
-        description:
-          "LƯ TRUNG HỎA (Lửa Trong Lò)\n" +
-          "• Nguồn Gốc Can Chi: Bính Dần, Đinh Mão\n" +
-          "• Hình Tượng & Bản Chất: Là ngọn lửa cháy trong lò rèn, cần có vật liệu (củi, than) và không gian (lò) để duy trì. Nó là biểu tượng của nội lực, tiềm năng cần được nuôi dưỡng, sự tôi luyện và quá trình chuẩn bị để tỏa sáng.\n" +
-          "• Đặc tính đột biến (Tổng quát): Cần nhất là Mộc (củi) để cháy, không có Mộc sẽ tự lụi tàn. Không sợ Thổ (lò) và Kim (vật cần rèn). Rất kỵ Thủy vì sẽ bị dập tắt hoàn toàn.\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này có tài năng tiềm ẩn, cần có sự giáo dục, rèn luyện và một môi trường tốt để phát triển. Thành công của họ đến muộn nhưng rất vững chắc. Họ có thể nóng tính nhưng thường không thể hiện ra ngoài.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Sức mạnh của nội lực & Sự phụ thuộc vào nhiên liệu.",
+        description: `LƯ TRUNG HỎA (Lửa Trong Lò)
+•	Nguồn Gốc Can Chi: Bính Dần, Đinh Mão
+•	Hình Tượng & Bản Chất: Là ngọn lửa cháy trong lò, cần có vật liệu (củi, than) và không gian (lò) để duy trì. Nó là biểu tượng của nội lực, tiềm năng cần được nuôi dưỡng, sự tôi luyện và quá trình chuẩn bị để tỏa sáng.
+•	Đặc tính đột biến (Tổng quát): Cần nhất là Mộc (củi) để cháy, không có Mộc sẽ tự lụi tàn. Không sợ Thổ (lò) và Kim (vật cần rèn). Rất kỵ Thủy vì sẽ bị dập tắt hoàn toàn.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tài năng tiềm ẩn, cần có sự giáo dục, rèn luyện và một môi trường tốt để phát triển. Thành công của họ đến muộn nhưng rất vững chắc. Họ có thể nóng tính nhưng thường không thể hiện ra ngoài.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của nội lực & Sự phụ thuộc vào nhiên liệu. Đây là ngọn lửa có mục đích, tượng trưng cho sức mạnh của sự tôi luyện và nội lực được nuôi dưỡng.`,
       },
       {
         name: "SƠN ĐẦU HỎA",
-        description:
-          "SƠN ĐẦU HỎA (Lửa Đầu Núi)\n" +
-          "• Nguồn Gốc Can Chi: Giáp Tuất, Ất Hợi\n" +
-          "• Hình Tượng & Bản Chất: Là ánh lửa le lói trên đỉnh núi lúc hoàng hôn hoặc bình minh, là ánh sáng của khí chứ không phải ngọn lửa thực. Nó là biểu tượng của tài năng, trí tuệ ẩn giấu, cần được người khác phát hiện và công nhận.\n" +
-          "• Đặc tính đột biến (Tổng quát): Vì là khí hỏa nên không sợ Thủy (biển ở dưới, núi ở trên). Cần Mộc (cây trên núi) và Thổ (núi) làm nền để tồn tại. Gặp Kim sẽ càng thêm đẹp (ánh chiều tà phản chiếu).\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này thường thông minh, có tài năng nhưng sống khép kín, không thích phô trương. Họ chờ đợi người biết đến giá trị của mình. Thành công thường đến một cách bất ngờ hoặc đến từ những con đường không ai nghĩ tới.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự ẩn giấu & Sự cô độc trên đỉnh cao.",
+        description: `SƠN ĐẦU HỎA (Núi Lửa)
+•	Nguồn Gốc Can Chi: Giáp Tuất, Ất Hợi
+•	Hình Tượng & Bản Chất: Là ngọn lửa âm ỉ bên trong lòng núi, có vẻ ngoài tĩnh lặng nhưng bên trong chứa đựng nguồn năng lượng khổng lồ. Nó là biểu tượng của sức mạnh tiềm tàng, nội lực thâm sâu, sự bùng nổ bất ngờ và khả năng thay đổi cục diện.
+•	Đặc tính đột biến (Tổng quát): Vẻ ngoài là Thổ nhưng bản chất là Hỏa. Vì vậy không sợ Thủy thông thường. Lửa này không cần Mộc để cháy, mà tự vận động từ bên trong. Khi phun trào, nó tạo ra Thổ mới.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có vẻ ngoài điềm tĩnh, ít nói, sống nội tâm nhưng lại có tài năng và ý chí rất lớn. Họ không dễ thể hiện nhưng một khi đã hành động thì vô cùng quyết liệt, tạo ra kết quả phi thường. Thành công của họ thường đến sau một giai đoạn dài tích lũy.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự dồn nén & Sự bùng nổ thay đổi tất cả. Đại diện cho sức mạnh nội lực bị dồn nén đến cực đại rồi bùng nổ. Nó là ngọn lửa của sự chuyển mình từ sâu trong lòng đất.`,
       },
       {
         name: "SƠN HẠ HỎA",
-        description:
-          "SƠN HẠ HỎA (Lửa Dưới Núi)\n" +
-          "• Nguồn Gốc Can Chi: Bính Thân, Đinh Dậu\n" +
-          "• Hình Tượng & Bản Chất: Là ánh lửa của mặt trời lúc sắp lặn, chỉ còn là ánh sáng yếu ớt dưới chân núi. Nó là biểu tượng của năng lượng đang suy tàn, sự ẩn dật, nhưng cũng là vẻ đẹp của sự chín chắn, trải nghiệm.\n" +
-          '• Đặc tính đột biến (Tổng quát): Hỏa ở vào thế "bệnh" và "tử", năng lượng yếu nhất. Không sợ Thổ (núi che cho). Ngược lại sợ Mộc vì không đủ sức đốt. Cần Kim (ánh kim của hoàng hôn) để tăng thêm vẻ đẹp.\n' +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này thường có tài năng, trí tuệ nhưng không gặp thời, hoặc đã qua thời đỉnh cao. Họ sống khiêm tốn, không thích tranh đua. Họ có sự chín chắn và kinh nghiệm sống sâu sắc.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự tàn phai & Sự yếu đuối của buổi hoàng hôn.",
+        description: `SƠN HẠ HỎA (Lửa Nhân Tạo)
+•	Nguồn Gốc Can Chi: Bính Thân, Đinh Dậu
+•	Hình Tượng & Bản Chất: Là ngọn lửa do con người tạo ra dưới chân núi khi màn đêm buông xuống, như lửa trại, lửa lò rèn. Nó là biểu tượng của sự sống, hoạt động của con người, sự ấm áp, cộng đồng và nguồn năng lượng chủ động để xua tan bóng tối.
+•	Đặc tính đột biến (Tổng quát): Hỏa ở vào thế "bệnh" và "tử", không phải vì năng lượng yếu, mà vì sự phụ thuộc. Lửa này không thể tự tồn tại, phải dựa vào nhiên liệu (Mộc) để cháy. Không sợ Thổ (núi che gió).
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường nhiệt tình, năng nổ, hướng ngoại và có khả năng khuấy động tập thể. Họ giống như ngọn lửa trại, là trung tâm của sự chú ý. Tuy nhiên, họ có xu hướng "cả thèm chóng chán", cần sự cổ vũ và "nhiên liệu" (động lực, sự công nhận) từ bên ngoài để duy trì đam mê.
+•	Ngữ Nghĩa Cốt Lõi: Nhiệt huyết bùng cháy & Sức mạnh phụ thuộc. Là ngọn lửa của cộng đồng, phục vụ nhu cầu của con người, mang tính ứng dụng cao nhưng không ổn định.`,
       },
       {
         name: "PHÚC ĐĂNG HỎA",
-        description:
-          "PHÚC ĐĂNG HỎA (Lửa Đèn Lồng)\n" +
-          "• Nguồn Gốc Can Chi: Giáp Thìn, Ất Tỵ\n" +
-          "• Hình Tượng & Bản Chất: Là ánh lửa của ngọn đèn do con người tạo ra, dùng để soi sáng vào ban đêm hoặc những nơi khuất. Nó là biểu tượng của tri thức, sự dẫn đường, niềm vui và sự ấm áp trong một phạm vi nhỏ.\n" +
-          "• Đặc tính đột biến (Tổng quát): Là Hỏa yếu, rất sợ Thủy và gió (do Mộc mạnh gây ra). Cần Mộc (dầu trong đèn) để duy trì. Chỉ phát huy giá trị tốt nhất khi không có các loại Hỏa khác cạnh tranh (mặt trời).\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này thường là người mang lại tri thức, niềm vui cho người khác như thầy giáo, nhà tư vấn, nghệ sĩ. Họ thích các hoạt động về đêm. Tuy nhiên, họ có thể yếu đuối, cần sự che chở.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Sự hữu ích của ánh sáng nhân tạo & Sự mong manh trước giông bão.",
+        description: `PHÚC ĐĂNG HỎA (Đèn Lồng)
+•	Nguồn Gốc Can Chi: Giáp Thìn, Ất Tỵ
+•	Hình Tượng & Bản Chất: Là ánh lửa của ngọn đèn do con người tạo ra, dùng để soi sáng vào ban đêm hoặc những nơi khuất. Nó là biểu tượng của tri thức, sự văn minh, niềm vui, sự dẫn đường và sự ấm áp trong một phạm vi nhỏ.
+•	Đặc tính đột biến (Tổng quát): Là Hỏa yếu, chỉ phát huy giá trị tốt nhất khi không có Thiên Thượng Hỏa (Mặt Trời). Rất sợ Thủy và gió lớn. Cần Mộc (dầu trong đèn, nến) để duy trì.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường là người mang lại tri thức, niềm vui cho người khác như thầy giáo, nhà tư vấn, nghệ sĩ. Họ thích các hoạt động về đêm. Tuy nhiên, họ có thể yếu đuối, cần sự che chở để tỏa sáng.
+•	Ngữ Nghĩa Cốt Lõi: Sự hữu ích của ánh sáng nhân tạo & Sự mong manh trước giông bão. Đây là loại Hỏa yếu nhất về mặt năng lượng vật lý, sức mạnh của nó nằm ở giá trị tinh thần và tri thức.`,
       },
       {
         name: "ĐẠI HẢI THỦY",
-        description:
-          "ĐẠI HẢI THỦY (Nước Biển Lớn)\n" +
-          "• Nguồn Gốc Can Chi: Nhâm Tuất, Quý Hợi\n" +
-          "• Hình Tượng & Bản Chất: Là hình tượng dòng nước ở trạng thái rộng lớn, mạnh mẽ và hùng vĩ nhất. Nó là biểu tượng của tham vọng lớn, nội lực hùng hậu, tiềm năng vô hạn nhưng cũng chứa đựng sự biến động và khó lường.\n" +
-          "• Đặc tính đột biến (Tổng quát): Là vua của các loại Thủy, không sợ các dòng nước khác mà có thể dung nạp tất cả. Có thể nhấn chìm Thổ, dập tắt Hỏa. Chỉ bị Thổ rất mạnh (như đê điều) ngăn chặn, hoặc cùng tồn tại với Hỏa ở cấp độ cao nhất (lửa trời).\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này thường có chí lớn, tư duy khoáng đạt, có tài năng và tiềm năng để làm những việc lớn lao. Họ có sức ảnh hưởng, thu hút người khác. Tuy nhiên, cuộc đời họ thường có nhiều sóng gió, tính tình có thể thất thường, khó đoán.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự vĩ đại & Nguy cơ của sự vô định.",
+        description: `ĐẠI HẢI THỦY (Đại Dương)
+•	Nguồn Gốc Can Chi: Nhâm Tuất, Quý Hợi
+•	Hình Tượng & Bản Chất: Là hình tượng dòng nước ở trạng thái rộng lớn, mạnh mẽ và hùng vĩ nhất. Nó là biểu tượng của tham vọng lớn, nội lực hùng hậu, tiềm năng vô hạn nhưng cũng chứa đựng sự biến động và khó lường.
+•	Đặc tính đột biến (Tổng quát): Là vua của các loại Thủy, không sợ các dòng nước khác mà có thể dung nạp tất cả. Có thể nhấn chìm Thổ, dập tắt Hỏa. Chỉ bị Thổ rất mạnh (như đê điều) ngăn chặn.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có chí lớn, tư duy khoáng đạt, có tài năng và tiềm năng để làm những việc lớn lao. Họ có sức ảnh hưởng, thu hút người khác. Tuy nhiên, cuộc đời họ thường có nhiều sóng gió, tính tình có thể thất thường, khó đoán.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự vĩ đại & Nguy cơ của sự vô định. Đây là "vua của các loại Thủy". Đại dương là nơi quy tụ của tất cả các dòng nước, có quy mô và sức mạnh lớn nhất, không gì sánh bằng. Nó có thể nhấn chìm vạn vật, dung nạp tất cả các dòng chảy khác. Sức mạnh của nó là tuyệt đối và hùng vĩ.`,
       },
       {
         name: "THIÊN HÀ THỦY",
-        description:
-          "THIÊN HÀ THỦY (Nước Trên Trời)\n" +
-          "• Nguồn Gốc Can Chi: Bính Ngọ, Đinh Mùi\n" +
-          "• Hình Tượng & Bản Chất: Là nước mưa từ trên trời rơi xuống, mang tính phổ quát, ban ơn cho vạn vật. Nó là biểu tượng của sự tinh khôi, lòng nhân ái, sự sáng tạo và những gì mang tính tâm linh, vô hình.\n" +
-          "• Đặc tính đột biến (Tổng quát): Nước từ trời nên không có nguồn từ Kim. Có thể tương tác với Hỏa (sấm sét). Mang lại lợi ích cho toàn bộ Mộc và Thổ, không có sự phân biệt.\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này thường có tâm hồn trong sáng, nhân hậu, có trí tưởng tượng phong phú. Họ có thể thành công trong các lĩnh vực văn hóa, nghệ thuật, giáo dục, tôn giáo. Tuy nhiên, họ có thể hơi mơ mộng, thiếu thực tế.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Sự màu nhiệm của ân huệ & Sự xa rời thực tế.",
+        description: `THIÊN HÀ THỦY (Nước Mưa)
+•	Nguồn Gốc Can Chi: Bính Ngọ, Đinh Mùi
+•	Hình Tượng & Bản Chất: Là nước mưa từ trên trời rơi xuống, mang tính phổ quát, ban ơn cho vạn vật. Nó là biểu tượng của sự tinh khôi, lòng nhân ái, sự sáng tạo và những gì mang tính tâm linh, vô hình.
+•	Đặc tính đột biến (Tổng quát): Nước từ trời nên không có nguồn từ Kim. Có thể tương tác với Hỏa (sấm sét). Mang lại lợi ích cho toàn bộ Mộc và Thổ, không có sự phân biệt.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tâm hồn trong sáng, nhân hậu, có trí tưởng tượng phong phú. Họ có thể thành công trong các lĩnh vực văn hóa, nghệ thuật, giáo dục, tôn giáo. Tuy nhiên, họ có thể hơi mơ mộng, thiếu thực tế.
+•	Ngữ Nghĩa Cốt Lõi: Sự màu nhiệm của ân huệ & Sự xa rời thực tế. Mặc dù không có lưu lượng tập trung như sông lớn, nhưng Nước Mưa lại có tầm ảnh hưởng phổ quát nhất. Nó rơi từ trên trời, ban phát sự sống cho cả một vùng rộng lớn không phân biệt. Về mặt quy mô tác động trong một thời điểm (cơn mưa lớn), nó chỉ đứng sau Đại Dương.`,
       },
       {
         name: "TRƯỜNG LƯU THỦY",
-        description:
-          "TRƯỜNG LƯU THỦY (Nước Chảy Dài)\n" +
-          "• Nguồn Gốc Can Chi: Nhâm Thìn, Quý Tỵ\n" +
-          "• Hình Tượng & Bản Chất: Là dòng nước chảy từ từ, len lỏi qua các địa hình, đi một chặng đường rất dài mới đổ ra sông lớn. Nó là biểu tượng của sự kiên nhẫn, tầm nhìn xa, khả năng thích ứng và tích lũy theo thời gian.\n" +
-          "• Đặc tính đột biến (Tổng quát): Dòng nước này tự tìm đường đi, có thể biến đổi để phù hợp với Thổ. Không sợ Thổ chặn vì nó sẽ tự tìm đường vòng. Đích đến cuối cùng là gặp được các dòng nước lớn hơn.\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này có khả năng hoạch định dài hạn, suy nghĩ sâu xa, không nóng vội. Họ có thể đạt được thành công lớn khi về già. Tuy nhiên, họ có thể thiếu quyết đoán, chần chừ, mất nhiều thời gian để đi đến mục tiêu.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Sức mạnh của tầm nhìn xa & Sự chậm chạp của con đường dài.",
+        description: `TRƯỜNG LƯU THỦY (Sông Dài)
+•	Nguồn Gốc Can Chi: Nhâm Thìn, Quý Tỵ
+•	Hình Tượng & Bản Chất: Là dòng sông lớn chảy một chặng đường rất dài, len lỏi qua các địa hình để cuối cùng đổ ra biển. Nó là biểu tượng của sự kiên nhẫn, tầm nhìn xa, khả năng thích ứng và tích lũy theo thời gian.
+•	Đặc tính đột biến (Tổng quát): Dòng nước này tự tìm đường đi, có thể biến đổi để phù hợp với Thổ. Không sợ Thổ chặn vì nó sẽ tự tìm đường vòng. Đích đến cuối cùng là gặp được Đại Hải Thủy.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có khả năng hoạch định dài hạn, suy nghĩ sâu xa, không nóng vội. Họ có thể đạt được thành công lớn khi về già. Tuy nhiên, họ có thể thiếu quyết đoán, chần chừ, mất nhiều thời gian để đi đến mục tiêu.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của tầm nhìn xa & Sự chậm chạp của con đường dài. Đây là hình ảnh dòng sông lớn, có lưu lượng ổn định và sức mạnh bền bỉ theo thời gian. Nó có sức mạnh bào mòn đất đá, thay đổi địa hình và là nguồn sống cho cả một khu vực nó chảy qua. Sức mạnh của nó đến từ sự kiên trì và dòng chảy không ngừng nghỉ.`,
       },
       {
         name: "ĐẠI KHÊ THỦY",
-        description:
-          "ĐẠI KHÊ THỦY (Nước Khe Lớn)\n" +
-          "•	Nguồn Gốc Can Chi: Giáp Dần, Ất Mão\n" +
-          "•	Hình Tượng & Bản Chất: Là dòng nước lớn ở đầu nguồn, trong các khe núi, chảy mạnh mẽ, dữ dội nhưng chưa có hướng đi rõ ràng. Nó là biểu tượng của sức sống mãnh liệt, sự nhiệt huyết, thẳng thắn của tuổi trẻ.\n" +
-          "•	Đặc tính đột biến (Tổng quát): Vì ở đầu nguồn nên không ưa Kim (chưa cần đến nguồn). Thích gặp các loại Thủy khác để hợp thành sông lớn. Không sợ Thổ vì có thể cuốn trôi đất đá. Rất ưa Mộc vì nó thể hiện sức sống của núi rừng.\n" +
-          "•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này thường hướng ngoại, thẳng thắn, nhiệt tình và thích tự do. Họ có nhiều ý tưởng, thích phiêu lưu mạo hiểm. Tuy nhiên, họ có thể bốc đồng, thiếu kiên nhẫn, không suy nghĩ dài hạn.\n" +
-          "•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự nhiệt huyết & Sự thiếu định hướng của tuổi trẻ.",
+        description: `ĐẠI KHÊ THỦY (Thác Nước)
+•	Nguồn Gốc Can Chi: Giáp Dần, Ất Mão
+•	Hình Tượng & Bản Chất: Là dòng nước lớn ở đầu nguồn, trong các khe núi, chảy mạnh mẽ, dữ dội nhưng chưa có hướng đi rõ ràng. Nó là biểu tượng của sức sống mãnh liệt, sự nhiệt huyết, thẳng thắn của tuổi trẻ.
+•	Đặc tính đột biến (Tổng quát): Vì ở đầu nguồn nên không ưa Kim (chưa cần đến nguồn). Thích gặp các loại Thủy khác để hợp thành sông lớn. Không sợ Thổ vì có thể cuốn trôi đất đá. Rất ưa Mộc vì nó thể hiện sức sống của núi rừng.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường hướng ngoại, thẳng thắn, nhiệt tình và thích tự do. Họ có nhiều ý tưởng, thích phiêu lưu mạo hiểm. Tuy nhiên, họ có thể bốc đồng, thiếu kiên nhẫn, không suy nghĩ dài hạn.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự nhiệt huyết & Sự thiếu định hướng của tuổi trẻ. Sức mạnh của Thác Nước rất dữ dội, mãnh liệt nhưng chỉ trong một phạm vi hẹp và ngắn. Nó có thể cuốn phăng đất đá ở đầu nguồn nhưng sức mạnh không bền bỉ và có định hướng như Sông Dài. Nó đại diện cho sức mạnh bộc phát nhất thời.`,
       },
       {
         name: "TUYỀN TRUNG THỦY",
-        description:
-          "TUYỀN TRUNG THỦY (Nước Giữa Suối)\n" +
-          "•	Nguồn Gốc Can Chi: Giáp Thân, Ất Dậu\n" +
-          "•	Hình Tượng & Bản Chất: Là dòng nước suối trong mát, chảy ra từ nguồn trong núi, lúc ẩn lúc hiện. Nó là biểu tượng của trí tuệ thanh khiết, sự tinh tường, khả năng nuôi dưỡng một cách thầm lặng và bền bỉ.\n" +
-          "•	Đặc tính đột biến (Tổng quát): Vì nguồn của nó là Kim (Thân, Dậu) nên đây là loại Thủy duy nhất càng gặp Kim lại càng mạnh, càng trong. Rất ưa Mộc để được nuôi dưỡng. Không sợ Thổ vì có thể len lỏi qua.\n" +
-          "•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này thông minh, thanh cao, có tấm lòng nhân hậu. Họ thích cuộc sống an tĩnh, không màng danh lợi xô bồ. Họ là những người thầy, nhà tư vấn thầm lặng. Tuy nhiên, họ có thể thiếu tham vọng, sống ẩn dật, khép kín.\n" +
-          "•	Ngữ Nghĩa Cốt Lõi: Sự trong lành của trí tuệ & Sự thầm lặng của cống hiến.",
+        description: `TUYỀN TRUNG THỦY (Nước Suối)
+•	Nguồn Gốc Can Chi: Giáp Thân, Ất Dậu
+•	Hình Tượng & Bản Chất: Là dòng nước suối trong mát, chảy ra từ nguồn trong núi, lúc ẩn lúc hiện. Nó là biểu tượng của trí tuệ thanh khiết, sự tinh tường, khả năng nuôi dưỡng một cách thầm lặng và bền bỉ.
+•	Đặc tính đột biến (Tổng quát): Vì nguồn của nó là Kim (Thân, Dậu) nên đây là loại Thủy duy nhất càng gặp Kim lại càng mạnh, càng trong. Rất ưa Mộc để được nuôi dưỡng. Không sợ Thổ vì có thể len lỏi qua.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thông minh, thanh cao, có tấm lòng nhân hậu. Họ thích cuộc sống an tĩnh, không màng danh lợi xô bồ. Họ là những người thầy, nhà tư vấn thầm lặng. Tuy nhiên, họ có thể thiếu tham vọng, sống ẩn dật, khép kín.
+•	Ngữ Nghĩa Cốt Lõi: Sự trong lành của trí tuệ & Sự thầm lặng của cống hiến. Nước Suối có lưu lượng nhỏ, dòng chảy hiền hòa. Sức mạnh của nó không nằm ở sức công phá mà ở khả năng nuôi dưỡng, duy trì sự sống một cách bền bỉ và tinh khiết. Nó là khởi nguồn của những dòng sông lớn nhưng bản thân nó lại rất khiêm tốn.`,
       },
       {
         name: "GIẢN HẠ THỦY",
-        description:
-          "GIẢN HẠ THỦY (Nước Dưới Khe)\n" +
-          "•	Nguồn Gốc Can Chi: Bính Tý, Đinh Sửu\n" +
-          "•	Hình Tượng & Bản Chất: Là dòng nước ngầm, mạch nước chảy trong khe sâu, lúc ẩn lúc hiện, lặng lẽ và mát lành. Nó là biểu tượng của nội tâm thâm sâu, trí tuệ tiềm ẩn và sự kiên trì bền bỉ nhưng ít khi thể hiện ra ngoài.\n" +
-          "•	Đặc tính đột biến (Tổng quát): Là Thủy ở tầng sâu nhất, không sợ Thổ vì nó nằm trong lòng đất. Cần Kim để sinh ra (kim loại trong lòng đất tạo mạch nước). Không sợ Hỏa yếu vì khó có thể tác động đến, nhưng lại rất hợp với Hỏa của sấm sét (Tích Lịch Hỏa) vì sấm mưa sẽ làm mạch nước mạnh lên.\n" +
-          "•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này thường có nội tâm phức tạp, khó đoán, thông minh nhưng không khoe khoang. Họ có sự nhẫn nại và có thể thành công một cách thầm lặng. Tuy nhiên, họ có thể đa nghi, hay do dự, bỏ lỡ cơ hội.\n" +
-          "•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự thâm trầm & Sự do dự vì đa nghi.",
+        description: `GIẢN HẠ THỦY (Mạch Nước Ngầm)
+•	Nguồn Gốc Can Chi: Bính Tý, Đinh Sửu
+•	Hình Tượng & Bản Chất: Là dòng nước ngầm, mạch nước chảy trong khe sâu, lúc ẩn lúc hiện, lặng lẽ và mát lành. Nó là biểu tượng của nội tâm thâm sâu, trí tuệ tiềm ẩn và sự kiên trì bền bỉ nhưng ít khi thể hiện ra ngoài.
+•	Đặc tính đột biến (Tổng quát): Là Thủy ở tầng sâu nhất, không sợ Thổ vì nó nằm trong lòng đất. Cần Kim để sinh ra. Không sợ Hỏa yếu vì khó có thể tác động đến.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có nội tâm phức tạp, khó đoán, thông minh nhưng không khoe khoang. Họ có sự nhẫn nại và có thể thành công một cách thầm lặng. Tuy nhiên, họ có thể đa nghi, hay do dự, bỏ lỡ cơ hội.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự thâm trầm & Sự do dự vì đa nghi. Đây là dòng nước có lưu lượng nhỏ nhất và ẩn mình sâu nhất. Nó gần như không có tác động trực tiếp lên bề mặt. Sức mạnh của nó là sự tồn tại thầm lặng, bền bỉ và tiềm ẩn. Nó rất quan trọng nhưng lại yếu nhất về mặt biểu hiện ra bên ngoài.`,
       },
       {
         name: "ĐẠI LÂM MỘC",
-        description:
-          "ĐẠI LÂM MỘC (Cây Rừng Lớn)\n" +
-          "•	Nguồn Gốc Can Chi: Mậu Thìn, Kỷ Tỵ\n" +
-          "•	Hình Tượng & Bản Chất: Là hình tượng của một khu rừng lớn với vô số cây cối hùng vĩ, xanh tươi. Nó là biểu tượng của sự thịnh vượng, sức sống mãnh liệt, tính cộng đồng và nền tảng vững chắc. Đây là dạng Mộc mạnh mẽ và có sức lan tỏa lớn nhất.\n" +
-          "•	Đặc tính đột biến (Tổng quát): Vì là cả một khu rừng nên không sợ Kim (một chiếc rìu không thể đốn hết). Cần Thủy để nuôi dưỡng và Thổ để làm nền tảng. Có thể lấn át Hỏa yếu.\n" +
-          "•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này thường có tấm lòng nhân hậu, phóng khoáng, có tinh thần đồng đội và khả năng che chở cho người khác. Họ có nền tảng tốt, dễ thành công trong các lĩnh vực đòi hỏi sự hợp tác, quy mô lớn. Tuy nhiên, trong một tập thể lớn, họ có thể thiếu đi sự nổi bật cá nhân.\n" +
-          "•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự hùng vĩ & Sự cạnh tranh của quần thể.",
+        description: `ĐẠI LÂM MỘC (Rừng Cây Lớn)
+•	Nguồn Gốc Can Chi: Mậu Thìn, Kỷ Tỵ
+•	Hình Tượng & Bản Chất: Là hình tượng của một khu rừng lớn với vô số cây cối hùng vĩ, xanh tươi. Nó là biểu tượng của sự thịnh vượng, sức sống mãnh liệt, tính cộng đồng và nền tảng vững chắc. Đây là dạng Mộc mạnh mẽ và có sức lan tỏa lớn nhất.
+•	Đặc tính đột biến (Tổng quát): Vì là cả một khu rừng nên không sợ Kim (một chiếc rìu không thể đốn hết). Cần Thủy để nuôi dưỡng và Thổ để làm nền tảng. Có thể lấn át Hỏa yếu.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tấm lòng nhân hậu, phóng khoáng, có tinh thần đồng đội và khả năng che chở cho người khác. Họ có nền tảng tốt, dễ thành công trong các lĩnh vực đòi hỏi sự hợp tác, quy mô lớn. Tuy nhiên, trong một tập thể lớn, họ có thể thiếu đi sự nổi bật cá nhân.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự hùng vĩ & Sự cạnh tranh của quần thể. Sức mạnh của Đại Lâm Mộc đến từ quy mô và tính quần thể. Một cây có thể bị đốn hạ, nhưng cả một khu rừng là một thế lực hùng vĩ, có sức sống mãnh liệt và rất khó bị hủy diệt. Sức mạnh của nó là sự to lớn, hùng hậu và vững chãi.`,
       },
       {
         name: "TÙNG BÁCH MỘC",
-        description:
-          "TÙNG BÁCH MỘC (Cây Tùng Bách)\n" +
-          "• Nguồn Gốc Can Chi: Canh Dần, Tân Mão\n" +
-          "• Hình Tượng & Bản Chất: Là hình ảnh cây tùng, cây bách hiên ngang, cứng cỏi, chịu đựng được sương tuyết giá lạnh. Nó là biểu tượng của sự kiên định, ý chí sắt đá, tuổi thọ, sự chính trực và khả năng vượt qua nghịch cảnh.\n" +
-          "• Đặc tính đột biến (Tổng quát): Là loại Mộc duy nhất có thể chống chọi lại Kim (rìu khó đốn). Không sợ mùa đông (Thủy vượng). Sống trên núi cao nên không cần nhiều Thổ màu mỡ.\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này có ý chí kiên cường, lập trường vững vàng, sống có nguyên tắc và danh dự. Họ có thể gánh vác những trọng trách lớn, là trụ cột trong gia đình và tổ chức. Tuy nhiên, họ có thể cô độc, cứng nhắc và ít khi cúi mình.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự kiên định & Sự cô độc trong giá lạnh.",
+        description: `TÙNG BÁCH MỘC (Cây Thân Cứng, Mọc Thẳng)
+•	Nguồn Gốc Can Chi: Canh Dần, Tân Mão
+•	Hình Tượng & Bản Chất: Là hình ảnh cây tùng, cây bách hiên ngang, cứng cỏi, chịu đựng được sương tuyết giá lạnh. Nó là biểu tượng của sự kiên định, ý chí sắt đá, tuổi thọ, sự chính trực và khả năng vượt qua nghịch cảnh.
+•	Đặc tính đột biến (Tổng quát): Là loại Mộc duy nhất có thể chống chọi lại Kim (rìu khó đốn). Không sợ mùa đông (Thủy vượng). Sống trên núi cao nên không cần nhiều Thổ màu mỡ.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có ý chí kiên cường, lập trường vững vàng, sống có nguyên tắc và danh dự. Họ có thể gánh vác những trọng trách lớn, là trụ cột trong gia đình và tổ chức. Tuy nhiên, họ có thể cô độc, cứng nhắc và ít khi cúi mình.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự kiên định & Sự cô độc trong giá lạnh. Đây là loại Mộc cứng rắn, kiên định và có ý chí mạnh mẽ nhất. Nó là hình ảnh của cây đại thụ hiên ngang trước sương tuyết, không sợ Kim khắc (rìu khó đốn). Sức mạnh của nó nằm ở sự bất khuất, khí phách và khả năng chịu đựng nghịch cảnh khắc nghiệt nhất.`,
       },
       {
         name: "THẠCH LỰU MỘC",
-        description:
-          "THẠCH LỰU MỘC (Cây Thạch Lựu)\n" +
-          "• Nguồn Gốc Can Chi: Canh Thân, Tân Dậu\n" +
-          "• Hình Tượng & Bản Chất: Là hình ảnh cây thạch lựu, một loại cây mà giá trị không nằm ở thân gỗ mà ở quả (hoa thơm, quả ngọt). Nó là biểu tượng của vẻ đẹp và thành quả nội tại, cần sự tác động từ bên ngoài để kết trái.\n" +
-          "• Đặc tính đột biến (Tổng quát): Là Mộc duy nhất bị Kim khắc mà lại trở nên tốt đẹp. Cần có Kim (dao kéo) cắt tỉa cành lá thì mới có thể ra hoa, kết trái. Do đó, nó không sợ Kim mà còn cần Kim.\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này thường có tài năng, vẻ đẹp tiềm ẩn bên trong. Họ cần sự rèn luyện, kỷ luật, thậm chí là áp lực, chỉ trích để có thể tạo ra thành quả. Thành công của họ thường đến sau khi trải qua gian khó.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của thành quả & Sự trưởng thành từ áp lực.",
+        description: `THẠCH LỰU MỘC (Cây Ăn Quả)
+•	Nguồn Gốc Can Chi: Canh Thân, Tân Dậu
+•	Hình Tượng & Bản Chất: Là hình ảnh cây thạch lựu, một loại cây mà giá trị không nằm ở thân gỗ mà ở quả (hoa thơm, quả ngọt). Nó là biểu tượng của vẻ đẹp và thành quả nội tại, cần sự tác động từ bên ngoài để kết trái.
+•	Đặc tính đột biến (Tổng quát): Là Mộc duy nhất bị Kim khắc mà lại trở nên tốt đẹp. Cần có Kim (dao kéo) cắt tỉa cành lá thì mới có thể ra hoa, kết trái. Do đó, nó không sợ Kim mà còn cần Kim.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tài năng, vẻ đẹp tiềm ẩn bên trong. Họ cần sự rèn luyện, kỷ luật, thậm chí là áp lực, chỉ trích để có thể tạo ra thành quả. Thành công của họ thường đến sau khi trải qua gian khó.
+•	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của thành quả & Sự trưởng thành từ áp lực. Sức mạnh của nó nằm ở sức sống phi thường và khả năng biến nghịch cảnh thành sức mạnh. Là Mộc duy nhất không những không sợ Kim mà còn cần Kim (sự cắt tỉa, áp lực) để phát triển và tạo ra thành quả. Đây là sức mạnh của sự kiên cường và ý chí vươn lên từ gian khó.`,
       },
       {
         name: "TANG ĐỐ MỘC",
-        description:
-          "TANG ĐỐ MỘC (Cây Dâu Tằm)\n" +
-          "• Nguồn Gốc Can Chi: Nhâm Tý, Quý Sửu\n" +
-          "• Hình Tượng & Bản Chất: Là hình ảnh cây dâu tằm, một loại cây có công năng đặc biệt (nuôi tằm, dệt lụa). Nó là biểu tượng của sự khéo léo, hữu ích trong một lĩnh vực chuyên biệt, sự hy sinh và cống hiến thầm lặng.\n" +
-          '• Đặc tính đột biến (Tổng quát): Là Mộc sinh ra từ Thủy (Tý, Sửu). Rất cần Thủy để phát triển. Công năng của nó gắn liền với con người (chăn nuôi, dệt vải), do đó nó có tính "nhân tạo" và cần sự chăm sóc.\n' +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này thường có tài năng đặc biệt trong một lĩnh vực hẹp, rất khéo léo và cần mẫn. Họ sống vì người khác nhiều hơn vì mình. Tuy nhiên, cuộc sống có thể vất vả, ít được hưởng thụ thành quả.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Sự hữu ích của chuyên môn & Sự hy sinh thầm lặng.",
+        description: `TANG ĐỐ MỘC (Cây Đa Dụng)
+•	Nguồn Gốc Can Chi: Nhâm Tý, Quý Sửu
+•	Hình Tượng & Bản Chất: Là hình ảnh cây dâu tằm, một loại cây có công năng đặc biệt (nuôi tằm, dệt lụa). Nó là biểu tượng của sự khéo léo, hữu ích trong một lĩnh vực chuyên biệt, sự hy sinh và cống hiến thầm lặng.
+•	Đặc tính đột biến (Tổng quát): Là Mộc sinh ra từ Thủy (Tý, Sửu). Rất cần Thủy để phát triển. Công năng của nó gắn liền với con người (chăn nuôi, dệt vải), do đó nó có tính "nhân tạo" và cần sự chăm sóc.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tài năng đặc biệt trong một lĩnh vực hẹp, rất khéo léo và cần mẫn. Họ sống vì người khác nhiều hơn vì mình. Tuy nhiên, cuộc sống có thể vất vả, ít được hưởng thụ thành quả.
+•	Ngữ Nghĩa Cốt Lõi: Sự hữu ích của chuyên môn & Sự hy sinh thầm lặng. Sức mạnh của nó không nằm ở sự cứng cỏi hay tầm vóc, mà ở giá trị sử dụng và sự linh hoạt. Gỗ dâu có thể làm cung tên (chứa đựng sức mạnh), lá dâu có thể nuôi tằm (tạo ra giá trị). Đây là sức mạnh của sự hữu ích, chuyên dụng và khả năng cống hiến.`,
       },
       {
         name: "BÌNH ĐỊA MỘC",
-        description:
-          "BÌNH ĐỊA MỘC (Cây Đất Bằng)\n" +
-          "• Nguồn Gốc Can Chi: Mậu Tuất, Kỷ Hợi\n" +
-          "• Hình Tượng & Bản Chất: Là cây cỏ, bụi rậm mọc ở đồng bằng. Tuy không cao lớn nhưng có sức sống mãnh liệt và lan tỏa trên diện rộng. Nó là biểu tượng của sự thực tế, gần gũi, khả năng thích nghi và tính cộng đồng.\n" +
-          "• Đặc tính đột biến (Tổng quát): Vì là cây cỏ nên không có giá trị về gỗ, do đó không sợ Kim (rìu). Rất cần Thủy (mưa) để sinh trưởng và sợ nhất là Hỏa (lửa đồng). Sống hòa hợp với Thổ.\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này sống thực tế, hòa đồng, dễ thích nghi và có nhiều mối quan hệ. Họ không có tham vọng cao xa nhưng xây dựng được cuộc sống ổn định, vui vẻ. Tuy nhiên, họ có thể thiếu tầm nhìn, dễ bằng lòng với thực tại.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Sức sống của sự lan tỏa & Sự thiếu tầm vóc cao xa.",
+        description: `BÌNH ĐỊA MỘC (Cây Thấp, Sát Đất)
+•	Nguồn Gốc Can Chi: Mậu Tuất, Kỷ Hợi
+•	Hình Tượng & Bản Chất: Là cây cỏ, bụi rậm mọc ở đồng bằng. Tuy không cao lớn nhưng có sức sống mãnh liệt và lan tỏa trên diện rộng. Nó là biểu tượng của sự thực tế, gần gũi, khả năng thích nghi và tính cộng đồng.
+•	Đặc tính đột biến (Tổng quát): Vì là cây cỏ nên không có giá trị về gỗ, do đó không sợ Kim (rìu). Rất cần Thủy (mưa) để sinh trưởng và sợ nhất là Hỏa (lửa đồng). Sống hòa hợp với Thổ.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này sống thực tế, hòa đồng, dễ thích nghi và có nhiều mối quan hệ. Họ không có tham vọng cao xa nhưng xây dựng được cuộc sống ổn định, vui vẻ. Tuy nhiên, họ có thể thiếu tầm nhìn, dễ bằng lòng với thực tại.
+•	Ngữ Nghĩa Cốt Lõi: Sức sống của sự lan tỏa & Sự thiếu tầm vóc cao xa. Sức mạnh của nó nằm ở sự lan tỏa và sức sống dẻo dai. Cây cỏ có thể bị dẫm đạp nhưng vẫn vươn lên. Tuy nhiên, về mặt tầm vóc và sự vững chãi, nó không thể so sánh với các loại cây gỗ lớn. Sức mạnh của nó là sức mạnh của số đông nhưng thiếu đi vóc dáng và sự kiên cố của cá thể.`,
       },
       {
         name: "DƯƠNG LIỄU MỘC",
-        description:
-          "DƯƠNG LIỄU MỘC (Cây Dương Liễu)\n" +
-          "• Nguồn Gốc Can Chi: Nhâm Ngọ, Quý Mùi\n" +
-          "• Hình Tượng & Bản Chất: Là hình ảnh cây dương liễu với thân mềm mại, cành lá rủ xuống, luôn đung đưa trước gió. Nó là biểu tượng của sự uyển chuyển, linh hoạt, duyên dáng nhưng cũng thiếu đi sự cứng cỏi, lập trường không vững vàng.\n" +
-          "• Đặc tính đột biến (Tổng quát): Thân mềm nên rất sợ Kim. Ưa Thủy để duy trì sự mềm mại. Dễ bị Hỏa mạnh làm cho khô héo.\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này thường có vẻ ngoài duyên dáng, tình cảm, khéo léo trong giao tiếp. Họ dễ thích nghi nhưng lập trường không vững, dễ thay đổi, nội tâm đa sầu đa cảm.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự mềm mại & Sự yếu đuối vì thiếu lập trường.",
+        description: `DƯƠNG LIỄU MỘC (Cây Thân Mềm)
+•	Nguồn Gốc Can Chi: Nhâm Ngọ, Quý Mùi
+•	Hình Tượng & Bản Chất: Là hình ảnh cây dương liễu với thân mềm mại, cành lá rủ xuống, luôn đung đưa trước gió. Nó là biểu tượng của sự uyển chuyển, linh hoạt, duyên dáng nhưng cũng thiếu đi sự cứng cỏi, lập trường không vững vàng.
+•	Đặc tính đột biến (Tổng quát): Thân mềm nên rất sợ Kim. Ưa Thủy để duy trì sự mềm mại. Dễ bị Hỏa mạnh làm cho khô héo.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có vẻ ngoài duyên dáng, tình cảm, khéo léo trong giao tiếp. Họ dễ thích nghi nhưng lập trường không vững, dễ thay đổi, nội tâm đa sầu đa cảm.
+•	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự mềm mại & Sự yếu đuối vì thiếu lập trường. Yếu nhất vì bản chất của nó là sự mềm mại, uyển chuyển và thiếu lập trường. Nó dễ dàng uốn mình theo chiều gió, tượng trưng cho sự thiếu kiên định. Trong hệ quy chiếu về sức mạnh (vốn đề cao sự cứng cỏi, vững vàng), nó bị xem là yếu nhất.`,
       },
       {
         name: "THÀNH ĐẦU THỔ",
-        description:
-          "THÀNH ĐẦU THỔ (Đất Trên Thành)\n" +
-          "•	Nguồn Gốc Can Chi: Mậu Dần, Kỷ Mão\n" +
-          "•	Hình Tượng & Bản Chất: Là đất tường thành, đê điều, đã được nén chặt và gia cố. Nó là biểu tượng của sự kiên cố, vững chãi, khả năng bảo vệ và tính nguyên tắc. Đây là dạng Thổ có sức mạnh phòng thủ lớn nhất.\n" +
-          "•	Đặc tính đột biến (Tổng quát): Không ngại Mộc, lại còn cần Mộc để làm cổng thành, gia tăng sự vững chãi, chứ không sợ bị Mộc khắc theo cách thông thường. Ưa Hỏa để làm đất thêm khô cứng, vững chãi. Rất kỵ Thủy lớn vì có thể làm sụp đổ thành trì.\n" +
-          "•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này thường có lập trường vững vàng, sống có nguyên tắc, đáng tin cậy và có khả năng bảo vệ người khác. Họ là những người xây dựng và duy trì sự ổn định. Tuy nhiên, họ có thể rất bảo thủ, cứng đầu, thiếu linh hoạt.\n" +
-          "•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự kiên cố & Nguy cơ của sự bất biến.",
+        description: `THÀNH ĐẦU THỔ (Đất Tường Thành)
+•	Nguồn Gốc Can Chi: Mậu Dần, Kỷ Mão
+•	Hình Tượng & Bản Chất: Là đất tường thành, đê điều, đã được nén chặt và gia cố. Nó là biểu tượng của sự kiên cố, vững chãi, khả năng bảo vệ và tính nguyên tắc. Đây là dạng Thổ có sức mạnh phòng thủ lớn nhất.
+•	Đặc tính đột biến (Tổng quát): Không ngại Mộc, lại còn cần Mộc để làm cổng thành, gia tăng sự vững chãi, chứ không sợ bị Mộc khắc theo cách thông thường. Ưa Hỏa để làm đất thêm khô cứng, vững chãi. Rất kỵ Thủy lớn vì có thể làm sụp đổ thành trì.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có lập trường vững vàng, sống có nguyên tắc, đáng tin cậy và có khả năng bảo vệ người khác. Họ là những người xây dựng và duy trì sự ổn định. Tuy nhiên, họ có thể rất bảo thủ, cứng đầu, thiếu linh hoạt.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự kiên cố & Nguy cơ của sự bất biến. Đây là loại Thổ có tính kiên cố, vững chãi và sức phòng thủ cao nhất. Nó được tạo ra với mục đích là để chống chịu, bảo vệ. Đặc biệt, nó không sợ Mộc khắc theo cách thông thường mà còn cần Mộc để gia cố. Sức mạnh của nó nằm ở sự vững vàng không thể lay chuyển.`,
       },
       {
         name: "ÐẠI TRẠCH THỔ",
-        description:
-          "ĐẠI TRẠCH THỔ (Đất Nền Rộng)\n" +
-          "•	Nguồn Gốc Can Chi: Mậu Thân, Kỷ Dậu\n" +
-          "•	Hình Tượng & Bản Chất: Là đất cồn bãi, đất phù sa, nền móng rộng lớn. Nó là biểu tượng của sự màu mỡ, trù phú, lòng bao dung và là nền tảng cho vạn vật sinh sôi.\n" +
-          "•	Đặc tính đột biến (Tổng quát): Không sợ Mộc vì đất rộng thì cây cối mọc lên càng làm đất thêm màu mỡ. Rất cần Thủy để bồi đắp và nuôi dưỡng. Gặp Hỏa (mặt trời) sẽ càng thêm trù phú.\n" +
-          "•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này có tấm lòng bao dung, phóng khoáng, dễ tha thứ. Họ thường có tài sản, đất đai và là nền tảng vững chắc cho người khác nương tựa. Tuy nhiên, họ có thể thiếu sự tinh tế, đôi khi tùy tiện và không có quy củ chặt chẽ.\n" +
-          "•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của nền tảng và sự trù phú & Sự thiếu quy củ.",
+        description: `ĐẠI TRẠCH THỔ (Đồng Bằng)
+•	Nguồn Gốc Can Chi: Mậu Thân, Kỷ Dậu
+•	Hình Tượng & Bản Chất: Là đất cồn bãi, đất phù sa, nền móng rộng lớn. Nó là biểu tượng của sự màu mỡ, trù phú, lòng bao dung và là nền tảng cho vạn vật sinh sôi.
+•	Đặc tính đột biến (Tổng quát): Không sợ Mộc vì đất rộng thì cây cối mọc lên càng làm đất thêm màu mỡ. Rất cần Thủy để bồi đắp và nuôi dưỡng. Gặp Hỏa (mặt trời) sẽ càng thêm trù phú.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tấm lòng bao dung, phóng khoáng, dễ tha thứ. Họ thường có tài sản, đất đai và là nền tảng vững chắc cho người khác nương tựa. Tuy nhiên, họ có thể thiếu sự tinh tế, đôi khi tùy tiện và không có quy củ chặt chẽ.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của nền tảng và sự trù phú & Sự thiếu quy củ. Sức mạnh của Đại Trạch Thổ nằm ở quy mô rộng lớn và khả năng nuôi dưỡng vô hạn. Nó là nền tảng cho vạn vật sinh sôi, có tấm lòng bao dung, dung nạp tất cả. Dù không cứng rắn như Thành Đầu Thổ, nhưng sức mạnh về tầm vóc và sự trù phú của nó là không thể phủ nhận.`,
       },
       {
         name: "LỘ BÀNG THỔ",
-        description:
-          "LỘ BÀNG THỔ (Đất Ven Đường)\n" +
-          "•	Nguồn Gốc Can Chi: Canh Ngọ, Tân Mùi\n" +
-          "•	Hình Tượng & Bản Chất: Là đất ven đường đã bị người và xe qua lại đè nén đến chai sạn. Nó là biểu tượng của sự bền bỉ, nhẫn nại, sức chịu đựng cao và trải qua nhiều sương gió.\n" +
-          "•	Đặc tính đột biến (Tổng quát): Vì đã chai sạn nên không sợ Mộc khắc, rễ cây khó đâm xuyên. Gặp Thủy sẽ trở nên lầy lội, vất vả. Gặp Hỏa sẽ càng thêm khô cứng.\n" +
-          "•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này có sức chịu đựng phi thường, kiên nhẫn, giữ chữ tín. Cuộc sống của họ thường vất vả, ít có cơ hội phát triển lớn và có thể trở nên trơ lì, vô cảm với xung quanh.\n" +
-          " •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự dãi dầu & Sự thiếu màu mỡ.",
+        description: `LỘ BÀNG THỔ (Mặt Đường Giao Thông)
+•	Nguồn Gốc Can Chi: Canh Ngọ, Tân Mùi
+•	Hình Tượng & Bản Chất: Là đất ven đường đã bị người và xe qua lại đè nén đến chai sạn. Nó là biểu tượng của sự bền bỉ, nhẫn nại, sức chịu đựng cao và trải qua nhiều sương gió.
+•	Đặc tính đột biến (Tổng quát): Vì đã chai sạn nên không sợ Mộc khắc, rễ cây khó đâm xuyên. Gặp Thủy sẽ trở nên lầy lội, vất vả. Gặp Hỏa sẽ càng thêm khô cứng.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có sức chịu đựng phi thường, kiên nhẫn, giữ chữ tín. Cuộc sống của họ thường vất vả, ít có cơ hội phát triển lớn và có thể trở nên trơ lì, vô cảm với xung quanh.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự dãi dầu & Sự thiếu màu mỡ. Sức mạnh của nó đến từ sự dãi dầu, chai sạn. Nó đã chịu đựng vô số tác động mà trở nên rắn chắc. Sức mạnh này không phải là quy mô hay sự màu mỡ, mà là sức bền và khả năng chịu đựng áp lực phi thường. Nó cũng là loại Thổ không sợ Mộc khắc.`,
       },
       {
         name: "SA TRUNG THỔ",
-        description:
-          "SA TRUNG THỔ (Đất Pha Cát)\n" +
-          "•	Nguồn Gốc Can Chi: Bính Thìn, Đinh Tỵ\n" +
-          "•	Hình Tượng & Bản Chất: Là đất cát, không thuần chất và dễ biến đổi. Nó là biểu tượng của sự linh hoạt, dễ thích nghi nhưng thiếu sự ổn định và lập trường vững chắc.\n" +
-          "•	Đặc tính đột biến (Tổng quát): Vì không thuần nhất nên dễ bị các hành khác tác động. Gặp Thủy sẽ bị cuốn trôi. Gặp Hỏa sẽ trở thành sa mạc khô cằn. Mộc khó sinh trưởng.\n" +
-          "•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này rất linh hoạt, dễ thích nghi. Họ có nhiều khả năng tiềm ẩn. Tuy nhiên, họ thường không ổn định, hay thay đổi, thiếu lập trường và khó tập trung vào một mục tiêu lâu dài.\n" +
-          "•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự thích ứng & Sự thiếu nhất quán.",
+        description: `SA TRUNG THỔ (Đất Pha Cát)
+•	Nguồn Gốc Can Chi: Bính Thìn, Đinh Tỵ
+•	Hình Tượng & Bản Chất: Là đất cát, không thuần chất và dễ biến đổi. Nó là biểu tượng của sự linh hoạt, dễ thích nghi nhưng thiếu sự ổn định và lập trường vững chắc.
+•	Đặc tính đột biến (Tổng quát): Vì không thuần nhất nên dễ bị các hành khác tác động. Gặp Thủy sẽ bị cuốn trôi. Gặp Hỏa sẽ trở thành sa mạc khô cằn. Mộc khó sinh trưởng.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này rất linh hoạt, dễ thích nghi. Họ có nhiều khả năng tiềm ẩn. Tuy nhiên, họ thường không ổn định, hay thay đổi, thiếu lập trường và khó tập trung vào một mục tiêu lâu dài.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự thích ứng & Sự thiếu nhất quán. Đây là loại Thổ thiếu sự ổn định và kiên cố nhất. Cấu trúc của nó rời rạc, dễ bị gió thổi, nước cuốn. "Sức mạnh" của nó nằm ở sự linh hoạt, biến đổi, nhưng trong hệ quy chiếu của hành Thổ (vốn trọng sự ổn định), nó bị xem là yếu.`,
       },
       {
         name: "BÍCH THƯỢNG THỔ",
-        description:
-          "BÍCH THƯỢNG THỔ (Đất Trên Tường)\n" +
-          "•	Nguồn Gốc Can Chi: Canh Tý, Tân Sửu\n" +
-          "•	Hình Tượng & Bản Chất: Là lớp vôi vữa, đất trát trên tường. Nó không thể tự tồn tại mà phải nương tựa vào một cấu trúc khác (gạch, gỗ). Nó là biểu tượng của sự cộng sinh, hợp tác, trang trí nhưng thiếu tự chủ.\n" +
-          "•	Đặc tính đột biến (Tổng quát): Cần Mộc (cốt tre, gỗ) để làm cấu trúc nương tựa, do đó không thể tồn tại nếu thiếu Mộc. Rất sợ Thủy (nước làm mục vữa). Cần Hỏa (ánh đèn, mặt trời) để giữ cho khô ráo, sáng sủa.\n" +
-          "•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này có tinh thần hợp tác tốt, biết nương tựa vào người khác để cùng phát triển. Họ có khả năng làm đẹp, trang trí. Tuy nhiên, họ thiếu tính tự lập, không có chính kiến, dễ lung lay và cuộc sống thường phụ thuộc.\n" +
-          "•	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự cộng sinh & Sự yếu đuối vì thiếu tự chủ.",
+        description: `BÍCH THƯỢNG THỔ (Đất Xây Nhà: xi măng, vôi...)
+•	Nguồn Gốc Can Chi: Canh Tý, Tân Sửu
+•	Hình Tượng & Bản Chất: Là lớp vôi vữa, đất trát trên tường. Nó không thể tự tồn tại mà phải nương tựa vào một cấu trúc khác (gạch, gỗ). Nó là biểu tượng của sự cộng sinh, hợp tác, trang trí nhưng thiếu tự chủ.
+•	Đặc tính đột biến (Tổng quát): Cần Mộc (cốt tre, gỗ) để làm cấu trúc nương tựa, do đó không thể tồn tại nếu thiếu Mộc. Rất sợ Thủy (nước làm mục vữa). Cần Hỏa (ánh đèn, mặt trời) để giữ cho khô ráo, sáng sủa.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tinh thần hợp tác tốt, biết nương tựa vào người khác để cùng phát triển. Họ có khả năng làm đẹp, trang trí. Tuy nhiên, họ thiếu tính tự lập, không có chính kiến, dễ lung lay và cuộc sống thường phụ thuộc.
+•	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự cộng sinh & Sự yếu đuối vì thiếu tự chủ. Yếu nhất vì hoàn toàn thiếu tính tự chủ. Nó là một lớp vữa mỏng, phải dựa vào cấu trúc khác (Mộc, gạch) để tồn tại. Nó không có sức chống chịu, dễ dàng bị bong tróc bởi Thủy. Sức mạnh của nó gần như không có, chỉ mang giá trị trang trí và phụ thuộc.`,
       },
       {
         name: "ỐC THƯỢNG THỔ",
-        description:
-          "ỐC THƯỢNG THỔ (Đất Trên Mái/Ngói)\n" +
-          "• Nguồn Gốc Can Chi: Bính Tuất, Đinh Hợi\n" +
-          "• Hình Tượng & Bản Chất: Là đất đã được nung trong lửa thành ngói lợp nhà. Nó đã mất đi hoàn toàn đặc tính tự nhiên của đất (khả năng nuôi dưỡng). Nó là biểu tượng của sự trật tự, quy tắc và công năng che chở, bảo vệ.\n" +
-          "• Đặc tính đột biến (Tổng quát): Đã qua Hỏa luyện nên không sợ Mộc. Công năng chính là để chống lại Thủy (nước mưa). Do đó, đây là loại Thổ duy nhất không sợ Mộc và kỵ Thủy. Cần có Mộc (vì kèo) để làm giá đỡ.\n" +
-          "• Luận Bàn Tính Cách & Số Phận (Tổng quát): Người mệnh này sống rất có trật tự, tuân thủ quy tắc và có công năng bảo vệ, che chở cho người khác. Tuy nhiên, họ có thể cứng nhắc, giáo điều, mất gốc, thiếu sự linh hoạt và không có khả năng nuôi dưỡng, sáng tạo.\n" +
-          "• Ngữ Nghĩa Cốt Lõi: Sự hữu ích của quy tắc & Sự mất mát bản chất tự nhiên.",
+        description: `ỐC THƯỢNG THỔ (Đất Nung:gốm,sứ, gạch…)
+•	Nguồn Gốc Can Chi: Bính Tuất, Đinh Hợi
+•	Hình Tượng & Bản Chất: Là đất đã được nung trong lửa thành ngói lợp nhà. Nó đã mất đi hoàn toàn đặc tính tự nhiên của đất (khả năng nuôi dưỡng). Nó là biểu tượng của sự trật tự, quy tắc và công năng che chở, bảo vệ.
+•	Đặc tính đột biến (Tổng quát): Đã qua Hỏa luyện nên không sợ Mộc. Công năng chính là để chống lại Thủy (nước mưa). Do đó, đây là loại Thổ duy nhất không sợ Mộc và kỵ Thủy. Cần có Mộc (vì kèo) để làm giá đỡ.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này sống rất có trật tự, tuân thủ quy tắc và có công năng bảo vệ, che chở cho người khác. Tuy nhiên, họ có thể cứng nhắc, giáo điều, mất gốc, thiếu sự linh hoạt và không có khả năng nuôi dưỡng, sáng tạo.
+•	Ngữ Nghĩa Cốt Lõi: Sự hữu ích của quy tắc & Sự mất mát bản chất tự nhiên. Đã qua lửa tôi luyện (nung thành ngói), nó trở nên rắn chắc và có công năng đặc biệt là chống lại Thủy. Sức mạnh của nó mang tính chức năng, hữu ích và có quy tắc. Tuy nhiên, nó đã mất đi bản chất tự nhiên của đất (khả năng nuôi dưỡng) và cần phải có kết cấu khác (Mộc) để nương tựa.`,
       },
     ];
     return napAmData.find((item) => item.name === napAm).description;
