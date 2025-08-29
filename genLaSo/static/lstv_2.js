@@ -3602,7 +3602,7 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
     let baseInfo = bazi.baseInfo;
     let daiVan = bazi.daiVan;
     if (daiVan?.decadeIndex === 0) {
-      return `Chưa thể xác định vận hạn cho đến năm ${daiVan.yearStartDecade}`;
+      return `Chưa thể xác định đại vận cho đến năm ${daiVan.yearStartDecade}`;
     }
     let batTuTemplate = `Hồ sơ AGI của ${
       baseInfo.gioiTinh === 1 ? "anh" : "chị"
