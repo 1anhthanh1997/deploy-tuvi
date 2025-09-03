@@ -713,7 +713,7 @@ function lapDiaBan(
         cungDaiVan = cung;
       }
     }
-    let chiLuuThang = luuThang + 2;
+    let chiLuuThang = luuThang + 2 > 12 ? luuThang + 2 - 12 : luuThang + 2;
     maCanChiDaivan =
       thienCan[cungDaiVan.cungCan].tenCan +
       " " +
@@ -766,6 +766,9 @@ function lapDiaBan(
       );
     }
     if (thangLuuNguyet) {
+      console.log("thangLuuNguyet", thangLuuNguyet);
+      console.log("canLuuThang", canLuuThang);
+      console.log("chiLuuThang", chiLuuThang);
       maCanChiNguyetVan =
         thienCan[canLuuThang].tenCan + " " + diaChi[chiLuuThang].tenChi;
       addSaoLuu(

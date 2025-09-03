@@ -2102,9 +2102,9 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
           {
             id: 3,
             title: "Bính Hỏa Cân Bằng Thực Sự (True Balance): 45% – 55%",
-            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Nhật Chủ Giáp Mộc. Họ vừa giữ được sự thẳng thắn, kiên định của mình, vừa có được sự dẻo dai cần thiết. Giống như cây tre, họ "cứng mà không giòn, mềm mà không yếu". Họ là những nhà lãnh đạo khôn ngoan, biết khi nào cần vươn lên và khi nào cần uốn mình theo gió.
-• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Power Forces (the Leader/Warrior) để có kỷ luật và sự công nhận, và Creation Forces (the Creator/Innovator) để thể hiện tài năng một cách hiệu quả.
-• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
+            data: `•	Luận giải: Đây là trạng thái lý tưởng nhất của Bính Hỏa. Sự nhiệt tình và hào phóng của họ được thể hiện một cách chừng mực và dễ chịu. Họ vừa có sức hút của người lãnh đạo, vừa có sự tinh tế để thấu hiểu người khác. Họ biết khi nào cần tỏa sáng và khi nào cần lùi lại.
+•	Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để thể hiện bản thân một cách khôn ngoan, hoặc Economic Forces (the Provider/Venturer) để có mục tiêu rõ ràng.
+•	Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
             `,
           },
           {
@@ -2482,18 +2482,18 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
           },
           {
             id: 5,
-            title: "Nhật Chủ Giáp Mộc Nhược (Weak): 25% – 35%",
-            data: `• Luận giải: Bản năng của họ là muốn vươn lên thẳng tắp, nhưng lại thiếu "nước" (hỗ trợ) và "đất" (nguồn lực) để làm điều đó. Điều này tạo ra cảm giác bất lực, hoài bão lớn nhưng không thể thực hiện. Họ sợ bị "chặt hạ" bởi áp lực và chỉ trích.
-• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để cây có thể lớn lên.
-• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như rìu chặt cây non. Creation Forces và Economic Forces cũng làm họ kiệt sức.
-            `,
-          },
-          {
-            id: 6,
             title: "Nhâm Thủy Nhược (Weak): 25% – 35%",
             data: `• Luận giải: Bản chất của họ là muốn chảy, muốn được tự do, nhưng lại thiếu nguồn (Kim) và đồng minh (Thủy) để tạo thành dòng. Điều này tạo ra cảm giác bị mắc kẹt, tù túng và bất mãn. Trí thông minh của họ không được sử dụng, gây ra sự trì trệ.
 • Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để tạo ra dòng chảy.
 • Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như đất đắp ngăn vũng nước nhỏ. Creation Forces và Economic Forces cũng làm họ khô cạn.
+            `,
+          },
+          {
+            id: 6,
+            title: "Nhâm Thủy Cực Nhược (Extremely Weak): < 25%",
+            data: `•	Luận giải: Ở trạng thái này, Nhâm Thủy phải từ bỏ hoàn toàn bản chất đại dương của mình để "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải học cách tồn tại như một phần của một thứ khác, nương theo sức mạnh không phải của mình.
+•	Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
+•	Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút hỗ trợ cũng sẽ "đánh thức" bản năng tự do, phá vỡ cấu trúc Tòng cách và gây ra khủng hoảng.
             `,
           },
         ],
@@ -2725,6 +2725,13 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     let nguyetVan = bazi.nguyetVan;
     let nhatVan = bazi.nhatVan;
     let thoiVan = bazi.thoiVan;
+    console.log(
+      getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+      )
+    );
 
     let tuTru = `
     1. Lá Số Tứ Trụ của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
