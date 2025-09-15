@@ -766,9 +766,6 @@ function lapDiaBan(
       );
     }
     if (thangLuuNguyet) {
-      console.log("thangLuuNguyet", thangLuuNguyet);
-      console.log("canLuuThang", canLuuThang);
-      console.log("chiLuuThang", chiLuuThang);
       maCanChiNguyetVan =
         thienCan[canLuuThang].tenCan + " " + diaChi[chiLuuThang].tenChi;
       addSaoLuu(

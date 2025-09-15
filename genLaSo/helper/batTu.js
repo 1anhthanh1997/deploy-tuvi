@@ -1004,7 +1004,7 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio, onlyDecade) => {
       for (let cung of thapNhiCung) {
         if (
           (cung.cungDaiHan < 10 && tuoi < 10) ||
-          (cung.cungDaiHan <= tuoi && cung.cungDaiHan + 10 > tuoi)
+          (cung.cungDaiHan - 1 <= tuoi && cung.cungDaiHan + 9 > tuoi)
         ) {
           cungDaiVan = cung;
           decadeIndex = Math.ceil(cung.cungDaiHan / 10);
