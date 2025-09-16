@@ -1612,6 +1612,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Cần Hỏa để tôi luyện nên không sợ Hỏa ở mức độ vừa phải. Cần Thủy để mài dũa cho thêm sắc bén. Gặp Mộc thì thể hiện được hết công năng của mình.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này cương trực, ý chí sắt đá, quyết đoán, có tài năng lãnh đạo và giỏi thực thi. Họ sống có mục tiêu rõ ràng, không ngại va chạm để bảo vệ quan điểm. Tuy nhiên, họ có thể quá cứng nhắc, lạnh lùng, dễ gây tổn thương cho người khác.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự sắc bén & Nguy cơ của sự tàn phá. Đây là dạng Kim đã đạt đến đỉnh cao của công năng và sức mạnh. Nó đã được tôi luyện (qua Hỏa) và mài dũa (qua Thủy) để trở nên cứng rắn và sắc bén nhất. Sức mạnh của nó là khả năng thực thi, phân định rõ ràng, mang tính quyết đoán và có tác động mạnh mẽ nhất.`,
+        nameEn: "Weaponry",
+        descriptionEn: `This is metal that has been forged to its highest degree of hardness and sharpness. It is a symbol of weapons, power, iron discipline, and decisiveness, with the function of cutting and making clear distinctions.
+The core meaning is the power of sharpness and the risk of devastation. This form of Metal has reached the pinnacle of function and power; its strength is its ability to execute, define clearly, and act decisively.
+`,
       },
       {
         name: "KIM BẠCH KIM",
@@ -1621,6 +1625,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Là Kim duy nhất không có gốc từ Thổ. Nó là sự kết tinh từ quá trình Thủy sinh Mộc. Do đã tinh khiết nên rất kỵ Hỏa (lửa làm ô tạp). Không ưa Thổ (đất làm vẩn đục).
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có phẩm chất trong sạch, cốt cách thanh cao, ít nói nhưng lời nói có trọng lượng. Họ là những người có giá trị thực chất. Tuy nhiên, họ có thể cô độc, khó hòa hợp với môi trường xô bồ.
 •	Ngữ Nghĩa Cốt Lõi: Giá trị của sự tinh khiết & Sự cao quý, xa cách của lý tưởng. Đây là kim loại ở dạng nguyên chất, cô đọng (vàng thỏi, bạc nén). Sức mạnh của nó là giá trị nội tại, sự tinh khiết và là nền tảng để tạo ra các dạng Kim khác. Nó rất mạnh về bản chất nhưng chưa có công năng cụ thể như vũ khí hay trang sức.`,
+        nameEn: "Pure Metal",
+        descriptionEn: `This is the image of metal that has been refined, separated from impurities, to become gold bars or silver ingots. It is a symbol of intrinsic value, concentration, essence, and purity.
+The core meaning is the value of purity and the noble distance of ideals. This is metal in its pure, concentrated form. Its strength is its intrinsic value and purity.
+`,
       },
       {
         name: "SA TRUNG KIM",
@@ -1630,6 +1638,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Bị Thổ vùi lấp. Cần Thủy để đãi lọc. Cần Hỏa để luyện. Khi chưa khai thác thì không khắc được Mộc.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có nhiều tài năng tiềm ẩn, kiên nhẫn, có nội lực. Tuy nhiên, nếu không gặp thời, tài năng có thể bị chôn vùi, đôi khi thiếu quyết đoán.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của tiềm năng ẩn giấu & Nguy cơ của sự mai một. Sức mạnh của nó nằm ở dạng tiềm năng. Đây là quặng kim loại, là vàng trong cát, có giá trị lớn nhưng còn bị che lấp và cần được khai phá. Nó mạnh hơn các dạng Kim chưa định hình khác vì đã là khoáng sản rắn chắc, chỉ chờ được khám phá.`,
+        nameEn: "Metal in Sand",
+        descriptionEn: `This is mineral ore still mixed with earth and sand. It is a symbol of great but hidden potential, requiring excavation, refinement, and forging to become a valuable item.
+The core meaning is the power of hidden potential and the risk of being lost. Its strength is in its potential form—gold in the sand—possessing great value but still concealed and needing to be discovered.
+`,
       },
       {
         name: "THOA XUYẾN KIM",
@@ -1639,6 +1651,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Vì đã là thành phẩm tinh xảo nên rất kỵ Hỏa, gặp lửa sẽ bị hư hoại. Cần nhất là Thủy để gột rửa, làm cho sáng bóng, tăng thêm vẻ đẹp.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có khí chất thanh cao, tao nhã, có gu thẩm mỹ tốt và coi trọng danh dự. Họ có số được người khác kính trọng, thường có địa vị trong xã hội. Tuy nhiên, họ có thể kiêu kỳ, xa rời thực tế, thiếu khả năng chịu đựng gian khổ.
 •	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự cao quý & Sự yếu đuối khi thiếu thực chiến. Sức mạnh của nó nằm ở giá trị và sự cao quý. Dù không có sức công phá như vũ khí, nó là dạng Kim đã được chế tác tinh xảo, đạt đến đỉnh cao của vẻ đẹp và phẩm chất. Sức mạnh của nó là sự sang trọng, địa vị và giá trị được xã hội công nhận.`,
+        nameEn: "Jewelry",
+        descriptionEn: `This is gold and silver that has been exquisitely crafted into precious ornaments. It is a symbol of nobility, elegance, beauty, social status, and wealth.
+The core meaning is the beauty of nobility and the weakness in the absence of practical combat. Its strength lies in its value and quality; it represents luxury, status, and value recognized by society.
+`,
       },
       {
         name: "HẢI TRUNG KIM",
@@ -1648,6 +1664,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Bị Thủy bao bọc, không phải là kìm hãm mà là che chở, bảo tồn giá trị. Do đó, nó không sợ Hỏa vì nước biển đã cách ly. Không thể khắc Mộc vì chưa được khai phá. Sức mạnh của nó là nội tại, không phụ thuộc vào các yếu tố bên ngoài.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có nội lực thâm sâu, trí tuệ uyên bác và tiềm năng cực lớn. Họ giống như một kho báu chưa được khám phá. Cuộc sống của họ thường an tĩnh, không phô trương, nhưng một khi đã gặp được môi trường hoặc con người phù hợp để "khai phá", họ sẽ tạo ra những giá trị phi thường.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của tiềm năng vô hạn & Thử thách của sự khai phá. Đại diện cho tiềm năng và giá trị nội tại lớn nhất. Đây là kho báu nguyên sơ, khổng lồ. Tuy chưa được khai phá nhưng trữ lượng và giá trị tiềm ẩn của nó vượt xa các dạng Kim khác. Sức mạnh của nó là sức mạnh của chiều sâu và sự giàu có vô tận.`,
+        nameEn: "Metal in the Sea",
+        descriptionEn: `This is a vast treasure of metals, gold, and silver deposited at the bottom of the ocean. It is a symbol of the greatest potential, of wealth and wisdom in a pure, primordial form.
+The core meaning is the power of infinite potential and the challenge of discovery. It represents the greatest intrinsic potential and value; though undiscovered, its latent reserves and value are immense.
+`,
       },
       {
         name: "BẠCH LẠP KIM",
@@ -1657,6 +1677,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Cần nhất là Hỏa để loại bỏ tạp chất và định hình. Kỵ Thủy mạnh làm nguội lạnh, mất đi khả năng biến đổi. Không có khả năng khắc Mộc.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có khả năng thích nghi tốt, dễ học hỏi, có tiềm năng lớn. Họ cần một môi trường tốt, một người thầy để định hướng phát triển. Tuy nhiên, họ thiếu tự chủ và khó thành công khi đứng một mình.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự biến đổi & Sự yếu đuối vì chưa định hình. Đây là dạng Kim ở trạng thái yếu và không ổn định nhất. Nó chưa được định hình, còn lẫn tạp chất và dễ bị tác động bởi các yếu tố bên ngoài (cần Hỏa để duy trì, sợ Thủy làm nguội). Sức mạnh duy nhất của nó là khả năng biến đổi, nhưng ở trạng thái hiện tại, nó không có sức mạnh nội tại.`,
+        nameEn: "Molten Metal",
+        descriptionEn: `This is metal in its initial state, either molten or not yet formed into a clear shape, still containing impurities. It is a symbol of beginnings and the potential for change, but it is still nascent and without specific value.
+The core meaning is the power of transformation and the weakness of being unformed. This is the weakest and most unstable form of Metal, not yet shaped and still containing impurities.
+`,
       },
       {
         name: "THIÊN THƯỢNG HỎA",
@@ -1666,6 +1690,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Là vua của các loại Hỏa, không sợ lửa khác. Có thể làm bốc hơi các loại Thủy nhỏ, chỉ có Đại Hải Thủy mới có thể cân bằng lại. Mang lại lợi ích và sự sống cho Mộc và Thổ.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này quang minh, lỗi lạc, có tầm ảnh hưởng lớn và tố chất lãnh đạo. Họ sống công bằng, chính trực và có tấm lòng rộng mở. Tuy nhiên, nếu năng lượng quá mạnh, họ có thể trở nên độc đoán, thiêu đốt những người xung quanh.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự quang minh & Nguy cơ của sự thiêu đốt. Đây là "vua của các loại Hỏa". Sức mạnh của nó là tuyệt đối, bao trùm vạn vật và là nguồn năng lượng của sự sống.`,
+        nameEn: "The Sun",
+        descriptionEn: `This is the image of the sun's fire at high noon, the largest, most brilliant, and brightest source of light, encompassing all things. It is a symbol of supreme power, fairness, integrity, and abundant life energy.
+The core meaning is the power of brilliance and the risk of scorching. This is the "king of all Fires"; its power is absolute, covering all things and serving as the source of life's energy.
+`,
       },
       {
         name: "TÍCH LỊCH HỎA",
@@ -1675,6 +1703,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Là loại Hỏa duy nhất sinh ra từ Thủy (sự giao tranh của mây mưa). Do đó không kỵ Thủy mà còn cần Thủy để xuất hiện. Lửa này có thể mang mưa đến tưới cho Mộc và Thổ.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tính cách mạnh mẽ, quyết liệt, có khả năng tạo ra những thay đổi lớn. Họ có thể thành công rất nhanh nhưng cuộc đời cũng đầy biến động. Họ hợp với các ngành nghề đòi hỏi sự táo bạo, đột phá.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự đột phá & Nguy cơ của sự hủy diệt. Tượng trưng cho sức mạnh đột phá, chớp nhoáng và quyền uy của tạo hóa. Sức mạnh của nó mang tính hủy diệt và tái tạo trong khoảnh khắc.`,
+        nameEn: "Thunder",
+        descriptionEn: `This is the fire born from the collision of yin and yang in the universe, the thunder that shakes the heavens. It is a symbol of breakthrough power, lightning-fast change, the authority of creation, and unexpected events.
+The core meaning is the power of breakthrough and the risk of destruction. Its power is destructive and regenerative in a single moment.
+`,
       },
       {
         name: "LƯ TRUNG HỎA",
@@ -1684,6 +1716,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Cần nhất là Mộc (củi) để cháy, không có Mộc sẽ tự lụi tàn. Không sợ Thổ (lò) và Kim (vật cần rèn). Rất kỵ Thủy vì sẽ bị dập tắt hoàn toàn.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tài năng tiềm ẩn, cần có sự giáo dục, rèn luyện và một môi trường tốt để phát triển. Thành công của họ đến muộn nhưng rất vững chắc. Họ có thể nóng tính nhưng thường không thể hiện ra ngoài.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của nội lực & Sự phụ thuộc vào nhiên liệu. Đây là ngọn lửa có mục đích, tượng trưng cho sức mạnh của sự tôi luyện và nội lực được nuôi dưỡng.`,
+        nameEn: "Fire in the Furnace",
+        descriptionEn: `This is a flame burning within a furnace, requiring fuel (wood, coal) and space (the furnace) to be sustained. It is a symbol of inner strength, potential that needs nurturing, refinement, and the process of preparing to shine.
+The core meaning is the power of inner strength and the dependence on fuel. This is a fire with a purpose, symbolizing the power of refinement and nurtured inner strength.
+`,
       },
       {
         name: "SƠN ĐẦU HỎA",
@@ -1693,6 +1729,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Vẻ ngoài là Thổ nhưng bản chất là Hỏa. Vì vậy không sợ Thủy thông thường. Lửa này không cần Mộc để cháy, mà tự vận động từ bên trong. Khi phun trào, nó tạo ra Thổ mới.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có vẻ ngoài điềm tĩnh, ít nói, sống nội tâm nhưng lại có tài năng và ý chí rất lớn. Họ không dễ thể hiện nhưng một khi đã hành động thì vô cùng quyết liệt, tạo ra kết quả phi thường. Thành công của họ thường đến sau một giai đoạn dài tích lũy.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự dồn nén & Sự bùng nổ thay đổi tất cả. Đại diện cho sức mạnh nội lực bị dồn nén đến cực đại rồi bùng nổ. Nó là ngọn lửa của sự chuyển mình từ sâu trong lòng đất.`,
+        nameEn: "Volcano",
+        descriptionEn: `This is a fire smoldering within a mountain, appearing tranquil on the outside but containing immense energy within. It is a symbol of latent power, deep inner strength, sudden eruptions, and the ability to change the entire situation.
+The core meaning is the power of compression and the explosion that changes everything. It represents inner power compressed to its maximum before erupting, a fire of transformation from deep within the earth.
+`,
       },
       {
         name: "SƠN HẠ HỎA",
@@ -1702,6 +1742,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Hỏa ở vào thế "bệnh" và "tử", không phải vì năng lượng yếu, mà vì sự phụ thuộc. Lửa này không thể tự tồn tại, phải dựa vào nhiên liệu (Mộc) để cháy. Không sợ Thổ (núi che gió).
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường nhiệt tình, năng nổ, hướng ngoại và có khả năng khuấy động tập thể. Họ giống như ngọn lửa trại, là trung tâm của sự chú ý. Tuy nhiên, họ có xu hướng "cả thèm chóng chán", cần sự cổ vũ và "nhiên liệu" (động lực, sự công nhận) từ bên ngoài để duy trì đam mê.
 •	Ngữ Nghĩa Cốt Lõi: Nhiệt huyết bùng cháy & Sức mạnh phụ thuộc. Là ngọn lửa của cộng đồng, phục vụ nhu cầu của con người, mang tính ứng dụng cao nhưng không ổn định.`,
+        nameEn: "Man-made Fire",
+        descriptionEn: `This is the fire created by people at the foot of a mountain as night falls, such as a campfire or a forge's fire. It is a symbol of life, human activity, warmth, community, and the proactive energy used to dispel darkness.
+The core meaning is blazing enthusiasm and dependent strength. This is the fire of the community, serving human needs, highly practical but unstable.
+`,
       },
       {
         name: "PHÚC ĐĂNG HỎA",
@@ -1711,6 +1755,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Là Hỏa yếu, chỉ phát huy giá trị tốt nhất khi không có Thiên Thượng Hỏa (Mặt Trời). Rất sợ Thủy và gió lớn. Cần Mộc (dầu trong đèn, nến) để duy trì.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường là người mang lại tri thức, niềm vui cho người khác như thầy giáo, nhà tư vấn, nghệ sĩ. Họ thích các hoạt động về đêm. Tuy nhiên, họ có thể yếu đuối, cần sự che chở để tỏa sáng.
 •	Ngữ Nghĩa Cốt Lõi: Sự hữu ích của ánh sáng nhân tạo & Sự mong manh trước giông bão. Đây là loại Hỏa yếu nhất về mặt năng lượng vật lý, sức mạnh của nó nằm ở giá trị tinh thần và tri thức.`,
+        nameEn: "Lantern",
+        descriptionEn: `This is the light of a man-made lamp, used to illuminate the night or hidden places. It is a symbol of knowledge, civilization, joy, guidance, and warmth within a small scope.
+The core meaning is the usefulness of artificial light and the fragility in the face of storms. This is the weakest Fire in terms of physical energy; its strength lies in its spiritual and intellectual value.
+`,
       },
       {
         name: "ĐẠI HẢI THỦY",
@@ -1720,6 +1768,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Là vua của các loại Thủy, không sợ các dòng nước khác mà có thể dung nạp tất cả. Có thể nhấn chìm Thổ, dập tắt Hỏa. Chỉ bị Thổ rất mạnh (như đê điều) ngăn chặn.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có chí lớn, tư duy khoáng đạt, có tài năng và tiềm năng để làm những việc lớn lao. Họ có sức ảnh hưởng, thu hút người khác. Tuy nhiên, cuộc đời họ thường có nhiều sóng gió, tính tình có thể thất thường, khó đoán.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự vĩ đại & Nguy cơ của sự vô định. Đây là "vua của các loại Thủy". Đại dương là nơi quy tụ của tất cả các dòng nước, có quy mô và sức mạnh lớn nhất, không gì sánh bằng. Nó có thể nhấn chìm vạn vật, dung nạp tất cả các dòng chảy khác. Sức mạnh của nó là tuyệt đối và hùng vĩ.`,
+        nameEn: "The Ocean",
+        descriptionEn: `This is the image of water in its vastest, most powerful, and majestic state. It is a symbol of great ambition, formidable inner strength, and limitless potential, but it also contains volatility and unpredictability.
+The core meaning is the power of greatness and the risk of aimlessness. This is the "king of all Waters," the gathering place of all currents, possessing the greatest scale and power, capable of submerging all things and accepting all other flows.
+`,
       },
       {
         name: "THIÊN HÀ THỦY",
@@ -1729,6 +1781,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Nước từ trời nên không có nguồn từ Kim. Có thể tương tác với Hỏa (sấm sét). Mang lại lợi ích cho toàn bộ Mộc và Thổ, không có sự phân biệt.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tâm hồn trong sáng, nhân hậu, có trí tưởng tượng phong phú. Họ có thể thành công trong các lĩnh vực văn hóa, nghệ thuật, giáo dục, tôn giáo. Tuy nhiên, họ có thể hơi mơ mộng, thiếu thực tế.
 •	Ngữ Nghĩa Cốt Lõi: Sự màu nhiệm của ân huệ & Sự xa rời thực tế. Mặc dù không có lưu lượng tập trung như sông lớn, nhưng Nước Mưa lại có tầm ảnh hưởng phổ quát nhất. Nó rơi từ trên trời, ban phát sự sống cho cả một vùng rộng lớn không phân biệt. Về mặt quy mô tác động trong một thời điểm (cơn mưa lớn), nó chỉ đứng sau Đại Dương.`,
+        nameEn: "Rainwater",
+        descriptionEn: `This is rain falling from the sky, universal in nature, bestowing grace upon all living things. It is a symbol of purity, compassion, creativity, and things that are spiritual and intangible.
+The core meaning is the magic of grace and the detachment from reality. Although it lacks concentrated flow, Rainwater has the most universal impact, bestowing life over a vast area without discrimination.
+`,
       },
       {
         name: "TRƯỜNG LƯU THỦY",
@@ -1738,6 +1794,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Dòng nước này tự tìm đường đi, có thể biến đổi để phù hợp với Thổ. Không sợ Thổ chặn vì nó sẽ tự tìm đường vòng. Đích đến cuối cùng là gặp được Đại Hải Thủy.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có khả năng hoạch định dài hạn, suy nghĩ sâu xa, không nóng vội. Họ có thể đạt được thành công lớn khi về già. Tuy nhiên, họ có thể thiếu quyết đoán, chần chừ, mất nhiều thời gian để đi đến mục tiêu.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của tầm nhìn xa & Sự chậm chạp của con đường dài. Đây là hình ảnh dòng sông lớn, có lưu lượng ổn định và sức mạnh bền bỉ theo thời gian. Nó có sức mạnh bào mòn đất đá, thay đổi địa hình và là nguồn sống cho cả một khu vực nó chảy qua. Sức mạnh của nó đến từ sự kiên trì và dòng chảy không ngừng nghỉ.`,
+        nameEn: "The Long River",
+        descriptionEn: `This is a great river that flows a very long course, weaving through various terrains to finally reach the sea. It is a symbol of patience, foresight, adaptability, and accumulation over time.
+The core meaning is the power of foresight and the slowness of a long path. Its strength comes from perseverance and its ceaseless flow, capable of eroding rock and changing landscapes.
+`,
       },
       {
         name: "ĐẠI KHÊ THỦY",
@@ -1747,6 +1807,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Vì ở đầu nguồn nên không ưa Kim (chưa cần đến nguồn). Thích gặp các loại Thủy khác để hợp thành sông lớn. Không sợ Thổ vì có thể cuốn trôi đất đá. Rất ưa Mộc vì nó thể hiện sức sống của núi rừng.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường hướng ngoại, thẳng thắn, nhiệt tình và thích tự do. Họ có nhiều ý tưởng, thích phiêu lưu mạo hiểm. Tuy nhiên, họ có thể bốc đồng, thiếu kiên nhẫn, không suy nghĩ dài hạn.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự nhiệt huyết & Sự thiếu định hướng của tuổi trẻ. Sức mạnh của Thác Nước rất dữ dội, mãnh liệt nhưng chỉ trong một phạm vi hẹp và ngắn. Nó có thể cuốn phăng đất đá ở đầu nguồn nhưng sức mạnh không bền bỉ và có định hướng như Sông Dài. Nó đại diện cho sức mạnh bộc phát nhất thời.`,
+        nameEn: "Waterfall",
+        descriptionEn: `This is a large flow of water at its source, in mountain ravines, flowing strongly and fiercely but without a clear direction. It is a symbol of intense vitality, enthusiasm, and the frankness of youth.
+The core meaning is the power of enthusiasm and the lack of direction of youth. The power of a Waterfall is fierce and intense but confined to a narrow and short range, representing a momentary burst of strength.
+`,
       },
       {
         name: "TUYỀN TRUNG THỦY",
@@ -1756,6 +1820,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Vì nguồn của nó là Kim (Thân, Dậu) nên đây là loại Thủy duy nhất càng gặp Kim lại càng mạnh, càng trong. Rất ưa Mộc để được nuôi dưỡng. Không sợ Thổ vì có thể len lỏi qua.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thông minh, thanh cao, có tấm lòng nhân hậu. Họ thích cuộc sống an tĩnh, không màng danh lợi xô bồ. Họ là những người thầy, nhà tư vấn thầm lặng. Tuy nhiên, họ có thể thiếu tham vọng, sống ẩn dật, khép kín.
 •	Ngữ Nghĩa Cốt Lõi: Sự trong lành của trí tuệ & Sự thầm lặng của cống hiến. Nước Suối có lưu lượng nhỏ, dòng chảy hiền hòa. Sức mạnh của nó không nằm ở sức công phá mà ở khả năng nuôi dưỡng, duy trì sự sống một cách bền bỉ và tinh khiết. Nó là khởi nguồn của những dòng sông lớn nhưng bản thân nó lại rất khiêm tốn.`,
+        nameEn: "Spring Water",
+        descriptionEn: `This is a clear, cool stream flowing from a source within the mountains, sometimes hidden, sometimes visible. It is a symbol of pure wisdom, clarity, and the ability to nurture silently and persistently.
+The core meaning is the purity of wisdom and the silence of dedication. Its strength lies not in destructive force but in its ability to nurture and sustain life persistently and purely.
+`,
       },
       {
         name: "GIẢN HẠ THỦY",
@@ -1765,6 +1833,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Là Thủy ở tầng sâu nhất, không sợ Thổ vì nó nằm trong lòng đất. Cần Kim để sinh ra. Không sợ Hỏa yếu vì khó có thể tác động đến.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có nội tâm phức tạp, khó đoán, thông minh nhưng không khoe khoang. Họ có sự nhẫn nại và có thể thành công một cách thầm lặng. Tuy nhiên, họ có thể đa nghi, hay do dự, bỏ lỡ cơ hội.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự thâm trầm & Sự do dự vì đa nghi. Đây là dòng nước có lưu lượng nhỏ nhất và ẩn mình sâu nhất. Nó gần như không có tác động trực tiếp lên bề mặt. Sức mạnh của nó là sự tồn tại thầm lặng, bền bỉ và tiềm ẩn. Nó rất quan trọng nhưng lại yếu nhất về mặt biểu hiện ra bên ngoài.`,
+        nameEn: "Underground Water",
+        descriptionEn: `This is groundwater, a current flowing in deep crevices, quiet and cool. It is a symbol of a deep inner self, hidden intellect, and persistent endurance that is rarely shown.
+The core meaning is the power of profundity and the hesitation from suspicion. This is the most deeply hidden water current; its strength is its silent, enduring, and latent existence.
+`,
       },
       {
         name: "ĐẠI LÂM MỘC",
@@ -1774,6 +1846,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Vì là cả một khu rừng nên không sợ Kim (một chiếc rìu không thể đốn hết). Cần Thủy để nuôi dưỡng và Thổ để làm nền tảng. Có thể lấn át Hỏa yếu.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tấm lòng nhân hậu, phóng khoáng, có tinh thần đồng đội và khả năng che chở cho người khác. Họ có nền tảng tốt, dễ thành công trong các lĩnh vực đòi hỏi sự hợp tác, quy mô lớn. Tuy nhiên, trong một tập thể lớn, họ có thể thiếu đi sự nổi bật cá nhân.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự hùng vĩ & Sự cạnh tranh của quần thể. Sức mạnh của Đại Lâm Mộc đến từ quy mô và tính quần thể. Một cây có thể bị đốn hạ, nhưng cả một khu rừng là một thế lực hùng vĩ, có sức sống mãnh liệt và rất khó bị hủy diệt. Sức mạnh của nó là sự to lớn, hùng hậu và vững chãi.`,
+        nameEn: "The Great Forest",
+        descriptionEn: `This is the image of a large forest with countless majestic, green trees. It is a symbol of prosperity, intense vitality, community, and a solid foundation.
+The core meaning is the power of majesty and the competition of the collective. Its strength comes from its scale and community; a single tree can be felled, but an entire forest is a formidable force that is very difficult to destroy.
+`,
       },
       {
         name: "TÙNG BÁCH MỘC",
@@ -1783,6 +1859,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Là loại Mộc duy nhất có thể chống chọi lại Kim (rìu khó đốn). Không sợ mùa đông (Thủy vượng). Sống trên núi cao nên không cần nhiều Thổ màu mỡ.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có ý chí kiên cường, lập trường vững vàng, sống có nguyên tắc và danh dự. Họ có thể gánh vác những trọng trách lớn, là trụ cột trong gia đình và tổ chức. Tuy nhiên, họ có thể cô độc, cứng nhắc và ít khi cúi mình.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự kiên định & Sự cô độc trong giá lạnh. Đây là loại Mộc cứng rắn, kiên định và có ý chí mạnh mẽ nhất. Nó là hình ảnh của cây đại thụ hiên ngang trước sương tuyết, không sợ Kim khắc (rìu khó đốn). Sức mạnh của nó nằm ở sự bất khuất, khí phách và khả năng chịu đựng nghịch cảnh khắc nghiệt nhất.`,
+        nameEn: "Hardwood Trees",
+        descriptionEn: `This is the image of pine and cypress trees, standing tall and resilient, able to withstand frost and snow. It is a symbol of steadfastness, an iron will, longevity, integrity, and the ability to overcome adversity.
+The core meaning is the power of steadfastness and the loneliness in the cold. This is the hardest and most strong-willed type of Wood; its strength lies in its indomitable spirit and its ability to endure the harshest adversities.
+`,
       },
       {
         name: "THẠCH LỰU MỘC",
@@ -1792,6 +1872,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Là Mộc duy nhất bị Kim khắc mà lại trở nên tốt đẹp. Cần có Kim (dao kéo) cắt tỉa cành lá thì mới có thể ra hoa, kết trái. Do đó, nó không sợ Kim mà còn cần Kim.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tài năng, vẻ đẹp tiềm ẩn bên trong. Họ cần sự rèn luyện, kỷ luật, thậm chí là áp lực, chỉ trích để có thể tạo ra thành quả. Thành công của họ thường đến sau khi trải qua gian khó.
 •	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của thành quả & Sự trưởng thành từ áp lực. Sức mạnh của nó nằm ở sức sống phi thường và khả năng biến nghịch cảnh thành sức mạnh. Là Mộc duy nhất không những không sợ Kim mà còn cần Kim (sự cắt tỉa, áp lực) để phát triển và tạo ra thành quả. Đây là sức mạnh của sự kiên cường và ý chí vươn lên từ gian khó.`,
+        nameEn: "Fruit-bearing Trees",
+        descriptionEn: `This is the image of a pomegranate tree, a plant whose value lies not in its wood but in its fruit. It is a symbol of inner beauty and achievement, requiring external impact to bear fruit.
+The core meaning is the beauty of achievement and growth from pressure. Its strength lies in its extraordinary vitality and its ability to turn adversity into strength, requiring pruning and pressure to grow and produce results.
+`,
       },
       {
         name: "TANG ĐỐ MỘC",
@@ -1801,6 +1885,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Là Mộc sinh ra từ Thủy (Tý, Sửu). Rất cần Thủy để phát triển. Công năng của nó gắn liền với con người (chăn nuôi, dệt vải), do đó nó có tính "nhân tạo" và cần sự chăm sóc.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tài năng đặc biệt trong một lĩnh vực hẹp, rất khéo léo và cần mẫn. Họ sống vì người khác nhiều hơn vì mình. Tuy nhiên, cuộc sống có thể vất vả, ít được hưởng thụ thành quả.
 •	Ngữ Nghĩa Cốt Lõi: Sự hữu ích của chuyên môn & Sự hy sinh thầm lặng. Sức mạnh của nó không nằm ở sự cứng cỏi hay tầm vóc, mà ở giá trị sử dụng và sự linh hoạt. Gỗ dâu có thể làm cung tên (chứa đựng sức mạnh), lá dâu có thể nuôi tằm (tạo ra giá trị). Đây là sức mạnh của sự hữu ích, chuyên dụng và khả năng cống hiến.`,
+        nameEn: "Multi-purpose Wood",
+        descriptionEn: `This is the image of a mulberry tree, a plant with special functions (raising silkworms, weaving silk). It is a symbol of skillfulness, usefulness in a specialized field, sacrifice, and silent dedication.
+The core meaning is the usefulness of expertise and silent sacrifice. Its strength lies not in hardness or stature but in its utility, flexibility, and ability to contribute.
+`,
       },
       {
         name: "BÌNH ĐỊA MỘC",
@@ -1810,6 +1898,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Vì là cây cỏ nên không có giá trị về gỗ, do đó không sợ Kim (rìu). Rất cần Thủy (mưa) để sinh trưởng và sợ nhất là Hỏa (lửa đồng). Sống hòa hợp với Thổ.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này sống thực tế, hòa đồng, dễ thích nghi và có nhiều mối quan hệ. Họ không có tham vọng cao xa nhưng xây dựng được cuộc sống ổn định, vui vẻ. Tuy nhiên, họ có thể thiếu tầm nhìn, dễ bằng lòng với thực tại.
 •	Ngữ Nghĩa Cốt Lõi: Sức sống của sự lan tỏa & Sự thiếu tầm vóc cao xa. Sức mạnh của nó nằm ở sự lan tỏa và sức sống dẻo dai. Cây cỏ có thể bị dẫm đạp nhưng vẫn vươn lên. Tuy nhiên, về mặt tầm vóc và sự vững chãi, nó không thể so sánh với các loại cây gỗ lớn. Sức mạnh của nó là sức mạnh của số đông nhưng thiếu đi vóc dáng và sự kiên cố của cá thể.`,
+        nameEn: "Low-lying Plants",
+        descriptionEn: `These are grasses and shrubs growing on the plains; though not tall, they possess intense vitality and spread over a wide area. It is a symbol of practicality, approachability, adaptability, and community.
+The core meaning is the vitality of expansion and the lack of great stature. Its strength lies in its ability to spread and its resilient vitality; it is the strength of the many but lacks the stature of an individual.
+`,
       },
       {
         name: "DƯƠNG LIỄU MỘC",
@@ -1819,6 +1911,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Thân mềm nên rất sợ Kim. Ưa Thủy để duy trì sự mềm mại. Dễ bị Hỏa mạnh làm cho khô héo.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có vẻ ngoài duyên dáng, tình cảm, khéo léo trong giao tiếp. Họ dễ thích nghi nhưng lập trường không vững, dễ thay đổi, nội tâm đa sầu đa cảm.
 •	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự mềm mại & Sự yếu đuối vì thiếu lập trường. Yếu nhất vì bản chất của nó là sự mềm mại, uyển chuyển và thiếu lập trường. Nó dễ dàng uốn mình theo chiều gió, tượng trưng cho sự thiếu kiên định. Trong hệ quy chiếu về sức mạnh (vốn đề cao sự cứng cỏi, vững vàng), nó bị xem là yếu nhất.`,
+        nameEn: "Softwood Trees",
+        descriptionEn: `This is the image of a willow tree with its soft trunk and drooping branches, always swaying in the wind. It is a symbol of grace, flexibility, and charm, but it lacks hardness and a firm stance.
+The core meaning is the beauty of softness and the weakness from lacking a firm stance. It is considered the weakest because its nature is soft and flexible, lacking steadfastness and easily bending to the wind.
+`,
       },
       {
         name: "THÀNH ĐẦU THỔ",
@@ -1828,6 +1924,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Không ngại Mộc, lại còn cần Mộc để làm cổng thành, gia tăng sự vững chãi, chứ không sợ bị Mộc khắc theo cách thông thường. Ưa Hỏa để làm đất thêm khô cứng, vững chãi. Rất kỵ Thủy lớn vì có thể làm sụp đổ thành trì.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có lập trường vững vàng, sống có nguyên tắc, đáng tin cậy và có khả năng bảo vệ người khác. Họ là những người xây dựng và duy trì sự ổn định. Tuy nhiên, họ có thể rất bảo thủ, cứng đầu, thiếu linh hoạt.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự kiên cố & Nguy cơ của sự bất biến. Đây là loại Thổ có tính kiên cố, vững chãi và sức phòng thủ cao nhất. Nó được tạo ra với mục đích là để chống chịu, bảo vệ. Đặc biệt, nó không sợ Mộc khắc theo cách thông thường mà còn cần Mộc để gia cố. Sức mạnh của nó nằm ở sự vững vàng không thể lay chuyển.`,
+        nameEn: "Fortress Earth",
+        descriptionEn: `This is the earth of ramparts and dikes, which has been compacted and reinforced. It is a symbol of solidity, stability, the ability to protect, and principles. This is the form of Earth with the greatest defensive strength.
+The core meaning is the power of solidity and the risk of immutability. This type of Earth is the most solid and stable, created for the purpose of withstanding and protecting.
+`,
       },
       {
         name: "ÐẠI TRẠCH THỔ",
@@ -1837,6 +1937,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Không sợ Mộc vì đất rộng thì cây cối mọc lên càng làm đất thêm màu mỡ. Rất cần Thủy để bồi đắp và nuôi dưỡng. Gặp Hỏa (mặt trời) sẽ càng thêm trù phú.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tấm lòng bao dung, phóng khoáng, dễ tha thứ. Họ thường có tài sản, đất đai và là nền tảng vững chắc cho người khác nương tựa. Tuy nhiên, họ có thể thiếu sự tinh tế, đôi khi tùy tiện và không có quy củ chặt chẽ.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của nền tảng và sự trù phú & Sự thiếu quy củ. Sức mạnh của Đại Trạch Thổ nằm ở quy mô rộng lớn và khả năng nuôi dưỡng vô hạn. Nó là nền tảng cho vạn vật sinh sôi, có tấm lòng bao dung, dung nạp tất cả. Dù không cứng rắn như Thành Đầu Thổ, nhưng sức mạnh về tầm vóc và sự trù phú của nó là không thể phủ nhận.`,
+        nameEn: "The Great Plains",
+        descriptionEn: `This is the earth of alluvial plains and vast foundations. It is a symbol of fertility, abundance, tolerance, and is the foundation for all things to flourish.
+The core meaning is the power of foundation, abundance, and the lack of order. Its strength lies in its vast scale and infinite capacity to nurture, providing the foundation for all life.
+`,
       },
       {
         name: "LỘ BÀNG THỔ",
@@ -1846,6 +1950,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Vì đã chai sạn nên không sợ Mộc khắc, rễ cây khó đâm xuyên. Gặp Thủy sẽ trở nên lầy lội, vất vả. Gặp Hỏa sẽ càng thêm khô cứng.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có sức chịu đựng phi thường, kiên nhẫn, giữ chữ tín. Cuộc sống của họ thường vất vả, ít có cơ hội phát triển lớn và có thể trở nên trơ lì, vô cảm với xung quanh.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự dãi dầu & Sự thiếu màu mỡ. Sức mạnh của nó đến từ sự dãi dầu, chai sạn. Nó đã chịu đựng vô số tác động mà trở nên rắn chắc. Sức mạnh này không phải là quy mô hay sự màu mỡ, mà là sức bền và khả năng chịu đựng áp lực phi thường. Nó cũng là loại Thổ không sợ Mộc khắc.`,
+        nameEn: "Roadside Earth",
+        descriptionEn: `This is the earth on the side of a road that has been trampled by people and vehicles until it has become hardened. It is a symbol of endurance, patience, high tolerance, and having weathered many storms.
+The core meaning is the strength of being weathered and the lack of fertility. Its strength comes from this hardened state, a resilience and an extraordinary ability to withstand pressure.
+`,
       },
       {
         name: "SA TRUNG THỔ",
@@ -1855,6 +1963,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Vì không thuần nhất nên dễ bị các hành khác tác động. Gặp Thủy sẽ bị cuốn trôi. Gặp Hỏa sẽ trở thành sa mạc khô cằn. Mộc khó sinh trưởng.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này rất linh hoạt, dễ thích nghi. Họ có nhiều khả năng tiềm ẩn. Tuy nhiên, họ thường không ổn định, hay thay đổi, thiếu lập trường và khó tập trung vào một mục tiêu lâu dài.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự thích ứng & Sự thiếu nhất quán. Đây là loại Thổ thiếu sự ổn định và kiên cố nhất. Cấu trúc của nó rời rạc, dễ bị gió thổi, nước cuốn. "Sức mạnh" của nó nằm ở sự linh hoạt, biến đổi, nhưng trong hệ quy chiếu của hành Thổ (vốn trọng sự ổn định), nó bị xem là yếu.`,
+        nameEn: "Sandy Earth",
+        descriptionEn: `This is sandy soil, impure and easily changed. It is a symbol of flexibility and adaptability but lacks stability and a firm stance.
+The core meaning is the power of adaptation and the lack of consistency. This is the most unstable and least solid type of Earth; its "strength" lies in its flexibility and changeability.
+`,
       },
       {
         name: "BÍCH THƯỢNG THỔ",
@@ -1864,6 +1976,10 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Cần Mộc (cốt tre, gỗ) để làm cấu trúc nương tựa, do đó không thể tồn tại nếu thiếu Mộc. Rất sợ Thủy (nước làm mục vữa). Cần Hỏa (ánh đèn, mặt trời) để giữ cho khô ráo, sáng sủa.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tinh thần hợp tác tốt, biết nương tựa vào người khác để cùng phát triển. Họ có khả năng làm đẹp, trang trí. Tuy nhiên, họ thiếu tính tự lập, không có chính kiến, dễ lung lay và cuộc sống thường phụ thuộc.
 •	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự cộng sinh & Sự yếu đuối vì thiếu tự chủ. Yếu nhất vì hoàn toàn thiếu tính tự chủ. Nó là một lớp vữa mỏng, phải dựa vào cấu trúc khác (Mộc, gạch) để tồn tại. Nó không có sức chống chịu, dễ dàng bị bong tróc bởi Thủy. Sức mạnh của nó gần như không có, chỉ mang giá trị trang trí và phụ thuộc.`,
+        nameEn: "Building Earth (cement, plaster...)",
+        descriptionEn: `This is a layer of plaster or mortar on a wall that cannot exist on its own but must rely on another structure. It is a symbol of symbiosis, cooperation, and decoration but lacks autonomy.
+The core meaning is the beauty of symbiosis and the weakness from lacking self-reliance. It is the weakest because it completely lacks autonomy, relies on other structures to exist, and serves only a decorative value.
+`,
       },
       {
         name: "ỐC THƯỢNG THỔ",
@@ -1873,9 +1989,15 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Đặc tính đột biến (Tổng quát): Đã qua Hỏa luyện nên không sợ Mộc. Công năng chính là để chống lại Thủy (nước mưa). Do đó, đây là loại Thổ duy nhất không sợ Mộc và kỵ Thủy. Cần có Mộc (vì kèo) để làm giá đỡ.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này sống rất có trật tự, tuân thủ quy tắc và có công năng bảo vệ, che chở cho người khác. Tuy nhiên, họ có thể cứng nhắc, giáo điều, mất gốc, thiếu sự linh hoạt và không có khả năng nuôi dưỡng, sáng tạo.
 •	Ngữ Nghĩa Cốt Lõi: Sự hữu ích của quy tắc & Sự mất mát bản chất tự nhiên. Đã qua lửa tôi luyện (nung thành ngói), nó trở nên rắn chắc và có công năng đặc biệt là chống lại Thủy. Sức mạnh của nó mang tính chức năng, hữu ích và có quy tắc. Tuy nhiên, nó đã mất đi bản chất tự nhiên của đất (khả năng nuôi dưỡng) và cần phải có kết cấu khác (Mộc) để nương tựa.`,
+        nameEn: "Fired Earth (ceramics, bricks...)",
+        descriptionEn: `This is earth that has been fired into roof tiles, completely losing its natural properties. It is a symbol of order, rules, and the function of sheltering and protecting.
+The core meaning is the utility of rules and the loss of natural essence. Having been through fire, it becomes solid and has a special function but has lost its natural essence and needs to rely on another structure.
+`,
       },
     ];
-    return napAmData.find((item) => item.name === napAm).description;
+    return napAmData.find((item) => item.name === napAm)[
+      LANGUAGE === "en" ? "descriptionEn" : "description"
+    ];
   };
 
   const getNguHanhThapThan = (nguHanhCan) => {
@@ -2964,32 +3086,45 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
   };
 
   const getRoleText = (dongHanhPercent, hoTroPercent) => {
+    let textData = {};
     if (dongHanhPercent > hoTroPercent) {
-      return "Lực Lượng Đồng Hành có vai trò quan trọng hơn Lực Lượng Hỗ Trợ trong việc cấu thành Sức Mạnh của Nhật Chủ";
+      textData = {
+        en: "Companion Forces play a more crucial role than Support Forces in constituting the Day Master/Key Element's Strength",
+        vi: "Lực Lượng Đồng Hành có vai trò quan trọng hơn Lực Lượng Hỗ Trợ trong việc cấu thành Sức Mạnh của Nhật Chủ",
+      };
     } else if (dongHanhPercent < hoTroPercent) {
-      return "Lực Lượng Hỗ Trợ có vai trò quan trọng hơn Lực Lượng Đồng Hành trong việc cấu thành Sức Mạnh của Nhật Chủ";
+      textData = {
+        en: "Support Forces play a more crucial role than Companion Forces in constituting the Day Master/Key Element's Strength",
+        vi: "Lực Lượng Hỗ Trợ có vai trò quan trọng hơn Lực Lượng Đồng Hành trong việc cấu thành Sức Mạnh của Nhật Chủ",
+      };
     } else {
-      return "Lực Lượng Đồng Hành và Lực Lượng Hỗ Trợ có vai trò tương đương trong việc cấu thành Sức Mạnh Nhật Chủ";
+      textData = {
+        en: "Companion Forces and Support Forces have an equal role in constituting the Day Master/Key Element's Strength",
+        vi: "Lực Lượng Đồng Hành và Lực Lượng Hỗ Trợ có vai trò tương đương trong việc cấu thành Sức Mạnh Nhật Chủ",
+      };
     }
+    return LANGUAGE === "en" ? textData.en : textData.vi;
   };
 
   const getNameFromIndex = (index) => {
+    let data = { en: "", vi: "" };
     switch (index) {
       case 0:
-        return "Cực Cường";
+        data = { en: "Extremely Hard", vi: "Cực Cường" };
       case 1:
-        return "Cường";
+        data = { en: "Hard ", vi: "Cường" };
       case 2:
-        return "Cân Bằng Thiên Cường";
+        data = { en: "Balanced (leaning Hard)", vi: "Cân Bằng Thiên Cường" };
       case 3:
-        return "Cân Bằng Thực Sự";
+        data = { en: "True Balance", vi: "Cân Bằng Thực Sự" };
       case 4:
-        return "Cân Bằng Thiên Nhược";
+        data = { en: "Balanced (leaning Soft)", vi: "Cân Bằng Thiên Nhược" };
       case 5:
-        return "Nhược";
+        data = { en: "Soft", vi: "Nhược" };
       case 6:
-        return "Cực Nhược";
+        data = { en: "Extremely Soft", vi: "Cực Nhược" };
     }
+    return LANGUAGE === "en" ? data.en : data.vi;
   };
 
   const getForcesDetail = (nhatChu, dongHanhPercent, hoTroPercent) => {
@@ -3252,6 +3387,138 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
       },
     };
     return LANGUAGE === "en" ? data[element].en : data[element].vi;
+  };
+
+  const getNapAmData = (napAm) => {
+    if (!napAm) return "";
+    let data = {
+      // Metal Elements
+      "KIẾM PHONG KIM": {
+        en: "Weaponry",
+        vi: "Kiếm Phong Kim",
+      },
+      "KIM BẠCH KIM": {
+        en: "Pure Metal",
+        vi: "Kim Bạch Kim",
+      },
+      "SA TRUNG KIM": {
+        en: "Metal in Sand",
+        vi: "Sa Trung Kim",
+      },
+      "THOA XUYẾN KIM": {
+        en: "Jewelry",
+        vi: "Thoa Xuyến Kim",
+      },
+      "HẢI TRUNG KIM": {
+        en: "Metal in the Sea",
+        vi: "Hải Trung Kim",
+      },
+      "BẠCH LẠP KIM": {
+        en: "Molten Metal",
+        vi: "Bạch Lạp Kim",
+      },
+      // Fire Elements
+      "THIÊN THƯỢNG HỎA": {
+        en: "The Sun",
+        vi: "Thiên Thượng Hỏa",
+      },
+      "TÍCH LỊCH HỎA": {
+        en: "Thunder",
+        vi: "Tích Lịch Hỏa",
+      },
+      "LƯ TRUNG HỎA": {
+        en: "Fire in the Furnace",
+        vi: "Lư Trung Hỏa",
+      },
+      "SƠN ĐẦU HỎA": {
+        en: "Volcano",
+        vi: "Sơn Đầu Hỏa",
+      },
+      "SƠN HẠ HỎA": {
+        en: "Man-made Fire",
+        vi: "Sơn Hạ Hỏa",
+      },
+      "PHÚC ĐĂNG HỎA": {
+        en: "Lantern",
+        vi: "Phúc Đăng Hỏa",
+      },
+      // Water Elements
+      "ĐẠI HẢI THỦY": {
+        en: "The Ocean",
+        vi: "Đại Hải Thủy",
+      },
+      "THIÊN HÀ THỦY": {
+        en: "Rainwater",
+        vi: "Thiên Hà Thủy",
+      },
+      "TRƯỜNG LƯU THỦY": {
+        en: "The Long River",
+        vi: "Trường Lưu Thủy",
+      },
+      "ĐẠI KHÊ THỦY": {
+        en: "Waterfall",
+        vi: "Đại Khê Thủy",
+      },
+      "TUYỀN TRUNG THỦY": {
+        en: "Spring Water",
+        vi: "Tuyền Trung Thủy",
+      },
+      "GIẢN HẠ THỦY": {
+        en: "Underground Water",
+        vi: "Giản Hạ Thủy",
+      },
+      // Wood Elements
+      "ĐẠI LÂM MỘC": {
+        en: "The Great Forest",
+        vi: "Đại Lâm Mộc",
+      },
+      "TÙNG BÁCH MỘC": {
+        en: "Hardwood Trees",
+        vi: "Tùng Bách Mộc",
+      },
+      "THẠCH LỰU MỘC": {
+        en: "Fruit-bearing Trees",
+        vi: "Thạch Lựu Mộc",
+      },
+      "TANG ĐỐ MỘC": {
+        en: "Multi-purpose Wood",
+        vi: "Tang Đố Mộc",
+      },
+      "BÌNH ĐỊA MỘC": {
+        en: "Low-lying Plants",
+        vi: "Bình Địa Mộc",
+      },
+      "DƯƠNG LIỄU MỘC": {
+        en: "Softwood Trees",
+        vi: "Dương Liễu Mộc",
+      },
+      // Earth Elements
+      "THÀNH ĐẦU THỔ": {
+        en: "Fortress Earth",
+        vi: "Thành Đầu Thổ",
+      },
+      "ĐẠI TRẠCH THỔ": {
+        en: "The Great Plains",
+        vi: "Đại Trạch Thổ",
+      },
+      "LỘ BÀNG THỔ": {
+        en: "Roadside Earth",
+        vi: "Lộ Bàng Thổ",
+      },
+      "SA TRUNG THỔ": {
+        en: "Sandy Earth",
+        vi: "Sa Trung Thổ",
+      },
+      "BÍCH THƯỢNG THỔ": {
+        en: "Building Earth (cement, plaster...)",
+        vi: "Bích Thượng Thổ",
+      },
+      "ỐC THƯỢNG THỔ": {
+        en: "Fired Earth (ceramics, bricks...)",
+        vi: "Ốc Thượng Thổ",
+      },
+    };
+    return LANGUAGE === "en" ? data[napAm].en : data[napAm].vi;
   };
 
   const getTuTruData = (bazi, baseInfo) => {
@@ -3594,7 +3861,9 @@ Root Year Pillar:${getStemData(nam.can)} ${getBranchData(nam.chi)}
 •	Branch:${getBranchData(nam.chi)} (Hidden Forces = ${nam.canTangPercent
       .map((item) => `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`)
       .join(" + ")}) 
-•	Ngũ Hành Nạp Âm: ${nam.nguHanhNapAm}. (${nam.nguHanhNapAmThapThan})
+•	Inner Strength is symbolized by images of nature: ${getNapAmData(
+      nam.nguHanhNapAm
+    )}. (Powered by: ${getTenForcesData(nam.nguHanhNapAmThapThan)})
 Root Month Pillar:${getStemData(thang.can)} ${getBranchData(thang.chi)}
 •	Stem: ${getStemData(thang.can)} (Revealed Force =${getTenForcesData(
       thang.thapThan
@@ -3745,26 +4014,32 @@ Root Hour Pillar:${
   ${nguHanhScoreGoc
     .map(
       (item) =>
-        `• ${item.name}(${getCuongNhuoc(item.percent)}) = ${item.percent}%.
-        -${item.name} (${item.thapThan[0]}) = ${item.percentAm}%, 
-        +${item.name} (${item.thapThan[1]}) = ${item.percentDuong}%`
+        `• ${getElementData(item.name)}(${getCuongNhuoc(item.percent)}) = ${
+          item.percent
+        }%.
+        -${getElementData(item.name)} (${getTenForcesData(
+          item.thapThan[0]
+        )}) = ${item.percentAm}%, 
+        +${getElementData(item.name)} (${getTenForcesData(
+          item.thapThan[1]
+        )}) = ${item.percentDuong}%`
     )
     .join("\n\n")}
   
-Cấp độ sức mạnh của Nhật Chủ (Chính): Hành ${
+Day Master/Key Element Strength Level (Root): ${getElementData(
       getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.name
-    } (Đồng Hành) ${
+    )} Element (Companion Forces) ${
       getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent
-    }% + Hành ${
+    }% + ${getElementData(
       getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.name
-    } (Hỗ Trợ) ${
+    )} Element (Support Forces) ${
       getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
     }% = ${
       getSupportPercent(nhatChu, nguHanhScoreGoc).totalPercent
-    }%. Tuy nhiên do ${getRoleText(
+    }%. However, because ${getRoleText(
       getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
       getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
-    )} nên Sức Mạnh của Nhật Chủ được AGI xác định tương đối tại ${
+    )}, the AGI has determined the Day Master/Key Element's Strength to be relatively at ${
       !getForcesDetail(
         nhatChu,
         getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
@@ -3772,7 +4047,7 @@ Cấp độ sức mạnh của Nhật Chủ (Chính): Hành ${
       ).minorForces.name
         ? ""
         : "2"
-    } cấp độ ${
+    } levels ${
       getForcesDetail(
         nhatChu,
         getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
@@ -3784,7 +4059,7 @@ Cấp độ sức mạnh của Nhật Chủ (Chính): Hành ${
         getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
         getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
       ).minorForces.name
-        ? " và " +
+        ? " and " +
           getForcesDetail(
             nhatChu,
             getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
