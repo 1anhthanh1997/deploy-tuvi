@@ -3314,6 +3314,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
   };
 
   const getTenForcesData = (thapThan) => {
+    console.log(thapThan);
     let data = {
       "Nhật chủ": {
         en: "Day Master/Key Element",
@@ -3361,6 +3362,14 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
       },
     };
     return LANGUAGE === "en" ? data[thapThan].en : data[thapThan].vi;
+  };
+
+  const getNapAmTenForces = (napAmThapThan) => {
+    let napAmData = napAmThapThan.replace(",", " +").split(" + ");
+    let napAmDataEn = napAmData.map((item) => {
+      return getTenForcesData(item);
+    });
+    return napAmDataEn.join(" + ");
   };
 
   const getElementData = (element) => {
@@ -3863,7 +3872,7 @@ Root Year Pillar:${getStemData(nam.can)} ${getBranchData(nam.chi)}
       .join(" + ")}) 
 •	Inner Strength is symbolized by images of nature: ${getNapAmData(
       nam.nguHanhNapAm
-    )}. (Powered by: ${getTenForcesData(nam.nguHanhNapAmThapThan)})
+    )}. (Powered by: ${getNapAmTenForces(nam.nguHanhNapAmThapThan)})
 Root Month Pillar:${getStemData(thang.can)} ${getBranchData(thang.chi)}
 •	Stem: ${getStemData(thang.can)} (Revealed Force =${getTenForcesData(
       thang.thapThan
@@ -3871,7 +3880,9 @@ Root Month Pillar:${getStemData(thang.can)} ${getBranchData(thang.chi)}
 •	Branch: ${getBranchData(thang.chi)} (Hidden Forces = ${thang.canTangPercent
       .map((item) => `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`)
       .join(" + ")}) 
-•	Ngũ Hành Nạp Âm: ${thang.nguHanhNapAm}. (${thang.nguHanhNapAmThapThan})
+•	Inner Strength is symbolized by images of nature: ${getNapAmData(
+      thang.nguHanhNapAm
+    )}. (Powered by: ${getNapAmTenForces(thang.nguHanhNapAmThapThan)})
 Root Day Pillar:${getStemData(nhatChu.can)} ${getBranchData(nhatChu.chi)}
 •	Stem: ${getStemData(nhatChu.can)} (Revealed Force =${getTenForcesData(
       nhatChu.thapThan
@@ -3879,7 +3890,9 @@ Root Day Pillar:${getStemData(nhatChu.can)} ${getBranchData(nhatChu.chi)}
 •	Branch: ${getBranchData(nhatChu.chi)} (Hidden Forces = ${nhatChu.canTangPercent
       .map((item) => `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`)
       .join(" + ")})       
-•	Ngũ Hành Nạp Âm: ${nhatChu.nguHanhNapAm}. (${nhatChu.nguHanhNapAmThapThan})
+•	Inner Strength is symbolized by images of nature: ${getNapAmData(
+      nhatChu.nguHanhNapAm
+    )}. (Powered by: ${getNapAmTenForces(nhatChu.nguHanhNapAmThapThan)})
 Root Hour Pillar:${
       gio ? getStemData(gio.can) + " " + getBranchData(gio.chi) : ""
     }
@@ -3896,9 +3909,11 @@ Root Hour Pillar:${
             .join(" + ")
         : ""
     })
-•	Ngũ Hành Nạp Âm: ${gio ? gio.nguHanhNapAm : ""}. (${
+•	Inner Strength is symbolized by images of nature: ${getNapAmData(
+      gio ? gio.nguHanhNapAm : ""
+    )}. (Powered by: ${getNapAmTenForces(
       gio ? gio.nguHanhNapAmThapThan : ""
-    })${
+    )})${
       daiVan
         ? `\n\nThông tin các Trụ Thời Gian (Biến) của ${
             baseInfo.gioiTinh === 1 ? "anh" : "chị"
@@ -3936,7 +3951,9 @@ Root Hour Pillar:${
                 `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
             )
             .join(" + ")})
-•	Ngũ Hành Nạp Âm: ${daiVan.nguHanhNapAm}. (${daiVan.nguHanhNapAmThapThan})`
+•	Inner Strength is symbolized by images of nature: ${getNapAmData(
+            daiVan.nguHanhNapAm
+          )}. (Powered by: ${getNapAmTenForces(daiVan.nguHanhNapAmThapThan)})`
         : ""
     }${
       tieuVan
@@ -3952,7 +3969,9 @@ Root Hour Pillar:${
                 `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
             )
             .join(" + ")})
-•	Ngũ Hành Nạp Âm: ${tieuVan.nguHanhNapAm}. (${tieuVan.nguHanhNapAmThapThan})`
+•	Inner Strength is symbolized by images of nature: ${getNapAmData(
+            tieuVan.nguHanhNapAm
+          )}. (Powered by: ${getNapAmTenForces(tieuVan.nguHanhNapAmThapThan)})`
         : ""
     }${
       nguyetVan
@@ -3970,9 +3989,11 @@ Root Hour Pillar:${
                 `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
             )
             .join(" + ")})
-•	Ngũ Hành Nạp Âm: ${nguyetVan.nguHanhNapAm}. (${
+•	Inner Strength is symbolized by images of nature: ${getNapAmData(
+            nguyetVan.nguHanhNapAm
+          )}. (Powered by: ${getNapAmTenForces(
             nguyetVan.nguHanhNapAmThapThan
-          })`
+          )})`
         : ""
     }${
       nhatVan
@@ -3988,7 +4009,9 @@ Root Hour Pillar:${
                 `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
             )
             .join(" + ")})
-•	Ngũ Hành Nạp Âm: ${nhatVan.nguHanhNapAm}. (${nhatVan.nguHanhNapAmThapThan})`
+•	Inner Strength is symbolized by images of nature: ${getNapAmData(
+            nhatVan.nguHanhNapAm
+          )}. (Powered by: ${getNapAmTenForces(nhatVan.nguHanhNapAmThapThan)})`
         : ""
     }${
       thoiVan
@@ -4004,7 +4027,9 @@ Root Hour Pillar:${
                 `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
             )
             .join(" + ")})
-•	Ngũ Hành Nạp Âm: ${thoiVan.nguHanhNapAm}. (${thoiVan.nguHanhNapAmThapThan})`
+•	Inner Strength is symbolized by images of nature: ${getNapAmData(
+            thoiVan.nguHanhNapAm
+          )}. (Powered by: ${getNapAmTenForces(thoiVan.nguHanhNapAmThapThan)})`
         : ""
     }    
 
@@ -4206,11 +4231,13 @@ ${
 }`
         : ""
     }
-5. Ngũ Hành Nạp Âm
-•	Trụ Năm:  ${nam.nguHanhNapAm}
-•	Trụ Tháng: ${thang.nguHanhNapAm}
-•	Trụ Ngày: ${nhatChu.nguHanhNapAm}
-•	Trụ Giờ: ${gio ? gio.nguHanhNapAm : ""}
+5. Analysis of Inner Strength for ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
+      baseInfo.hoTen
+    }, born in ${baseInfo.namSinh}
+•	Root Year Pillar:  ${getNapAmData(nam.nguHanhNapAm)}
+•	Root Month Pillar: ${getNapAmData(thang.nguHanhNapAm)}
+•	Root Day Pillar: ${getNapAmData(nhatChu.nguHanhNapAm)}
+•	Root Hour Pillar: ${getNapAmData(gio ? gio.nguHanhNapAm : "")}
 
 ${getNapAm(nam.nguHanhNapAm)}\n
 ${getNapAm(thang.nguHanhNapAm)}\n
