@@ -3530,6 +3530,41 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     return LANGUAGE === "en" ? data[napAm].en : data[napAm].vi;
   };
 
+  const convertMonth = (month) => {
+    switch (month) {
+      case 1:
+        return "January";
+      case 2:
+        return "February";
+      case 3:
+        return "March";
+      case 4:
+        return "April";
+      case 5:
+        return "May";
+      case 6:
+        return "June";
+      case 7:
+        return "July";
+      case 8:
+        return "August";
+      case 9:
+        return "September";
+      case 10:
+        return "October";
+      case 11:
+        return "November";
+      case 12:
+        return "December";
+      default:
+        return "";
+    }
+  };
+
+  const convertDate = (day, month, year) => {
+    return `${convertMonth(month)} ${day || ""}, ${year || ""}`;
+  };
+
   const getTuTruData = (bazi, baseInfo) => {
     let nam = bazi.year;
     let thang = bazi.month;
@@ -3911,31 +3946,116 @@ Root Hour Pillar:${
     })
 •	Inner Strength is symbolized by images of nature: ${getNapAmData(
       gio ? gio.nguHanhNapAm : ""
-    )}. (Powered by: ${getNapAmTenForces(
-      gio ? gio.nguHanhNapAmThapThan : ""
-    )})${
+    )}. (Powered by: ${getNapAmTenForces(gio ? gio.nguHanhNapAmThapThan : "")}) 
+
+2. Root Five Elements Proportions for ${
+      baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
+    } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}
+  ${nguHanhScoreGoc
+    .map(
+      (item) =>
+        `• ${getElementData(item.name)}(${getCuongNhuoc(item.percent)}) = ${
+          item.percent
+        }%.
+        -${getElementData(item.name)} (${getTenForcesData(
+          item.thapThan[0]
+        )}) = ${item.percentAm}%, 
+        +${getElementData(item.name)} (${getTenForcesData(
+          item.thapThan[1]
+        )}) = ${item.percentDuong}%`
+    )
+    .join("\n\n")}
+  
+Day Master/Key Element Strength Level (Root): ${getElementData(
+      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.name
+    )} Element (Companion Forces) ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent
+    }% + ${getElementData(
+      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.name
+    )} Element (Support Forces) ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+    }% = ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).totalPercent
+    }%. However, because ${getRoleText(
+      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+    )}, the AGI has determined the Day Master/Key Element's Strength to be relatively at ${
+      !getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+      ).minorForces.name
+        ? ""
+        : "2"
+    } levels ${
+      getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+      ).majorForces.name
+    }${
+      getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+      ).minorForces.name
+        ? " and " +
+          getForcesDetail(
+            nhatChu,
+            getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+            getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+          ).minorForces.name
+        : ""
+    }     
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+  ).majorForces.title
+}
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+  ).majorForces.data
+}
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+  ).minorForces?.title
+}
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+  ).minorForces?.data
+}${
       daiVan
-        ? `\n\nThông tin các Trụ Thời Gian (Biến) của ${
-            baseInfo.gioiTinh === 1 ? "anh" : "chị"
-          } ${baseInfo.hoTen} sinh năm ${baseInfo.namSinh} tại đại vận thứ ${
+        ? `\n\n3.Variable Pillars for ${
+            baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
+          } ${baseInfo.hoTen}, born in ${baseInfo.namSinh} at the Decade ${
             daiVan.decadeIndex
-          }${
+          }
+          ${
             baseInfo.gioThoiVan && !baseInfo.onlyDecade
-              ? " thời điểm " + (baseInfo.gioThoiVan - 1) * 2 + "h"
+              ? " at" + (baseInfo.gioThoiVan - 1) * 2 + "h"
               : ""
-          }${
-            baseInfo.ngayLuuNhat && !baseInfo.onlyDecade
-              ? " ngày " + baseInfo.ngayLuuNhat
+          }
+          ${
+            !baseInfo.onlyDecade
+              ? convertDate(
+                  baseInfo.ngayLuuNhat,
+                  baseInfo.thangLuuNguyet,
+                  baseInfo.namXemTieuVan
+                )
               : ""
-          }${
-            baseInfo.thangLuuNguyet && !baseInfo.onlyDecade
-              ? " tháng " + baseInfo.thangLuuNguyet
-              : ""
-          }${
-            baseInfo.namXemTieuVan && !baseInfo.onlyDecade
-              ? " năm " + baseInfo.namXemTieuVan
-              : ""
-          }`
+          }  
+        `
         : ""
     }${
       daiVan
@@ -4031,11 +4151,37 @@ Root Hour Pillar:${
             thoiVan.nguHanhNapAm
           )}. (Powered by: ${getNapAmTenForces(thoiVan.nguHanhNapAmThapThan)})`
         : ""
-    }    
-
-4. Root Five Elements Proportions for ${
-      baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
-    } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}
+    }   ${
+      daiVan
+        ? `\n4.Variable Five Elements Proportions for ${
+            baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
+          } ${baseInfo.hoTen} born in ${baseInfo.namSinh} at the Decade ${
+            daiVan.decadeIndex
+          }${
+            baseInfo.gioThoiVan && !baseInfo.onlyDecade
+              ? " at" + (baseInfo.gioThoiVan - 1) * 2 + "h"
+              : ""
+          }${
+            !baseInfo.onlyDecade
+              ? convertDate(
+                  baseInfo.ngayLuuNhat,
+                  baseInfo.thangLuuNguyet,
+                  baseInfo.namXemTieuVan
+                )
+              : ""
+          }.The value ${
+            baseInfo.gioThoiVan && !baseInfo.onlyDecade
+              ? " (at" + (baseInfo.gioThoiVan - 1) * 2 + "h"
+              : ""
+          }${
+            !baseInfo.onlyDecade
+              ? convertDate(
+                  baseInfo.ngayLuuNhat,
+                  baseInfo.thangLuuNguyet,
+                  baseInfo.namXemTieuVan
+                ) + ")"
+              : ""
+          } is compared to the root proportions
   ${nguHanhScoreGoc
     .map(
       (item) =>
@@ -4051,187 +4197,92 @@ Root Hour Pillar:${
     )
     .join("\n\n")}
   
-Day Master/Key Element Strength Level (Root): ${getElementData(
-      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.name
-    )} Element (Companion Forces) ${
-      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent
-    }% + ${getElementData(
-      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.name
-    )} Element (Support Forces) ${
-      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
-    }% = ${
-      getSupportPercent(nhatChu, nguHanhScoreGoc).totalPercent
-    }%. However, because ${getRoleText(
-      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
-    )}, the AGI has determined the Day Master/Key Element's Strength to be relatively at ${
-      !getForcesDetail(
-        nhatChu,
-        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
-      ).minorForces.name
-        ? ""
-        : "2"
-    } levels ${
-      getForcesDetail(
-        nhatChu,
-        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
-      ).majorForces.name
-    }${
-      getForcesDetail(
-        nhatChu,
-        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
-      ).minorForces.name
-        ? " and " +
-          getForcesDetail(
-            nhatChu,
+Day Master/Key Element Strength Level ${
+            baseInfo.gioThoiVan && !baseInfo.onlyDecade
+              ? " (at" + (baseInfo.gioThoiVan - 1) * 2 + "h"
+              : ""
+          }${
+            !baseInfo.onlyDecade
+              ? convertDate(
+                  baseInfo.ngayLuuNhat,
+                  baseInfo.thangLuuNguyet,
+                  baseInfo.namXemTieuVan
+                ) + ")"
+              : ""
+          } of ${baseInfo.gioiTinh === 1 ? "Mr." : "Ms."} ${
+            baseInfo.hoTen
+          }, born in ${baseInfo.namSinh}: ${getElementData(
+            getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.name
+          )} Element (Companion Forces) ${
+            getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent
+          }% + ${getElementData(
+            getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.name
+          )} Element (Support Forces) ${
+            getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+          }% = ${
+            getSupportPercent(nhatChu, nguHanhScoreGoc).totalPercent
+          }%. However, because ${getRoleText(
             getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
             getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
-          ).minorForces.name
-        : ""
-    }     
-${
-  getForcesDetail(
-    nhatChu,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
-  ).majorForces.title
-}
-${
-  getForcesDetail(
-    nhatChu,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
-  ).majorForces.data
-}
-${
-  getForcesDetail(
-    nhatChu,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
-  ).minorForces?.title
-}
-${
-  getForcesDetail(
-    nhatChu,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
-  ).minorForces?.data
-}${
-      daiVan
-        ? `\nTỷ Trọng Ngũ Hành của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
-            baseInfo.hoTen
-          } sinh năm ${baseInfo.namSinh} tại đại vận thứ ${daiVan.decadeIndex}${
-            baseInfo.gioThoiVan && !baseInfo.onlyDecade
-              ? " thời điểm " + (baseInfo.gioThoiVan - 1) * 2 + "h"
-              : ""
-          }${
-            baseInfo.ngayLuuNhat && !baseInfo.onlyDecade
-              ? " ngày " + baseInfo.ngayLuuNhat
-              : ""
-          }${
-            baseInfo.thangLuuNguyet && !baseInfo.onlyDecade
-              ? " tháng " + baseInfo.thangLuuNguyet
-              : ""
-          }${
-            baseInfo.namXemTieuVan && !baseInfo.onlyDecade
-              ? " năm " + baseInfo.namXemTieuVan
-              : ""
-          } (đính kèm dữ liệu tăng/giảm so với tỷ trọng chính)
-  ${nguHanhScore
-    .map(
-      (item) =>
-        `• ${item.name}(${getCuongNhuoc(item.percent)}) = ${item.percent}% (${
-          daiVan
-            ? getAdditionPercent(item.name, nguHanhScore, nguHanhScoreGoc).total
-            : ""
-        }).
-        -${item.name} (${item.thapThan[0]}) = ${item.percentAm}% (${
-          daiVan
-            ? getAdditionPercent(item.name, nguHanhScore, nguHanhScoreGoc).am
-            : ""
-        }), 
-        +${item.name} (${item.thapThan[1]}) = ${item.percentDuong}% (${
-          daiVan
-            ? getAdditionPercent(item.name, nguHanhScore, nguHanhScoreGoc).duong
-            : ""
-        })`
-    )
-    .join("\n\n")}
-Cấp độ sức mạnh của Nhật Chủ (Biến): Hành ${
-            getSupportPercent(nhatChu, nguHanhScore).dongHanh.name
-          } (Đồng Hành) ${
-            getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent
-          }% + Hành ${
-            getSupportPercent(nhatChu, nguHanhScore).hoTro.name
-          } (Hỗ Trợ) ${
-            getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
-          }% = ${
-            getSupportPercent(nhatChu, nguHanhScore).totalPercent
-          }%. Tuy nhiên do ${getRoleText(
-            getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-            getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
-          )} nên Sức Mạnh của Nhật Chủ được AGI xác định tương đối tại ${
+          )}, the AGI has determined the Day Master/Key Element's Strength to be relatively at ${
             !getForcesDetail(
               nhatChu,
-              getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+              getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+              getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
             ).minorForces.name
               ? ""
               : "2"
-          } cấp độ ${
+          } levels ${
             getForcesDetail(
               nhatChu,
-              getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+              getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+              getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
             ).majorForces.name
           }${
             getForcesDetail(
               nhatChu,
-              getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+              getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+              getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
             ).minorForces.name
-              ? " và " +
+              ? " and " +
                 getForcesDetail(
                   nhatChu,
-                  getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-                  getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+                  getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+                  getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
                 ).minorForces.name
               : ""
-          } 
+          }     
 ${
   getForcesDetail(
     nhatChu,
-    getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
   ).majorForces.title
 }
 ${
   getForcesDetail(
     nhatChu,
-    getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
   ).majorForces.data
 }
 ${
   getForcesDetail(
     nhatChu,
-    getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
   ).minorForces?.title
 }
 ${
   getForcesDetail(
     nhatChu,
-    getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
   ).minorForces?.data
 }`
         : ""
     }
-5. Analysis of Inner Strength for ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
+5. Analysis of Inner Strength for ${baseInfo.gioiTinh === 1 ? "Mr." : "Ms."} ${
       baseInfo.hoTen
     }, born in ${baseInfo.namSinh}
 •	Root Year Pillar:  ${getNapAmData(nam.nguHanhNapAm)}
@@ -4821,7 +4872,9 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
       ${getTuTruData(bazi, baseInfo)}
       ${
         !baseInfo.boTruGio
-          ? `Part 2: Astrology. AGI must consider the Five Elements, Thap Than and Can Tang in the Cung
+          ? `C. Purple Star Astrology for ${
+              baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
+            } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}. 
       ${getTamHopData(thapNhiCung, bazi.day.can)}`
           : ""
       }`;
