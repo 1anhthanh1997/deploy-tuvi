@@ -1,4 +1,5 @@
 const { diaChi, dichCung, khoangCachCung } = require("./amDuong.js");
+const { LANGUAGE } = require("./constant.js");
 
 class CungDiaBan {
   constructor(cungID, canNamSinh) {
@@ -151,21 +152,76 @@ class DiaBan {
     let cungHuynhDe = dichCung(this.cungMenh, 11);
 
     return [
-      { cungId: 1,tenCung:"Mệnh", tenCungEn: "Destiny / Soul", cungSoDiaBan: this.cungMenh },
-      { cungId: 2,tenCung:"Phụ mẫu", tenCungEn: "Senior", cungSoDiaBan: cungPhuMau },
-      { cungId: 3,tenCung:"Phúc đức", tenCungEn: "Spiritual Value", cungSoDiaBan: cungPhucDuc },
-      { cungId: 4,tenCung:"Điền trạch", tenCungEn: "Material Legacy", cungSoDiaBan: cungDienTrach },
-      { cungId: 5,tenCung:"Quan lộc", tenCungEn: "Career", cungSoDiaBan: cungQuanLoc },
-      { cungId: 6,tenCung:"Nô bộc", tenCungEn: "Friends/Peers", cungSoDiaBan: this.cungNoboc },
-      { cungId: 7,tenCung:"Thiên Di", tenCungEn: "External", cungSoDiaBan: cungThienDi },
-      { cungId: 8,tenCung:"Tật Ách", tenCungEn: "Karma", cungSoDiaBan: this.cungTatAch },
-      { cungId: 9,tenCung:"Tài Bạch", tenCungEn: "Resources", cungSoDiaBan: cungTaiBach },
-      { cungId: 10,tenCung:"Tử tức", tenCungEn: "Junior", cungSoDiaBan: cungTuTuc },
-      { cungId: 11,tenCung:"Phu thê", tenCungEn: "Soulmate", cungSoDiaBan: cungTheThiep },
+      {
+        cungId: 1,
+        tenCung: "Mệnh",
+        tenCungEn: "Destiny",
+        cungSoDiaBan: this.cungMenh,
+      },
+      {
+        cungId: 2,
+        tenCung: "Phụ mẫu",
+        tenCungEn: "Senior/Parents",
+        cungSoDiaBan: cungPhuMau,
+      },
+      {
+        cungId: 3,
+        tenCung: "Phúc đức",
+        tenCungEn: "Spiritual",
+        cungSoDiaBan: cungPhucDuc,
+      },
+      {
+        cungId: 4,
+        tenCung: "Điền trạch",
+        tenCungEn: "Property",
+        cungSoDiaBan: cungDienTrach,
+      },
+      {
+        cungId: 5,
+        tenCung: "Quan lộc",
+        tenCungEn: "Career",
+        cungSoDiaBan: cungQuanLoc,
+      },
+      {
+        cungId: 6,
+        tenCung: "Nô bộc",
+        tenCungEn: "Peers",
+        cungSoDiaBan: this.cungNoboc,
+      },
+      {
+        cungId: 7,
+        tenCung: "Thiên Di",
+        tenCungEn: "External",
+        cungSoDiaBan: cungThienDi,
+      },
+      {
+        cungId: 8,
+        tenCung: "Tật Ách",
+        tenCungEn: "Health",
+        cungSoDiaBan: this.cungTatAch,
+      },
+      {
+        cungId: 9,
+        tenCung: "Tài Bạch",
+        tenCungEn: "Resources",
+        cungSoDiaBan: cungTaiBach,
+      },
+      {
+        cungId: 10,
+        tenCung: "Tử tức",
+        tenCungEn: "Junior/Children",
+        cungSoDiaBan: cungTuTuc,
+      },
+      {
+        cungId: 11,
+        tenCung: "Phu thê",
+        tenCungEn: "Partner",
+        cungSoDiaBan: cungTheThiep,
+      },
       {
         cungId: 12,
         tenCung: "Huynh đệ",
-        tenCungEn: "Brothers and Sisters",
+        tenCungEn: "Siblings",
         cungSoDiaBan: cungHuynhDe,
       },
     ];
@@ -173,7 +229,9 @@ class DiaBan {
 
   nhapCungChu() {
     this.cungChu(this.thangSinhAmLich, this.gioSinhAmLich).forEach((cung) => {
-      this.thapNhiCung[cung.cungSoDiaBan].cungChu(cung.tenCung);
+      this.thapNhiCung[cung.cungSoDiaBan].cungChu(
+        LANGUAGE === "en" ? cung.tenCungEn : cung.tenCung
+      );
     });
     return this;
   }

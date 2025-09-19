@@ -17,7 +17,7 @@ const {
   checkNguHanhRelationshipDetailed,
   getThapThanNapAm,
 } = require("./amDuong.js");
-
+const { LANGUAGE } = require("./constant.js");
 const tietData = require("../tiet.json");
 
 // Helper function to calculate days between two dates
@@ -741,19 +741,32 @@ const getTuHoaBazi = (can, thapNhiCung, endName) => {
 
   thapNhiCung[viTriHoaLoc].cungSao.push({
     saoID: 94,
-    saoTen: `Hóa lộc (từ Can Trụ ${endName})`,
+    saoTen:
+      LANGUAGE === "en"
+        ? `Prosperity Transformation (from the ${endName}'s Stem)`
+        : `Hóa lộc (từ Can Trụ ${endName})`,
+    saoTenEn: `Prosperity Transformation (from the ${endName}'s Stem)`,
   });
   thapNhiCung[viTriHoaQuyen].cungSao.push({
     saoID: 93,
-    saoTen: `Hóa quyền (từ Can Trụ ${endName})`,
+    saoTen:
+      LANGUAGE === "en"
+        ? `Authority Transformation (from the ${endName}'s Stem)`
+        : `Hóa quyền (từ Can Trụ ${endName})`,
+    saoTenEn: `Authority Transformation (from the ${endName}'s Stem)`,
   });
   thapNhiCung[viTriHoaKhoa].cungSao.push({
     saoID: 92,
-    saoTen: `Hóa khoa (từ Can Trụ ${endName})`,
+    saoTen:
+      LANGUAGE === "en"
+        ? `Fame Transformation (from the ${endName}'s Stem)`
+        : `Hóa khoa (từ Can Trụ ${endName})`,
+    saoTenEn: `Fame Transformation (from the ${endName}'s Stem)`,
   });
   thapNhiCung[viTriHoaKy].cungSao.push({
     saoID: 95,
     saoTen: `Hóa kỵ (từ Can Trụ ${endName})`,
+    saoTenEn: `Taboo Transformation (from the ${endName}'s Stem)`,
   });
 };
 
@@ -773,43 +786,56 @@ const addTuHoaBazi = (
     {
       can: canGio,
       endName: "Giờ/Chính",
+      endNameEn: "Root Hour",
     },
     {
       can: canNgay,
       endName: "Ngày/Chính",
+      endNameEn: "Root Day",
     },
     {
       can: canThang,
       endName: "Tháng/Chính",
+      endNameEn: "Root Month",
     },
     {
       can: canNam,
       endName: "Năm/Chính",
+      endNameEn: "Root Year",
     },
     {
       can: canDaiVan,
       endName: "Đại Vận/Biến",
+      endNameEn: "Variable Decade",
     },
     {
       can: canTieuVan,
       endName: "Năm/Biến",
+      endNameEn: "Variable Year",
     },
     {
       can: canNguyetVan,
       endName: "Tháng/Biến",
+      endNameEn: "Variable Month",
     },
     {
       can: canNhatVan,
       endName: "Ngày/Biến",
+      endNameEn: "Variable Day",
     },
     {
       can: canThoiVan,
       endName: "Giờ/Biến",
+      endNameEn: "Variable Hour",
     },
   ];
   for (let item of data) {
     if (item.can) {
-      getTuHoaBazi(item.can, thapNhiCung, item.endName);
+      getTuHoaBazi(
+        item.can,
+        thapNhiCung,
+        LANGUAGE === "en" ? item.endNameEn : item.endName
+      );
     }
   }
 };

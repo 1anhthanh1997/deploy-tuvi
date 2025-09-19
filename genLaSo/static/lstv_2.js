@@ -3562,7 +3562,16 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
   };
 
   const convertDate = (day, month, year) => {
-    return `${convertMonth(month)} ${day || ""}, ${year || ""}`;
+    if (!year) {
+      return "";
+    } else {
+      if (!month) {
+        day = "";
+      }
+    }
+    return `${convertMonth(month)} ${day || ""}${month ? ", " : ""} ${
+      year || ""
+    }`;
   };
 
   const getTuTruData = (bazi, baseInfo) => {
@@ -4036,17 +4045,15 @@ ${
   ).minorForces?.data
 }${
       daiVan
-        ? `\n\n3.Variable Pillars for ${
+        ? `\n\n3. Variable Pillars for ${
             baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
           } ${baseInfo.hoTen}, born in ${baseInfo.namSinh} at the Decade ${
             daiVan.decadeIndex
-          }
-          ${
+          } ${
             baseInfo.gioThoiVan && !baseInfo.onlyDecade
-              ? " at" + (baseInfo.gioThoiVan - 1) * 2 + "h"
+              ? "at " + (baseInfo.gioThoiVan - 1) * 2 + "h "
               : ""
-          }
-          ${
+          }${
             !baseInfo.onlyDecade
               ? convertDate(
                   baseInfo.ngayLuuNhat,
@@ -4070,10 +4077,7 @@ ${
               (item) =>
                 `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
             )
-            .join(" + ")})
-•	Inner Strength is symbolized by images of nature: ${getNapAmData(
-            daiVan.nguHanhNapAm
-          )}. (Powered by: ${getNapAmTenForces(daiVan.nguHanhNapAmThapThan)})`
+            .join(" + ")})`
         : ""
     }${
       tieuVan
@@ -4088,10 +4092,7 @@ ${
               (item) =>
                 `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
             )
-            .join(" + ")})
-•	Inner Strength is symbolized by images of nature: ${getNapAmData(
-            tieuVan.nguHanhNapAm
-          )}. (Powered by: ${getNapAmTenForces(tieuVan.nguHanhNapAmThapThan)})`
+            .join(" + ")})`
         : ""
     }${
       nguyetVan
@@ -4108,12 +4109,7 @@ ${
               (item) =>
                 `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
             )
-            .join(" + ")})
-•	Inner Strength is symbolized by images of nature: ${getNapAmData(
-            nguyetVan.nguHanhNapAm
-          )}. (Powered by: ${getNapAmTenForces(
-            nguyetVan.nguHanhNapAmThapThan
-          )})`
+            .join(" + ")})`
         : ""
     }${
       nhatVan
@@ -4128,10 +4124,7 @@ ${
               (item) =>
                 `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
             )
-            .join(" + ")})
-•	Inner Strength is symbolized by images of nature: ${getNapAmData(
-            nhatVan.nguHanhNapAm
-          )}. (Powered by: ${getNapAmTenForces(nhatVan.nguHanhNapAmThapThan)})`
+            .join(" + ")})`
         : ""
     }${
       thoiVan
@@ -4146,20 +4139,17 @@ ${
               (item) =>
                 `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
             )
-            .join(" + ")})
-•	Inner Strength is symbolized by images of nature: ${getNapAmData(
-            thoiVan.nguHanhNapAm
-          )}. (Powered by: ${getNapAmTenForces(thoiVan.nguHanhNapAmThapThan)})`
+            .join(" + ")})`
         : ""
     }   ${
       daiVan
-        ? `\n4.Variable Five Elements Proportions for ${
+        ? `\n4. Variable Five Elements Proportions for ${
             baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
           } ${baseInfo.hoTen} born in ${baseInfo.namSinh} at the Decade ${
             daiVan.decadeIndex
-          }${
+          } ${
             baseInfo.gioThoiVan && !baseInfo.onlyDecade
-              ? " at" + (baseInfo.gioThoiVan - 1) * 2 + "h"
+              ? "at " + (baseInfo.gioThoiVan - 1) * 2 + "h "
               : ""
           }${
             !baseInfo.onlyDecade
@@ -4169,9 +4159,9 @@ ${
                   baseInfo.namXemTieuVan
                 )
               : ""
-          }.The value ${
+          }. The value ${
             baseInfo.gioThoiVan && !baseInfo.onlyDecade
-              ? " (at" + (baseInfo.gioThoiVan - 1) * 2 + "h"
+              ? " (at " + (baseInfo.gioThoiVan - 1) * 2 + "h "
               : ""
           }${
             !baseInfo.onlyDecade
@@ -4312,7 +4302,7 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
     for (let cungCach of cungCachList) {
       let saoCungCach = cungCach.saoList;
       if (isChildArray(toHopSao, saoCungCach)) {
-        return cungCach.name;
+        return LANGUAGE === "en" ? cungCach.nameEn : cungCach.name;
       }
     }
   }
@@ -4369,12 +4359,20 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
         saoList: [5, 8, 12],
       },
     ];
-    let tamHopList = [
-      ["Mệnh", "Tài Bạch", "Quan lộc"],
-      ["Phúc đức", "Phu thê", "Thiên Di"],
-      ["Phụ mẫu", "Tử tức", "Nô bộc"],
-      ["Huynh đệ", "Tật Ách", "Điền trạch"],
-    ];
+    let tamHopList =
+      LANGUAGE === "en"
+        ? [
+            ["Destiny", "Resources", "Career"],
+            ["Spiritual", "Partner", "External"],
+            ["Senior/Parents", "Junior/Children", "Peers"],
+            ["Siblings", "Health", "Property"],
+          ]
+        : [
+            ["Mệnh", "Tài Bạch", "Quan lộc"],
+            ["Phúc đức", "Phu thê", "Thiên Di"],
+            ["Phụ mẫu", "Tử tức", "Nô bộc"],
+            ["Huynh đệ", "Tật Ách", "Điền trạch"],
+          ];
     let tamHopCungAnThan = [];
     let toHopSao = [[], [], [], []];
     let toHopSaoThan = [];
@@ -4786,9 +4784,40 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
     return cungDau ? thapThan.cungDau.tenDayDu : thapThan.khacDau.tenDayDu;
   };
 
-  const getCungInfo = (cungChu, thapNhiCung, nhatChu) => {
-    let cung = thapNhiCung.find((cung) => cung.cungChu === cungChu);
+  const getCungInfo = (cungChu, thapNhiCung, nhatChu, baseInfo) => {
+    let cung = thapNhiCung.find((cung) => {
+      return cung.cungChu === cungChu;
+    });
     let canTangData = getCanTangData(cung.cungSo);
+    if (LANGUAGE === "en") {
+      return `${cungChu} Palace ${
+        cung.cungThan ? " (also the Identity Palace)" : ""
+      } ${baseInfo.gioiTinh === 1 ? "Mr." : "Ms."} ${baseInfo.hoTen}, born in ${
+        baseInfo.namSinh
+      } locates at ${getBranchData(cung.cungTen)} Branch. Stars: ${
+        getSao(cung.cungChu, thapNhiCung).chinhTinhGoc
+          ? getSao(cung.cungChu, thapNhiCung).chinhTinh
+          : `Vô Chính Diệu có ${
+              getSao(getXungChieu(cung.cungChu), thapNhiCung).chinhTinhGoc
+            } xung chiếu, ${getSao(cung.cungChu, thapNhiCung).newChinhTinh}`
+      }. Hidden Forces: ${canTangData
+        .map((item) => {
+          return (
+            getTenForcesData(
+              getThapThan(
+                getNguHanhCan(item.name).nguHanh,
+                getNguHanhCan(nhatChu).nguHanh,
+                getNguHanhCan(item.name).amDuong ===
+                  getNguHanhCan(nhatChu).amDuong
+              )
+            ) +
+            " (" +
+            item.score * 2 +
+            "%)"
+          );
+        })
+        .join(" + ")},`;
+    }
 
     return `Cung ${cungChu}${
       cung.cungThan ? " kiêm nhiệm cung an Thân" : ""
@@ -4818,35 +4847,63 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
     }`;
   };
 
-  const getTamHopData = (thapNhiCung, nhatChu) => {
+  const getTamHopData = (thapNhiCung, nhatChu, baseInfo) => {
     let tamHopList = [
       {
         id: 1,
         name: "Mệnh Tài Quan",
+        nameEn: "Destiny-Wealth-Career",
         cung: ["Mệnh", "Tài Bạch", "Quan lộc"],
+        cungEn: ["Destiny", "Resources", "Career"],
       },
       {
         id: 2,
         name: "Phúc Phối Di",
+        nameEn: "Spiritual-Spouse-External",
         cung: ["Phúc đức", "Phu thê", "Thiên Di"],
+        cungEn: ["Spiritual", "Partner", "External"],
       },
-      { id: 3, name: "Phụ Tử Nô", cung: ["Phụ mẫu", "Tử tức", "Nô bộc"] },
+      {
+        id: 3,
+        name: "Phụ Tử Nô",
+        nameEn: "Senior-Junior-Peers",
+        cung: ["Phụ mẫu", "Tử tức", "Nô bộc"],
+        cungEn: ["Senior/Parents", "Junior/Children", "Peers"],
+      },
       {
         id: 4,
         name: "Huynh Tật Điền",
+        nameEn: "Siblings-Health-Property",
         cung: ["Huynh đệ", "Tật Ách", "Điền trạch"],
+        cungEn: ["Siblings", "Health", "Property"],
       },
     ];
     const cungCachList = getBasicInfo(thapNhiCung).cungCach;
-    let tamHopData = tamHopList.map((item, index) => {
-      return `${item.id}. Tam hợp ${item.name}: Dạng cách cục ${
-        cungCachList[index]
-      }
-      ${item.cung
-        .map((cungChu) => getCungInfo(cungChu, thapNhiCung, nhatChu))
-        .join("\n")}
-      `;
-    });
+    let tamHopData = "";
+    if (LANGUAGE === "en") {
+      tamHopData = tamHopList.map((item, index) => {
+        return `${item.id}. ${item.nameEn} Trine: ${
+          cungCachList[index]
+        } Combination
+        ${item.cungEn
+          .map((cungChu) =>
+            getCungInfo(cungChu, thapNhiCung, nhatChu, baseInfo)
+          )
+          .join("\n")}
+        `;
+      });
+    } else {
+      tamHopData = tamHopList.map((item, index) => {
+        return `${item.id}. Tam hợp ${item.name}: Dạng cách cục ${
+          cungCachList[index]
+        }
+        ${item.cung
+          .map((cungChu) => getCungInfo(cungChu, thapNhiCung, nhatChu))
+          .join("\n")}
+        `;
+      });
+    }
+
     return tamHopData.join("\n");
   };
 
@@ -4875,7 +4932,7 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
           ? `C. Purple Star Astrology for ${
               baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
             } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}. 
-      ${getTamHopData(thapNhiCung, bazi.day.can)}`
+      ${getTamHopData(thapNhiCung, bazi.day.can, baseInfo)}`
           : ""
       }`;
     } else {
