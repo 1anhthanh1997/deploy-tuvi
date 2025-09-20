@@ -3106,6 +3106,24 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     return LANGUAGE === "en" ? textData.en : textData.vi;
   };
 
+  const generateDecadeText = (yearStartDecade, namSinh) => {
+    if (!yearStartDecade || !namSinh) {
+      return "";
+    }
+
+    return (
+      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        .map((item, index) => {
+          return `Decade ${index + 1}: ages ${
+            index * 10 + (yearStartDecade - namSinh)
+          }-${index * 10 + 9 + (yearStartDecade - namSinh)} (${
+            yearStartDecade + index * 10
+          }-${yearStartDecade + index * 10 + 9})`;
+        })
+        .join(", ") + "."
+    );
+  };
+
   const getNameFromIndex = (index) => {
     let data = { en: "", vi: "" };
     switch (index) {
@@ -3937,25 +3955,36 @@ Root Day Pillar:${getStemData(nhatChu.can)} ${getBranchData(nhatChu.chi)}
 •	Inner Strength is symbolized by images of nature: ${getNapAmData(
       nhatChu.nguHanhNapAm
     )}. (Powered by: ${getNapAmTenForces(nhatChu.nguHanhNapAmThapThan)})
-Root Hour Pillar:${
-      gio ? getStemData(gio.can) + " " + getBranchData(gio.chi) : ""
-    }
+${
+  gio
+    ? `Root Hour Pillar:${
+        gio ? getStemData(gio.can) + " " + getBranchData(gio.chi) : ""
+      }
 •	Stem: ${getStemData(gio ? gio.can : "")} (Revealed Force =${getTenForcesData(
-      gio ? gio.thapThan : ""
-    )})
+        gio ? gio.thapThan : ""
+      )})
 •	Branch: ${getBranchData(gio ? gio.chi : "")} (Hidden Forces = ${
-      gio
-        ? gio.canTangPercent
-            .map(
-              (item) =>
-                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
-            )
-            .join(" + ")
-        : ""
-    })
+        gio
+          ? gio.canTangPercent
+              .map(
+                (item) =>
+                  `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
+              )
+              .join(" + ")
+          : ""
+      })
 •	Inner Strength is symbolized by images of nature: ${getNapAmData(
-      gio ? gio.nguHanhNapAm : ""
-    )}. (Powered by: ${getNapAmTenForces(gio ? gio.nguHanhNapAmThapThan : "")}) 
+        gio ? gio.nguHanhNapAm : ""
+      )}. (Powered by: ${getNapAmTenForces(
+        gio ? gio.nguHanhNapAmThapThan : ""
+      )})} `
+    : ""
+}
+    ${
+      !gio && daiVan
+        ? generateDecadeText(daiVan.yearStartDecade, baseInfo.namSinh)
+        : ""
+    }
 
 2. Root Five Elements Proportions for ${
       baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
@@ -4907,6 +4936,16 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
     return tamHopData.join("\n");
   };
 
+  const getYearStartDecadeIndex = (thapNhiCung) => {
+    let yearStartDecadeIndex = 0;
+    for (let cung of thapNhiCung) {
+      if (cung.cungDaiHan <= 10) {
+        yearStartDecadeIndex = cung.cungDaiHan;
+      }
+    }
+    return yearStartDecadeIndex;
+  };
+
   function getBatTuTemplate(bazi) {
     // let nam = bazi.year;
     // let thang = bazi.month;
@@ -4931,7 +4970,11 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
         !baseInfo.boTruGio
           ? `C. Purple Star Astrology for ${
               baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
-            } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}. 
+            } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}.
+      ${generateDecadeText(
+        getYearStartDecadeIndex(thapNhiCung),
+        baseInfo.namSinh
+      )}        
       ${getTamHopData(thapNhiCung, bazi.day.can, baseInfo)}`
           : ""
       }`;
