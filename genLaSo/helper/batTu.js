@@ -765,7 +765,10 @@ const getTuHoaBazi = (can, thapNhiCung, endName) => {
   });
   thapNhiCung[viTriHoaKy].cungSao.push({
     saoID: 95,
-    saoTen: `Hóa kỵ (từ Can Trụ ${endName})`,
+    saoTen:
+      LANGUAGE === "en"
+        ? `Taboo Transformation (from the ${endName}'s Stem)`
+        : `Hóa kỵ (từ Can Trụ ${endName})`,
     saoTenEn: `Taboo Transformation (from the ${endName}'s Stem)`,
   });
 };
@@ -786,47 +789,47 @@ const addTuHoaBazi = (
     {
       can: canGio,
       endName: "Giờ/Chính",
-      endNameEn: "Root Hour",
+      endNameEn: "Active",
     },
     {
       can: canNgay,
       endName: "Ngày/Chính",
-      endNameEn: "Root Day",
+      endNameEn: "Active",
     },
     {
       can: canThang,
       endName: "Tháng/Chính",
-      endNameEn: "Root Month",
+      endNameEn: "Passive",
     },
     {
       can: canNam,
       endName: "Năm/Chính",
-      endNameEn: "Root Year",
+      endNameEn: "Passive",
     },
     {
       can: canDaiVan,
       endName: "Đại Vận/Biến",
-      endNameEn: "Variable Decade",
+      endNameEn: "Passive",
     },
     {
       can: canTieuVan,
       endName: "Năm/Biến",
-      endNameEn: "Variable Year",
+      endNameEn: "Passive",
     },
     {
       can: canNguyetVan,
       endName: "Tháng/Biến",
-      endNameEn: "Variable Month",
+      endNameEn: "Passive",
     },
     {
       can: canNhatVan,
       endName: "Ngày/Biến",
-      endNameEn: "Variable Day",
+      endNameEn: "Active",
     },
     {
       can: canThoiVan,
       endName: "Giờ/Biến",
-      endNameEn: "Variable Hour",
+      endNameEn: "Active",
     },
   ];
   for (let item of data) {
@@ -1145,9 +1148,10 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio, onlyDecade) => {
           solarValue: originHour,
           lunarValue: chiGioSinhTen,
           nguHanhNapAm: nguHanhNapAm(baseInfo.gioSinh, canGioSinh, true),
-          nguHanhNapAmThapThan: getThapThanNapAm(
+          nguHanhNapAmThapThan: getThapThan(
             nguHanhNapAm(baseInfo.gioSinh, canGioSinh, false),
-            thienCan[canNgay].nguHanh
+            thienCan[canNgay].nguHanh,
+            thienCan[canGioSinh].amDuong === thienCan[canNgay].amDuong
           ),
           nguHanhCan: nguHanh(thienCan[canGioSinh].nguHanh).tenHanh,
           nguHanhChi: nguHanh(diaChi[baseInfo.gioSinh].tenHanh).tenHanh,
@@ -1167,12 +1171,11 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio, onlyDecade) => {
       solarValue: baseInfo.ngaySinh,
       lunarValue: amLich[0],
       nguHanhNapAm: nguHanhNapAm(chiNgay, canNgay, true),
-      nguHanhNapAmThapThan:
-        "Nhật chủ, " +
-        getThapThanNapAm(
-          nguHanhNapAm(chiNgay, canNgay, false),
-          thienCan[canNgay].nguHanh
-        ),
+      nguHanhNapAmThapThan: getThapThan(
+        nguHanhNapAm(chiNgay, canNgay, false),
+        thienCan[canNgay].nguHanh,
+        thienCan[canNgay].amDuong === thienCan[canNgay].amDuong
+      ),
       nguHanhCan: nguHanh(thienCan[canNgay].nguHanh).tenHanh,
       nguHanhChi: nguHanh(diaChi[chiNgay].tenHanh).tenHanh,
       canTang: getCanTang(chiNgay),
@@ -1186,9 +1189,10 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio, onlyDecade) => {
       solarValue: baseInfo.thangSinh,
       lunarValue: amLich[1],
       nguHanhNapAm: nguHanhNapAm(getIndex(chiThang + 2), canThang, true),
-      nguHanhNapAmThapThan: getThapThanNapAm(
+      nguHanhNapAmThapThan: getThapThan(
         nguHanhNapAm(getIndex(chiThang + 2), canThang, false),
-        thienCan[canNgay].nguHanh
+        thienCan[canNgay].nguHanh,
+        thienCan[canThang].amDuong === thienCan[canNgay].amDuong
       ),
       nguHanhCan: nguHanh(thienCan[canThang].nguHanh).tenHanh,
       nguHanhChi: nguHanh(diaChi[getIndex(chiThang + 2)].tenHanh).tenHanh,
@@ -1207,9 +1211,10 @@ const getBaziData = (baseInfo, thapNhiCung, boTruGio, onlyDecade) => {
       solarValue: baseInfo.namSinh,
       lunarValue: amLich[2],
       nguHanhNapAm: nguHanhNapAm(chiNam, canNam, true),
-      nguHanhNapAmThapThan: getThapThanNapAm(
+      nguHanhNapAmThapThan: getThapThan(
         nguHanhNapAm(chiNam, canNam, false),
-        thienCan[canNgay].nguHanh
+        thienCan[canNgay].nguHanh,
+        thienCan[canNam].amDuong === thienCan[canNgay].amDuong
       ),
       nguHanhCan: nguHanh(thienCan[canNam].nguHanh).tenHanh,
       nguHanhChi: nguHanh(diaChi[chiNam].tenHanh).tenHanh,
