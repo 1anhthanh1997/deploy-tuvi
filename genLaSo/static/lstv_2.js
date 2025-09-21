@@ -3115,11 +3115,11 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     return (
       [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
         .map((item, index) => {
-          return `Decade ${index + 1}: ages ${item * 10 + yearStartDecade}-${
-            item * 10 + 9 + yearStartDecade
-          } (${yearStartDecade + item * 10}-${
-            yearStartDecade + item * 10 + 9
-          })`;
+          return `Decade ${index + 1}: ages ${
+            item * 10 + (yearStartDecade - namSinh)
+          }-${item * 10 + 9 + (yearStartDecade - namSinh)} (${
+            yearStartDecade + item * 10
+          }-${yearStartDecade + item * 10 + 9})`;
         })
         .join(", ") + "."
     );
