@@ -3107,7 +3107,6 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
   };
 
   const generateDecadeText = (yearStartDecade, namSinh) => {
-    console.log(yearStartDecade, namSinh);
     if (!yearStartDecade || !namSinh) {
       return "";
     }
@@ -4997,7 +4996,7 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
     let ageStartDecadeIndex = 0;
     for (let cung of thapNhiCung) {
       if (cung.cungDaiHan <= 10) {
-        ageStartDecadeIndex = cung.cungDaiHan;
+        ageStartDecadeIndex = cung.cungDaiHan - 1;
       }
     }
     return ageStartDecadeIndex;
