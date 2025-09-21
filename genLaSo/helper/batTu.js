@@ -743,33 +743,33 @@ const getTuHoaBazi = (can, thapNhiCung, endName) => {
     saoID: 94,
     saoTen:
       LANGUAGE === "en"
-        ? `Prosperity Transformation (from the ${endName}'s Stem)`
+        ? `Prosperity Transformation (${endName})`
         : `Hóa lộc (từ Can Trụ ${endName})`,
-    saoTenEn: `Prosperity Transformation (from the ${endName}'s Stem)`,
+    saoTenEn: `Prosperity Transformation (${endName})`,
   });
   thapNhiCung[viTriHoaQuyen].cungSao.push({
     saoID: 93,
     saoTen:
       LANGUAGE === "en"
-        ? `Authority Transformation (from the ${endName}'s Stem)`
+        ? `Authority Transformation (${endName})`
         : `Hóa quyền (từ Can Trụ ${endName})`,
-    saoTenEn: `Authority Transformation (from the ${endName}'s Stem)`,
+    saoTenEn: `Authority Transformation (${endName})`,
   });
   thapNhiCung[viTriHoaKhoa].cungSao.push({
     saoID: 92,
     saoTen:
       LANGUAGE === "en"
-        ? `Fame Transformation (from the ${endName}'s Stem)`
+        ? `Fame Transformation (${endName})`
         : `Hóa khoa (từ Can Trụ ${endName})`,
-    saoTenEn: `Fame Transformation (from the ${endName}'s Stem)`,
+    saoTenEn: `Fame Transformation (${endName})`,
   });
   thapNhiCung[viTriHoaKy].cungSao.push({
     saoID: 95,
     saoTen:
       LANGUAGE === "en"
-        ? `Taboo Transformation (from the ${endName}'s Stem)`
+        ? `Taboo Transformation (${endName})`
         : `Hóa kỵ (từ Can Trụ ${endName})`,
-    saoTenEn: `Taboo Transformation (from the ${endName}'s Stem)`,
+    saoTenEn: `Taboo Transformation (${endName})`,
   });
 };
 
