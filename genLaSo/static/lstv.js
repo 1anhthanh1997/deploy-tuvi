@@ -1820,6 +1820,9 @@ Success often comes from the help of benefactors or a protected environment.`;
       url: "api",
       type: "GET",
       dataType: "json",
+      headers: {
+        "X-Logged-In": localStorage.getItem("isLoggedIn") || "false",
+      },
       data: $("form#lstv").serialize(),
       success: function (thienBandiaBan) {
         lapLaSo(thienBandiaBan);
