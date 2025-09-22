@@ -3106,23 +3106,49 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     return LANGUAGE === "en" ? textData.en : textData.vi;
   };
 
+  const generateDecadeText = (yearStartDecade, namSinh) => {
+    if (!yearStartDecade || !namSinh) {
+      return "";
+    }
+
+    return (
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+        .map((item, index) => {
+          return `Decade ${index + 1}: ages ${
+            item * 10 + (yearStartDecade - namSinh)
+          }-${item * 10 + 9 + (yearStartDecade - namSinh)} (${
+            yearStartDecade + item * 10
+          }-${yearStartDecade + item * 10 + 9})`;
+        })
+        .join(", ") + "."
+    );
+  };
+
   const getNameFromIndex = (index) => {
     let data = { en: "", vi: "" };
     switch (index) {
       case 0:
         data = { en: "Extremely Hard", vi: "Cực Cường" };
+        break;
       case 1:
         data = { en: "Hard ", vi: "Cường" };
+        break;
       case 2:
         data = { en: "Balanced (leaning Hard)", vi: "Cân Bằng Thiên Cường" };
+        break;
       case 3:
         data = { en: "True Balance", vi: "Cân Bằng Thực Sự" };
+        break;
       case 4:
         data = { en: "Balanced (leaning Soft)", vi: "Cân Bằng Thiên Nhược" };
+        break;
       case 5:
         data = { en: "Soft", vi: "Nhược" };
+        break;
       case 6:
+        console.log("index", index);
         data = { en: "Extremely Soft", vi: "Cực Nhược" };
+        break;
     }
     return LANGUAGE === "en" ? data.en : data.vi;
   };
@@ -3164,7 +3190,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         minorForcesIndex = majorForcesIndex + 1;
       }
     }
-
+    console.log(majorForcesIndex, getNameFromIndex(majorForcesIndex));
     return {
       majorForces: {
         name: getNameFromIndex(majorForcesIndex),
@@ -3903,6 +3929,13 @@ ${getNapAm(thang.nguHanhNapAm)}\n
 ${getNapAm(nhatChu.nguHanhNapAm)}\n
 ${getNapAm(gio ? gio.nguHanhNapAm : "")}
 `;
+    console.log(
+      getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+      )
+    );
     let tuTruEn = `
      1. Four Root Pillars Chart for ${
        baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
@@ -3937,25 +3970,36 @@ Root Day Pillar:${getStemData(nhatChu.can)} ${getBranchData(nhatChu.chi)}
 •	Inner Strength is symbolized by images of nature: ${getNapAmData(
       nhatChu.nguHanhNapAm
     )}. (Powered by: ${getNapAmTenForces(nhatChu.nguHanhNapAmThapThan)})
-Root Hour Pillar:${
-      gio ? getStemData(gio.can) + " " + getBranchData(gio.chi) : ""
-    }
+${
+  gio
+    ? `Root Hour Pillar:${
+        gio ? getStemData(gio.can) + " " + getBranchData(gio.chi) : ""
+      }
 •	Stem: ${getStemData(gio ? gio.can : "")} (Revealed Force =${getTenForcesData(
-      gio ? gio.thapThan : ""
-    )})
+        gio ? gio.thapThan : ""
+      )})
 •	Branch: ${getBranchData(gio ? gio.chi : "")} (Hidden Forces = ${
-      gio
-        ? gio.canTangPercent
-            .map(
-              (item) =>
-                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
-            )
-            .join(" + ")
-        : ""
-    })
+        gio
+          ? gio.canTangPercent
+              .map(
+                (item) =>
+                  `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
+              )
+              .join(" + ")
+          : ""
+      })
 •	Inner Strength is symbolized by images of nature: ${getNapAmData(
-      gio ? gio.nguHanhNapAm : ""
-    )}. (Powered by: ${getNapAmTenForces(gio ? gio.nguHanhNapAmThapThan : "")}) 
+        gio ? gio.nguHanhNapAm : ""
+      )}. (Powered by: ${getNapAmTenForces(
+        gio ? gio.nguHanhNapAmThapThan : ""
+      )})} `
+    : ""
+}
+    ${
+      !gio && daiVan
+        ? generateDecadeText(daiVan.yearStartDecade, baseInfo.namSinh)
+        : ""
+    }
 
 2. Root Five Elements Proportions for ${
       baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
@@ -4441,7 +4485,6 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
 
   function capitalizeWords(str = "") {
     return str
-      .toLowerCase()
       .split(" ")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" "); //
@@ -4485,12 +4528,12 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
         chinhTinh = [...chinhTinhMoi];
       }
       if (tuan) {
-        chinhTinh = [...chinhTinh, { saoTen: "Tuần" }];
-        chinhTinhMoi = [...chinhTinhMoi, { saoTen: "Tuần" }];
+        chinhTinh = [...chinhTinh, { saoTen: "Void Zone" }];
+        chinhTinhMoi = [...chinhTinhMoi, { saoTen: "Void Zone" }];
       }
       if (triet) {
-        chinhTinh = [...chinhTinh, { saoTen: "Triệt" }];
-        chinhTinhMoi = [...chinhTinhMoi, { saoTen: "Triệt" }];
+        chinhTinh = [...chinhTinh, { saoTen: "Void Cut" }];
+        chinhTinhMoi = [...chinhTinhMoi, { saoTen: "Void Cut" }];
       }
       // if (cung.daiVanTuanTrung) {
       //   saoDaiVan = [...saoDaiVan, { saoTen: "X. Void Zone" }];
@@ -4580,6 +4623,37 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
         return "Huynh đệ";
       case "Huynh đệ":
         return "Nô bộc";
+      default:
+        return "";
+    }
+  };
+
+  const getXungChieuEn = (cungChu) => {
+    switch (cungChu) {
+      case "Destiny":
+        return "External";
+      case "Resources":
+        return "Spiritual";
+      case "Spiritual":
+        return "Resources";
+      case "Partner":
+        return "Career";
+      case "External":
+        return "Destiny";
+      case "Career":
+        return "Partner";
+      case "Senior/Parents":
+        return "Health";
+      case "Health":
+        return "Senior/Parents";
+      case "Junior/Children":
+        return "Property";
+      case "Property":
+        return "Junior/Children";
+      case "Peers":
+        return "Siblings";
+      case "Siblings":
+        return "Peers";
       default:
         return "";
     }
@@ -4789,6 +4863,10 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
       return cung.cungChu === cungChu;
     });
     let canTangData = getCanTangData(cung.cungSo);
+    console.log(
+      getSao(getXungChieuEn(cung.cungChu), thapNhiCung).chinhTinhGoc,
+      getXungChieuEn(cung.cungChu)
+    );
     if (LANGUAGE === "en") {
       return `${cungChu} Palace ${
         cung.cungThan ? " (also the Identity Palace)" : ""
@@ -4797,9 +4875,16 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
       } locates at ${getBranchData(cung.cungTen)} Branch. Stars: ${
         getSao(cung.cungChu, thapNhiCung).chinhTinhGoc
           ? getSao(cung.cungChu, thapNhiCung).chinhTinh
-          : `Vô Chính Diệu có ${
-              getSao(getXungChieu(cung.cungChu), thapNhiCung).chinhTinhGoc
-            } xung chiếu, ${getSao(cung.cungChu, thapNhiCung).newChinhTinh}`
+          : `No Major Star has ${
+              getSao(
+                LANGUAGE === "en"
+                  ? getXungChieuEn(cung.cungChu)
+                  : getXungChieu(cung.cungChu),
+                thapNhiCung
+              ).chinhTinhGoc
+            } opposition aspect, ${
+              getSao(cung.cungChu, thapNhiCung).newChinhTinh
+            }`
       }. Hidden Forces: ${canTangData
         .map((item) => {
           return (
@@ -4907,6 +4992,16 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
     return tamHopData.join("\n");
   };
 
+  const getAgeStartDecadeIndex = (thapNhiCung) => {
+    let ageStartDecadeIndex = 0;
+    for (let cung of thapNhiCung) {
+      if (cung.cungDaiHan <= 10) {
+        ageStartDecadeIndex = cung.cungDaiHan - 1;
+      }
+    }
+    return ageStartDecadeIndex;
+  };
+
   function getBatTuTemplate(bazi) {
     // let nam = bazi.year;
     // let thang = bazi.month;
@@ -4931,7 +5026,11 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
         !baseInfo.boTruGio
           ? `C. Purple Star Astrology for ${
               baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
-            } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}. 
+            } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}.
+      ${generateDecadeText(
+        getAgeStartDecadeIndex(thapNhiCung) + baseInfo.namSinh,
+        baseInfo.namSinh
+      )}        
       ${getTamHopData(thapNhiCung, bazi.day.can, baseInfo)}`
           : ""
       }`;
