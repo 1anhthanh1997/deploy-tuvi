@@ -254,6 +254,7 @@ function ngayThangNamCanChi(
 }
 
 function nguHanh(tenHanh) {
+  console.log("Hanh:", tenHanh);
   const hanhMap = {
     Kim: {
       id: 1,

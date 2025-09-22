@@ -136,6 +136,7 @@ function cloneSaoLuu(sao, type, saoLoai) {
   return new Sao(
     sao.saoId,
     type + sao.saoTen,
+    type + sao.saoTenEn,
     sao.saoNguHanh,
     saoLoai ? saoLoai : sao.saoLoai,
     sao.saoPhuongVi,

@@ -3190,7 +3190,6 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         minorForcesIndex = majorForcesIndex + 1;
       }
     }
-    console.log(majorForcesIndex, getNameFromIndex(majorForcesIndex));
     return {
       majorForces: {
         name: getNameFromIndex(majorForcesIndex),
@@ -3340,7 +3339,6 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
   };
 
   const getTenForcesData = (thapThan) => {
-    console.log(thapThan);
     let data = {
       "Nhật chủ": {
         en: "Day Master/Key Element",
@@ -3929,13 +3927,6 @@ ${getNapAm(thang.nguHanhNapAm)}\n
 ${getNapAm(nhatChu.nguHanhNapAm)}\n
 ${getNapAm(gio ? gio.nguHanhNapAm : "")}
 `;
-    console.log(
-      getForcesDetail(
-        nhatChu,
-        getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-        getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
-      )
-    );
     let tuTruEn = `
      1. Four Root Pillars Chart for ${
        baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
@@ -4490,6 +4481,10 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
       .join(" "); //
   }
 
+  const getStarName = (star) => {
+    return LANGUAGE === "en" ? star.saoTenEn : star.saoTen;
+  };
+
   function getSao(cungChu, thapNhiCung, tamHop = false) {
     const newChinhTinh = [
       51, 52, 53, 54, 55, 56, 57, 58, 61, 62, 92, 93, 94, 95,
@@ -4528,12 +4523,18 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
         chinhTinh = [...chinhTinhMoi];
       }
       if (tuan) {
-        chinhTinh = [...chinhTinh, { saoTen: "Void Zone" }];
-        chinhTinhMoi = [...chinhTinhMoi, { saoTen: "Void Zone" }];
+        chinhTinh = [...chinhTinh, { saoTen: "Tuần", saoTenEn: "Void Zone" }];
+        chinhTinhMoi = [
+          ...chinhTinhMoi,
+          { saoTen: "Tuần", saoTenEn: "Void Zone" },
+        ];
       }
       if (triet) {
-        chinhTinh = [...chinhTinh, { saoTen: "Void Cut" }];
-        chinhTinhMoi = [...chinhTinhMoi, { saoTen: "Void Cut" }];
+        chinhTinh = [...chinhTinh, { saoTen: "Triệt", saoTenEn: "Void Cut" }];
+        chinhTinhMoi = [
+          ...chinhTinhMoi,
+          { saoTen: "Triệt", saoTenEn: "Void Cut" },
+        ];
       }
       // if (cung.daiVanTuanTrung) {
       //   saoDaiVan = [...saoDaiVan, { saoTen: "X. Void Zone" }];
@@ -4566,12 +4567,14 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
 
       return {
         voChinhDieu: chinhTinhGoc.length === 0,
-        chinhTinhGoc: chinhTinhGoc.map((sao) => sao.saoTen).join(" + "),
-        newChinhTinh: chinhTinhMoi.map((sao) => sao.saoTen).join(" + "),
+        chinhTinhGoc: chinhTinhGoc.map((sao) => getStarName(sao)).join(" + "),
+        newChinhTinh: chinhTinhMoi.map((sao) => getStarName(sao)).join(" + "),
         chinhTinh: chinhTinh
-          .map((sao) => capitalizeWords(sao.saoTen))
+          .map((sao) => capitalizeWords(getStarName(sao)))
           .join(" + "),
-        phuTinh: phuTinh.map((sao) => capitalizeWords(sao.saoTen)).join(" + "),
+        phuTinh: phuTinh
+          .map((sao) => capitalizeWords(getStarName(sao)))
+          .join(" + "),
         // daiVan: saoDaiVan.map((sao) => capitalizeWords(sao.saoTen)).join(" + "),
         // chinhTinhDaiVan: chinhTinhDaiVan
         //   .map((sao) => capitalizeWords(sao.saoTen))
@@ -4863,10 +4866,6 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
       return cung.cungChu === cungChu;
     });
     let canTangData = getCanTangData(cung.cungSo);
-    console.log(
-      getSao(getXungChieuEn(cung.cungChu), thapNhiCung).chinhTinhGoc,
-      getXungChieuEn(cung.cungChu)
-    );
     if (LANGUAGE === "en") {
       return `${cungChu} Palace ${
         cung.cungThan ? " (also the Identity Palace)" : ""
