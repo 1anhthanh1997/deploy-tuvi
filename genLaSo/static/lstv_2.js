@@ -4207,7 +4207,7 @@ ${
                 ) + ")"
               : ""
           } is compared to the root proportions
-  ${nguHanhScoreGoc
+  ${nguHanhScore
     .map(
       (item) =>
         `• ${getElementData(item.name)}(${getCuongNhuoc(item.percent)}) = ${
@@ -4237,72 +4237,72 @@ Day Master/Key Element Strength Level ${
           } of ${baseInfo.gioiTinh === 1 ? "Mr." : "Ms."} ${
             baseInfo.hoTen
           }, born in ${baseInfo.namSinh}: ${getElementData(
-            getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.name
+            getSupportPercent(nhatChu, nguHanhScore).dongHanh.name
           )} Element (Companion Forces) ${
-            getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent
+            getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent
           }% + ${getElementData(
-            getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.name
+            getSupportPercent(nhatChu, nguHanhScore).hoTro.name
           )} Element (Support Forces) ${
-            getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+            getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
           }% = ${
-            getSupportPercent(nhatChu, nguHanhScoreGoc).totalPercent
+            getSupportPercent(nhatChu, nguHanhScore).totalPercent
           }%. However, because ${getRoleText(
-            getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-            getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+            getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+            getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
           )}, the AGI has determined the Day Master/Key Element's Strength to be relatively at ${
             !getForcesDetail(
               nhatChu,
-              getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-              getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+              getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
             ).minorForces.name
               ? ""
               : "2"
           } levels ${
             getForcesDetail(
               nhatChu,
-              getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-              getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+              getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
             ).majorForces.name
           }${
             getForcesDetail(
               nhatChu,
-              getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-              getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+              getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
             ).minorForces.name
               ? " and " +
                 getForcesDetail(
                   nhatChu,
-                  getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-                  getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+                  getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+                  getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
                 ).minorForces.name
               : ""
           }     
 ${
   getForcesDetail(
     nhatChu,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+    getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
   ).majorForces.title
 }
 ${
   getForcesDetail(
     nhatChu,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+    getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
   ).majorForces.data
 }
 ${
   getForcesDetail(
     nhatChu,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+    getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
   ).minorForces?.title
 }
 ${
   getForcesDetail(
     nhatChu,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+    getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
   ).minorForces?.data
 }`
         : ""
