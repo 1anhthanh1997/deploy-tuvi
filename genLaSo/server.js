@@ -14,7 +14,21 @@ const diaBan = require("./helper/diaBan");
 const { getNextDay } = require("./helper/amDuong");
 const { getBaziData } = require("./helper/batTu");
 
-app.get("/api", (req, res) => {
+// Simple authentication middleware for API endpoints
+const requireAuthAPI = (req, res, next) => {
+  const authHeader = req.headers.authorization;
+  const isLoggedIn = req.headers["x-logged-in"];
+
+  // For API calls, we'll check if the request comes from an authenticated page
+  // This is a simple check - in production, use proper JWT or session tokens
+  if (isLoggedIn === "true") {
+    next();
+  } else {
+    res.status(401).json({ error: "Unauthorized - Please login first" });
+  }
+};
+
+app.get("/api", requireAuthAPI, (req, res) => {
   try {
     const now = moment();
     const hoTen = req.query.hoten || "";
@@ -87,7 +101,7 @@ app.get("/api", (req, res) => {
   }
 });
 
-app.get("/api/get-bazi", (req, res) => {
+app.get("/api/get-bazi", requireAuthAPI, (req, res) => {
   try {
     const now = moment();
     const hoTen = req.query.hoten || "";
@@ -158,13 +172,19 @@ app.get("/api/get-bazi", (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+// Login page - always show login first
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "login.html"));
+});
+
+// Test page - accessible after login button click
+app.get("/test", (req, res) => {
+  res.sendFile(path.join(__dirname, "test.html"));
+});
+
 // Serve the main HTML file
 app.get("/horoscope", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
-});
-
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "test.html"));
 });
 
 // Start the server

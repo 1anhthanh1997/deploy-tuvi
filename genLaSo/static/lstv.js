@@ -7,6 +7,7 @@ $(document).ready(function () {
   $("#ngaysinh").val(today);
   $("#thangsinh").val(thismonth);
   $("#namsinh").val(thisyear);
+  const LANGUAGE = "en";
 
   function jdFromDate(dd, mm, yy) {
     let a = Math.floor((14 - mm) / 12);
@@ -329,18 +330,18 @@ $(document).ready(function () {
   }
 
   let enToViData = {
-    "Destiny / Soul": "Mệnh",
-    Senior: "Phụ mẫu",
-    "Spiritual Value": "Phúc đức",
-    "Material Legacy": "Điền trạch",
+    Destiny: "Mệnh",
+    "Senior/Parents": "Phụ mẫu",
+    Spiritual: "Phúc đức",
+    Property: "Điền trạch",
     Career: "Quan lộc",
-    "Friends/Peers": "Nô bộc",
+    Peers: "Nô bộc",
     External: "Thiên Di",
-    Karma: "Tật Ách",
+    Health: "Tật Ách",
     Resources: "Tài Bạch",
-    Junior: "Tử tức",
-    Soulmate: "Phu thê",
-    "Brothers and Sisters": "Huynh đệ",
+    "Junior/Children": "Tử tức",
+    Partner: "Phu thê",
+    Siblings: "Huynh đệ",
   };
 
   const viToEnData = {};
@@ -466,6 +467,10 @@ $(document).ready(function () {
     return saoTen.includes("D.");
   }
 
+  const getStarName = (star) => {
+    return LANGUAGE === "en" ? star.saoTenEn : star.saoTen;
+  };
+
   function getSao(cungChu, thapNhiCung, tamHop = false) {
     cungArr = thapNhiCung.filter((c) => {
       return c.cungChu === cungChu;
@@ -477,15 +482,21 @@ $(document).ready(function () {
       const chinhTinhMoi = cungSao.filter(
         (sao) =>
           newChinhTinh.includes(sao.saoID) &&
-          !checkSaoDaiVan(sao.saoTen) &&
-          !checkSaoLuuNien(sao.saoTen) &&
-          !checkSaoLuuNguyet(sao.saoTen) &&
-          !checkSaoLuuNhat(sao.saoTen)
+          !checkSaoDaiVan(getStarName(sao)) &&
+          !checkSaoLuuNien(getStarName(sao)) &&
+          !checkSaoLuuNguyet(getStarName(sao)) &&
+          !checkSaoLuuNhat(getStarName(sao))
       );
-      let saoDaiVan = cungSao.filter((sao) => checkSaoDaiVan(sao.saoTen));
-      let saoLuuNien = cungSao.filter((sao) => checkSaoLuuNien(sao.saoTen));
-      let saoLuuNguyet = cungSao.filter((sao) => checkSaoLuuNguyet(sao.saoTen));
-      let saoLuuNhat = cungSao.filter((sao) => checkSaoLuuNhat(sao.saoTen));
+      let saoDaiVan = cungSao.filter((sao) => checkSaoDaiVan(getStarName(sao)));
+      let saoLuuNien = cungSao.filter((sao) =>
+        checkSaoLuuNien(getStarName(sao))
+      );
+      let saoLuuNguyet = cungSao.filter((sao) =>
+        checkSaoLuuNguyet(getStarName(sao))
+      );
+      let saoLuuNhat = cungSao.filter((sao) =>
+        checkSaoLuuNhat(getStarName(sao))
+      );
       let chinhTinhDaiVanId = [92, 93, 94, 95];
       let chinhTinhDaiVan = saoDaiVan.filter((sao) =>
         chinhTinhDaiVanId.includes(sao.saoID)
@@ -500,62 +511,90 @@ $(document).ready(function () {
         chinhTinh = [...chinhTinhMoi];
       }
       if (tuan) {
-        chinhTinh = [...chinhTinh, { saoTen: "Void Zone" }];
+        chinhTinh = [...chinhTinh, { saoTen: "Tuần", saoTenEn: "Void Zone" }];
       }
       if (triet) {
-        chinhTinh = [...chinhTinh, { saoTen: "Void Cut" }];
+        chinhTinh = [...chinhTinh, { saoTen: "Triệt", saoTenEn: "Void Cut" }];
       }
       if (cung.daiVanTuanTrung) {
-        saoDaiVan = [...saoDaiVan, { saoTen: "X. Void Zone" }];
-        chinhTinhDaiVan = [...chinhTinhDaiVan, { saoTen: "X. Void Zone" }];
+        saoDaiVan = [
+          ...saoDaiVan,
+          { saoTen: "X. Tuần", saoTenEn: "X. Void Zone" },
+        ];
+        chinhTinhDaiVan = [
+          ...chinhTinhDaiVan,
+          { saoTen: "X. Tuần", saoTenEn: "X. Void Zone" },
+        ];
       }
       if (cung.daiVanTrietLo) {
-        saoDaiVan = [...saoDaiVan, { saoTen: "X. Void Cut" }];
-        chinhTinhDaiVan = [...chinhTinhDaiVan, { saoTen: "X. Void Cut" }];
+        saoDaiVan = [
+          ...saoDaiVan,
+          { saoTen: "X. Triệt", saoTenEn: "X. Void Cut" },
+        ];
+        chinhTinhDaiVan = [
+          ...chinhTinhDaiVan,
+          { saoTen: "X. Triệt", saoTenEn: "X. Void Cut" },
+        ];
       }
       if (cung.luuNienTuanTrung) {
-        saoLuuNien = [...saoLuuNien, { saoTen: "Y. Void Zone" }];
+        saoLuuNien = [
+          ...saoLuuNien,
+          { saoTen: "Y. Tuần", saoTenEn: "Y. Void Zone" },
+        ];
       }
       if (cung.luuNienTrietLo) {
-        saoLuuNien = [...saoLuuNien, { saoTen: "Y. Void Cut" }];
+        saoLuuNien = [
+          ...saoLuuNien,
+          { saoTen: "Y. Triệt", saoTenEn: "Y. Void Cut" },
+        ];
       }
       if (cung.luuNguyetTuanTrung) {
-        saoLuuNguyet = [...saoLuuNguyet, { saoTen: "M. Void Zone" }];
+        saoLuuNguyet = [
+          ...saoLuuNguyet,
+          { saoTen: "M. Tuần", saoTenEn: "M. Void Zone" },
+        ];
       }
       if (cung.luuNguyetTrietLo) {
-        saoLuuNguyet = [...saoLuuNguyet, { saoTen: "M. Void Cut" }];
+        saoLuuNguyet = [
+          ...saoLuuNguyet,
+          { saoTen: "M. Triệt", saoTenEn: "M. Void Cut" },
+        ];
       }
 
       const phuTinh = cungSao.filter(
         (sao) =>
           sao.saoAmDuong === "" &&
           !newChinhTinh.includes(sao.saoID) &&
-          !checkSaoDaiVan(sao.saoTen) &&
-          !checkSaoLuuNien(sao.saoTen) &&
-          !checkSaoLuuNguyet(sao.saoTen) &&
-          !checkSaoLuuNhat(sao.saoTen)
+          !checkSaoDaiVan(getStarName(sao)) &&
+          !checkSaoLuuNien(getStarName(sao)) &&
+          !checkSaoLuuNguyet(getStarName(sao)) &&
+          !checkSaoLuuNhat(getStarName(sao))
       );
 
       return {
         chinhTinh: chinhTinh
-          .map((sao) => capitalizeWords(sao.saoTen))
+          .map((sao) => capitalizeWords(getStarName(sao)))
           .join(" + "),
-        phuTinh: phuTinh.map((sao) => capitalizeWords(sao.saoTen)).join(" + "),
-        daiVan: saoDaiVan.map((sao) => capitalizeWords(sao.saoTen)).join(" + "),
+        phuTinh: phuTinh
+          .map((sao) => capitalizeWords(getStarName(sao)))
+          .join(" + "),
+        daiVan: saoDaiVan
+          .map((sao) => capitalizeWords(getStarName(sao)))
+          .join(" + "),
         chinhTinhDaiVan: chinhTinhDaiVan
-          .map((sao) => capitalizeWords(sao.saoTen))
+          .map((sao) => capitalizeWords(getStarName(sao)))
           .join(" + "),
         phuTinhDaiVan: phuTinhDaiVan
-          .map((sao) => capitalizeWords(sao.saoTen))
+          .map((sao) => capitalizeWords(getStarName(sao)))
           .join(" + "),
         luuNien: saoLuuNien
-          .map((sao) => capitalizeWords(sao.saoTen))
+          .map((sao) => capitalizeWords(getStarName(sao)))
           .join(" + "),
         luuNguyet: saoLuuNguyet
-          .map((sao) => capitalizeWords(sao.saoTen))
+          .map((sao) => capitalizeWords(getStarName(sao)))
           .join(" + "),
         luuNhat: saoLuuNhat
-          .map((sao) => capitalizeWords(sao.saoTen))
+          .map((sao) => capitalizeWords(getStarName(sao)))
           .join(" + "),
         cungDaiHan: cung.cungDaiHan,
       };
@@ -791,7 +830,7 @@ $(document).ready(function () {
     for (let cungCach of cungCachList) {
       let saoCungCach = cungCach.saoList;
       if (isChildArray(toHopSao, saoCungCach)) {
-        return cungCach.name;
+        return LANGUAGE === "en" ? cungCach.nameEn : cungCach.name;
       }
     }
   }
@@ -800,42 +839,51 @@ $(document).ready(function () {
     const cungCachList = [
       {
         id: 0,
-        name: "The Master + Guardian + Captialist + Hero + Executive",
+        name: "Tử Phủ Vũ Tướng Liêm",
+        nameEn: "The Master + Guardian + Captialist + Hero + Executive",
         saoList: [1, 2, 4, 7, 11],
       },
       {
         id: 1,
-        name: "The Master + Capitalist + Executive + Breaker + Taker + Seeker",
+        name: "Tử Vũ Liêm Sát Phá Tham",
+        nameEn:
+          "The Master + Capitalist + Executive + Breaker + Taker + Seeker",
         saoList: [1, 2, 4, 9, 13, 14],
       },
       {
         id: 2,
-        name: " The Breaker + Taker + Seeker",
+        name: "Sát Phá Tham",
+        nameEn: "The Breaker + Taker + Seeker",
         saoList: [9, 13, 14],
       },
       {
         id: 3,
-        name: "The Guardian + Hero",
+        name: "Phủ Tướng",
+        nameEn: "The Guardian + Hero",
         saoList: [7, 11],
       },
       {
         id: 4,
-        name: "The Thinker + Listener + Linker + Fortuner",
+        name: "Cơ Nguyệt Đồng Lương",
+        nameEn: "The Thinker + Listener + Linker + Fortuner",
         saoList: [3, 6, 8, 12],
       },
       {
         id: 5,
-        name: "The Thinker + Linker + Disruptor",
-        saoList: [3, 6, 10],
+        name: "Cơ Đồng Cự",
+        nameEn: "The Thinker + Linker + Disruptor",
+        saoList: [3, 6, 10], //
       },
       {
         id: 6,
-        name: "The Disruptor + Visionary",
+        name: "Cự Nhật",
+        nameEn: "The Disruptor + Visionary",
         saoList: [5, 10],
       },
       {
         id: 7,
-        name: "The Listener + Visionary + Fortuner",
+        name: "Âm Lương Dương",
+        nameEn: "The Listener + Visionary + Fortuner",
         saoList: [5, 8, 12],
       },
     ];
@@ -921,6 +969,7 @@ $(document).ready(function () {
     ]
       .filter((value) => value)
       .join(" + ");
+    console.log("Tam hợp:", getSao(viToEnData["Mệnh"], thapNhiCung, true));
 
     let phuTinhTamHopCungMenh = [
       getSao(viToEnData["Mệnh"], thapNhiCung, true).phuTinh,
@@ -1820,6 +1869,9 @@ Success often comes from the help of benefactors or a protected environment.`;
       url: "api",
       type: "GET",
       dataType: "json",
+      headers: {
+        "X-Logged-In": localStorage.getItem("isLoggedIn") || "false",
+      },
       data: $("form#lstv").serialize(),
       success: function (thienBandiaBan) {
         lapLaSo(thienBandiaBan);

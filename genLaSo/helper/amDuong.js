@@ -347,7 +347,7 @@ function nguHanhNapAm(diaChi, thienCan, xuatBanMenh = false) {
     M4: "DƯƠNG LIỄU MỘC",
     T5: "TUYỀN TRUNG THỦY",
     H5: "SƠN HẠ HỎA",
-    O5: "ÐẠI TRẠCH THỔ",
+    O5: "ĐẠI TRẠCH THỔ",
     M5: "THẠCH LỰU MỘC",
     K5: "KIẾM PHONG KIM",
     H6: "SƠN ĐẦU HỎA",
