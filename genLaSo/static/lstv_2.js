@@ -3332,7 +3332,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         vi: "Tuất",
       },
       Hợi: {
-        en: "Dog",
+        en: "Pig",
         vi: "Hợi",
       },
     };
