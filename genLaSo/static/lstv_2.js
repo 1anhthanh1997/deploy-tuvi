@@ -1638,8 +1638,8 @@ The core meaning is the value of purity and the noble distance of ideals. This i
 •	Đặc tính đột biến (Tổng quát): Bị Thổ vùi lấp. Cần Thủy để đãi lọc. Cần Hỏa để luyện. Khi chưa khai thác thì không khắc được Mộc.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có nhiều tài năng tiềm ẩn, kiên nhẫn, có nội lực. Tuy nhiên, nếu không gặp thời, tài năng có thể bị chôn vùi, đôi khi thiếu quyết đoán.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của tiềm năng ẩn giấu & Nguy cơ của sự mai một. Sức mạnh của nó nằm ở dạng tiềm năng. Đây là quặng kim loại, là vàng trong cát, có giá trị lớn nhưng còn bị che lấp và cần được khai phá. Nó mạnh hơn các dạng Kim chưa định hình khác vì đã là khoáng sản rắn chắc, chỉ chờ được khám phá.`,
-        nameEn: "Metal in Sand",
-        descriptionEn: `Metal in Sand
+        nameEn: "Metal in the Sand",
+        descriptionEn: `Metal in the Sand
 This is mineral ore still mixed with earth and sand. It is a symbol of great but hidden potential, requiring excavation, refinement, and forging to become a valuable item.
 The core meaning is the power of hidden potential and the risk of being lost. Its strength is in its potential form—gold in the sand—possessing great value but still concealed and needing to be discovered.`,
       },
@@ -1781,8 +1781,8 @@ The core meaning is the power of greatness and the risk of aimlessness. This is 
 •	Đặc tính đột biến (Tổng quát): Nước từ trời nên không có nguồn từ Kim. Có thể tương tác với Hỏa (sấm sét). Mang lại lợi ích cho toàn bộ Mộc và Thổ, không có sự phân biệt.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tâm hồn trong sáng, nhân hậu, có trí tưởng tượng phong phú. Họ có thể thành công trong các lĩnh vực văn hóa, nghệ thuật, giáo dục, tôn giáo. Tuy nhiên, họ có thể hơi mơ mộng, thiếu thực tế.
 •	Ngữ Nghĩa Cốt Lõi: Sự màu nhiệm của ân huệ & Sự xa rời thực tế. Mặc dù không có lưu lượng tập trung như sông lớn, nhưng Nước Mưa lại có tầm ảnh hưởng phổ quát nhất. Nó rơi từ trên trời, ban phát sự sống cho cả một vùng rộng lớn không phân biệt. Về mặt quy mô tác động trong một thời điểm (cơn mưa lớn), nó chỉ đứng sau Đại Dương.`,
-        nameEn: "Rainwater",
-        descriptionEn: `Rainwater
+        nameEn: "Rain Water",
+        descriptionEn: `Rain Water
 This is rain falling from the sky, universal in nature, bestowing grace upon all living things. It is a symbol of purity, compassion, creativity, and things that are spiritual and intangible.
 The core meaning is the magic of grace and the detachment from reality. Although it lacks concentrated flow, Rainwater has the most universal impact, bestowing life over a vast area without discrimination.`,
       },
@@ -1976,8 +1976,8 @@ The core meaning is the power of adaptation and the lack of consistency. This is
 •	Đặc tính đột biến (Tổng quát): Cần Mộc (cốt tre, gỗ) để làm cấu trúc nương tựa, do đó không thể tồn tại nếu thiếu Mộc. Rất sợ Thủy (nước làm mục vữa). Cần Hỏa (ánh đèn, mặt trời) để giữ cho khô ráo, sáng sủa.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tinh thần hợp tác tốt, biết nương tựa vào người khác để cùng phát triển. Họ có khả năng làm đẹp, trang trí. Tuy nhiên, họ thiếu tính tự lập, không có chính kiến, dễ lung lay và cuộc sống thường phụ thuộc.
 •	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự cộng sinh & Sự yếu đuối vì thiếu tự chủ. Yếu nhất vì hoàn toàn thiếu tính tự chủ. Nó là một lớp vữa mỏng, phải dựa vào cấu trúc khác (Mộc, gạch) để tồn tại. Nó không có sức chống chịu, dễ dàng bị bong tróc bởi Thủy. Sức mạnh của nó gần như không có, chỉ mang giá trị trang trí và phụ thuộc.`,
-        nameEn: "Building Earth (cement, plaster...)",
-        descriptionEn: `Building Earth (cement, plaster...)
+        nameEn: "Building Earth",
+        descriptionEn: `Building Earth
 This is a layer of plaster or mortar on a wall that cannot exist on its own but must rely on another structure. It is a symbol of symbiosis, cooperation, and decoration but lacks autonomy.
 The core meaning is the beauty of symbiosis and the weakness from lacking self-reliance. It is the weakest because it completely lacks autonomy, relies on other structures to exist, and serves only a decorative value.`,
       },
@@ -1989,8 +1989,8 @@ The core meaning is the beauty of symbiosis and the weakness from lacking self-r
 •	Đặc tính đột biến (Tổng quát): Đã qua Hỏa luyện nên không sợ Mộc. Công năng chính là để chống lại Thủy (nước mưa). Do đó, đây là loại Thổ duy nhất không sợ Mộc và kỵ Thủy. Cần có Mộc (vì kèo) để làm giá đỡ.
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này sống rất có trật tự, tuân thủ quy tắc và có công năng bảo vệ, che chở cho người khác. Tuy nhiên, họ có thể cứng nhắc, giáo điều, mất gốc, thiếu sự linh hoạt và không có khả năng nuôi dưỡng, sáng tạo.
 •	Ngữ Nghĩa Cốt Lõi: Sự hữu ích của quy tắc & Sự mất mát bản chất tự nhiên. Đã qua lửa tôi luyện (nung thành ngói), nó trở nên rắn chắc và có công năng đặc biệt là chống lại Thủy. Sức mạnh của nó mang tính chức năng, hữu ích và có quy tắc. Tuy nhiên, nó đã mất đi bản chất tự nhiên của đất (khả năng nuôi dưỡng) và cần phải có kết cấu khác (Mộc) để nương tựa.`,
-        nameEn: "Fired Earth (ceramics, bricks...)",
-        descriptionEn: `Fired Earth (ceramics, bricks...)
+        nameEn: "Fired Earth",
+        descriptionEn: `Fired Earth
 This is earth that has been fired into roof tiles, completely losing its natural properties. It is a symbol of order, rules, and the function of sheltering and protecting.
 The core meaning is the utility of rules and the loss of natural essence. Having been through fire, it becomes solid and has a special function but has lost its natural essence and needs to rely on another structure.`,
       },
@@ -4867,8 +4867,8 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
     });
     let canTangData = getCanTangData(cung.cungSo);
     if (LANGUAGE === "en") {
-      return `${cungChu} Palace ${
-        cung.cungThan ? " (also the Identity Palace)" : ""
+      return `${cungChu} Domain ${
+        cung.cungThan ? " (also the Identity Domain)" : ""
       } ${baseInfo.gioiTinh === 1 ? "Mr." : "Ms."} ${baseInfo.hoTen}, born in ${
         baseInfo.namSinh
       } locates at ${getBranchData(cung.cungTen)} Branch. Stars: ${
