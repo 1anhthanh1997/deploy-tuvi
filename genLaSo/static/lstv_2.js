@@ -3089,17 +3089,17 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     let textData = {};
     if (dongHanhPercent > hoTroPercent) {
       textData = {
-        en: "Companion Forces play a more crucial role than Support Forces in constituting the The Self/Key Element's Strength",
+        en: "Companion Forces play a more crucial role than Support Forces in constituting the The Self's Strength",
         vi: "Lực Lượng Đồng Hành có vai trò quan trọng hơn Lực Lượng Hỗ Trợ trong việc cấu thành Sức Mạnh của Nhật Chủ",
       };
     } else if (dongHanhPercent < hoTroPercent) {
       textData = {
-        en: "Support Forces play a more crucial role than Companion Forces in constituting the The Self/Key Element's Strength",
+        en: "Support Forces play a more crucial role than Companion Forces in constituting the The Self's Strength",
         vi: "Lực Lượng Hỗ Trợ có vai trò quan trọng hơn Lực Lượng Đồng Hành trong việc cấu thành Sức Mạnh của Nhật Chủ",
       };
     } else {
       textData = {
-        en: "Companion Forces and Support Forces have an equal role in constituting the The Self/Key Element's Strength",
+        en: "Companion Forces and Support Forces have an equal role in constituting the The Self's Strength",
         vi: "Lực Lượng Đồng Hành và Lực Lượng Hỗ Trợ có vai trò tương đương trong việc cấu thành Sức Mạnh Nhật Chủ",
       };
     }
@@ -3340,7 +3340,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
   const getTenForcesData = (thapThan) => {
     let data = {
       "Nhật chủ": {
-        en: "The Self/Key Element",
+        en: "The Self",
         vi: "Nhật chủ",
       },
       "Tỷ Kiên": {
@@ -4007,7 +4007,7 @@ ${
     )
     .join("\n\n")}
   
-The Self/Key Element Strength Level (Root): ${getElementData(
+The Self Strength Level (Root): ${getElementData(
       getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.name
     )} Element (Companion Forces) ${
       getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent
@@ -4020,7 +4020,7 @@ The Self/Key Element Strength Level (Root): ${getElementData(
     }%. However, because ${getRoleText(
       getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
       getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
-    )}, the AGI has determined the The Self/Key Element's Strength to be relatively at ${
+    )}, the AGI has determined the The Self's Strength to be relatively at ${
       !getForcesDetail(
         nhatChu,
         getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
@@ -4219,7 +4219,7 @@ ${
     )
     .join("\n\n")}
   
-The Self/Key Element Strength Level ${
+The Self Strength Level ${
             baseInfo.gioThoiVan && !baseInfo.onlyDecade
               ? " (at" + (baseInfo.gioThoiVan - 1) * 2 + "h"
               : ""
@@ -4246,7 +4246,7 @@ The Self/Key Element Strength Level ${
           }%. However, because ${getRoleText(
             getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
             getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
-          )}, the AGI has determined the The Self/Key Element's Strength to be relatively at ${
+          )}, the AGI has determined the The Self's Strength to be relatively at ${
             !getForcesDetail(
               nhatChu,
               getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
