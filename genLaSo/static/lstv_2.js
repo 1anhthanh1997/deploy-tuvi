@@ -1613,8 +1613,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này cương trực, ý chí sắt đá, quyết đoán, có tài năng lãnh đạo và giỏi thực thi. Họ sống có mục tiêu rõ ràng, không ngại va chạm để bảo vệ quan điểm. Tuy nhiên, họ có thể quá cứng nhắc, lạnh lùng, dễ gây tổn thương cho người khác.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự sắc bén & Nguy cơ của sự tàn phá. Đây là dạng Kim đã đạt đến đỉnh cao của công năng và sức mạnh. Nó đã được tôi luyện (qua Hỏa) và mài dũa (qua Thủy) để trở nên cứng rắn và sắc bén nhất. Sức mạnh của nó là khả năng thực thi, phân định rõ ràng, mang tính quyết đoán và có tác động mạnh mẽ nhất.`,
         nameEn: "Sharp Executive Power",
-        descriptionEn: `Sharp Executive Power
-This is the symbol of steel discipline, decisiveness, and action capability reaching absolute precision. It represents clear-cut thinking, the ability to distinguish right from wrong without compromise, and strong will to cut away superfluities to achieve goals; this strength lies in combat readiness and sharpness, however, this ruthless frankness sometimes brings the risk of causing deep hurt to others.
+        descriptionEn: `This is the symbol of steel discipline, decisiveness, and action capability reaching absolute precision. It represents clear-cut thinking, the ability to distinguish right from wrong without compromise, and strong will to cut away superfluities to achieve goals; this strength lies in combat readiness and sharpness, however, this ruthless frankness sometimes brings the risk of causing deep hurt to others.
 •	Mechanism of Absolute Precision Cutting: Operates like a sharp point concentrating energy to pierce and separate matter decisively; the risk is high damage capability, easily destroying the overall structure and wearing down the tool itself if it collides with too hard an obstacle.`,
       },
       {
@@ -1626,8 +1625,7 @@ This is the symbol of steel discipline, decisiveness, and action capability reac
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có phẩm chất trong sạch, cốt cách thanh cao, ít nói nhưng lời nói có trọng lượng. Họ là những người có giá trị thực chất. Tuy nhiên, họ có thể cô độc, khó hòa hợp với môi trường xô bồ.
 •	Ngữ Nghĩa Cốt Lõi: Giá trị của sự tinh khiết & Sự cao quý, xa cách của lý tưởng. Đây là kim loại ở dạng nguyên chất, cô đọng (vàng thỏi, bạc nén). Sức mạnh của nó là giá trị nội tại, sự tinh khiết và là nền tảng để tạo ra các dạng Kim khác. Nó rất mạnh về bản chất nhưng chưa có công năng cụ thể như vũ khí hay trang sức.`,
         nameEn: "Pure Bravery",
-        descriptionEn: `Pure Bravery
-This is the symbol of condensation, independence, and complete separation from the chaotic influences around. It represents the most core values, consistency in thought, and high concentration on the essence of the problem; this strength lies in purity and noble dignity, however, this idealization and separation sometimes create a cold distance, making it lonely in its own perfection.
+        descriptionEn: `This is the symbol of condensation, independence, and complete separation from the chaotic influences around. It represents the most core values, consistency in thought, and high concentration on the essence of the problem; this strength lies in purity and noble dignity, however, this idealization and separation sometimes create a cold distance, making it lonely in its own perfection.
 •	Mechanism of Consistent Purity: A form of matter that has reached the highest degree of condensation and purity, not corroded or degenerated; however, the inertness makes it difficult to link, standing completely separate and becoming cold, lonely in the perfection of itself.`,
       },
       {
@@ -1639,8 +1637,7 @@ This is the symbol of condensation, independence, and complete separation from t
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có nhiều tài năng tiềm ẩn, kiên nhẫn, có nội lực. Tuy nhiên, nếu không gặp thời, tài năng có thể bị chôn vùi, đôi khi thiếu quyết đoán.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của tiềm năng ẩn giấu & Nguy cơ của sự mai một. Sức mạnh của nó nằm ở dạng tiềm năng. Đây là quặng kim loại, là vàng trong cát, có giá trị lớn nhưng còn bị che lấp và cần được khai phá. Nó mạnh hơn các dạng Kim chưa định hình khác vì đã là khoáng sản rắn chắc, chỉ chờ được khám phá.`,
         nameEn: "Value Awaiting Discovery",
-        descriptionEn: `Value Awaiting Discovery
-This is the image of true talent but still mixed among ordinary things, not yet clearly separated. It represents precious qualities hiding themselves, requiring a process of screening, training, and serious effort to reveal their full value; this strength lies in immense potential, but without persistent honing, it is very easily obscured and forgotten amidst the chaotic crowd.
+        descriptionEn: `This is the image of true talent but still mixed among ordinary things, not yet clearly separated. It represents precious qualities hiding themselves, requiring a process of screening, training, and serious effort to reveal their full value; this strength lies in immense potential, but without persistent honing, it is very easily obscured and forgotten amidst the chaotic crowd.
 •	Mechanism of Dispersed Potential: Contains precious material particles mixed in a chaotic environment; this characteristic requires a costly screening process; without strong external impact, the real value remains forever hidden and assimilated with ordinary earth and stones.`,
       },
       {
@@ -1652,8 +1649,7 @@ This is the image of true talent but still mixed among ordinary things, not yet 
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có khí chất thanh cao, tao nhã, có gu thẩm mỹ tốt và coi trọng danh dự. Họ có số được người khác kính trọng, thường có địa vị trong xã hội. Tuy nhiên, họ có thể kiêu kỳ, xa rời thực tế, thiếu khả năng chịu đựng gian khổ.
 •	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự cao quý & Sự yếu đuối khi thiếu thực chiến. Sức mạnh của nó nằm ở giá trị và sự cao quý. Dù không có sức công phá như vũ khí, nó là dạng Kim đã được chế tác tinh xảo, đạt đến đỉnh cao của vẻ đẹp và phẩm chất. Sức mạnh của nó là sự sang trọng, địa vị và giá trị được xã hội công nhận.`,
         nameEn: "Sophisticated Nobility",
-        descriptionEn: `Sophisticated Nobility
-This is the embodiment of perfection, superior aesthetic taste, and the desire for social recognition of class. It represents self-radiating value, elegance, and the need to affirm position through community respect; this inner force does not lean towards collision or survival struggle but focuses on maintaining a perfect image, sophistication in behavior, and attraction from inner qualities.
+        descriptionEn: `This is the embodiment of perfection, superior aesthetic taste, and the desire for social recognition of class. It represents self-radiating value, elegance, and the need to affirm position through community respect; this inner force does not lean towards collision or survival struggle but focuses on maintaining a perfect image, sophistication in behavior, and attraction from inner qualities.
 •	Mechanism of Subtle Glowing Frequency: Radiates an aura of perfection and high aesthetic value, attracting attention; but the structure is fragile, easily deformed, scratched, and loses value if not preserved in a safe environment with little impact.`,
       },
       {
@@ -1665,8 +1661,7 @@ This is the embodiment of perfection, superior aesthetic taste, and the desire f
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có nội lực thâm sâu, trí tuệ uyên bác và tiềm năng cực lớn. Họ giống như một kho báu chưa được khám phá. Cuộc sống của họ thường an tĩnh, không phô trương, nhưng một khi đã gặp được môi trường hoặc con người phù hợp để "khai phá", họ sẽ tạo ra những giá trị phi thường.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của tiềm năng vô hạn & Thử thách của sự khai phá. Đại diện cho tiềm năng và giá trị nội tại lớn nhất. Đây là kho báu nguyên sơ, khổng lồ. Tuy chưa được khai phá nhưng trữ lượng và giá trị tiềm ẩn của nó vượt xa các dạng Kim khác. Sức mạnh của nó là sức mạnh của chiều sâu và sự giàu có vô tận.`,
         nameEn: "Hidden Wisdom",
-        descriptionEn: `Hidden Wisdom
-This is the power of colossal potential that is submerged deep in introversion, mystery, and elusiveness. It represents a treasury of original knowledge and deep capacity not yet revealed, carrying a passive nature of waiting for the opportunity to shine; this depth contains infinite inner force but also creates a great challenge in self-expression and connecting with the outside world.
+        descriptionEn: `This is the power of colossal potential that is submerged deep in introversion, mystery, and elusiveness. It represents a treasury of original knowledge and deep capacity not yet revealed, carrying a passive nature of waiting for the opportunity to shine; this depth contains infinite inner force but also creates a great challenge in self-expression and connecting with the outside world.
 •	Mechanism of Submerged Raw Material: A massive volume of value lying in a dormant state under high pressure, hard to erode; the disadvantage is high inertia, difficult to exploit, requires complex processes to bring to the surface, and is easily forgotten in eternal darkness.`,
       },
       {
@@ -1678,8 +1673,7 @@ This is the power of colossal potential that is submerged deep in introversion, 
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có khả năng thích nghi tốt, dễ học hỏi, có tiềm năng lớn. Họ cần một môi trường tốt, một người thầy để định hướng phát triển. Tuy nhiên, họ thiếu tự chủ và khó thành công khi đứng một mình.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự biến đổi & Sự yếu đuối vì chưa định hình. Đây là dạng Kim ở trạng thái yếu và không ổn định nhất. Nó chưa được định hình, còn lẫn tạp chất và dễ bị tác động bởi các yếu tố bên ngoài (cần Hỏa để duy trì, sợ Thủy làm nguội). Sức mạnh duy nhất của nó là khả năng biến đổi, nhưng ở trạng thái hiện tại, nó không có sức mạnh nội tại.`,
         nameEn: "Transformative Potential",
-        descriptionEn: `Transformative Potential
-This is the primitive stage of energy, representing pure beginnings and the ability to change form flexibly without a fixed shape yet. It symbolizes the process of self-completion, openness to shedding old impurities to seek a unique identity; although lacking the stability and solidity of a defined personality, it possesses a huge opportunity to transform and adapt to every new mold.
+        descriptionEn: `This is the primitive stage of energy, representing pure beginnings and the ability to change form flexibly without a fixed shape yet. It symbolizes the process of self-completion, openness to shedding old impurities to seek a unique identity; although lacking the stability and solidity of a defined personality, it possesses a huge opportunity to transform and adapt to every new mold.
 •	Mechanism of Molten Shaping: The stage where energy is transforming, removing impurities to find a new form; the risk is structural instability, easily being adulterated again, and lacking the necessary hardness to perform load-bearing functions.`,
       },
       {
@@ -1691,8 +1685,7 @@ This is the primitive stage of energy, representing pure beginnings and the abil
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này quang minh, lỗi lạc, có tầm ảnh hưởng lớn và tố chất lãnh đạo. Họ sống công bằng, chính trực và có tấm lòng rộng mở. Tuy nhiên, nếu năng lượng quá mạnh, họ có thể trở nên độc đoán, thiêu đốt những người xung quanh.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự quang minh & Nguy cơ của sự thiêu đốt. Đây là "vua của các loại Hỏa". Sức mạnh của nó là tuyệt đối, bao trùm vạn vật và là nguồn năng lượng của sự sống.`,
         nameEn: "Supreme Authority",
-        descriptionEn: `Supreme Authority
-This is the embodiment of absolute integrity and magnanimous energy that covers all aspects of life. It represents a public, transparent power, always bestowing value and life upon its surroundings without demanding anything in return. However, this excessive brilliance carries the risk of overwhelming and scorching others with its very own greatness.
+        descriptionEn: `This is the embodiment of absolute integrity and magnanimous energy that covers all aspects of life. It represents a public, transparent power, always bestowing value and life upon its surroundings without demanding anything in return. However, this excessive brilliance carries the risk of overwhelming and scorching others with its very own greatness.
 •	Mechanism of Fair Illumination: Operates like an eternal light source radiating transparent energy, warming and illuminating every hidden corner impartially; however, the excessive radiation intensity can cause an overwhelming effect, scorching weaker energy sources and depleting surrounding resources if not regulated.`,
       },
       {
@@ -1704,8 +1697,7 @@ This is the embodiment of absolute integrity and magnanimous energy that covers 
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tính cách mạnh mẽ, quyết liệt, có khả năng tạo ra những thay đổi lớn. Họ có thể thành công rất nhanh nhưng cuộc đời cũng đầy biến động. Họ hợp với các ngành nghề đòi hỏi sự táo bạo, đột phá.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự đột phá & Nguy cơ của sự hủy diệt. Tượng trưng cho sức mạnh đột phá, chớp nhoáng và quyền uy của tạo hóa. Sức mạnh của nó mang tính hủy diệt và tái tạo trong khoảnh khắc.`,
         nameEn: "Shocking Breakthrough",
-        descriptionEn: `Shocking Breakthrough
-This is the symbol of decisive turning points and the ability to change the situation in a split second. It represents explosive, authoritative energy, creating revolutionary shifts, breaking the old order to construct the new, containing high risks but accompanied by powerful opportunities for rebirth.
+        descriptionEn: `This is the symbol of decisive turning points and the ability to change the situation in a split second. It represents explosive, authoritative energy, creating revolutionary shifts, breaking the old order to construct the new, containing high risks but accompanied by powerful opportunities for rebirth.
 •	Mechanism of Regenerative Explosion: A form of extremely powerful shock energy, capable of instant release to shatter old structures and trigger sudden change; the downside is high instability, leaving aftershocks that can cause serious damage to the system and a lack of continuity to maintain long-term order.`,
       },
       {
@@ -1717,8 +1709,7 @@ This is the symbol of decisive turning points and the ability to change the situ
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tài năng tiềm ẩn, cần có sự giáo dục, rèn luyện và một môi trường tốt để phát triển. Thành công của họ đến muộn nhưng rất vững chắc. Họ có thể nóng tính nhưng thường không thể hiện ra ngoài.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của nội lực & Sự phụ thuộc vào nhiên liệu. Đây là ngọn lửa có mục đích, tượng trưng cho sức mạnh của sự tôi luyện và nội lực được nuôi dưỡng.`,
         nameEn: "Disciplined Forging",
-        descriptionEn: `Disciplined Forging
-This is the power of steadfastness and the harsh process of self-improvement within a specific framework. It symbolizes immense potential that needs to be nurtured and continuously honed, requiring support from the external environment to transform from a raw form into a useful and sustainable essence.
+        descriptionEn: `This is the power of steadfastness and the harsh process of self-improvement within a specific framework. It symbolizes immense potential that needs to be nurtured and continuously honed, requiring support from the external environment to transform from a raw form into a useful and sustainable essence.
 •	Mechanism of Thermal Tempering: Operates on the principle of continuous compression and combustion within a limited space to distill the essence; but this mechanism depends entirely on the supplied fuel source, easily falling into a state of cooling down or self-extinguishing if it loses stimulation from the external environment.`,
       },
       {
@@ -1730,8 +1721,7 @@ This is the power of steadfastness and the harsh process of self-improvement wit
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có vẻ ngoài điềm tĩnh, ít nói, sống nội tâm nhưng lại có tài năng và ý chí rất lớn. Họ không dễ thể hiện nhưng một khi đã hành động thì vô cùng quyết liệt, tạo ra kết quả phi thường. Thành công của họ thường đến sau một giai đoạn dài tích lũy.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự dồn nén & Sự bùng nổ thay đổi tất cả. Đại diện cho sức mạnh nội lực bị dồn nén đến cực đại rồi bùng nổ. Nó là ngọn lửa của sự chuyển mình từ sâu trong lòng đất.`,
         nameEn: "Latent Inner Power",
-        descriptionEn: `Latent Inner Power
-This is a form of power characterized by surface silence and compression but containing unfathomable deep inner strength. It represents the ability to withstand high pressure, accumulating energy over a long period to create spectacular transformations, completely changing the current order through a sudden release of energy.
+        descriptionEn: `This is a form of power characterized by surface silence and compression but containing unfathomable deep inner strength. It represents the ability to withstand high pressure, accumulating energy over a long period to create spectacular transformations, completely changing the current order through a sudden release of energy.
 •	Mechanism of Static Compression: A form of latent energy accumulated deep within a silent shell, capable of bearing large pressure loads before releasing; the risk lies in the delay of reaction and the danger of unannounced explosions, creating destructive power beyond control when the limit is reached.`,
       },
       {
@@ -1743,8 +1733,7 @@ This is a form of power characterized by surface silence and compression but con
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường nhiệt tình, năng nổ, hướng ngoại và có khả năng khuấy động tập thể. Họ giống như ngọn lửa trại, là trung tâm của sự chú ý. Tuy nhiên, họ có xu hướng "cả thèm chóng chán", cần sự cổ vũ và "nhiên liệu" (động lực, sự công nhận) từ bên ngoài để duy trì đam mê.
 •	Ngữ Nghĩa Cốt Lõi: Nhiệt huyết bùng cháy & Sức mạnh phụ thuộc. Là ngọn lửa của cộng đồng, phục vụ nhu cầu của con người, mang tính ứng dụng cao nhưng không ổn định.`,
         nameEn: "Practical Enthusiasm",
-        descriptionEn: `Practical Enthusiasm
-This is the energy source of proactivity, community spirit, and practical service. It represents eagerness and warmth in social relationships, always aiming to solve specific human needs, but its endurance depends heavily on interaction and encouragement from the collective.
+        descriptionEn: `This is the energy source of proactivity, community spirit, and practical service. It represents eagerness and warmth in social relationships, always aiming to solve specific human needs, but its endurance depends heavily on interaction and encouragement from the collective.
 •	Mechanism of Radiating Enthusiasm: Operates on a resonance mechanism, creating spreading warmth to serve and connect surrounding entities; the weakness is rapid depletion, short-term range of operation, and easy dispersion of energy if not continuously refueled.`,
       },
       {
@@ -1756,8 +1745,7 @@ This is the energy source of proactivity, community spirit, and practical servic
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường là người mang lại tri thức, niềm vui cho người khác như thầy giáo, nhà tư vấn, nghệ sĩ. Họ thích các hoạt động về đêm. Tuy nhiên, họ có thể yếu đuối, cần sự che chở để tỏa sáng.
 •	Ngữ Nghĩa Cốt Lõi: Sự hữu ích của ánh sáng nhân tạo & Sự mong manh trước giông bão. Đây là loại Hỏa yếu nhất về mặt năng lượng vật lý, sức mạnh của nó nằm ở giá trị tinh thần và tri thức.`,
         nameEn: "Illuminating Wisdom",
-        descriptionEn: `Illuminating Wisdom
-This is the symbol of clarity, knowledge, and the ability to navigate in dark or micro-circumstances. It does not carry overwhelming physical power but leans towards spiritual values, enlightenment, and spreading belief; however, this energy source is quite sensitive and easily affected by large fluctuations from the environment.
+        descriptionEn: `This is the symbol of clarity, knowledge, and the ability to navigate in dark or micro-circumstances. It does not carry overwhelming physical power but leans towards spiritual values, enlightenment, and spreading belief; however, this energy source is quite sensitive and easily affected by large fluctuations from the environment.
 •	Mechanism of Guiding Frequency: Emits a focused, specialized beam of light to lead the way in the most microscopic or darkest circumstances; however, this energy amplitude is quite narrow, easily fluctuating, flickering, or extinguishing completely before strong headwinds or macro-level changes.`,
       },
       {
@@ -1769,8 +1757,7 @@ This is the symbol of clarity, knowledge, and the ability to navigate in dark or
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có chí lớn, tư duy khoáng đạt, có tài năng và tiềm năng để làm những việc lớn lao. Họ có sức ảnh hưởng, thu hút người khác. Tuy nhiên, cuộc đời họ thường có nhiều sóng gió, tính tình có thể thất thường, khó đoán.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự vĩ đại & Nguy cơ của sự vô định. Đây là "vua của các loại Thủy". Đại dương là nơi quy tụ của tất cả các dòng nước, có quy mô và sức mạnh lớn nhất, không gì sánh bằng. Nó có thể nhấn chìm vạn vật, dung nạp tất cả các dòng chảy khác. Sức mạnh của nó là tuyệt đối và hùng vĩ.`,
         nameEn: "Grand Ambition",
-        descriptionEn: `Grand Ambition
-This is the symbol of comprehensive thinking, immense capacity for absorption, and a desire for dominance. It represents a powerful, elusive inner force capable of accepting all opposing opinions to converge them into one, but it also contains unpredictable variations between deep silence and the ferocity that washes everything away.
+        descriptionEn: `This is the symbol of comprehensive thinking, immense capacity for absorption, and a desire for dominance. It represents a powerful, elusive inner force capable of accepting all opposing opinions to converge them into one, but it also contains unpredictable variations between deep silence and the ferocity that washes everything away.
 •	Mechanism of Total Absorption: A colossal containment mechanism capable of swallowing and dissolving all distinct flows into a unified block; but its variation is extreme, capable of shifting from a calm state to a state of engulfing and destroying everything instead of uplifting it.`,
       },
       {
@@ -1782,8 +1769,7 @@ This is the symbol of comprehensive thinking, immense capacity for absorption, a
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tâm hồn trong sáng, nhân hậu, có trí tưởng tượng phong phú. Họ có thể thành công trong các lĩnh vực văn hóa, nghệ thuật, giáo dục, tôn giáo. Tuy nhiên, họ có thể hơi mơ mộng, thiếu thực tế.
 •	Ngữ Nghĩa Cốt Lõi: Sự màu nhiệm của ân huệ & Sự xa rời thực tế. Mặc dù không có lưu lượng tập trung như sông lớn, nhưng Nước Mưa lại có tầm ảnh hưởng phổ quát nhất. Nó rơi từ trên trời, ban phát sự sống cho cả một vùng rộng lớn không phân biệt. Về mặt quy mô tác động trong một thời điểm (cơn mưa lớn), nó chỉ đứng sau Đại Dương.`,
         nameEn: "Universal Compassion",
-        descriptionEn: `Universal Compassion
-This is the embodiment of idealism, nobility, and vast love without discrimination. It represents pure spiritual values, creativity, and inspiration spreading everywhere; however, it is sometimes too airy, detached from naked reality, and lacks focus on a specific goal.
+        descriptionEn: `This is the embodiment of idealism, nobility, and vast love without discrimination. It represents pure spiritual values, creativity, and inspiration spreading everywhere; however, it is sometimes too airy, detached from naked reality, and lacks focus on a specific goal.
 •	Mechanism of Purification Flow: Carries the characteristic of providing an ideal source of life for all things; however, due to its airy nature, this resource is often difficult to condense to solve practical problems.`,
       },
       {
@@ -1795,8 +1781,7 @@ This is the embodiment of idealism, nobility, and vast love without discriminati
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có khả năng hoạch định dài hạn, suy nghĩ sâu xa, không nóng vội. Họ có thể đạt được thành công lớn khi về già. Tuy nhiên, họ có thể thiếu quyết đoán, chần chừ, mất nhiều thời gian để đi đến mục tiêu.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của tầm nhìn xa & Sự chậm chạp của con đường dài. Đây là hình ảnh dòng sông lớn, có lưu lượng ổn định và sức mạnh bền bỉ theo thời gian. Nó có sức mạnh bào mòn đất đá, thay đổi địa hình và là nguồn sống cho cả một khu vực nó chảy qua. Sức mạnh của nó đến từ sự kiên trì và dòng chảy không ngừng nghỉ.`,
         nameEn: "Enduring Vision",
-        descriptionEn: `Enduring Vision
-This is the power of persistence, far-sightedness, and flexible adaptation through all circumstances. It symbolizes the process of long-term experience accumulation, not rushing but slowly gliding past obstacles, using time and patience to create great achievements and change solid foundations.
+        descriptionEn: `This is the power of persistence, far-sightedness, and flexible adaptation through all circumstances. It symbolizes the process of long-term experience accumulation, not rushing but slowly gliding past obstacles, using time and patience to create great achievements and change solid foundations.
 •	Mechanism of Enduring Motion: A form of energy in ceaseless flow, focusing on accumulation and osmosis over time to build a deep and wide foundation; the limitation is slow reaction speed, lack of breakthrough impulses, and a tendency toward stagnation, hesitating to change the established flow.`,
       },
       {
@@ -1808,8 +1793,7 @@ This is the power of persistence, far-sightedness, and flexible adaptation throu
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường hướng ngoại, thẳng thắn, nhiệt tình và thích tự do. Họ có nhiều ý tưởng, thích phiêu lưu mạo hiểm. Tuy nhiên, họ có thể bốc đồng, thiếu kiên nhẫn, không suy nghĩ dài hạn.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự nhiệt huyết & Sự thiếu định hướng của tuổi trẻ. Sức mạnh của Thác Nước rất dữ dội, mãnh liệt nhưng chỉ trong một phạm vi hẹp và ngắn. Nó có thể cuốn phăng đất đá ở đầu nguồn nhưng sức mạnh không bền bỉ và có định hướng như Sông Dài. Nó đại diện cho sức mạnh bộc phát nhất thời.`,
         nameEn: "Outspoken Passion",
-        descriptionEn: `Outspoken Passion
-This is the symbol of abundant vitality, eagerness, and the straightforward personality of youth. It represents powerful, fierce energy flows that often lack clear direction, are temporary in nature, and need guidance to turn initial impulses into practical effectiveness instead of waste.
+        descriptionEn: `This is the symbol of abundant vitality, eagerness, and the straightforward personality of youth. It represents powerful, fierce energy flows that often lack clear direction, are temporary in nature, and need guidance to turn initial impulses into practical effectiveness instead of waste.
 •	Mechanism of Powerful Impulse: Operates at high speed and large volume, creating fierce thrust to overcome obstacles; the drawback is a lack of direction, energy is easily dispersed uselessly, and it tends to wreak havoc on the banks if not channeled into a framework.`,
       },
       {
@@ -1821,8 +1805,7 @@ This is the symbol of abundant vitality, eagerness, and the straightforward pers
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thông minh, thanh cao, có tấm lòng nhân hậu. Họ thích cuộc sống an tĩnh, không màng danh lợi xô bồ. Họ là những người thầy, nhà tư vấn thầm lặng. Tuy nhiên, họ có thể thiếu tham vọng, sống ẩn dật, khép kín.
 •	Ngữ Nghĩa Cốt Lõi: Sự trong lành của trí tuệ & Sự thầm lặng của cống hiến. Nước Suối có lưu lượng nhỏ, dòng chảy hiền hòa. Sức mạnh của nó không nằm ở sức công phá mà ở khả năng nuôi dưỡng, duy trì sự sống một cách bền bỉ và tinh khiết. Nó là khởi nguồn của những dòng sông lớn nhưng bản thân nó lại rất khiêm tốn.`,
         nameEn: "Deep Serenity",
-        descriptionEn: `Deep Serenity
-This is the power of profound wisdom, purity, and the ability to nurture silently. It represents a clear, wise inner self that is not showy, always patiently cultivating and maintaining life for ideas or people around it quietly and persistently.
+        descriptionEn: `This is the power of profound wisdom, purity, and the ability to nurture silently. It represents a clear, wise inner self that is not showy, always patiently cultivating and maintaining life for ideas or people around it quietly and persistently.
 •	Mechanism of Deep Nurturing: Acts as an underground vein providing pure and continuous vitality for the ecosystem; the risk is passivity, being buried too deep, making energy hard to exploit, and easily becoming corrupted or blocked if the surrounding environment changes negatively.`,
       },
       {
@@ -1834,8 +1817,7 @@ This is the power of profound wisdom, purity, and the ability to nurture silentl
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có nội tâm phức tạp, khó đoán, thông minh nhưng không khoe khoang. Họ có sự nhẫn nại và có thể thành công một cách thầm lặng. Tuy nhiên, họ có thể đa nghi, hay do dự, bỏ lỡ cơ hội.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự thâm trầm & Sự do dự vì đa nghi. Đây là dòng nước có lưu lượng nhỏ nhất và ẩn mình sâu nhất. Nó gần như không có tác động trực tiếp lên bề mặt. Sức mạnh của nó là sự tồn tại thầm lặng, bền bỉ và tiềm ẩn. Nó rất quan trọng nhưng lại yếu nhất về mặt biểu hiện ra bên ngoài.`,
         nameEn: "Discreet Multidimensional",
-        descriptionEn: `Discreet Multidimensional
-This is the embodiment of a complex inner life, mystery, and the ability to endure silently. It represents carefully hidden strategies and calculations, characterized by high suspicion and caution, rarely revealing its full nature but possessing the ability to exist and maneuver through the narrowest cracks of life.
+        descriptionEn: `This is the embodiment of a complex inner life, mystery, and the ability to endure silently. It represents carefully hidden strategies and calculations, characterized by high suspicion and caution, rarely revealing its full nature but possessing the ability to exist and maneuver through the narrowest cracks of life.
 •	Mechanism of Flexible Osmosis: The ability to weave through every narrow crevice, changing shape to survive and penetrate every obstacle; however, this elusive nature comes with inconsistency, energy is fragmented, and it is always in a state of underground fluctuation, lacking surface stability.`,
       },
       {
@@ -1847,8 +1829,7 @@ This is the embodiment of a complex inner life, mystery, and the ability to endu
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tấm lòng nhân hậu, phóng khoáng, có tinh thần đồng đội và khả năng che chở cho người khác. Họ có nền tảng tốt, dễ thành công trong các lĩnh vực đòi hỏi sự hợp tác, quy mô lớn. Tuy nhiên, trong một tập thể lớn, họ có thể thiếu đi sự nổi bật cá nhân.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự hùng vĩ & Sự cạnh tranh của quần thể. Sức mạnh của Đại Lâm Mộc đến từ quy mô và tính quần thể. Một cây có thể bị đốn hạ, nhưng cả một khu rừng là một thế lực hùng vĩ, có sức sống mãnh liệt và rất khó bị hủy diệt. Sức mạnh của nó là sự to lớn, hùng hậu và vững chãi.`,
         nameEn: "Community Power",
-        descriptionEn: `Community Power
-This is the embodiment of collective prosperity and tight social cohesion. It represents a solid system created from the unity of many individuals, where strength does not lie in solitude but in massive scale and mutual reliance for joint development, creating an overwhelming position difficult to be shaken by external forces but always harboring underground competition to rise up.
+        descriptionEn: `This is the embodiment of collective prosperity and tight social cohesion. It represents a solid system created from the unity of many individuals, where strength does not lie in solitude but in massive scale and mutual reliance for joint development, creating an overwhelming position difficult to be shaken by external forces but always harboring underground competition to rise up.
 •	Mechanism of Resonant Ecosystem: Creates strength from the connection of a dense network, using quantity and intertwining to create a solid balance; the weakness is fierce resource competition right within the internal structure, where individuals can easily have their distinct development space suppressed.`,
       },
       {
@@ -1860,8 +1841,7 @@ This is the embodiment of collective prosperity and tight social cohesion. It re
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có ý chí kiên cường, lập trường vững vàng, sống có nguyên tắc và danh dự. Họ có thể gánh vác những trọng trách lớn, là trụ cột trong gia đình và tổ chức. Tuy nhiên, họ có thể cô độc, cứng nhắc và ít khi cúi mình.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự kiên định & Sự cô độc trong giá lạnh. Đây là loại Mộc cứng rắn, kiên định và có ý chí mạnh mẽ nhất. Nó là hình ảnh của cây đại thụ hiên ngang trước sương tuyết, không sợ Kim khắc (rìu khó đốn). Sức mạnh của nó nằm ở sự bất khuất, khí phách và khả năng chịu đựng nghịch cảnh khắc nghiệt nhất.`,
         nameEn: "Resilient Bravery",
-        descriptionEn: `Resilient Bravery
-This is the symbol of iron will, high moral character, and independent survival capability in the harshest circumstances. It represents integrity, firm living principles, and steadfastness that never bows to adversity; even if it must endure loneliness and cold, this inner force maintains its dignity intact and becomes a reliable spiritual pillar.
+        descriptionEn: `This is the symbol of iron will, high moral character, and independent survival capability in the harshest circumstances. It represents integrity, firm living principles, and steadfastness that never bows to adversity; even if it must endure loneliness and cold, this inner force maintains its dignity intact and becomes a reliable spiritual pillar.
 •	Mechanism of Resilient Independence: Operates based on a mechanism of self-nourishment and extreme cold resistance, maintaining green life in harsh conditions; but this characteristic creates isolation, difficulty in harmonizing with normal ecosystems, and slow, solitary development.`,
       },
       {
@@ -1873,9 +1853,8 @@ This is the symbol of iron will, high moral character, and independent survival 
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tài năng, vẻ đẹp tiềm ẩn bên trong. Họ cần sự rèn luyện, kỷ luật, thậm chí là áp lực, chỉ trích để có thể tạo ra thành quả. Thành công của họ thường đến sau khi trải qua gian khó.
 •	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của thành quả & Sự trưởng thành từ áp lực. Sức mạnh của nó nằm ở sức sống phi thường và khả năng biến nghịch cảnh thành sức mạnh. Là Mộc duy nhất không những không sợ Kim mà còn cần Kim (sự cắt tỉa, áp lực) để phát triển và tạo ra thành quả. Đây là sức mạnh của sự kiên cường và ý chí vươn lên từ gian khó.`,
         nameEn: "Achievement through Pressure",
-        descriptionEn: `Achievement through Pressure
-This is the embodiment of deep inner beauty and the ability to turn adversity into glory. It represents a latent intense vitality, disregarding flashy external appearances but aiming for substantial results; this inner force demands strict training and pressure from the environment to reveal talent, affirming self-worth through brilliant and distinct achievements.
-Mechanism of Condensed Crystallization: Contains intense vitality inside a rough shell, capable of surviving and blooming brilliantly; however, this mechanism requires high-pressure conditions, and the shell is too hard and thorny, often causing difficulties for access and energy exchange.`,
+        descriptionEn: `This is the embodiment of deep inner beauty and the ability to turn adversity into glory. It represents a latent intense vitality, disregarding flashy external appearances but aiming for substantial results; this inner force demands strict training and pressure from the environment to reveal talent, affirming self-worth through brilliant and distinct achievements.
+•	Mechanism of Condensed Crystallization: Contains intense vitality inside a rough shell, capable of surviving and blooming brilliantly; however, this mechanism requires high-pressure conditions, and the shell is too hard and thorny, often causing difficulties for access and energy exchange.`,
       },
       {
         name: "TANG ĐỐ MỘC",
@@ -1886,9 +1865,8 @@ Mechanism of Condensed Crystallization: Contains intense vitality inside a rough
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tài năng đặc biệt trong một lĩnh vực hẹp, rất khéo léo và cần mẫn. Họ sống vì người khác nhiều hơn vì mình. Tuy nhiên, cuộc sống có thể vất vả, ít được hưởng thụ thành quả.
 •	Ngữ Nghĩa Cốt Lõi: Sự hữu ích của chuyên môn & Sự hy sinh thầm lặng. Sức mạnh của nó không nằm ở sự cứng cỏi hay tầm vóc, mà ở giá trị sử dụng và sự linh hoạt. Gỗ dâu có thể làm cung tên (chứa đựng sức mạnh), lá dâu có thể nuôi tằm (tạo ra giá trị). Đây là sức mạnh của sự hữu ích, chuyên dụng và khả năng cống hiến.`,
         nameEn: "Spirit of Dedication",
-        descriptionEn: `Spirit of Dedication
-This is the power of versatility, altruism, and silent sacrifice to create useful value for others. It does not show off power but focuses on professional skills and service; the nature of this energy source is accepting self-change, even suffering disadvantages to complete the mission of supporting and nurturing larger goals of the community.
-Mechanism of Service Transformation: Operates with the purpose of providing raw materials and useful value for society & common goals; the downside is self-depletion, always in a position of being exploited, and lacking a self-protection mechanism against the invasion of external agents.`,
+        descriptionEn: `This is the power of versatility, altruism, and silent sacrifice to create useful value for others. It does not show off power but focuses on professional skills and service; the nature of this energy source is accepting self-change, even suffering disadvantages to complete the mission of supporting and nurturing larger goals of the community.
+•	Mechanism of Service Transformation: Operates with the purpose of providing raw materials and useful value for society & common goals; the downside is self-depletion, always in a position of being exploited, and lacking a self-protection mechanism against the invasion of external agents.`,
       },
       {
         name: "BÌNH ĐỊA MỘC",
@@ -1899,8 +1877,7 @@ Mechanism of Service Transformation: Operates with the purpose of providing raw 
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này sống thực tế, hòa đồng, dễ thích nghi và có nhiều mối quan hệ. Họ không có tham vọng cao xa nhưng xây dựng được cuộc sống ổn định, vui vẻ. Tuy nhiên, họ có thể thiếu tầm nhìn, dễ bằng lòng với thực tại.
 •	Ngữ Nghĩa Cốt Lõi: Sức sống của sự lan tỏa & Sự thiếu tầm vóc cao xa. Sức mạnh của nó nằm ở sự lan tỏa và sức sống dẻo dai. Cây cỏ có thể bị dẫm đạp nhưng vẫn vươn lên. Tuy nhiên, về mặt tầm vóc và sự vững chãi, nó không thể so sánh với các loại cây gỗ lớn. Sức mạnh của nó là sức mạnh của số đông nhưng thiếu đi vóc dáng và sự kiên cố của cá thể.`,
         nameEn: "Practical Expansion",
-        descriptionEn: `Practical Expansion
-This is the energy of flexibility, approachability, and excellent adaptability to all classes. It does not aim for prominence or high status but focuses on resilient vitality and widespread connection capability; this strength lies in mass appeal, pragmatism, and the ability to proliferate strongly even in the most ordinary conditions, using quantity and spread as an advantage.
+        descriptionEn: `This is the energy of flexibility, approachability, and excellent adaptability to all classes. It does not aim for prominence or high status but focuses on resilient vitality and widespread connection capability; this strength lies in mass appeal, pragmatism, and the ability to proliferate strongly even in the most ordinary conditions, using quantity and spread as an advantage.
 •	Mechanism of Prolific Spread: Focuses on the speed of green coverage and the ability to occupy large surfaces, easily recovering after damage; the risk is low stature, poor impact resistance, and being easily trampled or replaced by more macro-structures.`,
       },
       {
@@ -1912,8 +1889,7 @@ This is the energy of flexibility, approachability, and excellent adaptability t
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có vẻ ngoài duyên dáng, tình cảm, khéo léo trong giao tiếp. Họ dễ thích nghi nhưng lập trường không vững, dễ thay đổi, nội tâm đa sầu đa cảm.
 •	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự mềm mại & Sự yếu đuối vì thiếu lập trường. Yếu nhất vì bản chất của nó là sự mềm mại, uyển chuyển và thiếu lập trường. Nó dễ dàng uốn mình theo chiều gió, tượng trưng cho sự thiếu kiên định. Trong hệ quy chiếu về sức mạnh (vốn đề cao sự cứng cỏi, vững vàng), nó bị xem là yếu nhất.`,
         nameEn: "The Art of Softness",
-        descriptionEn: `The Art of Softness
-This is the symbol of flexibility, sophistication, and skillful diplomacy based on softness. It represents emotional intelligence, knowing how to customize attitudes to drift with the times to survive instead of direct confrontation; however, the lack of decisiveness and a core inner stance makes this energy source easily dominated by the influence of others and carries a fragile, sentimental appearance.
+        descriptionEn: `This is the symbol of flexibility, sophistication, and skillful diplomacy based on softness. It represents emotional intelligence, knowing how to customize attitudes to drift with the times to survive instead of direct confrontation; however, the lack of decisiveness and a core inner stance makes this energy source easily dominated by the influence of others and carries a fragile, sentimental appearance.
 •	Mechanism of Yielding Elasticity: Uses flexibility to cancel out impact force, drifting with external forces to survive; the disadvantage is the lack of a rigid skeleton, easily bent permanently, and losing the original direction before strong winds.`,
       },
       {
@@ -1925,8 +1901,7 @@ This is the symbol of flexibility, sophistication, and skillful diplomacy based 
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có lập trường vững vàng, sống có nguyên tắc, đáng tin cậy và có khả năng bảo vệ người khác. Họ là những người xây dựng và duy trì sự ổn định. Tuy nhiên, họ có thể rất bảo thủ, cứng đầu, thiếu linh hoạt.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự kiên cố & Nguy cơ của sự bất biến. Đây là loại Thổ có tính kiên cố, vững chãi và sức phòng thủ cao nhất. Nó được tạo ra với mục đích là để chống chịu, bảo vệ. Đặc biệt, nó không sợ Mộc khắc theo cách thông thường mà còn cần Mộc để gia cố. Sức mạnh của nó nằm ở sự vững vàng không thể lay chuyển.`,
         nameEn: "Principled Steadfastness",
-        descriptionEn: `Principled Steadfastness
-This is the symbol of solid protection and steel discipline, where all values are fortified to become inviolable. It represents a firm stance, high principles, and absolute defensive capability against all external impacts; however, this rigidity and "framing" carry the risk of conservatism and a lack of flexibility before the changes of the times.
+        descriptionEn: `This is the symbol of solid protection and steel discipline, where all values are fortified to become inviolable. It represents a firm stance, high principles, and absolute defensive capability against all external impacts; however, this rigidity and "framing" carry the risk of conservatism and a lack of flexibility before the changes of the times.
 •	Mechanism of Solid Defense: Establishes a sturdy barrier protecting core values, blocking all invasive impacts; the downside is complete closure, preventing metabolic exchange with the outside, leading to sclerosis and obsolescence of the internal system.`,
       },
       {
@@ -1938,8 +1913,7 @@ This is the symbol of solid protection and steel discipline, where all values ar
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tấm lòng bao dung, phóng khoáng, dễ tha thứ. Họ thường có tài sản, đất đai và là nền tảng vững chắc cho người khác nương tựa. Tuy nhiên, họ có thể thiếu sự tinh tế, đôi khi tùy tiện và không có quy củ chặt chẽ.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của nền tảng và sự trù phú & Sự thiếu quy củ. Sức mạnh của Đại Trạch Thổ nằm ở quy mô rộng lớn và khả năng nuôi dưỡng vô hạn. Nó là nền tảng cho vạn vật sinh sôi, có tấm lòng bao dung, dung nạp tất cả. Dù không cứng rắn như Thành Đầu Thổ, nhưng sức mạnh về tầm vóc và sự trù phú của nó là không thể phủ nhận.`,
         nameEn: "Inclusive Foundation",
-        descriptionEn: `Inclusive Foundation
-This is the embodiment of infinite generosity and the ability to accept all differences to create a common basis for development. It represents abundant resources, an open mindset, and the ability to nurture potential for the collective, but this excessive freedom and liberality sometimes lead to a lack of order, loose planning, and difficulty in control.
+        descriptionEn: `This is the embodiment of infinite generosity and the ability to accept all differences to create a common basis for development. It represents abundant resources, an open mindset, and the ability to nurture potential for the collective, but this excessive freedom and liberality sometimes lead to a lack of order, loose planning, and difficulty in control.
 •	Mechanism of Fertile Accretion: A form of matter capable of regeneration and providing abundant nutrients for diverse development; but the structure is often loose, lacking definition, and easily deformed into chaos.`,
       },
       {
@@ -1951,8 +1925,7 @@ This is the embodiment of infinite generosity and the ability to accept all diff
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có sức chịu đựng phi thường, kiên nhẫn, giữ chữ tín. Cuộc sống của họ thường vất vả, ít có cơ hội phát triển lớn và có thể trở nên trơ lì, vô cảm với xung quanh.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự dãi dầu & Sự thiếu màu mỡ. Sức mạnh của nó đến từ sự dãi dầu, chai sạn. Nó đã chịu đựng vô số tác động mà trở nên rắn chắc. Sức mạnh này không phải là quy mô hay sự màu mỡ, mà là sức bền và khả năng chịu đựng áp lực phi thường. Nó cũng là loại Thổ không sợ Mộc khắc.`,
         nameEn: "Enduring Forging",
-        descriptionEn: `Enduring Forging
-This is power formed from practical friction and enduring continuous pressure from the social environment. It symbolizes necessary callousness, strong survival instincts, and extraordinary patience in the face of adversity; although it may lack subtle sensitivity or breakthrough creativity, it possesses resilient bravery verified through time and challenges.
+        descriptionEn: `This is power formed from practical friction and enduring continuous pressure from the social environment. It symbolizes necessary callousness, strong survival instincts, and extraordinary patience in the face of adversity; although it may lack subtle sensitivity or breakthrough creativity, it possesses resilient bravery verified through time and challenges.
 •	Mechanism of Calloused Physical Endurance: Formed from the compression of reality, creating excellent load-bearing and friction resistance; the disadvantage is high inertness, loss of elasticity, and the inability to perceive subtle vibrations, becoming rough before emotional signals.`,
       },
       {
@@ -1964,8 +1937,7 @@ This is power formed from practical friction and enduring continuous pressure fr
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này rất linh hoạt, dễ thích nghi. Họ có nhiều khả năng tiềm ẩn. Tuy nhiên, họ thường không ổn định, hay thay đổi, thiếu lập trường và khó tập trung vào một mục tiêu lâu dài.
 •	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự thích ứng & Sự thiếu nhất quán. Đây là loại Thổ thiếu sự ổn định và kiên cố nhất. Cấu trúc của nó rời rạc, dễ bị gió thổi, nước cuốn. "Sức mạnh" của nó nằm ở sự linh hoạt, biến đổi, nhưng trong hệ quy chiếu của hành Thổ (vốn trọng sự ổn định), nó bị xem là yếu.`,
         nameEn: "Flexible Adaptation",
-        descriptionEn: `Flexible Adaptation
-This is a form of energy of unpredictable transformation, easily blending in but difficult to grasp in a fixed format. It represents multidimensional thinking and the ability to customize quickly according to circumstances to survive; however, it lacks consistency in stance and reliability regarding long-term commitment due to its constantly fluctuating nature and lack of tight cohesion.
+        descriptionEn: `This is a form of energy of unpredictable transformation, easily blending in but difficult to grasp in a fixed format. It represents multidimensional thinking and the ability to customize quickly according to circumstances to survive; however, it lacks consistency in stance and reliability regarding long-term commitment due to its constantly fluctuating nature and lack of tight cohesion.
 •	Mechanism of Adaptive Transformation: A form of discrete matter capable of changing structure instantly to fit a mold; the risk lies in the lack of internal linkage, easily swept away, dispersed, and failing to create a solid unified block to bear heavy loads.`,
       },
       {
@@ -1977,8 +1949,7 @@ This is a form of energy of unpredictable transformation, easily blending in but
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tinh thần hợp tác tốt, biết nương tựa vào người khác để cùng phát triển. Họ có khả năng làm đẹp, trang trí. Tuy nhiên, họ thiếu tính tự lập, không có chính kiến, dễ lung lay và cuộc sống thường phụ thuộc.
 •	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự cộng sinh & Sự yếu đuối vì thiếu tự chủ. Yếu nhất vì hoàn toàn thiếu tính tự chủ. Nó là một lớp vữa mỏng, phải dựa vào cấu trúc khác (Mộc, gạch) để tồn tại. Nó không có sức chống chịu, dễ dàng bị bong tróc bởi Thủy. Sức mạnh của nó gần như không có, chỉ mang giá trị trang trí và phụ thuộc.`,
         nameEn: "Symbiotic Dependence",
-        descriptionEn: `Symbiotic Dependence
-This is the symbol of aesthetic value and connection capability, but it always needs another solid fulcrum to be effective. It represents the spirit of cooperation, the embellishment of external perfection, and skillful diplomatic skills; however, this inner force lacks core autonomy and will become aimless and fragile if separated from the organization or the leader.
+        descriptionEn: `This is the symbol of aesthetic value and connection capability, but it always needs another solid fulcrum to be effective. It represents the spirit of cooperation, the embellishment of external perfection, and skillful diplomatic skills; however, this inner force lacks core autonomy and will become aimless and fragile if separated from the organization or the leader.
 •	Mechanism of Protective Covering: Plays the role of a coating layer, perfecting the surface and linking components; however, this is a dependent form of energy, unable to stand alone without a supporting frame, easily peeling off and collapsing when the fulcrum is shaken.`,
       },
       {
@@ -1990,9 +1961,8 @@ This is the symbol of aesthetic value and connection capability, but it always n
 •	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này sống rất có trật tự, tuân thủ quy tắc và có công năng bảo vệ, che chở cho người khác. Tuy nhiên, họ có thể cứng nhắc, giáo điều, mất gốc, thiếu sự linh hoạt và không có khả năng nuôi dưỡng, sáng tạo.
 •	Ngữ Nghĩa Cốt Lõi: Sự hữu ích của quy tắc & Sự mất mát bản chất tự nhiên. Đã qua lửa tôi luyện (nung thành ngói), nó trở nên rắn chắc và có công năng đặc biệt là chống lại Thủy. Sức mạnh của nó mang tính chức năng, hữu ích và có quy tắc. Tuy nhiên, nó đã mất đi bản chất tự nhiên của đất (khả năng nuôi dưỡng) và cần phải có kết cấu khác (Mộc) để nương tựa.`,
         nameEn: "Standardized Order",
-        descriptionEn: `Standardized Order
-This is a form of power that has undergone a harsh transformation process (firing/tempering) to reach hardness and utility according to a specific mold. It symbolizes adherence to rules, the function of sheltering, and high stability in the system; but to achieve that, it had to trade off its flexible natural instinct and is forced to attach to an existing structure to perform its protective role.
-Mechanism of Standardized Shaping: The limitation is brittleness, difficulty in repair when cracked or broken, and complete separation, lacking soft interference with the natural environment.`,
+        descriptionEn: `This is a form of power that has undergone a harsh transformation process (firing/tempering) to reach hardness and utility according to a specific mold. It symbolizes adherence to rules, the function of sheltering, and high stability in the system; but to achieve that, it had to trade off its flexible natural instinct and is forced to attach to an existing structure to perform its protective role.
+•	Mechanism of Standardized Shaping: The limitation is brittleness, difficulty in repair when cracked or broken, and complete separation, lacking soft interference with the natural environment.`,
       },
     ];
     return napAmData.find((item) => item.name === napAm)[

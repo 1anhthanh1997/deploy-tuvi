@@ -658,7 +658,7 @@ const getViTriSao = (saoID, thapNhiCung) => {
   return cungSaoIndex;
 };
 
-const getTuHoaBazi = (can, thapNhiCung, endName) => {
+const getTuHoaBazi = (can, thapNhiCung, endName, postName) => {
   let viTriHoaLoc, viTriHoaQuyen, viTriHoaKhoa, viTriHoaKy;
   let viTriLiemTrinh = getViTriSao(2, thapNhiCung);
   let viTriPhaQuan = getViTriSao(14, thapNhiCung);
@@ -743,33 +743,33 @@ const getTuHoaBazi = (can, thapNhiCung, endName) => {
     saoID: 94,
     saoTen:
       LANGUAGE === "en"
-        ? `Prosperity Transformation (${endName})`
+        ? `${postName}_Prosperity Transformation (${endName})`
         : `Hóa lộc (từ Can Trụ ${endName})`,
-    saoTenEn: `Prosperity Transformation (${endName})`,
+    saoTenEn: `${postName}_Prosperity Transformation (${endName})`,
   });
   thapNhiCung[viTriHoaQuyen].cungSao.push({
     saoID: 93,
     saoTen:
       LANGUAGE === "en"
-        ? `Authority Transformation (${endName})`
+        ? `${postName}_Authority Transformation (${endName})`
         : `Hóa quyền (từ Can Trụ ${endName})`,
-    saoTenEn: `Authority Transformation (${endName})`,
+    saoTenEn: `${postName}_Authority Transformation (${endName})`,
   });
   thapNhiCung[viTriHoaKhoa].cungSao.push({
     saoID: 92,
     saoTen:
       LANGUAGE === "en"
-        ? `Fame Transformation (${endName})`
+        ? `${postName}_Fame Transformation (${endName})`
         : `Hóa khoa (từ Can Trụ ${endName})`,
-    saoTenEn: `Fame Transformation (${endName})`,
+    saoTenEn: `${postName}_Fame Transformation (${endName})`,
   });
   thapNhiCung[viTriHoaKy].cungSao.push({
     saoID: 95,
     saoTen:
       LANGUAGE === "en"
-        ? `Taboo Transformation (${endName})`
+        ? `${postName}_Taboo Transformation (${endName})`
         : `Hóa kỵ (từ Can Trụ ${endName})`,
-    saoTenEn: `Taboo Transformation (${endName})`,
+    saoTenEn: `${postName}_Taboo Transformation (${endName})`,
   });
 };
 
@@ -790,46 +790,55 @@ const addTuHoaBazi = (
       can: canGio,
       endName: "Giờ/Chính",
       endNameEn: "Active",
+      postNameEn: "RH",
     },
     {
       can: canNgay,
       endName: "Ngày/Chính",
       endNameEn: "Active",
+      postNameEn: "RD",
     },
     {
       can: canThang,
       endName: "Tháng/Chính",
       endNameEn: "Passive",
+      postNameEn: "RM",
     },
     {
       can: canNam,
       endName: "Năm/Chính",
       endNameEn: "Passive",
+      postNameEn: "RY",
     },
     {
       can: canDaiVan,
       endName: "Đại Vận/Biến",
       endNameEn: "Passive",
+      postNameEn: "VX",
     },
     {
       can: canTieuVan,
       endName: "Năm/Biến",
       endNameEn: "Passive",
+      postNameEn: "VY",
     },
     {
       can: canNguyetVan,
       endName: "Tháng/Biến",
       endNameEn: "Passive",
+      postNameEn: "VM",
     },
     {
       can: canNhatVan,
       endName: "Ngày/Biến",
       endNameEn: "Active",
+      postNameEn: "VD",
     },
     {
       can: canThoiVan,
       endName: "Giờ/Biến",
       endNameEn: "Active",
+      postNameEn: "VH",
     },
   ];
   for (let item of data) {
@@ -837,7 +846,8 @@ const addTuHoaBazi = (
       getTuHoaBazi(
         item.can,
         thapNhiCung,
-        LANGUAGE === "en" ? item.endNameEn : item.endName
+        LANGUAGE === "en" ? item.endNameEn : item.endName,
+        item.postNameEn
       );
     }
   }
