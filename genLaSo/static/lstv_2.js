@@ -1616,6 +1616,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
         descriptionEn: `Weaponry
         This is metal that has been forged to its highest degree of hardness and sharpness. It is a symbol of weapons, power, iron discipline, and decisiveness, with the function of cutting and making clear distinctions.
 The core meaning is the power of sharpness and the risk of devastation. This form of Metal has reached the pinnacle of function and power; its strength is its ability to execute, define clearly, and act decisively.`,
+        coreMechanismEn: `Core Mechanism: Kinetic energy and structural rigidity are maximally concentrated at a microscopic cross-section to create absolute penetrating and severing pressure against membrane bonds. The system operates with zero elasticity. Microscopic destructive power reaches its maximum, but there is a risk of internal structural fracture (brittleness) if the impact force vector directly collides with a system of equal or greater matter density.`,
+        systemCode: "[WS-N1-2]",
       },
       {
         name: "KIM BẠCH KIM",
@@ -1629,6 +1631,8 @@ The core meaning is the power of sharpness and the risk of devastation. This for
         descriptionEn: `Pure Metal
 This is the image of metal that has been refined, separated from impurities, to become gold bars or silver ingots. It is a symbol of intrinsic value, concentration, essence, and purity.
 The core meaning is the value of purity and the noble distance of ideals. This is metal in its pure, concentrated form. Its strength is its intrinsic value and purity.`,
+        coreMechanismEn: `Core Mechanism: The structural matrix reaches atomic homogeneity and maximum matter density. The system exhibits absolute inertness, rejecting all attempts at bonding or intrusion from external variables. Its core defense mechanism is repulsion and the complete neutralization of all non-homogeneous components, maintaining originality by completely sealing its metabolic exchange ports with the environment.`,
+        systemCode: "[WS-N1-5]",
       },
       {
         name: "SA TRUNG KIM",
@@ -1642,6 +1646,8 @@ The core meaning is the value of purity and the noble distance of ideals. This i
         descriptionEn: `Metal in Sand
 This is mineral ore still mixed with earth and sand. It is a symbol of great but hidden potential, requiring excavation, refinement, and forging to become a valuable item.
 The core meaning is the power of hidden potential and the risk of being lost. Its strength is in its potential form—gold in the sand—possessing great value but still concealed and needing to be discovered.`,
+        coreMechanismEn: `Core Mechanism: Core value density exists in a state of maximum dispersion. High-density nodes are randomly mixed within a massive volume of inert impurities and signal noise. The core cannot be extracted by a single severing impulse; it requires a persistent, iterative cycle of mechanical friction, centrifugal separation, or multi-layered filtration to isolate the core signal from the surrounding valueless mass.`,
+        systemCode: "[WS-N1-4]",
       },
       {
         name: "THOA XUYẾN KIM",
@@ -1655,6 +1661,8 @@ The core meaning is the power of hidden potential and the risk of being lost. It
         descriptionEn: `Jewelry
 This is gold and silver that has been exquisitely crafted into precious ornaments. It is a symbol of nobility, elegance, beauty, social status, and wealth.
 The core meaning is the beauty of nobility and the weakness in the absence of practical combat. Its strength lies in its value and quality; it represents luxury, status, and value recognized by society.`,
+        coreMechanismEn: `Core Mechanism: The system structure has undergone micro-tuning, actively sacrificing core mechanical load-bearing capacity to optimize surface area and signal/optical radiation amplification amplitude to the maximum. The mechanical structure is highly fragile and easily broken under direct compressive pressure. Its power does not lie in physical collision force but in its ability to manipulate surface wavelengths to generate an output conversion value far exceeding its actual physical mass.`,
+        systemCode: "[WS-N1-6]",
       },
       {
         name: "HẢI TRUNG KIM",
@@ -1668,6 +1676,8 @@ The core meaning is the beauty of nobility and the weakness in the absence of pr
         descriptionEn: `Metal in the Sea
 This is a vast treasure of metals, gold, and silver deposited at the bottom of the ocean. It is a symbol of the greatest potential, of wealth and wisdom in a pure, primordial form.
 The core meaning is the power of infinite potential and the challenge of discovery. It represents the greatest intrinsic potential and value; though undiscovered, its latent reserves and value are immense.`,
+        coreMechanismEn: `Core Mechanism: The mass of latent dark matter is compressed under maximum multi-dimensional pressure at the deepest basal layer. Completely isolated from kinetic fluctuations at the surface layer. The system is in a state of absolute stasis, emitting no radiation and reflecting no signals. To extract this core structure, the system cannot use short-term collision impulses but is forced to use a specialized, continuously maintained pulling force vector to overcome the immense compressive pressure of the surrounding environment. `,
+        systemCode: "[WS-N1-1]",
       },
       {
         name: "BẠCH LẠP KIM",
@@ -1681,6 +1691,8 @@ The core meaning is the power of infinite potential and the challenge of discove
         descriptionEn: `Molten Metal
 This is metal in its initial state, either molten or not yet formed into a clear shape, still containing impurities. It is a symbol of beginnings and the potential for change, but it is still nascent and without specific value.
 The core meaning is the power of transformation and the weakness of being unformed. This is the weakest and most unstable form of Metal, not yet shaped and still containing impurities.`,
+        coreMechanismEn: `Core Mechanism: The system is in a critical phase transition. The core structure absorbs maximum heat and kinetic energy, temporarily breaking solid bonds to reshape. It is characterized by absolute malleability and can adapt to any new structural mold. However, this is a high-risk boundary state: it is easily permanently deformed or can lose integrity if environmental pressure and heat drop suddenly before the phase transition is complete.`,
+        systemCode: "[WS-N1-3]",
       },
       {
         name: "THIÊN THƯỢNG HỎA",
@@ -1694,6 +1706,8 @@ The core meaning is the power of transformation and the weakness of being unform
         descriptionEn: `The Sun
 This is the image of the sun's fire at high noon, the largest, most brilliant, and brightest source of light, encompassing all things. It is a symbol of supreme power, fairness, integrity, and abundant life energy.
 The core meaning is the power of brilliance and the risk of scorching. This is the "king of all Fires"; its power is absolute, covering all things and serving as the source of life's energy.`,
+        coreMechanismEn: `Core Mechanism: A macro-field thermal radiation system emitting continuous, omnidirectional energy from a coordinate with absolute potential energy. It uniformly blankets the entire spatial coordinate system below with kinetic energy and radiation without consuming the mass of receiving objects. Its impact capability depends entirely on the distance and radiation-catching cross-section of targets, remaining completely inert to reactive interactions or resistance from below.`,
+        systemCode: "[WS-N4-6]",
       },
       {
         name: "TÍCH LỊCH HỎA",
@@ -1707,6 +1721,9 @@ The core meaning is the power of brilliance and the risk of scorching. This is t
         descriptionEn: `Thunder
 This is the fire born from the collision of yin and yang in the universe, the thunder that shakes the heavens. It is a symbol of breakthrough power, lightning-fast change, the authority of creation, and unexpected events.
 The core meaning is the power of breakthrough and the risk of destruction. Its power is destructive and regenerative in a single moment.`,
+        coreMechanismEn:
+          "Core Mechanism: An instantaneous electromagnetic/thermodynamic pulse that releases maximal energy in a time unit approaching zero ($t \\to 0$) due to a massive potential difference between two reference frames. It creates a shockwave and fracture acceleration that pierces through all isolating envelopes. Structural destruction is abrupt, causing paralysis in opposing systems but lacking the ability to maintain a long-term exothermic state.",
+        systemCode: "[WS-N4-3]",
       },
       {
         name: "LƯ TRUNG HỎA",
@@ -1720,6 +1737,8 @@ The core meaning is the power of breakthrough and the risk of destruction. Its p
         descriptionEn: `Fire in the Furnace
 This is a flame burning within a furnace, requiring fuel (wood, coal) and space (the furnace) to be sustained. It is a symbol of inner strength, potential that needs nurturing, refinement, and the process of preparing to shine.
 The core meaning is the power of inner strength and the dependence on fuel. This is a fire with a purpose, symbolizing the power of refinement and nurtured inner strength.`,
+        coreMechanismEn: `Core Mechanism: A high-intensity confined exothermic reaction encased in a highly rigid thermal insulation shell that prevents heat from dissipating into the environment, continuously reflecting it back into the core. It requires continuous fuel input. Kinetic energy is fully focused on melting, breaking, and radically transforming the micro-structure of any object introduced into its core space.`,
+        systemCode: "[WS-N4-1]",
       },
       {
         name: "SƠN ĐẦU HỎA",
@@ -1733,6 +1752,8 @@ The core meaning is the power of inner strength and the dependence on fuel. This
         descriptionEn: `Volcano
 This is a fire smoldering within a mountain, appearing tranquil on the outside but containing immense energy within. It is a symbol of latent power, deep inner strength, sudden eruptions, and the ability to change the entire situation.
 The core meaning is the power of compression and the explosion that changes everything. It represents inner power compressed to its maximum before erupting, a fire of transformation from deep within the earth.`,
+        coreMechanismEn: `Core Mechanism: An uncontrolled high-potential surface radiation chain reaction occurring at the highest layer of the base structure. It generates a brilliant radiation spectrum and extremely fast horizontal propagation speed but lacks structural sustainability. The system completely burns and consumes the surface material membrane layer to generate instantaneous thrust, then self-extinguishes once fuel is depleted at that coordinate.`,
+        systemCode: "[WS-N4-2]",
       },
       {
         name: "SƠN HẠ HỎA",
@@ -1746,6 +1767,8 @@ The core meaning is the power of compression and the explosion that changes ever
         descriptionEn: `Man-made Fire
 This is the fire created by people at the foot of a mountain as night falls, such as a campfire or a forge's fire. It is a symbol of life, human activity, warmth, community, and the proactive energy used to dispel darkness.
 The core meaning is blazing enthusiasm and dependent strength. This is the fire of the community, serving human needs, highly practical but unstable.`,
+        coreMechanismEn: `Core Mechanism: A localized basal exothermic reaction that begins from a low potential energy point confined by narrow physical boundaries. It uses thermal convection to push kinetic energy upward. The system’s life-death cycle is short, its amplification range is narrow, and it depends entirely on the friction coefficient of adjacent basal materials.`,
+        systemCode: "[WS-N4-4]",
       },
       {
         name: "PHÚC ĐĂNG HỎA",
@@ -1759,6 +1782,8 @@ The core meaning is blazing enthusiasm and dependent strength. This is the fire 
         descriptionEn: `Lantern
 This is the light of a man-made lamp, used to illuminate the night or hidden places. It is a symbol of knowledge, civilization, joy, guidance, and warmth within a small scope.
 The core meaning is the usefulness of artificial light and the fragility in the face of storms. This is the weakest Fire in terms of physical energy; its strength lies in its spiritual and intellectual value.`,
+        coreMechanismEn: `Core Mechanism: A micro-directional optical radiation system finely tuned to maintain a minimum and stable amplitude. The reaction core is encased in an isolation module to protect it from peripheral pressure and fluid turbulence. The emitted energy is non-lethal, not intended to generate destructive structural work, but to maintain the stability of an illumination spectrum within a pre-designated narrow spatial zone.`,
+        systemCode: "[WS-N4-5]",
       },
       {
         name: "ĐẠI HẢI THỦY",
@@ -1772,6 +1797,8 @@ The core meaning is the usefulness of artificial light and the fragility in the 
         descriptionEn: `The Ocean
 This is the image of water in its vastest, most powerful, and majestic state. It is a symbol of great ambition, formidable inner strength, and limitless potential, but it also contains volatility and unpredictability.
 The core meaning is the power of greatness and the risk of aimlessness. This is the "king of all Waters," the gathering place of all currents, possessing the greatest scale and power, capable of submerging all things and accepting all other flows.`,
+        coreMechanismEn: `Core Mechanism: An ultimate thermodynamic sink with maximum capacity, acting as the final convergence point of all circulation vectors in space. It possesses near-infinite capacity to absorb, dilute, and neutralize all sources of kinetic energy, chemical energy, or anomalous impulses without altering the basal state of the core. While the deep layers exhibit static inertia, the surface membrane can resonate to generate massive amplitude oscillations when subjected to sufficiently large interaction impulses.`,
+        systemCode: "[WS-N3-6]",
       },
       {
         name: "THIÊN HÀ THỦY",
@@ -1785,6 +1812,8 @@ The core meaning is the power of greatness and the risk of aimlessness. This is 
         descriptionEn: `Rainwater
 This is rain falling from the sky, universal in nature, bestowing grace upon all living things. It is a symbol of purity, compassion, creativity, and things that are spiritual and intangible.
 The core meaning is the magic of grace and the detachment from reality. Although it lacks concentrated flow, Rainwater has the most universal impact, bestowing life over a vast area without discrimination.`,
+        coreMechanismEn: `Core Mechanism: High-potential particulate dispersion from a state of maximum potential energy. The system releases matter from the highest energy level space, allowing it to uniformly cover and permeate all topological structures at lower energy levels. It is effectively unconstrained by physical routing barriers on the surface, enabling widespread temperature neutralization and state transformation to occur simultaneously.`,
+        systemCode: "[WS-N3-4]",
       },
       {
         name: "TRƯỜNG LƯU THỦY",
@@ -1798,6 +1827,8 @@ The core meaning is the magic of grace and the detachment from reality. Although
         descriptionEn: `The Long River
 This is a great river that flows a very long course, weaving through various terrains to finally reach the sea. It is a symbol of patience, foresight, adaptability, and accumulation over time.
 The core meaning is the power of foresight and the slowness of a long path. Its strength comes from perseverance and its ceaseless flow, capable of eroding rock and changing landscapes.`,
+        coreMechanismEn: `Core Mechanism: A macro-scale transport matrix possessing colossal total mass and momentum. Due to its immense mass inertia, the system cannot abruptly change its orbital vector. Its core mechanical characteristic is the continuous generation of shear stress, slowly eroding, disintegrating, and reshaping any solid boundaries it contacts over long-term operational cycles.`,
+        systemCode: "[WS-N3-3]",
       },
       {
         name: "ĐẠI KHÊ THỦY",
@@ -1811,6 +1842,8 @@ The core meaning is the power of foresight and the slowness of a long path. Its 
         descriptionEn: `Waterfall
 This is a large flow of water at its source, in mountain ravines, flowing strongly and fiercely but without a clear direction. It is a symbol of intense vitality, enthusiasm, and the frankness of youth.
 The core meaning is the power of enthusiasm and the lack of direction of youth. The power of a Waterfall is fierce and intense but confined to a narrow and short range, representing a momentary burst of strength.`,
+        coreMechanismEn: `Core Mechanism: A turbulent kinetic flow activated by a sudden drop in potential energy differential (gradient drop). Linear velocity is driven to a maximum level for a short duration, generating vortices and high-intensity mechanical impact forces. The system shatters the equilibrium state of all objects in its trajectory with strong impulses, then dissipates energy and re-establishes a static equilibrium state at a lower level.`,
+        systemCode: "[WS-N3-5]",
       },
       {
         name: "TUYỀN TRUNG THỦY",
@@ -1824,6 +1857,8 @@ The core meaning is the power of enthusiasm and the lack of direction of youth. 
         descriptionEn: `Spring Water
 This is a clear, cool stream flowing from a source within the mountains, sometimes hidden, sometimes visible. It is a symbol of pure wisdom, clarity, and the ability to nurture silently and persistently.
 The core meaning is the purity of wisdom and the silence of dedication. Its strength lies not in destructive force but in its ability to nurture and sustain life persistently and purely.`,
+        coreMechanismEn: `Core Mechanism: A continuous unidirectional source flow emitted from a centralized origin point. Matter is maintained in an extremely low-entropy (high-purity) state. Kinetic energy is not generated from static compressive pressure but is continuously regenerated from the core source, forming a stable circulating vector capable of solventizing minor obstructive components along its linear trajectory.`,
+        systemCode: "[WS-N3-2]",
       },
       {
         name: "GIẢN HẠ THỦY",
@@ -1837,6 +1872,8 @@ The core meaning is the purity of wisdom and the silence of dedication. Its stre
         descriptionEn: `Underground Water
 This is groundwater, a current flowing in deep crevices, quiet and cool. It is a symbol of a deep inner self, hidden intellect, and persistent endurance that is rarely shown.
 The core meaning is the power of profundity and the hesitation from suspicion. This is the most deeply hidden water current; its strength is its silent, enduring, and latent existence.`,
+        coreMechanismEn: `Core Mechanism: A micro-fluidic subsurface flow of matter operating entirely beneath high-density solid structural layers, absolutely isolated from thermodynamic fluctuations at the surface. It has low linear kinetic energy but maintains extreme persistence. Its core strength is the ability to seep through microscopic structural fissures without triggering sensor or reactive force systems of mechanical barriers.`,
+        systemCode: "[WS-N3-1]",
       },
       {
         name: "ĐẠI LÂM MỘC",
@@ -1850,6 +1887,8 @@ The core meaning is the power of profundity and the hesitation from suspicion. T
         descriptionEn: `The Great Forest
 This is the image of a large forest with countless majestic, green trees. It is a symbol of prosperity, intense vitality, community, and a solid foundation.
 The core meaning is the power of majesty and the competition of the collective. Its strength comes from its scale and community; a single tree can be felled, but an entire forest is a formidable force that is very difficult to destroy.`,
+        coreMechanismEn: `Core Mechanism: Macro-network topology structure. The system does not exist as a single node but develops into a population of intimately interconnected modules. It possesses maximal mechanical resistance against external impulses by dispersing impact forces evenly across the network surface. The stability of the system is traded for immense inherent inertia: it is extremely difficult to break, but once established, it is extraordinarily slow to change its micro-orientation.`,
+        systemCode: "[WS-N2-1]",
       },
       {
         name: "TÙNG BÁCH MỘC",
@@ -1863,6 +1902,8 @@ The core meaning is the power of majesty and the competition of the collective. 
         descriptionEn: `Hardwood Trees
 This is the image of pine and cypress trees, standing tall and resilient, able to withstand frost and snow. It is a symbol of steadfastness, an iron will, longevity, integrity, and the ability to overcome adversity.
 The core meaning is the power of steadfastness and the loneliness in the cold. This is the hardest and most strong-willed type of Wood; its strength lies in its indomitable spirit and its ability to endure the harshest adversities.`,
+        coreMechanismEn: `Core Mechanism: Proliferative momentum is concentrated entirely along the vertical axis (Z-axis). The system is designed to withstand tensile stress and provide thermal isolation in extreme environments where input resources approach zero. Instead of surface expansion, it propels its core structure through chaotic layers to establish an independent positioning axis, preserving its original orientation even when peripheral components are severed.`,
+        systemCode: "[WS-N2-3]",
       },
       {
         name: "THẠCH LỰU MỘC",
@@ -1876,6 +1917,8 @@ The core meaning is the power of steadfastness and the loneliness in the cold. T
         descriptionEn: `Fruit-bearing Trees
 This is the image of a pomegranate tree, a plant whose value lies not in its wood but in its fruit. It is a symbol of inner beauty and achievement, requiring external impact to bear fruit.
 The core meaning is the beauty of achievement and growth from pressure. Its strength lies in its extraordinary vitality and its ability to turn adversity into strength, requiring pruning and pressure to grow and produce results.`,
+        coreMechanismEn: `Core Mechanism: High-friction penetration capability. This system is specialized for operating in space-constrained environments with rigid base structures whose matter density exceeds its own. It accumulates micro-kinetic energy very slowly, continuously applying expansive force to crack enclosing barriers. Upon crossing the critical point, it compresses all absorbed resources into an extremely dense matter mass at the system terminus (compressed value crystallization), generating highly concentrated destructive power or conversion value.`,
+        systemCode: "[WS-N2-6]",
       },
       {
         name: "TANG ĐỐ MỘC",
@@ -1889,6 +1932,8 @@ The core meaning is the beauty of achievement and growth from pressure. Its stre
         descriptionEn: `Multi-purpose Wood
 This is the image of a mulberry tree, a plant with special functions (raising silkworms, weaving silk). It is a symbol of skillfulness, usefulness in a specialized field, sacrifice, and silent dedication.
 The core meaning is the usefulness of expertise and silent sacrifice. Its strength lies not in hardness or stature but in its utility, flexibility, and ability to contribute.`,
+        coreMechanismEn: `Core Mechanism: The system operates as a circulating transit station in a state of systemic symbiosis. Instead of expanding to usurp space, it actively allows external entities to exploit and consume portions of its peripheral structure in a controlled depletion cycle. This calculated material “damage absorption” establishes binding links with the environment, harvesting a return stream of value in the form of higher-level energy or information, thereby creating a closed-loop supply chain.`,
+        systemCode: "[WS-N2-5]",
       },
       {
         name: "BÌNH ĐỊA MỘC",
@@ -1902,6 +1947,8 @@ The core meaning is the usefulness of expertise and silent sacrifice. Its streng
         descriptionEn: `Low-lying Plants
 These are grasses and shrubs growing on the plains; though not tall, they possess intense vitality and spread over a wide area. It is a symbol of practicality, approachability, adaptability, and community.
 The core meaning is the vitality of expansion and the lack of great stature. Its strength lies in its ability to spread and its resilient vitality; it is the strength of the many but lacks the stature of an individual.`,
+        coreMechanismEn: `Core Mechanism: Horizontal proliferation kinetic energy reaches its maximum. The system prioritizes the speed of occupying surface space in the shortest possible time rather than penetrating deeply into the base structure. It requires a highly stable surrounding environment and a continuous influx of energy. The physical structure is thin and highly susceptible to localized fracturing under sudden compressive pressure, but in return, it possesses the fastest regeneration rate and matter mass compensation in the entire system block.`,
+        systemCode: "[WS-N2-4]",
       },
       {
         name: "DƯƠNG LIỄU MỘC",
@@ -1915,6 +1962,8 @@ The core meaning is the vitality of expansion and the lack of great stature. Its
         descriptionEn: `Softwood Trees
 This is the image of a willow tree with its soft trunk and drooping branches, always swaying in the wind. It is a symbol of grace, flexibility, and charm, but it lacks hardness and a firm stance.
 The core meaning is the beauty of softness and the weakness from lacking a firm stance. It is considered the weakest because its nature is soft and flexible, lacking steadfastness and easily bending to the wind.`,
+        coreMechanismEn: `Core Mechanism: Structural elasticity and deformation amplitude reach their maximum. When facing hostile pressure or incoming force vectors, the system activates a directional yielding mechanism—actively bending in the direction of the applied force to reduce the friction coefficient to near zero. It absolutely avoids resisting with rigid compressive force (to prevent fracture), instead storing kinetic energy from the impact to restore equilibrium as soon as the external force is withdrawn.`,
+        systemCode: "[WS-N2-2]",
       },
       {
         name: "THÀNH ĐẦU THỔ",
@@ -1928,6 +1977,8 @@ The core meaning is the beauty of softness and the weakness from lacking a firm 
         descriptionEn: `Fortress Earth
 This is the earth of ramparts and dikes, which has been compacted and reinforced. It is a symbol of solidity, stability, the ability to protect, and principles. This is the form of Earth with the greatest defensive strength.
 The core meaning is the power of solidity and the risk of immutability. This type of Earth is the most solid and stable, created for the purpose of withstanding and protecting.`,
+        coreMechanismEn: `Core Mechanism: A high-strength retaining perimeter structure in which matter mass is artificially compressed to maximize density at boundary coordinates. Its mechanical function is to completely neutralize the kinetic energy of invading impulses through absolute static reactive force. The system loses directional flexibility, remains absolutely inert, and thoroughly blocks the exchange of matter or information across the boundary membrane.`,
+        systemCode: "[WS-N5-2]",
       },
       {
         name: "ÐẠI TRẠCH THỔ",
@@ -1941,6 +1992,8 @@ The core meaning is the power of solidity and the risk of immutability. This typ
         descriptionEn: `The Great Plains
 This is the earth of alluvial plains and vast foundations. It is a symbol of fertility, abundance, tolerance, and is the foundation for all things to flourish.
 The core meaning is the power of foundation, abundance, and the lack of order. Its strength lies in its vast scale and infinite capacity to nurture, providing the foundation for all life.`,
+        coreMechanismEn: `Core Mechanism: A variable-state granular accumulation system in which matter exists in an amorphous state, exhibiting characteristics of both solid and fluid depending on environmental shear force oscillations. Its capacity to absorb kinetic energy approaches infinity. The system continuously morphs its surface geometry to dissipate external impulses and never fractures because it is not rigidly locked into any fixed static structure.`,
+        systemCode: "[WS-N5-5]",
       },
       {
         name: "LỘ BÀNG THỔ",
@@ -1954,6 +2007,8 @@ The core meaning is the power of foundation, abundance, and the lack of order. I
         descriptionEn: `Roadside Earth
 This is the earth on the side of a road that has been trampled by people and vehicles until it has become hardened. It is a symbol of endurance, patience, high tolerance, and having weathered many storms.
 The core meaning is the strength of being weathered and the lack of fertility. Its strength comes from this hardened state, a resilience and an extraordinary ability to withstand pressure.`,
+        coreMechanismEn: `Core Mechanism: Maximized horizontal deposition of matter. The structure lacks strong internal molecular bonding forces and is susceptible to surface erosion by sliding kinetic energies, but its strength lies in friction dispersion: it contains and dissipates the momentum of all objects moving across it. Stability is preserved through widespread mass coverage rather than localized static rigidity.`,
+        systemCode: "[WS-N5-1]",
       },
       {
         name: "SA TRUNG THỔ",
@@ -1967,6 +2022,8 @@ The core meaning is the strength of being weathered and the lack of fertility. I
         descriptionEn: `Sandy Earth
 This is sandy soil, impure and easily changed. It is a symbol of flexibility and adaptability but lacks stability and a firm stance.
 The core meaning is the power of adaptation and the lack of consistency. This is the most unstable and least solid type of Earth; its "strength" lies in its flexibility and changeability.`,
+        coreMechanismEn: `Core Mechanism: A porous interstitial matrix with extremely high porosity, forming a micro-capillary network. Instead of relying on static compressive force to block impulses, the system uses the massive internal contact surface area of its pores to permeate, trap, and securely confine dispersed momentums. It acts as a near-perfect shock absorber, neutralizing high-frequency oscillations by subdividing impact forces deep into the material matrix.`,
+        systemCode: "[WS-N5-6]",
       },
       {
         name: "BÍCH THƯỢNG THỔ",
@@ -1980,6 +2037,8 @@ The core meaning is the power of adaptation and the lack of consistency. This is
         descriptionEn: `Building Earth (cement, plaster...)
 This is a layer of plaster or mortar on a wall that cannot exist on its own but must rely on another structure. It is a symbol of symbiosis, cooperation, and decoration but lacks autonomy.
 The core meaning is the beauty of symbiosis and the weakness from lacking self-reliance. It is the weakest because it completely lacks autonomy, relies on other structures to exist, and serves only a decorative value.`,
+        coreMechanismEn: `Core Mechanism: A vertical boundary interface where the material system is configured into a two-dimensional plane along the Y-axis to partition space and assist in bearing vertical compressive loads. Its mechanical cohesion depends entirely on an independent basal framework. If the underlying framework degrades or oscillates excessively, this system immediately fractures and disintegrates due to its inability to self-maintain its center of gravity.`,
+        systemCode: "[WS-N5-4]",
       },
       {
         name: "ỐC THƯỢNG THỔ",
@@ -1993,8 +2052,11 @@ The core meaning is the beauty of symbiosis and the weakness from lacking self-r
         descriptionEn: `Fired Earth (ceramics, bricks...)
 This is earth that has been fired into roof tiles, completely losing its natural properties. It is a symbol of order, rules, and the function of sheltering and protecting.
 The core meaning is the utility of rules and the loss of natural essence. Having been through fire, it becomes solid and has a special function but has lost its natural essence and needs to rely on another structure.`,
+        coreMechanismEn: `Core Mechanism: A suspended isolation shield for heat and impulses, where matter mass is distributed at a high potential energy layer to form a protective dome over the core structure below. It must continuously endure tensile force and deflection. While it has low mechanical impact resistance, it possesses excellent radiation reflection indices and a strong ability to neutralize temperature fluctuations from the peripheral environment.`,
+        systemCode: "[WS-N5-3]",
       },
     ];
+    return napAmData.find((item) => item.name === napAm).coreMechanismEn;
     return napAmData.find((item) => item.name === napAm)[
       LANGUAGE === "en" ? "descriptionEn" : "description"
     ];
@@ -2078,6 +2140,9 @@ The core meaning is the utility of rules and the loss of natural essence. Having
     let forceData = [
       {
         can: "Giáp",
+        selfCode: "[THE SELF-01]",
+        generalMechanism: `Carries the core DNA of growth momentum and the capacity to break environmental inertia (N-2 system). [The Self-01] routes this entire momentum along a vertical axis. It establishes a linear structure, representing an upward thrust. This mass maintains its monolithic nature and independent boundaries to preserve structural consistency from root to tip against all pressure variables. It prioritizes physical snapping over structural bending.`,
+        domainProduction: ``,
         forceRanges: [
           {
             id: 0,
@@ -2174,6 +2239,7 @@ The core meaning is the utility of rules and the loss of natural essence. Having
       },
       {
         can: "Ất",
+        selfCode: "[THE SELF-02]",
         forceRanges: [
           {
             id: 0,
@@ -2270,6 +2336,7 @@ The core meaning is the utility of rules and the loss of natural essence. Having
       },
       {
         can: "Bính",
+        selfCode: "[THE SELF-03]",
         forceRanges: [
           {
             id: 0,
@@ -2366,6 +2433,7 @@ The core meaning is the utility of rules and the loss of natural essence. Having
       },
       {
         can: "Đinh",
+        selfCode: "[THE SELF-04]",
         forceRanges: [
           {
             id: 0,
@@ -2461,6 +2529,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
       },
       {
         can: "Mậu",
+        selfCode: "[THE SELF-05]",
         forceRanges: [
           {
             id: 0,
@@ -2557,6 +2626,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
       },
       {
         can: "Kỷ",
+        selfCode: "[THE SELF-06]",
         forceRanges: [
           {
             id: 0,
@@ -2652,6 +2722,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
       },
       {
         can: "Canh",
+        selfCode: "[THE SELF-07]",
         forceRanges: [
           {
             id: 0,
@@ -2748,6 +2819,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
       },
       {
         can: "Tân",
+        selfCode: "[THE SELF-08]",
         forceRanges: [
           {
             id: 0,
@@ -2844,6 +2916,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
       },
       {
         can: "Nhâm",
+        selfCode: "[THE SELF-09]",
         forceRanges: [
           {
             id: 0,
@@ -2940,6 +3013,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
       },
       {
         can: "Quý",
+        selfCode: "[THE SELF-10]",
         forceRanges: [
           {
             id: 0,
@@ -3429,128 +3503,159 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
       "KIẾM PHONG KIM": {
         en: "Weaponry",
         vi: "Kiếm Phong Kim",
+        systemCode: "[WS-N1-2]",
       },
       "KIM BẠCH KIM": {
         en: "Pure Metal",
         vi: "Kim Bạch Kim",
+        systemCode: "[WS-N1-5]",
       },
       "SA TRUNG KIM": {
         en: "Metal in Sand",
         vi: "Sa Trung Kim",
+        systemCode: "[WS-N1-4]",
       },
       "THOA XUYẾN KIM": {
         en: "Jewelry",
         vi: "Thoa Xuyến Kim",
+        systemCode: "[WS-N1-6]",
       },
       "HẢI TRUNG KIM": {
         en: "Metal in the Sea",
         vi: "Hải Trung Kim",
+        systemCode: "[WS-N1-1]",
       },
       "BẠCH LẠP KIM": {
         en: "Molten Metal",
         vi: "Bạch Lạp Kim",
+        systemCode: "[WS-N1-3]",
       },
       // Fire Elements
       "THIÊN THƯỢNG HỎA": {
         en: "The Sun",
         vi: "Thiên Thượng Hỏa",
+        systemCode: "[WS-N4-6]",
       },
       "TÍCH LỊCH HỎA": {
         en: "Thunder",
         vi: "Tích Lịch Hỏa",
+        systemCode: "[WS-N4-3]",
       },
       "LƯ TRUNG HỎA": {
         en: "Fire in the Furnace",
         vi: "Lư Trung Hỏa",
+        systemCode: "[WS-N4-1]",
       },
       "SƠN ĐẦU HỎA": {
         en: "Volcano",
         vi: "Sơn Đầu Hỏa",
+        systemCode: "[WS-N4-2]",
       },
       "SƠN HẠ HỎA": {
         en: "Man-made Fire",
         vi: "Sơn Hạ Hỏa",
+        systemCode: "[WS-N4-4]",
       },
       "PHÚC ĐĂNG HỎA": {
         en: "Lantern",
         vi: "Phúc Đăng Hỏa",
+        systemCode: "[WS-N4-5]",
       },
       // Water Elements
       "ĐẠI HẢI THỦY": {
         en: "The Ocean",
         vi: "Đại Hải Thủy",
+        systemCode: "[WS-N3-6]",
       },
       "THIÊN HÀ THỦY": {
         en: "Rainwater",
         vi: "Thiên Hà Thủy",
+        systemCode: "[WS-N3-4]",
       },
       "TRƯỜNG LƯU THỦY": {
         en: "The Long River",
         vi: "Trường Lưu Thủy",
+        systemCode: "[WS-N3-3]",
       },
       "ĐẠI KHÊ THỦY": {
         en: "Waterfall",
         vi: "Đại Khê Thủy",
+        systemCode: "[WS-N3-5]",
       },
       "TUYỀN TRUNG THỦY": {
         en: "Spring Water",
         vi: "Tuyền Trung Thủy",
+        systemCode: "[WS-N3-2]",
       },
       "GIẢN HẠ THỦY": {
         en: "Underground Water",
         vi: "Giản Hạ Thủy",
+        systemCode: "[WS-N3-1]",
       },
       // Wood Elements
       "ĐẠI LÂM MỘC": {
         en: "The Great Forest",
         vi: "Đại Lâm Mộc",
+        systemCode: "[WS-N2-1]",
       },
       "TÙNG BÁCH MỘC": {
         en: "Hardwood Trees",
         vi: "Tùng Bách Mộc",
+        systemCode: "[WS-N2-3]",
       },
       "THẠCH LỰU MỘC": {
         en: "Fruit-bearing Trees",
         vi: "Thạch Lựu Mộc",
+        systemCode: "[WS-N2-6]",
       },
       "TANG ĐỐ MỘC": {
         en: "Multi-purpose Wood",
         vi: "Tang Đố Mộc",
+        systemCode: "[WS-N2-5]",
       },
       "BÌNH ĐỊA MỘC": {
         en: "Low-lying Plants",
         vi: "Bình Địa Mộc",
+        systemCode: "[WS-N2-4]",
       },
       "DƯƠNG LIỄU MỘC": {
         en: "Softwood Trees",
         vi: "Dương Liễu Mộc",
+        systemCode: "[WS-N2-2]",
       },
       // Earth Elements
       "THÀNH ĐẦU THỔ": {
         en: "Fortress Earth",
         vi: "Thành Đầu Thổ",
+        systemCode: "[WS-N5-2]",
       },
       "ĐẠI TRẠCH THỔ": {
         en: "The Great Plains",
         vi: "Đại Trạch Thổ",
+        systemCode: "[WS-N5-5]",
       },
       "LỘ BÀNG THỔ": {
         en: "Roadside Earth",
         vi: "Lộ Bàng Thổ",
+        systemCode: "[WS-N5-1]",
       },
       "SA TRUNG THỔ": {
         en: "Sandy Earth",
         vi: "Sa Trung Thổ",
+        systemCode: "[WS-N5-6]",
       },
       "BÍCH THƯỢNG THỔ": {
         en: "Building Earth (cement, plaster...)",
         vi: "Bích Thượng Thổ",
+        systemCode: "[WS-N5-4]",
       },
       "ỐC THƯỢNG THỔ": {
         en: "Fired Earth (ceramics, bricks...)",
         vi: "Ốc Thượng Thổ",
+        systemCode: "[WS-N5-3]",
       },
     };
+    return data[napAm].systemCode;
     return LANGUAGE === "en" ? data[napAm].en : data[napAm].vi;
   };
 
@@ -4315,10 +4420,12 @@ ${
 •	Root Day Pillar: ${getNapAmData(nhatChu.nguHanhNapAm)}
 •	Root Hour Pillar: ${getNapAmData(gio ? gio.nguHanhNapAm : "")}
 
-${getNapAm(nam.nguHanhNapAm)}\n
-${getNapAm(thang.nguHanhNapAm)}\n
-${getNapAm(nhatChu.nguHanhNapAm)}\n
-${getNapAm(gio ? gio.nguHanhNapAm : "")}
+Inner Strength comes from the Year Pillar ${getNapAm(nam.nguHanhNapAm)}\n
+Inner Strength comes from the Month Pillar ${getNapAm(thang.nguHanhNapAm)}\n
+Inner Strength comes from the Day Pillar ${getNapAm(nhatChu.nguHanhNapAm)}\n
+Inner Strength comes from the Hour Pillar ${getNapAm(
+      gio ? gio.nguHanhNapAm : ""
+    )}
 `;
     return LANGUAGE === "en" ? tuTruEn : tuTru;
   };
