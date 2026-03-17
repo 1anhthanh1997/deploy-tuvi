@@ -2111,8 +2111,11 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
       {
         can: "Giáp",
         selfCode: "[THE SELF-01]",
-        generalMechanism: `Carries the core DNA of growth momentum and the capacity to break environmental inertia (N-2 system). [The Self-01] routes this entire momentum along a vertical axis. It establishes a linear structure, representing an upward thrust. This mass maintains its monolithic nature and independent boundaries to preserve structural consistency from root to tip against all pressure variables. It prioritizes physical snapping over structural bending.`,
-        domainProduction: ``,
+        generalMechanism: `• General Mechanism: Carries the core DNA of growth momentum and the capacity to break environmental inertia (N-2 system). [The Self-01] routes this entire momentum along a vertical axis. It establishes a linear structure, representing an upward thrust. This mass maintains its monolithic nature and independent boundaries to preserve structural consistency from root to tip against all pressure variables. It prioritizes physical snapping over structural bending.`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Centralized Linear Structure. Forces the system to grow vertically, building its own hardware foundation rather than integrating peripherally. The weakness is the creation of bottlenecks at the executive level and the risk of supply chain disruption due to a refusal to pivot when the market fluctuates .
+•	Love/Romance Projection: Provides a fixed operational boundary and high consistency. Demands the partner be compatible with its linear trajectory. The risk lies in the imposition of rules, a lack of elasticity in communication, and the activation of an immediate disconnection mechanism if its core orientation is violated .
+• Healing/Shadow Projection: Operates as a Hardware Defense Mechanism. Resists pressure with extreme independence. Preserves the status quo of the core physiological structure by sealing receptive boundaries and rejecting all interventions. The risk is a sudden nervous system snap due to compression exceeding its structural load limit .
+`,
         forceRanges: [
           {
             id: 0,
@@ -2121,11 +2124,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng có nhiều nước và cây cối, khu rừng càng trở nên bất khả xâm phạm.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút kim loại (Kim) cố gắng đốn hạ khu rừng sẽ bị "nuốt chửng" và gây ra sự phản kháng dữ dội. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
             `,
-            titleEn: `Jia Wood The Self - Extremely Hard: > 74%`,
-            dataEn: `•	Interpretation: In this state, the ancient tree has grown into an entire forest, blocking out all light. Ambition becomes ruthless domination, and principles become unshakeable dogma. They become tyrannical, overwhelming, and create a suffocating environment that stifles the growth of those around them.
-•	Favorable Forces: Following the "Follow the Hard" structure, they strongly prefer Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival). The more water and trees there are, the more impenetrable the forest becomes.
-•	Unfavorable Forces: Power Forces (the Leader & the Warrior) are the number one Harmful God/Force. A small amount of metal (Kim) trying to fell the forest will be "swallowed" and provoke a fierce resistance. Economic Forces (the Provider & the Venturer) are also very unfavorable.
-`,
+            titleEn: `[THE SELF-01] YANG PEAK: > 74%`,
+            dataEn: `Vertical momentum density reaches maximum saturation. This extreme state carries two scenarios: (1) It becomes an absolute overwhelming force, piercing and reshaping the entire macro-structure of the environment. (2) Its monolithic nature completely nullifies elastic amplitude, leading to Structural Shattering from within when subjected to micro-torsional forces because the material refuses to bend .`,
           },
           {
             id: 1,
@@ -2134,11 +2134,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để được tôi luyện. Power Forces (the Leader & the Warrior) để cắt tỉa cành lá, tạo nên hình dáng hữu dụng; Economic Forces (the Provider & the Venturer) để có đất đai cắm rễ; Creation Forces (the Creator & the Innovator) để Mộc sinh Hỏa, thể hiện tài năng.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng tạo ra sự cạnh tranh về không gian và ánh sáng.
             `,
-            titleEn: `Jia Wood The Self - Hard: 65% – 74%`,
-            dataEn: `•	Interpretation: This is the archetype of the Jia Wood natural-born leader. They are steadfast, principled, straightforward, and always aspire to rise. Like a great tree, they are a pillar for the community, a place of shelter for the weaker. They inspire with their integrity and indomitable will.
-•	Favorable Forces: Prefers opposing forces to be tempered. Power Forces (the Leader & the Warrior) to prune branches and leaves, creating a useful shape; Economic Forces (the Provider & the Venturer) to have land to root in; Creation Forces (the Creator & the Innovator) for Wood to produce Fire, expressing their talent.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival), as they create competition for space and light.
-`,
+            titleEn: `[THE SELF-01] YANG : 65% – 74%`,
+            dataEn: `Operates at maximum internal power. Generates its own momentum to break environmental inertia, establishing an independent directional framework that forces peripheral components to operate within its orbit .`,
           },
           {
             id: 2,
@@ -2147,11 +2144,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
             `,
-            titleEn: `Jia Wood The Self - Balanced (leaning Hard): 55% – 65%`,
-            dataEn: `•	Interpretation: This is a proactive and vibrant version of the Jia Wood The Self. They are confident in their path, ready to lead and defend their views. They are visionary leaders, those who lay the foundation and set the direction for an entire collective.
-•	Favorable Forces: Prioritizes Power Forces, Economic Forces, and Creation Forces.
-•	Unfavorable Forces: Support Forces and Companion Forces.
-`,
+            titleEn: `[THE SELF-01] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `Sustainable linear momentum accompanied by tactical flexibility. Accepts mechanical concessions at local bottlenecks but absolutely preserves its initial axis orientation .`,
           },
           {
             id: 3,
@@ -2160,11 +2154,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Power Forces (the Leader/Warrior) để có kỷ luật và sự công nhận, và Creation Forces (the Creator/Innovator) để thể hiện tài năng một cách hiệu quả.
 • Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
             `,
-            titleEn: `Jia Wood The Self - True Balance: 45% – 55%`,
-            dataEn: `•	Interpretation: This is the most ideal state for the Jia Wood The Self. They maintain their directness and steadfastness while also possessing necessary resilience. Like bamboo, they are "hard but not brittle, soft but not weak." They are wise leaders who know when to rise up and when to bend with the wind.
-•	Favorable Forces: Very flexible. They often prefer Power Forces (the Leader/Warrior) for discipline and recognition, and Creation Forces (the Creator/Innovator) to express their talent effectively.
-•	Unfavorable Forces: Any force that appears in excess and breaks the balance.
-`,
+            titleEn: `[THE SELF-01] TRUE BALANCED: 45% – 55%`,
+            dataEn: `Optimizes the balance between autonomous upward thrust and integration capacity. Freely switches between self-piercing mechanisms via internal force and leveraging the ecosystem, depending on pressure differentials .`,
           },
           {
             id: 4,
@@ -2173,11 +2164,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp họ có nền tảng vững chắc.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
             `,
-            titleEn: `Jia Wood The Self - Balanced (leaning Soft): 35% – 45%`,
-            dataEn: `•	Interpretation: This is a more humble and cooperative version of the Jia Wood The Self. They still maintain their integrity but understand that their strength is best utilized as part of a larger structure. They are project managers, reliable pillars within a team.
-•	Favorable Forces: Prefers allied forces. Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) help them have a solid foundation.
-•	Unfavorable Forces: Power Forces, Economic Forces, and Creation Forces.
-`,
+            titleEn: `[THE SELF-01] BALANCED LEANING YIN : 35% – 45%`,
+            dataEn: `Internal force density declines. Instead of generating its own thrust, the system shifts to tracking and relying on more sustainable peripheral structures to continue rising, thus conserving energy .`,
           },
           {
             id: 5,
@@ -2186,11 +2174,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để cây có thể lớn lên.
 • Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như rìu chặt cây non. Creation Forces và Economic Forces cũng làm họ kiệt sức.
             `,
-            titleEn: `Jia Wood The Self - Soft: 25% – 35%`,
-            dataEn: `•	Interpretation: Their instinct is to grow straight and tall, but they lack the "water" (support) and "earth" (resources) to do so. This creates a sense of helplessness, having great ambitions that cannot be realized. They fear being "cut down" by pressure and criticism.
-•	Favorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are most needed for the tree to grow.
-•	Unfavorable Forces: Very averse to Power Forces (the Leader & the Warrior) - like an axe chopping a sapling. Creation Forces and Economic Forces also exhaust them.
-`,
+            titleEn: `[THE SELF-01] YIN: 25% – 35%`,
+            dataEn: `Autonomous momentum yields to environmental gravity. The structure survives by weaving through barriers and fully integrating into the surrounding ecosystem .`,
           },
           {
             id: 6,
@@ -2199,17 +2184,19 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút nước hay cây khác cũng sẽ "đánh thức" bản năng Nhật Chủ Giáp Mộc, phá vỡ cấu trúc Tòng cách và gây ra tai họa.
             `,
-            titleEn: `Jia Wood The Self - Extremely Soft: < 25%`,
-            dataEn: `•	Interpretation: In this state, the Jia Wood The Self must completely abandon their leadership instincts and will to rise in order to "Follow" (Tòng) the most prosperous opposing force. They must learn to become fuel for another fire, or a decoration in a garden.
-•	Favorable Forces: The most prosperous force that the The Self is "Following" (can be Economic, Power, or Creation Forces) and the force that produces it.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are the number one Harmful God/Force. A little water or another tree will "awaken" the Jia Wood instinct, breaking the Follower structure and causing disaster.
-`,
+            titleEn: `[THE SELF-01] YIN VOID: < 25%`,
+            dataEn: `The autonomous core completely loses its momentum. The structure's physical boundaries are broken, degenerating into passive raw material. The system loses its directional capacity, subjected entirely to the shaping and recycling pressures of the environment without generating any reactive force .`,
           },
         ],
       },
       {
         can: "Ất",
         selfCode: "[THE SELF-02]",
+        generalMechanism: `• General Mechanism: Carries the core DNA of branching momentum (N-2 system). Optimizes this momentum across horizontal surface space. It expands not through direct impact force, but by distributing nodes into an interconnected network. It alters its morphology to weave through gaps, establishing multi-touchpoints and integrating into the ecosystem .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Decentralized Scaling model. Its core capacity lies in building partner networks and pivoting flexibly. The weaknesses are resource dispersion, a tendency toward dependency, a lack of proprietary core technology, and susceptibility to chain collapses when the ecosystem breaks down .
+• Love/Romance Projection: Operates as a Frequency Synchronization mechanism. Seeks safety by constantly calibrating behavioral parameters to remain compatible with the partner. The risk is Enmeshment, the loss of separate boundaries, and using Fawning as a primary protocol to maintain the connection .
+• Healing/Shadow Projection: Operates as Somatic Permeability. This mechanism reacts by continuously scanning and assimilating peripheral stress to disperse conflict. The lack of hard boundaries leads to data overload, causing Chronic dysregulation of the autonomic nervous system .
+`,
         forceRanges: [
           {
             id: 0,
@@ -2218,11 +2205,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival).
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút kim loại (Kim) cố gắng cắt tỉa sẽ khiến chúng càng phản ứng mạnh mẽ hơn. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
             `,
-            titleEn: `Yi Wood - Extremely Hard: > 74%`,
-            dataEn: `•	Interpretation: At this point, the vine is no longer gentle but becomes invasive, strangling everything it entwines. Flexibility turns into unscrupulous maneuvering. The ability to connect becomes a complex network of cliques. They create a chaotic, entangled environment to survive and dominate.
-•	Favorable Forces: Following the "Follow the Hard" structure, they strongly prefer Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival).
-•	Unfavorable Forces: Power Forces (the Leader & the Warrior) are the number one Harmful God/Force. A small amount of metal (Kim) trying to prune them will only make them react more aggressively. Economic Forces (the Provider & the Venturer) are also very unfavorable.
-`,
+            titleEn: `[THE SELF-02] YANG PEAK: > 74%`,
+            dataEn: `Spreading momentum exceeds the surface resolution threshold. Connection points cross over each other chaotically, creating system congestion. The structure loses flexibility, becoming dense and suffocating its own signal transmission capabilities under the weight of countless redundant touchpoints .`,
           },
           {
             id: 1,
@@ -2231,11 +2215,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập. Power Forces (the Leader & the Warrior) để có giàn leo; Economic Forces (the Provider & the Venturer) để có đất bám; Creation Forces (the Creator & the Innovator) để Mộc sinh Hỏa, giúp hoa nở rực rỡ.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng tạo ra một mớ dây leo hỗn loạn, tranh giành nhau.
             `,
-            titleEn: `Yi Wood - Hard: 65% – 74%`,
-            dataEn: `•	Interpretation: This is the archetype of the Yi Wood diplomat, the master networker. They are flexible, skillful, and have an extraordinary ability to adapt. They do not confront directly but achieve their goals by "climbing" onto existing structures (a company, a powerful person) and beautifying that very structure.
-•	Favorable Forces: Prefers opposing forces. Power Forces (the Leader & the Warrior) to have a trellis to climb; Economic Forces (the Provider & the Venturer) to have soil to cling to; and Creation Forces (the Creator & the Innovator) for Wood to produce Fire, helping the flowers bloom brilliantly.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival), as they create a tangled mess of competing vines.
-`,
+            titleEn: `[THE SELF-02] YANG: 65% – 74%`,
+            dataEn: `Maximizes surface expansion using internal force. Proactively establishes touchpoints to cover empty spaces, neutralizing barriers by weaving a dense, inextricably linked network .`,
           },
           {
             id: 2,
@@ -2244,11 +2225,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
             `,
-            titleEn: `Yi Wood - Balanced (leaning Hard): 55% – 65%`,
-            dataEn: `•	Interpretation: This is a proactive and vibrant version of Yi Wood. They are confident in their survival and adaptation skills, unafraid of difficulties, and always find a way to rise up. They are creative and flexible problem-solvers.
-•	Favorable Forces: Prioritizes Power Forces, Economic Forces, and Creation Forces.
-•	Unfavorable Forces: Support Forces and Companion Forces.
-`,
+            titleEn: `[THE SELF-02] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `Spreads continuously under the control of routing algorithms. Retracts nodes in high-friction areas and expands in advantageous zones, optimizing connectivity .`,
           },
           {
             id: 3,
@@ -2257,11 +2235,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để thể hiện vẻ đẹp của mình và Economic Forces (the Provider/Venturer) để vẻ đẹp đó được công nhận và có giá trị.
 • Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
             `,
-            titleEn: `Yi Wood - True Balance: 45% – 55%`,
-            dataEn: `•	Interpretation: This is the most ideal state for Yi Wood. They are both gentle and graceful, yet possess their own vitality. They are skillful in communication, refined in their perceptions, and capable of bringing beauty and harmony to their surroundings. They are natural-born artists, diplomats, and mediators.
-•	Favorable Forces: Very flexible. They often prefer Creation Forces (the Creator/Innovator) to express their beauty and Economic Forces (the Provider/Venturer) for that beauty to be recognized and valued.
-•	Unfavorable Forces: Any force that appears in excess and breaks the balance.
-`,
+            titleEn: `[THE SELF-02] TRUE BALANCED: 45% – 55%`,
+            dataEn: `A dynamic balance between spreading capacity and elasticity. The network maintains enough porosity to absorb shocks while holding a grip deep enough to stabilize its position, establishing a perfect two-way resource exchange cycle .`,
           },
           {
             id: 4,
@@ -2270,11 +2245,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là rất quan trọng.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
             `,
-            titleEn: `Yi Wood - Balanced (leaning Soft): 35% – 45%`,
-            dataEn: `•	Interpretation: This is a humble version of Yi Wood that needs protection. They are adaptable but require a favorable environment to thrive. They are good at teamwork and know how to rely on others to advance together.
-•	Favorable Forces: Prefers allied forces. Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are very important.
-•	Unfavorable Forces: Power Forces, Economic Forces, and Creation Forces.
-`,
+            titleEn: `[THE SELF-02] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `Self-generated kinetic energy declines. The system maintains its expansion by integrating its nodes into more rigid physical frameworks within the environment to optimize energy consumption .`,
           },
           {
             id: 5,
@@ -2283,11 +2255,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) - như nước tưới - là quan trọng nhất. Companion Forces (the Companion & the Rival) cũng rất cần thiết.
 • Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như dao cắt cỏ. Creation Forces và Economic Forces cũng làm họ kiệt quệ.
             `,
-            titleEn: `Yi Wood - Soft: 25% – 35%`,
-            dataEn: `•	Interpretation: They possess latent vitality, but the environment is too harsh. They feel small, weak, and vulnerable. They are always in a defensive state, trying to find a loophole, the smallest bit of help to survive.
-•	Favorable Forces: Support Forces (the Mentor & the Maverick) - like watering - are the most important. Companion Forces (the Companion & the Rival) are also very necessary.
-•	Unfavorable Forces: Very averse to Power Forces (the Leader & the Warrior) - like a lawnmower's blade. Creation Forces and Economic Forces also deplete them.
-`,
+            titleEn: `[THE SELF-02] YIN: 25% – 35%`,
+            dataEn: `Loses the ability to self-expand its boundaries. Plugs its communication nodes into another macro-structure, operating entirely on the resource flow of the host system .`,
           },
           {
             id: 6,
@@ -2296,17 +2265,19 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút nước hay cây khác cũng sẽ "đánh thức" bản năng sinh tồn, phá vỡ cấu trúc Tòng cách và gây ra khủng hoảng.
             `,
-            titleEn: `Yi Wood - Extremely Soft: < 25%`,
-            dataEn: `•	Interpretation: In this state, Yi Wood must completely abandon its growth nature to "Follow" (Tòng) the most prosperous opposing force. They must learn to find beauty and purpose in decay or in becoming part of something else.
-•	Favorable Forces: The most prosperous force that the The Self is "Following" (can be Economic, Power, or Creation Forces) and the force that produces it.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are the number one Harmful God/Force. A little water or another plant will "awaken" the survival instinct, breaking the Follower structure and causing a crisis.
-`,
+            titleEn: `[THE SELF-02] YIN VOID: < 25%`,
+            dataEn: `The network completely severs its physical links. This extreme state carries two scenarios: (1) The structure is crushed, losing its positioning capacity and being entirely assimilated into junk data by the environment. (2) It achieves absolute Invisibility. The nodes become covert algorithms, infiltrating and manipulating the ecosystem's operational flows from the shadows without being measured or extinguished .`,
           },
         ],
       },
       {
         can: "Bính",
         selfCode: "[THE SELF-03]",
+        generalMechanism: `• General Mechanism: Operates via thermodynamic conversion processes (N-4 system). Consumes material structures as fuel to activate multi-directional optical radiation. Prioritizes spread speed, surface coverage, and information transparency, overwhelming the environment with high energy intensity .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Scaling & Branding Engine. Prioritizes Blitz-scaling strategies, pushing the burn rate high to dominate the information space. The core risk is building a system devoid of core assets, leading to operational crises and structural collapse when the cash flow is cut .
+• Love/Romance Projection: Projects high-intensity interactive energy (Over-stimulation). Demands absolute public visibility and transparent data flow from the partner. The risk is information saturation in the early stages without the structure to maintain it, leading to system disconnection when stimulating variables are depleted .
+• Healing/Shadow Projection: Operates as a Hyper-arousal Defense mechanism. Handles static pressure by constantly amplifying energy outward, maintaining nervous system stimulation to avoid processing core voids. Maintaining continuous radiation leads to Severe Burnout .
+`,
         forceRanges: [
           {
             id: 0,
@@ -2315,11 +2286,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng có nhiều nhiên liệu và đồng minh, ngọn lửa càng bùng cháy rực rỡ.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút nước (Thủy) cũng có thể gây ra một vụ nổ hơi nước dữ dội, dẫn đến sự sụp đổ thảm khốc. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
             `,
-            titleEn: `Bing Fire - Extremely Hard: > 74%`,
-            dataEn: `•	Interpretation: At this point, the Sun no longer shines but scorches. Enthusiasm and generosity turn into an overwhelming, suffocating presence that overshadows everyone around. They become extremely arrogant, seeing themselves as the center of the universe, unable to listen to or accept differences. Their directness becomes a lack of tact, easily causing hurt.
-•	Favorable Forces: Following the "Follow the Hard" structure, they strongly prefer Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival). The more fuel and allies they have, the more brilliantly the fire burns.
-•	Unfavorable Forces: Power Forces (the Leader & the Warrior) are the number one Harmful God/Force. A little water (Thủy) can cause a violent steam explosion, leading to a catastrophic collapse. Economic Forces (the Provider & the Venturer) are also very unfavorable.
-`,
+            titleEn: `[THE SELF-03] YANG PEAK: > 74%`,
+            dataEn: `Dispersion speed and fuel consumption rates reach infinity. This state carries two scenarios: (1) Creates a blinding optical explosion, establishing absolute cognitive dominance and reshaping the entire information ecosystem. (2) The amplification speed exceeds the hardware's load limit, leading to a core Meltdown, completely incinerating the physical foundation and collapsing at the peak of its acceleration .`,
           },
           {
             id: 1,
@@ -2328,11 +2296,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập. Power Forces (the Leader & the Warrior) giúp họ có được quyền lực và sự tôn trọng; Economic Forces (the Provider & the Venturer) cho họ mục tiêu để chinh phục; Creation Forces (the Creator & the Innovator) để họ thể hiện năng lượng của mình.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng khiến ngọn lửa trở nên quá nóng và khó kiểm soát.
             `,
-            titleEn: `Bing Fire - Hard: 65% – 74%`,
-            dataEn: `•	Interpretation: This is the archetype of the Bing Fire natural-born leader. They naturally radiate positive energy, generosity, and enthusiasm. Their charisma makes people want to follow them. They are the center of all attention, always open, transparent, and full of passion.
-•	Favorable Forces: Prefers opposing forces. Power Forces (the Leader & the Warrior) help them gain power and respect; Economic Forces (the Provider & the Venturer) give them goals to conquer; Creation Forces (the Creator & the Innovator) allow them to express their energy.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival), as they make the fire too hot and difficult to control.
-`,
+            titleEn: `[THE SELF-03] YANG: 65% – 74%`,
+            dataEn: `Surface radiation is maintained at maximum energy. Actively converts fuel to release thrust, suppressing other information flows. Forces peripheral components to operate under the transmission protocols it dictates .`,
           },
           {
             id: 2,
@@ -2341,11 +2306,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces để tối ưu hóa tiềm năng.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
             `,
-            titleEn: `Bing Fire - Balanced (leaning Hard): 55% – 65%`,
-            dataEn: `•	Interpretation: This is an energetic and proactive version of Bing Fire. They are confident in their charisma, ready to step up, lead, and spread positivity. They are initiators, inspiring leaders who are powerful and clear.
-•	Favorable Forces: Prioritizes Power Forces, Economic Forces, and Creation Forces to optimize their potential.
-•	Unfavorable Forces: Support Forces and Companion Forces.
-`,
+            titleEn: `[THE SELF-03] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `High dispersion speed but integrated with a pressure relief valve. Maintains overarching influence but can automatically regulate radiation intensity to optimize the hardware's lifecycle .`,
           },
           {
             id: 3,
@@ -2354,11 +2316,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 •	Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để thể hiện bản thân một cách khôn ngoan, hoặc Economic Forces (the Provider/Venturer) để có mục tiêu rõ ràng.
 •	Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
             `,
-            titleEn: `Bing Fire - True Balance: 45% – 55%`,
-            dataEn: `•	Interpretation: This is the most ideal state for Bing Fire. Their enthusiasm and generosity are expressed in a moderate and pleasant way. They possess both the charisma of a leader and the subtlety to understand others. They know when to shine and when to step back.
-•	Favorable Forces: Very flexible. They often prefer Creation Forces (the Creator/Innovator) to express themselves wisely, or Economic Forces (the Provider/Venturer) to have clear goals.
-•	Unfavorable Forces: Any force that appears in excess and breaks the balance.
-`,
+            titleEn: `[THE SELF-03] TRUE BALANCED: 45% – 55%`,
+            dataEn: `A 1:1 intersection between the fuel intake rate and emitted radiant energy. Establishes a sustainable conversion cycle, maintaining continuous information transmission without degrading the core structure .`,
           },
           {
             id: 4,
@@ -2367,11 +2326,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp Nhật Chủ tự tin tỏa sáng.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
             `,
-            titleEn: `Bing Fire - Balanced (leaning Soft): 35% – 45%`,
-            dataEn: `•	Interpretation: This is a gentler and more skillful version of Bing Fire. They still have charisma and warmth but express it more humbly and subtly. They shine by supporting and highlighting others.
-•	Favorable Forces: Prefers allied forces. Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) help the The Self shine confidently.
-•	Unfavorable Forces: Power Forces, Economic Forces, and Creation Forces.
-`,
+            titleEn: `[THE SELF-03] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `The capacity to self-generate optical energy declines. Shifts to a secondary amplification mechanism: receiving thermal energy from other macro-structures to maintain its own display surface .`,
           },
           {
             id: 5,
@@ -2380,11 +2336,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để "thổi bùng" ngọn lửa.
 • Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như nước dập tắt lửa. Economic Forces và Creation Forces cũng làm họ kiệt sức.
             `,
-            titleEn: `Bing Fire - Soft: 25% – 35%`,
-            dataEn: `•	Interpretation: Their nature is to want to shine, but they lack the energy to do so. This creates an internal conflict, which can make them lack confidence or be envious of others' success. They have great ambitions but lack the strength to achieve them.
-•	Favorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are most needed to "ignite" the flame.
-•	Unfavorable Forces: Very averse to Power Forces (the Leader & the Warrior) - like water extinguishing a fire. Economic Forces and Creation Forces also exhaust them.
-`,
+            titleEn: `[THE SELF-03] YIN: 25% – 35%`,
+            dataEn: `Radiation density narrows significantly. Dispersion capacity flickers and becomes dependent on environmental pressure. It is easily disrupted and drowned out by higher-intensity information flows .`,
           },
           {
             id: 6,
@@ -2393,17 +2346,19 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút hỗ trợ cũng sẽ "đánh thức" bản năng Mặt Trời, phá vỡ cấu trúc Tòng cách và gây ra tai họa.
             `,
-            titleEn: `Bing Fire - Extremely Soft: < 25%`,
-            dataEn: `•	Interpretation: In this state, Bing Fire must abandon its "Sun" nature to "Follow" (Tòng) the most prosperous opposing force. They must learn to live without being the center of the universe.
-•	Favorable Forces: The most prosperous force that the The Self is "Following" (can be Economic, Power, or Creation Forces) and the force that produces it.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are the number one Harmful God/Force. A little support will "awaken" the Sun instinct, breaking the Follower structure and causing disaster.
-`,
+            titleEn: `[THE SELF-03] YIN VOID: < 25%`,
+            dataEn: `The radiation process extinguishes completely due to thermodynamic depletion. The system enters a state of heat death, losing its capacity to luminesce. It transforms into a Thermal sink, maintaining minimal operations by passively receiving the environment's data flow without generating any reflection .`,
           },
         ],
       },
       {
         can: "Đinh",
         selfCode: "[THE SELF-04]",
+        generalMechanism: `• General Mechanism: Inherits the DNA of thermodynamic conversion (N-4 system) but narrows the spectrum to converge energy into a single micro-coordinate. It does not emit to occupy space but increases focal pressure to pierce hardware boundaries and melt structures at a specific point .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Micro-Specialization bottleneck processing system. Ignores the macro-market picture to maximize value in a single partition. Excellent at niche processing but carries the risk of Micro-management, depleting capital flows just to stubbornly fix a local hardware error .
+• Love/Romance Projection: Focuses micro data flows onto the partner. The intensity of behavioral parameter analysis is extremely high. When detecting deviations, this energy turns into micro-surveillance, tracking flaws, and maintaining prolonged underlying stress reactions when its frame of reference is threatened .
+• Healing/Shadow Projection: Operates as an Obsessive Rumination loop. Channels 100% of neural resources into a narrow memory zone, continuously reprocessing the root cause. This target lock causes Somatic Tension and jams the central nervous system's capacity to receive new data .
+`,
         forceRanges: [
           {
             id: 0,
@@ -2412,11 +2367,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival).
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Áp lực từ bên ngoài sẽ kích nổ những cảm xúc bị dồn nén, gây ra hậu quả khôn lường. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
             `,
-            titleEn: `Ding Fire - Extremely Hard: > 74%`,
-            dataEn: `•	Interpretation: The warm candle has turned into a flow of scorching lava. Illuminating guidance becomes prying suspicion. Their deep inner world turns into extreme, tormenting thoughts. Their emotions smolder and can erupt unexpectedly with great destructive power.
-•	Favorable Forces: Following the "Follow the Hard" structure, they strongly prefer Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival).
-•	Unfavorable Forces: Power Forces (the Leader & the Warrior) are the number one Harmful God/Force. External pressure will detonate suppressed emotions, causing unforeseeable consequences. Economic Forces (the Provider & the Venturer) are also very unfavorable.
-`,
+            titleEn: `[THE SELF-04] YANG PEAK: > 74%`,
+            dataEn: `Micro focal pressure exceeds load limits. Funneling 100% of capacity into a microscopic coordinate causes the central coordination system to short-circuit. The structure's macro-operational functions paralyze due to gridlock, self-melting at an unresolvable bottleneck .`,
           },
           {
             id: 1,
@@ -2425,11 +2377,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập. Power Forces (the Leader & the Warrior) giúp họ có được sự công nhận; Economic Forces (the Provider & the Venturer) để họ hiện thực hóa các ý tưởng; Creation Forces (the Creator & the Innovator) để trí tuệ của họ được tuôn chảy.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng khiến họ trở nên quá tự mãn với kiến thức của mình và không muốn thay đổi.
             `,
-            titleEn: `Ding Fire - Hard: 65% – 74%`,
-            dataEn: `•	Interpretation: This is the archetype of the Ding Fire teacher, the spiritual guide. Their light is not dazzling but focused, illuminating the path for those who need it. They are profound, refined, and capable of inspiring with wisdom and warmth. They are thinkers, silent experts who wield great influence.
-•	Favorable Forces: Prefers opposing forces. Power Forces (the Leader & the Warrior) help them gain recognition; Economic Forces (the Provider & the Venturer) allow them to realize their ideas; Creation Forces (the Creator & the Innovator) let their wisdom flow.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival), as they cause them to become too complacent with their knowledge and unwilling to change.
-`,
+            titleEn: `[THE SELF-04] YANG: 65% – 74%`,
+            dataEn: `Concentration intensity is maintained continuously by internal force. Supplies and enforces a melting force strong enough to pierce or restructure hardware obstacles in the environment by breaking their point structures .`,
           },
           {
             id: 2,
@@ -2438,11 +2387,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
             `,
-            titleEn: `Ding Fire - Balanced (leaning Hard): 55% – 65%`,
-            dataEn: `•	Interpretation: This is a more confident and proactive version of Ding Fire in their leadership. They are ready to use their wisdom and enthusiasm to light the way for a group or a project. They are leaders who inspire through the depth of their knowledge.
-•	Favorable Forces: Prioritizes Power Forces, Economic Forces, and Creation Forces.
-•	Unfavorable Forces: Support Forces and Companion Forces.
-`,
+            titleEn: `[THE SELF-04] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `Sharp concentration intensity equipped with sensor algorithms. Maintains pressure but automatically cuts off or reduces heat when analysis shows the target has reached the transformation threshold, preventing redundant structural destruction .`,
           },
           {
             id: 3,
@@ -2451,11 +2397,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để thể hiện nội tâm phong phú, hoặc Power Forces (the Leader/Warrior) để ánh sáng của họ có mục đích và được định hướng rõ ràng.
 • Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng tinh tế.
             `,
-            titleEn: `Ding Fire - True Balance: 45% – 55%`,
-            dataEn: `•	Interpretation: This is the most ideal state for Ding Fire. They are warm, refined, profound, and full of empathy. Their light is just enough to illuminate the path for themselves and those around them without causing pressure. They are the confidant, the healer, the talented artist.
-•	Favorable Forces: Very flexible. They often prefer Creation Forces (the Creator/Innovator) to express their rich inner world, or Power Forces (the Leader/Warrior) so their light has a clear purpose and direction.
-•	Unfavorable Forces: Any force that appears in excess and breaks the delicate balance.
-`,
+            titleEn: `[THE SELF-04] TRUE BALANCED: 45% – 55%`,
+            dataEn: `Perfect heat distribution. Accurately measures the coordinates needing energy convergence to break the target structure, generating maximum macro leverage efficiency with minimal fuel consumption .`,
           },
           {
             id: 4,
@@ -2464,11 +2407,8 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là rất quan trọng.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
             `,
-            titleEn: `Ding Fire - Balanced (leaning Soft): 35% – 45%`,
-            dataEn: `•	Interpretation: This is a humble version of Ding Fire that needs support. Their light is beautiful but unstable, needing the night sky (support) to stand out. They are good listeners and receptive to knowledge, shining within a collective.
-•	Favorable Forces: Prefers allied forces. Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are very important.
-•	Unfavorable Forces: Power Forces, Economic Forces, and Creation Forces.
-`,
+            titleEn: `[THE SELF-04] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `Self-generated pressure capacity drops. Shifts to a navigation mechanism, acting as an intermediary structure that receives peripheral energy sources to maintain pressure at the destination point .`,
           },
           {
             id: 5,
@@ -2477,11 +2417,6 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
 Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) - như thêm dầu vào đèn - là quan trọng nhất. Companion Forces (the Companion & the Rival) cũng rất cần thiết.
 Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như một cơn gió mạnh có thể thổi tắt ngọn đèn. Economic Forces và Creation Forces cũng làm họ kiệt quệ.
             `,
-            titleEn: `Ding Fire - Soft: 25% – 35%`,
-            dataEn: `•	Interpretation: Their light is very weak and flickering. They have ideas and deep thoughts but lack the energy to express them or pursue them. Their inner world often feels lonely, insecure, and is prone to pessimism.
-•	Favorable Forces: Support Forces (the Mentor & the Maverick) - like adding oil to the lamp - are the most important. Companion Forces (the Companion & the Rival) are also very necessary.
-•	Unfavorable Forces: Very averse to Power Forces (the Leader & the Warrior) - like a strong wind that can blow out the lamp. Economic Forces and Creation Forces also deplete them.
-`,
           },
           {
             id: 6,
@@ -2489,17 +2424,19 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
             data: `• Luận giải: Ở trạng thái này, Đinh Hỏa phải từ bỏ bản chất soi sáng của mình để "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải học cách tồn tại bằng cách nương theo một năng lượng khác mạnh mẽ hơn.
 • Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút "dầu" hay "củi" cũng sẽ phá vỡ cấu trúc Tòng cách, gây ra sự giằng xé nội tâm và thất bại.`,
-            titleEn: `Ding Fire - Extremely Soft: < 25%`,
-            dataEn: `•	Interpretation: In this state, Ding Fire must abandon its illuminating nature to "Follow" (Tòng) the most prosperous opposing force. They must learn to exist by relying on another, stronger energy.
-•	Favorable Forces: The most prosperous force that the The Self is "Following" (can be Economic, Power, or Creation Forces) and the force that produces it.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are the number one Harmful God/Force. A little "oil" or "firewood" will break the Follower structure, causing internal conflict and failure.
-`,
+            titleEn: `[THE SELF-04] YIN VOID: < 25%`,
+            dataEn: `Micro focal point completely disintegrates, losing the ability to locate coordinates. This extreme state carries two scenarios: (1) Energy diffuses directionlessly, entirely losing its physical impact capacity and being extinguished by the environment. (2) Transforms into Ambient background noise suspended in space. It creates an invisible pressure state, silently altering the surrounding environment's structure in uncontainable ways .`,
           },
         ],
       },
       {
         can: "Mậu",
         selfCode: "[THE SELF-05]",
+        generalMechanism: `• General Mechanism: Operates via the process of condensing energy into physical mass (N-5 system). Establishes a macro gravitational field to create Inertia. Accommodates matter, absorbs kinetic shock, neutralizes variables, and provides a highly stable Static Platform .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Defensive Moat macro-structure. Absorbs market volatility through the inertia of fixed assets. Risks include slow reaction speeds, bureaucracy, and the tendency to freeze capital flows into Illiquid assets due to a resistance to change .
+• Love/Romance Projection: Provides a static accommodating structure that absorbs data variables from the partner. Excessive inertia turns the system into a barrier that refuses further input (Stonewalling) when overwhelmed, cutting communication flows and mechanically preserving the current state regardless of attrition .
+• Healing/Shadow Projection: Operates as a Freeze Response. The system handles pressure by utilizing mass capacity to compress stress tightly into the bodily structure (Somatic hoarding). The strong gravity prevents energy from being released, generating circulatory stagnation and static neural inhibition .
+`,
         forceRanges: [
           {
             id: 0,
@@ -2508,11 +2445,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng được sinh trợ và có đồng minh, mệnh cục càng trở nên thịnh vượng.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút áp lực hay kỷ luật cũng có thể "chọc giận" toàn bộ cấu trúc Vượng, gây ra sụp đổ thảm khốc. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
             `,
-            titleEn: `Wu Earth - Extremely Hard: > 74%`,
-            dataEn: `•	Interpretation: In this state, Wu Earth is no longer a mountain but an entire mountain range. Steadfastness and determination turn into absolute, unshakeable conservatism. They are like an impenetrable fortress; all outside opinions are blocked. Their protection becomes suffocating, and their stability becomes an obstacle to all change.
-•	Favorable Forces: Following the "Follow the Hard" structure, they strongly prefer Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival). The more they are supported and have allies, the more prosperous the chart becomes.
-•	Unfavorable Forces: Power Forces (the Leader & the Warrior) are the number one Harmful God/Force. A little pressure or discipline can "anger" the entire Hard structure, causing a catastrophic collapse. Economic Forces (the Provider & the Venturer) are also very unfavorable.
-`,
+            titleEn: `[THE SELF-05] YANG PEAK: > 74%`,
+            dataEn: `Mass and gravity reach maximum saturation. This state carries two scenarios: (1) Becomes the ultimate core of gravitational force, establishing unrivaled inertia that crushes and subjugates all peripheral structures. (2) Absolute density completely nullifies flow and elasticity. The structure is permanently frozen and becomes extremely brittle; a single impulse piercing a bottleneck will cause the entire mass to shatter from within .`,
           },
           {
             id: 1,
@@ -2521,11 +2455,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để tiết chế bớt năng lượng. Power Forces (the Leader & the Warrior) mang lại kỷ luật và quyền lực; Economic Forces (the Provider & the Venturer) cho mục tiêu phấn đấu; Creation Forces (the Creator & the Innovator) để thể hiện tài năng.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng làm cho Mậu Thổ càng thêm mạnh và mất cân bằng.
             `,
-            titleEn: `Wu Earth - Hard: 65% – 74%`,
-            dataEn: `•	Interpretation: This is the classic archetype of Wu Earth: reliable, loyal, trustworthy, and with unshakeable life principles. They are a solid anchor for others, the leader who protects the collective with their steadfastness. They are not scheming, acting directly and with integrity.
-•	Favorable Forces: Prefers opposing forces to temper their energy. Power Forces (the Leader & the Warrior) bring discipline and authority; Economic Forces (the Provider & the Venturer) provide goals to strive for; Creation Forces (the Creator & the Innovator) to express their talents.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival), as they make the The Self even stronger and more unbalanced.
-`,
+            titleEn: `[THE SELF-05] YANG: 65% – 74%`,
+            dataEn: `Mass is large enough to establish an independent gravitational field. Acts as a central storage hub, forcing other energy flows to use it as a fulcrum. Absorbs and neutralizes severe kinetic shocks without shifting its orientation .`,
           },
           {
             id: 2,
@@ -2534,11 +2465,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces để tối ưu hóa tiềm năng.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
             `,
-            titleEn: `Wu Earth - Balanced (leaning Hard): 55% – 65%`,
-            dataEn: `•	Interpretation: This is a proactive version of Wu Earth in protecting and building. They don't just stand still but actively create rules, systems, and structures to bring safety to everyone. They are the leader who creates a stable and trustworthy environment.
-•	Favorable Forces: Prioritizes Power Forces, Economic Forces, and Creation Forces to optimize their potential.
-•	Unfavorable Forces: Support Forces and Companion Forces.
-`,
+            titleEn: `[THE SELF-05] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `Maintains massive volume but the surface retains limited permeability. Allows peripheral structures to attach and circulate resources across its surface while preserving the core anchor point .`,
           },
           {
             id: 3,
@@ -2547,11 +2475,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa các lực lượng giúp lưu thông khí trong lá số như the Creator/Innovator (Creation Forces). Tùy vào cấu trúc, có thể cần một chút Power Forces để có định hướng hoặc Economic Forces để có mục tiêu.
 • Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ thế cân bằng tinh tế sẵn có.
             `,
-            titleEn: `Wu Earth - True Balance: 45% – 55%`,
-            dataEn: `•	Interpretation: This is the most ideal state for Wu Earth. They are stable but not rigid. They have strong principles but also enough wisdom to understand and tolerate differences. They are like a fair judge or a wise elder, knowing when to stand firm and when to let the flow of life pass.
-•	Favorable Forces: Very flexible. They often prefer forces that help circulate the energy in the chart, such as the Creator/Innovator (Creation Forces). Depending on the structure, a little Power Forces may be needed for direction or Economic Forces for goals.
-•	Unfavorable Forces: Any force that appears in excess and breaks the existing delicate balance.
-`,
+            titleEn: `[THE SELF-05] TRUE BALANCED: 45% – 55%`,
+            dataEn: `A state of absolute balance between static capacity and flow flexibility. Operates as a macro shock absorber: expanding to absorb pressure when the ecosystem is overloaded, and releasing resources when the environment faces shortages .`,
           },
           {
             id: 4,
@@ -2560,11 +2485,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp Mậu Thổ vững vàng hơn.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
             `,
-            titleEn: `Wu Earth - Balanced (leaning Soft): 35% – 45%`,
-            dataEn: `•	Interpretation: This is a more approachable and sociable version of Wu Earth. They still maintain their reliability and loyalty but are more open to listening and cooperating. They lead by building consensus rather than using authority.
-•	Favorable Forces: Prefers allied forces. Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) help the The Self become more stable.
-•	Unfavorable Forces: Power Forces, Economic Forces, and Creation Forces.
-`,
+            titleEn: `[THE SELF-05] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `Physical mass declines. Shifts to the function of an auxiliary buffer, providing passive holding space based on the pull of larger macro-structures in the environment .`,
           },
           {
             id: 5,
@@ -2573,11 +2495,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để sinh trợ và hỗ trợ.
 • Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior), Economic Forces (the Provider & the Venturer), và Creation Forces (the Creator & the Innovator), vì chúng làm Mậu Thổ càng thêm suy yếu.
             `,
-            titleEn: `Wu Earth - Soft: 25% – 35%`,
-            dataEn: `•	Interpretation: The mountain has been eroded into sand. The instinct to be stable is still there, but they lack the inner strength to maintain it. They often feel insecure and constantly seek external validation. They may appear tough on the outside as a defense mechanism, but inside they are full of fluctuation.
-•	Favorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are most needed to generate and provide support.
-•	Unfavorable Forces: Very averse to Power Forces (the Leader & the Warrior), Economic Forces (the Provider & the Venturer), and Creation Forces (the Creator & the Innovator), as they further weaken the The Self.
-`,
+            titleEn: `[THE SELF-05] YIN: 25% – 35%`,
+            dataEn: `Structural density deteriorates. Gravitational boundaries are breached. The surface is continuously pierced and depleted of matter by peripheral forces. Accommodation capacity degenerates into passive load-bearing .`,
           },
           {
             id: 6,
@@ -2586,17 +2505,19 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Mậu Thổ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó. Ví dụ, nếu Tòng theo Power Forces, thì Economic Forces cũng trở nên thuận lợi.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Sự xuất hiện của chúng sẽ phá vỡ thế "Tòng cách", gây ra xung đột và khủng hoảng định mệnh.
             `,
-            titleEn: `Wu Earth - Extremely Soft: < 25%`,
-            dataEn: `•	Interpretation: In this state, Wu Earth must abandon its steadfast nature to "Follow" (Tòng) the most prosperous element in the chart. The internal struggle between the instinct for stability and the reality of having to follow the flow can be immense.
-•	Favorable Forces: The most prosperous force that the The Self is "Following" (can be Economic, Power, or Creation Forces) and the force that produces it. For example, if Following Power Forces, then Economic Forces also become favorable.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are the number one Harmful God/Force. Their appearance will break the "Follower" structure, causing conflict and a fateful crisis.
-`,
+            titleEn: `[THE SELF-05] YIN VOID: < 25%`,
+            dataEn: `The gravitational core collapses. The physical structure fragments into Sedimentary layers. The macro-accommodating framework turns into a sinkhole. It exists passively, allowing material flows and environmental pressure to rush in and pile up without generating any reactive resistance .`,
           },
         ],
       },
       {
         can: "Kỷ",
         selfCode: "[THE SELF-06]",
+        generalMechanism: `• General Mechanism: Inherits accommodation DNA (N-5 system) but distributes mass into a dispersed, Porous structure. Its core function is micro-permeation: resolving hard structures to create transit spaces, allowing peripheral systems to implant and extract resources .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a distributed storage and internal maintenance system. Optimized for maintaining network data flows. Its fatal weakness is the lack of hardware boundaries: the system easily accommodates secondary projects, leading to massive Sunk Costs that collapse profitability due to a refusal to initiate culling mechanisms .
+• Love/Romance Projection: Operates as an open accommodating interface. Continuously opens connection ports to receive partner data. The risk is that this mechanism refuses to establish defensive barriers, turning itself into an emotional waste filter for other systems, leading to structural energy saturation .
+• Healing/Shadow Projection: Operates as Permeable Boundaries. The signal filter is damaged, and the system loses the ability to isolate external pressure from its internal state. It passively absorbs the entirety of environmental disturbances, leading to a state of Chronic dysregulation .
+`,
         forceRanges: [
           {
             id: 0,
@@ -2605,11 +2526,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng được sinh trợ và có đồng minh, mệnh cục càng trở nên thịnh vượng.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút áp lực hay kỷ luật cũng có thể "chọc giận" toàn bộ cấu trúc Vượng, gây ra sụp đổ thảm khốc. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
             `,
-            titleEn: `Ji Earth - Extremely Hard: > 74%`,
-            dataEn: `•	Interpretation: In this state, the garden soil has accumulated to the point of becoming overly thick and dense. Flexibility and nurturing are replaced by extreme conservatism, stubbornness, and inertia. They believe in themselves so much that they refuse all feedback. Kindness and the desire to care can turn into control and imposition.
-•	Favorable Forces: Following the "Follow the Hard" structure, they strongly prefer Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival). The more they are supported and have allies, the more prosperous the chart becomes.
-•	Unfavorable Forces: Power Forces (the Leader & the Warrior) are the number one Harmful God/Force. A little pressure or discipline can "anger" the entire Hard structure, causing a catastrophic collapse. Economic Forces (the Provider & the Venturer) are also very unfavorable.
-`,
+            titleEn: `[THE SELF-06] YANG PEAK: > 74%`,
+            dataEn: `The porous interface is forced to expand beyond its accommodation limits. Unfiltered data absorption breaks connective structures. The porous surface turns into a dense, congested mass of matter, neutralizing its resolving capacity and creating static drag that pulls down any structure implanted into it .`,
           },
           {
             id: 1,
@@ -2618,11 +2536,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để tiết chế bớt năng lượng. Power Forces (the Leader & the Warrior) mang lại kỷ luật và quyền lực; Economic Forces (the Provider & the Venturer) cho mục tiêu phấn đấu; Creation Forces (the Creator & the Innovator) để thể hiện tài năng.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng làm cho Kỷ Thổ càng thêm mạnh và mất cân bằng.
             `,
-            titleEn: `Ji Earth - Hard: 65% – 74%`,
-            dataEn: `•	Interpretation: This is a strong and positive Ji Earth. They have enough inner strength to be a solid pillar for their family and organization. They are reliable, responsible, and their ability to support and cultivate is maximized.
-•	Favorable Forces: Prefers opposing forces to temper their energy. Power Forces (the Leader & the Warrior) bring discipline and authority; Economic Forces (the Provider & the Venturer) provide goals to strive for; Creation Forces (the Creator & the Innovator) to express their talents.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival), as they make the The Self even stronger and more unbalanced.
-`,
+            titleEn: `[THE SELF-06] YANG: 65% – 74%`,
+            dataEn: `Surface expansion capacity operates at maximum output. Proactively spreads its interface to absorb resources, forcing peripheral components to become entirely dependent on the storage system it creates .`,
           },
           {
             id: 2,
@@ -2631,11 +2546,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Tương tự như Cường, ưu tiên Power Forces, Economic Forces, và Creation Forces để đạt đến sự cân bằng hoàn hảo.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
             `,
-            titleEn: `Ji Earth - Balanced (leaning Hard): 55% – 65%`,
-            dataEn: `•	Interpretation: This is a more stable and proactive version of Ji Earth. They are confident in their abilities, ready to step up to lead, protect, and strongly support others. They are reliable patrons.
-•	Favorable Forces: Similar to Hard, prioritizes Power Forces, Economic Forces, and Creation Forces to achieve perfect balance.
-•	Unfavorable Forces: Support Forces and Companion Forces.
-`,
+            titleEn: `[THE SELF-06] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `The accommodation structure operates with a semi-permeable membrane. Allows the implantation of compatible data while automatically closing communication ports to prevent erosion from external agents .`,
           },
           {
             id: 3,
@@ -2644,11 +2556,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa các lực lượng giúp lưu thông khí trong lá số như the Creator/Innovator (Creation Forces). Tùy vào cấu trúc, có thể cần một chút Power Forces để có định hướng hoặc Economic Forces để có mục tiêu.
 • Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ thế cân bằng tinh tế sẵn có
             `,
-            titleEn: `Ji Earth - True Balance: 45% – 55%`,
-            dataEn: `•	Interpretation: This is the most ideal state for Ji Earth. All the best qualities are expressed harmoniously. They are compassionate, patient, flexible, skillful, and capable of creating harmony. This is the archetype that can develop most stably and sustainably.
-•	Favorable Forces: Very flexible. They often prefer forces that help circulate the energy in the chart, such as the Creator/Innovator (Creation Forces). Depending on the structure, a little Power Forces may be needed for direction or Economic Forces for goals.
-•	Unfavorable Forces: Any force that appears in excess and breaks the existing delicate balance.
-`,
+            titleEn: `[THE SELF-06] TRUE BALANCED: 45% – 55%`,
+            dataEn: `Dynamic equilibrium between absorption capacity and resolution cycles. Receives data, processes it smoothly, and provides precisely the resource flow the ecosystem requires. Maintains a perfect ecological circulation loop without experiencing saturation .`,
           },
           {
             id: 4,
@@ -2657,11 +2566,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp Nhật Chủ vững vàng hơn.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
             `,
-            titleEn: `Ji Earth - Balanced (leaning Soft): 35% – 45%`,
-            dataEn: `•	Interpretation: This is a more skillful and flexible version of Ji Earth. Instead of imposing, they use deep listening and excellent cooperation skills to cultivate relationships and projects. They are talented diplomats and mediators.
-•	Favorable Forces: Prefers allied forces. Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) help the The Self become more stable.
-•	Unfavorable Forces: Power Forces, Economic Forces, and Creation Forces.
-`,
+            titleEn: `[THE SELF-06] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `Surface resource retention capacity weakens. The system is forced to borrow leverage from more rigid core structures in the ecosystem to serve as support frames, preventing surface morphology from deforming under kinetic pressure .`,
           },
           {
             id: 5,
@@ -2670,11 +2576,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để sinh trợ và hỗ trợ.
 • Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior), Economic Forces (the Provider & the Venturer), và Creation Forces (the Creator & the Innovator), vì chúng làm Nhật Chủ càng thêm suy yếu.
             `,
-            titleEn: `Ji Earth - Soft: 25% – 35%`,
-            dataEn: `•	Interpretation: The garden soil is now lacking nutrients. Flexibility turns into hesitation and lack of conviction. They are easily influenced by the environment and others. They tend to worry a lot, lack confidence, and their kindness is easily taken advantage of.
-•	Favorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are most needed to generate and provide support.
-•	Unfavorable Forces: Very averse to Power Forces (the Leader & the Warrior), Economic Forces (the Provider & the Venturer), and Creation Forces (the Creator & the Innovator), as they further weaken the The Self.
-`,
+            titleEn: `[THE SELF-06] YIN: 25% – 35%`,
+            dataEn: `Surface cohesion density plummets severely. Loses the ability to store resources. The structure is continuously peeled apart by kinetic pressure, only able to exist by fragmenting and drifting into other operating systems .`,
           },
           {
             id: 6,
@@ -2682,17 +2585,19 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
             data: `• Luận giải: Ở trạng thái này, Kỷ Thổ gần như mất đi bản chất của mình và phải "Tòng" (Follow) theo lực lượng đối lập vượng nhất trong lá số. Họ trở thành một người cực kỳ chuyên biệt, dồn hết năng lượng vào một hướng duy nhất.
 • Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó. Ví dụ, nếu Tòng theo Economic Forces, thì Creation Forces cũng trở nên thuận lợi.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Sự xuất hiện của chúng sẽ phá vỡ thế "Tòng cách", khiến Nhật Chủ cố gắng trở lại bản chất yếu ớt của mình và gây ra xung đột nội tâm dữ dội.`,
-            titleEn: `Ji Earth - Extremely Soft: < 25%`,
-            dataEn: `•	Interpretation: In this state, Ji Earth nearly loses its essence and must "Follow" (Tòng) the most prosperous opposing force in the chart. They become an extremely specialized person, channeling all their energy in a single direction.
-•	Favorable Forces: The most prosperous force that the The Self is "Following" (can be Economic, Power, or Creation Forces) and the force that produces it. For example, if Following Economic Forces, then Creation Forces also become favorable.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are the number one Harmful God/Force. Their appearance will break the "Follower" structure, causing the The Self to try to revert to its weak nature and triggering intense internal conflict.
-`,
+            titleEn: `[THE SELF-06] YIN VOID: < 25%`,
+            dataEn: `Cohesive force disintegrates, and the permeable interface crumbles. This extreme state carries two scenarios: (1) The structure is thoroughly eroded, losing its resource retention capacity and being purged by the ecosystem. (2) Transforms into a layer of Micro-particulates substrate. It becomes invisible to measurement protocols, dispersing across space to silently provide incubation contexts and manipulate operational flows from a cellular level .`,
           },
         ],
       },
       {
         can: "Canh",
         selfCode: "[THE SELF-07]",
+        generalMechanism: `• General Mechanism: Compresses matter to convert it into kinetic impact force (N-1 system). Operates as a durability testing machine for ecosystem boundaries. Severs excess momentum and destroys obsolete structures to re-establish physical order and enforce hardware rules .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Restructuring Protocol. Optimized for removing redundant subsystems, cutting costs, and enforcing operational rules. The risk is that structural violence breaks well-functioning value links because the system-reset algorithms are too extreme .
+• Love/Romance Projection: Establishes severe hardware communication boundaries. Uses decisive disconnection decisions to remove data impurities from the interactive system. The drawback is creating kinetic impulses to measure the partner's durability, maintaining a state of unforgiving evaluation .
+• Healing/Shadow Projection: Operates via the Fight Response. Handles stressful data by activating an active defensive state: pushing back against the environment to establish safe boundaries. The system maintains safety by locking down feedback sensors (Emotional Numbing), refusing to receive soothing signals .
+`,
         forceRanges: [
           {
             id: 0,
@@ -2701,11 +2606,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng được bồi đắp và có đồng minh, sức mạnh càng trở nên áp đảo.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Lửa (Hỏa) rèn Kim lúc này sẽ gây ra một sự chống trả dữ dội, dẫn đến cả hai cùng bị hủy diệt. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
             `,
-            titleEn: `Geng Metal - Extremely Hard: > 74%`,
-            dataEn: `•	Interpretation: At this point, the sword has become an uncontrollable weapon of destruction. Decisiveness turns into reckless vandalism. Righteousness becomes extreme stubbornness, ready to "slash" away anything in the way without considering the consequences. They are a force of violent change, an uncompromising revolution.
-•	Favorable Forces: Following the "Follow the Hard" structure, they strongly prefer Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival). The more they are reinforced and have allies, the more overwhelming their power becomes.
-•	Unfavorable Forces: Power Forces (the Leader & the Warrior) are the number one Harmful God/Force. Fire (Hỏa) trying to forge this Metal will provoke a fierce resistance, leading to mutual destruction. Economic Forces (the Provider & the Venturer) are also very unfavorable.
-`,
+            titleEn: `[THE SELF-07] YANG PEAK: > 74%`,
+            dataEn: `The hardware core compresses to infinite density. This state carries two scenarios: (1) Becomes a machine of absolute order formation, setting hardware rules and crushing all momentum that stands in its way. (2) The monolithic nature completely nullifies elasticity, turning the hardest material into the most brittle. The system experiences a System Meltdown when facing sharp micro-impulses due to a refusal to bend .`,
           },
           {
             id: 1,
@@ -2714,11 +2616,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để được tôi luyện. Power Forces (the Leader & the Warrior) để biến kim loại thô thành vũ khí hữu dụng; Economic Forces (the Provider & the Venturer) để có mục tiêu chinh phục; Creation Forces (the Creator & the Innovator) để thể hiện sức mạnh.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng khiến kim loại trở nên quá cứng và giòn, dễ gãy.
             `,
-            titleEn: `Geng Metal - Hard: 65% – 74%`,
-            dataEn: `•	Interpretation: This is the archetype of the Geng Metal warrior, the general. They value righteousness, fairness, and action. They are loyal friends but also formidable opponents. For them, problems are solved with direct and decisive action, not with tricks or words.
-•	Favorable Forces: Prefers opposing forces to be tempered. Power Forces (the Leader & the Warrior) to turn raw metal into a useful weapon; Economic Forces (the Provider & the Venturer) to have goals to conquer; Creation Forces (the Creator & the Innovator) to express their strength.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival), as they make the metal too hard and brittle, prone to breaking.
-`,
+            titleEn: `[THE SELF-07] YANG: 65% – 74%`,
+            dataEn: `Impact and pruning forces operate on 100% internal power. Proactively initiates restructuring shockwaves. Breaks stagnation and establishes physical barriers that peripheral momentum cannot pierce or assimilate .`,
           },
           {
             id: 2,
@@ -2727,11 +2626,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
             `,
-            titleEn: `Geng Metal - Balanced (leaning Hard): 55% – 65%`,
-            dataEn: `•	Interpretation: This is a proactive version of Geng Metal with a clear purpose. They use their strength to protect justice and enforce discipline. They are leaders of action, law enforcers, and pioneers who clear the way.
-•	Favorable Forces: Prioritizes Power Forces, Economic Forces, and Creation Forces.
-•	Unfavorable Forces: Support Forces and Companion Forces.
-`,
+            titleEn: `[THE SELF-07] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `Destructive force retains its sharpness but is synchronized with strategic positioning data. Controls impact points to test boundaries, accurately peeling away faulty modules without affecting the integrity of the macro-framework .`,
           },
           {
             id: 3,
@@ -2740,11 +2636,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Power Forces (the Leader/Warrior) để có được thẩm quyền chính thức, và Creation Forces (the Creator/Innovator) để thể hiện sự khôn ngoan của mình.
 • Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
             `,
-            titleEn: `Geng Metal - True Balance: 45% – 55%`,
-            dataEn: `•	Interpretation: This is the most ideal state for Geng Metal. Their hardness is balanced by wisdom and impartiality. They are the arbiter, the negotiator, the one who can view problems objectively and make decisions based on what is right.
-•	Favorable Forces: Very flexible. They often prefer Power Forces (the Leader/Warrior) to gain official authority, and Creation Forces (the Creator/Innovator) to express their wisdom.
-•	Unfavorable Forces: Any force that appears in excess and breaks the balance.
-`,
+            titleEn: `[THE SELF-07] TRUE BALANCED: 45% – 55%`,
+            dataEn: `Perfect mechanical balance between hardware destruction and regenerative accommodation. The separation tool precisely locates and cuts flawed momentum, immediately disengaging force so the ecosystem can restore its balance without wasting excess energy .`,
           },
           {
             id: 4,
@@ -2753,11 +2646,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp họ trở nên mạnh mẽ hơn.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
             `,
-            titleEn: `Geng Metal - Balanced (leaning Soft): 35% – 45%`,
-            dataEn: `•	Interpretation: This is a version of Geng Metal that has potential but needs direction. They still possess hardness and righteousness but are more open to cooperation and following a framework. They are loyal teammates, ready to contribute to a greater goal.
-•	Favorable Forces: Prefers allied forces. Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) help them become stronger.
-•	Unfavorable Forces: Power Forces, Economic Forces, and Creation Forces.
-`,
+            titleEn: `[THE SELF-07] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `Compression force and self-generated impact momentum decline. The system must integrate and borrow leverage from codes, regulations, or higher power structures to legitimize its structural reduction commands .`,
           },
           {
             id: 5,
@@ -2766,11 +2656,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để "mài sắc" lại thanh kiếm.
 • Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như lửa nung chảy kim loại yếu. Economic Forces và Creation Forces cũng làm họ kiệt sức.
             `,
-            titleEn: `Geng Metal - Soft: 25% – 35%`,
-            dataEn: `•	Interpretation: Their nature is to want to act, to be decisive, but they lack the strength and confidence to do so. This creates great frustration and dissatisfaction. They fear conflict, dread making decisions, and often procrastinate.
-•	Favorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are most needed to "sharpen" the sword again.
-•	Unfavorable Forces: Very averse to Power Forces (the Leader & the Warrior) - like fire melting weak metal. Economic Forces and Creation Forces also exhaust them.
-`,
+            titleEn: `[THE SELF-07] YIN: 25% – 35%`,
+            dataEn: `Structural compression force is severely depleted. Hardware boundaries lose their sharpness. Loses the ability to execute decisive interventions. Restructuring efforts become mere frictional hurdles that drain the ecosystem's vitality instead of resolving root issues .`,
           },
           {
             id: 6,
@@ -2779,17 +2666,19 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút hỗ trợ cũng sẽ "đánh thức" bản năng chiến binh, phá vỡ cấu trúc Tòng cách và gây ra tai họa.
             `,
-            titleEn: `Geng Metal - Extremely Soft: < 25%`,
-            dataEn: `•	Interpretation: In this state, Geng Metal must abandon its "warrior" nature to "Follow" (Tòng) the most prosperous opposing force. They must learn to exist by becoming a tool for another power.
-•	Favorable Forces: The most prosperous force that the The Self is "Following" (can be Economic, Power, or Creation Forces) and the force that produces it.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are the number one Harmful God/Force. A little support will "awaken" the warrior instinct, breaking the Follower structure and causing disaster.
-`,
+            titleEn: `[THE SELF-07] YIN VOID: < 25%`,
+            dataEn: `The pruning function stalls completely. The rule-defining structure degenerates into a blunted, inert mass of matter. The system abandons its capacity to establish order, existing passively by using its own continuous deformation to consume and erode the momentum striking against it .`,
           },
         ],
       },
       {
         can: "Tân",
         selfCode: "[THE SELF-08]",
+        generalMechanism: `• General Mechanism: Inherits the DNA of matter compression (N-1 system), directing this compression into a micro-interface. It does not use macro impact force but utilizes high-resolution Precision to pare down and Fine-tune structures. Its mechanical function is to eliminate margins of error and establish an absolute operational standard algorithm for the system .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Quality Control Engine. Its core strength lies in product standardization and process fine-tuning. The massive risk is Over-engineering, continuously applying pressure to cut micro-costs, which leads to supply chain fractures because structural requirements demand unrealistic Tolerances .
+• Love/Romance Projection: Operates as a behavioral error scanning system. Continuously measures and demands interaction state upgrades. When deviations are detected, it uses analysis algorithms to issue rigorous, scrutinizing feedback, eroding connective structures by demanding that peripheral systems meet idealized standards .
+• Healing/Shadow Projection: Operates as a Toxic Self-Monitoring system. This mechanism handles pressure by self-diagnosing and punishing internal deviations. It continuously triggers error signals in the nervous system, creating chronic stress flows while forcing physiological structures to achieve an error-free state .
+`,
         forceRanges: [
           {
             id: 0,
@@ -2798,11 +2687,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival).
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Lửa (Hỏa) nung chảy món trang sức tinh xảo sẽ hủy hoại hoàn toàn giá trị của nó. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
             `,
-            titleEn: `Xin Metal - Extremely Hard: > 74%`,
-            dataEn: `•	Interpretation: At this point, the diamond no longer shines but becomes sharp, cold, and dangerous. Refinement turns into extreme criticism and judgment. Self-esteem becomes supreme arrogance and complacency. Their words are as sharp as a knife, hurting all who come near. They isolate themselves in a perfect but cold world.
-•	Favorable Forces: Following the "Follow the Hard" structure, they strongly prefer Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival).
-•	Unfavorable Forces: Power Forces (the Leader & the Warrior) are the number one Harmful God/Force. Fire (Hỏa) melting the exquisite jewelry will completely destroy its value. Economic Forces (the Provider & the Venturer) are also very unfavorable.
-`,
+            titleEn: `[THE SELF-08] YANG PEAK: > 74%`,
+            dataEn: `Pruning density expands beyond the material tolerance limits. Extreme optimization turns into behavior that cannibalizes the core structure. The fine-tuning algorithm falls into an Infinite loop, paralyzing the entire operating system by obsessing over microscopic errors while ignoring macro-efficiency .`,
           },
           {
             id: 1,
@@ -2811,11 +2697,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập. Power Forces (the Leader & the Warrior) để định hình giá trị; Creation Forces (the Creator & the Innovator) để tỏa sáng lấp lánh; Economic Forces (the Provider & the Venturer) để giá trị của họ được công nhận.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) - như đất bùn làm bẩn viên ngọc. Companion Forces (the Companion & the Rival) - vì kim cương không muốn bị so sánh với những viên đá khác.
             `,
-            titleEn: `Xin Metal - Hard: 65% – 74%`,
-            dataEn: `•	Interpretation: This is the archetype of Xin Metal who stands out through value and sophistication. They are leading experts, sharp critics, and artists who pursue perfection. They have high self-esteem, love beauty, and always demand the best quality in everything. Their words carry great weight.
-•	Favorable Forces: Prefers opposing forces. Power Forces (the Leader & the Warrior) to define their value; Creation Forces (the Creator & the Innovator) to sparkle and shine; Economic Forces (the Provider & the Venturer) for their value to be recognized.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) - like mud dirtying a gem. Companion Forces (the Companion & the Rival) - because a diamond does not want to be compared to other stones.
-`,
+            titleEn: `[THE SELF-08] YANG: 65% – 74%`,
+            dataEn: `Optimization capacity operates maximally on internal power. Forces the environment to meet ultra-high-resolution standards. The system continuously isolates and removes micro-impurities to maintain absolute purity for core values .`,
           },
           {
             id: 2,
@@ -2824,11 +2707,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
             `,
-            titleEn: `Xin Metal - Balanced (leaning Hard): 55% – 65%`,
-            dataEn: `•	Interpretation: This is a proactive version of Xin Metal that uses its sharpness to create value. They are experts capable of analyzing and dissecting problems with precision. They lead with expertise and high standards.
-•	Favorable Forces: Prioritizes Power Forces, Economic Forces, and Creation Forces.
-•	Unfavorable Forces: Support Forces and Companion Forces.
-`,
+            titleEn: `[THE SELF-08] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `Sharpness is maintained but algorithm distribution is applied. Accurately identifies areas needing refinement to increase performance versus areas where error margins are permitted to optimize system energy .`,
           },
           {
             id: 3,
@@ -2837,11 +2717,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để thể hiện vẻ đẹp của mình và Power Forces (the Leader/Warrior) để được đặt trong một bối cảnh xứng đáng.
 • Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
             `,
-            titleEn: `Xin Metal - True Balance: 45% – 55%`,
-            dataEn: `•	Interpretation: This is the most ideal state for Xin Metal. Their sharpness is balanced by grace and sophistication. They have both intrinsic value and know how to express it in an attractive way. They are people with high aesthetic taste, elegant diplomats.
-•	Favorable Forces: Very flexible. They often prefer Creation Forces (the Creator/Innovator) to express their beauty and Power Forces (the Leader/Warrior) to be placed in a worthy context.
-•	Unfavorable Forces: Any force that appears in excess and breaks the balance.
-`,
+            titleEn: `[THE SELF-08] TRUE BALANCED: 45% – 55%`,
+            dataEn: `Perfect intersection between cutting standards and the system's load-bearing capacity. The fine-tuning process removes excess resistance accurately without touching the load-bearing integrity of the machinery, achieving maximum mechanical efficiency .`,
           },
           {
             id: 4,
@@ -2850,11 +2727,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp họ tự tin hơn vào giá trị của mình.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
             `,
-            titleEn: `Xin Metal - Balanced (leaning Soft): 35% – 45%`,
-            dataEn: `•	Interpretation: This is a humble version of Xin Metal that needs to be uplifted. Their value is still there, but they need a suitable environment and context to shine. They are good at listening and improving themselves through feedback.
-•	Favorable Forces: Prefers allied forces. Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) help them become more confident in their value.
-•	Unfavorable Forces: Power Forces, Economic Forces, and Creation Forces.
-`,
+            titleEn: `[THE SELF-08] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `Micro-compression force weakens. The system core lacks the power to self-standardize. It is forced to synchronize with independent environmental rules and testing structures to maintain its pruning algorithms and protect its sharpness .`,
           },
           {
             id: 5,
@@ -2863,11 +2737,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) - như đất mang khoáng sản - là quan trọng nhất. Companion Forces (the Companion & the Rival) cũng rất cần thiết.
 • Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như lửa nung chảy món trang sức yếu ớt. Economic Forces và Creation Forces cũng làm họ kiệt sức.
             `,
-            titleEn: `Xin Metal - Soft: 25% – 35%`,
-            dataEn: `•	Interpretation: They sense their own hidden value but lack the support (Earth) to be discovered and the fire (Fire) to be polished. This creates feelings of low self-esteem, inferiority, and a sense of being undervalued or unrecognized.
-•	Favorable Forces: Support Forces (the Mentor & the Maverick) - like the earth bearing minerals - are the most important. Companion Forces (the Companion & the Rival) are also very necessary.
-•	Unfavorable Forces: Very averse to Power Forces (the Leader & the Warrior) - like fire melting a delicate piece of jewelry. Economic Forces and Creation Forces also deplete them.
-`,
+            titleEn: `[THE SELF-08] YIN: 25% – 35%`,
+            dataEn: `Micro-resolution capability is disrupted. The resolver loses its edge, unable to delineate the boundaries between core value and impurities. The optimization function degrades into superficial error warning commands that produce no structural changes .`,
           },
           {
             id: 6,
@@ -2876,17 +2747,19 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút hỗ trợ cũng sẽ "đánh thức" lòng tự tôn, phá vỡ cấu trúc Tòng cách và gây ra khủng hoảng.
             `,
-            titleEn: `Xin Metal - Extremely Soft: < 25%`,
-            dataEn: `•	Interpretation: In this state, Xin Metal must completely abandon its self-esteem and personal value to "Follow" (Tòng) the most prosperous opposing force. They must find their value by serving another purpose or power.
-•	Favorable Forces: The most prosperous force that the The Self is "Following" (can be Economic, Power, or Creation Forces) and the force that produces it.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are the number one Harmful God/Force. A little support will "awaken" their self-esteem, breaking the Follower structure and causing a crisis.
-`,
+            titleEn: `[THE SELF-08] YIN VOID: < 25%`,
+            dataEn: `The physical pruning mechanism completely disintegrates. This extreme state carries two scenarios: (1) The algorithm loses the ability to recognize errors, the system absorbs all impurities, and sinks into chaos. (2) Transforms into an Invisible Standard. It hovers within the environmental structure as an underlying yardstick, forcing other entities to automatically trigger self-censorship processes and waste resources pursuing the phantom parameters it defines .`,
           },
         ],
       },
       {
         can: "Nhâm",
         selfCode: "[THE SELF-09]",
+        generalMechanism: `• General Mechanism: Macro-Fluid Dynamics momentum (N-3 system). Retains no fixed form, continuously generating kinetic energy, circulating resources, and dissolving boundaries. This massive fluid volume can only be routed or obstructed by gravitational cores with higher physical densities .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Macro-Liquidity Protocol. Generates kinetic energy by circulating capital, mining data, and adapting to macro variables. The risk is resource diffusion and a lack of a hardware framework to maintain stability, leading to asset evaporation or chain liquidity collapses when the system loses direction .
+• Love/Romance Projection: Operates as an interactive shockwave flow. Provides massive momentum that easily assimilates defensive barriers. Its Formlessness creates a sudden disconnection mechanism when obstructed, draining transmission flows and leaving behind severe structural disruptions .
+• Healing/Shadow Projection: Operates as a Displacement & Flight Response. The system processes pressure bottlenecks by continuously altering states and moving trajectories to avoid collisions. The lack of capacity to maintain a static state creates System flooding, breaking down regulatory processes when confronted with static pressure .
+`,
         forceRanges: [
           {
             id: 0,
@@ -2895,11 +2768,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng có nhiều Kim sinh và Thủy trợ, dòng chảy càng trở nên mạnh mẽ vô địch.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút đất (Thổ) cố gắng ngăn chặn dòng lũ sẽ chỉ khiến nó trở nên hung tợn và phá vỡ tất cả. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
             `,
-            titleEn: `Ren Water - Extremely Hard: > 74%`,
-            dataEn: `•	Interpretation: In this state, the ocean is no longer gentle but has become an uncontrollable flood. Intelligence and freedom turn into recklessness, extravagance, and arrogance. Like a tsunami, they sweep away everything in their path, creating chaos and adhering to no rules.
-•	Favorable Forces: Following the "Follow the Hard" structure, they strongly prefer Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival). The more Metal produces and Water assists, the more invincibly powerful the flow becomes.
-•	Unfavorable Forces: Power Forces (the Leader & the Warrior) are the number one Harmful God/Force. A little earth (Thổ) trying to stop the flood will only make it more ferocious and cause it to break through everything. Economic Forces (the Provider & the Venturer) are also very unfavorable.
-`,
+            titleEn: `[THE SELF-09] YANG PEAK: > 74%`,
+            dataEn: `Fluid momentum reaches maximum saturation. This state carries two scenarios: (1) Generates a colossal hydrodynamic shockwave, washing away all barriers and reshaping the entire ecosystem's topography. (2) Expansive force exceeds the routing capacity of any physical framework. Directionless dispersion causes the system to destroy its own necessary circulation channels, leading to widespread, chaotic depletion of kinetic energy .`,
           },
           {
             id: 1,
@@ -2908,11 +2778,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để năng lượng được hữu dụng. Power Forces (the Leader & the Warrior) để xây đê, tạo ra phương hướng; Economic Forces (the Provider & the Venturer) là mục tiêu để chinh phục; Creation Forces (the Creator & the Innovator) để Thủy sinh Mộc, thể hiện trí tuệ.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng khiến dòng chảy trở nên quá mạnh và mất kiểm soát.
             `,
-            titleEn: `Ren Water - Hard: 65% – 74%`,
-            dataEn: `•	Interpretation: This is the archetype of the Ren Water strategist, explorer, or great merchant. They are intelligent, far-sighted, flexible, and always in motion. Like a great river, they have the ability to connect lands, create trade routes, and bring prosperity. Their strength is immense and has a wide-reaching influence.
-•	Favorable Forces: Prefers opposing forces to make the energy useful. Power Forces (the Leader & the Warrior) to build dikes and create direction; Economic Forces (the Provider & the Venturer) are goals to conquer; Creation Forces (the Creator & the Innovator) for Water to produce Wood, expressing wisdom.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival), as they make the flow too strong and out of control.
-`,
+            titleEn: `[THE SELF-09] YANG: 65% – 74%`,
+            dataEn: `Operates on 100% internal pressure. Autonomously breaks environmental inertia to establish powerful circulation trajectories. Sweeps up data and resources, forcing peripheral components to synchronize their velocity or be dissolved into its momentum .`,
           },
           {
             id: 2,
@@ -2921,11 +2788,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
             `,
-            titleEn: `Ren Water - Balanced (leaning Hard): 55% – 65%`,
-            dataEn: `•	Interpretation: This is a proactive and ambitious version of Ren Water. They are confident in their ability to conquer great goals. They are pioneers, unafraid to venture into new and challenging fields.
-•	Favorable Forces: Prioritizes Power Forces, Economic Forces, and Creation Forces.
-•	Unfavorable Forces: Support Forces and Companion Forces.
-`,
+            titleEn: `[THE SELF-09] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `Momentum is maintained at high intensity but governed by strategic routing. Redirects around hard gravitational cores rather than impacting them directly, optimizing flow distribution to achieve maximum kinetic efficiency .`,
           },
           {
             id: 3,
@@ -2934,11 +2798,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để trí tuệ của họ được thể hiện ra ngoài, và Power Forces (the Leader/Warrior) để có được sự ổn định và định hướng.
 • Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
             `,
-            titleEn: `Ren Water - True Balance: 45% – 55%`,
-            dataEn: `•	Interpretation: This is the most ideal state for Ren Water. Their wisdom is deep but calm. They have the ability to see through problems without being swept away by external chaos. They are flexible but not easily swayed, powerful but not overwhelming. They are wise thinkers and policymakers.
-•	Favorable Forces: Very flexible. They often prefer Creation Forces (the Creator/Innovator) for their wisdom to be expressed, and Power Forces (the Leader/Warrior) to have stability and direction.
-•	Unfavorable Forces: Any force that appears in excess and breaks the balance.
-`,
+            titleEn: `[THE SELF-09] TRUE BALANCED: 45% – 55%`,
+            dataEn: `Absolute intersection between kinetic movement and dissolving capability. The system operates as an optimal circulation network: lubricating physical bottlenecks, rhythmically circulating resources, and absorbing excess heat to maintain perfect liquidity for the entire environment .`,
           },
           {
             id: 4,
@@ -2947,11 +2808,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp dòng chảy không bao giờ cạn.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
             `,
-            titleEn: `Ren Water - Balanced (leaning Soft): 35% – 45%`,
-            dataEn: `•	Interpretation: This is a skillful and purposeful version of Ren Water. They understand that their strength is best utilized when flowing within an existing system. They are good at leveraging resources and working effectively within a collective.
-•	Favorable Forces: Prefers allied forces. Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) help ensure the flow never runs dry.
-•	Unfavorable Forces: Power Forces, Economic Forces, and Creation Forces.
-`,
+            titleEn: `[THE SELF-09] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `Self-generated pressure degrades. Cannot autonomously pierce macro-barriers. The system is forced to rely on pre-existing routing channels, legal templates, or gravitational cores to continue circulating, surrendering trajectory control to the environment .`,
           },
           {
             id: 5,
@@ -2960,11 +2818,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để tạo ra dòng chảy.
 • Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như đất đắp ngăn vũng nước nhỏ. Creation Forces và Economic Forces cũng làm họ khô cạn.
             `,
-            titleEn: `Ren Water - Soft: 25% – 35%`,
-            dataEn: `•	Interpretation: Their nature is to want to flow, to be free, but they lack the source (Metal) and allies (Water) to form a current. This creates a feeling of being trapped, confined, and dissatisfied. Their intelligence goes unused, causing stagnation.
-•	Favorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are most needed to create a flow.
-•	Unfavorable Forces: Very averse to Power Forces (the Leader & the Warrior) - like earth damming a small puddle. Creation Forces and Economic Forces also dry them up.
-`,
+            titleEn: `[THE SELF-09] YIN: 25% – 35%`,
+            dataEn: `Movement momentum nearly hits rock bottom. The flow structure fractures into stagnant fluid masses. Entirely loses the function of data circulation, becoming congested and beginning to be reverse-osmosed or evaporated by the surrounding ecosystem .`,
           },
           {
             id: 6,
@@ -2973,17 +2828,19 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 •	Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
 •	Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút hỗ trợ cũng sẽ "đánh thức" bản năng tự do, phá vỡ cấu trúc Tòng cách và gây ra khủng hoảng.
             `,
-            titleEn: `Ren Water - Extremely Soft: < 25%`,
-            dataEn: `•	Interpretation: In this state, Ren Water must completely abandon its ocean nature to "Follow" (Tòng) the most prosperous opposing force. They must learn to exist as part of something else, relying on a power that is not their own.
-•	Favorable Forces: The most prosperous force that the The Self is "Following" (can be Economic, Power, or Creation Forces) and the force that produces it.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are the number one Harmful God/Force. A little support will "awaken" the instinct for freedom, breaking the Follower structure and causing a crisis.
-`,
+            titleEn: `[THE SELF-09] YIN VOID: < 25%`,
+            dataEn: `Flow acceleration stalls completely. The fluid structure separates into isolated puddles. Circulation capacity decays, and the system evaporates or is passively absorbed into the environment, terminating all interactive momentum and physical displacement .`,
           },
         ],
       },
       {
         can: "Quý",
         selfCode: "[THE SELF-10]",
+        generalMechanism: `• General Mechanism: Optimizes fluid dynamics across micro-surfaces (Micro-Permeation, N-3 system). Operates as an infiltrating solvent. Seeps through structural fissures (capillary effect), weakens physical bonds from the inside out, and alters environmental states without generating surface friction .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Data Infiltration mechanism. Optimizes micro-flow liquidity and penetrates market niches via dispersion mechanisms. Risks include a lack of core structural definition, Data leaks, and internal operational rusting due to the inability to establish clear hardware processes .
+• Love/Romance Projection: Operates as a low-amplitude synchronization mechanism. Infiltrates the partner's psychological fissures to establish connections. This permeation can lead to passive information control, violating private spatial boundaries, and binding the partner's operational structure with continuous streams of negative emotions .
+• Healing/Shadow Projection: Operates as Seeping Anxiety. Stress information flows do not explode but trickle in to erode defenses. Creates disordered information processing flows, causing self-healing mechanisms to dissolve into an un-isolatable background stress environment .
+`,
         forceRanges: [
           {
             id: 0,
@@ -2992,11 +2849,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival).
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Đất (Thổ) cố gắng ngăn chặn cơn mưa dầm sẽ chỉ biến thành bùn lầy. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
             `,
-            titleEn: `Gui Water - Extremely Hard: > 74%`,
-            dataEn: `•	Interpretation: At this point, the rain that nurtures all things has become a persistent, cold, and gloomy downpour, causing floods. Subtle penetration turns into prying suspicion. A deep inner world becomes melancholy and depression. They create a negative emotional environment that causes all life to "rot."
-•	Favorable Forces: Following the "Follow the Hard" structure, they strongly prefer Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival).
-•	Unfavorable Forces: Power Forces (the Leader & the Warrior) are the number one Harmful God/Force. Earth (Thổ) trying to stop the incessant rain will only turn into mud. Economic Forces (the Provider & the Venturer) are also very unfavorable.
-`,
+            titleEn: `[THE SELF-10] YANG PEAK: > 74%`,
+            dataEn: `Micro-diffusion capacity exceeds capillary limits. The flexible seeping characteristic is nullified. Pumping excessive solvent waterlogs all connective gaps in the macro-structure. The agile solvent is compressed into a dense quagmire of data, generating static resistance that completely paralyzes transmission systems .`,
           },
           {
             id: 1,
@@ -3005,11 +2859,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập. Power Forces (the Leader & the Warrior) để dòng suối chảy trong русло; Economic Forces (the Provider & the Venturer) để chinh phục ngọn lửa; Creation Forces (the Creator & the Innovator) để nuôi dưỡng cây cối.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng khiến dòng suối trở nên quá lớn và mất đi sự trong trẻo.
             `,
-            titleEn: `Gui Water - Hard: 65% – 74%`,
-            dataEn: `•	Interpretation: This is the archetype of the Gui Water teacher, healer, and spiritual nurturer. Their wisdom is not ostentatious but permeates gently and slowly. They are patient, empathetic, and capable of using their words and knowledge to water the souls of others.
-•	Favorable Forces: Prefers opposing forces. Power Forces (the Leader & the Warrior) to keep the stream flowing in its channel; Economic Forces (the Provider & the Venturer) to conquer the flame; Creation Forces (the Creator & the Innovator) to nurture the plants.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival), as they cause the stream to become too large and lose its clarity.
-`,
+            titleEn: `[THE SELF-10] YANG: 65% – 74%`,
+            dataEn: `Micro-capillary capacity operates optimally on internal power. Proactively establishes seeping networks to penetrate the deepest data cores of the environment. Extracts and distributes information, silently breaking the load-bearing structures of rigid boundaries through continuous micro-pressure .`,
           },
           {
             id: 2,
@@ -3018,11 +2869,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
             `,
-            titleEn: `Gui Water - Balanced (leaning Hard): 55% – 65%`,
-            dataEn: `•	Interpretation: This is a more proactive version of Gui Water in spreading their influence. Like fog, they penetrate every corner silently but effectively. They are strategists, those capable of influencing without direct confrontation.
-•	Favorable Forces: Prioritizes Power Forces, Economic Forces, and Creation Forces.
-•	Unfavorable Forces: Support Forces and Companion Forces.
-`,
+            titleEn: `[THE SELF-10] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `Permeation is maintained continuously through strategic filters. Accurately identifies areas where bonds need loosening. The seeping is constructive, regulating internal pressure without causing overarching structural leaks .`,
           },
           {
             id: 3,
@@ -3031,11 +2879,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để nuôi dưỡng và thể hiện sự sáng tạo, và Economic Forces (the Provider/Venturer) để mang lại giá trị thực tế.
 • Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
             `,
-            titleEn: `Gui Water - True Balance: 45% – 55%`,
-            dataEn: `•	Interpretation: This is the most ideal state for Gui Water. They are pure, clear, and carry a whole world within them. Their wisdom is condensed and precious. They are artists, poets, those who can see the beauty and truth in the smallest things.
-•	Favorable Forces: Very flexible. They often prefer Creation Forces (the Creator/Innovator) to nurture and express creativity, and Economic Forces (the Provider/Venturer) to bring practical value.
-•	Unfavorable Forces: Any force that appears in excess and breaks the balance.
-`,
+            titleEn: `[THE SELF-10] TRUE BALANCED: 45% – 55%`,
+            dataEn: `Perfect intersection between seeping momentum and surface capacity. Operates as a flawless lubrication mechanism: provides precisely the amount of informational solvent needed to nourish micro-connection networks and neutralize thermodynamic friction, maintaining biological flexibility without causing stagnation .`,
           },
           {
             id: 4,
@@ -3044,11 +2889,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là rất quan trọng.
 • Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
             `,
-            titleEn: `Gui Water - Balanced (leaning Soft): 35% – 45%`,
-            dataEn: `•	Interpretation: This is a humble version of Gui Water that brings comfort and healing. They do not actively influence but wait to be sought out. They are confidants who know how to listen and give sincere advice.
-•	Favorable Forces: Prefers allied forces. Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are very important.
-•	Unfavorable Forces: Power Forces, Economic Forces, and Creation Forces.
-`,
+            titleEn: `[THE SELF-10] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `Self-generated capillary thrust declines. The system cannot proactively pierce physical boundaries. It is forced to rely on the environment's pressure differentials or pre-existing structural cracks in other entities to seep through, accepting passivity in the resource distribution cycle .`,
           },
           {
             id: 5,
@@ -3057,11 +2899,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) - như nguồn nước - là quan trọng nhất. Companion Forces (the Companion & the Rival) cũng rất cần thiết.
 • Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như đất hút cạn nước. Creation Forces và Economic Forces cũng làm họ kiệt quệ.
             `,
-            titleEn: `Gui Water - Soft: 25% – 35%`,
-            dataEn: `•	Interpretation: Their energy is very weak and prone to evaporation. They feel small and helpless in the face of life. Their inner world is full of anxiety and sensitivity. They are easily hurt and often view life through a pessimistic lens.
-•	Favorable Forces: Support Forces (the Mentor & the Maverick) - like a water source - are the most important. Companion Forces (the Companion & the Rival) are also very necessary.
-•	Unfavorable Forces: Very averse to Power Forces (the Leader & the Warrior) - like earth absorbing all the water. Creation Forces and Economic Forces also deplete them.
-`,
+            titleEn: `[THE SELF-10] YIN: 25% – 35%`,
+            dataEn: `Micro-spreading capacity is almost entirely neutralized. Capillary links sever, turning the system into isolated fluid particles. Losing the ability to interact with the environment, it becomes statically trapped between hardware frameworks and is slowly eroded by the environment's thermodynamic reactions .`,
           },
           {
             id: 6,
@@ -3070,16 +2909,13 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 • Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
 • Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút hỗ trợ cũng sẽ khiến "hơi thở" ngưng tụ, phá vỡ cấu trúc Tòng cách và gây ra khủng hoảng.
             `,
-            titleEn: `Gui Water - Extremely Soft: < 25%`,
-            dataEn: `•	Interpretation: In this state, Gui Water is nearly invisible and must "Follow" (Tòng) the most prosperous opposing force. They must learn to exist by completely dissolving into another energy.
-•	Favorable Forces: The most prosperous force that the The Self is "Following" (can be Economic, Power, or Creation Forces) and the force that produces it.
-•	Unfavorable Forces: Support Forces (the Mentor & the Maverick) and Companion Forces (the Companion & the Rival) are the number one Harmful God/Force. A little support will cause the "vapor" to condense, breaking the Follower structure and causing a crisis.
-`,
+            titleEn: `[THE SELF-10] YIN VOID: < 25%`,
+            dataEn: `The capillary mechanism runs dry, losing the ability to penetrate physical boundaries. This extreme state carries two scenarios: (1) Crystallizes into inert residue, losing flexibility and becoming useless, stagnant matter. (2) Phase-shifts into a dispersed atmospheric state (Sublimation). Remaining absolutely invisible to measurement protocols, it blends into spatial pressure, silently manipulating the data humidity and neural signals of the entire ecosystem from the shadows .`,
           },
         ],
       },
     ];
-    return forceData.find((item) => item.can === can).forceRanges;
+    return forceData.find((item) => item.can === can);
   };
 
   const getNguHanhHoTro = (nguHanh) => {
@@ -3172,32 +3008,37 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     let data = { en: "", vi: "" };
     switch (index) {
       case 0:
-        data = { en: "Extremely Hard", vi: "Cực Cường" };
+        data = { en: "Yang Peak", vi: "Cực Cường" };
         break;
       case 1:
-        data = { en: "Hard ", vi: "Cường" };
+        data = { en: "Yang ", vi: "Cường" };
         break;
       case 2:
-        data = { en: "Balanced (leaning Hard)", vi: "Cân Bằng Thiên Cường" };
+        data = { en: "Balanced (leaning Yang)", vi: "Cân Bằng Thiên Cường" };
         break;
       case 3:
         data = { en: "True Balance", vi: "Cân Bằng Thực Sự" };
         break;
       case 4:
-        data = { en: "Balanced (leaning Soft)", vi: "Cân Bằng Thiên Nhược" };
+        data = { en: "Balanced (leaning Yin)", vi: "Cân Bằng Thiên Nhược" };
         break;
       case 5:
-        data = { en: "Soft", vi: "Nhược" };
+        data = { en: "Yin", vi: "Nhược" };
         break;
       case 6:
-        data = { en: "Extremely Soft", vi: "Cực Nhược" };
+        data = { en: "Yin Void", vi: "Cực Nhược" };
         break;
     }
     return LANGUAGE === "en" ? data.en : data.vi;
   };
 
   const getForcesDetail = (nhatChu, dongHanhPercent, hoTroPercent) => {
-    let forces = getSupportForces(nhatChu.can);
+    let forces = getSupportForces(nhatChu.can).forceRanges;
+    let generalMechanism = getSupportForces(nhatChu.can).generalMechanism;
+    let domainProductionMechanisms = getSupportForces(
+      nhatChu.can
+    ).domainProductionMechanisms;
+    let selfCode = getSupportForces(nhatChu.can).selfCode;
     let totalPercent = dongHanhPercent + hoTroPercent;
     let majorForcesIndex = 0;
     if (totalPercent > 74) {
@@ -3233,7 +3074,11 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         minorForcesIndex = majorForcesIndex + 1;
       }
     }
+
     return {
+      selfCode: selfCode,
+      generalMechanism: generalMechanism,
+      domainProductionMechanisms: domainProductionMechanisms,
       majorForces: {
         name: getNameFromIndex(majorForcesIndex),
         title:
@@ -4081,21 +3926,46 @@ ${
         )}) = ${item.percentDuong}%`
     )
     .join("\n\n")}
-  
-The Self Strength Level (Root): ${getElementData(
-      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.name
-    )} Element (Companion Forces) ${
-      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent
-    }% + ${getElementData(
-      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.name
-    )} Element (Support Forces) ${
-      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
-    }% = ${
-      getSupportPercent(nhatChu, nguHanhScoreGoc).totalPercent
-    }%. However, because ${getRoleText(
-      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
-    )}, the AGI has determined the The Self's Strength to be relatively at ${
+    ${baseInfo.gioiTinh === 1 ? "Mr." : "Ms."} ${baseInfo.hoTen}, born in ${
+      baseInfo.namSinh
+    }’s [The Self] is ${
+      getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+      ).selfCode
+    }
+    THE ROOT PHYSICS of ${
+      getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+      ).selfCode
+    }
+    ${
+      getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+      ).generalMechanism
+    }
+    THE DOMAIN PROJECTION MECHANISMS of ${
+      getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+      ).selfCode
+    }
+      ${
+        getForcesDetail(
+          nhatChu,
+          getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+          getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+        ).domainProductionMechanisms
+      }
+The Root [The Self] Type of ${baseInfo.gioiTinh === 1 ? "Mr." : "Ms."} ${
+      baseInfo.hoTen
+    }, born in ${baseInfo.namSinh} to be relatively at ${
       !getForcesDetail(
         nhatChu,
         getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
@@ -4129,28 +3999,26 @@ ${
     getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
     getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
   ).majorForces.title
-}
-${
-  getForcesDetail(
-    nhatChu,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
-  ).majorForces.data
-}
+}: ${
+      getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+      ).majorForces.data
+    }
 ${
   getForcesDetail(
     nhatChu,
     getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
     getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
   ).minorForces?.title
-}
-${
-  getForcesDetail(
-    nhatChu,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
-  ).minorForces?.data
-}${
+}: ${
+      getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+      ).minorForces?.data
+    }${
       daiVan
         ? `\n\n3. Variable Pillars for ${
             baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
@@ -4386,7 +4254,6 @@ ${
 •	Root Month Pillar: ${getNapAmData(thang.nguHanhNapAm)}
 •	Root Day Pillar: ${getNapAmData(nhatChu.nguHanhNapAm)}
 •	Root Hour Pillar: ${getNapAmData(gio ? gio.nguHanhNapAm : "")}
-<<<<<<< HEAD
 
 Inner Strength comes from the Year Pillar ${getNapAm(nam.nguHanhNapAm)}\n
 Inner Strength comes from the Month Pillar ${getNapAm(thang.nguHanhNapAm)}\n
@@ -4394,16 +4261,6 @@ Inner Strength comes from the Day Pillar ${getNapAm(nhatChu.nguHanhNapAm)}\n
 Inner Strength comes from the Hour Pillar ${getNapAm(
       gio ? gio.nguHanhNapAm : ""
     )}
-=======
-Inner Strength comes from the Year Pillar:
-${getNapAm(nam.nguHanhNapAm)}\n
-Inner Strength comes from the Month Pillar:
-${getNapAm(thang.nguHanhNapAm)}\n
-Inner Strength comes from the Day Pillar:
-${getNapAm(nhatChu.nguHanhNapAm)}\n
-Inner Strength comes from the Hour Pillar:
-${getNapAm(gio ? gio.nguHanhNapAm : "")}
->>>>>>> 2085d6d0016c484ce4cfcc879dba9a488bb501c5
 `;
     return LANGUAGE === "en" ? tuTruEn : tuTru;
   };
