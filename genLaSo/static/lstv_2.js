@@ -3925,8 +3925,8 @@ ${
           item.thapThan[1]
         )}) = ${item.percentDuong}%`
     )
-    .join("\n\n")}
-    ${baseInfo.gioiTinh === 1 ? "Mr." : "Ms."} ${baseInfo.hoTen}, born in ${
+    .join("\n\n")}   
+     \n${baseInfo.gioiTinh === 1 ? "Mr." : "Ms."} ${baseInfo.hoTen}, born in ${
       baseInfo.namSinh
     }’s [The Self] is ${
       getForcesDetail(
@@ -3963,9 +3963,19 @@ ${
           getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
         ).domainProductionMechanisms
       }
-The Root [The Self] Type of ${baseInfo.gioiTinh === 1 ? "Mr." : "Ms."} ${
-      baseInfo.hoTen
-    }, born in ${baseInfo.namSinh} to be relatively at ${
+      ${getElementData(
+        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.name
+      )} Element (Companion Forces) ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent
+    }% + ${getElementData(
+      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.name
+    )} Element (Support Forces) ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+    }% = ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).totalPercent
+    }%. However, because Support Forces Companion Forces, the AGI has determined The Root [The Self] Type of ${
+      baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
+    } ${baseInfo.hoTen}, born in ${baseInfo.namSinh} to be relatively at ${
       !getForcesDetail(
         nhatChu,
         getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
@@ -4247,9 +4257,9 @@ ${
 }`
         : ""
     }
-5. Analysis of Inner Strength for ${baseInfo.gioiTinh === 1 ? "Mr." : "Ms."} ${
-      baseInfo.hoTen
-    }, born in ${baseInfo.namSinh}
+\n5. Analysis of Inner Strength for ${
+      baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
+    } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}
 •	Root Year Pillar:  ${getNapAmData(nam.nguHanhNapAm)}
 •	Root Month Pillar: ${getNapAmData(thang.nguHanhNapAm)}
 •	Root Day Pillar: ${getNapAmData(nhatChu.nguHanhNapAm)}
