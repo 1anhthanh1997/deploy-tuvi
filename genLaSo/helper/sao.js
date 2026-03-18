@@ -274,7 +274,7 @@ const saoDiaKiep = new Sao(54, "Địa kiếp", "Disaster Star", "H", 11);
 
 //    Hỏa tinh - Linh tinh
 const saoLinhTinh = new Sao(55, "Linh tinh", "Lighting", "H", 11);
-const saoHoaTinh = new Sao(56, "Hỏa tinh", "Fire", "H", 11);
+const saoHoaTinh = new Sao(56, "Hỏa tinh", "Mars", "H", 11);
 
 // Sao Âm Dương
 //    Văn xương - Văn khúc
