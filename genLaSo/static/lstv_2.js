@@ -2178,7 +2178,7 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
       },
     ];
     let thapThanText = thapThan.find(
-      (item) => item.name === nhatChuName
+      (item) => item.name === nhatChuName,
     ).thapThanText;
     return thapThanText;
   };
@@ -2676,13 +2676,13 @@ Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, 
           thapThanGroup[1]
         } (Ngũ hành ${getNguHanhThapThan(nguHanhCan)[groupIndex]})
     a. ${thapThanGroup[0]}${renderThapThanSection(
-          thapThanGroup[0],
-          nhatChuName
-        )}
+      thapThanGroup[0],
+      nhatChuName,
+    )}
     b. ${thapThanGroup[1]}${renderThapThanSection(
-          thapThanGroup[1],
-          nhatChuName
-        )}`;
+      thapThanGroup[1],
+      nhatChuName,
+    )}`;
       })
       .join("\n\n");
     return thapThanInfo;
@@ -3635,7 +3635,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     let forces = getSupportForces(nhatChu.can).forceRanges;
     let generalMechanism = getSupportForces(nhatChu.can).generalMechanism;
     let domainProductionMechanisms = getSupportForces(
-      nhatChu.can
+      nhatChu.can,
     ).domainProductionMechanisms;
     let selfCode = getSupportForces(nhatChu.can).selfCode;
     let totalPercent = dongHanhPercent + hoTroPercent;
@@ -4123,7 +4123,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     return `${data
       .map((item) => {
         let nguHanhData = nguHanhScore.find(
-          (nguHanh) => item.nguHanh === nguHanh.name
+          (nguHanh) => item.nguHanh === nguHanh.name,
         );
         let percent =
           item.amDuong === "Dương"
@@ -4138,6 +4138,33 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     `;
   };
 
+  const getAgeStartDecadeIndex = (thapNhiCung) => {
+    let ageStartDecadeIndex = 0;
+    let startDecadeCungSo = 1;
+    for (let cung of thapNhiCung) {
+      if (cung.cungDaiHan <= 10) {
+        ageStartDecadeIndex = cung.cungDaiHan - 1;
+        startDecadeCungSo = cung.cungSo;
+      }
+    }
+    return { ageStartDecadeIndex, startDecadeCungSo };
+  };
+
+  const BRANCH_LIST = [
+    "Tý",
+    "Sửu",
+    "Dần",
+    "Mão",
+    "Thìn",
+    "Tỵ",
+    "Ngọ",
+    "Mùi",
+    "Thân",
+    "Dậu",
+    "Tuất",
+    "Hợi",
+  ];
+
   const getTuTruData = (bazi, baseInfo) => {
     let nam = bazi.year;
     let thang = bazi.month;
@@ -4150,6 +4177,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     let nguyetVan = bazi.nguyetVan;
     let nhatVan = bazi.nhatVan;
     let thoiVan = bazi.thoiVan;
+    let thapNhiCung = bazi.thapNhiCung;
     let tuTru = `
     1. Lá Số Tứ Trụ của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
       baseInfo.hoTen
@@ -4272,7 +4300,7 @@ Trụ Giờ Chính:${gio ? gio.name : ""}
         }%, 
         +${getElementData(item.name)} (${item.thapThan[1]}) = ${
           item.percentDuong
-        }%`
+        }%`,
     )
     .join("\n\n")}
   
@@ -4288,12 +4316,12 @@ Cấp độ sức mạnh của Nhật Chủ (Chính): Hành ${
       getSupportPercent(nhatChu, nguHanhScoreGoc).totalPercent
     }%. Tuy nhiên do ${getRoleText(
       getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
     )} nên Sức Mạnh của Nhật Chủ được AGI xác định tương đối tại ${
       !getForcesDetail(
         nhatChu,
         getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
       ).minorForces.name
         ? ""
         : "2"
@@ -4301,19 +4329,19 @@ Cấp độ sức mạnh của Nhật Chủ (Chính): Hành ${
       getForcesDetail(
         nhatChu,
         getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
       ).majorForces.name
     }${
       getForcesDetail(
         nhatChu,
         getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
       ).minorForces.name
         ? " và " +
           getForcesDetail(
             nhatChu,
             getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-            getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+            getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
           ).minorForces.name
         : ""
     }     
@@ -4321,28 +4349,28 @@ ${
   getForcesDetail(
     nhatChu,
     getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
   ).majorForces.title
 }
 ${
   getForcesDetail(
     nhatChu,
     getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
   ).majorForces.data
 }
 ${
   getForcesDetail(
     nhatChu,
     getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
   ).minorForces?.title
 }
 ${
   getForcesDetail(
     nhatChu,
     getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
   ).minorForces?.data
 }${
       daiVan
@@ -4382,7 +4410,7 @@ ${
           daiVan
             ? getAdditionPercent(item.name, nguHanhScore, nguHanhScoreGoc).duong
             : ""
-        })`
+        })`,
     )
     .join("\n\n")}
 Cấp độ sức mạnh của Nhật Chủ (Biến): Hành ${
@@ -4397,12 +4425,12 @@ Cấp độ sức mạnh của Nhật Chủ (Biến): Hành ${
             getSupportPercent(nhatChu, nguHanhScore).totalPercent
           }%. Tuy nhiên do ${getRoleText(
             getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-            getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+            getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
           )} nên Sức Mạnh của Nhật Chủ được AGI xác định tương đối tại ${
             !getForcesDetail(
               nhatChu,
               getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
             ).minorForces.name
               ? ""
               : "2"
@@ -4410,19 +4438,19 @@ Cấp độ sức mạnh của Nhật Chủ (Biến): Hành ${
             getForcesDetail(
               nhatChu,
               getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
             ).majorForces.name
           }${
             getForcesDetail(
               nhatChu,
               getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
             ).minorForces.name
               ? " và " +
                 getForcesDetail(
                   nhatChu,
                   getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-                  getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+                  getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
                 ).minorForces.name
               : ""
           } 
@@ -4430,28 +4458,28 @@ ${
   getForcesDetail(
     nhatChu,
     getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
   ).majorForces.title
 }
 ${
   getForcesDetail(
     nhatChu,
     getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
   ).majorForces.data
 }
 ${
   getForcesDetail(
     nhatChu,
     getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
   ).minorForces?.title
 }
 ${
   getForcesDetail(
     nhatChu,
     getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
-    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
   ).minorForces?.data
 }`
         : ""
@@ -4473,33 +4501,33 @@ ${getNapAm(gio ? gio.nguHanhNapAm : "")}
      } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}
 Root Year Pillar:${getStemData(nam.can)} ${getBranchData(nam.chi)}
 •	Stem: ${getStemData(nam.can)} (Revealed Force =${getTenForcesData(
-      nam.thapThan
+      nam.thapThan,
     )})
 •	Branch:${getBranchData(nam.chi)} (Hidden Forces = ${nam.canTangPercent
       .map((item) => `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`)
       .join(" + ")}) 
 •	Inner Strength comes from the Year Pillar powered by ${getNapAmTenForces(
-      nam.nguHanhNapAmThapThan
+      nam.nguHanhNapAmThapThan,
     )}
 Root Month Pillar:${getStemData(thang.can)} ${getBranchData(thang.chi)}
 •	Stem: ${getStemData(thang.can)} (Revealed Force =${getTenForcesData(
-      thang.thapThan
+      thang.thapThan,
     )})
 •	Branch: ${getBranchData(thang.chi)} (Hidden Forces = ${thang.canTangPercent
       .map((item) => `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`)
       .join(" + ")}) 
 •	Inner Strength comes from the Month Pillar powered by ${getNapAmTenForces(
-      thang.nguHanhNapAmThapThan
+      thang.nguHanhNapAmThapThan,
     )}
 Root Day Pillar:${getStemData(nhatChu.can)} ${getBranchData(nhatChu.chi)}
 •	Stem: ${getStemData(nhatChu.can)} (Revealed Force =${getTenForcesData(
-      nhatChu.thapThan
+      nhatChu.thapThan,
     )})
 •	Branch: ${getBranchData(nhatChu.chi)} (Hidden Forces = ${nhatChu.canTangPercent
       .map((item) => `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`)
       .join(" + ")})       
 •	Inner Strength comes from the Day Pillar powered by ${getNapAmTenForces(
-      nhatChu.nguHanhNapAmThapThan
+      nhatChu.nguHanhNapAmThapThan,
     )}
 ${
   gio
@@ -4507,28 +4535,32 @@ ${
         gio ? getStemData(gio.can) + " " + getBranchData(gio.chi) : ""
       }
 •	Stem: ${getStemData(gio ? gio.can : "")} (Revealed Force =${getTenForcesData(
-        gio ? gio.thapThan : ""
+        gio ? gio.thapThan : "",
       )})
 •	Branch: ${getBranchData(gio ? gio.chi : "")} (Hidden Forces = ${
         gio
           ? gio.canTangPercent
               .map(
                 (item) =>
-                  `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
+                  `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`,
               )
               .join(" + ")
           : ""
       })
 •	Inner Strength comes from the Hour Pillar powered by ${getNapAmTenForces(
-        gio ? gio.nguHanhNapAmThapThan : ""
+        gio ? gio.nguHanhNapAmThapThan : "",
       )} `
     : ""
 }
-    ${
-      !gio && daiVan
-        ? generateDecadeText(daiVan.yearStartDecade, baseInfo.namSinh)
-        : ""
-    }
+     ${
+       !gio && daiVan
+         ? generateDecadeText(
+             daiVan.yearStartDecade,
+             baseInfo.namSinh,
+             BRANCH_LIST.indexOf(daiVan.chi) + 1,
+           )
+         : ""
+     }
 
 2. Root Five Elements Proportions for ${
       baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
@@ -4547,7 +4579,7 @@ ${
           ? convertDate(
               baseInfo.ngayLuuNhat,
               baseInfo.thangLuuNguyet,
-              baseInfo.namXemTieuVan
+              baseInfo.namXemTieuVan,
             )
           : ""
       }  
@@ -4556,77 +4588,77 @@ ${
 }${
       daiVan
         ? `\nVariable Decade Pillar: ${getStemData(daiVan.can)} ${getBranchData(
-            daiVan.chi
+            daiVan.chi,
           )}
 •	Stem: ${getStemData(daiVan.can)} (Revealed Force =${getTenForcesData(
-            daiVan.thapThan
+            daiVan.thapThan,
           )})
 •	Branch: ${getBranchData(daiVan.chi)} (Hidden Forces = ${daiVan.canTangPercent
             .map(
               (item) =>
-                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
+                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`,
             )
             .join(" + ")})`
         : ""
     }${
       tieuVan
         ? `\nVariable Year Pillar: ${getStemData(tieuVan.can)} ${getBranchData(
-            tieuVan.chi
+            tieuVan.chi,
           )}
 •	Stem: ${getStemData(tieuVan.can)} (Revealed Force =${getTenForcesData(
-            tieuVan.thapThan
+            tieuVan.thapThan,
           )})
 •	Branch: ${getBranchData(tieuVan.chi)} (Hidden Forces = ${tieuVan.canTangPercent
             .map(
               (item) =>
-                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
+                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`,
             )
             .join(" + ")})`
         : ""
     }${
       nguyetVan
         ? `\nVariable Month Pillar: ${getStemData(
-            nguyetVan.can
+            nguyetVan.can,
           )} ${getBranchData(nguyetVan.chi)}
 •	Stem: ${getStemData(nguyetVan.can)} (Revealed Force =${getTenForcesData(
-            nguyetVan.thapThan
+            nguyetVan.thapThan,
           )})
 •	Branch: ${getBranchData(
-            nguyetVan.chi
+            nguyetVan.chi,
           )} (Hidden Forces = ${nguyetVan.canTangPercent
             .map(
               (item) =>
-                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
+                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`,
             )
             .join(" + ")})`
         : ""
     }${
       nhatVan
         ? `\nVariable Day Pillar: ${getStemData(nhatVan.can)} ${getBranchData(
-            nhatVan.chi
+            nhatVan.chi,
           )}
 •	Stem: ${getStemData(nhatVan.can)} (Revealed Force =${getTenForcesData(
-            nhatVan.thapThan
+            nhatVan.thapThan,
           )})
 •	Branch: ${getBranchData(nhatVan.chi)} (Hidden Forces = ${nhatVan.canTangPercent
             .map(
               (item) =>
-                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
+                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`,
             )
             .join(" + ")})`
         : ""
     }${
       thoiVan
         ? `\nVariable Hour Pillar: ${getStemData(thoiVan.can)} ${getBranchData(
-            thoiVan.chi
+            thoiVan.chi,
           )}
 •	Stem: ${getStemData(thoiVan.can)} (Revealed Force =${getTenForcesData(
-            thoiVan.thapThan
+            thoiVan.thapThan,
           )})
 •	Branch: ${getBranchData(thoiVan.chi)} (Hidden Forces = ${thoiVan.canTangPercent
             .map(
               (item) =>
-                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`
+                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`,
             )
             .join(" + ")})`
         : ""
@@ -4645,7 +4677,7 @@ ${
               ? convertDate(
                   baseInfo.ngayLuuNhat,
                   baseInfo.thangLuuNguyet,
-                  baseInfo.namXemTieuVan
+                  baseInfo.namXemTieuVan,
                 )
               : ""
           }. The value ${
@@ -4657,7 +4689,7 @@ ${
               ? convertDate(
                   baseInfo.ngayLuuNhat,
                   baseInfo.thangLuuNguyet,
-                  baseInfo.namXemTieuVan
+                  baseInfo.namXemTieuVan,
                 ) + ")"
               : ""
           } is compared to the root proportions
@@ -4672,7 +4704,7 @@ ${
 
 Inner Strength comes from the Day Pillar ${getNapAm(nhatChu.nguHanhNapAm)}\n
 Inner Strength comes from the Hour Pillar ${getNapAm(
-      gio ? gio.nguHanhNapAm : ""
+      gio ? gio.nguHanhNapAm : "",
     )}
 `;
     return LANGUAGE === "en" ? tuTruEn : tuTru;
@@ -4851,10 +4883,10 @@ Inner Strength comes from the Hour Pillar ${getNapAm(
       let cung = cungArr[0];
       const { cungSao, cungSo } = cung;
       const chinhTinhGoc = cungSao.filter(
-        (sao) => sao.saoAmDuong && sao.saoAmDuong !== ""
+        (sao) => sao.saoAmDuong && sao.saoAmDuong !== "",
       );
       let chinhTinhMoi = cungSao.filter(
-        (sao) => newChinhTinh.includes(sao.saoID)
+        (sao) => newChinhTinh.includes(sao.saoID),
         // !checkSaoDaiVan(sao.saoTen) &&
         // !checkSaoLuuNien(sao.saoTen) &&
         // !checkSaoLuuNguyet(sao.saoTen) &&
@@ -4913,7 +4945,7 @@ Inner Strength comes from the Hour Pillar ${getNapAm(
       // }
 
       const phuTinh = cungSao.filter(
-        (sao) => sao.saoAmDuong === "" && !newChinhTinh.includes(sao.saoID)
+        (sao) => sao.saoAmDuong === "" && !newChinhTinh.includes(sao.saoID),
         // !checkSaoDaiVan(sao.saoTen) &&
         // !checkSaoLuuNien(sao.saoTen) &&
         // !checkSaoLuuNguyet(sao.saoTen) &&
@@ -5179,7 +5211,7 @@ Inner Strength comes from the Hour Pillar ${getNapAm(
   const getThapThan = (nguHanhThienCan, nguHanhNhatChu, cungDau) => {
     let relationship = checkNguHanhRelationshipDetailed(
       nguHanhNhatChu,
-      nguHanhThienCan
+      nguHanhThienCan,
     );
 
     // Bảng thập thần dựa trên mối quan hệ ngũ hành và âm dương
@@ -5209,7 +5241,7 @@ Inner Strength comes from the Hour Pillar ${getNapAm(
     const thapThan = thapThanMap[relationship];
     if (!thapThan) {
       throw new Error(
-        `Không xác định được thập thần cho mối quan hệ: ${relationship}`
+        `Không xác định được thập thần cho mối quan hệ: ${relationship}`,
       );
     }
 
@@ -5234,7 +5266,7 @@ Inner Strength comes from the Hour Pillar ${getNapAm(
                 LANGUAGE === "en"
                   ? getXungChieuEn(cung.cungChu)
                   : getXungChieu(cung.cungChu),
-                thapNhiCung
+                thapNhiCung,
               ).chinhTinhGoc
             } opposition aspect, ${
               getSao(cung.cungChu, thapNhiCung).newChinhTinh
@@ -5247,8 +5279,8 @@ Inner Strength comes from the Hour Pillar ${getNapAm(
                 getNguHanhCan(item.name).nguHanh,
                 getNguHanhCan(nhatChu).nguHanh,
                 getNguHanhCan(item.name).amDuong ===
-                  getNguHanhCan(nhatChu).amDuong
-              )
+                  getNguHanhCan(nhatChu).amDuong,
+              ),
             ) +
             " (" +
             item.score * 2 +
@@ -5261,7 +5293,7 @@ Inner Strength comes from the Hour Pillar ${getNapAm(
     return `Cung ${cungChu}${
       cung.cungThan ? " kiêm nhiệm cung an Thân" : ""
     }: Địa Chi: ${cung.cungTen} (${getNguHanhChi(
-      cung.cungTen
+      cung.cungTen,
     )}), Can Tàng: ${canTangData
       .map((item) => {
         return (
@@ -5272,7 +5304,7 @@ Inner Strength comes from the Hour Pillar ${getNapAm(
           getThapThan(
             getNguHanhCan(item.name).nguHanh,
             getNguHanhCan(nhatChu).nguHanh,
-            getNguHanhCan(item.name).amDuong === getNguHanhCan(nhatChu).amDuong
+            getNguHanhCan(item.name).amDuong === getNguHanhCan(nhatChu).amDuong,
           ) +
           ")"
         );
@@ -5326,7 +5358,7 @@ Inner Strength comes from the Hour Pillar ${getNapAm(
         } Combination
         ${item.cungEn
           .map((cungChu) =>
-            getCungInfo(cungChu, thapNhiCung, nhatChu, baseInfo)
+            getCungInfo(cungChu, thapNhiCung, nhatChu, baseInfo),
           )
           .join("\n")}
         `;
@@ -5344,18 +5376,6 @@ Inner Strength comes from the Hour Pillar ${getNapAm(
     }
 
     return tamHopData.join("\n");
-  };
-
-  const getAgeStartDecadeIndex = (thapNhiCung) => {
-    let ageStartDecadeIndex = 0;
-    let startDecadeCungSo = 1;
-    for (let cung of thapNhiCung) {
-      if (cung.cungDaiHan <= 10) {
-        ageStartDecadeIndex = cung.cungDaiHan - 1;
-        startDecadeCungSo = cung.cungSo;
-      }
-    }
-    return { ageStartDecadeIndex, startDecadeCungSo };
   };
 
   function getBatTuTemplate(bazi) {
@@ -5387,7 +5407,7 @@ Inner Strength comes from the Hour Pillar ${getNapAm(
         getAgeStartDecadeIndex(thapNhiCung).ageStartDecadeIndex +
           baseInfo.namSinh,
         baseInfo.namSinh,
-        getAgeStartDecadeIndex(thapNhiCung).startDecadeCungSo
+        getAgeStartDecadeIndex(thapNhiCung).startDecadeCungSo,
       )}        
       ${getTamHopData(thapNhiCung, bazi.day.can, baseInfo)}`
           : ""
@@ -5456,36 +5476,36 @@ Inner Strength comes from the Hour Pillar ${getNapAm(
     $("#tenTieuVanBatTu").text(bazi.tieuVan ? bazi.tieuVan.name : "");
     $("#napAmTieuVanBatTu").text(bazi.tieuVan ? bazi.tieuVan.nguHanhNapAm : "");
     $("#nguHanhCanTieuVanBatTu").text(
-      bazi.tieuVan ? bazi.tieuVan.nguHanhCan : ""
+      bazi.tieuVan ? bazi.tieuVan.nguHanhCan : "",
     );
     $("#nguHanhChiTieuVanBatTu").text(
-      bazi.tieuVan ? bazi.tieuVan.nguHanhChi : ""
+      bazi.tieuVan ? bazi.tieuVan.nguHanhChi : "",
     );
     $("#tenNguyetVanBatTu").text(bazi.nguyetVan ? bazi.nguyetVan.name : "");
     $("#napAmNguyetVanBatTu").text(
-      bazi.nguyetVan ? bazi.nguyetVan.nguHanhNapAm : ""
+      bazi.nguyetVan ? bazi.nguyetVan.nguHanhNapAm : "",
     );
     $("#nguHanhCanNguyetVanBatTu").text(
-      bazi.nguyetVan ? bazi.nguyetVan.nguHanhCan : ""
+      bazi.nguyetVan ? bazi.nguyetVan.nguHanhCan : "",
     );
     $("#nguHanhChiNguyetVanBatTu").text(
-      bazi.nguyetVan ? bazi.nguyetVan.nguHanhChi : ""
+      bazi.nguyetVan ? bazi.nguyetVan.nguHanhChi : "",
     );
     $("#tenNhatVanBatTu").text(bazi.nhatVan ? bazi.nhatVan.name : "");
     $("#napAmNhatVanBatTu").text(bazi.nhatVan ? bazi.nhatVan.nguHanhNapAm : "");
     $("#nguHanhCanNhatVanBatTu").text(
-      bazi.nhatVan ? bazi.nhatVan.nguHanhCan : ""
+      bazi.nhatVan ? bazi.nhatVan.nguHanhCan : "",
     );
     $("#nguHanhChiNhatVanBatTu").text(
-      bazi.nhatVan ? bazi.nhatVan.nguHanhChi : ""
+      bazi.nhatVan ? bazi.nhatVan.nguHanhChi : "",
     );
     $("#tenThoiVanBatTu").text(bazi.thoiVan ? bazi.thoiVan.name : "");
     $("#napAmThoiVanBatTu").text(bazi.thoiVan ? bazi.thoiVan.nguHanhNapAm : "");
     $("#nguHanhCanThoiVanBatTu").text(
-      bazi.thoiVan ? bazi.thoiVan.nguHanhCan : ""
+      bazi.thoiVan ? bazi.thoiVan.nguHanhCan : "",
     );
     $("#nguHanhChiThoiVanBatTu").text(
-      bazi.thoiVan ? bazi.thoiVan.nguHanhChi : ""
+      bazi.thoiVan ? bazi.thoiVan.nguHanhChi : "",
     );
     $("#tenNamTru").text(nam.name);
     $("#tenThangTru").text(thang.name);
@@ -5515,64 +5535,64 @@ Inner Strength comes from the Hour Pillar ${getNapAm(
     $("#thapThanNhatVan").text(bazi.nhatVan ? bazi.nhatVan.thapThan : "");
     $("#thapThanThoiVan").text(bazi.thoiVan ? bazi.thoiVan.thapThan : "");
     $("#nangLuongAmKim").text(
-      nguHanhScore.find((item) => item.id === 1).scoreAm
+      nguHanhScore.find((item) => item.id === 1).scoreAm,
     );
     $("#nangLuongAmMoc").text(
-      nguHanhScore.find((item) => item.id === 2).scoreAm
+      nguHanhScore.find((item) => item.id === 2).scoreAm,
     );
     $("#nangLuongAmThuy").text(
-      nguHanhScore.find((item) => item.id === 3).scoreAm
+      nguHanhScore.find((item) => item.id === 3).scoreAm,
     );
     $("#nangLuongAmHoa").text(
-      nguHanhScore.find((item) => item.id === 4).scoreAm
+      nguHanhScore.find((item) => item.id === 4).scoreAm,
     );
     $("#nangLuongAmTho").text(
-      nguHanhScore.find((item) => item.id === 5).scoreAm
+      nguHanhScore.find((item) => item.id === 5).scoreAm,
     );
     $("#nangLuongDuongKim").text(
-      nguHanhScore.find((item) => item.id === 1).scoreDuong
+      nguHanhScore.find((item) => item.id === 1).scoreDuong,
     );
     $("#nangLuongDuongMoc").text(
-      nguHanhScore.find((item) => item.id === 2).scoreDuong
+      nguHanhScore.find((item) => item.id === 2).scoreDuong,
     );
     $("#nangLuongDuongThuy").text(
-      nguHanhScore.find((item) => item.id === 3).scoreDuong
+      nguHanhScore.find((item) => item.id === 3).scoreDuong,
     );
     $("#nangLuongDuongHoa").text(
-      nguHanhScore.find((item) => item.id === 4).scoreDuong
+      nguHanhScore.find((item) => item.id === 4).scoreDuong,
     );
     $("#nangLuongDuongTho").text(
-      nguHanhScore.find((item) => item.id === 5).scoreDuong
+      nguHanhScore.find((item) => item.id === 5).scoreDuong,
     );
     $("#tongNangLuongKim").text(
-      nguHanhScore.find((item) => item.id === 1).total
+      nguHanhScore.find((item) => item.id === 1).total,
     );
     $("#tongNangLuongMoc").text(
-      nguHanhScore.find((item) => item.id === 2).total
+      nguHanhScore.find((item) => item.id === 2).total,
     );
     $("#tongNangLuongThuy").text(
-      nguHanhScore.find((item) => item.id === 3).total
+      nguHanhScore.find((item) => item.id === 3).total,
     );
     $("#tongNangLuongHoa").text(
-      nguHanhScore.find((item) => item.id === 4).total
+      nguHanhScore.find((item) => item.id === 4).total,
     );
     $("#tongNangLuongTho").text(
-      nguHanhScore.find((item) => item.id === 5).total
+      nguHanhScore.find((item) => item.id === 5).total,
     );
     $("#phanTramNangLuongKim").text(
-      nguHanhScore.find((item) => item.id === 1).percent
+      nguHanhScore.find((item) => item.id === 1).percent,
     );
     $("#phanTramNangLuongMoc").text(
-      nguHanhScore.find((item) => item.id === 2).percent
+      nguHanhScore.find((item) => item.id === 2).percent,
     );
     $("#phanTramNangLuongThuy").text(
-      nguHanhScore.find((item) => item.id === 3).percent
+      nguHanhScore.find((item) => item.id === 3).percent,
     );
     $("#phanTramNangLuongHoa").text(
-      nguHanhScore.find((item) => item.id === 4).percent
+      nguHanhScore.find((item) => item.id === 4).percent,
     );
     $("#phanTramNangLuongTho").text(
-      nguHanhScore.find((item) => item.id === 5).percent
+      nguHanhScore.find((item) => item.id === 5).percent,
     );
     $("#batTuTemplate").html(getBatTuTemplate(bazi).replace(/\n/g, "<br>"));
   }
