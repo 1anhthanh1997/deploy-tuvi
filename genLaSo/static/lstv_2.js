@@ -4150,6 +4150,19 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     return { ageStartDecadeIndex, startDecadeCungSo };
   };
 
+  const STEM_LIST = [
+    "Giáp",
+    "Ất",
+    "Bính",
+    "Đinh",
+    "Mậu",
+    "Kỷ",
+    "Canh",
+    "Tân",
+    "Nhâm",
+    "Quý",
+  ];
+
   const BRANCH_LIST = [
     "Tý",
     "Sửu",
@@ -4164,6 +4177,25 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     "Tuất",
     "Hợi",
   ];
+
+  const containsAllValues = (sourceList = [], targetList = []) => {
+    let sourceCountMap = new Map();
+
+    sourceList.forEach((value) => {
+      sourceCountMap.set(value, (sourceCountMap.get(value) || 0) + 1);
+    });
+
+    return targetList.every((value) => {
+      let currentCount = sourceCountMap.get(value) || 0;
+
+      if (currentCount <= 0) {
+        return false;
+      }
+
+      sourceCountMap.set(value, currentCount - 1);
+      return true;
+    });
+  };
 
   const getPartAMerge = (canList) => {
     let partAMergeData = [
@@ -4223,9 +4255,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 `,
       },
     ];
-    return partAMergeData.find(
-      (item) =>
-        item.canList.includes(canList[0]) && item.canList.includes(canList[1]),
+    return partAMergeData.filter((item) =>
+      containsAllValues(canList, item.canList),
     );
   };
 
@@ -4276,9 +4307,9 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 `,
       },
     ];
-    return partAClassData.find(
-      (item) =>
-        item.canList.includes(canList[0]) && item.canList.includes(canList[1]),
+
+    return partAClassData.filter((item) =>
+      containsAllValues(canList, item.canList),
     );
   };
 
@@ -4351,9 +4382,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 `,
       },
     ];
-    return partBMergeData.find(
-      (item) =>
-        item.chiList.includes(chiList[0]) && item.chiList.includes(chiList[1]),
+    return partBMergeData.filter((item) =>
+      containsAllValues(chiList, item.chiList),
     );
   };
 
@@ -4426,9 +4456,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 `,
       },
     ];
-    return partBClassData.find(
-      (item) =>
-        item.chiList.includes(chiList[0]) && item.chiList.includes(chiList[1]),
+    return partBClassData.filter((item) =>
+      containsAllValues(chiList, item.chiList),
     );
   };
 
@@ -4501,9 +4530,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 `,
       },
     ];
-    return partBPunctureData.find(
-      (item) =>
-        item.chiList.includes(chiList[0]) && item.chiList.includes(chiList[1]),
+    return partBPunctureData.filter((item) =>
+      containsAllValues(chiList, item.chiList),
     );
   };
 
@@ -4576,9 +4604,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 `,
       },
     ];
-    return partBDestructionData.find(
-      (item) =>
-        item.chiList.includes(chiList[0]) && item.chiList.includes(chiList[1]),
+    return partBDestructionData.filter((item) =>
+      containsAllValues(chiList, item.chiList),
     );
   };
 
@@ -4663,14 +4690,9 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 `,
       },
     ];
-    let normalizedChiList = [...(chiList || [])].sort((a, b) => a - b);
-    return partBThreePenaltyData.find((item) => {
-      let normalizedItemChiList = [...item.chiList].sort((a, b) => a - b);
-      return (
-        normalizedItemChiList.length === normalizedChiList.length &&
-        normalizedItemChiList.every((chi, index) => chi === normalizedChiList[index])
-      );
-    });
+    return partBThreePenaltyData.filter((item) =>
+      containsAllValues(chiList, item.chiList),
+    );
   };
 
   const getPartBCovertMerge = (chiList) => {
@@ -4709,9 +4731,8 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 `,
       },
     ];
-    return partBCovertMergeData.find(
-      (item) =>
-        item.chiList.includes(chiList[0]) && item.chiList.includes(chiList[1]),
+    return partBCovertMergeData.filter((item) =>
+      containsAllValues(chiList, item.chiList),
     );
   };
 
@@ -4766,14 +4787,9 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 `,
       },
     ];
-    let normalizedChiList = [...(chiList || [])].sort((a, b) => a - b);
-    return partBFrameData.find((item) => {
-      let normalizedItemChiList = [...item.chiList].sort((a, b) => a - b);
-      return (
-        normalizedItemChiList.length === normalizedChiList.length &&
-        normalizedItemChiList.every((chi, index) => chi === normalizedChiList[index])
-      );
-    });
+    return partBFrameData.filter((item) =>
+      containsAllValues(chiList, item.chiList),
+    );
   };
 
   const getPartBHalfMerge = (chiList) => {
@@ -4839,16 +4855,85 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 `,
       },
     ];
-    let normalizedChiList = [...(chiList || [])].sort((a, b) => a - b);
-    return partBHalfMergeData.find((item) =>
-      item.chiLists.some((pair) => {
-        let normalizedPair = [...pair].sort((a, b) => a - b);
-        return (
-          normalizedPair.length === normalizedChiList.length &&
-          normalizedPair.every((chi, index) => chi === normalizedChiList[index])
-        );
-      }),
+    return partBHalfMergeData.filter((item) =>
+      item.chiLists.some((pair) => containsAllValues(chiList, pair)),
     );
+  };
+
+  const getCanChiList = (bazi, isVariable) => {
+    let canList = [];
+    let chiList = [];
+    let nam = bazi.year;
+    let thang = bazi.month;
+    let nhatChu = bazi.day;
+    let gio = bazi.hour;
+    let daiVan = bazi.daiVan;
+    let tieuVan = bazi.tieuVan;
+    let nguyetVan = bazi.nguyetVan;
+    let nhatVan = bazi.nhatVan;
+    let thoiVan = bazi.thoiVan;
+    let baziData = (
+      isVariable
+        ? [
+            nam,
+            thang,
+            nhatChu,
+            gio,
+            daiVan,
+            tieuVan,
+            nguyetVan,
+            nhatVan,
+            thoiVan,
+          ]
+        : [nam, thang, nhatChu, gio]
+    ).filter(Boolean);
+
+    baziData.forEach((data) => {
+      let canIndex = STEM_LIST.indexOf(data.can) + 1;
+      let chiIndex = BRANCH_LIST.indexOf(data.chi) + 1;
+
+      if (canIndex > 0) {
+        canList.push(canIndex);
+      }
+
+      if (chiIndex > 0) {
+        chiList.push(chiIndex);
+      }
+    });
+
+    return { canList, chiList };
+  };
+
+  const getPartInteractionData = (bazi, isVariable = false) => {
+    let { canList, chiList } = getCanChiList(bazi, isVariable);
+    let formatItems = (items) =>
+      items
+        .map((item) => `${item.title}\n${item.comprehensiveImage}`)
+        .join("\n");
+    let partAData = [
+      formatItems(getPartAMerge(canList)),
+      formatItems(getPartAClass(canList)),
+    ]
+      .filter(Boolean)
+      .join("\n");
+    let partBData = [
+      formatItems(getPartBMerge(chiList)),
+      formatItems(getPartBClass(chiList)),
+      formatItems(getPartBPuncture(chiList)),
+      formatItems(getPartBDestruction(chiList)),
+      formatItems(getPartBThreePenalty(chiList)),
+      formatItems(getPartBCovertMerge(chiList)),
+      formatItems(getPartBFrame(chiList)),
+      formatItems(getPartBHalfMerge(chiList)),
+    ]
+      .filter(Boolean)
+      .join("\n");
+    const noInteractionText = "No interaction";
+
+    return `PART A: HEAVENLY STEMS INTERACTION SYSTEM (Surface, Expressed, Obvious)
+${partAData || noInteractionText}
+PART B: EARTHLY BRANCHES INTERACTION SYSTEM (Hidden, Deep-seated Nature)
+${partBData || noInteractionText}`;
   };
 
   const getTuTruData = (bazi, baseInfo) => {
@@ -5250,8 +5335,7 @@ ${
 2. Root Mechanical Matrix for ${
       baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
     } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}
-PART A: HEAVENLY STEMS INTERACTION SYSTEM (Surface, Expressed, Obvious)
-PART B: EARTHLY BRANCHES INTERACTION SYSTEM (Hidden, Deep-seated Nature)
+${getPartInteractionData(bazi)}
 
 3. Root Five Elements Proportions for ${
       baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
@@ -5353,7 +5437,12 @@ ${
             )
             .join(" + ")})`
         : ""
-    }   ${
+    } ${
+      daiVan
+        ? `\n\n5. Variable Mechanical Matrix for ${baseInfo.gioiTinh === 1 ? "Mr." : "Ms."} ${baseInfo.hoTen} born in ${baseInfo.namSinh} at the Decade ${daiVan.decadeIndex} ${baseInfo.gioThoiVan && !baseInfo.onlyDecade ? "at " + (baseInfo.gioThoiVan - 1) * 2 + "h " : ""} ${!baseInfo.onlyDecade ? convertDate(baseInfo.ngayLuuNhat, baseInfo.thangLuuNguyet, baseInfo.namXemTieuVan) : ""}. The value ${!baseInfo.onlyDecade ? convertDate(baseInfo.ngayLuuNhat, baseInfo.thangLuuNguyet, baseInfo.namXemTieuVan) : ""}
+      ${getPartInteractionData(bazi, true)}`
+        : ""
+    }  ${
       daiVan
         ? `\n6. Variable Five Elements Proportions for ${
             baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
@@ -5964,18 +6053,13 @@ Inner Strength comes from the Hour Pillar ${getNapAm(
             }`
       }. Hidden Forces: ${canTangData
         .map((item) => {
-          return (
-            getTenForcesData(
-              getThapThan(
-                getNguHanhCan(item.name).nguHanh,
-                getNguHanhCan(nhatChu).nguHanh,
-                getNguHanhCan(item.name).amDuong ===
-                  getNguHanhCan(nhatChu).amDuong,
-              ),
-            ) +
-            " (" +
-            item.score * 2 +
-            "%)"
+          return getTenForcesData(
+            getThapThan(
+              getNguHanhCan(item.name).nguHanh,
+              getNguHanhCan(nhatChu).nguHanh,
+              getNguHanhCan(item.name).amDuong ===
+                getNguHanhCan(nhatChu).amDuong,
+            ),
           );
         })
         .join(" + ")},`;
@@ -6088,7 +6172,7 @@ Inner Strength comes from the Hour Pillar ${getNapAm(
       ${getTuTruData(bazi, baseInfo)}
       ${
         !baseInfo.boTruGio
-          ? `C. Purple Star Astrology for ${
+          ? `B. Purple Star Astrology for ${
               baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
             } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}.
       ${generateDecadeText(
