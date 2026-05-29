@@ -4203,7 +4203,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 0,
         canList: [1, 6],
         canName: ["Giáp", "Kỷ"],
-        title: "Giáp - Kỷ (Jia - Ji) Merge (Proper / Righteous Merge)",
+        title: "Jia - Ji Merge (Proper / Righteous Merge)",
         comprehensiveImage: `•	General: [+] A merge of principles, uprightness, stability, and trustworthiness. The image of 'a tree with roots planted deep in the earth.' / [-] Conservatism, stubbornness, cumbersomeness, and inflexibility in the face of change.
 •	Business: [+] Sustainable and stable long-term cooperation (real estate, education, construction). Secure and safe transactions. / [-] Slow cash flow, missing market rhythms due to excessive caution, bureaucratic management systems.
 •	Love: [+] A marriage of well-matched social standing, a solid foundation, and safe protection (one is the breadwinner, the other the rear guard). / [-] A dry relationship lacking romance, leaning toward imposition or patriarchy.
@@ -4214,7 +4214,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 1,
         canList: [2, 7],
         canName: ["Ất", "Canh"],
-        title: "Ất - Canh (Yi - Geng) Merge (Benevolent / Righteous Merge)",
+        title: "Yi - Geng Merge (Benevolent / Righteous Merge)",
         comprehensiveImage: `•	General: [+] Flexible integration of hard and soft, using soft power to resolve conflicts. The image of "a vine wrapping around a sword blade." / [-] Fake compromises, outward agreement but inward dissent, manipulation for personal gain.
 •	Business: [+] Successful negotiation of thorny contracts. Using tact to acquire competitors or resolve legal crises. / [-] Being forced to sign under the pressure of authoritative power, losing one's independent position.
 •	Love: [+] An absolutely complementary couple (the resolute one is soothed by the gentle one), using softness to bind tightly. / [-] Enduring resentment; one side uses authority to suppress while the other must stoop and flatter.
@@ -4225,7 +4225,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 2,
         canList: [3, 8],
         canName: ["Bính", "Tân"],
-        title: "Bính - Tân (Bing - Xin) Merge (Authoritative Merge)",
+        title: "Bing - Xin Merge (Authoritative Merge)",
         comprehensiveImage: `•	General: [+] A glamorous merge, expanding reputation, shining brightly, and attracting attention. The image of "sunlight reflecting off jewelry." / [-] Empty ostentation, superficiality, valuing form over substance.
 •	Business: [+] Excellent brand building, leveraging reputation (KOLs) to explode sales, successful fundraising. / [-] Over-investing in image leading to cash flow deficits, "empty vessels making the most noise," flashy contracts with low profit margins.
 •	Love: [+] A talented and beautiful couple, proud of each other, publicly and brilliantly displaying their affection. / [-] Loving for the sake of face and status, putting on a "flashy facade" on social media but cold on the inside.
@@ -4236,7 +4236,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 3,
         canList: [4, 9],
         canName: ["Đinh", "Nhâm"],
-        title: "Đinh - Nhâm (Ding - Ren) Merge (Emotional / Lascivious Merge)",
+        title: "Ding - Ren Merge (Emotional / Lascivious Merge)",
         comprehensiveImage: `•	General: [+] Tacit understanding, keen intuition, deep emotions, and a mysterious harmony. The image of "stars reflecting on a night lake." / [-] Sneaky concealment, uncontrolled desires, shady secrets.
 •	Business: [+] Smooth cooperation without rigid paperwork, excellent grasp of customer psychology (suits the psychology and nightlife entertainment industries). / [-] "Under-the-table" agreements, shady transactions, prone to litigation if exposed.
 •	Love: [+] Intense sexual magnetism, complete romantic harmony in both body and soul. / [-] Getting involved in sneaky affairs, emotional infidelity, blind love, addiction to alcohol and sex.
@@ -4247,7 +4247,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 4,
         canList: [5, 10],
         canName: ["Mậu", "Quý"],
-        title: "Mậu - Quý (Wu - Gui) Merge (Heartless / Ruthless Merge)",
+        title: "Wu - Gui Merge (Heartless / Ruthless Merge)",
         comprehensiveImage: `•	General: [+] Masterful control of minor details, gathering micro-data into macro-strength. The image of "a rocky mountain absorbing dewdrops." / [-] Outwardly close but inwardly calculating, cold, and extracting all value.
 •	Business: [+] Effective data/network acquisition. Excellent cash flow management, accumulating small gains into massive wealth. / [-] Highly pragmatic cooperation; ruthlessly discarded once usefulness is exhausted. Money laundering or hiding large cash flows.
 •	Love: [+] Stable marriage based on a solid economic foundation, a complement between a cautious person and a flexible one. / [-] A relationship heavy on materialism, exchanging love for money (age gaps). Inwardly cold and ruthless when interests are touched.
@@ -4266,7 +4266,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 0,
         canList: [1, 7],
         canName: ["Giáp", "Canh"],
-        title: "Giáp - Canh (Jia - Geng) Clash",
+        title: "Jia - Geng Clash",
         comprehensiveImage: `•	General: [+] A powerful breakthrough, destroying the old and cumbersome to establish a new order. / [-] Brutal physical antagonism, destruction of core structures, heavy losses.
 •	 Business: [+] Drastic corporate restructuring, strictly eliminating poor personnel, winning in negotiations/lawsuits. / [-] Fierce commercial confrontations, public lawsuits, ruthless dismissals, corporate splitting.
 •	 Love: [+] Definitively resolving stagnant conflicts, breaking up decisively to free each other. / [-] Violent arguments, smashing things, neither side willing to yield leading to the exhaustion of all affection.
@@ -4277,7 +4277,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 1,
         canList: [2, 8],
         canName: ["Ất", "Tân"],
-        title: "Ất - Tân (Yi - Xin) Clash",
+        title: "Yi - Xin Clash",
         comprehensiveImage: `•	General: [+] Micro-adjustments, cutting away unnecessary details to achieve perfection. / [-] Bothersome minor injuries, constant poking and prodding, nagging that causes mental fatigue.
 •	Business: [+] Sharp contract reviews, optimizing processes, eliminating excess costs. / [-] Competitors playing dirty, nitpicking, stealing copyrights. Constant minor conflicts causing a slow leakage of cash flow.
 •	Love: [+] Frankly pointing out small mistakes so both can fix and improve together. / [-] Verbal abuse, sarcastic remarks as sharp as a knife, digging up past mistakes causing deep emotional pain.
@@ -4288,7 +4288,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 2,
         canList: [3, 9],
         canName: ["Bính", "Nhâm"],
-        title: "Bính - Nhâm (Bing - Ren) Clash",
+        title: "Bing - Ren Clash",
         comprehensiveImage: `•	General: [+] Explosive speed, creating a widespread wave of influence, rapidly changing the situation. / [-] Extreme ideological conflicts, uncontrolled emotions, high-speed destruction.
 •	Business: [+] Wildly successful viral marketing campaigns, rapidly dominating the market. / [-] Widespread media crisis, mass boycott waves, instant brand collapse.
 •	Love: [+] Intense love at first sight, extreme emotional sublimation. / [-] Erratic temperament, suddenly hot and cold. Love burns fast but fades ruthlessly due to reality.
@@ -4299,7 +4299,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 3,
         canList: [4, 10],
         canName: ["Đinh", "Quý"],
-        title: "Đinh - Quý (Ding - Gui) Clash",
+        title: "Ding - Gui Clash",
         comprehensiveImage: `•	General: [+] Illuminating hidden corners, using intellect to control shady information flows. / [-] Hidden suppression, nitpicking, secretly sabotaging in the dark, slowly eliminating motivation.
 •	Business: [+] Excellent auditing and internal error detection. Timely discovery and prevention of cash flow hemorrhage. / [-] Subjected to secret inspections, creative ideas suppressed, unannounced capital tightening, backstabbing.
 •	Love: [+] Deeply understanding the partner's innermost thoughts to share the burden. / [-] Cold war, suspicion, secret jealousy. Psychological abuse, using silence to extinguish the partner's enthusiasm.
@@ -4319,7 +4319,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 0,
         chiList: [1, 2],
         chiName: ["Tý", "Sửu"],
-        title: "Rat - Ox (Tý - Sửu) Merge",
+        title: "Rat - Ox Merge",
         comprehensiveImage: `•	General: [+] Safe storage, absolute information security, sustainable hidden accumulation. / [-] Secret bindings, inhibiting growth, stagnation, freezing.
 •	Business: [+] Successfully gathering reserve funds, hoarding real estate/assets waiting for the right time, building a solid hidden fund. / [-] Working capital frozen (bad debt, inventory). Shady collusion, under-the-table bribery, backdoor deals.
 •	Love: [+] Silent sacrifices, unconditional protection, tight bonding. / [-] Secretly tied down, emotional infidelity, clinging to toxic relationships, trading intimacy for benefits.
@@ -4330,7 +4330,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 1,
         chiList: [3, 12],
         chiName: ["Dần", "Hợi"],
-        title: "Tiger - Pig (Dần - Hợi) Merge",
+        title: "Tiger - Pig Merge",
         comprehensiveImage: `•	General: [+] Extinguishing potential risks, soothing impulsiveness, mutually beneficial cooperation. / [-] Generating and destroying simultaneously. Harmonious on the outside but secretly destructive inside, eliminating vitality, extinguishing motivation.
 •	Business: [+] Salvaging overheated projects. Partners injecting abundant resources to nurture ideas. / [-] Partners secretly gutting the company. Wrongful investments leading to premature failure, brain drain.
 •	Love: [+] Mutually supportive relationship, understanding, extinguishing the partner's anger. / [-] Marriage shadowed by a third party. Outwardly happy but inwardly rotting, losing rationality.
@@ -4341,7 +4341,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 2,
         chiList: [4, 11],
         chiName: ["Mão", "Tuất"],
-        title: "Rabbit/Cat - Dog (Mão - Tuất) Merge",
+        title: "Rabbit/Cat - Dog Merge",
         comprehensiveImage: `•	General: [+] Strict system management, using specialized skills to acquire major power/assets. Merges to transform into Fire. / [-] Imprisoning thought, dictatorial control, extinguishing creativity.
 •	Business: [+] Successful corporate acquisition (M&A). Holding exclusive technology/data, excellent risk control. / [-] Manipulating financial reports, using tricks to usurp. Choking employee innovation.
 •	Love: [+] Absolute protection of the family, loyal love, tight connection. / [-] Extreme possessiveness, psychological manipulation, monitoring the partner like a surveillance camera in the name of love.
@@ -4352,7 +4352,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 3,
         chiList: [5, 10],
         chiName: ["Thìn", "Dậu"],
-        title: "Dragon - Rooster (Thìn - Dậu) Merge",
+        title: "Dragon - Rooster Merge",
         comprehensiveImage: `•	General: [+] Power and law protecting legitimate interests. Reaching a major agreement. Merges to close the vault. / [-] Hidden fractures, sacrificing minor details/individuals to serve systemic interests.
 •	Business: [+] Large-scale protected transactions (government bids). Closing high-value contracts. / [-] Staff reduction, internal purges to save the overall structure. Bureaucratic "ask-and-give" mechanisms.
 •	Love: [+] Marriage bringing power and social status. Couples powerfully aiding each other's careers. / [-] Ruthlessly cutting off old relationships for new benefits. Disputes and hurting relatives over interests.
@@ -4363,7 +4363,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 4,
         chiList: [6, 9],
         chiName: ["Tỵ", "Thân"],
-        title: "Snake - Monkey (Tỵ - Thân) Merge",
+        title: "Snake - Monkey Merge",
         comprehensiveImage: `•	General: [+] Forging to create new value, highly profitable cooperation, gathering massive resources. / [-] Merging and destroying simultaneously. Harmonious outside but harsh and draining inside, secret disputes over core interests.
 •	Business: [+] Wildly profitable mergers and acquisitions. Brilliant combination of production and core technology. / [-] Internal infighting within joint ventures. Lubrication/operating costs are too high, leading to "doing much but earning little."
 •	Love: [+] Intense love, overcoming prejudices to bond, perfect compensation for each other. / [-] Opportunistic marriage, sleeping in the same bed but dreaming different dreams. A "love-hate" relationship with constant arguing but unable to leave.
@@ -4374,7 +4374,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 5,
         chiList: [7, 8],
         chiName: ["Ngọ", "Mùi"],
-        title: "Horse - Goat (Ngọ - Mùi) Merge",
+        title: "Horse - Goat Merge",
         comprehensiveImage: `•	General: [+] Absolute convergence of energy, shining brilliantly on a solid foundation. / [-] Concealment, burning away thoughts, stagnation, imprisonment of freedom.
 •	Business: [+] Foundations (real estate, infrastructure) generating explosive profits. Clear and unified strategic direction. / [-] Hiding revenue, fake ledgers. Suspended projects due to dried-up capital, money laundering through phantom real estate.
 •	Love: [+] Sublimated, passionate love, fully supported by both families. / [-] Closed off, hiding sexual orientation. Relationships hitting a dead end, losing the voice of freedom.
@@ -4393,7 +4393,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 0,
         chiList: [1, 7],
         chiName: ["Tý", "Ngọ"],
-        title: "Rat - Horse (Tý - Ngọ) Clash",
+        title: "Rat - Horse Clash",
         comprehensiveImage: `•	General: [+] Super-speed breakthrough motivation, releasing stagnant energy, turning situations around in a flash. / [-] Extreme emotional explosions, violent Water-Fire collisions, rapid destruction.
 •	Business: [+] Successful profit-taking from short-term trading. Immediately changing jobs to a better position. Highly flexible cash flow. / [-] Flash bankruptcy, impulsive spending causing asset loss. Fierce personnel conflicts leading to firings.
 •	Love: [+] Love at first sight, decisively ending a dull relationship to find a new haven. / [-] Bitter arguments, erratic emotional highs and lows, shocking breakups.
@@ -4404,7 +4404,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 1,
         chiList: [2, 8],
         chiName: ["Sửu", "Mùi"],
-        title: "Ox - Goat (Sửu - Mùi) Clash",
+        title: "Ox - Goat Clash",
         comprehensiveImage: `•	General: [+] Opening hidden treasuries, restructuring foundations to be more solid. Breaking ground. / [-] Collapse of basic structures, ugly secrets bursting out, internal turmoil, dust flying blindly.
 •	Business: [+] Hitting the jackpot in real estate, profitable compensation from land clearance. Uncovering beneficial hidden funds. / [-] Losing land, premises disputes. Board of directors in turmoil, unearthing hidden bad debts.
 •	Love: [+] Tearing down and rebuilding a better marital foundation. Definitively resolving long-standing family feuds. / [-] Fierce inheritance disputes, exposing shameful family secrets.
@@ -4415,7 +4415,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 2,
         chiList: [3, 9],
         chiName: ["Dần", "Thân"],
-        title: "Tiger - Monkey (Dần - Thân) Clash",
+        title: "Tiger - Monkey Clash",
         comprehensiveImage: `•	General: [+] Milestone shifts, expanding territory, motivation to reach far, traveling extensively. / [-] Heavy physical impacts, traveling and working hard in vain, broken roadmaps.
 •	Business: [+] Successful overseas business trips, pioneering new markets. Changes in position/politics bringing major promotions. / [-] Losing seats/status. Labor accidents involving heavy machinery. Logistics/import-export risks.
 •	Love: [+] Love blossoming through travel or business trips. / [-] Distanced due to the nature of work. Arguments and smashing things leading to separation.
@@ -4426,7 +4426,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 3,
         chiList: [4, 10],
         chiName: ["Mão", "Dậu"],
-        title: "Rabbit/Cat - Rooster (Mão - Dậu) Clash",
+        title: "Rabbit/Cat - Rooster Clash",
         comprehensiveImage: `•	General: [+] Sharp, exquisite transactions, resolving matters quickly and clearly. / [-] Stabbing arguments, bothersome minor injuries, cold refusals to cooperate.
 •	Business: [+] Closing large-scale financial/banking contracts. Effectively cutting redundant personnel. Prosperity in medical and jewelry sectors. / [-] Uncompromising and sharp contract disputes. Sudden dismissal.
 •	Love: [+] Breaking up with clear financial boundaries, no ambiguity. / [-] Thin, sharp words causing deep pain. Cutting off affection coldly and ruthlessly.
@@ -4437,7 +4437,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 4,
         chiList: [5, 11],
         chiName: ["Thìn", "Tuất"],
-        title: "Dragon - Dog (Thìn - Tuất) Clash",
+        title: "Dragon - Dog Clash",
         comprehensiveImage: `•	General: [+] Macro-level explosion, smashing treasuries to extract massive assets, re-establishing a grand order. / [-] Large-scale collapse, bursting bubbles, unsalvageable disasters.
 •	Business: [+] Winning mega-project bids, clearing entire premises to build major infrastructure. Unlocking massive capital sources. / [-] Corporate-level bankruptcy, chain defaults, bursting real estate/financial bubbles.
 •	Love: [+] Escaping harsh ideological/family rules to find freedom. / [-] Divorce involving the division of massive assets. Traumatic psychological events, life-and-death separations.
@@ -4448,7 +4448,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 5,
         chiList: [6, 12],
         chiName: ["Tỵ", "Hợi"],
-        title: "Snake - Pig (Tỵ - Hợi) Clash",
+        title: "Snake - Pig Clash",
         comprehensiveImage: `•	General: [+] Flexible mindset changes, quickly adapting to new currents of thought, reaching an international level. / [-] Backtracking, mental turmoil, core ideological conflicts, aimless displacement.
 •	Business: [+] Strong development in aviation, maritime, and international communications technology. Expanding strategic vision. / [-] Fierce conflicts over business strategy. Ruthlessly tearing up contracts, rapid crises.
 •	Love: [+] Overcoming prejudice to be together, changing oneself for a lover. / [-] Storms caused by disagreements in life perspectives. Attitudes changing on a dime (turning from love to hate).
@@ -4467,7 +4467,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 0,
         chiList: [1, 8],
         chiName: ["Tý", "Mùi"],
-        title: "Rat - Goat (Tý - Mùi) Puncture",
+        title: "Rat - Goat Puncture",
         comprehensiveImage: `•	General: [+] Decisively eliminating hidden risks without leaving a trace. / [-] Deep-seated hatred, hidden damage, backstabbing, draining vitality.
 •	Business: [+] Deservedly punishing moles/backstabbers within the company. / [-] Demoted/fired for unclear reasons. Competitors using dirty tricks, secretly gutting assets.
 •	Love: [+] Decisively cutting off a toxic relationship that drains mental energy. / [-] Vicious romantic revenge, cold violence, separations with hatred to the bone.
@@ -4478,7 +4478,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 1,
         chiList: [2, 7],
         chiName: ["Sửu", "Ngọ"],
-        title: "Ox - Horse (Sửu - Ngọ) Puncture",
+        title: "Ox - Horse Puncture",
         comprehensiveImage: `•	General: [+] Using iron discipline to extinguish impulsiveness and arrogance. / [-] Unexpected elimination of vitality; what seems supportive is actually poison.
 •	Business: [+] Timely prevention of an impulsive investment project, saving capital flow. / [-] Brutal suppression by bosses/advisors. A rising career is suddenly ousted due to trusting the wrong person.
 •	Love: [+] Family intervenes to stop a blind marriage. / [-] Not enjoying the blessings of parents. Having affection robbed by the closest people.
@@ -4489,7 +4489,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 2,
         chiList: [3, 6],
         chiName: ["Dần", "Tỵ"],
-        title: "Tiger - Snake (Dần - Tỵ) Puncture",
+        title: "Tiger - Snake Puncture",
         comprehensiveImage: `•	General: [+] Explosive breakthrough energy, burning through stages to achieve maximum efficiency. / [-] Backtracking, returning favors with resentment, impulsive, fast to rise and fast to fall.
 •	Business: [+] Rapid revenue growth, seizing opportunities to aggressively boost production. / [-] Biting the hand that feeds. Partners backtracking to destroy each other. Major compensation lawsuits, risks of warehouse fires.
 •	Love: [+] Burning love, intense passion in the early stages. / [-] Burns fast, fades fast. Close friends turning to tear you apart, exposing secrets online.
@@ -4500,7 +4500,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 3,
         chiList: [4, 5],
         chiName: ["Mão", "Thìn"],
-        title: "Rabbit/Cat - Dragon (Mão - Thìn) Puncture",
+        title: "Rabbit/Cat - Dragon Puncture",
         comprehensiveImage: `•	General: [+] Using minor details to break through massive blockages, resolving problems from their tiny roots. / [-] Persistent, lurking, slowly poking and prodding, endless fatigue.
 •	Business: [+] Successful inspections and audits, uncovering hidden systemic violations. / [-] Prolonged economic lawsuits. Being trapped by wording, competitors slowly tearing away market share bit by bit.
 •	Love: [+] Patiently unpacking every minor conflict to understand each other. / [-] Toxic mental abuse, unsolvable mother-in-law/daughter-in-law conflicts. Secret infidelity.
@@ -4511,7 +4511,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 4,
         chiList: [9, 12],
         chiName: ["Thân", "Hợi"],
-        title: "Monkey - Pig (Thân - Hợi) Puncture",
+        title: "Monkey - Pig Puncture",
         comprehensiveImage: `•	General: [+] Flexible displacement, escaping safety bubbles to seek high-risk, high-reward opportunities. / [-] Silent, cold collapse, losing stable foundations.
 •	Business: [+] Successfully switching to a new industry/freelance. Innovating outdated ways of thinking. / [-] Losing compulsory fixed income sources. Hidden cash flow bleeding, structural changes causing insecurity.
 •	Love: [+] Giving each other absolute private space to freely develop. / [-] Sleeping in the same bed but dreaming different dreams, frozen emotions. Wasting away without definitively divorcing.
@@ -4522,7 +4522,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 5,
         chiList: [10, 11],
         chiName: ["Dậu", "Tuất"],
-        title: "Rooster - Dog (Dậu - Tuất) Puncture",
+        title: "Rooster - Dog Puncture",
         comprehensiveImage: `•	General: [+] Iron discipline, applying strict laws to eradicate evil at its root. / [-] Destruction, firearms, violence, ruthlessness with no way back.
 •	Business: [+] Successfully purging corrupt gangs/interest groups within organizations using the law. / [-] Criminalizing economic relationships, involvement with underworld debt collection. Total loss of assets.
 •	Love: [+] Decisively terminating a toxic relationship to protect oneself. / [-] Extreme marital hatred, divorces empty of affection ready to annihilate each other, love/money-related murders.
@@ -4541,7 +4541,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 0,
         chiList: [1, 10],
         chiName: ["Tý", "Dậu"],
-        title: "Rat - Rooster (Tý - Dậu) Destruction",
+        title: "Rat - Rooster Destruction",
         comprehensiveImage: `•	General: [+] Shattering the arrogant, glamorous exterior to see through to the practical reality. / [-] Ungrateful arrogance, outwardly supportive but secretly corroding and sabotaging. Destruction concerning the feminine/hidden elements, or wine and sex.
 •	Business: [+] Discovering fake/counterfeit goods, exposing the truth behind a veneer of prestige. / [-] Hidden supply chain fractures. Leaking data to competitors, slow brain drain.
 •	Love: [+] Waking up from illusions about the partner's appearance. / [-] Sophisticated exploitation, receiving favors with indifference. Cold war due to excessive ego.
@@ -4552,7 +4552,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 1,
         chiList: [4, 7],
         chiName: ["Mão", "Ngọ"],
-        title: "Rabbit/Cat - Horse (Mão - Ngọ) Destruction",
+        title: "Rabbit/Cat - Horse Destruction",
         comprehensiveImage: `•	General: [+] Cutting off the spread of impulsive emotions, dividing things clearly. / [-] Destruction of households. Tearing, disconnecting, things abandoned halfway due to sudden conflicts.
 •	Business: [+] Anatomizing corporate structures, cutting out redundant money-burning departments. / [-] Abandoning projects mid-way, collapsing halfway due to running out of capital. Supply chain breaks.
 •	Love: [+] Quickly cutting off lingering, ambiguous romantic ties. / [-] Disconnected emotions, sudden breakups at the peak of passion, callous and hardened hearts.
@@ -4563,7 +4563,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 2,
         chiList: [5, 2],
         chiName: ["Thìn", "Sửu"],
-        title: "Dragon - Ox (Thìn - Sửu) Destruction",
+        title: "Dragon - Ox Destruction",
         comprehensiveImage: `•	General: [+] Breaking the grip of earth and stone to release resources. / [-] Hidden bursts, foundation sinking, collapse of things being kept securely hidden.
 •	Business: [+] Unearthing secret stashes, accessing competitors' slush funds. / [-] Internal information leaks, bad debts exposed, localized liquidity loss due to trapped fixed assets.
 •	Love: [+] Piercing the veil of secrecy to expose the truth of a deceitful relationship. / [-] Shameful family secrets leaked, hidden envy destroying family harmony.
@@ -4574,7 +4574,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 3,
         chiList: [11, 8],
         chiName: ["Tuất", "Mùi"],
-        title: "Dog - Goat (Tuất - Mùi) Destruction",
+        title: "Dog - Goat Destruction",
         comprehensiveImage: `•	General: [+] Plowing arid land to seek buried core values. / [-] Destroying solid foundations, dry disputes, ruining peace.
 •	Business: [+] Restructuring infrastructure, tearing down old factories to build new ones. / [-] Fierce premises disputes, exhausting long-term lawsuits claiming land/real estate.
 •	Love: [+] Breaking down backward family customs to take control of one's life. / [-] Persistent conflicts, emotional barrenness, arguments revolving entirely around money and shared assets.
@@ -4585,7 +4585,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 4,
         chiList: [3, 12],
         chiName: ["Dần", "Hợi"],
-        title: "Tiger - Pig (Dần - Hợi) Destruction",
+        title: "Tiger - Pig Destruction",
         comprehensiveImage: `•	General: [+] Explosive growth breaking out of its protective incubation shell. (Generates, merges, and destroys simultaneously). / [-] Vitality destroyed from within due to improper nurturing. Biting the hand that feeds.
 •	Business: [+] Successfully breaking away from an overbearing parent company to start a separate, highly successful venture. / [-] Receiving funding but using it for the wrong purposes leading to system collapse; partners turning hostile and pulling capital suddenly.
 •	Love: [+] Fighting to break the family's extreme control in order to mature. / [-] Spoiled rotten; one side's sacrifices are despised and trampled upon by the other.
@@ -4596,7 +4596,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 5,
         chiList: [6, 9],
         chiName: ["Tỵ", "Thân"],
-        title: "Snake - Monkey (Tỵ - Thân) Destruction",
+        title: "Snake - Monkey Destruction",
         comprehensiveImage: `•	General: [+] Using the heat of fire to forge metal and shape new tools. (Clashes, merges, and destroys simultaneously). / [-] Breaking alliances because core interests are violated. Cooperation that exploits and then discards.
 •	Business: [+] Recycling, merging, and reselling companies (acquiring to split and sell for profit). / [-] Tearing each other apart within joint ventures, going back on contracts to steal core technologies.
 •	Love: [+] Transforming a toxic relationship into a purely business partnership. / [-] Marriages based on pragmatic transactions; when money or benefits run out, they automatically disband and report each other.
@@ -4615,7 +4615,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 0,
         chiList: [2, 8, 11],
         chiName: ["Sửu", "Mùi", "Tuất"],
-        title: "The Earth Three Penalty (Ox - Goat - Dog / Sửu - Mùi - Tuất)",
+        title: "The Earth Three Penalty (Ox - Goat - Dog)",
         comprehensiveImage: `•	General: [+] Thoroughly excavating all foundations, smashing the old to build a massive empire. / [-] Large-scale disputes, legal punishments, collapsed foundations, stagnant tumors.
 •	Business: [+] Resounding victories in land lawsuits, gathering massive land banks thanks to large-scale clearances. / [-] Major economic lawsuits, investigative agencies freezing assets, bad debts leading to foreclosures.
 •	Love: [+] Completely resolving all generational grievances to turn over an entirely new leaf. / [-] Brutal family infighting, disputes over assets/child custody, doing favors but getting resentment in return.
@@ -4627,7 +4627,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         chiList: [3, 6, 9],
         chiName: ["Dần", "Tỵ", "Thân"],
         title:
-          "The Fire-Metal Three Penalty (Tiger - Snake - Monkey / Dần - Tỵ - Thân)",
+          "The Fire-Metal Three Penalty (Tiger - Snake - Monkey)",
         comprehensiveImage: `•	General: [+] Continuous volatility bringing super-fast capital turnover and power opportunities. / [-] Intertwined romantic grudges, traffic accidents, implicated legal entanglements.
 •	Business: [+] Huge wins in logistics, international transport. Cash flow rotating at dizzying speeds generating high profits. / [-] Multinational/customs legal implications. Multi-level financial scams, large money coming in and going out fast leaving nothing.
 •	Love: [+] Vibrant affection, constant renewal, experiencing continuous travel together. / [-] Complex romantic relationships (love triangles, quadrangles), love mixed with hate. Money-love scandals involving the law.
@@ -4638,55 +4638,11 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 2,
         chiList: [1, 4],
         chiName: ["Tý", "Mão"],
-        title: "The Uncivilized Penalty (Rat - Rabbit/Cat / Tý - Mão)",
+        title: "The Uncivilized Penalty (Rat - Rabbit/Cat)",
         comprehensiveImage: `•	General: [+] Clarity, outrightly rejecting unreasonable demands, maintaining personal principles. / [-] Heartless and unrighteous, disrespecting rules/elders, backstabbing, hidden deceit.
 •	Business: [+] Preventing "pie-in-the-sky" contracts, refusing to invest in empty projects. / [-] Employees betraying masters, stealing company intellectual property, sexual bribery for promotion.
 •	Love: [+] Alertness, decisively escaping psychological manipulation traps. / [-] Incest, lewdness, unfilial behavior toward parents. Exploitative relationships discarded coldly once benefits are extracted.
 •	Health: [+] Successfully preventing viral/bacterial infections through the skin. / [-] Venereal diseases, sexually transmitted infections, urethral damage, limb necrosis.
-`,
-      },
-      {
-        id: 3,
-        chiList: [5, 5],
-        chiName: ["Thìn", "Thìn"],
-        title: "Dragon - Dragon (Thìn - Thìn) Self-Penalty",
-        comprehensiveImage: `•	General: [+] Self-discipline, delving deep into a narrow specialty to a master level. / [-] Imprisoning oneself in outdated prejudices, conservatism, localized ideological stagnation.
-•	Business: [+] Exclusive technology experts, monopolizing closed bidding packages bringing supreme profits. / [-] Burying all capital into a single project leading to stagnation, the system tripping over itself.
-•	Love: [+] Independent, not emotionally reliant, knowing how to make oneself happy. / [-] Self-isolation, ego so high that no one is allowed into their inner world.
-•	Health: [+] Ideal physique thanks to a regime of self-imposed iron discipline. / [-] Illnesses caused by repeating terrible eating habits (obesity, diabetes, water retention).
-`,
-      },
-      {
-        id: 4,
-        chiList: [7, 7],
-        chiName: ["Ngọ", "Ngọ"],
-        title: "Horse - Horse (Ngọ - Ngọ) Self-Penalty",
-        comprehensiveImage: `•	General: [+] Burning maximum energy, pushing oneself past limits with extreme enthusiasm. / [-] Arrogance, delusions of grandeur, burning down one's own achievements due to hot-headedness.
-•	Business: [+] Brand shining brilliantly, monopolizing media attention. / [-] Expanding too rapidly to control, creating public relations crises through arrogant statements.
-•	Love: [+] Loving passionately, daring to express oneself intensely to conquer partners. / [-] Creating drama, baseless melancholy, paranoid jealousy tormenting oneself and the lover.
-•	Health: [+] Extremely prosperous blood and Qi, physical constitution immune to cold air. / [-] Neurasthenia, malignant hypertension, hot flashes, self-harming the body (smoking, stimulant addictions).
-`,
-      },
-      {
-        id: 5,
-        chiList: [10, 10],
-        chiName: ["Dậu", "Dậu"],
-        title: "Rooster - Rooster (Dậu - Dậu) Self-Penalty",
-        comprehensiveImage: `•	General: [+] Extremely sharp discipline, self-scrutinizing flaws for flawless perfection. / [-] High self-pity, holding grudges, rigid extreme thinking, taking a knife to one's own wounds.
-•	Business: [+] Flawless Quality Control (QC) processes. / [-] Nitpicking details slowing down the entire system's progress. Cutting ties with partners purely out of wounded pride.
-•	Love: [+] Transparency, demanding absolute loyalty, straightforward in all matters. / [-] Venomous words hurting oneself and others. Cold wars self-destructing the relationship.
-•	Health: [+] Training to create perfect muscle cuts (cutting phase). / [-] Addiction to cosmetic surgery causing complications, chronic autoimmune diseases destroying the respiratory system.
-`,
-      },
-      {
-        id: 6,
-        chiList: [12, 12],
-        chiName: ["Hợi", "Hợi"],
-        title: "Pig - Pig (Hợi - Hợi) Self-Penalty",
-        comprehensiveImage: `•	General: [+] Profound intellect, quiet contemplation to find hidden truths. / [-] Overthinking in circles, wallowing in sadness, pessimism, misanthropy.
-•	Business: [+] Research & Development (R&D) achieving breakthroughs in secret. / [-] Companies sinking themselves due to weak, indecisive leadership, cash flow slowly leaking away.
-•	Love: [+] Deep understanding of inner thoughts, knowing how to sacrifice without calculating. / [-] Playing the victim, wallowing in self-pity. Drowning in toxic relationships with no way out.
-•	Health: [+] Meditation and restorative capabilities recovering energy extremely well. / [-] Severe depressive disorders, bipolar disorder, excretory disorders due to prolonged psychological stress.
 `,
       },
     ];
@@ -4701,7 +4657,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 0,
         chiList: [3, 2],
         chiName: ["Dần", "Sửu"],
-        title: "Tiger - Ox (Dần - Sửu) Covert Merge",
+        title: "Tiger - Ox Covert Merge",
         comprehensiveImage: `•	General: [+] Hidden intellect, excellent information security capabilities, risk management in the shadows, sharp stratagems. / [-] Sneaky transactions, shady collusion, extreme micro-management, deceit.
 •	Business: [+] Building excellent corporate intelligence forces. Successful hidden share acquisitions, solid risk response funds. (AI, Big Data, Cybersecurity industries). / [-] Money laundering, tax evasion, bribery. Hidden dictatorial management, surveilling employees like criminals.
 •	Love: [+] Noble secret love, sacrificing without expecting returns, incredibly strong intuition understanding the partner. / [-] Sophisticated hidden affairs (secret mistresses). Partners being "helicopter supervisors," secretly planting trackers and controlling.
@@ -4712,7 +4668,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 1,
         chiList: [7, 12],
         chiName: ["Ngọ", "Hợi"],
-        title: "Horse - Pig (Ngọ - Hợi) Covert Merge",
+        title: "Horse - Pig Covert Merge",
         comprehensiveImage: `•	General: [+] Hidden intersection of thought and intellect. Quiet soul harmony, communicating without words. / [-] Overflowing hidden lust, dark thoughts, moral decay concealed beneath a dignified facade.
 •	Business: [+] Successful transactions based on intuition and silent trust. Angel investors injecting capital secretly. / [-] Bribery using sex, shady "under-the-table" nightlife deals, selling out copyrights/brainpower in secret.
 •	Love: [+] Ultimate harmony of body and soul but unpublicized (love in the shadows that is extremely sincere). / [-] Sneaky relationships (secret lovers, FWB), lewdness, sex addiction hidden under an intellectual guise.
@@ -4723,7 +4679,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         id: 2,
         chiList: [4, 9],
         chiName: ["Mão", "Thân"],
-        title: "Rabbit/Cat - Monkey (Mão - Thân) Covert Merge",
+        title: "Rabbit/Cat - Monkey Covert Merge",
         comprehensiveImage: `•	General: [+] Using softness and flexibility to neutralize hardness and violence in silence. The secret tactic of "soft ties bind tight." / [-] Cowardly secret compromises, being threatened, blackmailed, or subjected to hidden manipulation and control without daring to resist.
 •	Business: [+] Smoothly resolving media/legal crises by going through the back door, secretly settling with complainants. / [-] Company secretly controlled by dark forces, subjected to silent "protection" rackets (extortion), sophisticated technology theft.
 •	Love: [+] Silently enduring, patiently using gentleness to soothe and reform the partner's patriarchal/rough nature. / [-] Cold violence, romantic blackmail, toxic underground relationships (toxic Sugar Baby - Daddy), victims living in fear of being tracked.
@@ -4743,7 +4699,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         chiList: [9, 1, 5],
         chiName: ["Thân", "Tý", "Thìn"],
         title:
-          "Monkey - Rat - Dragon (Thân - Tý - Thìn) (Water Frame / Network of Flows & Hidden Data)",
+          "Monkey - Rat - Dragon (Water Frame / Network of Flows & Hidden Data)",
         comprehensiveImage: `•	General: [+] Macro-convergence of intellect, information, and resources. The ability to connect and circulate energy continuously without limits. / [-] Being washed away aimlessly in the current, overshadowed by hidden powers, dark conspiracies of a collective nature.
 •	Business: [+] Building financial/banking empires, acquiring Big Data, massive logistics networks. Immensely powerful liquidity cash flow. / [-] Monopolizing financial markets, large-scale money laundering, stock manipulation. Chain defaults due to broken hidden cash flows.
 •	Love: [+] An absolutely accommodating relationship like water, emotions flowing naturally, financial backing from both families. / [-] Drowning in collective lust, complex love lives, losing direction and being engulfed in a debauched lifestyle.
@@ -4755,7 +4711,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         chiList: [3, 7, 11],
         chiName: ["Dần", "Ngọ", "Tuất"],
         title:
-          "Tiger - Horse - Dog (Dần - Ngọ - Tuất) (Fire Frame / Network of Ideology & Media)",
+          "Tiger - Horse - Dog (Fire Frame / Network of Ideology & Media)",
         comprehensiveImage: `•	General: [+] A machine creating brilliant ideological movements, macro-cultural dissemination, the power to enlighten and guide the masses. / [-] Fanatical herd mentality, collective brainwashing, burning through stages, ideological riots.
 •	Business: [+] Dominating the media, entertainment, and social network industries. Viral marketing campaigns creating public opinion waves, shaping social perception. / [-] Burning money on deceitful PR, shattered image bubbles. Fatal media crises due to being boycotted by the online community.
 •	Love: [+] A brilliant love story, absolutely synchronized life ideals, inspiring and admired by the public. / [-] Loving like a "trend," putting on a show. Exposing each other on social media, brutally interfered with by the crowd.
@@ -4767,7 +4723,7 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         chiList: [12, 4, 8],
         chiName: ["Hợi", "Mão", "Mùi"],
         title:
-          "Pig - Rabbit/Cat - Goat (Hợi - Mão - Mùi) (Wood Frame / Network of Structure & Organization)",
+          "Pig - Rabbit/Cat - Goat (Wood Frame / Network of Structure & Organization)",
         comprehensiveImage: `•	General: [+] Building a solidly intertwined root structure/architecture, the power of education, deep-rooted worldviews. / [-] Cumbersome, bureaucratic machinery, tangled vines choking development, nepotistic cliques.
 •	Business: [+] Empires of manufacturing, education, and agriculture with massive branch networks. Rooted supply chains deeply embedded in the market. / [-] Conservative family-run companies. Personnel forming cliques to destroy each other, a system that is "bloated" but hollow and rotting inside.
 •	Love: [+] Tight-knit family bonds, highlighting family traditions, ties based on responsibility and duty. / [-] Tied down by harsh family prejudices. Pressure from relatives choking personal happiness, entangled by roots unable to escape.
@@ -4779,11 +4735,59 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
         chiList: [6, 10, 2],
         chiName: ["Tỵ", "Dậu", "Sửu"],
         title:
-          "Snake - Rooster - Ox (Tỵ - Dậu - Sửu) (Metal Frame / Network of Power & Slaughter)",
+          "Snake - Rooster - Ox (Metal Frame / Network of Power & Slaughter)",
         comprehensiveImage: `•	General: [+] The power of martial law, hard power systems, alliances of execution, absolute order, and iron discipline. / [-] Dictatorship, ruthless purges, gang warfare, crushing and organized violence.
 •	Business: [+] Monopolistic organizations (Cartels) in finance/heavy industry. The ability to destroy competitors via extreme legal sanctions. / [-] Manipulating markets mafia-style. Bloody purges on the battlefield of commerce, criminalizing economic relations, collective asset confiscation.
 •	Love: [+] Relationships based on strict paperwork/legal commitments. Establishing and obeying absolutely clear life rules. / [-] Marriage like a military prison. Brutal domestic violence, divorces going to court determined to annihilate the partner to the end.
 •	Health: [+] Skeletal structures solid as steel, extreme physical pain tolerance, a robust body. / [-] Catastrophic accidents (stabbings, firearms, metal, chain vehicle crashes). Amputating/removing multiple organs/limbs to save a life.
+`,
+      },
+      {
+        id: 4,
+        chiList: [3, 4, 5],
+        chiName: ["Dần", "Mão", "Thìn"],
+        title:
+          "Tiger - Rabbit/Cat - Dragon (Eastern Wood Directional Frame)",
+        comprehensiveImage: `•	General: [+] Overwhelming force of growth and expansion, massive gathering of similar minds, an unstoppable seasonal trend. / [-] Uncontrolled wild growth, mob rule, chaotic expansion without solid structure or boundaries.
+•	Business: [+] Regional monopolies in agriculture, education, or timber. Massive grassroots movements supporting a brand, overwhelming market dominance based on community trust. / [-] Bloated organizations, expanding too fast without infrastructure, gang-like regional protectionism stifling innovation.
+•	Love: [+] Massive support from the extended family/community, a relationship built on a strong, shared cultural background. / [-] Smothered by clan interference, loss of individuality within the group, overwhelming family pressure dictating the relationship.
+•	Health: [+] Immense vitality, unstoppable recovery power, robust physical growth and cellular regeneration. / [-] Massive abnormal tissue growth (tumors), overactive immune system attacking the body, overwhelming liver/gallbladder issues.
+`,
+      },
+      {
+        id: 5,
+        chiList: [6, 7, 8],
+        chiName: ["Tỵ", "Ngọ", "Mùi"],
+        title:
+          "Snake - Horse - Goat (Southern Fire Directional Frame)",
+        comprehensiveImage: `•	General: [+] A massive wave of ideology, cultural dominance, an overwhelming explosion of light, energy, and civilization. / [-] Mass hysteria, destructive fanaticism, unstoppable wildfires of extreme emotion.
+•	Business: [+] Dominating the entire media/entertainment landscape, creating massive societal trends, absolute brand supremacy that dictates the market. / [-] Explosive financial bubbles, catastrophic PR crises spreading like wildfire, collective burn-out and massive capital incineration.
+•	Love: [+] A highly celebrated, intensely public relationship supported by the masses, overflowing with extreme passion and warmth. / [-] Drowning in public scrutiny, collective drama, burning out quickly due to overwhelming external attention and lack of privacy.
+•	Health: [+] Supreme cardiovascular strength, immense mental energy, enthusiasm, and warmth. / [-] Severe collective epidemics (fevers/viruses), mass psychological breakdowns, fatal heart/blood pressure spikes, severe dehydration.
+`,
+      },
+      {
+        id: 6,
+        chiList: [9, 10, 11],
+        chiName: ["Thân", "Dậu", "Tuất"],
+        title:
+          "Monkey - Rooster - Dog (Western Metal Directional Frame)",
+        comprehensiveImage: `•	General: [+] Absolute authority, a massive gathering of military or legal power, unbreakable regional alliances of force and justice. / [-] Tyranny, ruthless collective suppression, absolute conformity leaving no room for mercy or flexibility.
+•	Business: [+] Monopolies in heavy industry, finance, or security. Unstoppable hostile takeovers backed by immense capital and legal clout. / [-] Cartel/mafia-style market manipulation, mass layoffs, collective financial punishment, industry-wide sanctions.
+•	Love: [+] A highly disciplined, legally ironclad union backed by powerful families, impenetrable loyalty and shared rules. / [-] A relationship resembling a military dictatorship, collective domestic violence, brutal divorces involving entire clans fighting over assets.
+•	Health: [+] Unbreakable skeletal structure, immense pain tolerance, supreme physical toughness and resilience. / [-] Massive traumatic injuries (wars, chain-reaction pile-ups, industrial disasters), overwhelming respiratory failures, severe collective violence.
+`,
+      },
+      {
+        id: 7,
+        chiList: [12, 1, 2],
+        chiName: ["Hợi", "Tý", "Sửu"],
+        title:
+          "Pig - Rat - Ox (Northern Water Directional Frame)",
+        comprehensiveImage: `•	General: [+] An overwhelming tsunami of data, capital, or hidden knowledge. Unstoppable underworld or shadow networks gathering immense momentum. / [-] Drowning in secrecy, massive corruption, an abyss of collective depression or shady conspiracies.
+•	Business: [+] Controlling the entire underground economy, massive data monopolies, immense hidden liquidity, offshore empires, and deep-web dominance. / [-] Tsunamis of bad debt, massive money-laundering rings collapsing, the entire system sinking in hidden losses and illegal operations.
+•	Love: [+] Deep, boundless, and overwhelming emotional/karmic connections, extreme secrecy protected by a collective or family. / [-] Drowning in collective trauma, massive hidden scandals, entire families tangled in dark, secretive lust or toxic codependency.
+•	Health: [+] Supreme adaptability, immense reserves of fluid and stamina, ultimate deep healing capabilities and fertility. / [-] Massive fluid retention, widespread edema, collective severe depression, sweeping reproductive/kidney failures, drowning.
 `,
       },
     ];
@@ -4796,13 +4800,14 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
     let partBHalfMergeData = [
       {
         id: 0,
+        frameChiList: [9, 1, 5],
         chiLists: [
           [9, 1],
           [1, 5],
         ],
         chiName: ["Thân - Tý", "Tý - Thìn"],
         title:
-          "Water Half Merge (Monkey - Rat / Rat - Dragon | Thân - Tý / Tý - Thìn)",
+          "Water Half Merge (Monkey - Rat / Rat - Dragon)",
         comprehensiveImage: `•	General: [+] The preparation of data flows and hidden capital slowly converging, waiting for the right time to clear the channel. / [-] Localized stagnation, broken flows, lacking the crucial link to form a macro power.
 •	Business: [+] Having built the initial tech/financial foundation (Beta version), waiting for the final funding round to explode. / [-] Stuck liquidity, cash flows unable to connect with partners. Goods are sourced but unable to circulate.
 •	Love: [+] Affection incubating deeply but unwilling to go public yet, or waiting for family permission. / [-] Unrequited love or broken relationships due to geographical/financial barriers. Weary waiting.
@@ -4811,13 +4816,14 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
       },
       {
         id: 1,
+        frameChiList: [3, 7, 11],
         chiLists: [
           [3, 7],
           [7, 11],
         ],
         chiName: ["Dần - Ngọ", "Ngọ - Tuất"],
         title:
-          "Fire Half Merge (Tiger - Horse / Horse - Dog | Dần - Ngọ / Ngọ - Tuất)",
+          "Fire Half Merge (Tiger - Horse / Horse - Dog)",
         comprehensiveImage: `•	General: [+] A spark kindling into a flame, brewing media plots, movements gathering forces. / [-] Haste, lacking foundation (firewood) or lacking storage (vault) leading to flaring up and dying out incompletely.
 •	Business: [+] Running small-scale media campaign tests very effectively, ready to scale up and multiply. / [-] Massive PR but no actual product to sell. Projects burning marketing money then suspended indefinitely.
 •	Love: [+] A passionately warm courting phase, full of brilliant passion but yet to reach a marriage commitment. / [-] "Blooms early, fades by evening" love, burning brightly in the early stages but lacking the responsible roots to maintain long-term.
@@ -4826,13 +4832,14 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
       },
       {
         id: 2,
+        frameChiList: [12, 4, 8],
         chiLists: [
           [12, 4],
           [4, 8],
         ],
         chiName: ["Hợi - Mão", "Mão - Mùi"],
         title:
-          "Wood Half Merge (Pig - Rabbit/Cat / Rabbit/Cat - Goat | Hợi - Mão / Mão - Mùi)",
+          "Wood Half Merge (Pig - Rabbit/Cat / Rabbit/Cat - Goat)",
         comprehensiveImage: `•	General: [+] Silently building the framework/root structure, slowly consolidating internal strength waiting for the day to rise high. / [-] Half-finished system building, broken supply chains, saplings lacking water or roots unable to grip the soil.
 •	Business: [+] Finished setting up the core personnel apparatus, waiting for operating licenses to officially produce. / [-] Construction projects mothballed, branch expansion projects suspended midway due to a lack of paperwork/capital.
 •	Love: [+] Trial marriage (cohabitation), building living habits together but yet to be introduced to the families or officially registered. / [-] Promising to build a future but never following through, stopping only at verbal commitments.
@@ -4841,13 +4848,14 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
       },
       {
         id: 3,
+        frameChiList: [6, 10, 2],
         chiLists: [
           [6, 10],
           [10, 2],
         ],
         chiName: ["Tỵ - Dậu", "Dậu - Sửu"],
         title:
-          "Metal Half Merge (Snake - Rooster / Rooster - Ox | Tỵ - Dậu / Dậu - Sửu)",
+          "Metal Half Merge (Snake - Rooster / Rooster - Ox)",
         comprehensiveImage: `•	General: [+] In the process of negotiating and drafting legal terms, localized power alliances are forming. / [-] Incomplete punishments, loose rules, written agreements delayed.
 •	Business: [+] Currently finalizing the terms of a Memorandum of Understanding (MOU), merger negotiations progressing favorably in the first step. / [-] Economic lawsuits suspended, courts sitting on files. Weary waiting for practice licenses/copyright protection.
 •	Love: [+] Currently handling prenuptial procedures (asset division, marriage registration) rationally. / [-] Currently separated, asset disputes unresolved so cannot finalize the divorce. Stuck because of paperwork.
@@ -4855,9 +4863,16 @@ Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Le
 `,
       },
     ];
-    return partBHalfMergeData.filter((item) =>
-      item.chiLists.some((pair) => containsAllValues(chiList, pair)),
-    );
+    return partBHalfMergeData.filter((item) => {
+      if (
+        item.frameChiList &&
+        containsAllValues(chiList, item.frameChiList)
+      ) {
+        return false;
+      }
+
+      return item.chiLists.some((pair) => containsAllValues(chiList, pair));
+    });
   };
 
   const getCanChiList = (bazi, isVariable) => {
