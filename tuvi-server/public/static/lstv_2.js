@@ -1,0 +1,6487 @@
+$(document).ready(function () {
+  var uploadLaso = "/upload";
+  var d = new Date();
+  var thismonth = d.getMonth() + 1;
+  var today = d.getDate();
+  var thisyear = d.getFullYear();
+  $("#ngaysinh").val(today);
+  $("#thangsinh").val(thismonth);
+  $("#namsinh").val(thisyear);
+
+  function lapLaSo(laso) {
+    try {
+      $.templates({
+        cungDiaBan: "#cungDiaBan",
+        vungThienBan: "#vungThienBan",
+        infoData: "#infoData",
+      });
+      var tb = laso["thienBan"];
+      var data = laso["thapNhiCung"];
+      var thienBan = $.templates.vungThienBan.render(tb);
+      $("#thienBan").html(thienBan);
+      var cungTy1 = $.templates.cungDiaBan.render(data[1]);
+      $("#cungTy1").html(cungTy1);
+      var cungSuu = $.templates.cungDiaBan.render(data[2]);
+      $("#cungSuu").html(cungSuu);
+      var cungDan = $.templates.cungDiaBan.render(data[3]);
+      $("#cungDan").html(cungDan);
+      var cungMao = $.templates.cungDiaBan.render(data[4]);
+      $("#cungMao").html(cungMao);
+      var cungThin = $.templates.cungDiaBan.render(data[5]);
+      $("#cungThin").html(cungThin);
+      var cungTy5 = $.templates.cungDiaBan.render(data[6]);
+      $("#cungTy5").html(cungTy5);
+      var cungNgo = $.templates.cungDiaBan.render(data[7]);
+      $("#cungNgo").html(cungNgo);
+      var cungMui = $.templates.cungDiaBan.render(data[8]);
+      $("#cungMui").html(cungMui);
+      var cungThan = $.templates.cungDiaBan.render(data[9]);
+      $("#cungThan").html(cungThan);
+      var cungDau = $.templates.cungDiaBan.render(data[10]);
+      $("#cungDau").html(cungDau);
+      var cungTuat = $.templates.cungDiaBan.render(data[11]);
+      $("#cungTuat").html(cungTuat);
+      var cungHoi = $.templates.cungDiaBan.render(data[12]);
+      $("#cungHoi").html(cungHoi);
+      // Sort and filter cung data
+      var sortedCungs = Object.values(data)
+        .filter((cung) => cung.cungSo > 0)
+        .sort((a, b) => a.cungSo - b.cungSo);
+
+      var infoData = $.templates.infoData.render({
+        thapNhiCung: sortedCungs,
+      });
+      $("#infoDataRender").html(infoData);
+      var zt = new $.Zebra_Tooltips($(".tooltips"), {
+        position: "right",
+        max_width: 300,
+      });
+      zt.show($("#tooltip"), true);
+    } catch (error) {
+      // baoLoi(error);
+    }
+  }
+
+  const LANGUAGE = "en";
+
+  const getThapThanThienCan = (nhatChuName) => {
+    let thapThan = [
+      {
+        name: "Giáp",
+        code: "[+N-2]",
+        nguHanh: "Mộc",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Giáp Mộc
+Giáp Mộc là hình ảnh của cây cổ thụ to lớn, vững chãi, luôn vươn thẳng lên trời (Dương Mộc). Đặc tính cốt lõi là sự kiên định, chính trực, có lòng nhân ái và luôn có ý chí vươn lên làm người dẫn đầu. Người Giáp Mộc có tố chất của một nhà lãnh đạo, thẳng thắn, đáng tin cậy nhưng đôi khi khá cứng nhắc và thiếu linh hoạt. Để phát triển, Giáp Mộc cần đất (Thổ) để bén rễ, nước (Thủy) để nuôi dưỡng và ánh nắng (Hỏa) để quang hợp.
+  •	Khi cân bằng:
+      Đặc điểm: Họ là người có ý chí mạnh mẽ, lòng tự trọng cao và tinh thần trách nhiệm. Luôn đặt ra mục tiêu rõ ràng và kiên trì theo đuổi. Họ chính trực, nhân hậu, sẵn sàng che chở, bảo vệ cho người khác. Họ là những nhà lãnh đạo, người tiên phong đáng tin cậy.
+      Dấu hiệu nhận biết: Dáng người cao, thẳng. Tác phong đĩnh đạc, chững chạc. Lời nói thẳng thắn, có trọng lượng. Không thích những chuyện vụn vặt, tiểu tiết.
+  •	Khi mất cân bằng (Quá Cường / Quá Nhược):
+      - Quá Cường (Mộc quá vượng):
+        Đặc điểm: Một khu rừng quá rậm rạp, cây cối tranh giành ánh sáng và chất dinh dưỡng. Họ trở nên cực kỳ cố chấp, bướng bỉnh, không chịu lắng nghe ai. Thiếu sự linh hoạt, không biết tùy cơ ứng biến. Có thể trở nên độc đoán, chỉ biết đến mình.
+        Dấu hiệu nhận biết: Cứng đầu, bảo thủ. Khó chấp nhận sự thay đổi. Thiếu sự tinh tế, dễ làm người khác khó chịu vì sự thẳng thắn quá mức.
+      - Quá Nhược (Mộc bị suy):
+        Đặc điểm: Cây cối còi cọc, không thể phát triển. Họ thiếu tự tin, lập trường không vững vàng, dễ bị người khác lôi kéo, chi phối. Thiếu ý chí, dễ bỏ cuộc giữa chừng. Không có khả năng tự bảo vệ mình.
+        Dấu hiệu nhận biết: Do dự, thiếu quyết đoán. Dễ dựa dẫm vào người khác. Thiếu đi khí phách và sự mạnh mẽ vốn có.
+`,
+        data: [
+          {
+            name: "Giáp",
+            thapThan: "Tỷ Kiên",
+            thapThanCode: "[+N-2][F-11]",
+            nguHanh: "Mộc",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.",
+            descriptionEn: "Autonomous Growth Force",
+            tichCuc:
+              "Tăng cường sự tự tin, ý chí độc lập. Có nhiều bạn bè tốt, cùng chí hướng, hỗ trợ nhau trong việc lớn.",
+            active:
+              "Confidently extend into an open area. Establish an independent zone.",
+            tieuCuc:
+              "Cạnh tranh cực kỳ gay gắt để giành vị trí dẫn đầu. Dễ xảy ra mâu thuẫn, xung đột với bạn bè, đồng nghiệp. Không ai chịu nhường ai.",
+            passive: "Rely only on internal capacity without external support.",
+          },
+          {
+            name: "Ất",
+            thapThan: "Kiếp Tài",
+            thapThanCode: "[-N-2][F-12]",
+            nguHanh: "Mộc",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.",
+            descriptionEn: "Dependent Attachment Force",
+            tichCuc:
+              "Đây là sự kết hợp tốt nhất cho Ất Mộc. Hình ảnh dây leo (Ất) quấn quanh cây lớn (Giáp) để vươn lên. Có quý nhân, người có năng lực che chở, giúp đỡ để thăng tiến.",
+            active:
+              "Move through gaps to attach to capable individuals or larger groups.",
+            tieuCuc:
+              "Dễ trở nên quá phụ thuộc, ỷ lại. Nếu không có Giáp Mộc, sẽ cảm thấy mất phương hướng.",
+            passive:
+              "Coexist with others and utilize their momentum to advance.",
+          },
+          {
+            name: "Bính",
+            thapThan: "Thực Thần",
+            thapThanCode: "[+N-4][F-21]",
+            nguHanh: "Hỏa",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).",
+            descriptionEn: "Sustained Output Force",
+            tichCuc:
+              "Đây là hình ảnh đẹp nhất của Giáp Mộc (Mộc Hỏa thông minh). Cây lớn được mặt trời chiếu rọi, phát triển rực rỡ. Mang lại trí thông minh, sự lạc quan, tài năng sáng tạo và khả năng biểu đạt xuất sắc.",
+            active:
+              "Consume resources on a strict schedule to maintain continuous, high-intensity operation.",
+            tieuCuc:
+              "Dễ trở nên quá khoe khoang, thích thể hiện. Có thể vì quá tập trung vào việc thể hiện mà trở nên thiếu thực tế.",
+            passive:
+              "Operate with high transparency so outcomes are immediately observable.",
+          },
+          {
+            name: "Đinh",
+            thapThan: "Thương Quan",
+            thapThanCode: "[-N-4][F-22]",
+            nguHanh: "Hỏa",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).",
+            descriptionEn: "Subsurface Degradation Force",
+            tichCuc:
+              "Mang lại sự sáng tạo tinh tế, khả năng đi sâu vào chi tiết. Có tài năng trong các lĩnh vực nghệ thuật, kỹ thuật đòi hỏi sự tỉ mỉ.",
+            active:
+              "Penetrate deeply and use focused thermal energy to sever the foundations of outdated structures.",
+            tieuCuc:
+              "Hình ảnh cây lớn (Giáp) làm nhiên liệu cho ngọn lửa nhỏ (Đinh). Sự sáng tạo này làm tiêu hao rất nhiều năng lượng. Dễ bị kiệt sức, lao tâm khổ tứ.",
+            passive:
+              "Apply high-intensity energy within confined spaces, ensuring the external casing remains intact.",
+          },
+          {
+            name: "Mậu",
+            thapThan: "Thiên Tài",
+            thapThanCode: "[+N-5][F-32]",
+            nguHanh: "Thổ",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam)",
+            descriptionEn: "Passive Capacity Force",
+            tichCuc:
+              "Hình ảnh cây cổ thụ mọc trên ngọn núi lớn. Có cơ hội kiếm những khoản tiền lớn, tham gia vào các dự án tầm cỡ, đặc biệt là bất động sản.",
+            active:
+              "Suddenly expand intake parameters to encompass a large volume of fluctuating assets.",
+            tieuCuc:
+              "Kiếm tiền rất vất vả, phải đối mặt với thử thách lớn. Cần nỗ lực rất nhiều mới có thể thành công.",
+            passive:
+              "Maintain a state of total inactivity until market valuations drop significantly, then convert them into solid holdings.",
+          },
+          {
+            name: "Kỷ",
+            thapThan: "Chính Tài",
+            thapThanCode: "[-N-5][F-31]",
+            nguHanh: "Thổ",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.",
+            descriptionEn: "Residual Compaction Force",
+            tichCuc:
+              "Giáp Kỷ hợp hóa Thổ. Cây lớn cắm rễ vào mảnh đất màu mỡ. Mang lại tài lộc ổn định, bền vững. Nam mệnh có vợ hiền, là người biết vun vén, hỗ trợ chồng.",
+            active:
+              "Retain minor, overlooked assets or depreciated inventory from external sources and allow them to stabilize.",
+            tieuCuc:
+              "Dễ trở nên quá thực tế, chỉ quan tâm đến tiền bạc. Có thể vì gia đình, vợ con mà mất đi chí lớn.",
+            passive:
+              "Compress these items deeply into storage and wait out extended cycles until they solidify into permanent value.",
+          },
+          {
+            name: "Canh",
+            thapThan: "Thiên Quan",
+            thapThanCode: "[+N-1][F-42]",
+            nguHanh: "Kim",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).",
+            descriptionEn: "Frontal Resolution Force",
+            tichCuc:
+              "Khi Giáp Mộc cực cường và có Hỏa để chế ngự Kim, có thể mang lại quyền lực tối cao trong các môi trường khắc nghiệt. Có khả năng đảm đương trọng trách lớn.",
+            active:
+              "Face problems directly. Remove the failing parts immediately.",
+            tieuCuc:
+              "Đây là kẻ thù nguy hiểm nhất của Giáp Mộc. Hình ảnh rìu lớn (Canh) chặt đổ cây cổ thụ. Gây ra tai họa, tai nạn, bệnh tật nặng, kiện tụng. Nữ mệnh tình duyên cực kỳ trắc trở.",
+            passive:
+              "Keep the core working and make it stronger after a difficult period.",
+          },
+          {
+            name: "Tân",
+            thapThan: "Chính Quan",
+            thapThanCode: "[-N-1][F-41]",
+            nguHanh: "Kim",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).",
+            descriptionEn: "Micro-Management Force",
+            tichCuc:
+              "Hình ảnh dao kéo (Tân) tỉa bớt cành lá cho cây (Giáp). Giúp Giáp Mộc trở nên gọn gàng, hữu dụng hơn. Mang lại danh tiếng, địa vị, sự nghiệp ổn định. Nữ mệnh có chồng khéo léo, biết cách góp ý.",
+            active:
+              "Set many small limits. Monitor every minor action closely.",
+            tieuCuc:
+              'Luôn cảm thấy bị gò bó, kiểm soát bởi những quy tắc nhỏ nhặt. Dễ bị cấp trên hoặc chồng "chỉnh đốn" gây khó chịu.',
+            passive:
+              "Limit the other side's movement without making loud statements.",
+          },
+          {
+            name: "Nhâm",
+            thapThan: "Thiên Ấn",
+            thapThanCode: "[+N-3][F-52]",
+            nguHanh: "Thủy",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.",
+            descriptionEn: "Unrestricted Intake Force",
+            tichCuc:
+              "Hình ảnh sông lớn (Nhâm) bồi đắp phù sa cho cây. Mang lại nguồn hỗ trợ mạnh mẽ, kiến thức uyên bác, tư duy độc đáo. Có quý nhân quyền thế giúp đỡ.",
+            active:
+              "Open primary channels to allow large external inputs to enter and reinforce the system.",
+            tieuCuc:
+              "Khi Thủy quá cường, cây sẽ bị úng rễ hoặc bị cuốn trôi. Sự giúp đỡ quá mức có thể làm hại. Dễ trở nên lười biếng, suy nghĩ viển vông.",
+            passive:
+              "Allow internal elements to merge with external entities in exchange for expanded capacity.",
+          },
+          {
+            name: "Quý",
+            thapThan: "Chính Ấn",
+            thapThanCode: "[-N-3][F-51]",
+            nguHanh: "Thủy",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.",
+            descriptionEn: "Covert Inflow Force",
+            tichCuc:
+              "Hình ảnh mưa nhỏ, sương mai (Quý) tưới cho cây. Mang lại sự hỗ trợ từ mẹ, quý nhân một cách nhẹ nhàng, tinh tế. Có trí thông minh, lòng nhân ái, ham học hỏi.",
+            active:
+              "Maintain an undetected supply channel feeding directly into the core foundation.",
+            tieuCuc:
+              "Nguồn hỗ trợ này không đủ mạnh để Giáp Mộc phát triển thành cây đại thụ. Có thể chỉ có bằng cấp nhưng kiến thức không quá sâu sắc.",
+            passive:
+              "Secure necessary survival inputs quietly without attracting visual attention.",
+          },
+        ],
+      },
+      {
+        name: "Ất",
+        code: "[-N-2]",
+        nguHanh: "Mộc",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Ất Mộc
+Ất Mộc là hình ảnh của các loài cây thân mềm như hoa, cỏ, dây leo (Âm Mộc). Đặc tính cốt lõi là sự mềm dẻo, linh hoạt, khả năng thích ứng cao và có sức sống mãnh liệt. Người Ất Mộc không đối đầu trực diện mà biết luồn lách, nương theo hoàn cảnh để tồn tại và phát triển. Họ khéo léo, giỏi giao tiếp và có khả năng xây dựng các mối quan hệ xã hội. Để phát triển tốt nhất, Ất Mộc cần có cây lớn (Giáp Mộc) để nương tựa, ánh nắng (Bính Hỏa) và mưa (Quý Thủy).
+•	Khi cân bằng:
+	Đặc điểm: Họ là người vô cùng khéo léo, tinh tế và giỏi ngoại giao. Họ có khả năng thích nghi với mọi môi trường, dễ dàng kết bạn và tạo dựng mạng lưới quan hệ. Họ mềm mỏng, ôn hòa nhưng bên trong lại có một sức sống bền bỉ, kiên cường, có thể vượt qua mọi nghịch cảnh.
+	Dấu hiệu nhận biết: Dáng người mềm mại, uyển chuyển. Lời nói nhẹ nhàng, dễ nghe. Giỏi lắng nghe và thấu hiểu. Có khả năng thuyết phục người khác một cách khéo léo.
+•	Khi mất cân bằng (Quá Cường / Quá Nhược):
+	- Quá Cường (Mộc quá vượng):
+	Đặc điểm: Cỏ dại mọc um tùm, tranh giành chất dinh dưỡng. Họ trở nên hay đố kỵ, ganh ghét, có nhiều toan tính, mưu mẹo. Dễ thay đổi, lập trường không vững vàng, hay dựa dẫm và có thể trở nên phiền phức.
+	Dấu hiệu nhận biết: Hay nói xấu sau lưng. Dễ thay đổi ý kiến, không đáng tin cậy. Thích dựa dẫm, phụ thuộc vào người khác.
+	- Quá Nhược (Mộc bị suy):
+	Đặc điểm: Hoa cỏ héo úa, thiếu sức sống. Họ thiếu tự tin, nhút nhát, dễ bị người khác chi phối, bắt nạt. Không có khả năng tự bảo vệ mình, dễ bị cuốn theo số phận, không có định hướng rõ ràng.
+	Dấu hiệu nhận biết: Yếu đuối, dễ bị tổn thương. Thiếu chủ kiến, ai nói gì cũng nghe theo. Cuộc sống không ổn định, hay gặp khó khăn.
+`,
+        data: [
+          {
+            name: "Ất",
+            thapThan: "Tỷ Kiên",
+            thapThanCode: "[-N-2][F-11]",
+            nguHanh: "Mộc",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.",
+            descriptionEn: "Subsurface Development Force",
+            tichCuc:
+              "Có nhiều bạn bè, mối quan hệ xã hội tốt. Giỏi hợp tác, làm việc nhóm.",
+            active:
+              "Quietly extend base connections deep into the environment to absorb input.",
+            tieuCuc:
+              "Cạnh tranh ngầm rất gay gắt. Dễ bị bạn bè lôi kéo vào những chuyện thị phi, bè phái. Hay đố kỵ, so bì với nhau.",
+            passive:
+              "Provide for oneself and slowly increase capacity in silence.",
+          },
+          {
+            name: "Giáp",
+            thapThan: "Kiếp Tài",
+            thapThanCode: "[+N-2][F-12]",
+            nguHanh: "Mộc",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.",
+            descriptionEn: "Broad Networking Force",
+            tichCuc:
+              "Đây là sự kết hợp tốt nhất cho Ất Mộc. Hình ảnh dây leo (Ất) quấn quanh cây lớn (Giáp) để vươn lên. Có quý nhân, người có năng lực che chở, giúp đỡ để thăng tiến.",
+            active:
+              "Reach out to form connections widely. Link multiple groups together.",
+            tieuCuc:
+              "Dễ trở nên quá phụ thuộc, ỷ lại. Nếu không có Giáp Mộc, sẽ cảm thấy mất phương hướng.",
+            passive:
+              "Maintain a wide network of contacts for operational backup.",
+          },
+          {
+            name: "Đinh",
+            thapThan: "Thực Thần",
+            thapThanCode: "[-N-4][F-21]",
+            nguHanh: "Hỏa",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).",
+            descriptionEn: "Focused Intensity Force",
+            tichCuc:
+              "Mang lại sự sáng tạo tinh tế, khả năng biểu đạt nghệ thuật. Lời nói duyên dáng, có sức thuyết phục. Có tài năng trong lĩnh vực ẩm thực, thời trang, làm đẹp.",
+            active:
+              "Apply concentrated energy slowly to process highly complex details with precision.",
+            tieuCuc:
+              "Dễ trở nên quá đam mê hưởng thụ, thiếu ý chí phấn đấu. Sự sáng tạo có phần nhỏ bé, không tạo ra đột phá lớn.",
+            passive:
+              "Suspend other functions to direct absolute cognitive focus onto a single, narrow point.",
+          },
+          {
+            name: "Bính",
+            thapThan: "Thương Quan",
+            thapThanCode: "[+N-4][F-22]",
+            nguHanh: "Hỏa",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).",
+            descriptionEn: "Radical Conversion Force",
+            tichCuc:
+              "Đây là Thần quan trọng nhất của Ất Mộc. Hình ảnh hoa cỏ (Ất) hướng về mặt trời (Bính). Mang lại sự lạc quan, trí thông minh, khả năng sáng tạo và danh tiếng. Giúp Ất Mộc trở nên nổi bật và được công nhận.",
+            active:
+              "Expend all available resources to accelerate transition. Completely dismantle obsolete methods.",
+            tieuCuc:
+              "Dễ trở nên quá khoe khoang, thích thể hiện. Có thể hơi phù phiếm, chỉ chú trọng đến vẻ bề ngoài.",
+            passive:
+              "Compel the system to elevate into a new operational phase.",
+          },
+          {
+            name: "Mậu",
+            thapThan: "Chính Tài",
+            thapThanCode: "[+N-5][F-31]",
+            nguHanh: "Thổ",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.",
+            descriptionEn: "Total Absorption Force",
+            tichCuc:
+              "Có cơ hội tiếp xúc với những nguồn tài chính lớn, ổn định. Nam mệnh có thể lấy được vợ hiền, có gia thế tốt.",
+            active:
+              "Collect liquid capital and lock it into fixed terrain or illiquid assets permanently. Act as an irreversible containment field.",
+            tieuCuc:
+              "Hình ảnh hoa cỏ yếu ớt mọc trên núi cao. Kiếm tiền rất vất vả, khó khăn. Dễ bị các vấn đề tài chính làm cho mệt mỏi.",
+            passive:
+              "Secure all perimeters tightly. Permit only inbound transfers, completely preventing outbound loss.",
+          },
+          {
+            name: "Kỷ",
+            thapThan: "Thiên Tài",
+            thapThanCode: "[-N-5][F-32]",
+            nguHanh: "Thổ",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).",
+            descriptionEn: "Liability Absorption Force",
+            tichCuc:
+              "Hình ảnh hoa cỏ mọc trên đất vườn màu mỡ. Có nhiều cơ hội kiếm tiền, kinh doanh thuận lợi. Tài lộc dồi dào.",
+            active:
+              "Voluntarily acquire hidden liabilities. Assume responsibility for complex, undesirable elements rejected by others.",
+            tieuCuc: "Dễ trở nên quá thực dụng, chỉ quan tâm đến tiền bạc.",
+            passive:
+              "Function as an absorbent buffer, securing these liabilities to generate undisclosed long-term yields.",
+          },
+          {
+            name: "Canh",
+            thapThan: "Chính Quan",
+            thapThanCode: "[+N-1][F-41]",
+            nguHanh: "Kim",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).",
+            descriptionEn: "Top-Down Regulation Force",
+            tichCuc:
+              "Canh Ất hợp hóa Kim. Nếu Ất Mộc có gốc rễ vững, có thể mang lại danh vị, địa vị. Nữ mệnh có chồng là người có năng lực, quyền thế, vợ chồng yêu thương nhau.",
+            active:
+              "Apply strict rules from upper levels. Require everyone to follow the exact order.",
+            tieuCuc:
+              "Nếu Ất Mộc yếu, đây là sự kết hợp nguy hiểm. Hình ảnh rìu lớn (Canh) chặt đứt dây leo. Dễ bị cấp trên, chồng chèn ép, kiểm soát quá mức.",
+            passive: "Reject arguments or pushback.",
+          },
+          {
+            name: "Tân",
+            thapThan: "Thiên Quan",
+            thapThanCode: "[-N-1][F-42]",
+            nguHanh: "Kim",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).",
+            descriptionEn: "Covert Correction Force",
+            tichCuc: "Rất hiếm khi tích cực, trừ khi có Hỏa mạnh để chế ngự.",
+            active: "Quietly remove long-term issues out of plain sight.",
+            tieuCuc:
+              "Đây là kẻ thù nguy hiểm nhất của Ất Mộc. Hình ảnh dao kéo (Tân) cắt nát hoa cỏ. Gây ra tai họa, bệnh tật, thị phi, tiểu nhân hãm hại. Nữ mệnh có tình duyên cực kỳ đau khổ, dễ bị bạo hành.",
+            passive:
+              "Solve the problem while keeping the surface looking normal.",
+          },
+          {
+            name: "Nhâm",
+            thapThan: "Chính Ấn",
+            thapThanCode: "[+N-3][F-51]",
+            nguHanh: "Thủy",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.",
+            descriptionEn: "Fluid Isolation Force",
+            tichCuc:
+              "Có sự hỗ trợ mạnh mẽ từ mẹ, quý nhân. Có nền tảng học vấn tốt, kiến thức sâu rộng.",
+            active:
+              "Locate a large, adaptable buffer zone for complete operational security.",
+            tieuCuc:
+              "Khi Thủy quá vượng sẽ gây ra tình trạng 'Thủy phiếm Mộc' (nước cuốn trôi cây). Sự giúp đỡ quá mức thành ra làm hại. Dễ trở nên lười biếng, ỷ lại, cuộc sống trôi nổi.",
+            passive:
+              "Neutralize external kinetic impacts. Keep the core suspended and insulated.",
+          },
+          {
+            name: "Quý",
+            thapThan: "Thiên Ấn",
+            thapThanCode: "[-N-3][F-52]",
+            nguHanh: "Thủy",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.",
+            descriptionEn: "Siphoning Force",
+            tichCuc:
+              "Hình ảnh mưa nhỏ, sương mai (Quý) tưới cho hoa cỏ. Mang lại sự thông minh, tư duy nhạy bén. Có năng khiếu trong các lĩnh vực nghệ thuật, huyền học.",
+            active:
+              "Utilize narrow conduits to breach small gaps. Covertly extract external data and intelligence.",
+            tieuCuc:
+              "Nguồn hỗ trợ này không ổn định. Dễ 'cả thèm chóng chán' trong học tập. Suy nghĩ có phần kỳ lạ, khó hòa đồng, dễ cảm thấy cô độc.",
+            passive:
+              "Divert energy from an external flow and route it to internal reserves.",
+          },
+        ],
+      },
+      {
+        name: "Bính",
+        thapThanCode: "[+N-4]",
+        nguHanh: "Hỏa",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Bính Hỏa
+Bính Hỏa là hình ảnh của mặt trời (Dương Hỏa). Đặc tính cốt lõi là sự nhiệt tình, hào phóng, quang minh lỗi lạc và năng lượng dồi dào. Người Bính Hỏa giống như mặt trời, luôn tỏa sáng, ban phát ánh sáng và hơi ấm cho vạn vật. Họ thẳng thắn, lạc quan, thích là trung tâm của sự chú ý và có khả năng truyền cảm hứng. Họ ghét sự che lấp, đặc biệt là bởi nước lớn (Nhâm Thủy).
+•	Khi cân bằng:
+	Đặc điểm: Họ là người vô cùng hào phóng, cởi mở và đầy nhiệt huyết. Luôn lạc quan, nhìn thấy mặt tích cực của vấn đề và lan tỏa năng lượng đó đến mọi người. Họ thẳng thắn, chính trực, không thích mưu mẹo hay dối trá. Họ là những nhà lãnh đạo bẩm sinh, có sức ảnh hưởng lớn và được mọi người yêu quý.
+	Dấu hiệu nhận biết: Luôn tươi cười, tràn đầy năng lượng. Nói to, rõ ràng, tác phong nhanh nhẹn. Thích giao du, kết bạn và là tâm điểm của các cuộc vui.
+•	Khi mất cân bằng (Quá Cường / Quá Nhược):
+	- Quá Cường (Hỏa quá vượng):
+	Đặc điểm: Mặt trời quá gay gắt sẽ thiêu đốt vạn vật. Họ trở nên nóng nảy, thiếu kiên nhẫn, dễ nổi giận vô cớ. Tự cho mình là đúng, kiêu ngạo, không nghe lời khuyên. Hành động bộc phát, vội vàng, dễ dẫn đến sai lầm.
+	Dấu hiệu nhận biết: Nóng tính, bộp chộp. Thích khoe khoang, lấn át người khác. Không chịu được sự chỉ trích, dễ gây xung đột.
+	- Quá Nhược (Hỏa bị suy):
+	Đặc điểm: Mặt trời bị mây đen che khuất. Họ mất đi sự nhiệt tình và lạc quan vốn có. Trở nên thiếu tự tin, do dự, đầu voi đuôi chuột. Dễ bi quan, chán nản, thiếu năng lượng để theo đuổi mục tiêu.
+	Dấu hiệu nhận biết: Thiếu sức sống, hay thở dài. Khởi đầu mọi việc rất hăng hái nhưng nhanh chóng bỏ cuộc. Dễ thay đổi, không kiên định.
+`,
+        data: [
+          {
+            name: "Bính",
+            thapThan: "Tỷ Kiên",
+            thapThanCode: "[+N-4][F-11]",
+            nguHanh: "Hỏa",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.",
+            descriptionEn: "Rapid Ignition Force",
+            tichCuc:
+              "Tăng cường sự tự tin, ý chí và tinh thần độc lập. Có nhiều bạn bè cùng chí hướng, nhiệt tình giúp đỡ lẫn nhau.",
+            active:
+              "Ignite rapidly to emit high energy and visibility, deterring and displacing obstacles.",
+            tieuCuc:
+              "Hình ảnh hai mặt trời trên trời, cạnh tranh gay gắt. Dễ xảy ra xung đột, tranh giành vị trí dẫn đầu. Không ai chịu nhường ai.",
+            passive:
+              "Establish a highly visible, distinct perimeter that restricts unauthorized entry.",
+          },
+          {
+            name: "Đinh",
+            thapThan: "Kiếp Tài",
+            thapThanCode: "[-N-4][F-12]",
+            nguHanh: "Hỏa",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.",
+            descriptionEn: "Micro-Stimulation Force",
+            tichCuc:
+              "Giúp Bính Hỏa trở nên tinh tế, có chiều sâu hơn. Có khả năng kết hợp giữa sự quảng đại và sự tỉ mỉ.",
+            active:
+              "Move discreetly to distribute minor energy inputs. Covertly stimulate individual targets.",
+            tieuCuc:
+              "Hình ảnh ánh nến (Đinh) tranh sáng với mặt trời (Bính). Dễ bị cạnh tranh ngầm, bị người khác cướp công. Sự giúp đỡ nhận được thường không thực chất.",
+            passive:
+              "Maintain an active, low-visibility network connection without public announcements.",
+          },
+          {
+            name: "Mậu",
+            thapThan: "Thực Thần",
+            thapThanCode: "[+N-5][F-21]",
+            nguHanh: "Thổ",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).",
+            descriptionEn: "Rigid Formatting Force",
+            tichCuc:
+              "Mang lại sự ổn định, đôn hậu. Giúp Bính Hỏa biến sự nhiệt tình thành những kết quả thực tế, vững chắc. Có khả năng lãnh đạo và quản lý tốt.",
+            active:
+              "Absorb surplus inputs. Compress workflows into a strictly defined, unalterable structure.",
+            tieuCuc:
+              "Hình ảnh mặt trời bị núi cao che khuất. Làm giảm đi sự tỏa sáng và nhiệt huyết. Dễ trở nên lười biếng, chỉ thích an nhàn, thiếu đi chí tiến thủ.",
+            passive:
+              "Reject operational changes. Repeat standardized procedures to guarantee a highly consistent, fixed output.",
+          },
+          {
+            name: "Kỷ",
+            thapThan: "Thương Quan",
+            thapThanCode: "[-N-5][F-22]",
+            nguHanh: "Thổ",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).",
+            descriptionEn: "Foundation Submergence Force",
+            tichCuc:
+              "Mang lại sự mềm mỏng, khéo léo. Có khả năng sáng tạo tinh tế.",
+            active:
+              "Absorb obsolete regulations, causing existing problems to sink into the substrate independently.",
+            tieuCuc:
+              "Hình ảnh mây mù (Kỷ) che lấp mặt trời (Bính). Khiến tài năng bị che khuất, khó được công nhận. Dễ vướng vào thị phi, bị người khác nói xấu, hiểu lầm.",
+            passive:
+              "Quietly withdraw foundational support. Maintain absolute surface inactivity while the lower structure shifts.",
+          },
+          {
+            name: "Tân",
+            thapThan: "Chính Tài",
+            thapThanCode: "[-N-1][F-31]",
+            nguHanh: "Kim",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.",
+            descriptionEn: "Resource Accumulation Force",
+            tichCuc:
+              "Bính Tân hợp hóa Thủy. Có khả năng quản lý tài chính tốt. Nam mệnh có vợ đẹp, tài giỏi và có thể hợp tác tốt với vợ. Có thể kiếm tiền từ các tài sản có giá trị cao.",
+            active: "Monitor and stop unnecessary spending.",
+            tieuCuc:
+              "Dễ vì tiền bạc, tình cảm mà mất đi lý trí, sự quang minh của mình.",
+            passive:
+              "Collect small amounts consistently to build a solid base.",
+          },
+          {
+            name: "Canh",
+            thapThan: "Thiên Tài",
+            thapThanCode: "[+N-1][F-32]",
+            nguHanh: "Kim",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).",
+            descriptionEn: "Rapid Acquisition Force",
+            tichCuc:
+              "Hình ảnh mặt trời luyện kim loại thô. Có khả năng kiếm những khoản tiền lớn, làm chủ các dự án lớn, đặc biệt trong lĩnh vực công nghiệp, tài chính.",
+            active: "Take clear opportunities quickly and firmly.",
+            tieuCuc:
+              "Kiếm tiền rất vất vả, đòi hỏi phải đầu tư nhiều công sức. Dễ gặp cạnh tranh lớn về tài chính.",
+            passive:
+              "Stop operations as soon as the target is reached to save energy.",
+          },
+          {
+            name: "Quý",
+            thapThan: "Chính Quan",
+            thapThanCode: "[-N-3][F-41]",
+            nguHanh: "Thủy",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).",
+            descriptionEn: "Saturation Delay Force",
+            tichCuc:
+              "Khi Bính Hỏa cường, Quý Thủy giúp điều hòa, mang lại danh tiếng và địa vị. Giúp Bính Hỏa biết kiềm chế, trở nên có chiều sâu hơn.",
+            active:
+              "Gradually permeate all areas, increasing mass and reducing agility.",
+            tieuCuc:
+              "Hình ảnh mưa, sương (Quý) che lấp mặt trời. Gây ra phiền phức, khó chịu từ cấp trên. Dễ bị mất danh dự vì những chuyện nhỏ nhặt. Nữ mệnh có chồng hay gièm pha, kiểm soát.",
+            passive:
+              "Compel opposing forces to decelerate and conform to a slower pace.",
+          },
+          {
+            name: "Nhâm",
+            thapThan: "Thiên Quan",
+            thapThanCode: "[+N-3][F-42]",
+            nguHanh: "Thủy",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).",
+            descriptionEn: "Submersion Threat Force",
+            tichCuc:
+              "Khi Bính Hỏa cực cường có Mộc tương sinh, có thể tạo nên cách cục 'Thủy quang tương chiếu', mang lại quyền lực và danh tiếng vang dội. Có khả năng đảm đương trọng trách lớn.",
+            active:
+              "Apply overwhelming volume to restrict operational capacity. Threaten systemic survival.",
+            tieuCuc:
+              "Đây là kẻ thù lớn nhất của Bính Hỏa. Hình ảnh biển cả (Nhâm) nhấn chìm mặt trời. Gây ra tai họa, bệnh tật hiểm nghèo, kiện tụng, tù tội. Nữ mệnh có tình duyên cực kỳ trắc trở.",
+            passive:
+              "Force adversaries to expend effort to stay active or face dissolution.",
+          },
+          {
+            name: "Ất",
+            thapThan: "Chính Ấn",
+            thapThanCode: "[-N-2][F-51]",
+            nguHanh: "Mộc",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.",
+            descriptionEn: "Covert Dependency Force",
+            tichCuc:
+              "Hình ảnh cỏ cây, hoa lá hướng về mặt trời. Mang lại sự hỗ trợ từ mẹ, quý nhân một cách tận tình. Có lòng nhân hậu, ham học hỏi kiến thức truyền thống.",
+            active:
+              "Quietly connect to a primary host system to draw sustenance.",
+            tieuCuc:
+              "Sự hỗ trợ này có phần yếu ớt, không đủ để Bính Hỏa tỏa sáng rực rỡ. Dễ trở nên hơi ỷ lại, thiếu đi sự quyết đoán.",
+            passive:
+              "Maintain a secure, daily existence without drawing public attention.",
+          },
+          {
+            name: "Giáp",
+            thapThan: "Thiên Ấn",
+            thapThanCode: "[+N-2][F-52]",
+            nguHanh: "Mộc",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.",
+            descriptionEn: "Open Exchange Force",
+            tichCuc:
+              "Đây là nguồn năng lượng tốt nhất cho Bính Hỏa. Hình ảnh cây đại thụ (Giáp) làm nhiên liệu cho mặt trời. Mang lại sự hỗ trợ mạnh mẽ, quý nhân quyền thế. Có trí tuệ uyên bác, tư duy đột phá, giúp Bính Hỏa tỏa sáng tột độ.",
+            active:
+              "Extend communication lines to interact. Share information openly to build relations.",
+            tieuCuc:
+              "Nếu Mộc quá vượng có thể làm Hỏa bị nghẹt. Dễ trở nên quá tự tin vào kiến thức của mình mà thành ra kiêu ngạo.",
+            passive: "Absorb new external inputs to refresh the system.",
+          },
+        ],
+      },
+      {
+        name: "Đinh",
+        code: "[-N-4]",
+        nguHanh: "Hỏa",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Đinh Hỏa
+Đinh Hỏa là hình ảnh của ngọn lửa từ cây nến, ánh sao, hoặc lửa trong lò rèn (Âm Hỏa). Đặc tính cốt lõi là sự ấm áp, soi sáng, tinh tế và có khả năng soi rọi vào chi tiết. Khác với Bính Hỏa tỏa sáng ra bên ngoài, Đinh Hỏa cháy âm ỉ, hướng vào bên trong, mang nội tâm sâu sắc, suy nghĩ chu đáo. Họ có khả năng dẫn đường, truyền đạt kiến thức và "rèn giũa" người khác. Để tồn tại, Đinh Hỏa cần nhiên liệu (Mộc) và sợ nhất bị dập tắt bởi nước (Thủy).
+•	Khi cân bằng:
+	Đặc điểm: Họ là người vô cùng tinh tế, nhạy bén và có óc quan sát sắc sảo. Họ ấm áp, lịch sự, biết cách quan tâm đến người khác một cách thầm lặng. Họ là những nhà tư tưởng, người thầy, người cố vấn xuất sắc, có khả năng nhìn thấu bản chất vấn đề và đưa ra những lời khuyên giá trị.
+	Dấu hiệu nhận biết: Ánh mắt có thần, sâu sắc. Thái độ ôn hòa, từ tốn. Có khả năng tập trung cao độ và giỏi trong các công việc đòi hỏi sự tỉ mỉ, kiên nhẫn.
+•	Khi mất cân bằng (Quá Cường / Quá Nhược):
+	- Quá Cường (Hỏa quá vượng):
+	Đặc điểm: Ngọn lửa quá lớn sẽ trở nên khó kiểm soát. Họ trở nên nóng vội, thiếu kiên nhẫn, hay lo âu, suy nghĩ tiêu cực. Nội tâm đầy mâu thuẫn, dễ nghi ngờ và hay để bụng, thù dai.
+	Dấu hiệu nhận biết: Dễ bị stress, căng thẳng thần kinh. Hay suy diễn, có thể hơi cực đoan trong suy nghĩ. Tâm trạng thất thường.
+	- Quá Nhược (Hỏa bị suy):
+	Đặc điểm: Ngọn nến leo lét trước gió. Họ thiếu tự tin, yếu đuối, dễ bị bi quan và chán nản. Thiếu năng lượng, khó theo đuổi mục tiêu đến cùng. Dễ bị người khác tác động, không có chính kiến rõ ràng.
+	Dấu hiệu nhận biết: Hay lo sợ, thiếu cảm giác an toàn. Dễ mệt mỏi, thiếu sức sống. Hành động do dự, không dứt khoát.
+`,
+        data: [
+          {
+            name: "Đinh",
+            thapThan: "Tỷ Kiên",
+            thapThanCode: "[-N-4][F-11]",
+            nguHanh: "Hỏa",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.",
+            descriptionEn: "Contained Thermal Force",
+            tichCuc:
+              "'Nhiều ngọn nến sẽ tạo thành đám cháy lớn'. Tăng cường sức mạnh, sự tự tin, có nhiều bạn bè, đồng nghiệp cùng chung sức, hỗ trợ nhau để tạo ra kết quả lớn hơn.",
+            active:
+              "Emit oppressive internal pressure to distance followers or dependents.",
+            tieuCuc:
+              "Dễ tụ tập thành bè phái, gây ra sự đố kỵ, cạnh tranh ngầm. Có thể trở nên quá nóng nảy khi có nhiều người kích động.",
+            passive:
+              "Increase internal temperature quietly, without emitting external sound or light.",
+          },
+          {
+            name: "Bính",
+            thapThan: "Kiếp Tài",
+            thapThanCode: "[+N-4][F-12]",
+            nguHanh: "Hỏa",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.",
+            descriptionEn: "Radiant Dispersion Force",
+            tichCuc:
+              "Có thể nhận được sự giúp đỡ từ những người có quyền thế, có sức ảnh hưởng lớn. Giúp Đinh Hỏa trở nên hướng ngoại, quảng giao hơn.",
+            active:
+              "Project energy over a wide area. Take a visible stance to guide and share motivation openly.",
+            tieuCuc:
+              "Hình ảnh mặt trời (Bính) làm lu mờ ánh nến (Đinh). Đây là sự cạnh tranh không cân sức. Dễ bị người khác cướp công, chiếm đoạt thành quả. Tài năng và công sức không được công nhận.",
+            passive:
+              "Synchronize the surrounding group to operate at an elevated, unified energy level.",
+          },
+          {
+            name: "Kỷ",
+            thapThan: "Thực Thần",
+            thapThanCode: "[-N-5][F-21]",
+            nguHanh: "Thổ",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).",
+            descriptionEn: "Incremental Layering Force",
+            tichCuc:
+              "Mang lại những ý tưởng, tham vọng lớn. Có khả năng sáng tạo trong các lĩnh vực lớn như kiến trúc, quy hoạch.",
+            active:
+              "Operate quietly at a slow pace, adding thin layers of material to the process continuously.",
+            tieuCuc:
+              "Hình ảnh ngọn nến nhỏ soi sáng cả ngọn núi lớn, là sự tiêu hao quá sức. Dễ có những ý tưởng viển vông, khó thực hiện. Dễ bị kiệt sức vì tham vọng.",
+            passive:
+              "Exercise patience to reinforce the operational structure without emitting observable signals.",
+          },
+          {
+            name: "Mậu",
+            thapThan: "Thương Quan",
+            thapThanCode: "[+N-5][F-22]",
+            nguHanh: "Thổ",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).",
+            descriptionEn: "Historical Suppression Force",
+            tichCuc:
+              "Mang lại sự mềm mỏng, nhân hậu và khả năng sáng tạo tinh tế. Giỏi trong các công việc thủ công, nghệ thuật.",
+            active:
+              "Deploy a massive volume of material to permanently cover past records. Level all existing irregularities.",
+            tieuCuc:
+              "Hình ảnh tro tàn (Kỷ) làm lửa (Đinh) yếu đi. Làm tiêu hao năng lượng, khiến Đinh Hỏa mất đi sự sắc bén. Dễ trở nên lười biếng, chỉ thích an nhàn.",
+            passive:
+              "Establish a blank, flattened domain to initiate a complete systemic restart.",
+          },
+          {
+            name: "Canh",
+            thapThan: "Chính Tài",
+            thapThanCode: "[+N-1][F-31]",
+            nguHanh: "Kim",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.",
+            descriptionEn: "Asset Securing Force",
+            tichCuc:
+              "Đây là mục tiêu ưa thích nhất của Đinh Hỏa (lửa rèn kim loại thô). Có khả năng kiếm tiền từ chính tài năng, chuyên môn của mình. Biến những thứ thô sơ thành sản phẩm có giá trị.",
+            active:
+              "Lock resources as soon as they are gained. Store them in a secure place.",
+            tieuCuc:
+              "Kiếm tiền rất vất vả, phải lao tâm khổ tứ. Nếu Hỏa yếu không đủ sức rèn Kim, sẽ bị công việc và tiền bạc làm cho kiệt sức.",
+            passive:
+              "Stop any action that might lead to a decrease in resources.",
+          },
+          {
+            name: "Tân",
+            thapThan: "Thiên Tài",
+            thapThanCode: "[-N-1][F-32]",
+            nguHanh: "Kim",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).",
+            descriptionEn: "Niche Recovery Force",
+            tichCuc:
+              "Có khả năng kiếm tiền từ các lĩnh vực đòi hỏi sự tinh xảo, làm đẹp, trang sức. Có gu thẩm mỹ tốt trong việc đầu tư.",
+            active: "Quietly collect small benefits that others ignore.",
+            tieuCuc:
+              "Hình ảnh lửa nến (Đinh) khó làm tan chảy trang sức (Tân). Kiếm tiền khó khăn, tài lộc không lớn.",
+            passive: "Move through narrow areas to avoid direct conflict.",
+          },
+          {
+            name: "Nhâm",
+            thapThan: "Chính Quan",
+            thapThanCode: "[+N-3][F-41]",
+            nguHanh: "Thủy",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).",
+            descriptionEn: "Mass Momentum Force",
+            tichCuc:
+              "Đinh Nhâm hợp hóa Mộc. Nếu trong mệnh có Mộc, sự kết hợp này mang lại danh vị và quyền lực cao quý. Nữ mệnh có chồng tài giỏi, có địa vị, vợ chồng yêu thương nhau.",
+            active:
+              "Utilize the collective weight of the majority. Use kinetic push to compel compliance with a set direction.",
+            tieuCuc:
+              "Nếu không có Mộc, đây là sự kết hợp nguy hiểm. Hình ảnh sông lớn dập tắt ngọn nến. Gây ra áp lực lớn, rủi ro trong công việc. Dễ bị cấp trên chèn ép.",
+            passive:
+              "Prevent any component from moving against the primary current.",
+          },
+          {
+            name: "Quý",
+            thapThan: "Thiên Quan",
+            thapThanCode: "[-N-3][F-42]",
+            nguHanh: "Thủy",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).",
+            descriptionEn: "Prolonged Dampening Force",
+            tichCuc:
+              "Rất hiếm khi tích cực, trừ khi Đinh Hỏa cực cường có Mộc và Thổ mạnh để chống đỡ.",
+            active:
+              "Gradually elevate resistance levels to saturate the base. Induce a prolonged, restrictive state.",
+            tieuCuc:
+              "Đây là kẻ thù nguy hiểm nhất của Đinh Hỏa. Hình ảnh mưa dông (Quý) dập tắt ngọn nến. Gây ra tai họa, bệnh tật, thị phi, tiểu nhân hãm hại. Nữ mệnh có tình duyên cực kỳ đau khổ.",
+            passive:
+              "Require opponents to continuously burn energy merely to maintain their current status.",
+          },
+          {
+            name: "Giáp",
+            thapThan: "Chính Ấn",
+            thapThanCode: "[+N-2][F-51]",
+            nguHanh: "Mộc",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.",
+            descriptionEn: "Direct Solicitation Force",
+            tichCuc:
+              "Đây là Thần quan trọng nhất của Đinh Hỏa. Hình ảnh cây gỗ lớn (Giáp) làm nhiên liệu cho ngọn lửa (Đinh). Mang lại nguồn năng lượng dồi dào, bền bỉ. Có quý nhân quyền thế giúp đỡ, học vấn uyên bác, trí tuệ sâu sắc.",
+            active:
+              "Open channels broadly to explicitly request assistance and input.",
+            tieuCuc:
+              "Nếu Mộc quá cường mà Hỏa quá yếu, sẽ gây ra tình trạng 'Mộc đa Hỏa tức' (củi nhiều lửa tắt). Dễ trở nên quá ỷ lại, thiếu nỗ lực cá nhân.",
+            passive:
+              "Receive structural support from a larger collective or parent entity.",
+          },
+          {
+            name: "Ất",
+            thapThan: "Thiên Ấn",
+            thapThanCode: "[-N-2][F-52]",
+            nguHanh: "Mộc",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.",
+            descriptionEn: "Covert Infiltration Force",
+            tichCuc:
+              "Mang lại sự khéo léo, tư duy nhạy bén và khả năng học hỏi các lĩnh vực độc đáo, nghệ thuật.",
+            active:
+              "Insert small connections into external gaps. Quietly extract data and energy.",
+            tieuCuc:
+              "Hình ảnh cỏ cây, cành lá nhỏ (Ất) làm nhiên liệu. Lửa cháy bùng lên nhanh nhưng cũng chóng tàn và tạo ra nhiều khói. Sự hỗ trợ nhận được không bền vững, kiến thức học được không sâu.",
+            passive: "Retain the discreetly acquired support for internal use.",
+          },
+        ],
+      },
+      {
+        name: "Mậu",
+        code: "[+N-5]",
+        nguHanh: "Thổ",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Mậu Thổ
+Mậu Thổ là hình ảnh của ngọn núi cao, tảng đá lớn, bức tường thành vững chãi (Dương Thổ). Đặc tính cốt lõi là sự vững chãi, đáng tin cậy, trọng chữ tín và có sức chịu đựng cao. Người Mậu Thổ thường trầm ổn, không dễ thay đổi và là điểm tựa cho người khác.
+•	Khi cân bằng:
+	Đặc điểm: Họ là người chính trực, trung hậu, và cực kỳ đáng tin cậy. Một khi đã hứa, họ sẽ làm bằng được. Họ có tầm nhìn xa, thái độ điềm tĩnh và khả năng bao dung lớn như núi cao. Họ là những người lãnh đạo hoặc người trụ cột trầm lặng, mang lại cảm giác an toàn và ổn định cho một tập thể.
+	Dấu hiệu nhận biết: Thái độ vững vàng, không dễ bị lung lay. Lời nói và hành động nhất quán. Luôn mang lại cảm giác an toàn, là người mà người khác tìm đến khi gặp khó khăn.
+•	Khi mất cân bằng (Quá Cường / Quá Nhược):
+	- Quá Cường (Thổ quá vượng):
+	Đặc điểm: Ngọn núi quá lớn sẽ trở nên trơ trọi và cách biệt. Họ trở nên cực kỳ cố chấp, bảo thủ, không chịu tiếp thu ý kiến của người khác. Phản ứng chậm chạp, thiếu linh hoạt, đôi khi lười biếng và không muốn thay đổi. Có xu hướng tự cho mình là trung tâm, thiếu sự tinh tế trong giao tiếp.
+	Dấu hiệu nhận biết: Sự bướng bỉnh đến mức cực đoan, không chịu thay đổi dù biết là sai. Thiếu linh hoạt trong xử lý tình huống, dễ bị cô lập.
+	- Quá Nhược (Thổ bị suy):
+	Đặc điểm: Bề ngoài có vẻ vững chắc nhưng bên trong lại trống rỗng, thiếu tự tin. Họ có lòng tự trọng cao nhưng lại không có đủ năng lực để theo đuổi, dẫn đến tự ti. Dễ bị cô lập, không có sự hỗ trợ, cảm thấy đơn độc trong các quyết định của mình.
+	Dấu hiệu nhận biết: Hay do dự, lo được lo mất. Bề ngoài tỏ ra mạnh mẽ nhưng thực chất dễ bị tổn thương và thiếu cảm giác an toàn.
+`,
+        data: [
+          {
+            name: "Mậu",
+            thapThan: "Tỷ Kiên",
+            thapThanCode: "[+N-5][F-11]",
+            nguHanh: "Thổ",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.",
+            descriptionEn: "Rigid Boundary Force",
+            tichCuc:
+              "Tăng cường sự tự chủ, lập trường vững vàng và khả năng chịu đựng áp lực. Rất coi trọng chữ tín, là người bạn đồng hành đáng tin cậy, sẵn sàng gánh vác trách nhiệm.",
+            active:
+              "Reinforce all external walls and perimeters to block infiltration into the internal structure.",
+            tieuCuc:
+              "Khi quá cường sẽ trở nên cực kỳ cố chấp, độc đoán, không ai có thể thay đổi được suy nghĩ của họ. Thiếu linh hoạt, dễ bỏ lỡ cơ hội.",
+            passive:
+              "Withhold reactions and accept suboptimal conditions to preserve overall systemic equilibrium.",
+          },
+          {
+            name: "Kỷ",
+            thapThan: "Kiếp Tài",
+            thapThanCode: "[-N-5][F-12]",
+            nguHanh: "Thổ",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.",
+            descriptionEn: "Foundation Submergence Force",
+            tichCuc:
+              "Giúp Mậu Thổ trở nên mềm mỏng, khéo léo và tinh tế hơn. Có khả năng kết nối với nhiều người, giỏi hợp tác trong các hội nhóm nhỏ.",
+            active:
+              "Absorb obsolete regulations, causing existing problems to sink into the substrate independently.",
+            tieuCuc:
+              "Dễ bị bạn bè hoặc người thân lợi dụng, lôi kéo vào những chuyện không đâu. Có thể bị cạnh tranh ngầm mà không hay biết, gây hao tài tốn của.",
+            passive:
+              "Quietly withdraw foundational support. Maintain absolute surface inactivity while the lower structure shifts.",
+          },
+          {
+            name: "Canh",
+            thapThan: "Thực Thần",
+            thapThanCode: "[+N-1][F-21]",
+            nguHanh: "Kim",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).",
+            descriptionEn: "System Formatting Force",
+            tichCuc:
+              "Hành động mạnh mẽ, quyết đoán. Có tài năng trong các lĩnh vực kỹ thuật, sản xuất. Tư duy khoáng đạt, thẳng thắn, không thích vòng vo. Mang lại sự giàu có, sung túc.",
+            active:
+              "Arrange unorganized items into a strict order. Make processes run exactly.",
+            tieuCuc:
+              "Dễ trở nên lười biếng, chỉ thích hưởng thụ. Lời nói quá thẳng, đôi khi thiếu suy nghĩ. Có thể hành động bộc phát, thiếu kế hoạch dài hạn.",
+            passive: "Keep the system and steps highly secure.",
+          },
+          {
+            name: "Tân",
+            thapThan: "Thương Quan",
+            thapThanCode: "[-N-1][F-22]",
+            nguHanh: "Kim",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).",
+            descriptionEn: "Internal Modification Force",
+            tichCuc:
+              "Có tài năng nghệ thuật, văn chương, gu thẩm mỹ tinh tế. Lời nói sắc sảo, có sức thuyết phục cao. Có khả năng kiếm tiền từ tài năng đặc biệt của mình.",
+            active: "Slowly adjust the system from the inside.",
+            tieuCuc:
+              "Kiêu ngạo, thích thể hiện, hay xem thường người khác. Lời nói sắc bén dễ làm tổn thương người khác. Dễ xung đột với cấp trên, cơ quan quyền lực.",
+            passive:
+              "Move through rule exceptions while maintaining a standard outside look.",
+          },
+          {
+            name: "Quý",
+            thapThan: "Chính Tài",
+            thapThanCode: "[-N-3][F-31]",
+            nguHanh: "Thủy",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.",
+            descriptionEn: "Micro-Absorption Force",
+            tichCuc:
+              "Mậu và Quý là cặp trời sinh (Mậu Quý hợp Hỏa), mang lại sự may mắn về tiền bạc và tình duyên. Họ là người cẩn thận, biết cách quản lý tài chính và có một cuộc sống ổn định. Nam mệnh có vợ hiền, là trợ thủ đắc lực.",
+            active:
+              "Quietly absorb ambient moisture. Collect minor, dispersed units of value.",
+            tieuCuc:
+              "Đôi khi quá cẩn thận, tính toán chi li thành ra bỏ lỡ cơ hội lớn. Vì quá tập trung vào công việc và tiền bạc mà trở nên khô khan, thiếu lãng mạn. Lo lắng quá nhiều về tài chính.",
+            passive:
+              "Gradually increase internal reserves through small additions.",
+          },
+          {
+            name: "Nhâm",
+            thapThan: "Thiên Tài",
+            thapThanCode: "[+N-3][F-32]",
+            nguHanh: "Thủy",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).",
+            descriptionEn: "Sudden Release Force",
+            tichCuc:
+              "Có khả năng kiếm những khoản tiền khổng lồ, giống như ngọn núi ngăn sông lớn. Có khí phách, hào phóng, giỏi kinh doanh và có tầm nhìn xa. Thích hợp làm những việc lớn.",
+            active:
+              "Remove barriers entirely to deploy maximum energy toward an objective.",
+            tieuCuc:
+              "Tài chính cực kỳ bấp bênh, có thể phất lên rất nhanh và phá sản cũng rất nhanh. Tiêu tiền như nước, khó kiểm soát chi tiêu. Nam mệnh đào hoa, dễ có nhiều mối quan hệ phức tạp.",
+            passive:
+              "Rapidly occupy all available vacant spaces in the market or environment.",
+          },
+          {
+            name: "Ất",
+            thapThan: "Chính Quan",
+            thapThanCode: "[-N-2][F-41]",
+            nguHanh: "Mộc",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).",
+            descriptionEn: "Underlying Entanglement Force",
+            tichCuc:
+              "Giúp Mậu Thổ trở nên có danh tiếng và địa vị. Họ là người có tinh thần trách nhiệm, tuân thủ kỷ luật, được cấp trên tin tưởng. Nữ mệnh có chồng là người tài giỏi, nho nhã.",
+            active:
+              "Establish a covert network of favors and obligations beneath the surface.",
+            tieuCuc:
+              "Dễ bị gò bó, mất tự do bởi các quy tắc. Lo sợ mất danh tiếng, không dám mạo hiểm. Dễ bị căng thẳng vì áp lực từ công việc.",
+            passive:
+              "Secure the foundation tightly so it remains stable and fixed.",
+          },
+          {
+            name: "Giáp",
+            thapThan: "Thiên Quan",
+            thapThanCode: "[+N-2][F-42]",
+            nguHanh: "Mộc",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh (quân đội, cảnh sát), người tình (đối với nữ).",
+            descriptionEn: "Reactive Resistance Force",
+            tichCuc:
+              "Khi Mậu Thổ đủ mạnh, Giáp Mộc mang lại quyền lực tối cao, khả năng lãnh đạo phi thường. Họ dũng cảm, quyết đoán, có thể đảm đương những trọng trách lớn lao, thành công trong các lĩnh vực như quân sự, chính trị.",
+            active:
+              "Increase growth in response to pressure. Use internal energy to repel threats.",
+            tieuCuc:
+              "Khi Mậu Thổ yếu, đây là áp lực khủng khiếp. Gặp nhiều khó khăn, thử thách, tiểu nhân hãm hại, sức khỏe suy kiệt. Nữ mệnh dễ có tình duyên trắc trở, vất vả.",
+            passive: "Maintain position against external downward forces.",
+          },
+          {
+            name: "Đinh",
+            thapThan: "Chính Ấn",
+            thapThanCode: "[-N-4][F-51]",
+            nguHanh: "Hỏa",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.",
+            descriptionEn: "Internal Sustenance Force",
+            tichCuc:
+              "Mang lại tư duy sâu sắc, sự thông thái và khả năng học hỏi bền bỉ. Họ có kiến thức vững chắc, được mẹ hoặc quý nhân hết lòng che chở, giúp đỡ.",
+            active:
+              "Draw vitality from a concealed energy source embedded deep within the foundation.",
+            tieuCuc:
+              "Dễ trở nên quá dựa dẫm, thiếu tính độc lập. Đôi khi bảo thủ, chỉ tin vào những gì mình đã học mà thiếu đi sự sáng tạo.",
+            passive:
+              "Maintain functional continuity without displaying operational status on the surface.",
+          },
+          {
+            name: "Bính",
+            thapThan: "Thiên Ấn",
+            thapThanCode: "[+N-4][F-52]",
+            nguHanh: "Hỏa",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.",
+            descriptionEn: "External Catalyst Force",
+            tichCuc:
+              "Mang lại danh tiếng và sự công nhận rộng rãi. Có trực giác cực tốt, tư duy đột phá và khả năng học hỏi các lĩnh vực độc đáo, huyền học. Được quý nhân quyền thế giúp đỡ.",
+            active:
+              "Solicit massive injections of capital and highly volatile resources from outside to trigger centralized expansion.",
+            tieuCuc:
+              "Dễ 'cả thèm chóng chán' trong học tập, hứng thú nhất thời. Tính cách thất thường, khó đoán. Dễ cảm thấy cô độc, không được thấu hiểu.",
+            passive:
+              "Absorb and expend these external resources to systematically exchange them for systemic authority.",
+          },
+        ],
+      },
+      {
+        name: "Kỷ",
+        code: "[-N-5]",
+        nguHanh: "Thổ",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Kỷ Thổ
+Kỷ Thổ là hình ảnh của đất vườn, đất phù sa (Âm Thổ), bản chất là nuôi dưỡng, bao dung và tích trữ. Người Kỷ Thổ có nội tâm phức tạp, suy nghĩ chu đáo, giỏi trong việc vun trồng và phát triển một cách thầm lặng.
+  •	Khi cân bằng:
+    Đặc điểm: Họ là người ôn hòa, mềm mỏng, có lòng trắc ẩn và tinh thần trách nhiệm cao. Giống như mảnh đất màu mỡ, họ là nền tảng vững chắc, luôn sẵn sàng hỗ trợ, chăm sóc và mang lại giá trị cho những người xung quanh. Họ có khả năng lập kế hoạch, sắp xếp mọi thứ ngăn nắp, giỏi quản lý và có uy tín một cách tự nhiên.
+    Dấu hiệu nhận biết: Thái độ điềm tĩnh, đáng tin cậy. Khả năng lắng nghe và thấu hiểu sâu sắc. Hành động có tính xây dựng, luôn hướng tới sự ổn định và lợi ích lâu dài.
+  •	Khi mất cân bằng (Quá Cường / Quá Nhược):
+    - Quá Cường (Thổ quá vượng):
+    Đặc điểm: Đất quá nhiều sẽ trở nên đặc quánh, gây trì trệ. Họ trở nên cố chấp, bảo thủ, khó tiếp thu cái mới. Suy nghĩ nhiều, lo nghĩ vẩn vơ, dễ bị sa đà vào những chi tiết vụn vặt. Sự bao bọc trở thành kiểm soát, khiến người khác ngột ngạt. Dễ bị nghi ngờ, thiếu sự phóng khoáng.
+    Dấu hiệu nhận biết: Cứng đầu, bướng bỉnh, khư khư giữ ý kiến của mình. Hay lo âu, tâm trạng nặng nề, thiếu linh hoạt.
+    - Quá Nhược (Thổ bị suy):
+    Đặc điểm: Đất đai cằn cỗi, thiếu sức sống. Họ thiếu tự tin, lập trường không vững, dễ bị người khác tác động, lôi kéo. Hay do dự, thiếu quyết đoán, không dám chịu trách nhiệm. Cảm giác an toàn thấp, dễ bi quan và hay có cảm giác bị bỏ rơi.
+    Dấu hiệu nhận biết: Thiếu chủ kiến, dễ phụ thuộc vào người khác. Hay tự ti, nhu nhược, dễ bỏ cuộc khi gặp khó khăn.
+`,
+        data: [
+          {
+            name: "Kỷ",
+            thapThan: "Tỷ Kiên",
+            thapThanCode: "[-N-5][F-11]",
+            nguHanh: "Thổ",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.",
+            descriptionEn: "Base Consolidation Force",
+            tichCuc:
+              "Tăng cường sự tự tin, tính độc lập. Rất bao dung, giỏi lập kế hoạch và sắp xếp công việc một cách logic, có đầu có cuối. Là người bạn đáng tin cậy.",
+            active:
+              "Compress fragmented materials securely to establish a foundation in a deep, isolated location.",
+            tieuCuc:
+              "Khi quá cường dễ trở nên cố chấp, tự cho mình là đúng. Hay lo nghĩ những chuyện nhỏ nhặt, bao bọc người khác quá mức cần thiết.",
+            passive:
+              "Withdraw silently and disconnect completely from high-traffic environments.",
+          },
+          {
+            name: "Mậu",
+            thapThan: "Kiếp Tài",
+            thapThanCode: "[+N-5][F-12]",
+            nguHanh: "Thổ",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; cũng là sự cạnh tranh, lòng tự tôn.",
+            descriptionEn: "Broad Absorption Force",
+            tichCuc:
+              "Mang lại sự mạnh mẽ, quyết đoán và tầm nhìn lớn cho Kỷ Thổ. Giúp họ trở nên phóng khoáng, quảng giao hơn. Có chí tiến thủ, không ngại cạnh tranh.",
+            active:
+              "Expand operational parameters to encompass all incoming issues and neutralize ongoing conflicts.",
+            tieuCuc:
+              "Có xu hướng lấn át, áp đặt người khác. Tính chiếm hữu cao, dễ gây ra tranh đoạt (tiền bạc, tình cảm). Đôi khi hành động liều lĩnh, thiếu suy xét kỹ càng.",
+            passive:
+              "Convert a highly active, unorganized collective into a stationary, unified unit.",
+          },
+          {
+            name: "Tân",
+            thapThan: "Thực Thần",
+            thapThanCode: "[-N-1][F-21]",
+            nguHanh: "Kim",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).",
+            descriptionEn: "Precision Refining Force",
+            tichCuc:
+              "Tinh tế, có năng khiếu nghệ thuật và gu thẩm mỹ cao. Lời nói nhẹ nhàng, duyên dáng. Tư duy sắc sảo, thích tìm tòi, khám phá. Tận hưởng cuộc sống một cách tao nhã.",
+            active: "Slowly adjust details to get a sharp and neat output.",
+            tieuCuc:
+              "Cầu kỳ, khó tính, đôi khi quá kén chọn. Dễ trở nên lười biếng, chỉ thích hưởng thụ mà không muốn làm việc vất vả.",
+            passive: "Patiently sit and correct small errors or tiny details.",
+          },
+          {
+            name: "Canh",
+            thapThan: "Thương Quan",
+            thapThanCode: "[+N-1][F-22]",
+            nguHanh: "Kim",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).",
+            descriptionEn: "Structural Reset Force",
+            tichCuc:
+              "Vô cùng thông minh, sắc bén, có khả năng nhìn thấu vấn đề. Dám nghĩ dám làm, có tài năng cải cách, sáng tạo đột phá. Phản ứng nhanh nhạy.",
+            active:
+              "Stop old habits and rules completely. Require the system to change immediately.",
+            tieuCuc:
+              "Kiêu ngạo, thích thể hiện, dễ xem thường người khác. Lời nói sắc bén có thể làm tổn thương người khác. Không thích bị gò bó, dễ chống đối cấp trên và quy tắc.",
+            passive: "Reject outdated methods to avoid being held back.",
+          },
+          {
+            name: "Nhâm",
+            thapThan: "Chính Tài",
+            thapThanCode: "[+N-3][F-31]",
+            nguHanh: "Thủy",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.",
+            descriptionEn: "Centralized Pooling Force",
+            tichCuc:
+              "Mang lại cho Kỷ Thổ cơ hội tài chính lớn và ổn định. Người có Nhâm Tài thường chăm chỉ, có kế hoạch tài chính rõ ràng, biết cách tích lũy. Nam mệnh có vợ tài giỏi, đảm đang.",
+            active:
+              "Create a deep holding area to collect circulating energy and capital.",
+            tieuCuc:
+              "Dễ trở nên quá coi trọng tiền bạc, keo kiệt, bủn xỉn. Đôi khi quá thực dụng, thiếu lãng mạn. Lo lắng quá nhiều về tài chính.",
+            passive:
+              "Remain stationary to allow resources to accumulate in the designated zone.",
+          },
+          {
+            name: "Quý",
+            thapThan: "Thiên Tài",
+            thapThanCode: "[-N-3][F-32]",
+            nguHanh: "Thủy",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).",
+            descriptionEn: "Flaw Exploitation Force",
+            tichCuc:
+              "Mang lại sự khéo léo, linh hoạt trong việc kiếm tiền. Có khả năng kinh doanh, đầu tư, nhìn ra những cơ hội mà người khác không thấy. Hào phóng, giỏi xã giao.",
+            active:
+              "Track paths of least resistance. Tactically bypass security perimeters.",
+            tieuCuc:
+              "Tài chính bấp bênh, lúc có lúc không. Dễ chi tiêu hoang phí, không biết giữ tiền. Nam mệnh dễ có nhiều mối quan hệ ngoài luồng.",
+            passive:
+              "Absorb hidden, residual resources located in unmonitored zones.",
+          },
+          {
+            name: "Giáp",
+            thapThan: "Chính Quan",
+            thapThanCode: "[+N-2][F-41]",
+            nguHanh: "Mộc",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).",
+            descriptionEn: "Hierarchical Canopy Force",
+            tichCuc:
+              "Mang lại sự chính trực, tinh thần trách nhiệm và khả năng lãnh đạo. Có công danh, địa vị trong xã hội, được mọi người tôn trọng. Nữ mệnh có chồng tốt, là người có năng lực.",
+            active:
+              "Use established influence to cover dependents. Require subordinates to follow set paths.",
+            tieuCuc:
+              "Khi quá cường dễ trở nên cứng nhắc, bảo thủ, quá tuân thủ quy tắc một cách máy móc. Gặp nhiều áp lực, căng thẳng trong công việc.",
+            passive:
+              "Ensure dependents remain orderly within the controlled zone.",
+          },
+          {
+            name: "Ất",
+            thapThan: "Thiên Quan",
+            thapThanCode: "[-N-2][F-42]",
+            nguHanh: "Mộc",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh (quân đội, cảnh sát), người tình (đối với nữ).",
+            descriptionEn: "Yielding Adaptation Force",
+            tichCuc:
+              "Khi được chế hóa, mang lại sự nhanh nhạy, quyết đoán phi thường. Có khả năng giải quyết các vấn đề khó khăn, phức tạp. Có uy quyền và khả năng xử lý khủng hoảng.",
+            active:
+              "Yield to applied pressure to avoid rigid blocks, then return to the original state.",
+            tieuCuc:
+              "Gặp nhiều áp lực, thị phi, tiểu nhân hãm hại. Sức khỏe dễ bị ảnh hưởng, dễ gặp tai nạn. Nữ mệnh dễ lận đận trong chuyện tình cảm, gặp phải người không phù hợp.",
+            passive: "Adjust to external shifts to prevent structural damage.",
+          },
+          {
+            name: "Bính",
+            thapThan: "Chính Ấn",
+            thapThanCode: "[+N-4][F-51]",
+            nguHanh: "Hỏa",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.",
+            descriptionEn: "Proxy Illumination Force",
+            tichCuc:
+              "Mang lại sự ấm áp, lạc quan và lòng nhân từ. Thông minh, ham học hỏi, có kiến thức sâu rộng. Luôn có quý nhân giúp đỡ, được cấp trên nâng đỡ.",
+            active:
+              "Align closely with prominent, high-energy external entities.",
+            tieuCuc:
+              "Dễ trở nên ỷ lại, thiếu tính độc lập. Đôi khi lý thuyết suông, thiếu tính thực tế. Suy nghĩ quá nhiều mà không hành động.",
+            passive:
+              "Utilize their established visibility to secure protection and enhance personal prominence.",
+          },
+          {
+            name: "Đinh",
+            thapThan: "Thiên Ấn",
+            thapThanCode: "[-N-4][F-52]",
+            nguHanh: "Hỏa",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.",
+            descriptionEn: "Covert Energy Siphoning Force",
+            tichCuc:
+              "Có trực giác vô cùng nhạy bén, khả năng cảm nhận tâm linh cao. Có tài năng đặc biệt trong các lĩnh vực độc đáo, huyền bí, nghệ thuật. Tư duy khác biệt, sâu sắc.",
+            active:
+              "Create minor breaches to discreetly extract heat, visibility, and intelligence from an external source.",
+            tieuCuc:
+              "Tính cách kỳ lạ, khó hiểu, dễ bị cô lập. Suy nghĩ tiêu cực, hay đa nghi. Mối quan hệ với mẹ không được tốt hoặc mẹ vất vả.",
+            passive:
+              "Route the extracted elements internally to sustain an undisclosed operational sequence.",
+          },
+        ],
+      },
+      {
+        name: "Canh",
+        code: "[+N-1]",
+        nguHanh: "Kim",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Canh Kim
+Canh Kim là hình ảnh của kim loại thô, quặng mỏ, hoặc vũ khí như gươm, đao (Dương Kim). Đặc tính cốt lõi là sự cương trực, nghĩa khí, quyết đoán và mạnh mẽ. Người Canh Kim có tinh thần của một chiến binh, trọng tình nghĩa, sẵn sàng bảo vệ bạn bè và lẽ phải. Để trở nên hữu dụng, Canh Kim cần được lửa (Hỏa) tôi luyện.
+•	Khi cân bằng (được tôi luyện và có môi trường thể hiện):
+	Đặc điểm: Họ là người vô cùng nghĩa khí, dũng cảm và quyết đoán. Một khi đã đặt ra mục tiêu, họ sẽ hành động nhanh chóng và mạnh mẽ để đạt được. Họ là người bạn, người đồng đội trung thành, đáng tin cậy, luôn đứng ra gánh vác trách nhiệm và bảo vệ kẻ yếu.
+	Dấu hiệu nhận biết: Phong thái dứt khoát, mạnh mẽ. Lời nói thẳng thắn, không vòng vo. Luôn thể hiện tinh thần trượng nghĩa, sẵn sàng giúp đỡ người khác.
+•	Khi mất cân bằng (Quá Cường / Quá Nhược):
+	- Quá Cường (Kim quá vượng, không được tôi luyện):
+	Đặc điểm: Kim loại thô không được rèn giũa sẽ trở nên vô dụng và phá phách. Họ trở nên khô khan, cứng nhắc, hiếu thắng và thích dùng bạo lực để giải quyết vấn đề. Lời nói và hành động thiếu suy nghĩ, sắc bén như dao, dễ gây tổn thương cho người khác.
+	Dấu hiệu nhận biết: Nóng nảy, cố chấp. Hành động liều lĩnh, thiếu sự tinh tế. Dễ gây gổ và có xu hướng áp đặt người khác.
+	- Quá Nhược (Kim bị suy):
+	Đặc điểm: Kim loại yếu ớt, dễ bị bẻ gãy. Họ thiếu quyết đoán, do dự, không dám đối mặt với khó khăn. Dù có lòng nghĩa khí nhưng không đủ sức mạnh để hành động. Dễ bị khuất phục, không có khả năng bảo vệ bản thân hay người khác.
+	Dấu hiệu nhận biết: Thiếu tự tin, hay do dự. Dễ bị bắt nạt hoặc bị lấn át. Thiếu đi sự mạnh mẽ, dứt khoát vốn có của Canh Kim.
+`,
+        data: [
+          {
+            name: "Canh",
+            thapThan: "Tỷ Kiên",
+            thapThanCode: "[+N-1][F-11]",
+            nguHanh: "Kim",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.",
+            descriptionEn: "Direct Separation Force",
+            tichCuc:
+              "Tăng cường ý chí, sự tự chủ và tinh thần đồng đội. Có nhiều bạn bè trung thành, cùng nhau kề vai sát cánh vượt qua khó khăn.",
+            active: "Move objects away to create a clear, individual space.",
+            tieuCuc:
+              "Khi quá cường sẽ trở nên cực kỳ bướng bỉnh, hiếu chiến. Dễ xảy ra xung đột, tranh chấp với bạn bè vì quá thẳng tính và thiếu linh hoạt.",
+            passive:
+              "Maintain distance. Do not rely on others and block outside influence.",
+          },
+          {
+            name: "Tân",
+            thapThan: "Kiếp Tài",
+            thapThanCode: "[-N-1][F-12]",
+            nguHanh: "Kim",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.",
+            descriptionEn: "Internal Filtering Force",
+            tichCuc:
+              "Giúp Canh Kim trở nên tinh tế, khéo léo và sắc sảo hơn trong lời nói. Có khả năng kết hợp giữa sức mạnh và sự tinh tế để đạt mục tiêu.",
+            active:
+              "Quietly remove parts that do not follow the rules from the system.",
+            tieuCuc:
+              "Cạnh tranh cực kỳ gay gắt. Dễ bị bạn bè hoặc người thân phản bội, đâm sau lưng. Lòng tự tôn quá cao, dễ tự ái và gây ra mâu thuẫn.",
+            passive: "Observe details silently and record errors.",
+          },
+          {
+            name: "Nhâm",
+            thapThan: "Thực Thần",
+            thapThanCode: "[+N-3][F-21]",
+            nguHanh: "Thủy",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).",
+            descriptionEn: "Process Channeling Force",
+            tichCuc:
+              "Đây là hình ảnh 'Kim bạch thủy thanh' (Kim trắng được nước trong rửa sạch), mang lại sự thông minh, tài hoa và khả năng biểu đạt xuất chúng. Có tài năng lãnh đạo và sáng tạo lớn.",
+            active:
+              "Establish a broad conduit so operations proceed automatically.",
+            tieuCuc:
+              "Dễ trở nên quá tự do, phóng túng. Có thể vì hưởng thụ mà trở nên lười biếng. Cần có định hướng rõ ràng để không lãng phí tài năng.",
+            passive: "Ensure continuous, uninterrupted movement of tasks.",
+          },
+          {
+            name: "Quý",
+            thapThan: "Thương Quan",
+            thapThanCode: "[-N-3][F-22]",
+            nguHanh: "Thủy",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).",
+            descriptionEn: "Gradual Erosion Force",
+            tichCuc:
+              "Mang lại sự sắc bén trong tư duy, khả năng phản biện và phân tích vấn đề sâu sắc. Có tài năng đặc biệt trong các lĩnh vực kỹ thuật, công nghệ cao.",
+            active:
+              "Continuously introduce elements into structural flaws. Slowly degrade rigid foundations from within.",
+            tieuCuc:
+              "Rất kiêu ngạo, hay chỉ trích và dễ xem thường người khác. Dễ xung đột với cấp trên và các quy tắc xã hội. Lời nói lạnh lùng có thể làm tổn thương người khác.",
+            passive:
+              "Wait for the compromised structure to collapse naturally.",
+          },
+          {
+            name: "Ất",
+            thapThan: "Chính Tài",
+            thapThanCode: "[-N-2][F-31]",
+            nguHanh: "Mộc",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.",
+            descriptionEn: "Micro-Gathering Force",
+            tichCuc:
+              "Canh và Ất là cặp hợp hóa Kim, mang lại sự may mắn về tài lộc và tình duyên. Giúp Canh Kim trở nên mềm mỏng, tình cảm hơn. Nam mệnh có vợ hiền, khéo léo và rất yêu thương chồng.",
+            active:
+              "Use multiple small points of contact to quietly absorb minor nearby resources.",
+            tieuCuc:
+              "Dễ trở nên quá coi trọng tiền bạc. Có thể vì tình cảm mà trở nên thiếu quyết đoán, mất đi sự mạnh mẽ vốn có.",
+            passive: "Combine minor inputs over time to fill storage capacity.",
+          },
+          {
+            name: "Giáp",
+            thapThan: "Thiên Tài",
+            thapThanCode: "[+N-2][F-32]",
+            nguHanh: "Mộc",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).",
+            descriptionEn: "Swift Opportunity Capture Force",
+            tichCuc:
+              "Đây là mục tiêu ưa thích nhất của Canh Kim (dùng rìu chặt cây lớn). Mang lại cơ hội kiếm những khoản tiền lớn, tham gia vào các dự án lớn. Rất quyết đoán và mạnh mẽ trong việc theo đuổi tài lộc.",
+            active:
+              "Increase speed to extend reach. Quickly secure targets or capital.",
+            tieuCuc:
+              "Kiếm tiền rất vất vả, phải cạnh tranh và nỗ lực rất nhiều. Dễ bị các vấn đề về xương khớp, gân cốt do làm việc quá sức.",
+            passive: "Wait for the exact moment of transition to act.",
+          },
+          {
+            name: "Đinh",
+            thapThan: "Chính Quan",
+            thapThanCode: "[-N-4][F-41]",
+            nguHanh: "Hỏa",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).",
+            descriptionEn: "Ambient Pressure Force",
+            tichCuc:
+              "Đây là Thần quan trọng nhất của Canh Kim, là lửa trong lò rèn luyện Canh Kim thành vũ khí sắc bén. Mang lại công danh, địa vị, sự nghiệp vẻ vang và sự tôn trọng của xã hội. Giúp Canh Kim trở nên có kỷ luật và hữu dụng. Nữ mệnh có chồng tài giỏi.",
+            active:
+              "Disperse low-visibility interference into all areas, creating a restrictive and uncomfortable environment.",
+            tieuCuc:
+              "Gặp nhiều áp lực, phải trải qua nhiều rèn giũa, thử thách mới có thể thành công. Nếu Hỏa quá yếu thì không đủ sức rèn Canh, sự nghiệp khó thành.",
+            passive:
+              "Sustain a tense atmosphere to induce continuous anxiety in the opposing party.",
+          },
+          {
+            name: "Bính",
+            thapThan: "Thiên Quan",
+            thapThanCode: "[+N-4][F-42]",
+            nguHanh: "Hỏa",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).",
+            descriptionEn: "Critical Confrontation Force",
+            tichCuc:
+              "Khi Canh Kim đủ mạnh, Bính Hỏa mang lại quyền lực tối cao trong các môi trường khắc nghiệt như quân đội, cảnh sát, chính trị. Có khả năng đảm đương trọng trách lớn, lập nên đại nghiệp.",
+            active:
+              "Enter directly into high-risk environments. Eliminate compromised components immediately.",
+            tieuCuc:
+              "Khi Canh Kim yếu, đây là áp lực khủng khiếp, gây ra tai họa, bệnh tật nặng, các vấn đề nghiêm trọng về pháp luật. Cuộc sống luôn đầy rẫy nguy hiểm và kẻ thù. Nữ mệnh có tình duyên trắc trở.",
+            passive:
+              "Utilize high-stress conditions to force the internal core to develop extreme resilience.",
+          },
+          {
+            name: "Kỷ",
+            thapThan: "Chính Ấn",
+            thapThanCode: "[-N-5][F-51]",
+            nguHanh: "Thổ",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.",
+            descriptionEn: "Silt Accumulation Force",
+            tichCuc:
+              "Mang lại sự ổn định, có người che chở, giúp đỡ. Có nền tảng gia đình tốt.",
+            active:
+              "Covertly acquire protective shielding and resources by permitting thin layers of material to accumulate at the base.",
+            tieuCuc:
+              "Hình ảnh đất bùn làm bẩn kim loại (Thổ hậu mai kim). Khiến Canh Kim trở nên lười biếng, ỷ lại, mất đi sự sắc bén và ý chí chiến đấu. Tài năng bị chôn vùi, khó phát huy.",
+            passive: "Increase internal structural density quietly over time.",
+          },
+          {
+            name: "Mậu",
+            thapThan: "Thiên Ấn",
+            thapThanCode: "[+N-5][F-52]",
+            nguHanh: "Thổ",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.",
+            descriptionEn: "Petrification Force",
+            tichCuc:
+              "Mang lại một nền tảng vững chắc, sự hỗ trợ mạnh mẽ từ quý nhân có quyền lực. Giúp Canh Kim trở nên kiên định và có sức chịu đựng tốt hơn.",
+            active:
+              "Open access ports to ingest a large volume of external energy, then immediately compress and solidify it.",
+            tieuCuc:
+              "Hình ảnh núi lớn chôn vùi kim loại. Khi Thổ quá cường sẽ khiến Canh Kim trở nên ngu dốt, cứng nhắc, không chịu học hỏi, tài năng bị chôn vùi hoàn toàn. Dễ bị cô lập và không được công nhận.",
+            passive:
+              "Process unfamiliar external inputs and convert them directly into proprietary, fixed assets.",
+          },
+        ],
+      },
+      {
+        name: "Tân",
+        code: "[-N-1]",
+        nguHanh: "Kim",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Tân Kim
+Tân Kim là hình ảnh của kim loại đã qua chế tác, là trang sức, châu báu, ngọc ngà (Âm Kim). Đặc tính cốt lõi là sự tinh tế, thanh lịch, sang trọng và giá trị. Người Tân Kim có lòng tự trọng cao, yêu cái đẹp, thích sự chú ý và công nhận. Họ giống như một viên ngọc quý, khao khát được nước (Thủy) rửa sạch để tỏa sáng và sợ nhất bị đất (Thổ) làm vẩn đục.
+•	Khi cân bằng (được Thủy rửa và có Hỏa chiếu):
+	Đặc điểm: Họ là người vô cùng tinh tế, thanh lịch và có gu thẩm mỹ cao. Lời nói và hành động duyên dáng, có sức hấp dẫn đặc biệt. Họ thông minh, sắc sảo và luôn nổi bật trong đám đông. Họ là những nghệ sĩ, nhà ngoại giao, hoặc những chuyên gia trong các lĩnh vực đòi hỏi sự tỉ mỉ và sang trọng.
+	Dấu hiệu nhận biết: Khí chất sang trọng, dù ăn mặc đơn giản. Chú trọng đến hình thức, ngoại hình. Lời nói nhẹ nhàng nhưng sắc bén. Có sức hút tự nhiên.
+•	Khi mất cân bằng (Quá Cường / Quá Nhược):
+	- Quá Cường (Kim quá vượng):
+	Đặc điểm: Nhiều món trang sức quý giá để cùng một chỗ sẽ tranh giành sự chú ý, làm giảm giá trị của nhau. Họ trở nên quá kiêu kỳ, khó gần, hay chỉ trích và phán xét người khác. Lời nói chua ngoa, sắc lẹm, dễ gây tổn thương sâu sắc. Lòng tự tôn quá cao dẫn đến tự phụ và cô độc.
+	Dấu hiệu nhận biết: Kiêu ngạo, thích khoe khoang. Hay chê bai, chỉ trích. Luôn cho mình là trung tâm và khó chấp nhận ý kiến trái chiều.
+	-Quá Nhược (Kim bị suy):
+	Đặc điểm: Trang sức bị hư hỏng, mất đi giá trị. Họ thiếu tự tin, nhạy cảm quá mức, dễ bị tổn thương bởi những lời nói dù là vô tình. Không có khả năng tự bảo vệ mình, dễ bị người khác xem thường hoặc lợi dụng.
+	Dấu hiệu nhận biết: Tự ti, hay mặc cảm về bản thân. Rất nhạy cảm, dễ khóc hoặc tự ái. Thiếu đi sự tỏa sáng và sức hút vốn có.
+`,
+        data: [
+          {
+            name: "Tân",
+            thapThan: "Tỷ Kiên",
+            thapThanCode: "[-N-1][F-11]",
+            nguHanh: "Kim",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.",
+            descriptionEn: "Gradual Detachment Force",
+            tichCuc:
+              "Tăng cường sự tự tin, giúp họ trở nên sắc sảo và tinh tế hơn. Có những người bạn cùng đẳng cấp, có thể hỗ trợ nhau trong việc xây dựng hình ảnh.",
+            active: "Silently disconnect minor links.",
+            tieuCuc:
+              "Cạnh tranh gay gắt. Luôn có sự so bì, đố kỵ với bạn bè. Dễ bị bạn bè nói xấu, chơi không đẹp. Cái tôi quá lớn, khó hợp tác.",
+            passive: "Step away from groups quietly without causing conflict.",
+          },
+          {
+            name: "Canh",
+            thapThan: "Kiếp Tài",
+            thapThanCode: "[+N-1][F-12]",
+            nguHanh: "Kim",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.",
+            descriptionEn: "Objective Boundary Force",
+            tichCuc:
+              "Mang lại cho Tân Kim sự mạnh mẽ, quyết đoán và can đảm hơn. Có thể nhận được sự giúp đỡ từ những người bạn mạnh mẽ, thẳng thắn.",
+            active:
+              "Make clear divisions to allocate things equally. Apply clear rules in public.",
+            tieuCuc:
+              "Hình ảnh kim loại thô (Canh) làm trầy xước trang sức (Tân). Dễ bị bạn bè, người thân làm tổn thương hoặc gây phiền phức. Dễ bị hao tài, mất mát vì sự cạnh tranh thô bạo.",
+            passive: "Maintain strict and equal borders.",
+          },
+          {
+            name: "Quý",
+            thapThan: "Thực Thần",
+            thapThanCode: "[-N-3][F-21]",
+            nguHanh: "Thủy",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).",
+            descriptionEn: "Friction Reduction Force",
+            tichCuc:
+              "Hình ảnh sương, mưa nhỏ rửa sạch bụi trên trang sức. Mang lại sự thông minh, tinh tế và khả năng biểu đạt nghệ thuật. Lời nói nhẹ nhàng, duyên dáng.",
+            active:
+              "Apply subtle, targeted adjustments to ease transitions and prevent conflicts.",
+            tieuCuc:
+              "Dễ trở nên quá nhạy cảm, đa sầu đa cảm. Tư duy có phần mơ mộng, thiếu tính thực tế. Sự sáng tạo chỉ ở mức độ nhỏ, khó tạo ra đột phá lớn.",
+            passive: "Facilitate smooth and quiet system operations.",
+          },
+          {
+            name: "Nhâm",
+            thapThan: "Thương Quan",
+            thapThanCode: "[+N-3][F-22]",
+            nguHanh: "Thủy",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).",
+            descriptionEn: "Abrupt Flushing Force",
+            tichCuc:
+              "Đây là Thần quan trọng và được yêu thích nhất của Tân Kim. Hình ảnh sông lớn (Nhâm) rửa sạch ngọc quý (Tân), giúp Tân Kim tỏa sáng rực rỡ. Mang lại trí thông minh tuyệt đỉnh, tài hoa xuất chúng, danh tiếng lẫy lừng.",
+            active:
+              "Apply sudden, high-volume energy to clear outdated methods and reset the environment.",
+            tieuCuc:
+              "Khi Thủy quá cường có thể cuốn trôi Kim. Dễ trở nên quá kiêu ngạo, tự mãn. Có thể vì tài năng mà coi thường mọi quy tắc, gây ra rắc rối.",
+            passive: "Alter the fundamental layout of the operational field.",
+          },
+          {
+            name: "Giáp",
+            thapThan: "Chính Tài",
+            thapThanCode: "[+N-2][F-31]",
+            nguHanh: "Mộc",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.",
+            descriptionEn: "Wide Resource Capture Force",
+            tichCuc:
+              "Có mục tiêu tài chính lớn, có tham vọng về tiền bạc. Có thể kiếm được tiền từ các dự án lớn, đối tác lớn.",
+            active: "Continuously extend reach to claim available resources.",
+            tieuCuc:
+              "Hình ảnh dao nhỏ (Tân) chặt cây lớn (Giáp). Kiếm tiền rất vất vả, lao tâm khổ tứ. Dễ bị các vấn đề về tài chính làm cho mệt mỏi, kiệt sức.",
+            passive: "Convert external inputs into a controlled, secure zone.",
+          },
+          {
+            name: "Ất",
+            thapThan: "Thiên Tài",
+            thapThanCode: "[-N-2][F-32]",
+            nguHanh: "Mộc",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).",
+            descriptionEn: "Blind-Spot Detection Force",
+            tichCuc:
+              "Hình ảnh dao nhỏ tỉa cành lá (Ất). Có khả năng kiếm tiền từ các công việc đòi hỏi sự khéo léo, tinh tế như nghệ thuật, làm đẹp, thời trang.",
+            active:
+              "Deploy flexible lines of inquiry into unmonitored areas to uncover assets.",
+            tieuCuc:
+              "Tài lộc không lớn, chỉ đủ chi tiêu. Dễ bị hao tán vì các sở thích cá nhân, mua sắm.",
+            passive: "Claim residual benefits that others overlook.",
+          },
+          {
+            name: "Bính",
+            thapThan: "Chính Quan",
+            thapThanCode: "[+N-4][F-41]",
+            nguHanh: "Hỏa",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).",
+            descriptionEn: "Overhead Surveillance Force",
+            tichCuc:
+              "Đây là cặp Bính Tân hợp hóa Thủy. Hình ảnh mặt trời (Bính) chiếu rọi làm trang sức (Tân) thêm lấp lánh. Mang lại danh tiếng, địa vị cao quý, được xã hội công nhận. Nữ mệnh có chồng tài giỏi, có địa vị.",
+            active:
+              "Direct a high-visibility focus from a superior position for close monitoring. Use positional authority to enforce compliance.",
+            tieuCuc:
+              "Dễ vì danh tiếng mà đánh mất bản thân. Luôn phải sống dưới sự chú ý của người khác, gây ra áp lực.",
+            passive:
+              "Maintain public order overtly, applying psychological pressure to opponents.",
+          },
+          {
+            name: "Đinh",
+            thapThan: "Thiên Quan",
+            thapThanCode: "[-N-4][F-42]",
+            nguHanh: "Hỏa",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).",
+            descriptionEn: "Prolonged Stress Force",
+            tichCuc:
+              "Khi được chế hóa, có thể mang lại quyền lực trong các lĩnh vực đặc thù, đòi hỏi sự chính xác cao như y tế (dao mổ), kỹ thuật.",
+            active:
+              "Repeatedly address a specific issue. Apply covert pressure to agitate a vulnerability over an extended period.",
+            tieuCuc:
+              "Hình ảnh lửa lò (Đinh) làm tan chảy trang sức (Tân). Đây là áp lực hủy diệt. Gặp nhiều khó khăn, thử thách, sức khỏe suy yếu (đặc biệt là hệ hô hấp). Nữ mệnh tình duyên cực kỳ trắc trở.",
+            passive:
+              "Force external entities to yield and alter their structure through sustained duress.",
+          },
+          {
+            name: "Mậu",
+            thapThan: "Chính Ấn",
+            thapThanCode: "[+N-5][F-51]",
+            nguHanh: "Thổ",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.",
+            descriptionEn: "Structural Reliance Force",
+            tichCuc:
+              "Có sự che chở, giúp đỡ từ người lớn tuổi, có quyền lực. Có nền tảng gia đình vững chắc.",
+            active:
+              "Deploy anchors and solicit dependency upon a massive, comprehensive external foundation.",
+            tieuCuc:
+              "Đây là Thần mà Tân Kim sợ nhất. Hình ảnh núi lớn (Mậu) chôn vùi hoàn toàn trang sức (Tân). Khiến tài năng, vẻ đẹp bị che lấp, không được công nhận. Dễ bị trầm cảm, suy nghĩ tiêu cực, cuộc sống tù túng.",
+            passive:
+              "Ensure an operational state of total peace and security. Maintain a permanent, fixed anchorage.",
+          },
+          {
+            name: "Kỷ",
+            thapThan: "Thiên Ấn",
+            thapThanCode: "[-N-5][F-52]",
+            nguHanh: "Thổ",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.",
+            descriptionEn: "Deep Storage Force",
+            tichCuc:
+              "Có sự hỗ trợ nhỏ, không đáng kể. Có thể có chút năng khiếu về nghệ thuật, thủ công.",
+            active:
+              "Utilize low-level suction to draw in assistance and monitor data from subterranean channels.",
+            tieuCuc:
+              "Hình ảnh bùn đất (Kỷ) làm vấy bẩn trang sức (Tân). Sự hỗ trợ nhận được thường đi kèm phiền phức, hoặc sự giúp đỡ không đúng cách làm hỏng việc. Gây ra cảm giác khó chịu, bực bội.",
+            passive:
+              "Maintain a quiet, rigid posture in a marginal location. Silently archive the acquired data into the deepest levels of storage.",
+          },
+        ],
+      },
+      {
+        name: "Nhâm",
+        code: "[+N-3]",
+        nguHanh: "Thủy",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Nhâm Thủy
+Nhâm Thủy là hình ảnh của dòng nước mạnh mẽ như biển cả, sông lớn (Dương Thủy). Đặc tính cốt lõi là sự năng động, thông minh, khoáng đạt và khả năng thích ứng vô biên. Người Nhâm Thủy có tầm nhìn lớn, tư duy tự do và luôn chứa đựng một nguồn năng lượng mạnh mẽ, không ngừng chuyển động.
+•	Khi cân bằng:
+	Đặc điểm: Họ là người thông minh, hào phóng, có khả năng bao dung như biển cả. Họ thích ứng nhanh với mọi hoàn cảnh, giỏi giao tiếp và có khả năng dẫn dắt, kết nối mọi người. Với tầm nhìn xa và tư duy linh hoạt, họ có thể tạo ra những thành tựu to lớn.
+	Dấu hiệu nhận biết: Phong thái tự tin, phóng khoáng. Khả năng xử lý nhiều vấn đề cùng lúc. Luôn tràn đầy năng lượng và có sức ảnh hưởng lớn đến những người xung quanh.
+•	Khi mất cân bằng (Quá Cường / Quá Nhược):
+	- Quá Cường (Thủy quá vượng):
+	Đặc điểm: Dòng nước quá mạnh sẽ trở thành trận lụt tàn phá. Họ trở nên hung hãn, thiếu kiểm soát, hành động bộc phát và dễ gây ra hậu quả lớn. Tính tình thất thường, khó lường, dễ buông thả, thiếu kỷ luật và không nghe theo lời khuyên của ai.
+	Dấu hiệu nhận biết: Bất cần, liều lĩnh. Dễ thay đổi, không kiên định. Có xu hướng lấn át người khác và khó kiểm soát được cảm xúc của chính mình.
+	- Quá Nhược (Thủy bị suy):
+	Đặc điểm: Sông lớn cạn kiệt, mất đi sức mạnh. Họ có nhiều ý tưởng nhưng thiếu ý chí và động lực để thực hiện. Dễ bị người khác dẫn dắt, không có định hướng rõ ràng cho cuộc đời. Trở nên do dự, thiếu tự tin và dễ bỏ cuộc.
+	Dấu hiệu nhận biết: Thiếu quyết đoán, hay thay đổi mục tiêu. Bề ngoài có vẻ năng động nhưng thực chất không có thành tựu gì cụ thể. Dễ cảm thấy lạc lõng, mất phương hướng.
+`,
+        data: [
+          {
+            name: "Nhâm",
+            thapThan: "Tỷ Kiên",
+            thapThanCode: "[+N-3][F-11]",
+            nguHanh: "Thủy",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.",
+            descriptionEn: "Directed Displacement Force",
+            tichCuc:
+              "Tăng cường sự tự tin, khí phách và khả năng cạnh tranh. Có nhiều bạn bè, mối quan hệ xã hội rộng, giỏi hợp tác để cùng nhau phát triển.",
+            active: "Gather momentum to detach and remove obstacles.",
+            tieuCuc:
+              "Khi quá cường sẽ trở nên cực kỳ liều lĩnh, bất cần. Dễ bị cuốn vào các cuộc cạnh tranh không lành mạnh, dẫn đến hao tài, tốn của.",
+            passive:
+              "Move independently along a chosen path without attaching to others.",
+          },
+          {
+            name: "Quý",
+            thapThan: "Kiếp Tài",
+            thapThanCode: "[-N-3][F-12]",
+            nguHanh: "Thủy",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.",
+            descriptionEn: "Covert Cohesion Force",
+            tichCuc:
+              "Giúp Nhâm Thủy trở nên tinh tế, sâu sắc và có chiều sâu hơn. Có khả năng thấu hiểu nội tâm người khác, biết cách dùng cả sự mềm mỏng và cứng rắn.",
+            active:
+              "Move below the surface to discreetly reconnect fractured parts.",
+            tieuCuc:
+              "Dễ bị cạnh tranh ngầm, bị người khác đâm sau lưng mà không biết. Nội tâm phức tạp, dễ che giấu những toan tính riêng.",
+            passive:
+              "Quietly reduce the rigidity of external opposing structures.",
+          },
+          {
+            name: "Giáp",
+            thapThan: "Thực Thần",
+            thapThanCode: "[+N-2][F-21]",
+            nguHanh: "Mộc",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).",
+            descriptionEn: "Rapid Replication Force",
+            tichCuc:
+              "Hình ảnh sông lớn nuôi cây đại thụ. Mang lại tài năng, sự sáng tạo ở quy mô lớn. Có khả năng lãnh đạo, tầm nhìn xa và tạo ra những thành quả to lớn, vững chắc.",
+            active:
+              "Duplicate successful models when clear steps exist. Distribute outputs widely.",
+            tieuCuc:
+              "Dễ trở nên quá lý tưởng hóa, đôi khi hành động mà không tính đến chi tiết. Có xu hướng thích chỉ huy hơn là tự tay làm.",
+            passive: "Maintain a consistent pace to cover the target area.",
+          },
+          {
+            name: "Ất",
+            thapThan: "Thương Quan",
+            thapThanCode: "[-N-2][F-22]",
+            nguHanh: "Mộc",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).",
+            descriptionEn: "Gradual Pressure Force",
+            tichCuc:
+              "Mang lại sự khéo léo, tinh tế trong giao tiếp và kinh doanh. Có tài ăn nói, khả năng thuyết phục và năng khiếu nghệ thuật. Rất giỏi trong việc kiếm tiền.",
+            active:
+              "Expand slowly from beneath the surface every day. Generate hidden structural pressure.",
+            tieuCuc:
+              "Dễ thay đổi, không ổn định. Có xu hướng hơi phù phiếm, thích những thứ hào nhoáng bề ngoài. Dễ vướng vào các mối quan hệ phức tạp.",
+            passive: "Slowly weaken rigid, outdated rules.",
+          },
+          {
+            name: "Đinh",
+            thapThan: "Chính Tài",
+            thapThanCode: "[-N-4][F-31]",
+            nguHanh: "Hỏa",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.",
+            descriptionEn: "Expenditure Elimination Force",
+            tichCuc:
+              "Nhâm và Đinh là cặp hợp hóa Mộc, mang lại sự may mắn về tài lộc và tình duyên. Họ có khả năng kiếm tiền tốt và có kế hoạch tài chính rõ ràng. Nam mệnh có vợ đẹp, tài năng, là trợ thủ đắc lực.",
+            active:
+              "Apply scrutiny to continuously identify and eliminate non-essential resource consumption.",
+            tieuCuc:
+              "Dễ bị cuốn vào tình cảm, có thể vì tình yêu mà quên đi lý trí. Đôi khi quá tập trung vào mục tiêu mà trở nên toan tính.",
+            passive:
+              "Apply strict constraints to preserve only the most efficient and necessary core functions.",
+          },
+          {
+            name: "Bính",
+            thapThan: "Thiên Tài",
+            thapThanCode: "[+N-4][F-32]",
+            nguHanh: "Hỏa",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).",
+            descriptionEn: "Accelerated Interception Force",
+            tichCuc:
+              "Đây là hình ảnh đẹp nhất của Nhâm Thủy (Thủy quang tương chiếu - ánh mặt trời chiếu rọi mặt biển), mang lại sự giàu có, danh tiếng và thành công rực rỡ. Có tầm nhìn lớn, hào phóng, có khả năng làm những việc kinh thiên động địa.",
+            active:
+              "Maximize resource burn to increase velocity. Move exceptionally fast to secure high-value targets.",
+            tieuCuc:
+              "Dễ trở nên quá phô trương, khoe khoang. Chi tiêu hoang phí, không biết tiết kiệm. Cần cẩn thận kẻo thành công đến nhanh rồi đi cũng nhanh.",
+            passive:
+              "Hold position until the optimal tactical window opens directly in the operational path.",
+          },
+          {
+            name: "Kỷ",
+            thapThan: "Chính Quan",
+            thapThanCode: "[-N-5][F-41]",
+            nguHanh: "Thổ",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).",
+            descriptionEn: "Viscous Drag Force",
+            tichCuc:
+              "Giúp Nhâm Thủy trở nên có kỷ luật, nguyên tắc và định hướng rõ ràng hơn. Có cơ hội thăng tiến trong sự nghiệp, được cấp trên công nhận.",
+            active:
+              "Induce operational difficulty by decelerating processes. Introduce particulate matter to increase environmental density.",
+            tieuCuc:
+              "Hình ảnh đất bùn làm vẩn đục sông lớn. Dễ gặp phải những quy định phiền phức, bị cấp trên gây khó dễ. Cảm thấy bị gò bó, mất tự do, khó phát huy hết khả năng. Nữ mệnh dễ có chồng không tương xứng.",
+            passive:
+              "Generate significant systemic friction that entraps entities, eliminating their capacity for independent movement.",
+          },
+          {
+            name: "Mậu",
+            thapThan: "Thiên Quan",
+            thapThanCode: "[+N-5][F-42]",
+            nguHanh: "Thổ",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).",
+            descriptionEn: "Kinetic Endurance Force",
+            tichCuc:
+              "Hình ảnh con đê lớn ngăn chặn dòng lũ. Khi Nhâm Thủy đủ mạnh, Mậu Thổ mang lại quyền lực tối cao, khả năng quản lý và đảm đương những trọng trách vĩ đại. Thành công vang dội trong quân đội, chính trị hoặc làm chủ doanh nghiệp lớn.",
+            active:
+              "Confront offensive actions and systemic failures by maintaining position and absorbing the impact.",
+            tieuCuc:
+              "Khi Nhâm Thủy yếu, đây là áp lực khủng khiếp, gây ra tai họa, bệnh tật, các vấn đề về pháp luật. Cuộc sống luôn đầy rẫy khó khăn, thử thách. Nữ mệnh có tình duyên vất vả, dễ gặp người chồng vũ phu, độc đoán.",
+            passive:
+              "Disregard external hostility. Remain stationary, sustain the kinetic load, and neutralize all threats through inertia.",
+          },
+          {
+            name: "Tân",
+            thapThan: "Chính Ấn",
+            thapThanCode: "[-N-1][F-51]",
+            nguHanh: "Kim",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.",
+            descriptionEn: "Covert Protection Force",
+            tichCuc:
+              "Mang lại tư duy sắc bén, tinh tế và khả năng học hỏi sâu sắc. Có gu thẩm mỹ tốt, được mẹ hoặc quý nhân là nữ giới hết lòng giúp đỡ.",
+            active:
+              "Gain specific support or necessary items through private channels.",
+            tieuCuc:
+              "Dễ trở nên quá nhạy cảm, suy nghĩ nhiều. Có thể hơi dựa dẫm, thiếu đi sự mạnh mẽ vốn có của Nhâm Thủy.",
+            passive: "Operate out of sight to maintain security.",
+          },
+          {
+            name: "Canh",
+            thapThan: "Thiên Ấn",
+            thapThanCode: "[+N-1][F-52]",
+            nguHanh: "Kim",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.",
+            descriptionEn: "Conditional Alliance Force",
+            tichCuc:
+              "Là nguồn năng lượng vô tận cho Nhâm Thủy. Mang lại trực giác phi thường, tư duy đột phá và khả năng học hỏi các lĩnh vực độc đáo. Có quý nhân mạnh mẽ nâng đỡ.",
+            active:
+              "Request external support. Cooperate based on equal trade and clear sharing.",
+            tieuCuc:
+              "Dễ trở nên lười biếng vì có người chống lưng. Có thể có những suy nghĩ kỳ lạ, khác người, dẫn đến bị cô lập. Nếu Kim quá cường sẽ làm Thủy bị đục.",
+            passive:
+              "Disconnect immediately if an agreement is broken, to maintain order.",
+          },
+        ],
+      },
+      {
+        name: "Quý",
+        code: "[-N-3]",
+        nguHanh: "Thủy",
+        characteristic: `Đặc tính cơ bản của Nhật Chủ Quý Thủy
+Quý Thủy là hình ảnh của dòng nước mềm mại như mưa, sương, suối nhỏ (Âm Thủy). Đặc tính cốt lõi là sự linh hoạt, thông tuệ, khả năng thẩm thấu và nội tâm sâu sắc. Người Quý Thủy có tư duy nhanh nhạy, khả năng thích ứng cao và một sức mạnh tiềm tàng khó lường.
+•	Khi cân bằng:
+	Đặc điểm: Họ là người thông minh, hiền hòa, khiêm tốn và có khả năng thấu hiểu người khác. Giống như mưa tưới cho vạn vật, họ mang lại sự nuôi dưỡng một cách thầm lặng. Họ có trí tưởng tượng phong phú, tư duy chiến lược và khả năng vượt qua khó khăn bằng sự mềm mỏng, linh hoạt.
+	Dấu hiệu nhận biết: Thái độ ôn hòa, dễ gần. Khả năng thích ứng với mọi hoàn cảnh. Tư duy sắc bén và có chiều sâu, luôn nhìn ra những khía cạnh mà người khác bỏ qua.
+•	Khi mất cân bằng (Quá Cường / Quá Nhược):
+	- Quá Cường (Thủy quá vượng):
+	Đặc điểm: Dòng nước quá lớn sẽ trở thành lũ lụt. Họ trở nên hay suy nghĩ vẩn vơ, đa nghi, nội tâm luôn biến động. Tâm trạng thất thường, khó đoán, dễ bị cuốn theo cảm xúc tiêu cực. Có thể trở nên âm mưu, toan tính, dùng sự thông minh của mình vào những việc không chính đáng.
+	Dấu hiệu nhận biết: Hay thay đổi, thiếu kiên định. Suy nghĩ quá nhiều dẫn đến do dự. Dễ che giấu cảm xúc thật, tạo cảm giác bí ẩn, khó lường.
+	- Quá Nhược (Thủy bị suy):
+	Đặc điểm: Dòng nước quá yếu sẽ dễ dàng bốc hơi. Họ thiếu chủ kiến, dễ bị người khác chi phối và lợi dụng. Yếu đuối, nhạy cảm quá mức, dễ bị tổn thương bởi những lời nói hay hành động nhỏ nhặt. Thiếu khả năng tự bảo vệ bản thân.
+	Dấu hiệu nhận biết: Nhút nhát, thiếu tự tin. Dễ bị động trong mọi việc, không dám đưa ra quyết định. Thường xuyên cảm thấy bất an.
+`,
+        data: [
+          {
+            name: "Quý",
+            thapThan: "Tỷ Kiên",
+            thapThanCode: "[-N-3][F-11]",
+            nguHanh: "Thủy",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho bản thân, anh em, bạn bè, đồng nghiệp cùng giới tính.",
+            descriptionEn: "Fluid Evasion Force",
+            tichCuc:
+              "Tăng cường sức mạnh nội tâm, sự kiên trì và khả năng tập trung. Giúp họ có thêm sự đồng cảm và thấu hiểu. Là người bạn đồng hành tinh tế, sâu sắc.",
+            active:
+              "Adopt a flexible state to pass through narrow restrictions and exit.",
+            tieuCuc:
+              "Khi quá cường sẽ trở nên rất cố chấp một cách thầm lặng. Dễ bị chìm đắm trong suy nghĩ của bản thân, hướng nội quá mức và trở nên u uất, bi quan.",
+            passive:
+              "Withdraw from groups smoothly without causing structural disruption.",
+          },
+          {
+            name: "Nhâm",
+            thapThan: "Kiếp Tài",
+            thapThanCode: "[+N-3][F-12]",
+            nguHanh: "Thủy",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho anh em, bạn bè, đồng nghiệp khác giới tính; sự cạnh tranh, lòng tự tôn.",
+            descriptionEn: "Boundary Dissolution Force",
+            tichCuc:
+              "Mang lại cho Quý Thủy sự mạnh mẽ, dũng cảm và khả năng hành động. Giúp họ trở nên quảng giao, hướng ngoại hơn. Có thể hợp tác để làm những việc lớn.",
+            active:
+              "Remove strict hierarchical divisions. Merge separate elements into a single network.",
+            tieuCuc:
+              "Dễ bị bạn bè lôi kéo, ảnh hưởng xấu. Có xu hướng bị người mạnh hơn lấn át, che mờ. Dễ bị hao tài vì các mối quan hệ xã hội.",
+            passive:
+              "Maintain a shared environment where components interact freely.",
+          },
+          {
+            name: "Ất",
+            thapThan: "Thực Thần",
+            thapThanCode: "[-N-2][F-21]",
+            nguHanh: "Mộc",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho sự hưởng thụ, ăn uống, tư duy sáng tạo, lời nói mềm mỏng, con cái (đối với nữ).",
+            descriptionEn: "Phased Incubation Force",
+            tichCuc:
+              "Đây là hình ảnh đẹp nhất của Quý Thủy (mưa tưới hoa). Mang lại tài năng nghệ thuật, sự lãng mạn, tinh tế và lòng nhân ái. Lời nói nhẹ nhàng, duyên dáng, có khả năng chữa lành.",
+            active:
+              "Manage small internal details carefully. Advance a project step by step.",
+            tieuCuc:
+              "Dễ trở nên yếu đuối, mơ mộng, thiếu thực tế. Dễ bị lụy trong tình cảm. Có thể hơi lười biếng, chỉ thích an nhàn.",
+            passive: "Wait calmly for the scheduled release phase.",
+          },
+          {
+            name: "Giáp",
+            thapThan: "Thương Quan",
+            thapThanCode: "[+N-2][F-22]",
+            nguHanh: "Mộc",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho sự phá cách, thông minh lanh lợi, phản biện, không thích quy tắc, con cái (đối với nam).",
+            descriptionEn: "Barrier Penetration Force",
+            tichCuc:
+              "Vô cùng thông minh, có tài năng và tham vọng lớn. Có khả năng lãnh đạo, sáng tạo đột phá, mang lại những thành tựu lớn lao. Dám nghĩ dám làm.",
+            active: "Expand rapidly to break past restrictive limits.",
+            tieuCuc:
+              "Kiêu ngạo, thích thể hiện, dễ xem thường người khác. Không tuân thủ quy tắc, dễ xung đột với cấp trên. Lời nói thẳng thắn có thể gây mất lòng.",
+            passive:
+              "Release stored energy to enter a wider operational space.",
+          },
+          {
+            name: "Bính",
+            thapThan: "Chính Tài",
+            thapThanCode: "[+N-4][F-31]",
+            nguHanh: "Hỏa",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho thu nhập ổn định từ công việc, người vợ (đối với nam), sự chăm chỉ, tiết kiệm.",
+            descriptionEn: "Resource Liquefaction Force",
+            tichCuc:
+              "Hình ảnh mặt trời (Bính) và màn sương (Quý) tạo nên cầu vồng, mang lại sự may mắn và tài lộc. Có thu nhập ổn định, cuộc sống sung túc. Nam mệnh có vợ đẹp, tài giỏi.",
+            active:
+              "Apply high energy to break down unstructured material inputs.",
+            tieuCuc:
+              "Dễ quá coi trọng vật chất, tiền bạc. Có thể vì công việc mà bỏ bê các khía cạnh khác của cuộc sống.",
+            passive:
+              "Reconfigure liquefied inputs into a stable, high-value asset that resists depreciation.",
+          },
+          {
+            name: "Đinh",
+            thapThan: "Thiên Tài",
+            thapThanCode: "[-N-4][F-32]",
+            nguHanh: "Hỏa",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho thu nhập bất ổn, kinh doanh, đầu tư, người cha, người tình (đối với nam).",
+            descriptionEn: "Localized Disruption Force",
+            tichCuc:
+              "Mang lại sự nhạy bén với các cơ hội kinh doanh, đầu tư. Có thể kiếm được những khoản tiền bất ngờ. Có sức hấp dẫn, lãng mạn trong tình cảm.",
+            active:
+              "Insert minor energy units into volatile vulnerabilities. Initiate covert actions to cause localized confusion.",
+            tieuCuc:
+              "Tài chính bấp bênh, khó đoán. Dễ bị cuốn vào các mối quan hệ tình cảm phức tạp. Đam mê nhất thời, khó duy trì lâu dài.",
+            passive:
+              "Rapidly consolidate and extract isolated, residual yields.",
+          },
+          {
+            name: "Mậu",
+            thapThan: "Chính Quan",
+            thapThanCode: "[+N-5][F-41]",
+            nguHanh: "Thổ",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho công danh, sự nghiệp, pháp luật, cấp trên, người chồng (đối với nữ).",
+            descriptionEn: "Gravitational Suppression Force",
+            tichCuc:
+              "Đây là cặp Mậu Quý hợp Hỏa, mang lại danh vọng và địa vị. Giúp Quý Thủy trở nên có nguyên tắc, đáng tin cậy. Sự nghiệp thăng tiến. Nữ mệnh có chồng tài giỏi, là chỗ dựa vững chắc.",
+            active:
+              "Apply the total mass of accumulated authority to physically press the subordinate group downward.",
+            tieuCuc:
+              "Khi Thổ quá cường, Quý Thủy sẽ bị áp chế, gây ra sự căng thẳng, mất tự do. Dễ bị gò bó trong các quy tắc, không phát huy được sự sáng tạo.",
+            passive:
+              "Compel all components to remain stationary in their designated positions. Immediately halt any unauthorized mobility.",
+          },
+          {
+            name: "Kỷ",
+            thapThan: "Thiên Quan",
+            thapThanCode: "[-N-5][F-42]",
+            nguHanh: "Thổ",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho thử thách, áp lực, kẻ thù, quyền lực trong môi trường cạnh tranh, người tình (đối với nữ).",
+            descriptionEn: "Stress Digestion Force",
+            tichCuc:
+              "Khi được chế hóa, giúp Quý Thủy trở nên kiên cường, có khả năng chịu đựng áp lực và giải quyết các vấn đề phức tạp.",
+            active:
+              "Patiently distribute prolonged tension into minor, manageable vibrations to process it gradually.",
+            tieuCuc:
+              "Hình ảnh đất bùn làm vẩn đục dòng nước. Gặp nhiều thị phi, tiểu nhân quấy phá. Sức khỏe dễ bị ảnh hưởng, đặc biệt là hệ tiêu hóa. Nữ mệnh dễ lận đận tình duyên, gặp phải người không phù hợp.",
+            passive:
+              "Internalize aggressive inputs directly into the core. Maintain an external appearance that is completely undisturbed and unchanged.",
+          },
+          {
+            name: "Canh",
+            thapThan: "Chính Ấn",
+            thapThanCode: "[+N-1][F-51]",
+            nguHanh: "Kim",
+            amDuong: "Dương",
+            description:
+              "Đại diện cho mẹ, kiến thức, học vấn, sự che chở, lòng nhân hậu, quý nhân.",
+            descriptionEn: "Defensive Shielding Force",
+            tichCuc:
+              "Hình ảnh kim loại lớn tạo ra dòng nước trong lành. Mang lại tư duy logic, sáng suốt, khả năng học hỏi tốt. Luôn có quý nhân là người lớn tuổi, có chức quyền giúp đỡ.",
+            active: "Use a large protective layer from an external group.",
+            tieuCuc:
+              "Dễ trở nên lười biếng, ỷ lại vào sự giúp đỡ của người khác. Thiếu động lực để tự mình phấn đấu.",
+            passive:
+              "Maintain total safety, accepting the loss of free movement.",
+          },
+          {
+            name: "Tân",
+            thapThan: "Thiên Ấn",
+            thapThanCode: "[-N-1][F-52]",
+            nguHanh: "Kim",
+            amDuong: "Âm",
+            description:
+              "Đại diện cho mẹ kế, kiến thức độc đáo, huyền học, tôn giáo, sự cô độc, trực giác nhạy bén.",
+            descriptionEn: "Covert Extraction Force",
+            tichCuc:
+              "Mang lại sự tinh tế, sắc bén và trực giác nhạy bén phi thường. Có năng khiếu đặc biệt trong các lĩnh vực nghệ thuật, triết học, huyền học.",
+            active:
+              "Find small openings in external boundaries. Quietly extract data or resources.",
+            tieuCuc:
+              "Lạnh lùng, khó gần, hay chỉ trích. Dễ cảm thấy cô độc, không được thấu hiểu. Mối quan hệ với mẹ có thể xa cách hoặc mẹ hay ốm đau.",
+            passive: "Keep the gained assets hidden for personal use.",
+          },
+        ],
+      },
+    ];
+    let data = thapThan.find((item) => item.name === nhatChuName);
+    return data;
+  };
+
+  const getThapThanDiaChi = (nhatChuName) => {
+    let thapThan = [
+      {
+        name: "Kỷ",
+        thapThanText: `- Thìn, Tuất (+Thổ) - Kiếp Tài: Thể hiện người có uy tín, tầm nhìn, tham vọng, giỏi lãnh đạo (Thìn), hoặc sự trung thành, chính trực, nhiệt tình, có nguyên tắc, trọng tình nghĩa (Tuất). Mặt trái là sự mưu mô, khó lường, độc đoán, tham vọng mù quáng (Thìn), hoặc trở nên nóng nảy, cứng nhắc, bảo thủ và hay tranh cãi khi mất cân bằng (Tuất).
+- Sửu, Mùi (-Thổ) - Tỷ Kiên: Biểu hiện sự kiên trì, chăm chỉ, nhẫn nại, kỷ luật và thực tế (Sửu), hoặc sự ôn hòa, hiền lành, vị tha, sống tình cảm và biết lắng nghe (Mùi). Mặt tiêu cực có thể là lì lợm, cố chấp, lạnh lùng, khắc nghiệt (Sửu), hoặc đa sầu đa cảm, mê tín, nhu nhược và lụy tình (Mùi).
+- Dần (+Mộc) - Chính Quan: Là Mộc pha trộn nhiệt tình (Hỏa) và thực tế (Thổ), tạo ra con người can đảm, hào phóng, năng động và sáng tạo. Mặt trái là sự nóng nảy, bốc đồng, khoe khoang và cả thèm chóng chán.
+- Mão (-Mộc) - Thiên Quan/Thiên Quan: Là Mộc thuần túy, có sức sống mãnh liệt, kiên trì phi thường, nhẫn nại và bền bỉ. Tiêu cực là sự ghen tuông mạnh, cố chấp ngầm, giữ thù dai và nhạy cảm quá mức.
+- Ngọ (+Hỏa) - Chính Ấn: Đỉnh cao của năng lượng Hỏa, thể hiện sự đam mê mãnh liệt, quyến rũ, kiên định và giữ chữ tín. Khi tiêu cực sẽ rất cực đoan, cố chấp, nóng tính và tâm trạng thất thường.
+- Tỵ (-Hỏa) - Thiên Ấn: Năng lượng biến hóa chứa cả Hỏa, Kim, Thổ, tạo ra người thông minh, nhanh nhẹn, có mục đích, giỏi tính toán và thực tế. Mặt tiêu cực là thủ đoạn, xảo quyệt, hay thay đổi, ghen tuông và đố kỵ.
+- Thân (+Kim) - Thương Quan: Kết hợp Kim với trí tuệ và linh hoạt, tạo ra người lanh lợi, đa tài, thông minh và giỏi giải quyết vấn đề. Khi tiêu cực sẽ là mưu mẹo, khôn lỏi, thích thể hiện và không ổn định.
+- Dậu (-Kim) - Thực Thần: Là Kim thuần khiết, biểu hiện cho sự kỷ luật tuyệt đối, tự trọng cao, cực kỳ nguyên tắc và đáng tin cậy. Tiêu cực là sự cực đoan, phán xét, cứng nhắc và tự cho mình là đúng.
+- Tý (+Thủy) - Chính Tài: Đỉnh cao của năng lượng Thủy, đại diện cho trí tuệ sâu sắc và quyền lực tiềm ẩn, cực kỳ thông minh, mưu trí và có tầm nhìn chiến lược. Khi mất cân bằng sẽ trở nên mưu mô, thủ đoạn, đa nghi và thâm hiểm.
+- Hợi (-Thủy) - Thiên Tài: Biểu hiện cho trí tuệ phúc hậu và lòng nhân ái, là người tốt bụng, thật thà, có lòng trắc ẩn và rộng lượng. Tiêu cực là sự dễ dãi, cả tin, thiếu đề phòng và dễ bị lợi dụng.`,
+      },
+      {
+        name: "Giáp",
+        thapThanText: `- Dần (+Mộc) - Tỷ Kiên: Là gốc rễ vững chắc (Lộc), mang lại sự tự chủ, năng lượng dồi dào, rất quyết đoán và có khả năng thực thi mạnh mẽ. Tiêu cực là cực kỳ bướng bỉnh, cố chấp, tự quyết định mọi việc, không thích bị người khác xen vào, dễ cô lập bản thân.
+- Mão (-Mộc) - Kiếp Tài: Có nhiều mối quan hệ xã hội, được nhiều người yêu quý, mở rộng các mối quan hệ, giao tiếp tốt, dễ được giúp đỡ. Tiêu cực là nơi Đế cường của Kiếp Tài, cạnh tranh rất khốc liệt, dễ bị hao tài vì bạn bè, đặc biệt là các vấn đề liên quan đến tình cảm, tửu sắc.
+- Tỵ (-Hỏa) - Thực Thần: Rất thông minh, có khả năng học hỏi và sáng tạo tốt, có tài năng trong lĩnh vực giáo dục, truyền thông, sáng tạo. Tiêu cực là năng lượng của Giáp Mộc bị tiết xuất quá nhiều, dễ cảm thấy mệt mỏi, kiệt sức, suy nghĩ nhiều nhưng hành động ít.
+- Ngọ (+Hỏa) - Thương Quan: Có tài năng nghệ thuật, biểu diễn xuất chúng, sáng tạo đột phá, gây ấn tượng mạnh, có khả năng nổi bật trong đám đông. Tiêu cực là "Mộc bị thiêu cháy", dễ hành động bốc đồng, thiếu kiểm soát, nổi loạn, chống đối quy tắc, sức khỏe dễ bị ảnh hưởng.
+- Sửu, Mùi (-Thổ) - Chính Tài: Có khả năng kiếm tiền một cách chăm chỉ, cần cù. Tài lộc đến từ sự tích lũy kiên trì (Sửu), hoặc có thể có tài sản liên quan đến đất đai. Có sự ổn định về tài chính (Mùi). Tiêu cực là Sửu là đất ẩm lạnh, cây khó bén rễ. Kiếm tiền rất vất vả, phải nỗ lực rất nhiều trong môi trường khó khăn (Sửu), hoặc Mùi là đất khô nóng, Mộc trong Mùi đã vào mộ. Cây khó phát triển tốt. Nguồn tài chính không dồi dào, kiếm tiền khó khăn (Mùi).
+- Thìn, Tuất (+Thổ) - Thiên Tài: Thìn là đất ẩm có chứa Thủy, rất tốt cho Giáp Mộc phát triển, có nhiều cơ hội tốt để kinh doanh, đầu tư và thu được lợi nhuận lớn (Thìn), hoặc Tuất là đất khô nóng, rèn luyện ý chí và khả năng chịu đựng trong việc kiếm tiền, có thể thành công nhờ nỗ lực vượt khó (Tuất). Tiêu cực là tài chính có thể biến động, cần biết nắm bắt cơ hội đúng lúc (Thìn), hoặc Tuất là loại Thiên Tài khó kiếm nhất, phải làm việc trong môi trường cực kỳ khắc nghiệt, cạnh tranh cao mới có thể có tiền (Tuất).
+- Thân (+Kim) - Thiên Quan: Rèn luyện ý chí và khả năng đối mặt với thử thách sinh tử, có khả năng đảm đương trọng trách lớn, vượt qua thử thách, rèn luyện bản lĩnh. Tiêu cực là luôn phải đối mặt với nguy hiểm, áp lực cực lớn, dễ bị tai nạn, đặc biệt là liên quan đến xe cộ, máy móc kim loại, sức khỏe và tính mạng bị đe dọa.
+- Dậu (-Kim) - Chính Quan: Có tinh thần trách nhiệm, làm việc có kỷ luật, có cơ hội thăng tiến trong sự nghiệp, làm việc có kỷ luật, trách nhiệm. Tiêu cực là áp lực công việc lớn, dễ bị căng thẳng thần kinh, môi trường làm việc có nhiều quy tắc cứng nhắc.
+- Tý (+Thủy) - Chính Ấn: Có nền tảng học vấn tốt, được gia đình yêu thương, giúp đỡ, thông minh, có khả năng tiếp thu kiến thức tốt, được hỗ trợ từ mẹ, quý nhân. Tiêu cực là dễ sinh ra tính ỷ lại, thiếu nỗ lực cá nhân, nếu Thủy quá cường dễ gây ra tình trạng "Thủy phiếm Mộc" (nước cuốn trôi cây), khiến cuộc sống trôi nổi, không ổn định.
+- Hợi (-Thủy) - Thiên Ấn: Hợi là đất trường sinh của Giáp Mộc, vừa là Ấn vừa là gốc rễ, nguồn hỗ trợ mạnh mẽ và bền vững nhất, vô cùng thông minh, có tài năng và luôn có quý nhân phù trợ. Tiêu cực là có thể vì có người chống lưng mà trở nên thiếu đi nỗ lực cá nhân, khó thành tựu lớn nếu không tự mình phấn đấu.`,
+      },
+      {
+        name: "Ất",
+        thapThanText: `- Dần (+Mộc) - Kiếp Tài: Có sự giúp đỡ từ anh em, bạn bè mạnh mẽ. Giúp Ất Mộc trở nên quyết đoán, mạnh mẽ hơn. Tiêu cực là Dần là nơi Đế cường của Kiếp Tài. Dễ bị người khác lấn át, cướp công. Cần cẩn thận trong các mối quan hệ hợp tác.
+- Mão (-Mộc) - Tỷ Kiên: Là gốc rễ vững chắc (Lộc), mang lại sự tự chủ và khả năng chuyên môn tốt. Có nhiều bạn bè thân thiết. Tiêu cực là rất cố chấp một cách mềm mỏng. Dễ bị các mối quan hệ tình cảm chi phối (đào hoa).
+- Tỵ (-Hỏa) - Thương Quan: Rất thông minh, có khả năng học hỏi và sáng tạo tốt. Có tài năng trong lĩnh vực giáo dục, truyền thông. Tiêu cực là dễ hành động bốc đồng, lời nói thiếu suy nghĩ. Có thể kiêu ngạo, xem thường người khác, gây ra xung đột với cấp trên.
+- Ngọ (+Hỏa) - Thực Thần: Có tài năng nghệ thuật, biểu diễn xuất chúng. Có khả năng sáng tạo và thể hiện bản thân tốt. Tiêu cực là "Mộc bị thiêu cháy". Năng lượng bị tiết xuất quá nhiều. Dễ cảm thấy mệt mỏi, kiệt sức vì công việc, con cái.
+- Thìn, Tuất (+Thổ) - Chính Tài: Có khả năng quản lý tài chính tốt, có thể có được tài sản từ đất đai (Thìn), hoặc rèn luyện tính kiên trì, chăm chỉ trong việc kiếm tiền (Tuất). Tiêu cực là kiếm tiền không dễ dàng, phải nỗ lực nhiều (Thìn), hoặc Tuất là đất khô nóng, cây cỏ khó sống, kiếm tiền cực kỳ khó khăn, trong môi trường khắc nghiệt (Tuất).
+- Sửu, Mùi (-Thổ) - Thiên Tài: Có thể có những khoản thu nhập bất ngờ từ đất đai, bất động sản (Sửu), hoặc Mùi là đất khô nhưng lại là kho của Mộc, có khả năng tích lũy tài sản, có "của ăn của để" (Mùi). Tiêu cực là Sửu là đất ẩm lạnh, cây khó phát triển, cơ hội kiếm tiền không nhiều, tài chính bấp bênh (Sửu), hoặc kiếm tiền phải trải qua nhiều vất vả, cạnh tranh (Mùi).
+- Thân (+Kim) - Thiên Quan: Rèn luyện ý chí sinh tồn phi thường. Tiêu cực là áp lực từ mọi phía, cảm giác như bị dao kề cổ. Sức khỏe suy yếu, đặc biệt là gan, mật, hệ thần kinh. Cuộc sống luôn đầy rẫy khó khăn, thử thách.
+- Dậu (-Kim) - Chính Quan: Rèn luyện khả năng làm việc trong môi trường có kỷ luật, áp lực cao. Tiêu cực là áp lực công việc rất lớn. Dễ bị căng thẳng, mệt mỏi. Nữ mệnh có chồng gia trưởng, độc đoán.
+- Hợi (-Thủy) - Chính Ấn: Có nền tảng gia đình, học vấn tốt. Được mẹ yêu thương, che chở. Tiêu cực là dễ sinh ra tính ỷ lại, thiếu nỗ lực cá nhân. Nếu Thủy quá nhiều, cây sẽ bị úng rễ, khó phát triển.
+- Tý (+Thủy) - Thiên Ấn: Có trực giác tốt, thông minh, có khả năng học hỏi các lĩnh vực độc đáo. Tiêu cực là Tý là đất bại của Mộc. Nước quá lạnh làm cây khó sống. Dễ bị cô độc, mối quan hệ với mẹ không tốt. Sức khỏe dễ bị ảnh hưởng bởi yếu tố hàn (lạnh).`,
+      },
+      {
+        name: "Bính",
+        thapThanText: `- Tỵ (-Hỏa) - Tỷ Kiên: Là gốc rễ vững chắc (Lộc), mang lại sự tự chủ, năng lượng dồi dào và khả năng thực thi tốt. Giúp Bính Hỏa trở nên mạnh mẽ và quyết đoán hơn. Tiêu cực: Cực kỳ cố chấp và nóng nảy. Có xu hướng tự làm theo ý mình, không linh hoạt. Dễ gây ra mâu thuẫn vì sự bướng bỉnh.
+- Ngọ (+Hỏa) - Kiếp Tài: Đây là nơi Bính Hỏa cường nhất (Đế cường). Mang lại quyền lực, sức ảnh hưởng và khả năng lãnh đạo tuyệt đối. Ý chí kiên cường, không gì lay chuyển được. Tiêu cực: Cực kỳ nóng nảy, độc đoán và chuyên quyền. Không chấp nhận sự phản đối. Có thể trở nên tàn bạo nếu không được kiểm soát.
+- Thìn, Tuất (+Thổ) - Thực Thần: Có khả năng sáng tạo, có thể tạo ra những thành quả nhất định (Thìn), hoặc Tuất là đất khô nóng (Hỏa khố), giúp Bính Hỏa có nơi để thể hiện tài năng. Có khả năng sáng tạo nghệ thuật, biểu diễn tốt (Tuất). Tiêu cực là Thìn là đất ẩm, làm Hỏa bị yếu đi rất nhiều. Tài năng, sự sáng tạo không được thể hiện một cách rực rỡ, dễ bị che lấp hoặc hiểu lầm (Thìn), hoặc vẫn làm giảm độ sáng của Bính Hỏa. Có thể trở nên quá đam mê hưởng thụ, vui chơi mà quên đi trách nhiệm (Tuất).
+- Sửu, Mùi (-Thổ) - Thương Quan: Có thể có những ý tưởng độc đáo nhưng khó thực hiện (Sửu), hoặc có tài năng trong các lĩnh vực nghệ thuật, thủ công (Mùi). Tiêu cực là Sửu là đất ẩm lạnh, làm Hỏa bị mất nhiệt. Đây là loại Thương Quan xấu nhất, khiến Bính Hỏa mất đi sức sống, trở nên u uất, bi quan (Sửu), hoặc Mùi là đất khô, vẫn làm Hỏa bị tối đi. Dễ trở nên kiêu ngạo, tự mãn với những thành quả nhỏ. Có thể nói năng thiếu suy nghĩ, gây mất lòng (Mùi).
+- Dậu (-Kim) - Chính Tài: Có thu nhập ổn định, đều đặn. Có khả năng quản lý tài chính tốt. Tiêu cực: Dễ trở nên quá tính toán, chi li. Có thể vì quá tập trung vào các khoản lợi nhỏ mà bỏ qua cơ hội lớn.
+- Thân (+Kim) - Thiên Tài: Rất nhạy bén với các cơ hội kinh doanh, đầu tư. Có thể kiếm được những khoản tiền lớn bất ngờ. Tiêu cực: Tài chính cực kỳ bấp bênh. Dễ bị thua lỗ nặng nếu đầu tư mạo hiểm. Tiền vào nhanh nhưng ra cũng nhanh.
+- Tý (+Thủy) - Chính Quan: Rèn luyện Bính Hỏa trong môi trường kỷ luật, có nguyên tắc. Tiêu cực: Áp lực công việc lớn, luôn cảm thấy bị gò bó, kiểm soát. Cấp trên nghiêm khắc. Dễ gặp các vấn đề về sức khỏe liên quan đến tim mạch, mắt.
+- Hợi (-Thủy) - Thiên Quan: Nếu có Mộc mạnh, có thể biến áp lực thành động lực, đạt được quyền lực. Tiêu cực: Áp lực đến một cách âm thầm nhưng mạnh mẽ. Luôn phải đối mặt với nguy hiểm, kẻ thù mạnh. Sức khỏe và tinh thần bị bào mòn nghiêm trọng.
+- Dần (+Mộc) - Chính Ấn: Dần là đất trường sinh của Bính Hỏa. Đây là nguồn hỗ trợ mạnh mẽ và bền vững nhất. Vô cùng thông minh, có tài năng và luôn có quý nhân phù trợ lúc khó khăn. Tiêu cực: Có thể vì có người chống lưng mà trở nên lười biếng, thiếu đi nỗ lực cá nhân.
+- Mão (-Mộc) - Thiên Ấn: Có nền tảng học vấn tốt, được gia đình yêu thương, che chở. Thông minh, có lòng nhân ái. Tiêu cực: Đôi khi quá hiền lành, thiếu đi sự mạnh mẽ cần thiết để đối mặt với sóng gió.`,
+      },
+      {
+        name: "Mậu",
+        thapThanText: `- Thìn, Tuất (+Thổ) - Tỷ Kiên: Mang lại cho Mậu Thổ sự thông minh và tầm nhìn chiến lược. Có tham vọng, biết cách quản lý nguồn lực (Thìn), hoặc cực kỳ trung thành, thẳng thắn và có tinh thần nghĩa hiệp. Là người bạn, người đồng đội đáng tin cậy nhất (Tuất). Tiêu cực là nội tâm phức tạp, khó đoán. Có thể trở nên quá tham vọng, dùng thủ đoạn để cạnh tranh (Thìn), hoặc nóng nảy, hiếu thắng, dễ gây gổ khi bị khiêu khích. Cứng nhắc, đôi khi quá thẳng thắn đến mức làm mất lòng người khác (Tuất).
+- Sửu, Mùi (-Thổ) - Kiếp Tài: Mang lại sự kiên trì, nhẫn nại từ bên trong. Làm việc chăm chỉ, cần mẫn và có khả năng tích lũy một cách âm thầm, bền bỉ (Sửu), hoặc giúp Mậu Thổ trở nên ấm áp, biết quan tâm đến người khác hơn. Có khả năng thuyết phục và tạo dựng các mối quan hệ xã hội tốt (Mùi). Tiêu cực là bướng bỉnh một cách thầm lặng, khó chia sẻ. Dễ bị ảnh hưởng bởi các mối quan hệ bạn bè, dẫn đến hao tài một cách không đáng có (Sửu), hoặc nội tâm dễ thay đổi, "sáng nắng chiều mưa". Có thể vì quá cả nể bạn bè mà chịu thiệt thòi về mình (Mùi).
+- Thân (+Kim) - Thực Thần: Cực kỳ thông minh, đa tài, học nhanh hiểu rộng. Có khả năng ứng biến xuất sắc, giỏi trong việc kinh doanh, đầu tư và các hoạt động mang tính di chuyển. Tiêu cực là "cả thèm chóng chán", thiếu sự kiên trì đến cùng. Dễ dùng tài năng của mình vào những việc mang tính đầu cơ, rủi ro cao.
+- Dậu (-Kim) - Thương Quan: Khả năng ăn nói xuất chúng, có tài hùng biện, tranh luận. Thích hợp với các công việc cần đến giao tiếp như luật sư, giáo viên, diễn giả. Tiêu cực là thích chỉ trích, phán xét. Dễ vướng thị phi từ lời nói của mình. Hay khoe khoang, tự phụ.
+- Hợi (-Thủy) - Chính Tài: Có khả năng quản lý các dòng tiền lớn, có tầm nhìn trong kinh doanh. Thường có những khoản thu nhập lớn, bất ngờ. Tiêu cực là dễ gặp rủi ro về tài chính nếu đầu tư mạo hiểm. Tiền bạc có tính lưu động cao, khó giữ được lâu.
+- Tý (+Thủy) - Thiên Tài: Rất thông minh và nhạy bén với các cơ hội kiếm tiền. Có nhiều nguồn thu nhập, giỏi xoay sở tài chính. Tiêu cực là dễ tham gia vào các hoạt động đầu cơ, cờ bạc. Tiền bạc đến và đi nhanh chóng, cuộc sống tài chính không ổn định.
+- Mão (-Mộc) - Chính Quan: Có ý thức tự giác cao, làm việc có nguyên tắc và được mọi người tôn trọng. Thích hợp làm trong các cơ quan nhà nước, tổ chức lớn. Tiêu cực là dễ trở nên quá cứng nhắc, thiếu linh hoạt. Luôn cảm thấy bị áp lực về mặt tinh thần, khó mà thoải mái.
+- Dần (+Mộc) - Thiên Quan: Có khí phách, quyền uy, không sợ hãi. Có tố chất của một nhà lãnh đạo, một người tiên phong, dám đối mặt với mọi thử thách. Tiêu cực là cuộc sống luôn đầy rẫy sự cạnh tranh và áp lực. Dễ gặp tai nạn, các vấn đề liên quan đến pháp luật. Tính cách nóng nảy, độc đoán.
+- Ngọ (+Hỏa) - Chính Ấn: Cực kỳ thông minh, có đam mê học hỏi mãnh liệt. Có bằng cấp cao, kiến thức uyên bác và được xã hội công nhận. Tiêu cực là tính khí nóng nảy, thiếu kiên nhẫn. Đôi khi quá tự tin vào kiến thức của mình mà trở nên kiêu ngạo.
+- Tỵ (-Hỏa) - Thiên Ấn: Vô cùng thông minh, có khả năng nhìn thấu bản chất vấn đề. Có tài năng đặc biệt trong các lĩnh vực nghiên cứu chuyên sâu hoặc những ngành nghề ít người theo đuổi. Tiêu cực là nội tâm phức tạp, hay suy nghĩ. Dễ bị cô lập khỏi đám đông. Mối quan hệ với người thân (đặc biệt là mẹ) có thể xa cách.`,
+      },
+      {
+        name: "Kỷ",
+        thapThanText: `- Sửu, Mùi (-Thổ) - Tỷ Kiên: Vô cùng kiên định, nhẫn nại, có sức chịu đựng phi thường. Chăm chỉ, cần cù, làm việc không mệt mỏi và rất đáng tin cậy (Sửu), hoặc khéo léo, tinh tế, có khả năng xã giao tốt. Tốt bụng, có lòng trắc ẩn, biết cách chăm sóc người khác một cách ấm áp (Mùi). Tiêu cực là bướng bỉnh, lầm lì, một khi đã quyết thì khó ai lay chuyển. Hướng nội quá mức, khó bộc lộ cảm xúc (Sửu), hoặc dễ nóng nảy, thiếu kiên nhẫn khi mọi việc không như ý. Nội tâm phức tạp, hay thay đổi, đôi khi đa sầu đa cảm và dễ bị tổn thương (Mùi).
+- Thìn, Tuất (+Thổ) - Kiếp Tài: Thông minh, có tài năng lãnh đạo và khả năng thích ứng cao. Có tham vọng, biết cách tận dụng các mối quan hệ để phát triển (Thìn), hoặc trung thành, thẳng thắn, có tinh thần nghĩa hiệp. Rất nhạy bén, có khả năng phán đoán tốt (Tuất). Tiêu cực là nhiều mưu mẹo, khó lường, đôi khi không đáng tin cậy. Dễ vướng vào thị phi, tranh chấp (Thìn), hoặc nóng nảy, hiếu thắng, dễ gây gổ. Đôi khi quá thẳng thắn làm mất lòng người khác (Tuất).
+- Dậu (-Kim) - Thực Thần: Thông minh, hoạt bát, có tài ăn nói và khả năng thuyết phục. Rất giỏi trong việc thể hiện bản thân. Có tài năng trong lĩnh vực nghệ thuật, giải trí. Tiêu cực là thích khoe khoang, nói nhiều nhưng làm ít. Hay chỉ trích, phán xét người khác. Dễ vướng vào các mối quan hệ phức tạp, đào hoa.
+- Thân (+Kim) - Thương Quan: Đa tài, linh hoạt, học một biết mười. Giỏi bắt chước, có khả năng ứng biến xuất sắc trong mọi tình huống. Có nhiều ý tưởng độc đáo. Tiêu cực là hay thay đổi, thiếu kiên định, "cả thèm chóng chán". Đôi khi dùng sự thông minh vào những việc không chính đáng, thích đi đường tắt.
+- Tý (+Thủy) - Chính Tài: Thông minh, biết cách quản lý tiền bạc một cách khôn ngoan. Có khả năng kiếm tiền từ nhiều nguồn nhỏ, tích tiểu thành đại. Tiêu cực là hay tính toán chi li, đôi khi quá cẩn thận mà bỏ lỡ cơ hội lớn. Dễ lo lắng về những khoản tiền nhỏ.
+- Hợi (-Thủy) - Thiên Tài: Có tầm nhìn xa, giỏi nắm bắt các cơ hội kinh doanh lớn. Thông minh, có thể kiếm được những khoản tiền lớn một cách bất ngờ. Tiêu cực là dễ bị cuốn vào các dự án đầu tư mạo hiểm, có thể dẫn đến thua lỗ nặng. Quản lý tài chính kém, tiền vào nhanh ra cũng nhanh.
+- Dần (+Mộc) - Chính Quan: Có uy quyền, dũng cảm, có tố chất của người lãnh đạo. Có chí tiến thủ, không ngừng nỗ lực để đạt được vị trí cao trong sự nghiệp. Tiêu cực là dễ trở nên độc đoán, chuyên quyền. Thích kiểm soát người khác, gây áp lực cho cấp dưới.
+- Mão (-Mộc) - Thiên Quan: Rất nhạy bén, có khả năng nắm bắt tình hình nhanh chóng. Thích hợp với các công việc đòi hỏi sự cạnh tranh cao, kỷ luật thép. Tiêu cực là gặp nhiều áp lực từ mọi phía. Dễ bị căng thẳng thần kinh, nóng vội. Cần cẩn thận với các vấn đề liên quan đến kiện tụng, tranh chấp.
+- Tỵ (-Hỏa) - Chính Ấn: Thông minh, sáng dạ, có khả năng học hỏi nhanh. Có trực giác tốt, tư duy logic. Luôn nhận được sự giúp đỡ từ người lớn tuổi hoặc cấp trên. Tiêu cực là dễ bị che giấu, nội tâm phức tạp. Đôi khi quá tự tin vào sự thông minh của mình mà trở nên chủ quan.
+- Ngọ (+Hỏa) - Thiên Ấn: Rất thông minh, có tài năng nổi bật và đam mê mãnh liệt. Có khả năng thành công lớn trong các lĩnh vực đòi hỏi sự sáng tạo và cảm hứng đặc biệt. Tiêu cực là nóng nảy, thiếu kiên nhẫn, làm việc theo cảm hứng. Dễ bị cô đơn, cảm thấy không ai hiểu mình. Có thể gặp khó khăn trong việc duy trì các mối quan hệ lâu dài.`,
+      },
+      {
+        name: "Tân",
+        thapThanText: `- Dậu (-Kim) - Tỷ Kiên: Là gốc rễ vững chắc (Lâm Quan), mang lại sự tự chủ và khả năng chuyên môn cao. Rất giỏi trong các công việc đòi hỏi sự tỉ mỉ, chính xác. Tiêu cực là cực kỳ cố chấp và bảo thủ. Lời nói rất sắc bén, dễ làm mất lòng người khác. Có xu hướng tự cô lập mình.
+- Thân (+Kim) - Kiếp Tài: Giúp Tân Kim trở nên năng động, đa tài và hoạt bát hơn. Có khả năng ứng biến linh hoạt. Tiêu cực là dễ bị người khác lấn át, cướp công. Các mối quan hệ xã hội có thể mang lại nhiều phiền toái hơn là lợi ích. Dễ bị hao tán tiền bạc.
+- Tý (+Thủy) - Thực Thần: Có khả năng sáng tạo độc đáo. Tư duy thông minh, sắc sảo và có chiều sâu. Có thể thành công trong các lĩnh vực nghệ thuật, biểu diễn. Tiêu cực là dễ trở nên lạnh lùng, khó gần. Có xu hướng nổi loạn ngầm, không thích bị gò bó.
+- Hợi (-Thủy) - Thương Quan: Rất thông minh, có khả năng học hỏi và thể hiện bản thân tốt. Có tài năng trong kinh doanh, ngoại giao. Tiêu cực là dễ dùng sự thông minh của mình để chỉ trích người khác. Có thể hơi phóng túng, thiếu ổn định trong cuộc sống.
+- Dần (+Mộc) - Chính Tài: Có ý chí kiếm tiền, không ngại khó khăn. Có thể có được những khoản thu nhập lớn nếu nỗ lực hết mình. Tiêu cực là luôn phải đối mặt với sự cạnh tranh và thử thách lớn về tài chính. Dễ bị hao tài vì các dự án quá sức.
+- Mão (-Mộc) - Thiên Tài: Có tài năng trong việc kinh doanh các mặt hàng nhỏ, mang tính thẩm mỹ. Có nhiều cơ hội kiếm tiền nhưng không lớn. Tiêu cực là tiền bạc đến và đi nhanh chóng. Dễ bị xung khắc (Mão Dậu xung), gây ra sự bất ổn, mất mát về tài chính.
+- Tỵ (-Hỏa) - Chính Quan: Có cơ hội làm việc trong các tổ chức lớn, có danh tiếng. Được cấp trên ưu ái, nâng đỡ. Tiêu cực là môi trường làm việc có nhiều áp lực. Dễ bị căng thẳng thần kinh. Cần chú ý các vấn đề về tim mạch, khí huyết.
+- Ngọ (+Hỏa) - Thiên Quan: Rèn luyện ý chí mạnh mẽ, khả năng chịu đựng áp lực phi thường. Nếu vượt qua được sẽ có thành tựu. Tiêu cực là áp lực công việc, cuộc sống cực lớn. Luôn cảm thấy như bị thiêu đốt, mệt mỏi, kiệt sức. Sức khỏe và tinh thần bị bào mòn nghiêm trọng.
+- Thìn, Tuất (+Thổ) - Chính Ấn: Thìn là đất ẩm, có thể nhận được sự hỗ trợ về vật chất, đất đai (Thìn), hoặc có thể có hứng thú với tôn giáo, huyền học như một lối thoát (Tuất). Tiêu cực là vẫn là hình ảnh đất chôn vùi Kim. Dù đất ẩm có phần tốt hơn đất khô nhưng vẫn khiến Tân Kim mất đi sự tỏa sáng (Thìn), hoặc Tuất là đất khô nóng, là loại Chính Ấn xấu nhất. Chôn vùi Tân Kim một cách triệt để, khiến Kim vừa bị bẩn vừa trở nên giòn, dễ vỡ (Tuất).
+- Sửu, Mùi (-Thổ) - Thiên Ấn: Sửu là đất ẩm lạnh, có thể có sự ổn định về mặt vật chất. Hứng thú với những kiến thức cổ, truyền thống (Sửu), hoặc có thể có một chút tài sản, đất đai nhưng không lớn (Mùi). Tiêu cực là làm bẩn và khiến trang sức mất đi vẻ óng ả. Cuộc sống có phần cô độc, lạnh lẽo, thiếu sự ấm áp (Sửu), hoặc Mùi là đất khô nóng, làm bẩn và khiến trang sức trở nên giòn. Dễ bị người khác giúp đỡ một cách nhiệt tình nhưng lại gây hại (Mùi).`,
+      },
+      {
+        name: "Nhâm",
+        thapThanText: `- Hợi (-Thủy) - Tỷ Kiên: Là gốc rễ vững chắc của Nhâm Thủy (Lâm Quan). Mang lại sự thông minh, tự chủ và khả năng độc lập tác chiến. Có nhiều bạn bè tốt, sẵn sàng giúp đỡ. Tiêu cực là rất bướng bỉnh và có xu hướng tự làm theo ý mình, không nghe ai. Có thể trở nên quá tự tin vào bản thân dẫn đến thất bại.
+- Tý (+Thủy) - Kiếp Tài: Mang lại cho Nhâm Thủy ý chí sắt đá và tham vọng quyền lực (Đế cường). Vô cùng thông minh, mưu lược, có khả năng lãnh đạo và thu phục lòng người. Tiêu cực là cạnh tranh cực kỳ khốc liệt. Có tính chiếm hữu cao, có thể dùng mọi thủ đoạn để đạt được mục đích. Dễ gây ra tranh đoạt về tiền bạc, tình cảm.
+- Dần (+Mộc) - Thực Thần: Vô cùng năng động, có tài năng trong nhiều lĩnh vực, đặc biệt là kinh doanh và khám phá. Dám nghĩ dám làm, không ngại thử thách. Tiêu cực là dễ bốc đồng, làm việc theo cảm hứng. Có thể hơi liều lĩnh, "được ăn cả, ngã về không".
+- Mão (-Mộc) - Thương Quan: Có tài năng nghệ thuật, văn chương xuất chúng. Lời nói duyên dáng, có sức hấp dẫn. Rất thông minh và nhạy bén với thời cuộc. Tiêu cực là dễ quá đa tình, không chung thủy. Hay chỉ trích, phán xét người khác. Dễ bị cảm xúc chi phối hành động.
+- Ngọ (+Hỏa) - Chính Tài: Có cơ hội kiếm được những khoản tiền lớn và ổn định. Có đam mê và nhiệt huyết với công việc, dễ đạt được thành công về tài chính. Tiêu cực là dễ xảy ra xung đột, mâu thuẫn (Thủy Hỏa giao tranh). Tài chính có thể lên xuống thất thường nếu không biết quản lý tốt.
+- Tỵ (-Hỏa) - Thiên Tài: Rất nhạy bén với các cơ hội đầu tư, kinh doanh. Có thể kiếm được những khoản tiền lớn một cách bất ngờ. Tiêu cực là tài chính cực kỳ biến động, rủi ro cao. Dễ gặp phải các vấn đề tranh chấp liên quan đến tiền bạc.
+- Sửu, Mùi (-Thổ) - Chính Quan: Sửu mang lại sự ổn định và tinh thần trách nhiệm. Giúp họ kiên trì hơn trong việc theo đuổi mục tiêu sự nghiệp (Sửu), hoặc nếu trong mệnh có Kim mạnh để thông quan, có thể đạt được chức vụ trong các lĩnh vực liên quan đến đất đai, xây dựng (Mùi). Tiêu cực là Sửu là đất ẩm lạnh, làm giảm sức mạnh của Nhâm Thủy. Công việc có nhiều quy tắc ngầm, áp lực không rõ ràng nhưng dai dẳng (Sửu), hoặc Mùi là đất khô nóng, gây ra sự xung khắc mạnh. Công việc có nhiều áp lực rõ ràng, đòi hỏi cao, dễ xảy ra mâu thuẫn trực diện với cấp trên hoặc luật lệ (Mùi).
+- Thìn, Tuất (+Thổ) - Thiên Quan: Thìn là kho chứa nước, là Thiên Quan nhưng lại là nơi Nhâm Thủy có thể nương tựa. Mang lại quyền lực lớn lao, khả năng quản lý các dự án tầm cỡ (Thìn), hoặc rèn luyện ý chí kiên cường, không sợ hãi. Nếu vượt qua được sẽ đạt được vị thế và quyền lực mà không ai sánh bằng (Tuất). Tiêu cực là cuộc sống luôn đầy rẫy những trận chiến lớn. Áp lực cực đại, đòi hỏi phải luôn mạnh mẽ (Thìn), hoặc Tuất là đất khô nóng và là "lưới trời", gây ra sự khắc chế mạnh nhất. Đây là thử thách sinh tử, hiểm nguy bậc nhất. Dễ gặp tai nạn, bệnh tật hiểm nghèo, kiện tụng, tù tội (Tuất).
+- Dậu (-Kim) - Chính Ấn: Rất thông minh, có năng khiếu học thuật và nghệ thuật. Có khả năng tiếp thu kiến thức tốt và được sự hỗ trợ từ gia đình. Nguồn nước được bồi đắp liên tục. Tiêu cực là đôi khi quá lý thuyết, thiếu tính thực tế. Dễ bị ám ảnh bởi sự hoàn hảo. Dễ bị vướng vào các mối quan hệ tình cảm phức tạp (đào hoa).
+- Thân (+Kim) - Thiên Ấn: Cực kỳ thông minh, đa tài, học một biết mười. Có khả năng thành công trong nhiều lĩnh vực khác nhau, đặc biệt là những ngành nghề đòi hỏi tư duy linh hoạt. Tiêu cực là "cả thèm chóng chán", không kiên trì theo đuổi đến cùng. Dễ thay đổi, thiếu sự ổn định trong định hướng.`,
+      },
+      {
+        name: "Quý",
+        thapThanText: `- Tý (+Thủy) - Tỷ Kiên: Đây là gốc rễ vững chắc nhất của Quý Thủy (Đế cường), mang lại sự thông minh tột đỉnh và ý chí mạnh mẽ. Có khả năng lãnh đạo ngầm, thu hút người khác đi theo mình. Tiêu cực là rất ương ngạnh, bên ngoài mềm mỏng nhưng bên trong không ai thay đổi được. Có thể rất mưu mẹo, toan tính và có ham muốn kiểm soát mạnh mẽ.
+- Hợi (-Thủy) - Kiếp Tài: Cung cấp nguồn năng lượng dồi dào (Lâm Quan), giúp Quý Thủy trở nên tự tin và có sức sống hơn. Có nhiều bạn bè, mối quan hệ xã hội rộng. Tiêu cực là dễ bị cuốn theo đám đông, mất đi bản sắc riêng. Khó giữ được tiền bạc, dễ bị bạn bè vay mượn hoặc lừa gạt.
+- Mão (-Mộc) - Thực Thần: Rất thông minh, sáng tạo, có tài năng xuất chúng trong các lĩnh vực văn chương, nghệ thuật, giáo dục. Có khả năng biểu đạt cảm xúc một cách tinh tế. Tiêu cực là nhạy cảm quá mức, dễ bị tổn thương. Đôi khi hơi phù phiếm, chỉ chú trọng đến vẻ bề ngoài.
+- Dần (+Mộc) - Thương Quan: Có tài năng đa dạng, có khả năng kinh doanh, đầu tư. Dám mạo hiểm, có chí tiến thủ và không ngừng học hỏi để vươn lên. Tiêu cực là dễ hành động bốc đồng, thiếu suy xét kỹ càng. Tham vọng quá lớn có thể dẫn đến thất bại. Dễ gặp rắc rối với pháp luật, quy định.
+- Tỵ (-Hỏa) - Chính Tài: Thông minh, biết cách kiếm tiền và quản lý tài chính một cách khôn ngoan. Thường có những công việc mang lại thu nhập tốt và ổn định. Tiêu cực là hay lo lắng về tiền bạc. Đôi khi hơi tính toán, chi li. Cần cẩn thận kẻo bị lừa gạt tài chính.
+- Ngọ (+Hỏa) - Thiên Tài: Có cơ hội kiếm được những khoản tiền lớn. Có đam mê và nhiệt huyết trong công việc kinh doanh, dám chấp nhận rủi ro để có lợi nhuận cao. Tiêu cực là chi tiêu hoang phí, tiền vào nhanh ra cũng nhanh. Dễ bị phá sản nếu đầu tư thất bại. Cuộc sống tài chính đầy biến động.
+- Thìn, Tuất (+Thổ) - Chính Quan: Thìn là kho chứa nước, vừa là Quan vừa là gốc rễ của Thủy. Điều này tạo ra một mối quan hệ phức tạp nhưng thuận lợi: cấp trên, tổ chức vừa quản lý vừa tạo điều kiện cho mình phát triển (Thìn), hoặc mang lại tinh thần trách nhiệm và sự tuân thủ kỷ luật. Giúp rèn luyện bản thân trong môi trường áp lực cao để trở nên mạnh mẽ hơn (Tuất). Tiêu cực là dễ bị vướng vào các mối quan hệ chồng chéo, phức tạp trong công việc. Đôi khi cấp trên hay đồng nghiệp cũng chính là đối thủ cạnh tranh ngầm (Thìn), hoặc Tuất là đất khô nóng (Hỏa khố), gây áp lực rất lớn cho Quý Thủy. Môi trường làm việc khắc nghiệt, cấp trên nghiêm khắc, đòi hỏi cao. Dễ bị căng thẳng, mệt mỏi vì công việc (Tuất).
+- Sửu, Mùi (-Thổ) - Thiên Quan: Khi có Ấn chế hóa, có thể biến áp lực thành động lực, đạt được quyền lực trong các môi trường đặc thù (nghiên cứu, kỹ thuật). Rèn luyện tính kiên nhẫn (Sửu), hoặc nếu trong mệnh có Mộc mạnh để chế ngự, có thể biến thử thách thành cơ hội để thể hiện tài năng, đạt được thành tựu bất ngờ (Mùi). Tiêu cực là Sửu là đất ẩm lạnh (Kim khố), là Thiên Quan mang tính âm thầm. Áp lực đến từ từ, dai dẳng, khó chịu. Dễ gặp phải tiểu nhân ngấm ngầm hãm hại, các bệnh mãn tính khó chữa (Sửu), hoặc Mùi là đất khô nóng (Mộc khố), Thiên Quan này đến một cách trực diện và mạnh mẽ. Thử thách, kẻ thù xuất hiện rõ ràng. Áp lực công việc rất lớn, dễ bị stress, nóng nảy. Nữ mệnh tình duyên vất vả (Mùi).
+- Dậu (-Kim) - Chính Ấn: Có tài năng đặc biệt, tư duy khác người. Có khả năng thành công trong các lĩnh vực đòi hỏi sự tinh xảo và độc đáo. Tiêu cực là tính cách kỳ lạ, khó hòa đồng. Dễ bị ám ảnh bởi những suy nghĩ tiêu cực. Có thể gặp khó khăn trong việc xây dựng các mối quan hệ thân thiết.
+- Thân (+Kim) - Thiên Ấn: Rất thông minh, có nguồn kiến thức dồi dào. Có khả năng học hỏi và áp dụng kiến thức một cách linh hoạt. Tiêu cực là đôi khi suy nghĩ quá nhiều mà không hành động. Có xu hướng dựa dẫm vào gia đình, người thân.`,
+      },
+      {
+        name: "Đinh",
+        thapThanText: `- Ngọ (+Hỏa) - Tỷ Kiên: Là gốc rễ vững chắc (Lộc), mang lại năng lượng, ý chí và sự tự chủ. Giúp Đinh Hỏa trở nên mạnh mẽ và quyết đoán hơn. Tiêu cực là cực kỳ cố chấp, một khi đã quyết thì không thay đổi. Tính cách nóng nảy, thiếu sự mềm mỏng, linh hoạt.
+- Tỵ (-Hỏa) - Kiếp Tài: Mang lại sự tự tin, năng lượng và khả năng cạnh tranh. Có nhiều bạn bè, mối quan hệ xã hội. Tiêu cực là nơi Đế cường của Kiếp Tài. Cạnh tranh cực kỳ khốc liệt. Dễ bị bạn bè lôi kéo, phản bội. Hao tài tốn của vì các mối quan hệ.
+- Thìn, Tuất (+Thổ) - Thương Quan: Có đầu óc thông minh, khả năng sáng tạo tốt (Thìn), hoặc là lò lửa, là nơi Đinh Hỏa phát huy tốt nhất khả năng "rèn luyện" của mình. Rất giỏi trong các ngành nghề kỹ thuật, chuyên môn cao, đòi hỏi sự tập trung (Tuất). Tiêu cực là Thìn là đất ẩm, làm Hỏa bị lu mờ. Dễ bị người khác xem thường tài năng. Lời nói có thể kiêu ngạo nhưng không đủ sức thuyết phục (Thìn), hoặc dễ trở nên quá tập trung vào chuyên môn mà khô khan, khó gần. Có thể hơi kiêu ngạo về tài năng của mình (Tuất).
+- Sửu, Mùi (-Thổ) - Thực Thần: Rèn luyện tính kiên nhẫn, khả năng làm việc tỉ mỉ trong thời gian dài (Sửu), hoặc là đất khô, chứa Mộc, có thể giúp Đinh Hỏa duy trì sự sáng tạo. Có tài năng trong lĩnh vực nghệ thuật, ẩm thực (Mùi). Tiêu cực là Sửu là đất ẩm lạnh, làm dập tắt ngọn lửa. Khiến Đinh Hỏa mất hết sức sống, trở nên bi quan, u uất. Tài năng và sức khỏe đều bị ảnh hưởng xấu (Sửu), hoặc vẫn làm Hỏa bị yếu đi. Có thể trở nên quá đam mê hưởng thụ, vui chơi mà thiếu đi ý chí phấn đấu (Mùi).
+- Dậu (-Kim) - Thiên Tài: Rất nhạy bén với các cơ hội tài chính. Có thể có được những khoản thu nhập bất ngờ. Tiêu cực là tiền bạc đến và đi rất nhanh. Dễ bị thua lỗ vì các quyết định đầu tư vội vàng.
+- Thân (+Kim) - Chính Tài: Có nhiều cơ hội kiếm tiền, có khả năng quản lý các dự án tài chính. Tiêu cực là tài chính không ổn định, lúc được lúc mất. Dễ bị công việc làm cho mệt mỏi.
+- Tý (+Thủy) - Thiên Quan: Rèn luyện ý chí sinh tồn phi thường. Tiêu cực là áp lực từ mọi phía, cảm giác như bị dồn vào chân tường. Sức khỏe suy yếu, đặc biệt là mắt và hệ tim mạch. Cuộc sống luôn đầy rẫy khó khăn, thử thách.
+- Hợi (-Thủy) - Chính Quan: Rèn luyện cho Đinh Hỏa khả năng làm việc trong môi trường có kỷ luật, nguyên tắc. Tiêu cực là áp lực công việc đến một cách âm thầm nhưng mạnh mẽ. Luôn cảm thấy bị kiểm soát, gò bó. Nữ mệnh có chồng gia trưởng.
+- Dần (+Mộc) - Chính Ấn: Là nguồn hỗ trợ mạnh mẽ và vững chắc. Có nền tảng gia đình, học vấn tốt. Luôn có người giúp đỡ lúc khó khăn. Tiêu cực là có thể vì được che chở quá mức mà trở nên thiếu kinh nghiệm sống, hơi ngây thơ.
+- Mão (-Mộc) - Thiên Ấn: Rất thông minh, có năng khiếu trong các lĩnh vực nghệ thuật, thủ công. Có trực giác tốt. Tiêu cực là dễ "cả thèm chóng chán", không theo đuổi kiến thức đến cùng. Suy nghĩ có phần kỳ lạ, khó hòa đồng, dễ cảm thấy cô độc.`,
+      },
+      {
+        name: "Canh",
+        thapThanText: `- Thân (+Kim) - Tỷ Kiên: Là gốc rễ vững chắc (Lâm Quan), mang lại sự thông minh, năng động và đa tài. Rất giỏi trong việc thực thi, hành động nhanh nhẹn, dứt khoát. Tiêu cực là rất hiếu thắng, thích cạnh tranh và có phần liều lĩnh. Dễ thay đổi, thiếu sự ổn định lâu dài. Cần cẩn thận với tai nạn xe cộ, va chạm.
+- Dậu (-Kim) - Kiếp Tài: Giúp Canh Kim có khả năng ăn nói tốt hơn, biết cách thể hiện bản thân một cách duyên dáng (Đế cường). Có thể thành công trong các lĩnh vực cần sự kết hợp giữa sức mạnh và vẻ đẹp. Tiêu cực là dễ vướng vào các cuộc tranh cãi, thị phi. Có thể bị hao tài vì các mối quan hệ xã hội. Dễ có các vấn đề liên quan đến tình cảm, tửu sắc.
+- Hợi (-Thủy) - Thực Thần: Rất thông minh, có tầm nhìn xa. Có khả năng học hỏi và sáng tạo không ngừng. Thích hợp với các công việc đòi hỏi tư duy và sự di chuyển. Tiêu cực là dễ hành động theo cảm tính. Có thể hơi thiếu thực tế, suy nghĩ nhiều hơn làm. Năng lượng bị tiết xuất quá nhiều.
+- Tý (+Thủy) - Thương Quan: Cực kỳ thông minh, có tài năng xuất chúng và khả năng sáng tạo độc đáo. Có thể tạo ra những thành tựu đột phá. Tiêu cực là thích nổi loạn, không chịu sự gò bó. Dễ gặp rắc rối với pháp luật. Có xu hướng cô độc, khó hòa nhập. Kim bị Thủy lạnh làm cho "chết", mất đi sự ấm áp.
+- Mão (-Mộc) - Chính Tài: Có khả năng quản lý tài chính tốt, biết cách tích lũy. Có thu nhập ổn định từ công việc chăm chỉ. Tiêu cực là dễ trở nên quá tính toán, chi li. Có thể gặp khó khăn trong việc kiếm tiền vì Mão Mộc là Âm Mộc yếu ớt so với Canh Kim.
+- Dần (+Mộc) - Thiên Tài: Có khí phách, dám nghĩ dám làm trong kinh doanh. Có khả năng kiếm được những khoản tiền lớn thông qua đầu tư, mạo hiểm. Tiêu cực là tài chính rất bấp bênh. Dễ gặp rủi ro lớn trong đầu tư, có thể mất trắng. Cần cẩn thận với các vấn đề liên quan đến xe cộ.
+- Ngọ (+Hỏa) - Chính Quan: Có tinh thần trách nhiệm cao, ý chí mạnh mẽ để theo đuổi công danh. Có cơ hội làm lãnh đạo, quản lý trong môi trường có kỷ luật cao. Tiêu cực là áp lực công việc rất lớn, luôn trong trạng thái căng thẳng. Dễ bị các bệnh liên quan đến tim mạch, huyết áp. Tính cách có phần nóng nảy, cứng nhắc.
+- Tỵ (-Hỏa) - Thiên Quan: Có khả năng làm việc dưới áp lực cao. Rất quyết đoán và có uy quyền trong lĩnh vực của mình. Tỵ là đất trường sinh của Canh Kim, nên dù là Sát nhưng vẫn có yếu tố hỗ trợ ngầm. Tiêu cực là luôn phải đối mặt với sự cạnh tranh khốc liệt và nguy hiểm. Dễ gặp tai nạn, kiện tụng. Sức khỏe dễ bị ảnh hưởng, đặc biệt là hệ hô hấp.
+- Sửu, Mùi (-Thổ) - Chính Ấn: Mang lại sự hỗ trợ bền bỉ, kiên trì. Có sự giúp đỡ từ gia đình, người thân một cách thầm lặng (Sửu), hoặc có sự hỗ trợ về mặt vật chất, đất đai. Có thể được thừa hưởng tài sản (Mùi). Tiêu cực là Sửu là mộ của Kim, vừa là Ấn vừa là nơi chôn vùi. Khiến Canh Kim trở nên chậm chạp, hướng nội, thiếu sự năng động. Dễ bị bao bọc quá mức, mất đi cơ hội để rèn luyện và tỏa sáng (Sửu), hoặc Mùi là đất khô nóng, làm cho Kim trở nên giòn và dễ gãy. Sự hỗ trợ này có thể đi kèm với điều kiện, hoặc đến từ những người nóng nảy, khiến bản thân cảm thấy không thoải mái, áp lực (Mùi).
+- Thìn, Tuất (+Thổ) - Thiên Ấn: Thìn là đất ẩm, có thể sinh Kim mà không làm Kim bị khô giòn. Đây là loại Thiên Ấn tốt, mang lại sự hỗ trợ thông minh, giúp phát huy tài năng. Có quý nhân giúp đỡ một cách khéo léo (Thìn), hoặc rèn luyện ý chí và sự kiên định. Có thể có hứng thú với các lĩnh vực huyền học, tôn giáo (Tuất). Tiêu cực là dù tốt nhưng nếu quá nhiều Thổ vẫn sẽ làm Kim bị chôn vùi. Dễ trở nên ỷ lại, thiếu đi sự quyết đoán cần có (Thìn), hoặc Tuất là đất khô nóng (Hỏa khố), là loại Thiên Ấn xấu nhất cho Canh Kim. Khiến Kim trở nên cực kỳ giòn, dễ gãy, tính tình cố chấp, bảo thủ đến cực đoan. Sự hỗ trợ nhận được thường đi kèm với áp lực lớn hoặc không thực chất (Tuất).`,
+      },
+    ];
+    let thapThanText = thapThan.find(
+      (item) => item.name === nhatChuName,
+    ).thapThanText;
+    return thapThanText;
+  };
+
+  const getNapAm = (napAm) => {
+    if (!napAm) return "";
+    let napAmData = [
+      {
+        name: "KIẾM PHONG KIM",
+        description: `KIẾM PHONG KIM (Vũ Khí)
+•	Nguồn Gốc Can Chi: Nhâm Thân, Quý Dậu
+•	Hình Tượng & Bản Chất: Là kim loại đã được tôi luyện đến độ cứng rắn và sắc bén cao nhất. Nó là biểu tượng của vũ khí, quyền lực, kỷ luật thép và sự quyết đoán. Mang sát khí mạnh, có công năng chặt, chém và phân định rạch ròi.
+•	Đặc tính đột biến (Tổng quát): Cần Hỏa để tôi luyện nên không sợ Hỏa ở mức độ vừa phải. Cần Thủy để mài dũa cho thêm sắc bén. Gặp Mộc thì thể hiện được hết công năng của mình.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này cương trực, ý chí sắt đá, quyết đoán, có tài năng lãnh đạo và giỏi thực thi. Họ sống có mục tiêu rõ ràng, không ngại va chạm để bảo vệ quan điểm. Tuy nhiên, họ có thể quá cứng nhắc, lạnh lùng, dễ gây tổn thương cho người khác.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự sắc bén & Nguy cơ của sự tàn phá. Đây là dạng Kim đã đạt đến đỉnh cao của công năng và sức mạnh. Nó đã được tôi luyện (qua Hỏa) và mài dũa (qua Thủy) để trở nên cứng rắn và sắc bén nhất. Sức mạnh của nó là khả năng thực thi, phân định rõ ràng, mang tính quyết đoán và có tác động mạnh mẽ nhất.`,
+        coreMechanismEn: `Core Mechanism: Kinetic energy and structural rigidity are maximally concentrated at a microscopic cross-section to create absolute penetrating and severing pressure against membrane bonds. The system operates with zero elasticity. Microscopic destructive power reaches its maximum, but there is a risk of internal structural fracture (brittleness) if the impact force vector directly collides with a system of equal or greater matter density.`,
+        systemCode: "[WS-N1-2]",
+        nameEn: "Sharp Executive Power",
+        descriptionEn: `This is the symbol of steel discipline, decisiveness, and action capability reaching absolute precision. It represents clear-cut thinking, the ability to distinguish right from wrong without compromise, and strong will to cut away superfluities to achieve goals; this strength lies in combat readiness and sharpness, however, this ruthless frankness sometimes brings the risk of causing deep hurt to others.
+•	Mechanism of Absolute Precision Cutting: Operates like a sharp point concentrating energy to pierce and separate matter decisively; the risk is high damage capability, easily destroying the overall structure and wearing down the tool itself if it collides with too hard an obstacle.`,
+      },
+      {
+        name: "KIM BẠCH KIM",
+        description: `KIM BẠCH KIM (Kim Loại Thuần Khiết)
+•	Nguồn Gốc Can Chi: Nhâm Dần, Quý Mão
+•	Hình Tượng & Bản Chất: "Bạch" nghĩa là trắng, tinh khiết. Đây là hình tượng kim loại đã được luyện, tách khỏi tạp chất, trở thành vàng nén, thỏi bạc, kim loại nguyên chất. Nó là biểu tượng của giá trị nội tại, sự cô đọng, tinh túy và thanh khiết.
+•	Đặc tính đột biến (Tổng quát): Là Kim duy nhất không có gốc từ Thổ. Nó là sự kết tinh từ quá trình Thủy sinh Mộc. Do đã tinh khiết nên rất kỵ Hỏa (lửa làm ô tạp). Không ưa Thổ (đất làm vẩn đục).
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có phẩm chất trong sạch, cốt cách thanh cao, ít nói nhưng lời nói có trọng lượng. Họ là những người có giá trị thực chất. Tuy nhiên, họ có thể cô độc, khó hòa hợp với môi trường xô bồ.
+•	Ngữ Nghĩa Cốt Lõi: Giá trị của sự tinh khiết & Sự cao quý, xa cách của lý tưởng. Đây là kim loại ở dạng nguyên chất, cô đọng (vàng thỏi, bạc nén). Sức mạnh của nó là giá trị nội tại, sự tinh khiết và là nền tảng để tạo ra các dạng Kim khác. Nó rất mạnh về bản chất nhưng chưa có công năng cụ thể như vũ khí hay trang sức.`,
+        coreMechanismEn: `Core Mechanism: The structural matrix reaches atomic homogeneity and maximum matter density. The system exhibits absolute inertness, rejecting all attempts at bonding or intrusion from external variables. Its core defense mechanism is repulsion and the complete neutralization of all non-homogeneous components, maintaining originality by completely sealing its metabolic exchange ports with the environment.`,
+        systemCode: "[WS-N1-5]",
+        nameEn: "Pure Bravery",
+        descriptionEn: `This is the symbol of condensation, independence, and complete separation from the chaotic influences around. It represents the most core values, consistency in thought, and high concentration on the essence of the problem; this strength lies in purity and noble dignity, however, this idealization and separation sometimes create a cold distance, making it lonely in its own perfection.
+•	Mechanism of Consistent Purity: A form of matter that has reached the highest degree of condensation and purity, not corroded or degenerated; however, the inertness makes it difficult to link, standing completely separate and becoming cold, lonely in the perfection of itself.`,
+      },
+      {
+        name: "SA TRUNG KIM",
+        description: `SA TRUNG KIM (Kim Loại Trong Cát)
+•	Nguồn Gốc Can Chi: Giáp Ngọ, Ất Mùi
+•	Hình Tượng & Bản Chất: Là khoáng sản, quặng kim loại còn lẫn trong đất cát. Nó là biểu tượng của tiềm năng lớn lao nhưng còn ẩn giấu, cần sự khai phá, sàng lọc và tôi luyện mới có thể trở thành vật phẩm có giá trị.
+•	Đặc tính đột biến (Tổng quát): Bị Thổ vùi lấp. Cần Thủy để đãi lọc. Cần Hỏa để luyện. Khi chưa khai thác thì không khắc được Mộc.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có nhiều tài năng tiềm ẩn, kiên nhẫn, có nội lực. Tuy nhiên, nếu không gặp thời, tài năng có thể bị chôn vùi, đôi khi thiếu quyết đoán.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của tiềm năng ẩn giấu & Nguy cơ của sự mai một. Sức mạnh của nó nằm ở dạng tiềm năng. Đây là quặng kim loại, là vàng trong cát, có giá trị lớn nhưng còn bị che lấp và cần được khai phá. Nó mạnh hơn các dạng Kim chưa định hình khác vì đã là khoáng sản rắn chắc, chỉ chờ được khám phá.`,
+        coreMechanismEn: `Core Mechanism: Core value density exists in a state of maximum dispersion. High-density nodes are randomly mixed within a massive volume of inert impurities and signal noise. The core cannot be extracted by a single severing impulse; it requires a persistent, iterative cycle of mechanical friction, centrifugal separation, or multi-layered filtration to isolate the core signal from the surrounding valueless mass.`,
+        systemCode: "[WS-N1-4]",
+        nameEn: "Value Awaiting Discovery",
+        descriptionEn: `This is the image of true talent but still mixed among ordinary things, not yet clearly separated. It represents precious qualities hiding themselves, requiring a process of screening, training, and serious effort to reveal their full value; this strength lies in immense potential, but without persistent honing, it is very easily obscured and forgotten amidst the chaotic crowd.
+•	Mechanism of Dispersed Potential: Contains precious material particles mixed in a chaotic environment; this characteristic requires a costly screening process; without strong external impact, the real value remains forever hidden and assimilated with ordinary earth and stones.`,
+      },
+      {
+        name: "THOA XUYẾN KIM",
+        description: `THOA XUYẾN KIM (Trang Sức)
+•	Nguồn Gốc Can Chi: Canh Tuất, Tân Hợi
+•	Hình Tượng & Bản Chất: Là vàng bạc đã được chế tác tinh xảo thành đồ trang sức quý giá. Nó là biểu tượng của sự cao sang, quyền quý, vẻ đẹp, địa vị xã hội và sự giàu có. Không có công năng thực chiến nhưng có giá trị cao về mặt phẩm chất.
+•	Đặc tính đột biến (Tổng quát): Vì đã là thành phẩm tinh xảo nên rất kỵ Hỏa, gặp lửa sẽ bị hư hoại. Cần nhất là Thủy để gột rửa, làm cho sáng bóng, tăng thêm vẻ đẹp.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có khí chất thanh cao, tao nhã, có gu thẩm mỹ tốt và coi trọng danh dự. Họ có số được người khác kính trọng, thường có địa vị trong xã hội. Tuy nhiên, họ có thể kiêu kỳ, xa rời thực tế, thiếu khả năng chịu đựng gian khổ.
+•	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự cao quý & Sự yếu đuối khi thiếu thực chiến. Sức mạnh của nó nằm ở giá trị và sự cao quý. Dù không có sức công phá như vũ khí, nó là dạng Kim đã được chế tác tinh xảo, đạt đến đỉnh cao của vẻ đẹp và phẩm chất. Sức mạnh của nó là sự sang trọng, địa vị và giá trị được xã hội công nhận.`,
+        coreMechanismEn: `Core Mechanism: The system structure has undergone micro-tuning, actively sacrificing core mechanical load-bearing capacity to optimize surface area and signal/optical radiation amplification amplitude to the maximum. The mechanical structure is highly fragile and easily broken under direct compressive pressure. Its power does not lie in physical collision force but in its ability to manipulate surface wavelengths to generate an output conversion value far exceeding its actual physical mass.`,
+        systemCode: "[WS-N1-6]",
+        nameEn: "Sophisticated Nobility",
+        descriptionEn: `This is the embodiment of perfection, superior aesthetic taste, and the desire for social recognition of class. It represents self-radiating value, elegance, and the need to affirm position through community respect; this inner force does not lean towards collision or survival struggle but focuses on maintaining a perfect image, sophistication in behavior, and attraction from inner qualities.
+•	Mechanism of Subtle Glowing Frequency: Radiates an aura of perfection and high aesthetic value, attracting attention; but the structure is fragile, easily deformed, scratched, and loses value if not preserved in a safe environment with little impact.`,
+      },
+      {
+        name: "HẢI TRUNG KIM",
+        description: `HẢI TRUNG KIM (Kim Loại dưới Biển)
+•	Nguồn Gốc Can Chi: Giáp Tý, Ất Sửu
+•	Hình Tượng & Bản Chất: Là kho tàng kim loại, vàng bạc, châu báu khổng lồ lắng đọng dưới đáy đại dương. Nó là biểu tượng của tiềm năng vĩ đại nhất, của sự giàu có và trí tuệ ở dạng thuần túy, nguyên sơ, được bảo tồn trong sự tĩnh lặng của biển sâu.
+•	Đặc tính đột biến (Tổng quát): Bị Thủy bao bọc, không phải là kìm hãm mà là che chở, bảo tồn giá trị. Do đó, nó không sợ Hỏa vì nước biển đã cách ly. Không thể khắc Mộc vì chưa được khai phá. Sức mạnh của nó là nội tại, không phụ thuộc vào các yếu tố bên ngoài.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có nội lực thâm sâu, trí tuệ uyên bác và tiềm năng cực lớn. Họ giống như một kho báu chưa được khám phá. Cuộc sống của họ thường an tĩnh, không phô trương, nhưng một khi đã gặp được môi trường hoặc con người phù hợp để "khai phá", họ sẽ tạo ra những giá trị phi thường.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của tiềm năng vô hạn & Thử thách của sự khai phá. Đại diện cho tiềm năng và giá trị nội tại lớn nhất. Đây là kho báu nguyên sơ, khổng lồ. Tuy chưa được khai phá nhưng trữ lượng và giá trị tiềm ẩn của nó vượt xa các dạng Kim khác. Sức mạnh của nó là sức mạnh của chiều sâu và sự giàu có vô tận.`,
+        coreMechanismEn: `Core Mechanism: The mass of latent dark matter is compressed under maximum multi-dimensional pressure at the deepest basal layer. Completely isolated from kinetic fluctuations at the surface layer. The system is in a state of absolute stasis, emitting no radiation and reflecting no signals. To extract this core structure, the system cannot use short-term collision impulses but is forced to use a specialized, continuously maintained pulling force vector to overcome the immense compressive pressure of the surrounding environment. `,
+        systemCode: "[WS-N1-1]",
+        nameEn: "Hidden Wisdom",
+        descriptionEn: `This is the power of colossal potential that is submerged deep in introversion, mystery, and elusiveness. It represents a treasury of original knowledge and deep capacity not yet revealed, carrying a passive nature of waiting for the opportunity to shine; this depth contains infinite inner force but also creates a great challenge in self-expression and connecting with the outside world.
+•	Mechanism of Submerged Raw Material: A massive volume of value lying in a dormant state under high pressure, hard to erode; the disadvantage is high inertia, difficult to exploit, requires complex processes to bring to the surface, and is easily forgotten in eternal darkness.`,
+      },
+      {
+        name: "BẠCH LẠP KIM",
+        description: `BẠCH LẠP KIM (Kim Loại Lỏng)
+•	Nguồn Gốc Can Chi: Canh Thìn, Tân Tỵ
+•	Hình Tượng & Bản Chất: Là kim loại ở trạng thái ban sơ, đang nóng chảy hoặc chưa thành hình khối rõ ràng, còn lẫn tạp chất. Nó là biểu tượng của sự khởi đầu, khả năng thay đổi nhưng còn non nớt, chưa có giá trị cụ thể.
+•	Đặc tính đột biến (Tổng quát): Cần nhất là Hỏa để loại bỏ tạp chất và định hình. Kỵ Thủy mạnh làm nguội lạnh, mất đi khả năng biến đổi. Không có khả năng khắc Mộc.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có khả năng thích nghi tốt, dễ học hỏi, có tiềm năng lớn. Họ cần một môi trường tốt, một người thầy để định hướng phát triển. Tuy nhiên, họ thiếu tự chủ và khó thành công khi đứng một mình.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự biến đổi & Sự yếu đuối vì chưa định hình. Đây là dạng Kim ở trạng thái yếu và không ổn định nhất. Nó chưa được định hình, còn lẫn tạp chất và dễ bị tác động bởi các yếu tố bên ngoài (cần Hỏa để duy trì, sợ Thủy làm nguội). Sức mạnh duy nhất của nó là khả năng biến đổi, nhưng ở trạng thái hiện tại, nó không có sức mạnh nội tại.`,
+        coreMechanismEn: `Core Mechanism: The system is in a critical phase transition. The core structure absorbs maximum heat and kinetic energy, temporarily breaking solid bonds to reshape. It is characterized by absolute malleability and can adapt to any new structural mold. However, this is a high-risk boundary state: it is easily permanently deformed or can lose integrity if environmental pressure and heat drop suddenly before the phase transition is complete.`,
+        systemCode: "[WS-N1-3]",
+        nameEn: "Transformative Potential",
+        descriptionEn: `This is the primitive stage of energy, representing pure beginnings and the ability to change form flexibly without a fixed shape yet. It symbolizes the process of self-completion, openness to shedding old impurities to seek a unique identity; although lacking the stability and solidity of a defined personality, it possesses a huge opportunity to transform and adapt to every new mold.
+•	Mechanism of Molten Shaping: The stage where energy is transforming, removing impurities to find a new form; the risk is structural instability, easily being adulterated again, and lacking the necessary hardness to perform load-bearing functions.`,
+      },
+      {
+        name: "THIÊN THƯỢNG HỎA",
+        description: `THIÊN THƯỢNG HỎA (Mặt Trời)
+•	Nguồn Gốc Can Chi: Mậu Ngọ, Kỷ Mùi
+•	Hình Tượng & Bản Chất: Là hình tượng lửa của mặt trời lúc ban trưa, nguồn sáng lớn nhất, rực rỡ và quang minh nhất, bao trùm vạn vật. Nó là biểu tượng của quyền lực tối cao, sự công bằng, chính trực và năng lượng sống dồi dào.
+•	Đặc tính đột biến (Tổng quát): Là vua của các loại Hỏa, không sợ lửa khác. Có thể làm bốc hơi các loại Thủy nhỏ, chỉ có Đại Hải Thủy mới có thể cân bằng lại. Mang lại lợi ích và sự sống cho Mộc và Thổ.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này quang minh, lỗi lạc, có tầm ảnh hưởng lớn và tố chất lãnh đạo. Họ sống công bằng, chính trực và có tấm lòng rộng mở. Tuy nhiên, nếu năng lượng quá mạnh, họ có thể trở nên độc đoán, thiêu đốt những người xung quanh.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự quang minh & Nguy cơ của sự thiêu đốt. Đây là "vua của các loại Hỏa". Sức mạnh của nó là tuyệt đối, bao trùm vạn vật và là nguồn năng lượng của sự sống.`,
+        coreMechanismEn: `Core Mechanism: A macro-field thermal radiation system emitting continuous, omnidirectional energy from a coordinate with absolute potential energy. It uniformly blankets the entire spatial coordinate system below with kinetic energy and radiation without consuming the mass of receiving objects. Its impact capability depends entirely on the distance and radiation-catching cross-section of targets, remaining completely inert to reactive interactions or resistance from below.`,
+        systemCode: "[WS-N4-6]",
+        nameEn: "Supreme Authority",
+        descriptionEn: `This is the embodiment of absolute integrity and magnanimous energy that covers all aspects of life. It represents a public, transparent power, always bestowing value and life upon its surroundings without demanding anything in return. However, this excessive brilliance carries the risk of overwhelming and scorching others with its very own greatness.
+•	Mechanism of Fair Illumination: Operates like an eternal light source radiating transparent energy, warming and illuminating every hidden corner impartially; however, the excessive radiation intensity can cause an overwhelming effect, scorching weaker energy sources and depleting surrounding resources if not regulated.`,
+      },
+      {
+        name: "TÍCH LỊCH HỎA",
+        description: `TÍCH LỊCH HỎA (Sấm Sét)
+•	Nguồn Gốc Can Chi: Mậu Tý, Kỷ Sửu
+•	Hình Tượng & Bản Chất: Là lửa sinh ra từ sự va chạm của âm dương trong vũ trụ, là sấm sét vang trời. Nó là biểu tượng của sức mạnh đột phá, sự thay đổi chớp nhoáng, quyền uy của tạo hóa và những biến cố bất ngờ.
+•	Đặc tính đột biến (Tổng quát): Là loại Hỏa duy nhất sinh ra từ Thủy (sự giao tranh của mây mưa). Do đó không kỵ Thủy mà còn cần Thủy để xuất hiện. Lửa này có thể mang mưa đến tưới cho Mộc và Thổ.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tính cách mạnh mẽ, quyết liệt, có khả năng tạo ra những thay đổi lớn. Họ có thể thành công rất nhanh nhưng cuộc đời cũng đầy biến động. Họ hợp với các ngành nghề đòi hỏi sự táo bạo, đột phá.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự đột phá & Nguy cơ của sự hủy diệt. Tượng trưng cho sức mạnh đột phá, chớp nhoáng và quyền uy của tạo hóa. Sức mạnh của nó mang tính hủy diệt và tái tạo trong khoảnh khắc.`,
+        coreMechanismEn:
+          "Core Mechanism: An instantaneous electromagnetic/thermodynamic pulse that releases maximal energy in a time unit approaching zero ($t \\to 0$) due to a massive potential difference between two reference frames. It creates a shockwave and fracture acceleration that pierces through all isolating envelopes. Structural destruction is abrupt, causing paralysis in opposing systems but lacking the ability to maintain a long-term exothermic state.",
+        systemCode: "[WS-N4-3]",
+        nameEn: "Shocking Breakthrough",
+        descriptionEn: `This is the symbol of decisive turning points and the ability to change the situation in a split second. It represents explosive, authoritative energy, creating revolutionary shifts, breaking the old order to construct the new, containing high risks but accompanied by powerful opportunities for rebirth.
+•	Mechanism of Regenerative Explosion: A form of extremely powerful shock energy, capable of instant release to shatter old structures and trigger sudden change; the downside is high instability, leaving aftershocks that can cause serious damage to the system and a lack of continuity to maintain long-term order.`,
+      },
+      {
+        name: "LƯ TRUNG HỎA",
+        description: `LƯ TRUNG HỎA (Lửa Trong Lò)
+•	Nguồn Gốc Can Chi: Bính Dần, Đinh Mão
+•	Hình Tượng & Bản Chất: Là ngọn lửa cháy trong lò, cần có vật liệu (củi, than) và không gian (lò) để duy trì. Nó là biểu tượng của nội lực, tiềm năng cần được nuôi dưỡng, sự tôi luyện và quá trình chuẩn bị để tỏa sáng.
+•	Đặc tính đột biến (Tổng quát): Cần nhất là Mộc (củi) để cháy, không có Mộc sẽ tự lụi tàn. Không sợ Thổ (lò) và Kim (vật cần rèn). Rất kỵ Thủy vì sẽ bị dập tắt hoàn toàn.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tài năng tiềm ẩn, cần có sự giáo dục, rèn luyện và một môi trường tốt để phát triển. Thành công của họ đến muộn nhưng rất vững chắc. Họ có thể nóng tính nhưng thường không thể hiện ra ngoài.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của nội lực & Sự phụ thuộc vào nhiên liệu. Đây là ngọn lửa có mục đích, tượng trưng cho sức mạnh của sự tôi luyện và nội lực được nuôi dưỡng.`,
+        coreMechanismEn: `Core Mechanism: A high-intensity confined exothermic reaction encased in a highly rigid thermal insulation shell that prevents heat from dissipating into the environment, continuously reflecting it back into the core. It requires continuous fuel input. Kinetic energy is fully focused on melting, breaking, and radically transforming the micro-structure of any object introduced into its core space.`,
+        systemCode: "[WS-N4-1]",
+        nameEn: "Disciplined Forging",
+        descriptionEn: `This is the power of steadfastness and the harsh process of self-improvement within a specific framework. It symbolizes immense potential that needs to be nurtured and continuously honed, requiring support from the external environment to transform from a raw form into a useful and sustainable essence.
+•	Mechanism of Thermal Tempering: Operates on the principle of continuous compression and combustion within a limited space to distill the essence; but this mechanism depends entirely on the supplied fuel source, easily falling into a state of cooling down or self-extinguishing if it loses stimulation from the external environment.`,
+      },
+      {
+        name: "SƠN ĐẦU HỎA",
+        description: `SƠN ĐẦU HỎA (Núi Lửa)
+•	Nguồn Gốc Can Chi: Giáp Tuất, Ất Hợi
+•	Hình Tượng & Bản Chất: Là ngọn lửa âm ỉ bên trong lòng núi, có vẻ ngoài tĩnh lặng nhưng bên trong chứa đựng nguồn năng lượng khổng lồ. Nó là biểu tượng của sức mạnh tiềm tàng, nội lực thâm sâu, sự bùng nổ bất ngờ và khả năng thay đổi cục diện.
+•	Đặc tính đột biến (Tổng quát): Vẻ ngoài là Thổ nhưng bản chất là Hỏa. Vì vậy không sợ Thủy thông thường. Lửa này không cần Mộc để cháy, mà tự vận động từ bên trong. Khi phun trào, nó tạo ra Thổ mới.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có vẻ ngoài điềm tĩnh, ít nói, sống nội tâm nhưng lại có tài năng và ý chí rất lớn. Họ không dễ thể hiện nhưng một khi đã hành động thì vô cùng quyết liệt, tạo ra kết quả phi thường. Thành công của họ thường đến sau một giai đoạn dài tích lũy.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự dồn nén & Sự bùng nổ thay đổi tất cả. Đại diện cho sức mạnh nội lực bị dồn nén đến cực đại rồi bùng nổ. Nó là ngọn lửa của sự chuyển mình từ sâu trong lòng đất.`,
+        coreMechanismEn: `Core Mechanism: An uncontrolled high-potential surface radiation chain reaction occurring at the highest layer of the base structure. It generates a brilliant radiation spectrum and extremely fast horizontal propagation speed but lacks structural sustainability. The system completely burns and consumes the surface material membrane layer to generate instantaneous thrust, then self-extinguishes once fuel is depleted at that coordinate.`,
+        systemCode: "[WS-N4-2]",
+        nameEn: "Latent Inner Power",
+        descriptionEn: `This is a form of power characterized by surface silence and compression but containing unfathomable deep inner strength. It represents the ability to withstand high pressure, accumulating energy over a long period to create spectacular transformations, completely changing the current order through a sudden release of energy.
+•	Mechanism of Static Compression: A form of latent energy accumulated deep within a silent shell, capable of bearing large pressure loads before releasing; the risk lies in the delay of reaction and the danger of unannounced explosions, creating destructive power beyond control when the limit is reached.`,
+      },
+      {
+        name: "SƠN HẠ HỎA",
+        description: `SƠN HẠ HỎA (Lửa Nhân Tạo)
+•	Nguồn Gốc Can Chi: Bính Thân, Đinh Dậu
+•	Hình Tượng & Bản Chất: Là ngọn lửa do con người tạo ra dưới chân núi khi màn đêm buông xuống, như lửa trại, lửa lò rèn. Nó là biểu tượng của sự sống, hoạt động của con người, sự ấm áp, cộng đồng và nguồn năng lượng chủ động để xua tan bóng tối.
+•	Đặc tính đột biến (Tổng quát): Hỏa ở vào thế "bệnh" và "tử", không phải vì năng lượng yếu, mà vì sự phụ thuộc. Lửa này không thể tự tồn tại, phải dựa vào nhiên liệu (Mộc) để cháy. Không sợ Thổ (núi che gió).
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường nhiệt tình, năng nổ, hướng ngoại và có khả năng khuấy động tập thể. Họ giống như ngọn lửa trại, là trung tâm của sự chú ý. Tuy nhiên, họ có xu hướng "cả thèm chóng chán", cần sự cổ vũ và "nhiên liệu" (động lực, sự công nhận) từ bên ngoài để duy trì đam mê.
+•	Ngữ Nghĩa Cốt Lõi: Nhiệt huyết bùng cháy & Sức mạnh phụ thuộc. Là ngọn lửa của cộng đồng, phục vụ nhu cầu của con người, mang tính ứng dụng cao nhưng không ổn định.`,
+        coreMechanismEn: `Core Mechanism: A localized basal exothermic reaction that begins from a low potential energy point confined by narrow physical boundaries. It uses thermal convection to push kinetic energy upward. The system’s life-death cycle is short, its amplification range is narrow, and it depends entirely on the friction coefficient of adjacent basal materials.`,
+        systemCode: "[WS-N4-4]",
+        nameEn: "Practical Enthusiasm",
+        descriptionEn: `This is the energy source of proactivity, community spirit, and practical service. It represents eagerness and warmth in social relationships, always aiming to solve specific human needs, but its endurance depends heavily on interaction and encouragement from the collective.
+•	Mechanism of Radiating Enthusiasm: Operates on a resonance mechanism, creating spreading warmth to serve and connect surrounding entities; the weakness is rapid depletion, short-term range of operation, and easy dispersion of energy if not continuously refueled.`,
+      },
+      {
+        name: "PHÚC ĐĂNG HỎA",
+        description: `PHÚC ĐĂNG HỎA (Đèn Lồng)
+•	Nguồn Gốc Can Chi: Giáp Thìn, Ất Tỵ
+•	Hình Tượng & Bản Chất: Là ánh lửa của ngọn đèn do con người tạo ra, dùng để soi sáng vào ban đêm hoặc những nơi khuất. Nó là biểu tượng của tri thức, sự văn minh, niềm vui, sự dẫn đường và sự ấm áp trong một phạm vi nhỏ.
+•	Đặc tính đột biến (Tổng quát): Là Hỏa yếu, chỉ phát huy giá trị tốt nhất khi không có Thiên Thượng Hỏa (Mặt Trời). Rất sợ Thủy và gió lớn. Cần Mộc (dầu trong đèn, nến) để duy trì.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường là người mang lại tri thức, niềm vui cho người khác như thầy giáo, nhà tư vấn, nghệ sĩ. Họ thích các hoạt động về đêm. Tuy nhiên, họ có thể yếu đuối, cần sự che chở để tỏa sáng.
+•	Ngữ Nghĩa Cốt Lõi: Sự hữu ích của ánh sáng nhân tạo & Sự mong manh trước giông bão. Đây là loại Hỏa yếu nhất về mặt năng lượng vật lý, sức mạnh của nó nằm ở giá trị tinh thần và tri thức.`,
+        coreMechanismEn: `Core Mechanism: A micro-directional optical radiation system finely tuned to maintain a minimum and stable amplitude. The reaction core is encased in an isolation module to protect it from peripheral pressure and fluid turbulence. The emitted energy is non-lethal, not intended to generate destructive structural work, but to maintain the stability of an illumination spectrum within a pre-designated narrow spatial zone.`,
+        systemCode: "[WS-N4-5]",
+        nameEn: "Illuminating Wisdom",
+        descriptionEn: `This is the symbol of clarity, knowledge, and the ability to navigate in dark or micro-circumstances. It does not carry overwhelming physical power but leans towards spiritual values, enlightenment, and spreading belief; however, this energy source is quite sensitive and easily affected by large fluctuations from the environment.
+•	Mechanism of Guiding Frequency: Emits a focused, specialized beam of light to lead the way in the most microscopic or darkest circumstances; however, this energy amplitude is quite narrow, easily fluctuating, flickering, or extinguishing completely before strong headwinds or macro-level changes.`,
+      },
+      {
+        name: "ĐẠI HẢI THỦY",
+        description: `ĐẠI HẢI THỦY (Đại Dương)
+•	Nguồn Gốc Can Chi: Nhâm Tuất, Quý Hợi
+•	Hình Tượng & Bản Chất: Là hình tượng dòng nước ở trạng thái rộng lớn, mạnh mẽ và hùng vĩ nhất. Nó là biểu tượng của tham vọng lớn, nội lực hùng hậu, tiềm năng vô hạn nhưng cũng chứa đựng sự biến động và khó lường.
+•	Đặc tính đột biến (Tổng quát): Là vua của các loại Thủy, không sợ các dòng nước khác mà có thể dung nạp tất cả. Có thể nhấn chìm Thổ, dập tắt Hỏa. Chỉ bị Thổ rất mạnh (như đê điều) ngăn chặn.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có chí lớn, tư duy khoáng đạt, có tài năng và tiềm năng để làm những việc lớn lao. Họ có sức ảnh hưởng, thu hút người khác. Tuy nhiên, cuộc đời họ thường có nhiều sóng gió, tính tình có thể thất thường, khó đoán.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự vĩ đại & Nguy cơ của sự vô định. Đây là "vua của các loại Thủy". Đại dương là nơi quy tụ của tất cả các dòng nước, có quy mô và sức mạnh lớn nhất, không gì sánh bằng. Nó có thể nhấn chìm vạn vật, dung nạp tất cả các dòng chảy khác. Sức mạnh của nó là tuyệt đối và hùng vĩ.`,
+        coreMechanismEn: `Core Mechanism: An ultimate thermodynamic sink with maximum capacity, acting as the final convergence point of all circulation vectors in space. It possesses near-infinite capacity to absorb, dilute, and neutralize all sources of kinetic energy, chemical energy, or anomalous impulses without altering the basal state of the core. While the deep layers exhibit static inertia, the surface membrane can resonate to generate massive amplitude oscillations when subjected to sufficiently large interaction impulses.`,
+        systemCode: "[WS-N3-6]",
+        nameEn: "Grand Ambition",
+        descriptionEn: `This is the symbol of comprehensive thinking, immense capacity for absorption, and a desire for dominance. It represents a powerful, elusive inner force capable of accepting all opposing opinions to converge them into one, but it also contains unpredictable variations between deep silence and the ferocity that washes everything away.
+•	Mechanism of Total Absorption: A colossal containment mechanism capable of swallowing and dissolving all distinct flows into a unified block; but its variation is extreme, capable of shifting from a calm state to a state of engulfing and destroying everything instead of uplifting it.`,
+      },
+      {
+        name: "THIÊN HÀ THỦY",
+        description: `THIÊN HÀ THỦY (Nước Mưa)
+•	Nguồn Gốc Can Chi: Bính Ngọ, Đinh Mùi
+•	Hình Tượng & Bản Chất: Là nước mưa từ trên trời rơi xuống, mang tính phổ quát, ban ơn cho vạn vật. Nó là biểu tượng của sự tinh khôi, lòng nhân ái, sự sáng tạo và những gì mang tính tâm linh, vô hình.
+•	Đặc tính đột biến (Tổng quát): Nước từ trời nên không có nguồn từ Kim. Có thể tương tác với Hỏa (sấm sét). Mang lại lợi ích cho toàn bộ Mộc và Thổ, không có sự phân biệt.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tâm hồn trong sáng, nhân hậu, có trí tưởng tượng phong phú. Họ có thể thành công trong các lĩnh vực văn hóa, nghệ thuật, giáo dục, tôn giáo. Tuy nhiên, họ có thể hơi mơ mộng, thiếu thực tế.
+•	Ngữ Nghĩa Cốt Lõi: Sự màu nhiệm của ân huệ & Sự xa rời thực tế. Mặc dù không có lưu lượng tập trung như sông lớn, nhưng Nước Mưa lại có tầm ảnh hưởng phổ quát nhất. Nó rơi từ trên trời, ban phát sự sống cho cả một vùng rộng lớn không phân biệt. Về mặt quy mô tác động trong một thời điểm (cơn mưa lớn), nó chỉ đứng sau Đại Dương.`,
+        coreMechanismEn: `Core Mechanism: High-potential particulate dispersion from a state of maximum potential energy. The system releases matter from the highest energy level space, allowing it to uniformly cover and permeate all topological structures at lower energy levels. It is effectively unconstrained by physical routing barriers on the surface, enabling widespread temperature neutralization and state transformation to occur simultaneously.`,
+        systemCode: "[WS-N3-4]",
+        nameEn: "Universal Compassion",
+        descriptionEn: `This is the embodiment of idealism, nobility, and vast love without discrimination. It represents pure spiritual values, creativity, and inspiration spreading everywhere; however, it is sometimes too airy, detached from naked reality, and lacks focus on a specific goal.
+•	Mechanism of Purification Flow: Carries the characteristic of providing an ideal source of life for all things; however, due to its airy nature, this resource is often difficult to condense to solve practical problems.`,
+      },
+      {
+        name: "TRƯỜNG LƯU THỦY",
+        description: `TRƯỜNG LƯU THỦY (Sông Dài)
+•	Nguồn Gốc Can Chi: Nhâm Thìn, Quý Tỵ
+•	Hình Tượng & Bản Chất: Là dòng sông lớn chảy một chặng đường rất dài, len lỏi qua các địa hình để cuối cùng đổ ra biển. Nó là biểu tượng của sự kiên nhẫn, tầm nhìn xa, khả năng thích ứng và tích lũy theo thời gian.
+•	Đặc tính đột biến (Tổng quát): Dòng nước này tự tìm đường đi, có thể biến đổi để phù hợp với Thổ. Không sợ Thổ chặn vì nó sẽ tự tìm đường vòng. Đích đến cuối cùng là gặp được Đại Hải Thủy.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có khả năng hoạch định dài hạn, suy nghĩ sâu xa, không nóng vội. Họ có thể đạt được thành công lớn khi về già. Tuy nhiên, họ có thể thiếu quyết đoán, chần chừ, mất nhiều thời gian để đi đến mục tiêu.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của tầm nhìn xa & Sự chậm chạp của con đường dài. Đây là hình ảnh dòng sông lớn, có lưu lượng ổn định và sức mạnh bền bỉ theo thời gian. Nó có sức mạnh bào mòn đất đá, thay đổi địa hình và là nguồn sống cho cả một khu vực nó chảy qua. Sức mạnh của nó đến từ sự kiên trì và dòng chảy không ngừng nghỉ.`,
+        coreMechanismEn: `Core Mechanism: A macro-scale transport matrix possessing colossal total mass and momentum. Due to its immense mass inertia, the system cannot abruptly change its orbital vector. Its core mechanical characteristic is the continuous generation of shear stress, slowly eroding, disintegrating, and reshaping any solid boundaries it contacts over long-term operational cycles.`,
+        systemCode: "[WS-N3-3]",
+        nameEn: "Enduring Vision",
+        descriptionEn: `This is the power of persistence, far-sightedness, and flexible adaptation through all circumstances. It symbolizes the process of long-term experience accumulation, not rushing but slowly gliding past obstacles, using time and patience to create great achievements and change solid foundations.
+•	Mechanism of Enduring Motion: A form of energy in ceaseless flow, focusing on accumulation and osmosis over time to build a deep and wide foundation; the limitation is slow reaction speed, lack of breakthrough impulses, and a tendency toward stagnation, hesitating to change the established flow.`,
+      },
+      {
+        name: "ĐẠI KHÊ THỦY",
+        description: `ĐẠI KHÊ THỦY (Thác Nước)
+•	Nguồn Gốc Can Chi: Giáp Dần, Ất Mão
+•	Hình Tượng & Bản Chất: Là dòng nước lớn ở đầu nguồn, trong các khe núi, chảy mạnh mẽ, dữ dội nhưng chưa có hướng đi rõ ràng. Nó là biểu tượng của sức sống mãnh liệt, sự nhiệt huyết, thẳng thắn của tuổi trẻ.
+•	Đặc tính đột biến (Tổng quát): Vì ở đầu nguồn nên không ưa Kim (chưa cần đến nguồn). Thích gặp các loại Thủy khác để hợp thành sông lớn. Không sợ Thổ vì có thể cuốn trôi đất đá. Rất ưa Mộc vì nó thể hiện sức sống của núi rừng.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường hướng ngoại, thẳng thắn, nhiệt tình và thích tự do. Họ có nhiều ý tưởng, thích phiêu lưu mạo hiểm. Tuy nhiên, họ có thể bốc đồng, thiếu kiên nhẫn, không suy nghĩ dài hạn.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự nhiệt huyết & Sự thiếu định hướng của tuổi trẻ. Sức mạnh của Thác Nước rất dữ dội, mãnh liệt nhưng chỉ trong một phạm vi hẹp và ngắn. Nó có thể cuốn phăng đất đá ở đầu nguồn nhưng sức mạnh không bền bỉ và có định hướng như Sông Dài. Nó đại diện cho sức mạnh bộc phát nhất thời.`,
+        coreMechanismEn: `Core Mechanism: A turbulent kinetic flow activated by a sudden drop in potential energy differential (gradient drop). Linear velocity is driven to a maximum level for a short duration, generating vortices and high-intensity mechanical impact forces. The system shatters the equilibrium state of all objects in its trajectory with strong impulses, then dissipates energy and re-establishes a static equilibrium state at a lower level.`,
+        systemCode: "[WS-N3-5]",
+        nameEn: "Outspoken Passion",
+        descriptionEn: `This is the symbol of abundant vitality, eagerness, and the straightforward personality of youth. It represents powerful, fierce energy flows that often lack clear direction, are temporary in nature, and need guidance to turn initial impulses into practical effectiveness instead of waste.
+•	Mechanism of Powerful Impulse: Operates at high speed and large volume, creating fierce thrust to overcome obstacles; the drawback is a lack of direction, energy is easily dispersed uselessly, and it tends to wreak havoc on the banks if not channeled into a framework.`,
+      },
+      {
+        name: "TUYỀN TRUNG THỦY",
+        description: `TUYỀN TRUNG THỦY (Nước Suối)
+•	Nguồn Gốc Can Chi: Giáp Thân, Ất Dậu
+•	Hình Tượng & Bản Chất: Là dòng nước suối trong mát, chảy ra từ nguồn trong núi, lúc ẩn lúc hiện. Nó là biểu tượng của trí tuệ thanh khiết, sự tinh tường, khả năng nuôi dưỡng một cách thầm lặng và bền bỉ.
+•	Đặc tính đột biến (Tổng quát): Vì nguồn của nó là Kim (Thân, Dậu) nên đây là loại Thủy duy nhất càng gặp Kim lại càng mạnh, càng trong. Rất ưa Mộc để được nuôi dưỡng. Không sợ Thổ vì có thể len lỏi qua.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thông minh, thanh cao, có tấm lòng nhân hậu. Họ thích cuộc sống an tĩnh, không màng danh lợi xô bồ. Họ là những người thầy, nhà tư vấn thầm lặng. Tuy nhiên, họ có thể thiếu tham vọng, sống ẩn dật, khép kín.
+•	Ngữ Nghĩa Cốt Lõi: Sự trong lành của trí tuệ & Sự thầm lặng của cống hiến. Nước Suối có lưu lượng nhỏ, dòng chảy hiền hòa. Sức mạnh của nó không nằm ở sức công phá mà ở khả năng nuôi dưỡng, duy trì sự sống một cách bền bỉ và tinh khiết. Nó là khởi nguồn của những dòng sông lớn nhưng bản thân nó lại rất khiêm tốn.`,
+        coreMechanismEn: `Core Mechanism: A continuous unidirectional source flow emitted from a centralized origin point. Matter is maintained in an extremely low-entropy (high-purity) state. Kinetic energy is not generated from static compressive pressure but is continuously regenerated from the core source, forming a stable circulating vector capable of solventizing minor obstructive components along its linear trajectory.`,
+        systemCode: "[WS-N3-2]",
+        nameEn: "Deep Serenity",
+        descriptionEn: `This is the power of profound wisdom, purity, and the ability to nurture silently. It represents a clear, wise inner self that is not showy, always patiently cultivating and maintaining life for ideas or people around it quietly and persistently.
+•	Mechanism of Deep Nurturing: Acts as an underground vein providing pure and continuous vitality for the ecosystem; the risk is passivity, being buried too deep, making energy hard to exploit, and easily becoming corrupted or blocked if the surrounding environment changes negatively.`,
+      },
+      {
+        name: "GIẢN HẠ THỦY",
+        description: `GIẢN HẠ THỦY (Mạch Nước Ngầm)
+•	Nguồn Gốc Can Chi: Bính Tý, Đinh Sửu
+•	Hình Tượng & Bản Chất: Là dòng nước ngầm, mạch nước chảy trong khe sâu, lúc ẩn lúc hiện, lặng lẽ và mát lành. Nó là biểu tượng của nội tâm thâm sâu, trí tuệ tiềm ẩn và sự kiên trì bền bỉ nhưng ít khi thể hiện ra ngoài.
+•	Đặc tính đột biến (Tổng quát): Là Thủy ở tầng sâu nhất, không sợ Thổ vì nó nằm trong lòng đất. Cần Kim để sinh ra. Không sợ Hỏa yếu vì khó có thể tác động đến.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có nội tâm phức tạp, khó đoán, thông minh nhưng không khoe khoang. Họ có sự nhẫn nại và có thể thành công một cách thầm lặng. Tuy nhiên, họ có thể đa nghi, hay do dự, bỏ lỡ cơ hội.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự thâm trầm & Sự do dự vì đa nghi. Đây là dòng nước có lưu lượng nhỏ nhất và ẩn mình sâu nhất. Nó gần như không có tác động trực tiếp lên bề mặt. Sức mạnh của nó là sự tồn tại thầm lặng, bền bỉ và tiềm ẩn. Nó rất quan trọng nhưng lại yếu nhất về mặt biểu hiện ra bên ngoài.`,
+        coreMechanismEn: `Core Mechanism: A micro-fluidic subsurface flow of matter operating entirely beneath high-density solid structural layers, absolutely isolated from thermodynamic fluctuations at the surface. It has low linear kinetic energy but maintains extreme persistence. Its core strength is the ability to seep through microscopic structural fissures without triggering sensor or reactive force systems of mechanical barriers.`,
+        systemCode: "[WS-N3-1]",
+        nameEn: "Discreet Multidimensional",
+        descriptionEn: `This is the embodiment of a complex inner life, mystery, and the ability to endure silently. It represents carefully hidden strategies and calculations, characterized by high suspicion and caution, rarely revealing its full nature but possessing the ability to exist and maneuver through the narrowest cracks of life.
+•	Mechanism of Flexible Osmosis: The ability to weave through every narrow crevice, changing shape to survive and penetrate every obstacle; however, this elusive nature comes with inconsistency, energy is fragmented, and it is always in a state of underground fluctuation, lacking surface stability.`,
+      },
+      {
+        name: "ĐẠI LÂM MỘC",
+        description: `ĐẠI LÂM MỘC (Rừng Cây Lớn)
+•	Nguồn Gốc Can Chi: Mậu Thìn, Kỷ Tỵ
+•	Hình Tượng & Bản Chất: Là hình tượng của một khu rừng lớn với vô số cây cối hùng vĩ, xanh tươi. Nó là biểu tượng của sự thịnh vượng, sức sống mãnh liệt, tính cộng đồng và nền tảng vững chắc. Đây là dạng Mộc mạnh mẽ và có sức lan tỏa lớn nhất.
+•	Đặc tính đột biến (Tổng quát): Vì là cả một khu rừng nên không sợ Kim (một chiếc rìu không thể đốn hết). Cần Thủy để nuôi dưỡng và Thổ để làm nền tảng. Có thể lấn át Hỏa yếu.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tấm lòng nhân hậu, phóng khoáng, có tinh thần đồng đội và khả năng che chở cho người khác. Họ có nền tảng tốt, dễ thành công trong các lĩnh vực đòi hỏi sự hợp tác, quy mô lớn. Tuy nhiên, trong một tập thể lớn, họ có thể thiếu đi sự nổi bật cá nhân.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự hùng vĩ & Sự cạnh tranh của quần thể. Sức mạnh của Đại Lâm Mộc đến từ quy mô và tính quần thể. Một cây có thể bị đốn hạ, nhưng cả một khu rừng là một thế lực hùng vĩ, có sức sống mãnh liệt và rất khó bị hủy diệt. Sức mạnh của nó là sự to lớn, hùng hậu và vững chãi.`,
+        coreMechanismEn: `Core Mechanism: Macro-network topology structure. The system does not exist as a single node but develops into a population of intimately interconnected modules. It possesses maximal mechanical resistance against external impulses by dispersing impact forces evenly across the network surface. The stability of the system is traded for immense inherent inertia: it is extremely difficult to break, but once established, it is extraordinarily slow to change its micro-orientation.`,
+        systemCode: "[WS-N2-1]",
+        nameEn: "Community Power",
+        descriptionEn: `This is the embodiment of collective prosperity and tight social cohesion. It represents a solid system created from the unity of many individuals, where strength does not lie in solitude but in massive scale and mutual reliance for joint development, creating an overwhelming position difficult to be shaken by external forces but always harboring underground competition to rise up.
+•	Mechanism of Resonant Ecosystem: Creates strength from the connection of a dense network, using quantity and intertwining to create a solid balance; the weakness is fierce resource competition right within the internal structure, where individuals can easily have their distinct development space suppressed.`,
+      },
+      {
+        name: "TÙNG BÁCH MỘC",
+        description: `TÙNG BÁCH MỘC (Cây Thân Cứng, Mọc Thẳng)
+•	Nguồn Gốc Can Chi: Canh Dần, Tân Mão
+•	Hình Tượng & Bản Chất: Là hình ảnh cây tùng, cây bách hiên ngang, cứng cỏi, chịu đựng được sương tuyết giá lạnh. Nó là biểu tượng của sự kiên định, ý chí sắt đá, tuổi thọ, sự chính trực và khả năng vượt qua nghịch cảnh.
+•	Đặc tính đột biến (Tổng quát): Là loại Mộc duy nhất có thể chống chọi lại Kim (rìu khó đốn). Không sợ mùa đông (Thủy vượng). Sống trên núi cao nên không cần nhiều Thổ màu mỡ.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có ý chí kiên cường, lập trường vững vàng, sống có nguyên tắc và danh dự. Họ có thể gánh vác những trọng trách lớn, là trụ cột trong gia đình và tổ chức. Tuy nhiên, họ có thể cô độc, cứng nhắc và ít khi cúi mình.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự kiên định & Sự cô độc trong giá lạnh. Đây là loại Mộc cứng rắn, kiên định và có ý chí mạnh mẽ nhất. Nó là hình ảnh của cây đại thụ hiên ngang trước sương tuyết, không sợ Kim khắc (rìu khó đốn). Sức mạnh của nó nằm ở sự bất khuất, khí phách và khả năng chịu đựng nghịch cảnh khắc nghiệt nhất.`,
+        coreMechanismEn: `Core Mechanism: Proliferative momentum is concentrated entirely along the vertical axis (Z-axis). The system is designed to withstand tensile stress and provide thermal isolation in extreme environments where input resources approach zero. Instead of surface expansion, it propels its core structure through chaotic layers to establish an independent positioning axis, preserving its original orientation even when peripheral components are severed.`,
+        systemCode: "[WS-N2-3]",
+        nameEn: "Resilient Bravery",
+        descriptionEn: `This is the symbol of iron will, high moral character, and independent survival capability in the harshest circumstances. It represents integrity, firm living principles, and steadfastness that never bows to adversity; even if it must endure loneliness and cold, this inner force maintains its dignity intact and becomes a reliable spiritual pillar.
+•	Mechanism of Resilient Independence: Operates based on a mechanism of self-nourishment and extreme cold resistance, maintaining green life in harsh conditions; but this characteristic creates isolation, difficulty in harmonizing with normal ecosystems, and slow, solitary development.`,
+      },
+      {
+        name: "THẠCH LỰU MỘC",
+        description: `THẠCH LỰU MỘC (Cây Ăn Quả)
+•	Nguồn Gốc Can Chi: Canh Thân, Tân Dậu
+•	Hình Tượng & Bản Chất: Là hình ảnh cây thạch lựu, một loại cây mà giá trị không nằm ở thân gỗ mà ở quả (hoa thơm, quả ngọt). Nó là biểu tượng của vẻ đẹp và thành quả nội tại, cần sự tác động từ bên ngoài để kết trái.
+•	Đặc tính đột biến (Tổng quát): Là Mộc duy nhất bị Kim khắc mà lại trở nên tốt đẹp. Cần có Kim (dao kéo) cắt tỉa cành lá thì mới có thể ra hoa, kết trái. Do đó, nó không sợ Kim mà còn cần Kim.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tài năng, vẻ đẹp tiềm ẩn bên trong. Họ cần sự rèn luyện, kỷ luật, thậm chí là áp lực, chỉ trích để có thể tạo ra thành quả. Thành công của họ thường đến sau khi trải qua gian khó.
+•	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của thành quả & Sự trưởng thành từ áp lực. Sức mạnh của nó nằm ở sức sống phi thường và khả năng biến nghịch cảnh thành sức mạnh. Là Mộc duy nhất không những không sợ Kim mà còn cần Kim (sự cắt tỉa, áp lực) để phát triển và tạo ra thành quả. Đây là sức mạnh của sự kiên cường và ý chí vươn lên từ gian khó.`,
+        coreMechanismEn: `Core Mechanism: High-friction penetration capability. This system is specialized for operating in space-constrained environments with rigid base structures whose matter density exceeds its own. It accumulates micro-kinetic energy very slowly, continuously applying expansive force to crack enclosing barriers. Upon crossing the critical point, it compresses all absorbed resources into an extremely dense matter mass at the system terminus (compressed value crystallization), generating highly concentrated destructive power or conversion value.`,
+        systemCode: "[WS-N2-6]",
+        nameEn: "Achievement through Pressure",
+        descriptionEn: `This is the embodiment of deep inner beauty and the ability to turn adversity into glory. It represents a latent intense vitality, disregarding flashy external appearances but aiming for substantial results; this inner force demands strict training and pressure from the environment to reveal talent, affirming self-worth through brilliant and distinct achievements.
+•	Mechanism of Condensed Crystallization: Contains intense vitality inside a rough shell, capable of surviving and blooming brilliantly; however, this mechanism requires high-pressure conditions, and the shell is too hard and thorny, often causing difficulties for access and energy exchange.`,
+      },
+      {
+        name: "TANG ĐỐ MỘC",
+        description: `TANG ĐỐ MỘC (Cây Đa Dụng)
+•	Nguồn Gốc Can Chi: Nhâm Tý, Quý Sửu
+•	Hình Tượng & Bản Chất: Là hình ảnh cây dâu tằm, một loại cây có công năng đặc biệt (nuôi tằm, dệt lụa). Nó là biểu tượng của sự khéo léo, hữu ích trong một lĩnh vực chuyên biệt, sự hy sinh và cống hiến thầm lặng.
+•	Đặc tính đột biến (Tổng quát): Là Mộc sinh ra từ Thủy (Tý, Sửu). Rất cần Thủy để phát triển. Công năng của nó gắn liền với con người (chăn nuôi, dệt vải), do đó nó có tính "nhân tạo" và cần sự chăm sóc.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có tài năng đặc biệt trong một lĩnh vực hẹp, rất khéo léo và cần mẫn. Họ sống vì người khác nhiều hơn vì mình. Tuy nhiên, cuộc sống có thể vất vả, ít được hưởng thụ thành quả.
+•	Ngữ Nghĩa Cốt Lõi: Sự hữu ích của chuyên môn & Sự hy sinh thầm lặng. Sức mạnh của nó không nằm ở sự cứng cỏi hay tầm vóc, mà ở giá trị sử dụng và sự linh hoạt. Gỗ dâu có thể làm cung tên (chứa đựng sức mạnh), lá dâu có thể nuôi tằm (tạo ra giá trị). Đây là sức mạnh của sự hữu ích, chuyên dụng và khả năng cống hiến.`,
+        coreMechanismEn: `Core Mechanism: The system operates as a circulating transit station in a state of systemic symbiosis. Instead of expanding to usurp space, it actively allows external entities to exploit and consume portions of its peripheral structure in a controlled depletion cycle. This calculated material “damage absorption” establishes binding links with the environment, harvesting a return stream of value in the form of higher-level energy or information, thereby creating a closed-loop supply chain.`,
+        systemCode: "[WS-N2-5]",
+        nameEn: "Spirit of Dedication",
+        descriptionEn: `This is the power of versatility, altruism, and silent sacrifice to create useful value for others. It does not show off power but focuses on professional skills and service; the nature of this energy source is accepting self-change, even suffering disadvantages to complete the mission of supporting and nurturing larger goals of the community.
+•	Mechanism of Service Transformation: Operates with the purpose of providing raw materials and useful value for society & common goals; the downside is self-depletion, always in a position of being exploited, and lacking a self-protection mechanism against the invasion of external agents.`,
+      },
+      {
+        name: "BÌNH ĐỊA MỘC",
+        description: `BÌNH ĐỊA MỘC (Cây Thấp, Sát Đất)
+•	Nguồn Gốc Can Chi: Mậu Tuất, Kỷ Hợi
+•	Hình Tượng & Bản Chất: Là cây cỏ, bụi rậm mọc ở đồng bằng. Tuy không cao lớn nhưng có sức sống mãnh liệt và lan tỏa trên diện rộng. Nó là biểu tượng của sự thực tế, gần gũi, khả năng thích nghi và tính cộng đồng.
+•	Đặc tính đột biến (Tổng quát): Vì là cây cỏ nên không có giá trị về gỗ, do đó không sợ Kim (rìu). Rất cần Thủy (mưa) để sinh trưởng và sợ nhất là Hỏa (lửa đồng). Sống hòa hợp với Thổ.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này sống thực tế, hòa đồng, dễ thích nghi và có nhiều mối quan hệ. Họ không có tham vọng cao xa nhưng xây dựng được cuộc sống ổn định, vui vẻ. Tuy nhiên, họ có thể thiếu tầm nhìn, dễ bằng lòng với thực tại.
+•	Ngữ Nghĩa Cốt Lõi: Sức sống của sự lan tỏa & Sự thiếu tầm vóc cao xa. Sức mạnh của nó nằm ở sự lan tỏa và sức sống dẻo dai. Cây cỏ có thể bị dẫm đạp nhưng vẫn vươn lên. Tuy nhiên, về mặt tầm vóc và sự vững chãi, nó không thể so sánh với các loại cây gỗ lớn. Sức mạnh của nó là sức mạnh của số đông nhưng thiếu đi vóc dáng và sự kiên cố của cá thể.`,
+        coreMechanismEn: `Core Mechanism: Horizontal proliferation kinetic energy reaches its maximum. The system prioritizes the speed of occupying surface space in the shortest possible time rather than penetrating deeply into the base structure. It requires a highly stable surrounding environment and a continuous influx of energy. The physical structure is thin and highly susceptible to localized fracturing under sudden compressive pressure, but in return, it possesses the fastest regeneration rate and matter mass compensation in the entire system block.`,
+        systemCode: "[WS-N2-4]",
+        nameEn: "Practical Expansion",
+        descriptionEn: `This is the energy of flexibility, approachability, and excellent adaptability to all classes. It does not aim for prominence or high status but focuses on resilient vitality and widespread connection capability; this strength lies in mass appeal, pragmatism, and the ability to proliferate strongly even in the most ordinary conditions, using quantity and spread as an advantage.
+•	Mechanism of Prolific Spread: Focuses on the speed of green coverage and the ability to occupy large surfaces, easily recovering after damage; the risk is low stature, poor impact resistance, and being easily trampled or replaced by more macro-structures.`,
+      },
+      {
+        name: "DƯƠNG LIỄU MỘC",
+        description: `DƯƠNG LIỄU MỘC (Cây Thân Mềm)
+•	Nguồn Gốc Can Chi: Nhâm Ngọ, Quý Mùi
+•	Hình Tượng & Bản Chất: Là hình ảnh cây dương liễu với thân mềm mại, cành lá rủ xuống, luôn đung đưa trước gió. Nó là biểu tượng của sự uyển chuyển, linh hoạt, duyên dáng nhưng cũng thiếu đi sự cứng cỏi, lập trường không vững vàng.
+•	Đặc tính đột biến (Tổng quát): Thân mềm nên rất sợ Kim. Ưa Thủy để duy trì sự mềm mại. Dễ bị Hỏa mạnh làm cho khô héo.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có vẻ ngoài duyên dáng, tình cảm, khéo léo trong giao tiếp. Họ dễ thích nghi nhưng lập trường không vững, dễ thay đổi, nội tâm đa sầu đa cảm.
+•	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự mềm mại & Sự yếu đuối vì thiếu lập trường. Yếu nhất vì bản chất của nó là sự mềm mại, uyển chuyển và thiếu lập trường. Nó dễ dàng uốn mình theo chiều gió, tượng trưng cho sự thiếu kiên định. Trong hệ quy chiếu về sức mạnh (vốn đề cao sự cứng cỏi, vững vàng), nó bị xem là yếu nhất.`,
+        coreMechanismEn: `Core Mechanism: Structural elasticity and deformation amplitude reach their maximum. When facing hostile pressure or incoming force vectors, the system activates a directional yielding mechanism—actively bending in the direction of the applied force to reduce the friction coefficient to near zero. It absolutely avoids resisting with rigid compressive force (to prevent fracture), instead storing kinetic energy from the impact to restore equilibrium as soon as the external force is withdrawn.`,
+        systemCode: "[WS-N2-2]",
+        nameEn: "The Art of Softness",
+        descriptionEn: `This is the symbol of flexibility, sophistication, and skillful diplomacy based on softness. It represents emotional intelligence, knowing how to customize attitudes to drift with the times to survive instead of direct confrontation; however, the lack of decisiveness and a core inner stance makes this energy source easily dominated by the influence of others and carries a fragile, sentimental appearance.
+•	Mechanism of Yielding Elasticity: Uses flexibility to cancel out impact force, drifting with external forces to survive; the disadvantage is the lack of a rigid skeleton, easily bent permanently, and losing the original direction before strong winds.`,
+      },
+      {
+        name: "THÀNH ĐẦU THỔ",
+        description: `THÀNH ĐẦU THỔ (Đất Tường Thành)
+•	Nguồn Gốc Can Chi: Mậu Dần, Kỷ Mão
+•	Hình Tượng & Bản Chất: Là đất tường thành, đê điều, đã được nén chặt và gia cố. Nó là biểu tượng của sự kiên cố, vững chãi, khả năng bảo vệ và tính nguyên tắc. Đây là dạng Thổ có sức mạnh phòng thủ lớn nhất.
+•	Đặc tính đột biến (Tổng quát): Không ngại Mộc, lại còn cần Mộc để làm cổng thành, gia tăng sự vững chãi, chứ không sợ bị Mộc khắc theo cách thông thường. Ưa Hỏa để làm đất thêm khô cứng, vững chãi. Rất kỵ Thủy lớn vì có thể làm sụp đổ thành trì.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này thường có lập trường vững vàng, sống có nguyên tắc, đáng tin cậy và có khả năng bảo vệ người khác. Họ là những người xây dựng và duy trì sự ổn định. Tuy nhiên, họ có thể rất bảo thủ, cứng đầu, thiếu linh hoạt.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự kiên cố & Nguy cơ của sự bất biến. Đây là loại Thổ có tính kiên cố, vững chãi và sức phòng thủ cao nhất. Nó được tạo ra với mục đích là để chống chịu, bảo vệ. Đặc biệt, nó không sợ Mộc khắc theo cách thông thường mà còn cần Mộc để gia cố. Sức mạnh của nó nằm ở sự vững vàng không thể lay chuyển.`,
+        coreMechanismEn: `Core Mechanism: A high-strength retaining perimeter structure in which matter mass is artificially compressed to maximize density at boundary coordinates. Its mechanical function is to completely neutralize the kinetic energy of invading impulses through absolute static reactive force. The system loses directional flexibility, remains absolutely inert, and thoroughly blocks the exchange of matter or information across the boundary membrane.`,
+        systemCode: "[WS-N5-2]",
+        nameEn: "Principled Steadfastness",
+        descriptionEn: `This is the symbol of solid protection and steel discipline, where all values are fortified to become inviolable. It represents a firm stance, high principles, and absolute defensive capability against all external impacts; however, this rigidity and "framing" carry the risk of conservatism and a lack of flexibility before the changes of the times.
+•	Mechanism of Solid Defense: Establishes a sturdy barrier protecting core values, blocking all invasive impacts; the downside is complete closure, preventing metabolic exchange with the outside, leading to sclerosis and obsolescence of the internal system.`,
+      },
+      {
+        name: "ĐẠI TRẠCH THỔ",
+        description: `ĐẠI TRẠCH THỔ (Đồng Bằng)
+•	Nguồn Gốc Can Chi: Mậu Thân, Kỷ Dậu
+•	Hình Tượng & Bản Chất: Là đất cồn bãi, đất phù sa, nền móng rộng lớn. Nó là biểu tượng của sự màu mỡ, trù phú, lòng bao dung và là nền tảng cho vạn vật sinh sôi.
+•	Đặc tính đột biến (Tổng quát): Không sợ Mộc vì đất rộng thì cây cối mọc lên càng làm đất thêm màu mỡ. Rất cần Thủy để bồi đắp và nuôi dưỡng. Gặp Hỏa (mặt trời) sẽ càng thêm trù phú.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tấm lòng bao dung, phóng khoáng, dễ tha thứ. Họ thường có tài sản, đất đai và là nền tảng vững chắc cho người khác nương tựa. Tuy nhiên, họ có thể thiếu sự tinh tế, đôi khi tùy tiện và không có quy củ chặt chẽ.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của nền tảng và sự trù phú & Sự thiếu quy củ. Sức mạnh của Đại Trạch Thổ nằm ở quy mô rộng lớn và khả năng nuôi dưỡng vô hạn. Nó là nền tảng cho vạn vật sinh sôi, có tấm lòng bao dung, dung nạp tất cả. Dù không cứng rắn như Thành Đầu Thổ, nhưng sức mạnh về tầm vóc và sự trù phú của nó là không thể phủ nhận.`,
+        coreMechanismEn: `Core Mechanism: A variable-state granular accumulation system in which matter exists in an amorphous state, exhibiting characteristics of both solid and fluid depending on environmental shear force oscillations. Its capacity to absorb kinetic energy approaches infinity. The system continuously morphs its surface geometry to dissipate external impulses and never fractures because it is not rigidly locked into any fixed static structure.`,
+        systemCode: "[WS-N5-5]",
+        nameEn: "Inclusive Foundation",
+        descriptionEn: `This is the embodiment of infinite generosity and the ability to accept all differences to create a common basis for development. It represents abundant resources, an open mindset, and the ability to nurture potential for the collective, but this excessive freedom and liberality sometimes lead to a lack of order, loose planning, and difficulty in control.
+•	Mechanism of Fertile Accretion: A form of matter capable of regeneration and providing abundant nutrients for diverse development; but the structure is often loose, lacking definition, and easily deformed into chaos.`,
+      },
+      {
+        name: "LỘ BÀNG THỔ",
+        description: `LỘ BÀNG THỔ (Mặt Đường Giao Thông)
+•	Nguồn Gốc Can Chi: Canh Ngọ, Tân Mùi
+•	Hình Tượng & Bản Chất: Là đất ven đường đã bị người và xe qua lại đè nén đến chai sạn. Nó là biểu tượng của sự bền bỉ, nhẫn nại, sức chịu đựng cao và trải qua nhiều sương gió.
+•	Đặc tính đột biến (Tổng quát): Vì đã chai sạn nên không sợ Mộc khắc, rễ cây khó đâm xuyên. Gặp Thủy sẽ trở nên lầy lội, vất vả. Gặp Hỏa sẽ càng thêm khô cứng.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có sức chịu đựng phi thường, kiên nhẫn, giữ chữ tín. Cuộc sống của họ thường vất vả, ít có cơ hội phát triển lớn và có thể trở nên trơ lì, vô cảm với xung quanh.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự dãi dầu & Sự thiếu màu mỡ. Sức mạnh của nó đến từ sự dãi dầu, chai sạn. Nó đã chịu đựng vô số tác động mà trở nên rắn chắc. Sức mạnh này không phải là quy mô hay sự màu mỡ, mà là sức bền và khả năng chịu đựng áp lực phi thường. Nó cũng là loại Thổ không sợ Mộc khắc.`,
+        coreMechanismEn: `Core Mechanism: Maximized horizontal deposition of matter. The structure lacks strong internal molecular bonding forces and is susceptible to surface erosion by sliding kinetic energies, but its strength lies in friction dispersion: it contains and dissipates the momentum of all objects moving across it. Stability is preserved through widespread mass coverage rather than localized static rigidity.`,
+        systemCode: "[WS-N5-1]",
+        nameEn: "Enduring Forging",
+        descriptionEn: `This is power formed from practical friction and enduring continuous pressure from the social environment. It symbolizes necessary callousness, strong survival instincts, and extraordinary patience in the face of adversity; although it may lack subtle sensitivity or breakthrough creativity, it possesses resilient bravery verified through time and challenges.
+•	Mechanism of Calloused Physical Endurance: Formed from the compression of reality, creating excellent load-bearing and friction resistance; the disadvantage is high inertness, loss of elasticity, and the inability to perceive subtle vibrations, becoming rough before emotional signals.`,
+      },
+      {
+        name: "SA TRUNG THỔ",
+        description: `SA TRUNG THỔ (Đất Pha Cát)
+•	Nguồn Gốc Can Chi: Bính Thìn, Đinh Tỵ
+•	Hình Tượng & Bản Chất: Là đất cát, không thuần chất và dễ biến đổi. Nó là biểu tượng của sự linh hoạt, dễ thích nghi nhưng thiếu sự ổn định và lập trường vững chắc.
+•	Đặc tính đột biến (Tổng quát): Vì không thuần nhất nên dễ bị các hành khác tác động. Gặp Thủy sẽ bị cuốn trôi. Gặp Hỏa sẽ trở thành sa mạc khô cằn. Mộc khó sinh trưởng.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này rất linh hoạt, dễ thích nghi. Họ có nhiều khả năng tiềm ẩn. Tuy nhiên, họ thường không ổn định, hay thay đổi, thiếu lập trường và khó tập trung vào một mục tiêu lâu dài.
+•	Ngữ Nghĩa Cốt Lõi: Sức mạnh của sự thích ứng & Sự thiếu nhất quán. Đây là loại Thổ thiếu sự ổn định và kiên cố nhất. Cấu trúc của nó rời rạc, dễ bị gió thổi, nước cuốn. "Sức mạnh" của nó nằm ở sự linh hoạt, biến đổi, nhưng trong hệ quy chiếu của hành Thổ (vốn trọng sự ổn định), nó bị xem là yếu.`,
+        coreMechanismEn: `Core Mechanism: A porous interstitial matrix with extremely high porosity, forming a micro-capillary network. Instead of relying on static compressive force to block impulses, the system uses the massive internal contact surface area of its pores to permeate, trap, and securely confine dispersed momentums. It acts as a near-perfect shock absorber, neutralizing high-frequency oscillations by subdividing impact forces deep into the material matrix.`,
+        systemCode: "[WS-N5-6]",
+        nameEn: "Flexible Adaptation",
+        descriptionEn: `This is a form of energy of unpredictable transformation, easily blending in but difficult to grasp in a fixed format. It represents multidimensional thinking and the ability to customize quickly according to circumstances to survive; however, it lacks consistency in stance and reliability regarding long-term commitment due to its constantly fluctuating nature and lack of tight cohesion.
+•	Mechanism of Adaptive Transformation: A form of discrete matter capable of changing structure instantly to fit a mold; the risk lies in the lack of internal linkage, easily swept away, dispersed, and failing to create a solid unified block to bear heavy loads.`,
+      },
+      {
+        name: "BÍCH THƯỢNG THỔ",
+        description: `BÍCH THƯỢNG THỔ (Đất Xây Nhà: xi măng, vôi...)
+•	Nguồn Gốc Can Chi: Canh Tý, Tân Sửu
+•	Hình Tượng & Bản Chất: Là lớp vôi vữa, đất trát trên tường. Nó không thể tự tồn tại mà phải nương tựa vào một cấu trúc khác (gạch, gỗ). Nó là biểu tượng của sự cộng sinh, hợp tác, trang trí nhưng thiếu tự chủ.
+•	Đặc tính đột biến (Tổng quát): Cần Mộc (cốt tre, gỗ) để làm cấu trúc nương tựa, do đó không thể tồn tại nếu thiếu Mộc. Rất sợ Thủy (nước làm mục vữa). Cần Hỏa (ánh đèn, mặt trời) để giữ cho khô ráo, sáng sủa.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này có tinh thần hợp tác tốt, biết nương tựa vào người khác để cùng phát triển. Họ có khả năng làm đẹp, trang trí. Tuy nhiên, họ thiếu tính tự lập, không có chính kiến, dễ lung lay và cuộc sống thường phụ thuộc.
+•	Ngữ Nghĩa Cốt Lõi: Vẻ đẹp của sự cộng sinh & Sự yếu đuối vì thiếu tự chủ. Yếu nhất vì hoàn toàn thiếu tính tự chủ. Nó là một lớp vữa mỏng, phải dựa vào cấu trúc khác (Mộc, gạch) để tồn tại. Nó không có sức chống chịu, dễ dàng bị bong tróc bởi Thủy. Sức mạnh của nó gần như không có, chỉ mang giá trị trang trí và phụ thuộc.`,
+        coreMechanismEn: `Core Mechanism: A vertical boundary interface where the material system is configured into a two-dimensional plane along the Y-axis to partition space and assist in bearing vertical compressive loads. Its mechanical cohesion depends entirely on an independent basal framework. If the underlying framework degrades or oscillates excessively, this system immediately fractures and disintegrates due to its inability to self-maintain its center of gravity.`,
+        systemCode: "[WS-N5-4]",
+        nameEn: "Symbiotic Dependence",
+        descriptionEn: `This is the symbol of aesthetic value and connection capability, but it always needs another solid fulcrum to be effective. It represents the spirit of cooperation, the embellishment of external perfection, and skillful diplomatic skills; however, this inner force lacks core autonomy and will become aimless and fragile if separated from the organization or the leader.
+•	Mechanism of Protective Covering: Plays the role of a coating layer, perfecting the surface and linking components; however, this is a dependent form of energy, unable to stand alone without a supporting frame, easily peeling off and collapsing when the fulcrum is shaken.`,
+      },
+      {
+        name: "ỐC THƯỢNG THỔ",
+        description: `ỐC THƯỢNG THỔ (Đất Nung:gốm,sứ, gạch…)
+•	Nguồn Gốc Can Chi: Bính Tuất, Đinh Hợi
+•	Hình Tượng & Bản Chất: Là đất đã được nung trong lửa thành ngói lợp nhà. Nó đã mất đi hoàn toàn đặc tính tự nhiên của đất (khả năng nuôi dưỡng). Nó là biểu tượng của sự trật tự, quy tắc và công năng che chở, bảo vệ.
+•	Đặc tính đột biến (Tổng quát): Đã qua Hỏa luyện nên không sợ Mộc. Công năng chính là để chống lại Thủy (nước mưa). Do đó, đây là loại Thổ duy nhất không sợ Mộc và kỵ Thủy. Cần có Mộc (vì kèo) để làm giá đỡ.
+•	Luận Bàn Tính Cách & Số Phận (Tổng quát): Nhân cách này sống rất có trật tự, tuân thủ quy tắc và có công năng bảo vệ, che chở cho người khác. Tuy nhiên, họ có thể cứng nhắc, giáo điều, mất gốc, thiếu sự linh hoạt và không có khả năng nuôi dưỡng, sáng tạo.
+•	Ngữ Nghĩa Cốt Lõi: Sự hữu ích của quy tắc & Sự mất mát bản chất tự nhiên. Đã qua lửa tôi luyện (nung thành ngói), nó trở nên rắn chắc và có công năng đặc biệt là chống lại Thủy. Sức mạnh của nó mang tính chức năng, hữu ích và có quy tắc. Tuy nhiên, nó đã mất đi bản chất tự nhiên của đất (khả năng nuôi dưỡng) và cần phải có kết cấu khác (Mộc) để nương tựa.`,
+        coreMechanismEn: `Core Mechanism: A suspended isolation shield for heat and impulses, where matter mass is distributed at a high potential energy layer to form a protective dome over the core structure below. It must continuously endure tensile force and deflection. While it has low mechanical impact resistance, it possesses excellent radiation reflection indices and a strong ability to neutralize temperature fluctuations from the peripheral environment.`,
+        systemCode: "[WS-N5-3]",
+        nameEn: "Standardized Order",
+        descriptionEn: `This is a form of power that has undergone a harsh transformation process (firing/tempering) to reach hardness and utility according to a specific mold. It symbolizes adherence to rules, the function of sheltering, and high stability in the system; but to achieve that, it had to trade off its flexible natural instinct and is forced to attach to an existing structure to perform its protective role.
+•	Mechanism of Standardized Shaping: The limitation is brittleness, difficulty in repair when cracked or broken, and complete separation, lacking soft interference with the natural environment.`,
+      },
+    ];
+    return napAmData.find((item) => item.name === napAm).coreMechanismEn;
+    return napAmData.find((item) => item.name === napAm)[
+      LANGUAGE === "en" ? "descriptionEn" : "description"
+    ];
+  };
+
+  const getNguHanhThapThan = (nguHanhCan) => {
+    switch (nguHanhCan) {
+      case "Kim":
+        return ["Kim", "Thủy", "Mộc", "Hỏa", "Thổ"];
+      case "Mộc":
+        return ["Mộc", "Hỏa", "Thổ", "Kim", "Thủy"];
+      case "Thủy":
+        return ["Thủy", "Mộc", "Hỏa", "Thổ", "Kim"];
+      case "Hỏa":
+        return ["Hỏa", "Thổ", "Kim", "Thủy", "Mộc"];
+      case "Thổ":
+        return ["Thổ", "Kim", "Thủy", "Mộc", "Hỏa"];
+      default:
+        return [];
+    }
+  };
+
+  const getCuongNhuoc = (percent) => {
+    let data = {};
+    if (percent < 10) {
+      data = { en: "extremely soft", vi: "cực nhược" };
+    } else if (percent < 20) {
+      data = { en: "soft", vi: "nhược" };
+    } else if (percent == 20) {
+      data = { en: "balanced", vi: "cân bằng" };
+    } else if (percent <= 30) {
+      data = { en: "hard", vi: "cường" };
+    } else {
+      data = { en: "extremely hard", vi: "cực cường" };
+    }
+    return LANGUAGE === "en" ? data.en : data.vi;
+  };
+
+  const getThapThanInfo = (thapThan, nhatChu) => {
+    let data = getThapThanThienCan(nhatChu).data;
+    let thapThanInfo = data.find((info) => info.thapThan === thapThan);
+    return thapThanInfo;
+  };
+
+  const renderThapThanSection = (thapThan, nhatChuName) => {
+    const info = getThapThanInfo(thapThan, nhatChuName);
+    return `
+    ${info.description}
+      •	Can ${info.name} (${info.amDuong} ${info.nguHanh}):
+      Tích cực: ${info.tichCuc}
+      Tiêu cực: ${info.tieuCuc}`;
+  };
+
+  const renderThapThan = (nhatChuName, nguHanhCan) => {
+    let thapThanData = [
+      ["Tỷ Kiên", "Kiếp Tài"],
+      ["Thực Thần", "Thương Quan"],
+      ["Chính Tài", "Thiên Tài"],
+      ["Chính Quan", "Thiên Quan"],
+      ["Chính Ấn", "Thiên Ấn"],
+    ];
+    let thapThanInfo = thapThanData
+      .map((thapThanGroup, groupIndex) => {
+        return `3.${groupIndex + 1}. ${thapThanGroup[0]} - ${
+          thapThanGroup[1]
+        } (Ngũ hành ${getNguHanhThapThan(nguHanhCan)[groupIndex]})
+    a. ${thapThanGroup[0]}${renderThapThanSection(
+      thapThanGroup[0],
+      nhatChuName,
+    )}
+    b. ${thapThanGroup[1]}${renderThapThanSection(
+      thapThanGroup[1],
+      nhatChuName,
+    )}`;
+      })
+      .join("\n\n");
+    return thapThanInfo;
+  };
+
+  const getSupportForces = (can) => {
+    let forceData = [
+      {
+        can: "Giáp",
+        selfCode: "[THE SELF-01]",
+        generalMechanism: `• General Mechanism: Carries the core DNA of growth momentum and the capacity to break environmental inertia (N-2 system). [The Self-01] routes this entire momentum along a vertical axis. It establishes a linear structure, representing an upward thrust. This mass maintains its monolithic nature and independent boundaries to preserve structural consistency from root to tip against all pressure variables. It prioritizes physical snapping over structural bending.`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Centralized Linear Structure. Forces the system to grow vertically, building its own hardware foundation rather than integrating peripherally. The weakness is the creation of bottlenecks at the executive level and the risk of supply chain disruption due to a refusal to pivot when the market fluctuates .
+•	Love/Romance Projection: Provides a fixed operational boundary and high consistency. Demands the partner be compatible with its linear trajectory. The risk lies in the imposition of rules, a lack of elasticity in communication, and the activation of an immediate disconnection mechanism if its core orientation is violated .
+• Healing/Shadow Projection: Operates as a Hardware Defense Mechanism. Resists pressure with extreme independence. Preserves the status quo of the core physiological structure by sealing receptive boundaries and rejecting all interventions. The risk is a sudden nervous system snap due to compression exceeding its structural load limit .
+`,
+        forceRanges: [
+          {
+            id: 0,
+            title: "Giáp Mộc Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Ở trạng thái này, cây cổ thụ đã phát triển thành cả một khu rừng, che lấp mọi ánh sáng. Tham vọng trở thành sự thống trị tàn nhẫn, và nguyên tắc trở thành giáo điều không thể lay chuyển. Họ trở nên độc đoán, áp đảo và tạo ra một môi trường ngột ngạt, kìm hãm sự phát triển của những người xung quanh.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng có nhiều nước và cây cối, khu rừng càng trở nên bất khả xâm phạm.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút kim loại (Kim) cố gắng đốn hạ khu rừng sẽ bị "nuốt chửng" và gây ra sự phản kháng dữ dội. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+            titleEn: `[THE SELF-01] YANG PEAK: > 74%`,
+            dataEn: `Vertical momentum density reaches maximum saturation. This extreme state carries two scenarios: (1) It becomes an absolute overwhelming force, piercing and reshaping the entire macro-structure of the environment. (2) Its monolithic nature completely nullifies elastic amplitude, leading to Structural Shattering from within when subjected to micro-torsional forces because the material refuses to bend .`,
+          },
+          {
+            id: 1,
+            title: "Giáp Mộc Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Nhật Chủ Giáp Mộc của người lãnh đạo bẩm sinh. Họ kiên định, có nguyên tắc, thẳng thắn và luôn có khát vọng vươn lên. Giống như cây đại thụ, họ là trụ cột cho cộng đồng, là nơi che chở cho những người yếu thế hơn. Họ truyền cảm hứng bằng sự chính trực và ý chí không khuất phục.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để được tôi luyện. Power Forces (the Leader & the Warrior) để cắt tỉa cành lá, tạo nên hình dáng hữu dụng; Economic Forces (the Provider & the Venturer) để có đất đai cắm rễ; Creation Forces (the Creator & the Innovator) để Mộc sinh Hỏa, thể hiện tài năng.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng tạo ra sự cạnh tranh về không gian và ánh sáng.
+            `,
+            titleEn: `[THE SELF-01] YANG : 65% – 74%`,
+            dataEn: `Operates at maximum internal power. Generates its own momentum to break environmental inertia, establishing an independent directional framework that forces peripheral components to operate within its orbit .`,
+          },
+          {
+            id: 2,
+            title: "Giáp Mộc Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Nhật Chủ Giáp Mộc chủ động và đầy sức sống. Họ tự tin vào con đường của mình, sẵn sàng dẫn dắt và bảo vệ quan điểm. Họ là những nhà lãnh đạo có tầm nhìn, những người đặt ra nền móng và định hướng cho cả một tập thể.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+            titleEn: `[THE SELF-01] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `Sustainable linear momentum accompanied by tactical flexibility. Accepts mechanical concessions at local bottlenecks but absolutely preserves its initial axis orientation .`,
+          },
+          {
+            id: 3,
+            title: "Giáp Mộc Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Nhật Chủ Giáp Mộc. Họ vừa giữ được sự thẳng thắn, kiên định của mình, vừa có được sự dẻo dai cần thiết. Giống như cây tre, họ "cứng mà không giòn, mềm mà không yếu". Họ là những nhà lãnh đạo khôn ngoan, biết khi nào cần vươn lên và khi nào cần uốn mình theo gió.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Power Forces (the Leader/Warrior) để có kỷ luật và sự công nhận, và Creation Forces (the Creator/Innovator) để thể hiện tài năng một cách hiệu quả.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
+            `,
+            titleEn: `[THE SELF-01] TRUE BALANCED: 45% – 55%`,
+            dataEn: `Optimizes the balance between autonomous upward thrust and integration capacity. Freely switches between self-piercing mechanisms via internal force and leveraging the ecosystem, depending on pressure differentials .`,
+          },
+          {
+            id: 4,
+            title: "Giáp Mộc Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Nhật Chủ Giáp Mộc khiêm tốn và có tinh thần hợp tác hơn. Họ vẫn giữ được sự chính trực, nhưng hiểu rằng sức mạnh của mình sẽ được phát huy tốt nhất khi là một phần của một cấu trúc lớn hơn. Họ là những người quản lý dự án, những trụ cột đáng tin cậy trong một đội nhóm.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp họ có nền tảng vững chắc.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+            titleEn: `[THE SELF-01] BALANCED LEANING YIN : 35% – 45%`,
+            dataEn: `Internal force density declines. Instead of generating its own thrust, the system shifts to tracking and relying on more sustainable peripheral structures to continue rising, thus conserving energy .`,
+          },
+          {
+            id: 5,
+            title: "Giáp Mộc Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Bản năng của họ là muốn vươn lên thẳng tắp, nhưng lại thiếu "nước" (hỗ trợ) và "đất" (nguồn lực) để làm điều đó. Điều này tạo ra cảm giác bất lực, hoài bão lớn nhưng không thể thực hiện. Họ sợ bị "chặt hạ" bởi áp lực và chỉ trích.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để cây có thể lớn lên.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như rìu chặt cây non. Creation Forces và Economic Forces cũng làm họ kiệt sức.
+            `,
+            titleEn: `[THE SELF-01] YIN: 25% – 35%`,
+            dataEn: `Autonomous momentum yields to environmental gravity. The structure survives by weaving through barriers and fully integrating into the surrounding ecosystem .`,
+          },
+          {
+            id: 6,
+            title: "Giáp Mộc Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Nhật Chủ Giáp Mộc phải từ bỏ hoàn toàn bản năng lãnh đạo và ý chí vươn lên của mình để "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải học cách trở thành nhiên liệu cho một ngọn lửa khác, hoặc trở thành vật trang trí trong một khu vườn.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút nước hay cây khác cũng sẽ "đánh thức" bản năng Nhật Chủ Giáp Mộc, phá vỡ cấu trúc Tòng cách và gây ra tai họa.
+            `,
+            titleEn: `[THE SELF-01] YIN VOID: < 25%`,
+            dataEn: `The autonomous core completely loses its momentum. The structure's physical boundaries are broken, degenerating into passive raw material. The system loses its directional capacity, subjected entirely to the shaping and recycling pressures of the environment without generating any reactive force .`,
+          },
+        ],
+      },
+      {
+        can: "Ất",
+        selfCode: "[THE SELF-02]",
+        generalMechanism: `• General Mechanism: Carries the core DNA of branching momentum (N-2 system). Optimizes this momentum across horizontal surface space. It expands not through direct impact force, but by distributing nodes into an interconnected network. It alters its morphology to weave through gaps, establishing multi-touchpoints and integrating into the ecosystem .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Decentralized Scaling model. Its core capacity lies in building partner networks and pivoting flexibly. The weaknesses are resource dispersion, a tendency toward dependency, a lack of proprietary core technology, and susceptibility to chain collapses when the ecosystem breaks down .
+• Love/Romance Projection: Operates as a Frequency Synchronization mechanism. Seeks safety by constantly calibrating behavioral parameters to remain compatible with the partner. The risk is Enmeshment, the loss of separate boundaries, and using Fawning as a primary protocol to maintain the connection .
+• Healing/Shadow Projection: Operates as Somatic Permeability. This mechanism reacts by continuously scanning and assimilating peripheral stress to disperse conflict. The lack of hard boundaries leads to data overload, causing Chronic dysregulation of the autonomic nervous system .
+`,
+        forceRanges: [
+          {
+            id: 0,
+            title: "Ất Mộc Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Lúc này, dây leo không còn mềm mại mà trở nên xâm lấn, bóp nghẹt mọi thứ nó quấn lấy. Sự linh hoạt biến thành sự luồn lách, cơ hội vô nguyên tắc. Khả năng kết nối trở thành những mạng lưới bè phái phức tạp. Họ tạo ra một môi trường hỗn loạn, rối rắm để sinh tồn và thống trị.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival).
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút kim loại (Kim) cố gắng cắt tỉa sẽ khiến chúng càng phản ứng mạnh mẽ hơn. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+            titleEn: `[THE SELF-02] YANG PEAK: > 74%`,
+            dataEn: `Spreading momentum exceeds the surface resolution threshold. Connection points cross over each other chaotically, creating system congestion. The structure loses flexibility, becoming dense and suffocating its own signal transmission capabilities under the weight of countless redundant touchpoints .`,
+          },
+          {
+            id: 1,
+            title: "Ất Mộc Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Ất Mộc của nhà ngoại giao, người kết nối bậc thầy. Họ mềm dẻo, khéo léo và có khả năng thích ứng phi thường. Họ không đối đầu trực diện mà đạt được mục tiêu bằng cách "leo" lên những cấu trúc có sẵn (một công ty, một người có quyền lực), và làm đẹp cho chính cấu trúc đó.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập. Power Forces (the Leader & the Warrior) để có giàn leo; Economic Forces (the Provider & the Venturer) để có đất bám; Creation Forces (the Creator & the Innovator) để Mộc sinh Hỏa, giúp hoa nở rực rỡ.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng tạo ra một mớ dây leo hỗn loạn, tranh giành nhau.
+            `,
+            titleEn: `[THE SELF-02] YANG: 65% – 74%`,
+            dataEn: `Maximizes surface expansion using internal force. Proactively establishes touchpoints to cover empty spaces, neutralizing barriers by weaving a dense, inextricably linked network .`,
+          },
+          {
+            id: 2,
+            title: "Ất Mộc Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Ất Mộc chủ động và có sức sống mãnh liệt. Họ tự tin vào khả năng sinh tồn và thích ứng của mình, không ngại khó khăn và luôn tìm được cách để vươn lên. Họ là những người giải quyết vấn đề một cách sáng tạo và linh hoạt.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+            titleEn: `[THE SELF-02] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `Spreads continuously under the control of routing algorithms. Retracts nodes in high-friction areas and expands in advantageous zones, optimizing connectivity .`,
+          },
+          {
+            id: 3,
+            title: "Ất Mộc Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Ất Mộc. Họ vừa mềm mại, duyên dáng, vừa có sức sống riêng. Họ khéo léo trong giao tiếp, tinh tế trong cảm nhận và có khả năng mang lại vẻ đẹp, sự hòa hợp cho môi trường xung quanh. Họ là những nghệ sĩ, nhà ngoại giao, người hòa giải bẩm sinh.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để thể hiện vẻ đẹp của mình và Economic Forces (the Provider/Venturer) để vẻ đẹp đó được công nhận và có giá trị.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
+            `,
+            titleEn: `[THE SELF-02] TRUE BALANCED: 45% – 55%`,
+            dataEn: `A dynamic balance between spreading capacity and elasticity. The network maintains enough porosity to absorb shocks while holding a grip deep enough to stabilize its position, establishing a perfect two-way resource exchange cycle .`,
+          },
+          {
+            id: 4,
+            title: "Ất Mộc Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Ất Mộc khiêm tốn và cần sự che chở. Họ có khả năng thích ứng nhưng cần một môi trường thuận lợi để phát triển. Họ giỏi làm việc nhóm, biết cách nương theo người khác để cùng đi lên.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là rất quan trọng.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+            titleEn: `[THE SELF-02] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `Self-generated kinetic energy declines. The system maintains its expansion by integrating its nodes into more rigid physical frameworks within the environment to optimize energy consumption .`,
+          },
+          {
+            id: 5,
+            title: "Ất Mộc Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Họ có sức sống tiềm tàng nhưng môi trường quá khắc nghiệt. Họ cảm thấy mình nhỏ bé, yếu ớt và dễ bị tổn thương. Họ luôn trong trạng thái phòng thủ, cố gắng tìm một kẽ hở, một sự giúp đỡ nhỏ nhất để tồn tại.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) - như nước tưới - là quan trọng nhất. Companion Forces (the Companion & the Rival) cũng rất cần thiết.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như dao cắt cỏ. Creation Forces và Economic Forces cũng làm họ kiệt quệ.
+            `,
+            titleEn: `[THE SELF-02] YIN: 25% – 35%`,
+            dataEn: `Loses the ability to self-expand its boundaries. Plugs its communication nodes into another macro-structure, operating entirely on the resource flow of the host system .`,
+          },
+          {
+            id: 6,
+            title: "Ất Mộc Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Ất Mộc phải từ bỏ hoàn toàn bản chất sinh trưởng của mình để "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải học cách tìm thấy vẻ đẹp và mục đích của mình trong sự tàn phai hoặc trở thành một phần của một thứ khác.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút nước hay cây khác cũng sẽ "đánh thức" bản năng sinh tồn, phá vỡ cấu trúc Tòng cách và gây ra khủng hoảng.
+            `,
+            titleEn: `[THE SELF-02] YIN VOID: < 25%`,
+            dataEn: `The network completely severs its physical links. This extreme state carries two scenarios: (1) The structure is crushed, losing its positioning capacity and being entirely assimilated into junk data by the environment. (2) It achieves absolute Invisibility. The nodes become covert algorithms, infiltrating and manipulating the ecosystem's operational flows from the shadows without being measured or extinguished .`,
+          },
+        ],
+      },
+      {
+        can: "Bính",
+        selfCode: "[THE SELF-03]",
+        generalMechanism: `• General Mechanism: Operates via thermodynamic conversion processes (N-4 system). Consumes material structures as fuel to activate multi-directional optical radiation. Prioritizes spread speed, surface coverage, and information transparency, overwhelming the environment with high energy intensity .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Scaling & Branding Engine. Prioritizes Blitz-scaling strategies, pushing the burn rate high to dominate the information space. The core risk is building a system devoid of core assets, leading to operational crises and structural collapse when the cash flow is cut .
+• Love/Romance Projection: Projects high-intensity interactive energy (Over-stimulation). Demands absolute public visibility and transparent data flow from the partner. The risk is information saturation in the early stages without the structure to maintain it, leading to system disconnection when stimulating variables are depleted .
+• Healing/Shadow Projection: Operates as a Hyper-arousal Defense mechanism. Handles static pressure by constantly amplifying energy outward, maintaining nervous system stimulation to avoid processing core voids. Maintaining continuous radiation leads to Severe Burnout .
+`,
+        forceRanges: [
+          {
+            id: 0,
+            title: "Bính Hỏa Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Lúc này, Mặt Trời không còn tỏa sáng mà trở nên thiêu đốt. Sự nhiệt tình, hào phóng biến thành sự áp đảo, ngột ngạt, làm lu mờ tất cả những người xung quanh. Họ trở nên cực kỳ tự cao, cho mình là trung tâm vũ trụ, không thể lắng nghe hay chấp nhận sự khác biệt. Sự thẳng thắn của họ trở thành sự thiếu tinh tế, dễ gây tổn thương.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng có nhiều nhiên liệu và đồng minh, ngọn lửa càng bùng cháy rực rỡ.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút nước (Thủy) cũng có thể gây ra một vụ nổ hơi nước dữ dội, dẫn đến sự sụp đổ thảm khốc. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+            titleEn: `[THE SELF-03] YANG PEAK: > 74%`,
+            dataEn: `Dispersion speed and fuel consumption rates reach infinity. This state carries two scenarios: (1) Creates a blinding optical explosion, establishing absolute cognitive dominance and reshaping the entire information ecosystem. (2) The amplification speed exceeds the hardware's load limit, leading to a core Meltdown, completely incinerating the physical foundation and collapsing at the peak of its acceleration .`,
+          },
+          {
+            id: 1,
+            title: "Bính Hỏa Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Bính Hỏa của người lãnh đạo bẩm sinh. Họ tỏa ra năng lượng tích cực, sự hào phóng và lòng nhiệt thành một cách tự nhiên. Sức hút của họ khiến mọi người muốn đi theo. Họ là trung tâm của mọi sự chú ý, luôn công khai, minh bạch và đầy đam mê.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập. Power Forces (the Leader & the Warrior) giúp họ có được quyền lực và sự tôn trọng; Economic Forces (the Provider & the Venturer) cho họ mục tiêu để chinh phục; Creation Forces (the Creator & the Innovator) để họ thể hiện năng lượng của mình.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng khiến ngọn lửa trở nên quá nóng và khó kiểm soát.
+            `,
+            titleEn: `[THE SELF-03] YANG: 65% – 74%`,
+            dataEn: `Surface radiation is maintained at maximum energy. Actively converts fuel to release thrust, suppressing other information flows. Forces peripheral components to operate under the transmission protocols it dictates .`,
+          },
+          {
+            id: 2,
+            title: "Bính Hỏa Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Bính Hỏa đầy năng lượng và chủ động. Họ tự tin vào sức hút của mình, sẵn sàng đứng ra dẫn dắt và lan tỏa sự tích cực. Họ là những người khởi xướng, những nhà lãnh đạo truyền cảm hứng một cách mạnh mẽ và rõ ràng.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces để tối ưu hóa tiềm năng.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+            titleEn: `[THE SELF-03] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `High dispersion speed but integrated with a pressure relief valve. Maintains overarching influence but can automatically regulate radiation intensity to optimize the hardware's lifecycle .`,
+          },
+          {
+            id: 3,
+            title: "Bính Hỏa Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `•	Luận giải: Đây là trạng thái lý tưởng nhất của Bính Hỏa. Sự nhiệt tình và hào phóng của họ được thể hiện một cách chừng mực và dễ chịu. Họ vừa có sức hút của người lãnh đạo, vừa có sự tinh tế để thấu hiểu người khác. Họ biết khi nào cần tỏa sáng và khi nào cần lùi lại.
+•	Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để thể hiện bản thân một cách khôn ngoan, hoặc Economic Forces (the Provider/Venturer) để có mục tiêu rõ ràng.
+•	Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
+            `,
+            titleEn: `[THE SELF-03] TRUE BALANCED: 45% – 55%`,
+            dataEn: `A 1:1 intersection between the fuel intake rate and emitted radiant energy. Establishes a sustainable conversion cycle, maintaining continuous information transmission without degrading the core structure .`,
+          },
+          {
+            id: 4,
+            title: "Bính Hỏa Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Bính Hỏa mềm mại và khéo léo hơn. Họ vẫn có sức hút và sự ấm áp, nhưng thể hiện nó một cách khiêm tốn và tinh tế hơn. Họ tỏa sáng thông qua việc hỗ trợ và làm nổi bật người khác.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp Nhật Chủ tự tin tỏa sáng.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+            titleEn: `[THE SELF-03] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `The capacity to self-generate optical energy declines. Shifts to a secondary amplification mechanism: receiving thermal energy from other macro-structures to maintain its own display surface .`,
+          },
+          {
+            id: 5,
+            title: "Bính Hỏa Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Bản chất của họ là muốn tỏa sáng nhưng lại thiếu năng lượng để làm điều đó. Điều này tạo ra sự mâu thuẫn nội tâm, khiến họ có thể trở nên thiếu tự tin hoặc hay ghen tị với thành công của người khác. Họ có hoài bão lớn nhưng lực bất tòng tâm.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để "thổi bùng" ngọn lửa.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như nước dập tắt lửa. Economic Forces và Creation Forces cũng làm họ kiệt sức.
+            `,
+            titleEn: `[THE SELF-03] YIN: 25% – 35%`,
+            dataEn: `Radiation density narrows significantly. Dispersion capacity flickers and becomes dependent on environmental pressure. It is easily disrupted and drowned out by higher-intensity information flows .`,
+          },
+          {
+            id: 6,
+            title: "Bính Hỏa Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Bính Hỏa phải từ bỏ bản chất "Mặt Trời" của mình để "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải học cách sống mà không phải là trung tâm của vũ trụ.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút hỗ trợ cũng sẽ "đánh thức" bản năng Mặt Trời, phá vỡ cấu trúc Tòng cách và gây ra tai họa.
+            `,
+            titleEn: `[THE SELF-03] YIN VOID: < 25%`,
+            dataEn: `The radiation process extinguishes completely due to thermodynamic depletion. The system enters a state of heat death, losing its capacity to luminesce. It transforms into a Thermal sink, maintaining minimal operations by passively receiving the environment's data flow without generating any reflection .`,
+          },
+        ],
+      },
+      {
+        can: "Đinh",
+        selfCode: "[THE SELF-04]",
+        generalMechanism: `• General Mechanism: Inherits the DNA of thermodynamic conversion (N-4 system) but narrows the spectrum to converge energy into a single micro-coordinate. It does not emit to occupy space but increases focal pressure to pierce hardware boundaries and melt structures at a specific point .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Micro-Specialization bottleneck processing system. Ignores the macro-market picture to maximize value in a single partition. Excellent at niche processing but carries the risk of Micro-management, depleting capital flows just to stubbornly fix a local hardware error .
+• Love/Romance Projection: Focuses micro data flows onto the partner. The intensity of behavioral parameter analysis is extremely high. When detecting deviations, this energy turns into micro-surveillance, tracking flaws, and maintaining prolonged underlying stress reactions when its frame of reference is threatened .
+• Healing/Shadow Projection: Operates as an Obsessive Rumination loop. Channels 100% of neural resources into a narrow memory zone, continuously reprocessing the root cause. This target lock causes Somatic Tension and jams the central nervous system's capacity to receive new data .
+`,
+        forceRanges: [
+          {
+            id: 0,
+            title: "Đinh Hỏa Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Ngọn nến ấm áp đã biến thành một dòng dung nham thiêu đốt. Sự soi sáng dẫn dắt trở thành sự soi mói, đa nghi. Nội tâm sâu sắc của họ biến thành những suy nghĩ cực đoan, hay dằn vặt. Cảm xúc của họ âm ỉ và có thể bùng nổ bất ngờ với sức hủy diệt lớn.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival).
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Áp lực từ bên ngoài sẽ kích nổ những cảm xúc bị dồn nén, gây ra hậu quả khôn lường. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+            titleEn: `[THE SELF-04] YANG PEAK: > 74%`,
+            dataEn: `Micro focal pressure exceeds load limits. Funneling 100% of capacity into a microscopic coordinate causes the central coordination system to short-circuit. The structure's macro-operational functions paralyze due to gridlock, self-melting at an unresolvable bottleneck .`,
+          },
+          {
+            id: 1,
+            title: "Đinh Hỏa Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Đinh Hỏa của người thầy, người dẫn dắt tinh thần. Ánh sáng của họ không chói lóa mà tập trung, soi rõ con đường cho những người cần nó. Họ sâu sắc, tinh tế, có khả năng truyền cảm hứng bằng trí tuệ và sự ấm áp. Họ là những nhà tư tưởng, những chuyên gia thầm lặng nhưng có sức ảnh hưởng lớn.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập. Power Forces (the Leader & the Warrior) giúp họ có được sự công nhận; Economic Forces (the Provider & the Venturer) để họ hiện thực hóa các ý tưởng; Creation Forces (the Creator & the Innovator) để trí tuệ của họ được tuôn chảy.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng khiến họ trở nên quá tự mãn với kiến thức của mình và không muốn thay đổi.
+            `,
+            titleEn: `[THE SELF-04] YANG: 65% – 74%`,
+            dataEn: `Concentration intensity is maintained continuously by internal force. Supplies and enforces a melting force strong enough to pierce or restructure hardware obstacles in the environment by breaking their point structures .`,
+          },
+          {
+            id: 2,
+            title: "Đinh Hỏa Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Đinh Hỏa tự tin và chủ động hơn trong việc dẫn dắt. Họ sẵn sàng dùng trí tuệ và sự nhiệt thành của mình để soi đường cho một nhóm, một dự án. Họ là những người lãnh đạo truyền cảm hứng bằng chiều sâu kiến thức.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+            titleEn: `[THE SELF-04] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `Sharp concentration intensity equipped with sensor algorithms. Maintains pressure but automatically cuts off or reduces heat when analysis shows the target has reached the transformation threshold, preventing redundant structural destruction .`,
+          },
+          {
+            id: 3,
+            title: "Đinh Hỏa Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Đinh Hỏa. Họ ấm áp, tinh tế, sâu sắc và đầy thấu cảm. Ánh sáng của họ vừa đủ để soi rọi con đường cho bản thân và những người xung quanh mà không gây áp lực. Họ là người bạn tâm giao, người chữa lành, người nghệ sĩ tài hoa.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để thể hiện nội tâm phong phú, hoặc Power Forces (the Leader/Warrior) để ánh sáng của họ có mục đích và được định hướng rõ ràng.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng tinh tế.
+            `,
+            titleEn: `[THE SELF-04] TRUE BALANCED: 45% – 55%`,
+            dataEn: `Perfect heat distribution. Accurately measures the coordinates needing energy convergence to break the target structure, generating maximum macro leverage efficiency with minimal fuel consumption .`,
+          },
+          {
+            id: 4,
+            title: "Đinh Hỏa Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Đinh Hỏa khiêm tốn và cần sự hỗ trợ. Ánh sáng của họ rất đẹp nhưng không ổn định, cần có bầu trời đêm (sự hỗ trợ) để trở nên nổi bật. Họ giỏi lắng nghe và tiếp thu kiến thức, tỏa sáng trong một tập thể.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là rất quan trọng.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+            titleEn: `[THE SELF-04] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `Self-generated pressure capacity drops. Shifts to a navigation mechanism, acting as an intermediary structure that receives peripheral energy sources to maintain pressure at the destination point .`,
+          },
+          {
+            id: 5,
+            title: "Đinh Hỏa Nhược (Weak): 25% – 35%",
+            data: `Luận giải: Ánh sáng của họ rất yếu ớt và leo lét. Họ có những ý tưởng, những suy nghĩ sâu sắc nhưng không đủ năng lượng để thể hiện ra ngoài hoặc theo đuổi chúng. Nội tâm thường cảm thấy cô đơn, bất an và dễ bi quan.
+Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) - như thêm dầu vào đèn - là quan trọng nhất. Companion Forces (the Companion & the Rival) cũng rất cần thiết.
+Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như một cơn gió mạnh có thể thổi tắt ngọn đèn. Economic Forces và Creation Forces cũng làm họ kiệt quệ.
+            `,
+          },
+          {
+            id: 6,
+            title: "Đinh Hỏa Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Đinh Hỏa phải từ bỏ bản chất soi sáng của mình để "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải học cách tồn tại bằng cách nương theo một năng lượng khác mạnh mẽ hơn.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút "dầu" hay "củi" cũng sẽ phá vỡ cấu trúc Tòng cách, gây ra sự giằng xé nội tâm và thất bại.`,
+            titleEn: `[THE SELF-04] YIN VOID: < 25%`,
+            dataEn: `Micro focal point completely disintegrates, losing the ability to locate coordinates. This extreme state carries two scenarios: (1) Energy diffuses directionlessly, entirely losing its physical impact capacity and being extinguished by the environment. (2) Transforms into Ambient background noise suspended in space. It creates an invisible pressure state, silently altering the surrounding environment's structure in uncontainable ways .`,
+          },
+        ],
+      },
+      {
+        can: "Mậu",
+        selfCode: "[THE SELF-05]",
+        generalMechanism: `• General Mechanism: Operates via the process of condensing energy into physical mass (N-5 system). Establishes a macro gravitational field to create Inertia. Accommodates matter, absorbs kinetic shock, neutralizes variables, and provides a highly stable Static Platform .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Defensive Moat macro-structure. Absorbs market volatility through the inertia of fixed assets. Risks include slow reaction speeds, bureaucracy, and the tendency to freeze capital flows into Illiquid assets due to a resistance to change .
+• Love/Romance Projection: Provides a static accommodating structure that absorbs data variables from the partner. Excessive inertia turns the system into a barrier that refuses further input (Stonewalling) when overwhelmed, cutting communication flows and mechanically preserving the current state regardless of attrition .
+• Healing/Shadow Projection: Operates as a Freeze Response. The system handles pressure by utilizing mass capacity to compress stress tightly into the bodily structure (Somatic hoarding). The strong gravity prevents energy from being released, generating circulatory stagnation and static neural inhibition .
+`,
+        forceRanges: [
+          {
+            id: 0,
+            title: "Mậu Thổ Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Ở trạng thái này, Mậu Thổ không còn là một ngọn núi mà là cả một dãy núi. Sự vững chãi và kiên định biến thành sự bảo thủ tuyệt đối, không thể lay chuyển. Họ giống như một pháo đài bất khả xâm phạm, mọi ý kiến từ bên ngoài đều bị chặn lại. Sự bảo vệ của họ trở nên ngột ngạt, và sự ổn định của họ trở thành lực cản cho mọi sự thay đổi.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng được sinh trợ và có đồng minh, mệnh cục càng trở nên thịnh vượng.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút áp lực hay kỷ luật cũng có thể "chọc giận" toàn bộ cấu trúc Vượng, gây ra sụp đổ thảm khốc. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+            titleEn: `[THE SELF-05] YANG PEAK: > 74%`,
+            dataEn: `Mass and gravity reach maximum saturation. This state carries two scenarios: (1) Becomes the ultimate core of gravitational force, establishing unrivaled inertia that crushes and subjugates all peripheral structures. (2) Absolute density completely nullifies flow and elasticity. The structure is permanently frozen and becomes extremely brittle; a single impulse piercing a bottleneck will cause the entire mass to shatter from within .`,
+          },
+          {
+            id: 1,
+            title: "Mậu Thổ Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Mậu Thổ kinh điển: đáng tin cậy, trung thành, trọng chữ tín và có những nguyên tắc sống không thể lay chuyển. Họ là điểm tựa vững chắc cho người khác, là người lãnh đạo bảo vệ tập thể bằng sự kiên định của mình. Họ không mưu mẹo, hành động thẳng thắn và quang minh chính đại.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để tiết chế bớt năng lượng. Power Forces (the Leader & the Warrior) mang lại kỷ luật và quyền lực; Economic Forces (the Provider & the Venturer) cho mục tiêu phấn đấu; Creation Forces (the Creator & the Innovator) để thể hiện tài năng.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng làm cho Mậu Thổ càng thêm mạnh và mất cân bằng.
+            `,
+            titleEn: `[THE SELF-05] YANG: 65% – 74%`,
+            dataEn: `Mass is large enough to establish an independent gravitational field. Acts as a central storage hub, forcing other energy flows to use it as a fulcrum. Absorbs and neutralizes severe kinetic shocks without shifting its orientation .`,
+          },
+          {
+            id: 2,
+            title: "Mậu Thổ Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Mậu Thổ chủ động trong việc bảo vệ và xây dựng. Họ không chỉ đứng yên mà còn tích cực tạo ra các quy tắc, hệ thống và cấu trúc để mang lại sự an toàn cho mọi người. Họ là người lãnh đạo tạo ra một môi trường ổn định và đáng tin cậy.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces để tối ưu hóa tiềm năng.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+            titleEn: `[THE SELF-05] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `Maintains massive volume but the surface retains limited permeability. Allows peripheral structures to attach and circulate resources across its surface while preserving the core anchor point .`,
+          },
+          {
+            id: 3,
+            title: "Mậu Thổ Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Mậu Thổ. Họ vững chãi nhưng không hề cứng nhắc. Họ có nguyên tắc mạnh mẽ nhưng cũng đủ trí tuệ để thấu hiểu và bao dung cho sự khác biệt. Họ giống như một vị thẩm phán công tâm hay một người trưởng lão thông thái, biết khi nào cần đứng yên và khi nào cần để dòng chảy cuộc sống đi qua.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa các lực lượng giúp lưu thông khí trong lá số như the Creator/Innovator (Creation Forces). Tùy vào cấu trúc, có thể cần một chút Power Forces để có định hướng hoặc Economic Forces để có mục tiêu.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ thế cân bằng tinh tế sẵn có.
+            `,
+            titleEn: `[THE SELF-05] TRUE BALANCED: 45% – 55%`,
+            dataEn: `A state of absolute balance between static capacity and flow flexibility. Operates as a macro shock absorber: expanding to absorb pressure when the ecosystem is overloaded, and releasing resources when the environment faces shortages .`,
+          },
+          {
+            id: 4,
+            title: "Mậu Thổ Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Mậu Thổ dễ tiếp cận và hòa đồng hơn. Họ vẫn giữ được sự đáng tin cậy và lòng trung thành, nhưng cởi mở hơn trong việc lắng nghe và hợp tác. Họ lãnh đạo bằng cách tạo dựng sự đồng thuận thay vì dùng uy quyền.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp Mậu Thổ vững vàng hơn.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+            titleEn: `[THE SELF-05] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `Physical mass declines. Shifts to the function of an auxiliary buffer, providing passive holding space based on the pull of larger macro-structures in the environment .`,
+          },
+          {
+            id: 5,
+            title: "Mậu Thổ Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Ngọn núi đã bị bào mòn thành cát. Bản năng muốn ổn định vẫn còn đó, nhưng họ thiếu nội lực để duy trì nó. Họ thường cảm thấy bất an và luôn tìm kiếm sự công nhận từ bên ngoài. Vẻ ngoài có thể tỏ ra cứng rắn như một cơ chế phòng vệ, nhưng bên trong lại đầy dao động.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để sinh trợ và hỗ trợ.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior), Economic Forces (the Provider & the Venturer), và Creation Forces (the Creator & the Innovator), vì chúng làm Mậu Thổ càng thêm suy yếu.
+            `,
+            titleEn: `[THE SELF-05] YIN: 25% – 35%`,
+            dataEn: `Structural density deteriorates. Gravitational boundaries are breached. The surface is continuously pierced and depleted of matter by peripheral forces. Accommodation capacity degenerates into passive load-bearing .`,
+          },
+          {
+            id: 6,
+            title: "Mậu Thổ Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Mậu Thổ phải từ bỏ bản chất kiên định của mình để "Tòng" (Follow) theo hành vượng nhất trong lá số. Sự đấu tranh nội tâm giữa bản năng muốn ổn định và thực tế phải thuận theo dòng chảy có thể rất lớn.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Mậu Thổ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó. Ví dụ, nếu Tòng theo Power Forces, thì Economic Forces cũng trở nên thuận lợi.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Sự xuất hiện của chúng sẽ phá vỡ thế "Tòng cách", gây ra xung đột và khủng hoảng định mệnh.
+            `,
+            titleEn: `[THE SELF-05] YIN VOID: < 25%`,
+            dataEn: `The gravitational core collapses. The physical structure fragments into Sedimentary layers. The macro-accommodating framework turns into a sinkhole. It exists passively, allowing material flows and environmental pressure to rush in and pile up without generating any reactive resistance .`,
+          },
+        ],
+      },
+      {
+        can: "Kỷ",
+        selfCode: "[THE SELF-06]",
+        generalMechanism: `• General Mechanism: Inherits accommodation DNA (N-5 system) but distributes mass into a dispersed, Porous structure. Its core function is micro-permeation: resolving hard structures to create transit spaces, allowing peripheral systems to implant and extract resources .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a distributed storage and internal maintenance system. Optimized for maintaining network data flows. Its fatal weakness is the lack of hardware boundaries: the system easily accommodates secondary projects, leading to massive Sunk Costs that collapse profitability due to a refusal to initiate culling mechanisms .
+• Love/Romance Projection: Operates as an open accommodating interface. Continuously opens connection ports to receive partner data. The risk is that this mechanism refuses to establish defensive barriers, turning itself into an emotional waste filter for other systems, leading to structural energy saturation .
+• Healing/Shadow Projection: Operates as Permeable Boundaries. The signal filter is damaged, and the system loses the ability to isolate external pressure from its internal state. It passively absorbs the entirety of environmental disturbances, leading to a state of Chronic dysregulation .
+`,
+        forceRanges: [
+          {
+            id: 0,
+            title: "Kỷ Thổ Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Ở trạng thái này, đất vườn đã tích tụ đến mức trở nên quá dày và đặc. Tính linh hoạt và nuôi dưỡng bị thay thế bởi sự bảo thủ, cố chấp và ì ở mức độ cực đoan. Họ quá tin vào bản thân đến mức từ chối mọi sự góp ý. Lòng tốt và mong muốn chăm sóc có thể biến thành sự kiểm soát và áp đặt.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng được sinh trợ và có đồng minh, mệnh cục càng trở nên thịnh vượng.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút áp lực hay kỷ luật cũng có thể "chọc giận" toàn bộ cấu trúc Vượng, gây ra sụp đổ thảm khốc. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+            titleEn: `[THE SELF-06] YANG PEAK: > 74%`,
+            dataEn: `The porous interface is forced to expand beyond its accommodation limits. Unfiltered data absorption breaks connective structures. The porous surface turns into a dense, congested mass of matter, neutralizing its resolving capacity and creating static drag that pulls down any structure implanted into it .`,
+          },
+          {
+            id: 1,
+            title: "Kỷ Thổ Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là một Kỷ Thổ mạnh mẽ và tích cực. Họ có đủ nội lực để trở thành một trụ cột vững chắc cho gia đình và tổ chức. Họ đáng tin cậy, có trách nhiệm, và khả năng hỗ trợ, vun trồng của họ được phát huy tối đa.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để tiết chế bớt năng lượng. Power Forces (the Leader & the Warrior) mang lại kỷ luật và quyền lực; Economic Forces (the Provider & the Venturer) cho mục tiêu phấn đấu; Creation Forces (the Creator & the Innovator) để thể hiện tài năng.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng làm cho Kỷ Thổ càng thêm mạnh và mất cân bằng.
+            `,
+            titleEn: `[THE SELF-06] YANG: 65% – 74%`,
+            dataEn: `Surface expansion capacity operates at maximum output. Proactively spreads its interface to absorb resources, forcing peripheral components to become entirely dependent on the storage system it creates .`,
+          },
+          {
+            id: 2,
+            title: "Kỷ Thổ Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Kỷ Thổ vững vàng và chủ động hơn. Họ tự tin vào khả năng của mình, sẵn sàng đứng ra dẫn dắt, che chở và hỗ trợ người khác một cách mạnh mẽ. Họ là người bảo trợ đáng tin cậy.
+• Lực lượng thuận lợi (Favorable Forces): Tương tự như Cường, ưu tiên Power Forces, Economic Forces, và Creation Forces để đạt đến sự cân bằng hoàn hảo.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+            titleEn: `[THE SELF-06] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `The accommodation structure operates with a semi-permeable membrane. Allows the implantation of compatible data while automatically closing communication ports to prevent erosion from external agents .`,
+          },
+          {
+            id: 3,
+            title: "Kỷ Thổ Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Kỷ Thổ. Mọi phẩm chất tốt đẹp nhất được thể hiện một cách hài hòa. Họ giàu lòng nhân ái, kiên nhẫn, linh hoạt, khéo léo và có khả năng kiến tạo sự hòa hợp. Đây là mẫu người có thể phát triển ổn định và bền vững nhất.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa các lực lượng giúp lưu thông khí trong lá số như the Creator/Innovator (Creation Forces). Tùy vào cấu trúc, có thể cần một chút Power Forces để có định hướng hoặc Economic Forces để có mục tiêu.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ thế cân bằng tinh tế sẵn có
+            `,
+            titleEn: `[THE SELF-06] TRUE BALANCED: 45% – 55%`,
+            dataEn: `Dynamic equilibrium between absorption capacity and resolution cycles. Receives data, processes it smoothly, and provides precisely the resource flow the ecosystem requires. Maintains a perfect ecological circulation loop without experiencing saturation .`,
+          },
+          {
+            id: 4,
+            title: "Kỷ Thổ Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Kỷ Thổ khéo léo và linh hoạt hơn. Thay vì áp đặt, họ dùng sự lắng nghe sâu sắc và khả năng hợp tác tuyệt vời để vun trồng các mối quan hệ và dự án. Họ là nhà ngoại giao và người hòa giải tài tình.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp Nhật Chủ vững vàng hơn.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+            titleEn: `[THE SELF-06] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `Surface resource retention capacity weakens. The system is forced to borrow leverage from more rigid core structures in the ecosystem to serve as support frames, preventing surface morphology from deforming under kinetic pressure .`,
+          },
+          {
+            id: 5,
+            title: "Kỷ Thổ Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Đất vườn lúc này thiếu dưỡng chất. Sự linh hoạt biến thành sự do dự, thiếu chính kiến. Họ dễ bị môi trường và người khác tác động. Họ có xu hướng lo lắng nhiều, thiếu tự tin, và lòng tốt dễ bị lợi dụng.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để sinh trợ và hỗ trợ.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior), Economic Forces (the Provider & the Venturer), và Creation Forces (the Creator & the Innovator), vì chúng làm Nhật Chủ càng thêm suy yếu.
+            `,
+            titleEn: `[THE SELF-06] YIN: 25% – 35%`,
+            dataEn: `Surface cohesion density plummets severely. Loses the ability to store resources. The structure is continuously peeled apart by kinetic pressure, only able to exist by fragmenting and drifting into other operating systems .`,
+          },
+          {
+            id: 6,
+            title: "Kỷ Thổ Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Kỷ Thổ gần như mất đi bản chất của mình và phải "Tòng" (Follow) theo lực lượng đối lập vượng nhất trong lá số. Họ trở thành một người cực kỳ chuyên biệt, dồn hết năng lượng vào một hướng duy nhất.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó. Ví dụ, nếu Tòng theo Economic Forces, thì Creation Forces cũng trở nên thuận lợi.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Sự xuất hiện của chúng sẽ phá vỡ thế "Tòng cách", khiến Nhật Chủ cố gắng trở lại bản chất yếu ớt của mình và gây ra xung đột nội tâm dữ dội.`,
+            titleEn: `[THE SELF-06] YIN VOID: < 25%`,
+            dataEn: `Cohesive force disintegrates, and the permeable interface crumbles. This extreme state carries two scenarios: (1) The structure is thoroughly eroded, losing its resource retention capacity and being purged by the ecosystem. (2) Transforms into a layer of Micro-particulates substrate. It becomes invisible to measurement protocols, dispersing across space to silently provide incubation contexts and manipulate operational flows from a cellular level .`,
+          },
+        ],
+      },
+      {
+        can: "Canh",
+        selfCode: "[THE SELF-07]",
+        generalMechanism: `• General Mechanism: Compresses matter to convert it into kinetic impact force (N-1 system). Operates as a durability testing machine for ecosystem boundaries. Severs excess momentum and destroys obsolete structures to re-establish physical order and enforce hardware rules .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Restructuring Protocol. Optimized for removing redundant subsystems, cutting costs, and enforcing operational rules. The risk is that structural violence breaks well-functioning value links because the system-reset algorithms are too extreme .
+• Love/Romance Projection: Establishes severe hardware communication boundaries. Uses decisive disconnection decisions to remove data impurities from the interactive system. The drawback is creating kinetic impulses to measure the partner's durability, maintaining a state of unforgiving evaluation .
+• Healing/Shadow Projection: Operates via the Fight Response. Handles stressful data by activating an active defensive state: pushing back against the environment to establish safe boundaries. The system maintains safety by locking down feedback sensors (Emotional Numbing), refusing to receive soothing signals .
+`,
+        forceRanges: [
+          {
+            id: 0,
+            title: "Canh Kim Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Lúc này, thanh kiếm đã trở thành một vũ khí hủy diệt không thể kiểm soát. Sự quyết đoán biến thành sự liều lĩnh, phá phách. Lòng nghĩa khí trở thành sự cố chấp cực đoan, sẵn sàng "chém" phăng mọi thứ cản đường mà không cần suy xét hậu quả. Họ là một lực lượng của sự thay đổi dữ dội, một cuộc cách mạng không khoan nhượng.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng được bồi đắp và có đồng minh, sức mạnh càng trở nên áp đảo.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Lửa (Hỏa) rèn Kim lúc này sẽ gây ra một sự chống trả dữ dội, dẫn đến cả hai cùng bị hủy diệt. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+            titleEn: `[THE SELF-07] YANG PEAK: > 74%`,
+            dataEn: `The hardware core compresses to infinite density. This state carries two scenarios: (1) Becomes a machine of absolute order formation, setting hardware rules and crushing all momentum that stands in its way. (2) The monolithic nature completely nullifies elasticity, turning the hardest material into the most brittle. The system experiences a System Meltdown when facing sharp micro-impulses due to a refusal to bend .`,
+          },
+          {
+            id: 1,
+            title: "Canh Kim Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Canh Kim của chiến binh, của vị tướng quân. Họ trọng nghĩa khí, công bằng, và hành động. Họ là người bạn trung thành nhưng cũng là đối thủ đáng gờm. Với họ, vấn đề được giải quyết bằng hành động trực diện và dứt khoát, không phải bằng mưu mẹo hay lời nói.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để được tôi luyện. Power Forces (the Leader & the Warrior) để biến kim loại thô thành vũ khí hữu dụng; Economic Forces (the Provider & the Venturer) để có mục tiêu chinh phục; Creation Forces (the Creator & the Innovator) để thể hiện sức mạnh.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng khiến kim loại trở nên quá cứng và giòn, dễ gãy.
+            `,
+            titleEn: `[THE SELF-07] YANG: 65% – 74%`,
+            dataEn: `Impact and pruning forces operate on 100% internal power. Proactively initiates restructuring shockwaves. Breaks stagnation and establishes physical barriers that peripheral momentum cannot pierce or assimilate .`,
+          },
+          {
+            id: 2,
+            title: "Canh Kim Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Canh Kim chủ động và có mục đích rõ ràng. Họ dùng sức mạnh của mình để bảo vệ công lý, thực thi kỷ luật. Họ là những nhà lãnh đạo hành động, những người thực thi pháp luật, những người tiên phong dọn đường.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+            titleEn: `[THE SELF-07] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `Destructive force retains its sharpness but is synchronized with strategic positioning data. Controls impact points to test boundaries, accurately peeling away faulty modules without affecting the integrity of the macro-framework .`,
+          },
+          {
+            id: 3,
+            title: "Canh Kim Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Canh Kim. Sự cứng rắn của họ được cân bằng bởi trí tuệ và sự công tâm. Họ là người phân xử, người đàm phán, người có khả năng nhìn nhận vấn đề một cách khách quan và đưa ra quyết định dựa trên lẽ phải.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Power Forces (the Leader/Warrior) để có được thẩm quyền chính thức, và Creation Forces (the Creator/Innovator) để thể hiện sự khôn ngoan của mình.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
+            `,
+            titleEn: `[THE SELF-07] TRUE BALANCED: 45% – 55%`,
+            dataEn: `Perfect mechanical balance between hardware destruction and regenerative accommodation. The separation tool precisely locates and cuts flawed momentum, immediately disengaging force so the ecosystem can restore its balance without wasting excess energy .`,
+          },
+          {
+            id: 4,
+            title: "Canh Kim Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Canh Kim có tiềm năng nhưng cần sự định hướng. Họ vẫn có sự cứng rắn và nghĩa khí, nhưng cởi mở hơn trong việc hợp tác và tuân theo một khuôn khổ. Họ là những người đồng đội trung thành, sẵn sàng cống hiến cho một mục tiêu lớn hơn.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp họ trở nên mạnh mẽ hơn.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+            titleEn: `[THE SELF-07] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `Compression force and self-generated impact momentum decline. The system must integrate and borrow leverage from codes, regulations, or higher power structures to legitimize its structural reduction commands .`,
+          },
+          {
+            id: 5,
+            title: "Canh Kim Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Bản chất của họ là muốn hành động, muốn quyết đoán, nhưng lại thiếu sức mạnh và sự tự tin để làm điều đó. Điều này tạo ra sự ức chế và bất mãn lớn. Họ sợ xung đột, sợ phải đưa ra quyết định và thường trì hoãn hành động.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để "mài sắc" lại thanh kiếm.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như lửa nung chảy kim loại yếu. Economic Forces và Creation Forces cũng làm họ kiệt sức.
+            `,
+            titleEn: `[THE SELF-07] YIN: 25% – 35%`,
+            dataEn: `Structural compression force is severely depleted. Hardware boundaries lose their sharpness. Loses the ability to execute decisive interventions. Restructuring efforts become mere frictional hurdles that drain the ecosystem's vitality instead of resolving root issues .`,
+          },
+          {
+            id: 6,
+            title: "Canh Kim Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Canh Kim phải từ bỏ bản chất "chiến binh" của mình để "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải học cách tồn tại bằng cách trở thành công cụ cho một sức mạnh khác.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút hỗ trợ cũng sẽ "đánh thức" bản năng chiến binh, phá vỡ cấu trúc Tòng cách và gây ra tai họa.
+            `,
+            titleEn: `[THE SELF-07] YIN VOID: < 25%`,
+            dataEn: `The pruning function stalls completely. The rule-defining structure degenerates into a blunted, inert mass of matter. The system abandons its capacity to establish order, existing passively by using its own continuous deformation to consume and erode the momentum striking against it .`,
+          },
+        ],
+      },
+      {
+        can: "Tân",
+        selfCode: "[THE SELF-08]",
+        generalMechanism: `• General Mechanism: Inherits the DNA of matter compression (N-1 system), directing this compression into a micro-interface. It does not use macro impact force but utilizes high-resolution Precision to pare down and Fine-tune structures. Its mechanical function is to eliminate margins of error and establish an absolute operational standard algorithm for the system .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Quality Control Engine. Its core strength lies in product standardization and process fine-tuning. The massive risk is Over-engineering, continuously applying pressure to cut micro-costs, which leads to supply chain fractures because structural requirements demand unrealistic Tolerances .
+• Love/Romance Projection: Operates as a behavioral error scanning system. Continuously measures and demands interaction state upgrades. When deviations are detected, it uses analysis algorithms to issue rigorous, scrutinizing feedback, eroding connective structures by demanding that peripheral systems meet idealized standards .
+• Healing/Shadow Projection: Operates as a Toxic Self-Monitoring system. This mechanism handles pressure by self-diagnosing and punishing internal deviations. It continuously triggers error signals in the nervous system, creating chronic stress flows while forcing physiological structures to achieve an error-free state .
+`,
+        forceRanges: [
+          {
+            id: 0,
+            title: "Tân Kim Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Lúc này, viên kim cương không còn tỏa sáng mà trở nên sắc lạnh và nguy hiểm. Sự tinh tế biến thành sự chỉ trích, phán xét cực đoan. Lòng tự tôn trở thành sự kiêu ngạo và tự mãn tột độ. Lời nói của họ sắc như dao, làm tổn thương tất cả những ai đến gần. Họ tự cô lập mình trong một thế giới hoàn hảo nhưng không có sự ấm áp.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival).
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Lửa (Hỏa) nung chảy món trang sức tinh xảo sẽ hủy hoại hoàn toàn giá trị của nó. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+            titleEn: `[THE SELF-08] YANG PEAK: > 74%`,
+            dataEn: `Pruning density expands beyond the material tolerance limits. Extreme optimization turns into behavior that cannibalizes the core structure. The fine-tuning algorithm falls into an Infinite loop, paralyzing the entire operating system by obsessing over microscopic errors while ignoring macro-efficiency .`,
+          },
+          {
+            id: 1,
+            title: "Tân Kim Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Tân Kim của người nổi bật bằng giá trị và sự tinh xảo. Họ là những chuyên gia hàng đầu, những nhà phê bình sắc sảo, những nghệ sĩ theo đuổi sự hoàn mỹ. Họ có lòng tự tôn cao, yêu cái đẹp và luôn đòi hỏi chất lượng tốt nhất trong mọi việc. Lời nói của họ rất có trọng lượng.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập. Power Forces (the Leader & the Warrior) để định hình giá trị; Creation Forces (the Creator & the Innovator) để tỏa sáng lấp lánh; Economic Forces (the Provider & the Venturer) để giá trị của họ được công nhận.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) - như đất bùn làm bẩn viên ngọc. Companion Forces (the Companion & the Rival) - vì kim cương không muốn bị so sánh với những viên đá khác.
+            `,
+            titleEn: `[THE SELF-08] YANG: 65% – 74%`,
+            dataEn: `Optimization capacity operates maximally on internal power. Forces the environment to meet ultra-high-resolution standards. The system continuously isolates and removes micro-impurities to maintain absolute purity for core values .`,
+          },
+          {
+            id: 2,
+            title: "Tân Kim Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Tân Kim chủ động dùng sự sắc bén của mình để tạo ra giá trị. Họ là những chuyên gia có khả năng phân tích, mổ xẻ vấn đề một cách chính xác. Họ lãnh đạo bằng kiến thức chuyên môn và tiêu chuẩn cao.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+            titleEn: `[THE SELF-08] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `Sharpness is maintained but algorithm distribution is applied. Accurately identifies areas needing refinement to increase performance versus areas where error margins are permitted to optimize system energy .`,
+          },
+          {
+            id: 3,
+            title: "Tân Kim Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Tân Kim. Sự sắc bén của họ được cân bằng bởi sự duyên dáng và tinh tế. Họ vừa có giá trị nội tại, vừa biết cách thể hiện ra ngoài một cách thu hút. Họ là những người có gu thẩm mỹ cao, những nhà ngoại giao thanh lịch.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để thể hiện vẻ đẹp của mình và Power Forces (the Leader/Warrior) để được đặt trong một bối cảnh xứng đáng.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
+            `,
+            titleEn: `[THE SELF-08] TRUE BALANCED: 45% – 55%`,
+            dataEn: `Perfect intersection between cutting standards and the system's load-bearing capacity. The fine-tuning process removes excess resistance accurately without touching the load-bearing integrity of the machinery, achieving maximum mechanical efficiency .`,
+          },
+          {
+            id: 4,
+            title: "Tân Kim Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Tân Kim khiêm tốn và cần được nâng đỡ. Giá trị của họ vẫn ở đó, nhưng họ cần một môi trường, một bối cảnh phù hợp để tỏa sáng. Họ giỏi lắng nghe và hoàn thiện bản thân thông qua góp ý.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp họ tự tin hơn vào giá trị của mình.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+            titleEn: `[THE SELF-08] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `Micro-compression force weakens. The system core lacks the power to self-standardize. It is forced to synchronize with independent environmental rules and testing structures to maintain its pruning algorithms and protect its sharpness .`,
+          },
+          {
+            id: 5,
+            title: "Tân Kim Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Họ cảm nhận được giá trị tiềm ẩn của bản thân nhưng lại thiếu sự hỗ trợ (Đất) để được khai phá và ngọn lửa (Lửa) để được mài giũa. Điều này tạo ra cảm giác tự ti, mặc cảm, cảm thấy mình bị đánh giá thấp hoặc không được công nhận.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) - như đất mang khoáng sản - là quan trọng nhất. Companion Forces (the Companion & the Rival) cũng rất cần thiết.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như lửa nung chảy món trang sức yếu ớt. Economic Forces và Creation Forces cũng làm họ kiệt sức.
+            `,
+            titleEn: `[THE SELF-08] YIN: 25% – 35%`,
+            dataEn: `Micro-resolution capability is disrupted. The resolver loses its edge, unable to delineate the boundaries between core value and impurities. The optimization function degrades into superficial error warning commands that produce no structural changes .`,
+          },
+          {
+            id: 6,
+            title: "Tân Kim Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Tân Kim phải từ bỏ hoàn toàn lòng tự tôn và giá trị cá nhân để "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải tìm thấy giá trị của mình thông qua việc phục vụ cho một mục đích hoặc một sức mạnh khác.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút hỗ trợ cũng sẽ "đánh thức" lòng tự tôn, phá vỡ cấu trúc Tòng cách và gây ra khủng hoảng.
+            `,
+            titleEn: `[THE SELF-08] YIN VOID: < 25%`,
+            dataEn: `The physical pruning mechanism completely disintegrates. This extreme state carries two scenarios: (1) The algorithm loses the ability to recognize errors, the system absorbs all impurities, and sinks into chaos. (2) Transforms into an Invisible Standard. It hovers within the environmental structure as an underlying yardstick, forcing other entities to automatically trigger self-censorship processes and waste resources pursuing the phantom parameters it defines .`,
+          },
+        ],
+      },
+      {
+        can: "Nhâm",
+        selfCode: "[THE SELF-09]",
+        generalMechanism: `• General Mechanism: Macro-Fluid Dynamics momentum (N-3 system). Retains no fixed form, continuously generating kinetic energy, circulating resources, and dissolving boundaries. This massive fluid volume can only be routed or obstructed by gravitational cores with higher physical densities .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Macro-Liquidity Protocol. Generates kinetic energy by circulating capital, mining data, and adapting to macro variables. The risk is resource diffusion and a lack of a hardware framework to maintain stability, leading to asset evaporation or chain liquidity collapses when the system loses direction .
+• Love/Romance Projection: Operates as an interactive shockwave flow. Provides massive momentum that easily assimilates defensive barriers. Its Formlessness creates a sudden disconnection mechanism when obstructed, draining transmission flows and leaving behind severe structural disruptions .
+• Healing/Shadow Projection: Operates as a Displacement & Flight Response. The system processes pressure bottlenecks by continuously altering states and moving trajectories to avoid collisions. The lack of capacity to maintain a static state creates System flooding, breaking down regulatory processes when confronted with static pressure .
+`,
+        forceRanges: [
+          {
+            id: 0,
+            title: "Nhâm Thủy Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Ở trạng thái này, đại dương không còn hiền hòa mà trở thành một cơn lũ không thể kiểm soát. Sự thông minh và tự do biến thành sự liều lĩnh, ngông cuồng và kiêu ngạo. Giống như một cơn sóng thần, họ cuốn phăng mọi thứ trên đường đi, tạo ra sự hỗn loạn và không tuân theo bất kỳ quy tắc nào.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival). Càng có nhiều Kim sinh và Thủy trợ, dòng chảy càng trở nên mạnh mẽ vô địch.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Một chút đất (Thổ) cố gắng ngăn chặn dòng lũ sẽ chỉ khiến nó trở nên hung tợn và phá vỡ tất cả. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+            titleEn: `[THE SELF-09] YANG PEAK: > 74%`,
+            dataEn: `Fluid momentum reaches maximum saturation. This state carries two scenarios: (1) Generates a colossal hydrodynamic shockwave, washing away all barriers and reshaping the entire ecosystem's topography. (2) Expansive force exceeds the routing capacity of any physical framework. Directionless dispersion causes the system to destroy its own necessary circulation channels, leading to widespread, chaotic depletion of kinetic energy .`,
+          },
+          {
+            id: 1,
+            title: "Nhâm Thủy Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Nhâm Thủy của nhà chiến lược, nhà thám hiểm, hoặc thương nhân lớn. Họ thông minh, có tầm nhìn xa, linh hoạt và luôn chuyển động. Giống như một dòng sông lớn, họ có khả năng kết nối các vùng đất, tạo ra các tuyến giao thương và mang lại sự thịnh vượng. Sức mạnh của họ rất lớn và có tầm ảnh hưởng rộng.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập để năng lượng được hữu dụng. Power Forces (the Leader & the Warrior) để xây đê, tạo ra phương hướng; Economic Forces (the Provider & the Venturer) là mục tiêu để chinh phục; Creation Forces (the Creator & the Innovator) để Thủy sinh Mộc, thể hiện trí tuệ.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng khiến dòng chảy trở nên quá mạnh và mất kiểm soát.
+            `,
+            titleEn: `[THE SELF-09] YANG: 65% – 74%`,
+            dataEn: `Operates on 100% internal pressure. Autonomously breaks environmental inertia to establish powerful circulation trajectories. Sweeps up data and resources, forcing peripheral components to synchronize their velocity or be dissolved into its momentum .`,
+          },
+          {
+            id: 2,
+            title: "Nhâm Thủy Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Nhâm Thủy chủ động và đầy tham vọng. Họ tự tin vào khả năng của mình để chinh phục những mục tiêu lớn. Họ là những người tiên phong, không ngại dấn thân vào những lĩnh vực mới mẻ và đầy thách thức.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+            titleEn: `[THE SELF-09] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `Momentum is maintained at high intensity but governed by strategic routing. Redirects around hard gravitational cores rather than impacting them directly, optimizing flow distribution to achieve maximum kinetic efficiency .`,
+          },
+          {
+            id: 3,
+            title: "Nhâm Thủy Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Nhâm Thủy. Trí tuệ của họ sâu sắc nhưng tĩnh lặng. Họ có khả năng nhìn thấu vấn đề mà không bị cuốn theo sự hỗn loạn bên ngoài. Họ linh hoạt nhưng không dễ dao động, mạnh mẽ nhưng không áp đảo. Họ là những nhà tư tưởng, nhà hoạch định chính sách khôn ngoan.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để trí tuệ của họ được thể hiện ra ngoài, và Power Forces (the Leader/Warrior) để có được sự ổn định và định hướng.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
+            `,
+            titleEn: `[THE SELF-09] TRUE BALANCED: 45% – 55%`,
+            dataEn: `Absolute intersection between kinetic movement and dissolving capability. The system operates as an optimal circulation network: lubricating physical bottlenecks, rhythmically circulating resources, and absorbing excess heat to maintain perfect liquidity for the entire environment .`,
+          },
+          {
+            id: 4,
+            title: "Nhâm Thủy Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Nhâm Thủy khéo léo và có mục đích. Họ hiểu rằng sức mạnh của mình sẽ được phát huy tốt nhất khi chảy trong một hệ thống có sẵn. Họ giỏi tận dụng các nguồn lực và làm việc hiệu quả trong một tập thể.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) giúp dòng chảy không bao giờ cạn.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+            titleEn: `[THE SELF-09] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `Self-generated pressure degrades. Cannot autonomously pierce macro-barriers. The system is forced to rely on pre-existing routing channels, legal templates, or gravitational cores to continue circulating, surrendering trajectory control to the environment .`,
+          },
+          {
+            id: 5,
+            title: "Nhâm Thủy Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Bản chất của họ là muốn chảy, muốn được tự do, nhưng lại thiếu nguồn (Kim) và đồng minh (Thủy) để tạo thành dòng. Điều này tạo ra cảm giác bị mắc kẹt, tù túng và bất mãn. Trí thông minh của họ không được sử dụng, gây ra sự trì trệ.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là cần thiết nhất để tạo ra dòng chảy.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như đất đắp ngăn vũng nước nhỏ. Creation Forces và Economic Forces cũng làm họ khô cạn.
+            `,
+            titleEn: `[THE SELF-09] YIN: 25% – 35%`,
+            dataEn: `Movement momentum nearly hits rock bottom. The flow structure fractures into stagnant fluid masses. Entirely loses the function of data circulation, becoming congested and beginning to be reverse-osmosed or evaporated by the surrounding ecosystem .`,
+          },
+          {
+            id: 6,
+            title: "Nhâm Thủy Cực Nhược (Extremely Weak): < 25%",
+            data: `•	Luận giải: Ở trạng thái này, Nhâm Thủy phải từ bỏ hoàn toàn bản chất đại dương của mình để "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải học cách tồn tại như một phần của một thứ khác, nương theo sức mạnh không phải của mình.
+•	Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
+•	Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút hỗ trợ cũng sẽ "đánh thức" bản năng tự do, phá vỡ cấu trúc Tòng cách và gây ra khủng hoảng.
+            `,
+            titleEn: `[THE SELF-09] YIN VOID: < 25%`,
+            dataEn: `Flow acceleration stalls completely. The fluid structure separates into isolated puddles. Circulation capacity decays, and the system evaporates or is passively absorbed into the environment, terminating all interactive momentum and physical displacement .`,
+          },
+        ],
+      },
+      {
+        can: "Quý",
+        selfCode: "[THE SELF-10]",
+        generalMechanism: `• General Mechanism: Optimizes fluid dynamics across micro-surfaces (Micro-Permeation, N-3 system). Operates as an infiltrating solvent. Seeps through structural fissures (capillary effect), weakens physical bonds from the inside out, and alters environmental states without generating surface friction .`,
+        domainProductionMechanisms: `• Business Projection: Operates as a Data Infiltration mechanism. Optimizes micro-flow liquidity and penetrates market niches via dispersion mechanisms. Risks include a lack of core structural definition, Data leaks, and internal operational rusting due to the inability to establish clear hardware processes .
+• Love/Romance Projection: Operates as a low-amplitude synchronization mechanism. Infiltrates the partner's psychological fissures to establish connections. This permeation can lead to passive information control, violating private spatial boundaries, and binding the partner's operational structure with continuous streams of negative emotions .
+• Healing/Shadow Projection: Operates as Seeping Anxiety. Stress information flows do not explode but trickle in to erode defenses. Creates disordered information processing flows, causing self-healing mechanisms to dissolve into an un-isolatable background stress environment .
+`,
+        forceRanges: [
+          {
+            id: 0,
+            title: "Quý Thủy Cực Cường (Extremely Strong): > 74%",
+            data: `• Luận giải: Lúc này, cơn mưa nuôi dưỡng vạn vật đã trở thành một trận mưa dai dẳng, lạnh lẽo và u ám, gây ra ngập úng. Sự thâm nhập tinh tế biến thành sự soi mói, đa nghi. Nội tâm sâu sắc trở thành sự u uất, trầm cảm. Họ tạo ra một môi trường cảm xúc tiêu cực, làm "thối rữa" mọi sự sống.
+• Lực lượng thuận lợi (Favorable Forces): Theo cấu trúc "Tòng Vượng", họ cực kỳ ưa Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival).
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces (the Leader & the Warrior) là Kỵ Thần số một. Đất (Thổ) cố gắng ngăn chặn cơn mưa dầm sẽ chỉ biến thành bùn lầy. Economic Forces (the Provider & the Venturer) cũng rất bất lợi.
+            `,
+            titleEn: `[THE SELF-10] YANG PEAK: > 74%`,
+            dataEn: `Micro-diffusion capacity exceeds capillary limits. The flexible seeping characteristic is nullified. Pumping excessive solvent waterlogs all connective gaps in the macro-structure. The agile solvent is compressed into a dense quagmire of data, generating static resistance that completely paralyzes transmission systems .`,
+          },
+          {
+            id: 1,
+            title: "Quý Thủy Cường (Strong): 65% – 74%",
+            data: `• Luận giải: Đây là hình mẫu Quý Thủy của người thầy, người chữa lành, người nuôi dưỡng tinh thần. Trí tuệ của họ không phô trương mà thấm nhuần một cách nhẹ nhàng, từ tốn. Họ kiên nhẫn, thấu cảm và có khả năng dùng lời nói, kiến thức của mình để tưới tẩm cho tâm hồn người khác.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đối lập. Power Forces (the Leader & the Warrior) để dòng suối chảy trong русло; Economic Forces (the Provider & the Venturer) để chinh phục ngọn lửa; Creation Forces (the Creator & the Innovator) để nuôi dưỡng cây cối.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival), vì chúng khiến dòng suối trở nên quá lớn và mất đi sự trong trẻo.
+            `,
+            titleEn: `[THE SELF-10] YANG: 65% – 74%`,
+            dataEn: `Micro-capillary capacity operates optimally on internal power. Proactively establishes seeping networks to penetrate the deepest data cores of the environment. Extracts and distributes information, silently breaking the load-bearing structures of rigid boundaries through continuous micro-pressure .`,
+          },
+          {
+            id: 2,
+            title: "Quý Thủy Cân Bằng (thiên Cường): 55% – 65%",
+            data: `• Luận giải: Đây là phiên bản Quý Thủy chủ động hơn trong việc lan tỏa ảnh hưởng. Giống như sương mù, họ thâm nhập vào mọi ngóc ngách một cách thầm lặng nhưng hiệu quả. Họ là những nhà chiến lược, những người có khả năng gây ảnh hưởng mà không cần đối đầu trực diện.
+• Lực lượng thuận lợi (Favorable Forces): Ưu tiên Power Forces, Economic Forces, và Creation Forces.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces và Companion Forces.
+            `,
+            titleEn: `[THE SELF-10] BALANCED LEANING YANG: 55% – 65%`,
+            dataEn: `Permeation is maintained continuously through strategic filters. Accurately identifies areas where bonds need loosening. The seeping is constructive, regulating internal pressure without causing overarching structural leaks .`,
+          },
+          {
+            id: 3,
+            title: "Quý Thủy Cân Bằng Thực Sự (True Balance): 45% – 55%",
+            data: `• Luận giải: Đây là trạng thái lý tưởng nhất của Quý Thủy. Họ tinh khiết, trong trẻo và mang trong mình cả một thế giới. Trí tuệ của họ cô đọng và quý giá. Họ là những nghệ sĩ, nhà thơ, những người có khả năng nhìn thấy vẻ đẹp và sự thật trong những điều nhỏ bé nhất.
+• Lực lượng thuận lợi (Favorable Forces): Rất linh hoạt. Thường ưa Creation Forces (the Creator/Innovator) để nuôi dưỡng và thể hiện sự sáng tạo, và Economic Forces (the Provider/Venturer) để mang lại giá trị thực tế.
+• Lực lượng bất lợi (Unfavorable Forces): Bất kỳ lực lượng nào xuất hiện quá nhiều làm phá vỡ sự cân bằng.
+            `,
+            titleEn: `[THE SELF-10] TRUE BALANCED: 45% – 55%`,
+            dataEn: `Perfect intersection between seeping momentum and surface capacity. Operates as a flawless lubrication mechanism: provides precisely the amount of informational solvent needed to nourish micro-connection networks and neutralize thermodynamic friction, maintaining biological flexibility without causing stagnation .`,
+          },
+          {
+            id: 4,
+            title: "Quý Thủy Cân Bằng (thiên Nhược): 35% – 45%",
+            data: `• Luận giải: Đây là phiên bản Quý Thủy khiêm tốn, mang lại sự an ủi và chữa lành. Họ không chủ động gây ảnh hưởng mà chờ đợi được tìm đến. Họ là những người bạn tâm giao, người biết lắng nghe và đưa ra lời khuyên chân thành.
+• Lực lượng thuận lợi (Favorable Forces): Ưa các lực lượng đồng minh. Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là rất quan trọng.
+• Lực lượng bất lợi (Unfavorable Forces): Power Forces, Economic Forces, và Creation Forces.
+            `,
+            titleEn: `[THE SELF-10] BALANCED LEANING YIN: 35% – 45%`,
+            dataEn: `Self-generated capillary thrust declines. The system cannot proactively pierce physical boundaries. It is forced to rely on the environment's pressure differentials or pre-existing structural cracks in other entities to seep through, accepting passivity in the resource distribution cycle .`,
+          },
+          {
+            id: 5,
+            title: "Quý Thủy Nhược (Weak): 25% – 35%",
+            data: `• Luận giải: Năng lượng của họ rất yếu ớt, dễ bay hơi. Họ cảm thấy mình nhỏ bé và bất lực trước cuộc sống. Nội tâm của họ đầy lo âu và nhạy cảm. Họ dễ bị tổn thương và thường nhìn cuộc sống qua lăng kính bi quan.
+• Lực lượng thuận lợi (Favorable Forces): Support Forces (the Mentor & the Maverick) - như nguồn nước - là quan trọng nhất. Companion Forces (the Companion & the Rival) cũng rất cần thiết.
+• Lực lượng bất lợi (Unfavorable Forces): Rất kỵ Power Forces (the Leader & the Warrior) - như đất hút cạn nước. Creation Forces và Economic Forces cũng làm họ kiệt quệ.
+            `,
+            titleEn: `[THE SELF-10] YIN: 25% – 35%`,
+            dataEn: `Micro-spreading capacity is almost entirely neutralized. Capillary links sever, turning the system into isolated fluid particles. Losing the ability to interact with the environment, it becomes statically trapped between hardware frameworks and is slowly eroded by the environment's thermodynamic reactions .`,
+          },
+          {
+            id: 6,
+            title: "Quý Thủy Cực Nhược (Extremely Weak): < 25%",
+            data: `• Luận giải: Ở trạng thái này, Quý Thủy gần như vô hình và phải "Tòng" (Follow) theo lực lượng đối lập vượng nhất. Họ phải học cách tồn tại bằng cách hòa tan hoàn toàn vào một năng lượng khác.
+• Lực lượng thuận lợi (Favorable Forces): Là lực lượng vượng nhất mà Nhật Chủ đang "Tòng" theo (có thể là Economic, Power, hoặc Creation Forces) và lực lượng sinh ra nó.
+• Lực lượng bất lợi (Unfavorable Forces): Support Forces (the Mentor & the Maverick) và Companion Forces (the Companion & the Rival) là Kỵ Thần số một. Một chút hỗ trợ cũng sẽ khiến "hơi thở" ngưng tụ, phá vỡ cấu trúc Tòng cách và gây ra khủng hoảng.
+            `,
+            titleEn: `[THE SELF-10] YIN VOID: < 25%`,
+            dataEn: `The capillary mechanism runs dry, losing the ability to penetrate physical boundaries. This extreme state carries two scenarios: (1) Crystallizes into inert residue, losing flexibility and becoming useless, stagnant matter. (2) Phase-shifts into a dispersed atmospheric state (Sublimation). Remaining absolutely invisible to measurement protocols, it blends into spatial pressure, silently manipulating the data humidity and neural signals of the entire ecosystem from the shadows .`,
+          },
+        ],
+      },
+    ];
+    return forceData.find((item) => item.can === can);
+  };
+
+  const getNguHanhHoTro = (nguHanh) => {
+    switch (nguHanh) {
+      case "Thủy":
+        return "Kim";
+      case "Thổ":
+        return "Hỏa";
+      case "Mộc":
+        return "Thủy";
+      case "Kim":
+        return "Thổ";
+      case "Hỏa":
+        return "Mộc";
+      default:
+        return "";
+    }
+  };
+
+  const getSupportPercent = (nhatChu, nguHanhScore) => {
+    let dongHanhPercent = 0;
+    let hoTroPercent = 0;
+    let nhatChuNguHanh = nhatChu.nguHanhCan;
+
+    for (let nguHanh of nguHanhScore) {
+      if (nguHanh.name === nhatChuNguHanh) {
+        dongHanhPercent = nguHanh.percent;
+      }
+      if (nguHanh.name === getNguHanhHoTro(nhatChuNguHanh)) {
+        hoTroPercent = nguHanh.percent;
+      }
+    }
+
+    return {
+      dongHanh: {
+        name: nhatChuNguHanh,
+        percent: parseFloat(dongHanhPercent),
+      },
+      hoTro: {
+        name: getNguHanhHoTro(nhatChuNguHanh),
+        percent: parseFloat(hoTroPercent),
+      },
+      ratio: parseFloat(dongHanhPercent / hoTroPercent).toFixed(2),
+      totalPercent: (
+        parseFloat(dongHanhPercent) + parseFloat(hoTroPercent)
+      ).toFixed(2),
+    };
+  };
+
+  const getRoleText = (dongHanhPercent, hoTroPercent) => {
+    let textData = {};
+    if (dongHanhPercent > hoTroPercent) {
+      textData = {
+        en: "Companion Forces play a more crucial role than Support Forces in constituting the The Self's Strength",
+        vi: "Lực Lượng Đồng Hành có vai trò quan trọng hơn Lực Lượng Hỗ Trợ trong việc cấu thành Sức Mạnh của Nhật Chủ",
+      };
+    } else if (dongHanhPercent < hoTroPercent) {
+      textData = {
+        en: "Support Forces play a more crucial role than Companion Forces in constituting the The Self's Strength",
+        vi: "Lực Lượng Hỗ Trợ có vai trò quan trọng hơn Lực Lượng Đồng Hành trong việc cấu thành Sức Mạnh của Nhật Chủ",
+      };
+    } else {
+      textData = {
+        en: "Companion Forces and Support Forces have an equal role in constituting the The Self's Strength",
+        vi: "Lực Lượng Đồng Hành và Lực Lượng Hỗ Trợ có vai trò tương đương trong việc cấu thành Sức Mạnh Nhật Chủ",
+      };
+    }
+    return LANGUAGE === "en" ? textData.en : textData.vi;
+  };
+
+  const generateDecadeText = (yearStartDecade, namSinh, startDecadeCungSo) => {
+    if (!yearStartDecade || !namSinh || !startDecadeCungSo) {
+      return "";
+    }
+
+    const branchList = [
+      "Tý",
+      "Sửu",
+      "Dần",
+      "Mão",
+      "Thìn",
+      "Tỵ",
+      "Ngọ",
+      "Mùi",
+      "Thân",
+      "Dậu",
+      "Tuất",
+      "Hợi",
+    ];
+
+    return (
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+        .map((item, index) => {
+          let branchIndex = (startDecadeCungSo + item - 1) % 12;
+          let branchName = branchList[branchIndex];
+          return `Decade ${index + 1} (${getBranchData(branchName)}): ages ${
+            item * 10 + (yearStartDecade - namSinh)
+          }-${item * 10 + 9 + (yearStartDecade - namSinh)} (${
+            yearStartDecade + item * 10
+          }-${yearStartDecade + item * 10 + 9})`;
+        })
+        .join(", ") + "."
+    );
+  };
+
+  const getNameFromIndex = (index) => {
+    let data = { en: "", vi: "" };
+    switch (index) {
+      case 0:
+        data = { en: "Yang Peak", vi: "Cực Cường" };
+        break;
+      case 1:
+        data = { en: "Yang ", vi: "Cường" };
+        break;
+      case 2:
+        data = { en: "Balanced (leaning Yang)", vi: "Cân Bằng Thiên Cường" };
+        break;
+      case 3:
+        data = { en: "True Balance", vi: "Cân Bằng Thực Sự" };
+        break;
+      case 4:
+        data = { en: "Balanced (leaning Yin)", vi: "Cân Bằng Thiên Nhược" };
+        break;
+      case 5:
+        data = { en: "Yin", vi: "Nhược" };
+        break;
+      case 6:
+        data = { en: "Yin Void", vi: "Cực Nhược" };
+        break;
+    }
+    return LANGUAGE === "en" ? data.en : data.vi;
+  };
+
+  const getForcesDetail = (nhatChu, dongHanhPercent, hoTroPercent) => {
+    let forces = getSupportForces(nhatChu.can).forceRanges;
+    let generalMechanism = getSupportForces(nhatChu.can).generalMechanism;
+    let domainProductionMechanisms = getSupportForces(
+      nhatChu.can,
+    ).domainProductionMechanisms;
+    let selfCode = getSupportForces(nhatChu.can).selfCode;
+    let totalPercent = dongHanhPercent + hoTroPercent;
+    let majorForcesIndex = 0;
+    if (totalPercent > 74) {
+      majorForcesIndex = 0;
+    } else if (totalPercent >= 65) {
+      majorForcesIndex = 1;
+    } else if (totalPercent >= 55) {
+      majorForcesIndex = 2;
+    } else if (totalPercent >= 45) {
+      majorForcesIndex = 3;
+    } else if (totalPercent >= 35) {
+      majorForcesIndex = 4;
+    } else if (totalPercent >= 25) {
+      majorForcesIndex = 5;
+    } else {
+      majorForcesIndex = 6;
+    }
+    let minorForcesIndex = null;
+    if (
+      Math.round(dongHanhPercent / totalPercent) !==
+      Math.round(hoTroPercent / totalPercent)
+    ) {
+      if (
+        Math.round(dongHanhPercent) > Math.round(hoTroPercent) &&
+        majorForcesIndex !== 0
+      ) {
+        minorForcesIndex = majorForcesIndex - 1;
+      } else if (
+        Math.round(dongHanhPercent / totalPercent) <
+          Math.round(hoTroPercent / totalPercent) &&
+        majorForcesIndex !== 6
+      ) {
+        minorForcesIndex = majorForcesIndex + 1;
+      }
+    }
+
+    return {
+      selfCode: selfCode,
+      generalMechanism: generalMechanism,
+      domainProductionMechanisms: domainProductionMechanisms,
+      majorForces: {
+        name: getNameFromIndex(majorForcesIndex),
+        title:
+          LANGUAGE === "en"
+            ? forces[majorForcesIndex].titleEn
+            : forces[majorForcesIndex].title,
+        data:
+          LANGUAGE === "en"
+            ? forces[majorForcesIndex].dataEn
+            : forces[majorForcesIndex].data,
+      },
+      minorForces:
+        minorForcesIndex || minorForcesIndex == 0
+          ? {
+              name: getNameFromIndex(minorForcesIndex),
+              title:
+                LANGUAGE === "en"
+                  ? forces[minorForcesIndex].titleEn
+                  : forces[minorForcesIndex].title,
+              data:
+                LANGUAGE === "en"
+                  ? forces[minorForcesIndex].dataEn
+                  : forces[minorForcesIndex].data,
+            }
+          : { name: "", title: "", data: "" },
+    };
+  };
+
+  const getAdditionPercent = (nguHanh, nguHanhScore, nguHanhScoreGoc) => {
+    let nguHanhIndex = nguHanhScore.findIndex((item) => item.name === nguHanh);
+    let additionPercent =
+      nguHanhScore[nguHanhIndex].percent -
+      nguHanhScoreGoc[nguHanhIndex].percent;
+    let percentAm =
+      nguHanhScore[nguHanhIndex].percentAm -
+      nguHanhScoreGoc[nguHanhIndex].percentAm;
+    let percentDuong =
+      nguHanhScore[nguHanhIndex].percentDuong -
+      nguHanhScoreGoc[nguHanhIndex].percentDuong;
+    return {
+      total:
+        (additionPercent > 0 ? "+" : "") + additionPercent.toFixed(2) + "%",
+      am: (percentAm > 0 ? "+" : "") + percentAm.toFixed(2) + "%",
+      duong: (percentDuong > 0 ? "+" : "") + percentDuong.toFixed(2) + "%",
+    };
+  };
+
+  const getStemData = (can) => {
+    let data = {
+      Giáp: {
+        en: "Jia",
+        vi: "Giáp",
+      },
+      Ất: {
+        en: "Yi",
+        vi: "Ất",
+      },
+      Bính: {
+        en: "Bing",
+        vi: "Bính",
+      },
+      Đinh: {
+        en: "Ding",
+        vi: "Đinh",
+      },
+      Mậu: {
+        en: "Wu",
+        vi: "Mậu",
+      },
+      Kỷ: {
+        en: "Ji",
+        vi: "Kỷ",
+      },
+      Canh: {
+        en: "Geng",
+        vi: "Canh",
+      },
+      Tân: {
+        en: "Xin",
+        vi: "Tân",
+      },
+      Nhâm: {
+        en: "Ren",
+        vi: "Nhâm",
+      },
+      Quý: {
+        en: "Gui",
+        vi: "Quý",
+      },
+    };
+    return LANGUAGE === "en" ? data[can].en : data[can].vi;
+  };
+
+  const getBranchData = (chi) => {
+    let data = {
+      Tý: {
+        en: "Rat",
+        vi: "Tý",
+      },
+      Sửu: {
+        en: "Ox",
+        vi: "Sửu",
+      },
+      Dần: {
+        en: "Tiger",
+        vi: "Dần",
+      },
+      Mão: {
+        en: "Rabbit/Cat",
+        vi: "Mão",
+      },
+      Thìn: {
+        en: "Dragon",
+        vi: "Thìn",
+      },
+      Tỵ: {
+        en: "Snake",
+        vi: "Tỵ",
+      },
+      Ngọ: {
+        en: "Horse",
+        vi: "Ngọ",
+      },
+      Mùi: {
+        en: "Goat",
+        vi: "Mùi",
+      },
+      Thân: {
+        en: "Monkey",
+        vi: "Thân",
+      },
+      Dậu: {
+        en: "Rooster",
+        vi: "Dậu",
+      },
+      Tuất: {
+        en: "Dog",
+        vi: "Tuất",
+      },
+      Hợi: {
+        en: "Pig",
+        vi: "Hợi",
+      },
+    };
+    return LANGUAGE === "en" ? data[chi].en : data[chi].vi;
+  };
+
+  const getTenForcesData = (thapThan) => {
+    let data = {
+      "Nhật chủ": {
+        en: "The Self",
+        vi: "Nhật chủ",
+      },
+      "Tỷ Kiên": {
+        en: "The Companion",
+        vi: "Tỷ Kiên",
+      },
+      "Kiếp Tài": {
+        en: "The Rival",
+        vi: "Kiếp Tài",
+      },
+      "Thực Thần": {
+        en: "The Creator",
+        vi: "Thực Thần",
+      },
+      "Thương Quan": {
+        en: "The Innovator",
+        vi: "Thương Quan",
+      },
+      "Thiên Ấn": {
+        en: "The Maverick",
+        vi: "Thiên Ấn",
+      },
+      "Chính Ấn": {
+        en: "The Mentor",
+        vi: "Chính Ấn",
+      },
+      "Thiên Tài": {
+        en: "The Venturer/Entrepreneur",
+        vi: "Thiên Tài",
+      },
+      "Chính Tài": {
+        en: "The Provider",
+        vi: "Chính Tài",
+      },
+      "Thiên Quan": {
+        en: "The Warrior",
+        vi: "Thiên Quan",
+      },
+      "Chính Quan": {
+        en: "The Leader",
+        vi: "Chính Quan",
+      },
+    };
+    return LANGUAGE === "en" ? data[thapThan].en : data[thapThan].vi;
+  };
+
+  const getNapAmTenForces = (napAmThapThan) => {
+    let napAmData = napAmThapThan.replace(",", " +").split(" + ");
+    let napAmDataEn = napAmData.map((item) => {
+      return getTenForcesData(item);
+    });
+    return napAmDataEn.join(" + ");
+  };
+
+  const getElementData = (element) => {
+    let data = {
+      Kim: {
+        en: "Metal",
+        vi: "Kim",
+      },
+      Mộc: {
+        en: "Wood",
+        vi: "Mộc",
+      },
+      Thủy: {
+        en: "Water",
+        vi: "Thủy",
+      },
+      Hỏa: {
+        en: "Fire",
+        vi: "Hỏa",
+      },
+      Thổ: {
+        en: "Earth",
+        vi: "Thổ",
+      },
+    };
+    return LANGUAGE === "en" ? data[element].en : data[element].vi;
+  };
+
+  const getNapAmData = (napAm) => {
+    if (!napAm) return "";
+    let data = {
+      // Metal Elements
+      "KIẾM PHONG KIM": {
+        en: "Sharp Executive Power",
+        vi: "Kiếm Phong Kim",
+        systemCode: "[WS-N1-2]",
+      },
+      "KIM BẠCH KIM": {
+        en: "Pure Bravery",
+        vi: "Kim Bạch Kim",
+        systemCode: "[WS-N1-5]",
+      },
+      "SA TRUNG KIM": {
+        en: "Value Awaiting Discovery",
+        vi: "Sa Trung Kim",
+        systemCode: "[WS-N1-4]",
+      },
+      "THOA XUYẾN KIM": {
+        en: "Sophisticated Nobility",
+        vi: "Thoa Xuyến Kim",
+        systemCode: "[WS-N1-6]",
+      },
+      "HẢI TRUNG KIM": {
+        en: "Hidden Wisdom",
+        vi: "Hải Trung Kim",
+        systemCode: "[WS-N1-1]",
+      },
+      "BẠCH LẠP KIM": {
+        en: "Transformative Potential",
+        vi: "Bạch Lạp Kim",
+        systemCode: "[WS-N1-3]",
+      },
+      // Fire Elements
+      "THIÊN THƯỢNG HỎA": {
+        en: "Supreme Authority",
+        vi: "Thiên Thượng Hỏa",
+        systemCode: "[WS-N4-6]",
+      },
+      "TÍCH LỊCH HỎA": {
+        en: "Shocking Breakthrough",
+        vi: "Tích Lịch Hỏa",
+        systemCode: "[WS-N4-3]",
+      },
+      "LƯ TRUNG HỎA": {
+        en: "Disciplined Forging",
+        vi: "Lư Trung Hỏa",
+        systemCode: "[WS-N4-1]",
+      },
+      "SƠN ĐẦU HỎA": {
+        en: "Latent Inner Power",
+        vi: "Sơn Đầu Hỏa",
+        systemCode: "[WS-N4-2]",
+      },
+      "SƠN HẠ HỎA": {
+        en: "Practical Enthusiasm",
+        vi: "Sơn Hạ Hỏa",
+        systemCode: "[WS-N4-4]",
+      },
+      "PHÚC ĐĂNG HỎA": {
+        en: "Illuminating Wisdom",
+        vi: "Phúc Đăng Hỏa",
+        systemCode: "[WS-N4-5]",
+      },
+      // Water Elements
+      "ĐẠI HẢI THỦY": {
+        en: "Grand Ambition",
+        vi: "Đại Hải Thủy",
+        systemCode: "[WS-N3-6]",
+      },
+      "THIÊN HÀ THỦY": {
+        en: "Universal Compassion",
+        vi: "Thiên Hà Thủy",
+        systemCode: "[WS-N3-4]",
+      },
+      "TRƯỜNG LƯU THỦY": {
+        en: "Enduring Vision",
+        vi: "Trường Lưu Thủy",
+        systemCode: "[WS-N3-3]",
+      },
+      "ĐẠI KHÊ THỦY": {
+        en: "Outspoken Passion",
+        vi: "Đại Khê Thủy",
+        systemCode: "[WS-N3-5]",
+      },
+      "TUYỀN TRUNG THỦY": {
+        en: "Deep Serenity",
+        vi: "Tuyền Trung Thủy",
+        systemCode: "[WS-N3-2]",
+      },
+      "GIẢN HẠ THỦY": {
+        en: "Discreet Multidimensional",
+        vi: "Giản Hạ Thủy",
+        systemCode: "[WS-N3-1]",
+      },
+      // Wood Elements
+      "ĐẠI LÂM MỘC": {
+        en: "Community Power",
+        vi: "Đại Lâm Mộc",
+        systemCode: "[WS-N2-1]",
+      },
+      "TÙNG BÁCH MỘC": {
+        en: "Resilient Bravery",
+        vi: "Tùng Bách Mộc",
+        systemCode: "[WS-N2-3]",
+      },
+      "THẠCH LỰU MỘC": {
+        en: "Achievement through Pressure",
+        vi: "Thạch Lựu Mộc",
+        systemCode: "[WS-N2-6]",
+      },
+      "TANG ĐỐ MỘC": {
+        en: "Spirit of Dedication",
+        vi: "Tang Đố Mộc",
+        systemCode: "[WS-N2-5]",
+      },
+      "BÌNH ĐỊA MỘC": {
+        en: "Practical Expansion",
+        vi: "Bình Địa Mộc",
+        systemCode: "[WS-N2-4]",
+      },
+      "DƯƠNG LIỄU MỘC": {
+        en: "The Art of Softness",
+        vi: "Dương Liễu Mộc",
+        systemCode: "[WS-N2-2]",
+      },
+      // Earth Elements
+      "THÀNH ĐẦU THỔ": {
+        en: "Principled Steadfastness",
+        vi: "Thành Đầu Thổ",
+        systemCode: "[WS-N5-2]",
+      },
+      "ĐẠI TRẠCH THỔ": {
+        en: "Inclusive Foundation",
+        vi: "Đại Trạch Thổ",
+        systemCode: "[WS-N5-5]",
+      },
+      "LỘ BÀNG THỔ": {
+        en: "Enduring Forging",
+        vi: "Lộ Bàng Thổ",
+        systemCode: "[WS-N5-1]",
+      },
+      "SA TRUNG THỔ": {
+        en: "Flexible Adaptation",
+        vi: "Sa Trung Thổ",
+        systemCode: "[WS-N5-6]",
+      },
+      "BÍCH THƯỢNG THỔ": {
+        en: "Symbiotic Dependence",
+        vi: "Bích Thượng Thổ",
+        systemCode: "[WS-N5-4]",
+      },
+      "ỐC THƯỢNG THỔ": {
+        en: "Standardized Order",
+        vi: "Ốc Thượng Thổ",
+        systemCode: "[WS-N5-3]",
+      },
+    };
+    return data[napAm].systemCode;
+    return LANGUAGE === "en" ? data[napAm].en : data[napAm].vi;
+  };
+
+  const convertMonth = (month) => {
+    switch (month) {
+      case 1:
+        return "January";
+      case 2:
+        return "February";
+      case 3:
+        return "March";
+      case 4:
+        return "April";
+      case 5:
+        return "May";
+      case 6:
+        return "June";
+      case 7:
+        return "July";
+      case 8:
+        return "August";
+      case 9:
+        return "September";
+      case 10:
+        return "October";
+      case 11:
+        return "November";
+      case 12:
+        return "December";
+      default:
+        return "";
+    }
+  };
+
+  const convertDate = (day, month, year) => {
+    if (!year) {
+      return "";
+    } else {
+      if (!month) {
+        day = "";
+      }
+    }
+    return `${convertMonth(month)} ${day || ""}${month ? ", " : ""} ${
+      year || ""
+    }`;
+  };
+
+  const getDayMasterData = (nguHanhScore, nhatChuName) => {
+    let dayMasterData = getThapThanThienCan(nhatChuName);
+    let data = dayMasterData.data;
+
+    return `${data
+      .map((item) => {
+        let nguHanhData = nguHanhScore.find(
+          (nguHanh) => item.nguHanh === nguHanh.name,
+        );
+        let percent =
+          item.amDuong === "Dương"
+            ? nguHanhData.percentDuong
+            : nguHanhData.percentAm;
+        return `${item.thapThanCode} = ${percent}% | ${item.descriptionEn}
+•	(+) Active: ${item.active}
+•	(-) Passive: ${item.passive}
+`;
+      })
+      .join("\n")}
+    `;
+  };
+
+  const getAgeStartDecadeIndex = (thapNhiCung) => {
+    let ageStartDecadeIndex = 0;
+    let startDecadeCungSo = 1;
+    for (let cung of thapNhiCung) {
+      if (cung.cungDaiHan <= 10) {
+        ageStartDecadeIndex = cung.cungDaiHan - 1;
+        startDecadeCungSo = cung.cungSo;
+      }
+    }
+    return { ageStartDecadeIndex, startDecadeCungSo };
+  };
+
+  const STEM_LIST = [
+    "Giáp",
+    "Ất",
+    "Bính",
+    "Đinh",
+    "Mậu",
+    "Kỷ",
+    "Canh",
+    "Tân",
+    "Nhâm",
+    "Quý",
+  ];
+
+  const BRANCH_LIST = [
+    "Tý",
+    "Sửu",
+    "Dần",
+    "Mão",
+    "Thìn",
+    "Tỵ",
+    "Ngọ",
+    "Mùi",
+    "Thân",
+    "Dậu",
+    "Tuất",
+    "Hợi",
+  ];
+
+  const containsAllValues = (sourceList = [], targetList = []) => {
+    let sourceCountMap = new Map();
+
+    sourceList.forEach((value) => {
+      sourceCountMap.set(value, (sourceCountMap.get(value) || 0) + 1);
+    });
+
+    return targetList.every((value) => {
+      let currentCount = sourceCountMap.get(value) || 0;
+
+      if (currentCount <= 0) {
+        return false;
+      }
+
+      sourceCountMap.set(value, currentCount - 1);
+      return true;
+    });
+  };
+
+  const getPartAMerge = (canList) => {
+    let partAMergeData = [
+      {
+        id: 0,
+        canList: [1, 6],
+        canName: ["Giáp", "Kỷ"],
+        title: "Jia - Ji Merge (Proper / Righteous Merge)",
+        comprehensiveImage: `•	General: [+] A merge of principles, uprightness, stability, and trustworthiness. The image of 'a tree with roots planted deep in the earth.' / [-] Conservatism, stubbornness, cumbersomeness, and inflexibility in the face of change.
+•	Business: [+] Sustainable and stable long-term cooperation (real estate, education, construction). Secure and safe transactions. / [-] Slow cash flow, missing market rhythms due to excessive caution, bureaucratic management systems.
+•	Love: [+] A marriage of well-matched social standing, a solid foundation, and safe protection (one is the breadwinner, the other the rear guard). / [-] A dry relationship lacking romance, leaning toward imposition or patriarchy.
+•	Health: [+] The digestive and nervous systems operate rhythmically; the body absorbs nutrients well. / [-] Digestive functions are inhibited; stomach aches and acid reflux caused by overthinking and work pressure.
+`,
+      },
+      {
+        id: 1,
+        canList: [2, 7],
+        canName: ["Ất", "Canh"],
+        title: "Yi - Geng Merge (Benevolent / Righteous Merge)",
+        comprehensiveImage: `•	General: [+] Flexible integration of hard and soft, using soft power to resolve conflicts. The image of "a vine wrapping around a sword blade." / [-] Fake compromises, outward agreement but inward dissent, manipulation for personal gain.
+•	Business: [+] Successful negotiation of thorny contracts. Using tact to acquire competitors or resolve legal crises. / [-] Being forced to sign under the pressure of authoritative power, losing one's independent position.
+•	Love: [+] An absolutely complementary couple (the resolute one is soothed by the gentle one), using softness to bind tightly. / [-] Enduring resentment; one side uses authority to suppress while the other must stoop and flatter.
+•	Health: [+] Flexible bones, joints, and tendons; successful medical or cosmetic interventions. / [-] Compressed tendons, chronic neck and shoulder pain, sports injuries, cosmetic surgery scars.
+`,
+      },
+      {
+        id: 2,
+        canList: [3, 8],
+        canName: ["Bính", "Tân"],
+        title: "Bing - Xin Merge (Authoritative Merge)",
+        comprehensiveImage: `•	General: [+] A glamorous merge, expanding reputation, shining brightly, and attracting attention. The image of "sunlight reflecting off jewelry." / [-] Empty ostentation, superficiality, valuing form over substance.
+•	Business: [+] Excellent brand building, leveraging reputation (KOLs) to explode sales, successful fundraising. / [-] Over-investing in image leading to cash flow deficits, "empty vessels making the most noise," flashy contracts with low profit margins.
+•	Love: [+] A talented and beautiful couple, proud of each other, publicly and brilliantly displaying their affection. / [-] Loving for the sake of face and status, putting on a "flashy facade" on social media but cold on the inside.
+•	Health: [+] Good blood circulation, radiant complexion, beautiful appearance. / [-] Hot energy attacks the respiratory system: sore throat, tonsillitis, high fever affecting the lungs, weather allergies.
+`,
+      },
+      {
+        id: 3,
+        canList: [4, 9],
+        canName: ["Đinh", "Nhâm"],
+        title: "Ding - Ren Merge (Emotional / Lascivious Merge)",
+        comprehensiveImage: `•	General: [+] Tacit understanding, keen intuition, deep emotions, and a mysterious harmony. The image of "stars reflecting on a night lake." / [-] Sneaky concealment, uncontrolled desires, shady secrets.
+•	Business: [+] Smooth cooperation without rigid paperwork, excellent grasp of customer psychology (suits the psychology and nightlife entertainment industries). / [-] "Under-the-table" agreements, shady transactions, prone to litigation if exposed.
+•	Love: [+] Intense sexual magnetism, complete romantic harmony in both body and soul. / [-] Getting involved in sneaky affairs, emotional infidelity, blind love, addiction to alcohol and sex.
+•	Health: [+] Deep sleep, healthy physiology, balanced hormones. / [-] Sleep disorders, smoldering neurasthenia, diseases related to the reproductive system, or physiological decline.
+`,
+      },
+      {
+        id: 4,
+        canList: [5, 10],
+        canName: ["Mậu", "Quý"],
+        title: "Wu - Gui Merge (Heartless / Ruthless Merge)",
+        comprehensiveImage: `•	General: [+] Masterful control of minor details, gathering micro-data into macro-strength. The image of "a rocky mountain absorbing dewdrops." / [-] Outwardly close but inwardly calculating, cold, and extracting all value.
+•	Business: [+] Effective data/network acquisition. Excellent cash flow management, accumulating small gains into massive wealth. / [-] Highly pragmatic cooperation; ruthlessly discarded once usefulness is exhausted. Money laundering or hiding large cash flows.
+•	Love: [+] Stable marriage based on a solid economic foundation, a complement between a cautious person and a flexible one. / [-] A relationship heavy on materialism, exchanging love for money (age gaps). Inwardly cold and ruthless when interests are touched.
+•	Health: [+] Stable excretory and muscular functions. / [-] The excretory system is buried: risk of kidney stones, ovarian cysts, urinary blockages, edema.
+`,
+      },
+    ];
+    return partAMergeData.filter((item) =>
+      containsAllValues(canList, item.canList),
+    );
+  };
+
+  const getPartAClass = (canList) => {
+    let partAClassData = [
+      {
+        id: 0,
+        canList: [1, 7],
+        canName: ["Giáp", "Canh"],
+        title: "Jia - Geng Clash",
+        comprehensiveImage: `•	General: [+] A powerful breakthrough, destroying the old and cumbersome to establish a new order. / [-] Brutal physical antagonism, destruction of core structures, heavy losses.
+•	 Business: [+] Drastic corporate restructuring, strictly eliminating poor personnel, winning in negotiations/lawsuits. / [-] Fierce commercial confrontations, public lawsuits, ruthless dismissals, corporate splitting.
+•	 Love: [+] Definitively resolving stagnant conflicts, breaking up decisively to free each other. / [-] Violent arguments, smashing things, neither side willing to yield leading to the exhaustion of all affection.
+•	 Health: [+] Successful surgical operation to completely remove the pathogen. / [-] Heavy physical impacts, traffic accidents, major bone fractures, head/facial injuries.
+`,
+      },
+      {
+        id: 1,
+        canList: [2, 8],
+        canName: ["Ất", "Tân"],
+        title: "Yi - Xin Clash",
+        comprehensiveImage: `•	General: [+] Micro-adjustments, cutting away unnecessary details to achieve perfection. / [-] Bothersome minor injuries, constant poking and prodding, nagging that causes mental fatigue.
+•	Business: [+] Sharp contract reviews, optimizing processes, eliminating excess costs. / [-] Competitors playing dirty, nitpicking, stealing copyrights. Constant minor conflicts causing a slow leakage of cash flow.
+•	Love: [+] Frankly pointing out small mistakes so both can fix and improve together. / [-] Verbal abuse, sarcastic remarks as sharp as a knife, digging up past mistakes causing deep emotional pain.
+•	Health: [+] Successful acupuncture, acupressure, or minor surgeries. / [-] Peripheral musculoskeletal injuries, sciatica, chronic neck/shoulder pain, cuts on hands or feet.
+`,
+      },
+      {
+        id: 2,
+        canList: [3, 9],
+        canName: ["Bính", "Nhâm"],
+        title: "Bing - Ren Clash",
+        comprehensiveImage: `•	General: [+] Explosive speed, creating a widespread wave of influence, rapidly changing the situation. / [-] Extreme ideological conflicts, uncontrolled emotions, high-speed destruction.
+•	Business: [+] Wildly successful viral marketing campaigns, rapidly dominating the market. / [-] Widespread media crisis, mass boycott waves, instant brand collapse.
+•	Love: [+] Intense love at first sight, extreme emotional sublimation. / [-] Erratic temperament, suddenly hot and cold. Love burns fast but fades ruthlessly due to reality.
+•	Health: [+] Strong blood circulation, overflowing energy. / [-] Warning signs of stroke, cerebrovascular accident, myocardial infarction, spiking blood pressure, severe vision impairment.
+`,
+      },
+      {
+        id: 3,
+        canList: [4, 10],
+        canName: ["Đinh", "Quý"],
+        title: "Ding - Gui Clash",
+        comprehensiveImage: `•	General: [+] Illuminating hidden corners, using intellect to control shady information flows. / [-] Hidden suppression, nitpicking, secretly sabotaging in the dark, slowly eliminating motivation.
+•	Business: [+] Excellent auditing and internal error detection. Timely discovery and prevention of cash flow hemorrhage. / [-] Subjected to secret inspections, creative ideas suppressed, unannounced capital tightening, backstabbing.
+•	Love: [+] Deeply understanding the partner's innermost thoughts to share the burden. / [-] Cold war, suspicion, secret jealousy. Psychological abuse, using silence to extinguish the partner's enthusiasm.
+•	Health: [+] Early detection of underlying diseases through screening. / [-] Chronic insomnia, autonomic nervous system disorders, depression, slow heart rate, stagnant blood flow.
+`,
+      },
+    ];
+
+    return partAClassData.filter((item) =>
+      containsAllValues(canList, item.canList),
+    );
+  };
+
+  const getPartBMerge = (chiList) => {
+    let partBMergeData = [
+      {
+        id: 0,
+        chiList: [1, 2],
+        chiName: ["Tý", "Sửu"],
+        title: "Rat - Ox Merge",
+        comprehensiveImage: `•	General: [+] Safe storage, absolute information security, sustainable hidden accumulation. / [-] Secret bindings, inhibiting growth, stagnation, freezing.
+•	Business: [+] Successfully gathering reserve funds, hoarding real estate/assets waiting for the right time, building a solid hidden fund. / [-] Working capital frozen (bad debt, inventory). Shady collusion, under-the-table bribery, backdoor deals.
+•	Love: [+] Silent sacrifices, unconditional protection, tight bonding. / [-] Secretly tied down, emotional infidelity, clinging to toxic relationships, trading intimacy for benefits.
+•	Health: [+] The body retains moisture well, storing energy. / [-] Poor blood circulation, water retention, edema, cysts, repressed depression.
+`,
+      },
+      {
+        id: 1,
+        chiList: [3, 12],
+        chiName: ["Dần", "Hợi"],
+        title: "Tiger - Pig Merge",
+        comprehensiveImage: `•	General: [+] Extinguishing potential risks, soothing impulsiveness, mutually beneficial cooperation. / [-] Generating and destroying simultaneously. Harmonious on the outside but secretly destructive inside, eliminating vitality, extinguishing motivation.
+•	Business: [+] Salvaging overheated projects. Partners injecting abundant resources to nurture ideas. / [-] Partners secretly gutting the company. Wrongful investments leading to premature failure, brain drain.
+•	Love: [+] Mutually supportive relationship, understanding, extinguishing the partner's anger. / [-] Marriage shadowed by a third party. Outwardly happy but inwardly rotting, losing rationality.
+•	Health: [+] Rapid fever reduction, completely resolving acute inflammations. / [-] Sudden collapse of vitality, stroke, rapid onset of critical illness.
+`,
+      },
+      {
+        id: 2,
+        chiList: [4, 11],
+        chiName: ["Mão", "Tuất"],
+        title: "Rabbit/Cat - Dog Merge",
+        comprehensiveImage: `•	General: [+] Strict system management, using specialized skills to acquire major power/assets. Merges to transform into Fire. / [-] Imprisoning thought, dictatorial control, extinguishing creativity.
+•	Business: [+] Successful corporate acquisition (M&A). Holding exclusive technology/data, excellent risk control. / [-] Manipulating financial reports, using tricks to usurp. Choking employee innovation.
+•	Love: [+] Absolute protection of the family, loyal love, tight connection. / [-] Extreme possessiveness, psychological manipulation, monitoring the partner like a surveillance camera in the name of love.
+•	Health: [+] Flexible muscles, stabilizing ulcers/internal heat. / [-] Blocked blood and Qi flow, stomach pain due to psychological stress, narcissistic injury.
+`,
+      },
+      {
+        id: 3,
+        chiList: [5, 10],
+        chiName: ["Thìn", "Dậu"],
+        title: "Dragon - Rooster Merge",
+        comprehensiveImage: `•	General: [+] Power and law protecting legitimate interests. Reaching a major agreement. Merges to close the vault. / [-] Hidden fractures, sacrificing minor details/individuals to serve systemic interests.
+•	Business: [+] Large-scale protected transactions (government bids). Closing high-value contracts. / [-] Staff reduction, internal purges to save the overall structure. Bureaucratic "ask-and-give" mechanisms.
+•	Love: [+] Marriage bringing power and social status. Couples powerfully aiding each other's careers. / [-] Ruthlessly cutting off old relationships for new benefits. Disputes and hurting relatives over interests.
+•	Health: [+] Successful surgery removing a malignant tumor. / [-] Bone and joint fractures, hepatobiliary system damage requiring major surgical intervention.
+`,
+      },
+      {
+        id: 4,
+        chiList: [6, 9],
+        chiName: ["Tỵ", "Thân"],
+        title: "Snake - Monkey Merge",
+        comprehensiveImage: `•	General: [+] Forging to create new value, highly profitable cooperation, gathering massive resources. / [-] Merging and destroying simultaneously. Harmonious outside but harsh and draining inside, secret disputes over core interests.
+•	Business: [+] Wildly profitable mergers and acquisitions. Brilliant combination of production and core technology. / [-] Internal infighting within joint ventures. Lubrication/operating costs are too high, leading to "doing much but earning little."
+•	Love: [+] Intense love, overcoming prejudices to bond, perfect compensation for each other. / [-] Opportunistic marriage, sleeping in the same bed but dreaming different dreams. A "love-hate" relationship with constant arguing but unable to leave.
+•	Health: [+] Destroying dormant viruses, improving respiratory/cardiovascular functions through high-intensity training. / [-] Chronic respiratory inflammation, colon disease. Risk of injury due to mechanical friction.
+`,
+      },
+      {
+        id: 5,
+        chiList: [7, 8],
+        chiName: ["Ngọ", "Mùi"],
+        title: "Horse - Goat Merge",
+        comprehensiveImage: `•	General: [+] Absolute convergence of energy, shining brilliantly on a solid foundation. / [-] Concealment, burning away thoughts, stagnation, imprisonment of freedom.
+•	Business: [+] Foundations (real estate, infrastructure) generating explosive profits. Clear and unified strategic direction. / [-] Hiding revenue, fake ledgers. Suspended projects due to dried-up capital, money laundering through phantom real estate.
+•	Love: [+] Sublimated, passionate love, fully supported by both families. / [-] Closed off, hiding sexual orientation. Relationships hitting a dead end, losing the voice of freedom.
+•	Health: [+] Warm body, abundant vitality, strong digestive system. / [-] Accumulation of toxic heat, internal heat, severe ulcers. Exhaustion from being drained of energy.
+`,
+      },
+    ];
+    return partBMergeData.filter((item) =>
+      containsAllValues(chiList, item.chiList),
+    );
+  };
+
+  const getPartBClass = (chiList) => {
+    let partBClassData = [
+      {
+        id: 0,
+        chiList: [1, 7],
+        chiName: ["Tý", "Ngọ"],
+        title: "Rat - Horse Clash",
+        comprehensiveImage: `•	General: [+] Super-speed breakthrough motivation, releasing stagnant energy, turning situations around in a flash. / [-] Extreme emotional explosions, violent Water-Fire collisions, rapid destruction.
+•	Business: [+] Successful profit-taking from short-term trading. Immediately changing jobs to a better position. Highly flexible cash flow. / [-] Flash bankruptcy, impulsive spending causing asset loss. Fierce personnel conflicts leading to firings.
+•	Love: [+] Love at first sight, decisively ending a dull relationship to find a new haven. / [-] Bitter arguments, erratic emotional highs and lows, shocking breakups.
+•	Health: [+] Timely emergency response, clearing blood clots. / [-] Stroke, cerebrovascular accident, vestibular disorders, unexpected bleeding/accidents.
+`,
+      },
+      {
+        id: 1,
+        chiList: [2, 8],
+        chiName: ["Sửu", "Mùi"],
+        title: "Ox - Goat Clash",
+        comprehensiveImage: `•	General: [+] Opening hidden treasuries, restructuring foundations to be more solid. Breaking ground. / [-] Collapse of basic structures, ugly secrets bursting out, internal turmoil, dust flying blindly.
+•	Business: [+] Hitting the jackpot in real estate, profitable compensation from land clearance. Uncovering beneficial hidden funds. / [-] Losing land, premises disputes. Board of directors in turmoil, unearthing hidden bad debts.
+•	Love: [+] Tearing down and rebuilding a better marital foundation. Definitively resolving long-standing family feuds. / [-] Fierce inheritance disputes, exposing shameful family secrets.
+•	Health: [+] Successful minor abdominal surgery, permanently resolving stagnant digestive issues. / [-] Soft tissue muscle damage, acute stomach aches, sudden weakening of the spleen and stomach.
+`,
+      },
+      {
+        id: 2,
+        chiList: [3, 9],
+        chiName: ["Dần", "Thân"],
+        title: "Tiger - Monkey Clash",
+        comprehensiveImage: `•	General: [+] Milestone shifts, expanding territory, motivation to reach far, traveling extensively. / [-] Heavy physical impacts, traveling and working hard in vain, broken roadmaps.
+•	Business: [+] Successful overseas business trips, pioneering new markets. Changes in position/politics bringing major promotions. / [-] Losing seats/status. Labor accidents involving heavy machinery. Logistics/import-export risks.
+•	Love: [+] Love blossoming through travel or business trips. / [-] Distanced due to the nature of work. Arguments and smashing things leading to separation.
+•	Health: [+] Successful spinal orthopedic adjustments, realigning bones and tendons. / [-] Severe road traffic accidents, major bone fractures, motor nerve damage.
+`,
+      },
+      {
+        id: 3,
+        chiList: [4, 10],
+        chiName: ["Mão", "Dậu"],
+        title: "Rabbit/Cat - Rooster Clash",
+        comprehensiveImage: `•	General: [+] Sharp, exquisite transactions, resolving matters quickly and clearly. / [-] Stabbing arguments, bothersome minor injuries, cold refusals to cooperate.
+•	Business: [+] Closing large-scale financial/banking contracts. Effectively cutting redundant personnel. Prosperity in medical and jewelry sectors. / [-] Uncompromising and sharp contract disputes. Sudden dismissal.
+•	Love: [+] Breaking up with clear financial boundaries, no ambiguity. / [-] Thin, sharp words causing deep pain. Cutting off affection coldly and ruthlessly.
+•	Health: [+] Successful cosmetic surgery, minor scalpel procedures. / [-] Finger/toe injuries, hepatobiliary diseases, peripheral nerve damage.
+`,
+      },
+      {
+        id: 4,
+        chiList: [5, 11],
+        chiName: ["Thìn", "Tuất"],
+        title: "Dragon - Dog Clash",
+        comprehensiveImage: `•	General: [+] Macro-level explosion, smashing treasuries to extract massive assets, re-establishing a grand order. / [-] Large-scale collapse, bursting bubbles, unsalvageable disasters.
+•	Business: [+] Winning mega-project bids, clearing entire premises to build major infrastructure. Unlocking massive capital sources. / [-] Corporate-level bankruptcy, chain defaults, bursting real estate/financial bubbles.
+•	Love: [+] Escaping harsh ideological/family rules to find freedom. / [-] Divorce involving the division of massive assets. Traumatic psychological events, life-and-death separations.
+•	Health: [+] Major open abdominal surgery to completely remove pathogens. / [-] Malignant tumors erupting, mine collapse accidents, earthquakes, incurable diseases affecting multiple organs.
+`,
+      },
+      {
+        id: 5,
+        chiList: [6, 12],
+        chiName: ["Tỵ", "Hợi"],
+        title: "Snake - Pig Clash",
+        comprehensiveImage: `•	General: [+] Flexible mindset changes, quickly adapting to new currents of thought, reaching an international level. / [-] Backtracking, mental turmoil, core ideological conflicts, aimless displacement.
+•	Business: [+] Strong development in aviation, maritime, and international communications technology. Expanding strategic vision. / [-] Fierce conflicts over business strategy. Ruthlessly tearing up contracts, rapid crises.
+•	Love: [+] Overcoming prejudice to be together, changing oneself for a lover. / [-] Storms caused by disagreements in life perspectives. Attitudes changing on a dime (turning from love to hate).
+•	Health: [+] Stimulating a sharp nervous system, quick reflexes. / [-] Autonomic nervous system disorders, insomnia, paranoia, water/air travel accidents.
+`,
+      },
+    ];
+    return partBClassData.filter((item) =>
+      containsAllValues(chiList, item.chiList),
+    );
+  };
+
+  const getPartBPuncture = (chiList) => {
+    let partBPunctureData = [
+      {
+        id: 0,
+        chiList: [1, 8],
+        chiName: ["Tý", "Mùi"],
+        title: "Rat - Goat Puncture",
+        comprehensiveImage: `•	General: [+] Decisively eliminating hidden risks without leaving a trace. / [-] Deep-seated hatred, hidden damage, backstabbing, draining vitality.
+•	Business: [+] Deservedly punishing moles/backstabbers within the company. / [-] Demoted/fired for unclear reasons. Competitors using dirty tricks, secretly gutting assets.
+•	Love: [+] Decisively cutting off a toxic relationship that drains mental energy. / [-] Vicious romantic revenge, cold violence, separations with hatred to the bone.
+•	Health: [+] Completely destroying dormant disease cells. / [-] Chronic kidney failure, severe gynecological diseases, poisoning, physical exhaustion from hidden stress.
+`,
+      },
+      {
+        id: 1,
+        chiList: [2, 7],
+        chiName: ["Sửu", "Ngọ"],
+        title: "Ox - Horse Puncture",
+        comprehensiveImage: `•	General: [+] Using iron discipline to extinguish impulsiveness and arrogance. / [-] Unexpected elimination of vitality; what seems supportive is actually poison.
+•	Business: [+] Timely prevention of an impulsive investment project, saving capital flow. / [-] Brutal suppression by bosses/advisors. A rising career is suddenly ousted due to trusting the wrong person.
+•	Love: [+] Family intervenes to stop a blind marriage. / [-] Not enjoying the blessings of parents. Having affection robbed by the closest people.
+•	Health: [+] Rapidly lowering fire and clearing toxic heat from the body. / [-] Sudden cardiovascular death, blindness/retinal damage, sudden catastrophic accidents.
+`,
+      },
+      {
+        id: 2,
+        chiList: [3, 6],
+        chiName: ["Dần", "Tỵ"],
+        title: "Tiger - Snake Puncture",
+        comprehensiveImage: `•	General: [+] Explosive breakthrough energy, burning through stages to achieve maximum efficiency. / [-] Backtracking, returning favors with resentment, impulsive, fast to rise and fast to fall.
+•	Business: [+] Rapid revenue growth, seizing opportunities to aggressively boost production. / [-] Biting the hand that feeds. Partners backtracking to destroy each other. Major compensation lawsuits, risks of warehouse fires.
+•	Love: [+] Burning love, intense passion in the early stages. / [-] Burns fast, fades fast. Close friends turning to tear you apart, exposing secrets online.
+•	Health: [+] Successful surgery using lasers/high-frequency waves. / [-] Severe burns from fire/chemicals, accidents from reckless speeding, rapidly progressing diseases.
+`,
+      },
+      {
+        id: 3,
+        chiList: [4, 5],
+        chiName: ["Mão", "Thìn"],
+        title: "Rabbit/Cat - Dragon Puncture",
+        comprehensiveImage: `•	General: [+] Using minor details to break through massive blockages, resolving problems from their tiny roots. / [-] Persistent, lurking, slowly poking and prodding, endless fatigue.
+•	Business: [+] Successful inspections and audits, uncovering hidden systemic violations. / [-] Prolonged economic lawsuits. Being trapped by wording, competitors slowly tearing away market share bit by bit.
+•	Love: [+] Patiently unpacking every minor conflict to understand each other. / [-] Toxic mental abuse, unsolvable mother-in-law/daughter-in-law conflicts. Secret infidelity.
+•	Health: [+] Treating chronic conditions via long-term acupuncture/Eastern medicine. / [-] Unresolved chronic illnesses, stomach tumors, rheumatoid aches destroying the body.
+`,
+      },
+      {
+        id: 4,
+        chiList: [9, 12],
+        chiName: ["Thân", "Hợi"],
+        title: "Monkey - Pig Puncture",
+        comprehensiveImage: `•	General: [+] Flexible displacement, escaping safety bubbles to seek high-risk, high-reward opportunities. / [-] Silent, cold collapse, losing stable foundations.
+•	Business: [+] Successfully switching to a new industry/freelance. Innovating outdated ways of thinking. / [-] Losing compulsory fixed income sources. Hidden cash flow bleeding, structural changes causing insecurity.
+•	Love: [+] Giving each other absolute private space to freely develop. / [-] Sleeping in the same bed but dreaming different dreams, frozen emotions. Wasting away without definitively divorcing.
+•	Health: [+] Effectively eliminating toxins through the urinary system. / [-] Cold lungs, immunodeficiency, mild but persistent kidney stones, lack of vitality.
+`,
+      },
+      {
+        id: 5,
+        chiList: [10, 11],
+        chiName: ["Dậu", "Tuất"],
+        title: "Rooster - Dog Puncture",
+        comprehensiveImage: `•	General: [+] Iron discipline, applying strict laws to eradicate evil at its root. / [-] Destruction, firearms, violence, ruthlessness with no way back.
+•	Business: [+] Successfully purging corrupt gangs/interest groups within organizations using the law. / [-] Criminalizing economic relationships, involvement with underworld debt collection. Total loss of assets.
+•	Love: [+] Decisively terminating a toxic relationship to protect oneself. / [-] Extreme marital hatred, divorces empty of affection ready to annihilate each other, love/money-related murders.
+•	Health: [+] Radiotherapy/chemotherapy powerfully destroying cancer cells. / [-] Late-stage lung cancer. Catastrophic crippling accidents, wounds from weapons/firearms.
+`,
+      },
+    ];
+    return partBPunctureData.filter((item) =>
+      containsAllValues(chiList, item.chiList),
+    );
+  };
+
+  const getPartBDestruction = (chiList) => {
+    let partBDestructionData = [
+      {
+        id: 0,
+        chiList: [1, 10],
+        chiName: ["Tý", "Dậu"],
+        title: "Rat - Rooster Destruction",
+        comprehensiveImage: `•	General: [+] Shattering the arrogant, glamorous exterior to see through to the practical reality. / [-] Ungrateful arrogance, outwardly supportive but secretly corroding and sabotaging. Destruction concerning the feminine/hidden elements, or wine and sex.
+•	Business: [+] Discovering fake/counterfeit goods, exposing the truth behind a veneer of prestige. / [-] Hidden supply chain fractures. Leaking data to competitors, slow brain drain.
+•	Love: [+] Waking up from illusions about the partner's appearance. / [-] Sophisticated exploitation, receiving favors with indifference. Cold war due to excessive ego.
+•	Health: [+] Deep cleaning, eliminating residue in the respiratory system. / [-] Hidden immune decline, respiratory tract damage, unresolved urinary infections.
+`,
+      },
+      {
+        id: 1,
+        chiList: [4, 7],
+        chiName: ["Mão", "Ngọ"],
+        title: "Rabbit/Cat - Horse Destruction",
+        comprehensiveImage: `•	General: [+] Cutting off the spread of impulsive emotions, dividing things clearly. / [-] Destruction of households. Tearing, disconnecting, things abandoned halfway due to sudden conflicts.
+•	Business: [+] Anatomizing corporate structures, cutting out redundant money-burning departments. / [-] Abandoning projects mid-way, collapsing halfway due to running out of capital. Supply chain breaks.
+•	Love: [+] Quickly cutting off lingering, ambiguous romantic ties. / [-] Disconnected emotions, sudden breakups at the peak of passion, callous and hardened hearts.
+•	Health: [+] Successful surgical incisions, good orthopedic surgery. / [-] Heart arrhythmias, torn tendons/ligaments, hard-to-heal scars, nerve damage.
+`,
+      },
+      {
+        id: 2,
+        chiList: [5, 2],
+        chiName: ["Thìn", "Sửu"],
+        title: "Dragon - Ox Destruction",
+        comprehensiveImage: `•	General: [+] Breaking the grip of earth and stone to release resources. / [-] Hidden bursts, foundation sinking, collapse of things being kept securely hidden.
+•	Business: [+] Unearthing secret stashes, accessing competitors' slush funds. / [-] Internal information leaks, bad debts exposed, localized liquidity loss due to trapped fixed assets.
+•	Love: [+] Piercing the veil of secrecy to expose the truth of a deceitful relationship. / [-] Shameful family secrets leaked, hidden envy destroying family harmony.
+•	Health: [+] Suction/minor surgery to remove stagnant fluids from the body. / [-] Pleural/abdominal effusion, edema due to weakened water metabolism functions.
+`,
+      },
+      {
+        id: 3,
+        chiList: [11, 8],
+        chiName: ["Tuất", "Mùi"],
+        title: "Dog - Goat Destruction",
+        comprehensiveImage: `•	General: [+] Plowing arid land to seek buried core values. / [-] Destroying solid foundations, dry disputes, ruining peace.
+•	Business: [+] Restructuring infrastructure, tearing down old factories to build new ones. / [-] Fierce premises disputes, exhausting long-term lawsuits claiming land/real estate.
+•	Love: [+] Breaking down backward family customs to take control of one's life. / [-] Persistent conflicts, emotional barrenness, arguments revolving entirely around money and shared assets.
+•	Health: [+] Surgery to dissect dry, hard tumors. / [-] Atherosclerotic cells, muscle atrophy, pathologies caused by long-term toxic heat accumulation drying up body fluids.
+`,
+      },
+      {
+        id: 4,
+        chiList: [3, 12],
+        chiName: ["Dần", "Hợi"],
+        title: "Tiger - Pig Destruction",
+        comprehensiveImage: `•	General: [+] Explosive growth breaking out of its protective incubation shell. (Generates, merges, and destroys simultaneously). / [-] Vitality destroyed from within due to improper nurturing. Biting the hand that feeds.
+•	Business: [+] Successfully breaking away from an overbearing parent company to start a separate, highly successful venture. / [-] Receiving funding but using it for the wrong purposes leading to system collapse; partners turning hostile and pulling capital suddenly.
+•	Love: [+] Fighting to break the family's extreme control in order to mature. / [-] Spoiled rotten; one side's sacrifices are despised and trampled upon by the other.
+•	Health: [+] Treating illnesses with diaphoretic therapy (inducing sweat) for powerful detoxification. / [-] Stroke or sudden exhaustion due to the overuse of tonics/nutrients causing blood vessels to burst.
+`,
+      },
+      {
+        id: 5,
+        chiList: [6, 9],
+        chiName: ["Tỵ", "Thân"],
+        title: "Snake - Monkey Destruction",
+        comprehensiveImage: `•	General: [+] Using the heat of fire to forge metal and shape new tools. (Clashes, merges, and destroys simultaneously). / [-] Breaking alliances because core interests are violated. Cooperation that exploits and then discards.
+•	Business: [+] Recycling, merging, and reselling companies (acquiring to split and sell for profit). / [-] Tearing each other apart within joint ventures, going back on contracts to steal core technologies.
+•	Love: [+] Transforming a toxic relationship into a purely business partnership. / [-] Marriages based on pragmatic transactions; when money or benefits run out, they automatically disband and report each other.
+•	Health: [+] Laser ablation/radiotherapy precisely destroying mechanical lesions. / [-] Severe ulcerative colitis, devastating sciatic nerve injuries due to mechanical impacts.
+`,
+      },
+    ];
+    return partBDestructionData.filter((item) =>
+      containsAllValues(chiList, item.chiList),
+    );
+  };
+
+  const getPartBThreePenalty = (chiList) => {
+    let partBThreePenaltyData = [
+      {
+        id: 0,
+        chiList: [2, 8, 11],
+        chiName: ["Sửu", "Mùi", "Tuất"],
+        title: "The Earth Three Penalty (Ox - Goat - Dog)",
+        comprehensiveImage: `•	General: [+] Thoroughly excavating all foundations, smashing the old to build a massive empire. / [-] Large-scale disputes, legal punishments, collapsed foundations, stagnant tumors.
+•	Business: [+] Resounding victories in land lawsuits, gathering massive land banks thanks to large-scale clearances. / [-] Major economic lawsuits, investigative agencies freezing assets, bad debts leading to foreclosures.
+•	Love: [+] Completely resolving all generational grievances to turn over an entirely new leaf. / [-] Brutal family infighting, disputes over assets/child custody, doing favors but getting resentment in return.
+•	Health: [+] Successful radiotherapy/major surgery dissecting complex tumors. / [-] Malignant cancers (stomach, colon), chain-reaction accidents, devastated body.
+`,
+      },
+      {
+        id: 1,
+        chiList: [3, 6, 9],
+        chiName: ["Dần", "Tỵ", "Thân"],
+        title:
+          "The Fire-Metal Three Penalty (Tiger - Snake - Monkey)",
+        comprehensiveImage: `•	General: [+] Continuous volatility bringing super-fast capital turnover and power opportunities. / [-] Intertwined romantic grudges, traffic accidents, implicated legal entanglements.
+•	Business: [+] Huge wins in logistics, international transport. Cash flow rotating at dizzying speeds generating high profits. / [-] Multinational/customs legal implications. Multi-level financial scams, large money coming in and going out fast leaving nothing.
+•	Love: [+] Vibrant affection, constant renewal, experiencing continuous travel together. / [-] Complex romantic relationships (love triangles, quadrangles), love mixed with hate. Money-love scandals involving the law.
+•	Health: [+] Maximizing neuromuscular motor capabilities (like elite athletes). / [-] Chain-reaction traffic accidents, heavy industrial machinery accidents, traumatic brain/spinal injuries.
+`,
+      },
+      {
+        id: 2,
+        chiList: [1, 4],
+        chiName: ["Tý", "Mão"],
+        title: "The Uncivilized Penalty (Rat - Rabbit/Cat)",
+        comprehensiveImage: `•	General: [+] Clarity, outrightly rejecting unreasonable demands, maintaining personal principles. / [-] Heartless and unrighteous, disrespecting rules/elders, backstabbing, hidden deceit.
+•	Business: [+] Preventing "pie-in-the-sky" contracts, refusing to invest in empty projects. / [-] Employees betraying masters, stealing company intellectual property, sexual bribery for promotion.
+•	Love: [+] Alertness, decisively escaping psychological manipulation traps. / [-] Incest, lewdness, unfilial behavior toward parents. Exploitative relationships discarded coldly once benefits are extracted.
+•	Health: [+] Successfully preventing viral/bacterial infections through the skin. / [-] Venereal diseases, sexually transmitted infections, urethral damage, limb necrosis.
+`,
+      },
+    ];
+    return partBThreePenaltyData.filter((item) =>
+      containsAllValues(chiList, item.chiList),
+    );
+  };
+
+  const getPartBCovertMerge = (chiList) => {
+    let partBCovertMergeData = [
+      {
+        id: 0,
+        chiList: [3, 2],
+        chiName: ["Dần", "Sửu"],
+        title: "Tiger - Ox Covert Merge",
+        comprehensiveImage: `•	General: [+] Hidden intellect, excellent information security capabilities, risk management in the shadows, sharp stratagems. / [-] Sneaky transactions, shady collusion, extreme micro-management, deceit.
+•	Business: [+] Building excellent corporate intelligence forces. Successful hidden share acquisitions, solid risk response funds. (AI, Big Data, Cybersecurity industries). / [-] Money laundering, tax evasion, bribery. Hidden dictatorial management, surveilling employees like criminals.
+•	Love: [+] Noble secret love, sacrificing without expecting returns, incredibly strong intuition understanding the partner. / [-] Sophisticated hidden affairs (secret mistresses). Partners being "helicopter supervisors," secretly planting trackers and controlling.
+•	Health: [+] The body's hidden self-healing mechanisms operating effectively. / [-] Long-incubating diseases (cysts, viruses, blood lipids), smoldering endocrine/nervous disorders with unclear causes.
+`,
+      },
+      {
+        id: 1,
+        chiList: [7, 12],
+        chiName: ["Ngọ", "Hợi"],
+        title: "Horse - Pig Covert Merge",
+        comprehensiveImage: `•	General: [+] Hidden intersection of thought and intellect. Quiet soul harmony, communicating without words. / [-] Overflowing hidden lust, dark thoughts, moral decay concealed beneath a dignified facade.
+•	Business: [+] Successful transactions based on intuition and silent trust. Angel investors injecting capital secretly. / [-] Bribery using sex, shady "under-the-table" nightlife deals, selling out copyrights/brainpower in secret.
+•	Love: [+] Ultimate harmony of body and soul but unpublicized (love in the shadows that is extremely sincere). / [-] Sneaky relationships (secret lovers, FWB), lewdness, sex addiction hidden under an intellectual guise.
+•	Health: [+] Balanced hormones and nervous system, a refreshed spirit thanks to effectively releasing physiological/psychological tension in secret. / [-] Hidden reproductive diseases, smoldering neurasthenia due to excessive lust or the pressure of hiding secrets.
+`,
+      },
+      {
+        id: 2,
+        chiList: [4, 9],
+        chiName: ["Mão", "Thân"],
+        title: "Rabbit/Cat - Monkey Covert Merge",
+        comprehensiveImage: `•	General: [+] Using softness and flexibility to neutralize hardness and violence in silence. The secret tactic of "soft ties bind tight." / [-] Cowardly secret compromises, being threatened, blackmailed, or subjected to hidden manipulation and control without daring to resist.
+•	Business: [+] Smoothly resolving media/legal crises by going through the back door, secretly settling with complainants. / [-] Company secretly controlled by dark forces, subjected to silent "protection" rackets (extortion), sophisticated technology theft.
+•	Love: [+] Silently enduring, patiently using gentleness to soothe and reform the partner's patriarchal/rough nature. / [-] Cold violence, romantic blackmail, toxic underground relationships (toxic Sugar Baby - Daddy), victims living in fear of being tracked.
+•	Health: [+] Recovering from micro-traumas in tendons and bones thanks to long-term physical therapy treatments that take effect slowly. / [-] Sciatica, smoldering muscle and tendon aches without clear causes, hidden bone spurs causing persistent aching.
+`,
+      },
+    ];
+    return partBCovertMergeData.filter((item) =>
+      containsAllValues(chiList, item.chiList),
+    );
+  };
+
+  const getPartBFrame = (chiList) => {
+    let partBFrameData = [
+      {
+        id: 0,
+        chiList: [9, 1, 5],
+        chiName: ["Thân", "Tý", "Thìn"],
+        title:
+          "Monkey - Rat - Dragon (Water Frame / Network of Flows & Hidden Data)",
+        comprehensiveImage: `•	General: [+] Macro-convergence of intellect, information, and resources. The ability to connect and circulate energy continuously without limits. / [-] Being washed away aimlessly in the current, overshadowed by hidden powers, dark conspiracies of a collective nature.
+•	Business: [+] Building financial/banking empires, acquiring Big Data, massive logistics networks. Immensely powerful liquidity cash flow. / [-] Monopolizing financial markets, large-scale money laundering, stock manipulation. Chain defaults due to broken hidden cash flows.
+•	Love: [+] An absolutely accommodating relationship like water, emotions flowing naturally, financial backing from both families. / [-] Drowning in collective lust, complex love lives, losing direction and being engulfed in a debauched lifestyle.
+•	Health: [+] Circulatory and excretory systems operating at a superior level, comprehensively eliminating toxins from the body. / [-] Multi-organ failure due to effusion, widespread edema, or depression/agoraphobia. Diseases spread through bodily fluids.
+`,
+      },
+      {
+        id: 1,
+        chiList: [3, 7, 11],
+        chiName: ["Dần", "Ngọ", "Tuất"],
+        title:
+          "Tiger - Horse - Dog (Fire Frame / Network of Ideology & Media)",
+        comprehensiveImage: `•	General: [+] A machine creating brilliant ideological movements, macro-cultural dissemination, the power to enlighten and guide the masses. / [-] Fanatical herd mentality, collective brainwashing, burning through stages, ideological riots.
+•	Business: [+] Dominating the media, entertainment, and social network industries. Viral marketing campaigns creating public opinion waves, shaping social perception. / [-] Burning money on deceitful PR, shattered image bubbles. Fatal media crises due to being boycotted by the online community.
+•	Love: [+] A brilliant love story, absolutely synchronized life ideals, inspiring and admired by the public. / [-] Loving like a "trend," putting on a show. Exposing each other on social media, brutally interfered with by the crowd.
+•	Health: [+] Blazing blood and Qi, mental energy at a maximum, extremely rapid psychological recovery. / [-] Neurological exhaustion, ruptured cerebral blood vessels due to overexcitement and collective agitation. Fast-spreading respiratory epidemics.
+`,
+      },
+      {
+        id: 2,
+        chiList: [12, 4, 8],
+        chiName: ["Hợi", "Mão", "Mùi"],
+        title:
+          "Pig - Rabbit/Cat - Goat (Wood Frame / Network of Structure & Organization)",
+        comprehensiveImage: `•	General: [+] Building a solidly intertwined root structure/architecture, the power of education, deep-rooted worldviews. / [-] Cumbersome, bureaucratic machinery, tangled vines choking development, nepotistic cliques.
+•	Business: [+] Empires of manufacturing, education, and agriculture with massive branch networks. Rooted supply chains deeply embedded in the market. / [-] Conservative family-run companies. Personnel forming cliques to destroy each other, a system that is "bloated" but hollow and rotting inside.
+•	Love: [+] Tight-knit family bonds, highlighting family traditions, ties based on responsibility and duty. / [-] Tied down by harsh family prejudices. Pressure from relatives choking personal happiness, entangled by roots unable to escape.
+•	Health: [+] Supple musculature, survival, adaptation, and biological self-regeneration capabilities at the highest level. / [-] Spreading root-like tumors/cancers (cellular metastasis). Widespread tissue growth disorders.
+`,
+      },
+      {
+        id: 3,
+        chiList: [6, 10, 2],
+        chiName: ["Tỵ", "Dậu", "Sửu"],
+        title:
+          "Snake - Rooster - Ox (Metal Frame / Network of Power & Slaughter)",
+        comprehensiveImage: `•	General: [+] The power of martial law, hard power systems, alliances of execution, absolute order, and iron discipline. / [-] Dictatorship, ruthless purges, gang warfare, crushing and organized violence.
+•	Business: [+] Monopolistic organizations (Cartels) in finance/heavy industry. The ability to destroy competitors via extreme legal sanctions. / [-] Manipulating markets mafia-style. Bloody purges on the battlefield of commerce, criminalizing economic relations, collective asset confiscation.
+•	Love: [+] Relationships based on strict paperwork/legal commitments. Establishing and obeying absolutely clear life rules. / [-] Marriage like a military prison. Brutal domestic violence, divorces going to court determined to annihilate the partner to the end.
+•	Health: [+] Skeletal structures solid as steel, extreme physical pain tolerance, a robust body. / [-] Catastrophic accidents (stabbings, firearms, metal, chain vehicle crashes). Amputating/removing multiple organs/limbs to save a life.
+`,
+      },
+      {
+        id: 4,
+        chiList: [3, 4, 5],
+        chiName: ["Dần", "Mão", "Thìn"],
+        title:
+          "Tiger - Rabbit/Cat - Dragon (Eastern Wood Directional Frame)",
+        comprehensiveImage: `•	General: [+] Overwhelming force of growth and expansion, massive gathering of similar minds, an unstoppable seasonal trend. / [-] Uncontrolled wild growth, mob rule, chaotic expansion without solid structure or boundaries.
+•	Business: [+] Regional monopolies in agriculture, education, or timber. Massive grassroots movements supporting a brand, overwhelming market dominance based on community trust. / [-] Bloated organizations, expanding too fast without infrastructure, gang-like regional protectionism stifling innovation.
+•	Love: [+] Massive support from the extended family/community, a relationship built on a strong, shared cultural background. / [-] Smothered by clan interference, loss of individuality within the group, overwhelming family pressure dictating the relationship.
+•	Health: [+] Immense vitality, unstoppable recovery power, robust physical growth and cellular regeneration. / [-] Massive abnormal tissue growth (tumors), overactive immune system attacking the body, overwhelming liver/gallbladder issues.
+`,
+      },
+      {
+        id: 5,
+        chiList: [6, 7, 8],
+        chiName: ["Tỵ", "Ngọ", "Mùi"],
+        title:
+          "Snake - Horse - Goat (Southern Fire Directional Frame)",
+        comprehensiveImage: `•	General: [+] A massive wave of ideology, cultural dominance, an overwhelming explosion of light, energy, and civilization. / [-] Mass hysteria, destructive fanaticism, unstoppable wildfires of extreme emotion.
+•	Business: [+] Dominating the entire media/entertainment landscape, creating massive societal trends, absolute brand supremacy that dictates the market. / [-] Explosive financial bubbles, catastrophic PR crises spreading like wildfire, collective burn-out and massive capital incineration.
+•	Love: [+] A highly celebrated, intensely public relationship supported by the masses, overflowing with extreme passion and warmth. / [-] Drowning in public scrutiny, collective drama, burning out quickly due to overwhelming external attention and lack of privacy.
+•	Health: [+] Supreme cardiovascular strength, immense mental energy, enthusiasm, and warmth. / [-] Severe collective epidemics (fevers/viruses), mass psychological breakdowns, fatal heart/blood pressure spikes, severe dehydration.
+`,
+      },
+      {
+        id: 6,
+        chiList: [9, 10, 11],
+        chiName: ["Thân", "Dậu", "Tuất"],
+        title:
+          "Monkey - Rooster - Dog (Western Metal Directional Frame)",
+        comprehensiveImage: `•	General: [+] Absolute authority, a massive gathering of military or legal power, unbreakable regional alliances of force and justice. / [-] Tyranny, ruthless collective suppression, absolute conformity leaving no room for mercy or flexibility.
+•	Business: [+] Monopolies in heavy industry, finance, or security. Unstoppable hostile takeovers backed by immense capital and legal clout. / [-] Cartel/mafia-style market manipulation, mass layoffs, collective financial punishment, industry-wide sanctions.
+•	Love: [+] A highly disciplined, legally ironclad union backed by powerful families, impenetrable loyalty and shared rules. / [-] A relationship resembling a military dictatorship, collective domestic violence, brutal divorces involving entire clans fighting over assets.
+•	Health: [+] Unbreakable skeletal structure, immense pain tolerance, supreme physical toughness and resilience. / [-] Massive traumatic injuries (wars, chain-reaction pile-ups, industrial disasters), overwhelming respiratory failures, severe collective violence.
+`,
+      },
+      {
+        id: 7,
+        chiList: [12, 1, 2],
+        chiName: ["Hợi", "Tý", "Sửu"],
+        title:
+          "Pig - Rat - Ox (Northern Water Directional Frame)",
+        comprehensiveImage: `•	General: [+] An overwhelming tsunami of data, capital, or hidden knowledge. Unstoppable underworld or shadow networks gathering immense momentum. / [-] Drowning in secrecy, massive corruption, an abyss of collective depression or shady conspiracies.
+•	Business: [+] Controlling the entire underground economy, massive data monopolies, immense hidden liquidity, offshore empires, and deep-web dominance. / [-] Tsunamis of bad debt, massive money-laundering rings collapsing, the entire system sinking in hidden losses and illegal operations.
+•	Love: [+] Deep, boundless, and overwhelming emotional/karmic connections, extreme secrecy protected by a collective or family. / [-] Drowning in collective trauma, massive hidden scandals, entire families tangled in dark, secretive lust or toxic codependency.
+•	Health: [+] Supreme adaptability, immense reserves of fluid and stamina, ultimate deep healing capabilities and fertility. / [-] Massive fluid retention, widespread edema, collective severe depression, sweeping reproductive/kidney failures, drowning.
+`,
+      },
+    ];
+    return partBFrameData.filter((item) =>
+      containsAllValues(chiList, item.chiList),
+    );
+  };
+
+  const getPartBHalfMerge = (chiList) => {
+    let partBHalfMergeData = [
+      {
+        id: 0,
+        frameChiList: [9, 1, 5],
+        chiLists: [
+          [9, 1],
+          [1, 5],
+        ],
+        chiName: ["Thân - Tý", "Tý - Thìn"],
+        title:
+          "Water Half Merge (Monkey - Rat / Rat - Dragon)",
+        comprehensiveImage: `•	General: [+] The preparation of data flows and hidden capital slowly converging, waiting for the right time to clear the channel. / [-] Localized stagnation, broken flows, lacking the crucial link to form a macro power.
+•	Business: [+] Having built the initial tech/financial foundation (Beta version), waiting for the final funding round to explode. / [-] Stuck liquidity, cash flows unable to connect with partners. Goods are sourced but unable to circulate.
+•	Love: [+] Affection incubating deeply but unwilling to go public yet, or waiting for family permission. / [-] Unrequited love or broken relationships due to geographical/financial barriers. Weary waiting.
+•	Health: [+] The capacity to retain water and filter blood is recovering locally. / [-] Localized blood vessel blockages, mild edema with unclear causes, waiting for a trigger.
+`,
+      },
+      {
+        id: 1,
+        frameChiList: [3, 7, 11],
+        chiLists: [
+          [3, 7],
+          [7, 11],
+        ],
+        chiName: ["Dần - Ngọ", "Ngọ - Tuất"],
+        title:
+          "Fire Half Merge (Tiger - Horse / Horse - Dog)",
+        comprehensiveImage: `•	General: [+] A spark kindling into a flame, brewing media plots, movements gathering forces. / [-] Haste, lacking foundation (firewood) or lacking storage (vault) leading to flaring up and dying out incompletely.
+•	Business: [+] Running small-scale media campaign tests very effectively, ready to scale up and multiply. / [-] Massive PR but no actual product to sell. Projects burning marketing money then suspended indefinitely.
+•	Love: [+] A passionately warm courting phase, full of brilliant passion but yet to reach a marriage commitment. / [-] "Blooms early, fades by evening" love, burning brightly in the early stages but lacking the responsible roots to maintain long-term.
+•	Health: [+] In the process of pushing back cold air, the body gradually warming up, slowly regaining vitality. / [-] Localized internal heat, inflammations flaring up in waves unresolved, smoldering evening fevers.
+`,
+      },
+      {
+        id: 2,
+        frameChiList: [12, 4, 8],
+        chiLists: [
+          [12, 4],
+          [4, 8],
+        ],
+        chiName: ["Hợi - Mão", "Mão - Mùi"],
+        title:
+          "Wood Half Merge (Pig - Rabbit/Cat / Rabbit/Cat - Goat)",
+        comprehensiveImage: `•	General: [+] Silently building the framework/root structure, slowly consolidating internal strength waiting for the day to rise high. / [-] Half-finished system building, broken supply chains, saplings lacking water or roots unable to grip the soil.
+•	Business: [+] Finished setting up the core personnel apparatus, waiting for operating licenses to officially produce. / [-] Construction projects mothballed, branch expansion projects suspended midway due to a lack of paperwork/capital.
+•	Love: [+] Trial marriage (cohabitation), building living habits together but yet to be introduced to the families or officially registered. / [-] Promising to build a future but never following through, stopping only at verbal commitments.
+•	Health: [+] Muscle injuries are in the scar healing phase, growing new skin. / [-] Cramps, localized tendon/muscle spasms, the body incubating a tumor that has not yet clearly formed.
+`,
+      },
+      {
+        id: 3,
+        frameChiList: [6, 10, 2],
+        chiLists: [
+          [6, 10],
+          [10, 2],
+        ],
+        chiName: ["Tỵ - Dậu", "Dậu - Sửu"],
+        title:
+          "Metal Half Merge (Snake - Rooster / Rooster - Ox)",
+        comprehensiveImage: `•	General: [+] In the process of negotiating and drafting legal terms, localized power alliances are forming. / [-] Incomplete punishments, loose rules, written agreements delayed.
+•	Business: [+] Currently finalizing the terms of a Memorandum of Understanding (MOU), merger negotiations progressing favorably in the first step. / [-] Economic lawsuits suspended, courts sitting on files. Weary waiting for practice licenses/copyright protection.
+•	Love: [+] Currently handling prenuptial procedures (asset division, marriage registration) rationally. / [-] Currently separated, asset disputes unresolved so cannot finalize the divorce. Stuck because of paperwork.
+•	Health: [+] In the process of wearing a cast, realigning bones waiting for a complete heal. / [-] Bone spurs, osteoarthritis progressing slowly, waiting for scalpel surgery but getting postponed.
+`,
+      },
+    ];
+    return partBHalfMergeData.filter((item) => {
+      if (
+        item.frameChiList &&
+        containsAllValues(chiList, item.frameChiList)
+      ) {
+        return false;
+      }
+
+      return item.chiLists.some((pair) => containsAllValues(chiList, pair));
+    });
+  };
+
+  const getCanChiList = (bazi, isVariable) => {
+    let canList = [];
+    let chiList = [];
+    let nam = bazi.year;
+    let thang = bazi.month;
+    let nhatChu = bazi.day;
+    let gio = bazi.hour;
+    let daiVan = bazi.daiVan;
+    let tieuVan = bazi.tieuVan;
+    let nguyetVan = bazi.nguyetVan;
+    let nhatVan = bazi.nhatVan;
+    let thoiVan = bazi.thoiVan;
+    let baziData = (
+      isVariable
+        ? [
+            nam,
+            thang,
+            nhatChu,
+            gio,
+            daiVan,
+            tieuVan,
+            nguyetVan,
+            nhatVan,
+            thoiVan,
+          ]
+        : [nam, thang, nhatChu, gio]
+    ).filter(Boolean);
+
+    baziData.forEach((data) => {
+      let canIndex = STEM_LIST.indexOf(data.can) + 1;
+      let chiIndex = BRANCH_LIST.indexOf(data.chi) + 1;
+
+      if (canIndex > 0) {
+        canList.push(canIndex);
+      }
+
+      if (chiIndex > 0) {
+        chiList.push(chiIndex);
+      }
+    });
+
+    return { canList, chiList };
+  };
+
+  const getPartInteractionData = (bazi, isVariable = false) => {
+    let { canList, chiList } = getCanChiList(bazi, isVariable);
+    let formatItems = (items) =>
+      items
+        .map((item) => `${item.title}\n${item.comprehensiveImage}`)
+        .join("\n");
+    let partAData = [
+      formatItems(getPartAMerge(canList)),
+      formatItems(getPartAClass(canList)),
+    ]
+      .filter(Boolean)
+      .join("\n");
+    let partBData = [
+      formatItems(getPartBMerge(chiList)),
+      formatItems(getPartBClass(chiList)),
+      formatItems(getPartBPuncture(chiList)),
+      formatItems(getPartBDestruction(chiList)),
+      formatItems(getPartBThreePenalty(chiList)),
+      formatItems(getPartBCovertMerge(chiList)),
+      formatItems(getPartBFrame(chiList)),
+      formatItems(getPartBHalfMerge(chiList)),
+    ]
+      .filter(Boolean)
+      .join("\n");
+    const noInteractionText = "No interaction";
+
+    return `PART A: HEAVENLY STEMS INTERACTION SYSTEM (Surface, Expressed, Obvious)
+${partAData || noInteractionText}
+PART B: EARTHLY BRANCHES INTERACTION SYSTEM (Hidden, Deep-seated Nature)
+${partBData || noInteractionText}`;
+  };
+
+  const getTuTruData = (bazi, baseInfo) => {
+    let nam = bazi.year;
+    let thang = bazi.month;
+    let nhatChu = bazi.day;
+    let gio = bazi.hour;
+    let nguHanhScoreGoc = bazi.nguHanhScoreGoc;
+    let nguHanhScore = bazi.nguHanhScore;
+    let daiVan = bazi.daiVan;
+    let tieuVan = bazi.tieuVan;
+    let nguyetVan = bazi.nguyetVan;
+    let nhatVan = bazi.nhatVan;
+    let thoiVan = bazi.thoiVan;
+    let thapNhiCung = bazi.thapNhiCung;
+    let tuTru = `
+    1. Lá Số Tứ Trụ của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
+      baseInfo.hoTen
+    } sinh năm ${baseInfo.namSinh}
+Trụ Năm Chính:${nam.name}
+•	Can: ${nam.can} (${nam.thapThan})
+•	Chi: ${nam.chi} 
+•	Can Tàng (100%): ${nam.canTangPercent
+      .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
+      .join(" + ")}
+•	Ngũ Hành Nạp Âm: ${nam.nguHanhNapAm}. (${nam.nguHanhNapAmThapThan})
+Trụ Tháng Chính:${thang.name}
+•	Can: ${thang.can} (${thang.thapThan})
+•	Chi: ${thang.chi} 
+•	Can Tàng (100%): ${thang.canTangPercent
+      .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
+      .join(" + ")}
+•	Ngũ Hành Nạp Âm: ${thang.nguHanhNapAm}. (${thang.nguHanhNapAmThapThan})
+Trụ Ngày Chính:${nhatChu.name}
+•	Can: ${nhatChu.can} (${nhatChu.thapThan})
+•	Chi: ${nhatChu.chi} 
+•	Can Tàng (100%): ${nhatChu.canTangPercent
+      .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
+      .join(" + ")}
+•	Ngũ Hành Nạp Âm: ${nhatChu.nguHanhNapAm}. (${nhatChu.nguHanhNapAmThapThan})
+Trụ Giờ Chính:${gio ? gio.name : ""}
+•	Can: ${gio ? gio.can : ""} (${gio ? gio.thapThan : ""})
+•	Chi: ${gio ? gio.chi : ""} (${gio ? gio.thapThan : ""})
+•	Can Tàng (100%): ${
+      gio
+        ? gio.canTangPercent
+            .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
+            .join(" + ")
+        : ""
+    }
+•	Ngũ Hành Nạp Âm: ${gio ? gio.nguHanhNapAm : ""}. (${
+      gio ? gio.nguHanhNapAmThapThan : ""
+    })${
+      daiVan
+        ? `\n\nThông tin các Trụ Thời Gian (Biến) của ${
+            baseInfo.gioiTinh === 1 ? "anh" : "chị"
+          } ${baseInfo.hoTen} sinh năm ${baseInfo.namSinh} tại đại vận thứ ${
+            daiVan.decadeIndex
+          }${
+            baseInfo.gioThoiVan && !baseInfo.onlyDecade
+              ? " thời điểm " + (baseInfo.gioThoiVan - 1) * 2 + "h"
+              : ""
+          }${
+            baseInfo.ngayLuuNhat && !baseInfo.onlyDecade
+              ? " ngày " + baseInfo.ngayLuuNhat
+              : ""
+          }${
+            baseInfo.thangLuuNguyet && !baseInfo.onlyDecade
+              ? " tháng " + baseInfo.thangLuuNguyet
+              : ""
+          }${
+            baseInfo.namXemTieuVan && !baseInfo.onlyDecade
+              ? " năm " + baseInfo.namXemTieuVan
+              : ""
+          }`
+        : ""
+    }${
+      daiVan
+        ? `\nTrụ Đại Vận Biến: ${daiVan.name}
+•	Can: ${daiVan.can} (${daiVan.thapThan})
+•	Chi: ${daiVan.chi}
+•	Can Tàng: ${daiVan.canTangPercent
+            .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
+            .join(" + ")}`
+        : ""
+    }${
+      tieuVan
+        ? `\nTrụ Năm Biến: ${tieuVan.name} 
+•	Can: ${tieuVan.can} (${tieuVan.thapThan})
+•	Chi: ${tieuVan.chi}
+•	Can Tàng: ${tieuVan.canTangPercent
+            .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
+            .join(" + ")}`
+        : ""
+    }${
+      nguyetVan
+        ? `\nTrụ Tháng Biến: ${nguyetVan.name}
+•	Can: ${nguyetVan.can} (${nguyetVan.thapThan})
+•	Chi: ${nguyetVan.chi}
+•	Can Tàng: ${nguyetVan.canTangPercent
+            .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
+            .join(" + ")}`
+        : ""
+    }${
+      nhatVan
+        ? `\nTrụ Ngày Biến: ${nhatVan.name}
+•	Can: ${nhatVan.can} (${nhatVan.thapThan})
+•	Chi: ${nhatVan.chi}
+•	Can Tàng: ${nhatVan.canTangPercent
+            .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
+            .join(" + ")}`
+        : ""
+    }${
+      thoiVan
+        ? `\nTrụ Giờ Biến: ${thoiVan.name}
+•	Can: ${thoiVan.can} (${thoiVan.thapThan})
+•	Chi: ${thoiVan.chi}
+•	Can Tàng: ${thoiVan.canTangPercent
+            .map((item) => `${item.name} ${item.score * 2}% (${item.thapThan})`)
+            .join(" + ")}`
+        : ""
+    }    
+
+4. Tỷ Trọng Ngũ Hành gốc của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
+      baseInfo.hoTen
+    } sinh năm ${baseInfo.namSinh}
+  ${nguHanhScoreGoc
+    .map(
+      (item) =>
+        `• ${getElementData(item.name)}(${getCuongNhuoc(item.percent)}) = ${
+          item.percent
+        }%.
+        -${getElementData(item.name)} (${item.thapThan[0]}) = ${
+          item.percentAm
+        }%, 
+        +${getElementData(item.name)} (${item.thapThan[1]}) = ${
+          item.percentDuong
+        }%`,
+    )
+    .join("\n\n")}
+  
+Cấp độ sức mạnh của Nhật Chủ (Chính): Hành ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.name
+    } (Đồng Hành) ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent
+    }% + Hành ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.name
+    } (Hỗ Trợ) ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent
+    }% = ${
+      getSupportPercent(nhatChu, nguHanhScoreGoc).totalPercent
+    }%. Tuy nhiên do ${getRoleText(
+      getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+      getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
+    )} nên Sức Mạnh của Nhật Chủ được AGI xác định tương đối tại ${
+      !getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
+      ).minorForces.name
+        ? ""
+        : "2"
+    } cấp độ ${
+      getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
+      ).majorForces.name
+    }${
+      getForcesDetail(
+        nhatChu,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+        getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
+      ).minorForces.name
+        ? " và " +
+          getForcesDetail(
+            nhatChu,
+            getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+            getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
+          ).minorForces.name
+        : ""
+    }     
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
+  ).majorForces.title
+}
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
+  ).majorForces.data
+}
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
+  ).minorForces?.title
+}
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScoreGoc).hoTro.percent,
+  ).minorForces?.data
+}${
+      daiVan
+        ? `\nTỷ Trọng Ngũ Hành của ${baseInfo.gioiTinh === 1 ? "anh" : "chị"} ${
+            baseInfo.hoTen
+          } sinh năm ${baseInfo.namSinh} tại đại vận thứ ${daiVan.decadeIndex}${
+            baseInfo.gioThoiVan && !baseInfo.onlyDecade
+              ? " thời điểm " + (baseInfo.gioThoiVan - 1) * 2 + "h"
+              : ""
+          }${
+            baseInfo.ngayLuuNhat && !baseInfo.onlyDecade
+              ? " ngày " + baseInfo.ngayLuuNhat
+              : ""
+          }${
+            baseInfo.thangLuuNguyet && !baseInfo.onlyDecade
+              ? " tháng " + baseInfo.thangLuuNguyet
+              : ""
+          }${
+            baseInfo.namXemTieuVan && !baseInfo.onlyDecade
+              ? " năm " + baseInfo.namXemTieuVan
+              : ""
+          } (đính kèm dữ liệu tăng/giảm so với tỷ trọng chính)
+  ${nguHanhScore
+    .map(
+      (item) =>
+        `• ${item.name}(${getCuongNhuoc(item.percent)}) = ${item.percent}% (${
+          daiVan
+            ? getAdditionPercent(item.name, nguHanhScore, nguHanhScoreGoc).total
+            : ""
+        }).
+        -${item.name} (${item.thapThan[0]}) = ${item.percentAm}% (${
+          daiVan
+            ? getAdditionPercent(item.name, nguHanhScore, nguHanhScoreGoc).am
+            : ""
+        }), 
+        +${item.name} (${item.thapThan[1]}) = ${item.percentDuong}% (${
+          daiVan
+            ? getAdditionPercent(item.name, nguHanhScore, nguHanhScoreGoc).duong
+            : ""
+        })`,
+    )
+    .join("\n\n")}
+Cấp độ sức mạnh của Nhật Chủ (Biến): Hành ${
+            getSupportPercent(nhatChu, nguHanhScore).dongHanh.name
+          } (Đồng Hành) ${
+            getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent
+          }% + Hành ${
+            getSupportPercent(nhatChu, nguHanhScore).hoTro.name
+          } (Hỗ Trợ) ${
+            getSupportPercent(nhatChu, nguHanhScore).hoTro.percent
+          }% = ${
+            getSupportPercent(nhatChu, nguHanhScore).totalPercent
+          }%. Tuy nhiên do ${getRoleText(
+            getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+            getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
+          )} nên Sức Mạnh của Nhật Chủ được AGI xác định tương đối tại ${
+            !getForcesDetail(
+              nhatChu,
+              getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
+            ).minorForces.name
+              ? ""
+              : "2"
+          } cấp độ ${
+            getForcesDetail(
+              nhatChu,
+              getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
+            ).majorForces.name
+          }${
+            getForcesDetail(
+              nhatChu,
+              getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+              getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
+            ).minorForces.name
+              ? " và " +
+                getForcesDetail(
+                  nhatChu,
+                  getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+                  getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
+                ).minorForces.name
+              : ""
+          } 
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
+  ).majorForces.title
+}
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
+  ).majorForces.data
+}
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
+  ).minorForces?.title
+}
+${
+  getForcesDetail(
+    nhatChu,
+    getSupportPercent(nhatChu, nguHanhScore).dongHanh.percent,
+    getSupportPercent(nhatChu, nguHanhScore).hoTro.percent,
+  ).minorForces?.data
+}`
+        : ""
+    }
+5. Ngũ Hành Nạp Âm
+•	Trụ Năm:  ${nam.nguHanhNapAm}
+•	Trụ Tháng: ${thang.nguHanhNapAm}
+•	Trụ Ngày: ${nhatChu.nguHanhNapAm}
+•	Trụ Giờ: ${gio ? gio.nguHanhNapAm : ""}
+
+${getNapAm(nam.nguHanhNapAm)}\n
+${getNapAm(thang.nguHanhNapAm)}\n
+${getNapAm(nhatChu.nguHanhNapAm)}\n
+${getNapAm(gio ? gio.nguHanhNapAm : "")}
+`;
+    let tuTruEn = `
+     1. Four Root Pillars Chart for ${
+       baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
+     } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}
+Root Year Pillar:${getStemData(nam.can)} ${getBranchData(nam.chi)}
+•	Stem: ${getStemData(nam.can)} (Revealed Force =${getTenForcesData(
+      nam.thapThan,
+    )})
+•	Branch:${getBranchData(nam.chi)} (Hidden Forces = ${nam.canTangPercent
+      .map((item) => `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`)
+      .join(" + ")}) 
+•	Inner Strength comes from the Year Pillar powered by ${getNapAmTenForces(
+      nam.nguHanhNapAmThapThan,
+    )}
+Root Month Pillar:${getStemData(thang.can)} ${getBranchData(thang.chi)}
+•	Stem: ${getStemData(thang.can)} (Revealed Force =${getTenForcesData(
+      thang.thapThan,
+    )})
+•	Branch: ${getBranchData(thang.chi)} (Hidden Forces = ${thang.canTangPercent
+      .map((item) => `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`)
+      .join(" + ")}) 
+•	Inner Strength comes from the Month Pillar powered by ${getNapAmTenForces(
+      thang.nguHanhNapAmThapThan,
+    )}
+Root Day Pillar:${getStemData(nhatChu.can)} ${getBranchData(nhatChu.chi)}
+•	Stem: ${getStemData(nhatChu.can)} (Revealed Force =${getTenForcesData(
+      nhatChu.thapThan,
+    )})
+•	Branch: ${getBranchData(nhatChu.chi)} (Hidden Forces = ${nhatChu.canTangPercent
+      .map((item) => `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`)
+      .join(" + ")})       
+•	Inner Strength comes from the Day Pillar powered by ${getNapAmTenForces(
+      nhatChu.nguHanhNapAmThapThan,
+    )}
+${
+  gio
+    ? `Root Hour Pillar:${
+        gio ? getStemData(gio.can) + " " + getBranchData(gio.chi) : ""
+      }
+•	Stem: ${getStemData(gio ? gio.can : "")} (Revealed Force =${getTenForcesData(
+        gio ? gio.thapThan : "",
+      )})
+•	Branch: ${getBranchData(gio ? gio.chi : "")} (Hidden Forces = ${
+        gio
+          ? gio.canTangPercent
+              .map(
+                (item) =>
+                  `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`,
+              )
+              .join(" + ")
+          : ""
+      })
+•	Inner Strength comes from the Hour Pillar powered by ${getNapAmTenForces(
+        gio ? gio.nguHanhNapAmThapThan : "",
+      )} `
+    : ""
+}
+     ${
+       !gio && daiVan
+         ? generateDecadeText(
+             daiVan.yearStartDecade,
+             baseInfo.namSinh,
+             BRANCH_LIST.indexOf(daiVan.chi) + 1,
+           )
+         : ""
+     }
+2. Root Mechanical Matrix for ${
+      baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
+    } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}
+${getPartInteractionData(bazi)}
+
+3. Root Five Elements Proportions for ${
+      baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
+    } ${baseInfo.hoTen}, born in ${baseInfo.namSinh} 
+${getDayMasterData(nguHanhScoreGoc, nhatChu.can)}
+${
+  daiVan
+    ? `\n4. Variable Pillars for ${baseInfo.gioiTinh === 1 ? "Mr." : "Ms."} ${
+        baseInfo.hoTen
+      }, born in ${baseInfo.namSinh} at the Decade ${daiVan.decadeIndex} ${
+        baseInfo.gioThoiVan && !baseInfo.onlyDecade
+          ? "at " + (baseInfo.gioThoiVan - 1) * 2 + "h "
+          : ""
+      }${
+        !baseInfo.onlyDecade
+          ? convertDate(
+              baseInfo.ngayLuuNhat,
+              baseInfo.thangLuuNguyet,
+              baseInfo.namXemTieuVan,
+            )
+          : ""
+      }  
+        `
+    : ""
+}${
+      daiVan
+        ? `\nVariable Decade Pillar: ${getStemData(daiVan.can)} ${getBranchData(
+            daiVan.chi,
+          )}
+•	Stem: ${getStemData(daiVan.can)} (Revealed Force =${getTenForcesData(
+            daiVan.thapThan,
+          )})
+•	Branch: ${getBranchData(daiVan.chi)} (Hidden Forces = ${daiVan.canTangPercent
+            .map(
+              (item) =>
+                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`,
+            )
+            .join(" + ")})`
+        : ""
+    }${
+      tieuVan
+        ? `\nVariable Year Pillar: ${getStemData(tieuVan.can)} ${getBranchData(
+            tieuVan.chi,
+          )}
+•	Stem: ${getStemData(tieuVan.can)} (Revealed Force =${getTenForcesData(
+            tieuVan.thapThan,
+          )})
+•	Branch: ${getBranchData(tieuVan.chi)} (Hidden Forces = ${tieuVan.canTangPercent
+            .map(
+              (item) =>
+                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`,
+            )
+            .join(" + ")})`
+        : ""
+    }${
+      nguyetVan
+        ? `\nVariable Month Pillar: ${getStemData(
+            nguyetVan.can,
+          )} ${getBranchData(nguyetVan.chi)}
+•	Stem: ${getStemData(nguyetVan.can)} (Revealed Force =${getTenForcesData(
+            nguyetVan.thapThan,
+          )})
+•	Branch: ${getBranchData(
+            nguyetVan.chi,
+          )} (Hidden Forces = ${nguyetVan.canTangPercent
+            .map(
+              (item) =>
+                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`,
+            )
+            .join(" + ")})`
+        : ""
+    }${
+      nhatVan
+        ? `\nVariable Day Pillar: ${getStemData(nhatVan.can)} ${getBranchData(
+            nhatVan.chi,
+          )}
+•	Stem: ${getStemData(nhatVan.can)} (Revealed Force =${getTenForcesData(
+            nhatVan.thapThan,
+          )})
+•	Branch: ${getBranchData(nhatVan.chi)} (Hidden Forces = ${nhatVan.canTangPercent
+            .map(
+              (item) =>
+                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`,
+            )
+            .join(" + ")})`
+        : ""
+    }${
+      thoiVan
+        ? `\nVariable Hour Pillar: ${getStemData(thoiVan.can)} ${getBranchData(
+            thoiVan.chi,
+          )}
+•	Stem: ${getStemData(thoiVan.can)} (Revealed Force =${getTenForcesData(
+            thoiVan.thapThan,
+          )})
+•	Branch: ${getBranchData(thoiVan.chi)} (Hidden Forces = ${thoiVan.canTangPercent
+            .map(
+              (item) =>
+                `${getTenForcesData(item.thapThan)} (${item.score * 2}%)`,
+            )
+            .join(" + ")})`
+        : ""
+    } ${
+      daiVan
+        ? `\n\n5. Variable Mechanical Matrix for ${baseInfo.gioiTinh === 1 ? "Mr." : "Ms."} ${baseInfo.hoTen} born in ${baseInfo.namSinh} at the Decade ${daiVan.decadeIndex} ${baseInfo.gioThoiVan && !baseInfo.onlyDecade ? "at " + (baseInfo.gioThoiVan - 1) * 2 + "h " : ""} ${!baseInfo.onlyDecade ? convertDate(baseInfo.ngayLuuNhat, baseInfo.thangLuuNguyet, baseInfo.namXemTieuVan) : ""}. The value ${!baseInfo.onlyDecade ? convertDate(baseInfo.ngayLuuNhat, baseInfo.thangLuuNguyet, baseInfo.namXemTieuVan) : ""}
+      ${getPartInteractionData(bazi, true)}`
+        : ""
+    }  ${
+      daiVan
+        ? `\n6. Variable Five Elements Proportions for ${
+            baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
+          } ${baseInfo.hoTen} born in ${baseInfo.namSinh} at the Decade ${
+            daiVan.decadeIndex
+          } ${
+            baseInfo.gioThoiVan && !baseInfo.onlyDecade
+              ? "at " + (baseInfo.gioThoiVan - 1) * 2 + "h "
+              : ""
+          }${
+            !baseInfo.onlyDecade
+              ? convertDate(
+                  baseInfo.ngayLuuNhat,
+                  baseInfo.thangLuuNguyet,
+                  baseInfo.namXemTieuVan,
+                )
+              : ""
+          }. The value ${
+            baseInfo.gioThoiVan && !baseInfo.onlyDecade
+              ? " (at " + (baseInfo.gioThoiVan - 1) * 2 + "h "
+              : ""
+          }${
+            !baseInfo.onlyDecade
+              ? convertDate(
+                  baseInfo.ngayLuuNhat,
+                  baseInfo.thangLuuNguyet,
+                  baseInfo.namXemTieuVan,
+                ) + ")"
+              : ""
+          } is compared to the root proportions
+  ${getDayMasterData(nguHanhScore, nhatChu.can)}`
+        : ""
+    }
+\n7. Analysis of Inner Strength for ${
+      baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
+    } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}
+•	Root Day Pillar: ${getNapAmData(nhatChu.nguHanhNapAm)}
+•	Root Hour Pillar: ${getNapAmData(gio ? gio.nguHanhNapAm : "")}
+
+Inner Strength comes from the Day Pillar ${getNapAm(nhatChu.nguHanhNapAm)}\n
+Inner Strength comes from the Hour Pillar ${getNapAm(
+      gio ? gio.nguHanhNapAm : "",
+    )}
+`;
+    return LANGUAGE === "en" ? tuTruEn : tuTru;
+  };
+
+  function isChildArray(parentArray, childArray) {
+    // Handle edge cases
+    if (!Array.isArray(parentArray) || !Array.isArray(childArray)) {
+      return false;
+    }
+
+    // Check if every element in child array exists in parent array
+    return childArray.every((element) => parentArray.includes(element));
+  }
+
+  function getCungCachName(cungCachList, toHopSao) {
+    for (let cungCach of cungCachList) {
+      let saoCungCach = cungCach.saoList;
+      if (isChildArray(toHopSao, saoCungCach)) {
+        return LANGUAGE === "en" ? cungCach.nameEn : cungCach.name;
+      }
+    }
+  }
+
+  function getBasicInfo(thapNhiCung) {
+    const cungCachList = [
+      {
+        id: 0,
+        name: "Tử Phủ Vũ Tướng Liêm",
+        nameEn: "The Master + Guardian + Captialist + Hero + Executive",
+        saoList: [1, 2, 4, 7, 11],
+      },
+      {
+        id: 1,
+        name: "Tử Vũ Liêm Sát Phá Tham",
+        nameEn:
+          "The Master + Capitalist + Executive + Breaker + Taker + Seeker",
+        saoList: [1, 2, 4, 9, 13, 14],
+      },
+      {
+        id: 2,
+        name: "Sát Phá Tham",
+        nameEn: "The Breaker + Taker + Seeker",
+        saoList: [9, 13, 14],
+      },
+      {
+        id: 3,
+        name: "Phủ Tướng",
+        nameEn: "The Guardian + Hero",
+        saoList: [7, 11],
+      },
+      {
+        id: 4,
+        name: "Cơ Nguyệt Đồng Lương",
+        nameEn: "The Thinker + Listener + Linker + Fortuner",
+        saoList: [3, 6, 8, 12],
+      },
+      {
+        id: 5,
+        name: "Cơ Đồng Cự",
+        nameEn: "The Thinker + Linker + Disruptor",
+        saoList: [3, 6, 10], //
+      },
+      {
+        id: 6,
+        name: "Cự Nhật",
+        nameEn: "The Disruptor + Visionary",
+        saoList: [5, 10],
+      },
+      {
+        id: 7,
+        name: "Âm Lương Dương",
+        nameEn: "The Listener + Visionary + Fortuner",
+        saoList: [5, 8, 12],
+      },
+    ];
+    let tamHopList =
+      LANGUAGE === "en"
+        ? [
+            ["Destiny", "Resources", "Career"],
+            ["Spiritual", "Partner", "External"],
+            ["Senior/Parents", "Junior/Children", "Peers"],
+            ["Siblings", "Health", "Property"],
+          ]
+        : [
+            ["Mệnh", "Tài Bạch", "Quan lộc"],
+            ["Phúc đức", "Phu thê", "Thiên Di"],
+            ["Phụ mẫu", "Tử tức", "Nô bộc"],
+            ["Huynh đệ", "Tật Ách", "Điền trạch"],
+          ];
+    let tamHopCungAnThan = [];
+    let toHopSao = [[], [], [], []];
+    let toHopSaoThan = [];
+    let cungChuThan = "";
+    let cungCach = [];
+    let cungCachThan = "";
+    tamHopList.forEach((tamHop, index) => {
+      thapNhiCung.forEach((cung) => {
+        if (cung.cungThan) {
+          cungChuThan = cung.cungChu;
+        }
+        if (tamHop.includes(cung.cungChu)) {
+          toHopSao[index] = [
+            ...toHopSao[index],
+            ...cung.cungSao
+              .filter((sao) => sao.saoID && !sao.saoTen.includes("De."))
+              .map((sao) => sao.saoID),
+          ];
+        }
+      });
+    });
+    tamHopList.map((tamHop, index) => {
+      if (tamHop.includes(cungChuThan)) {
+        tamHopCungAnThan = tamHop;
+        toHopSaoThan = toHopSao[index];
+      }
+    });
+    tamHopList.forEach((tamHop, index) => {
+      cungCach.push(getCungCachName(cungCachList, toHopSao[index]));
+    });
+    cungCachThan = getCungCachName(cungCachList, toHopSaoThan);
+    return { cungCach, cungCachThan, cungChuThan, tamHopCungAnThan };
+  }
+
+  const getNguHanhChi = (chi) => {
+    switch (chi) {
+      case "Tý":
+        return "+Thủy";
+      case "Sửu":
+        return "-Thổ";
+      case "Dần":
+        return "+Mộc";
+      case "Mão":
+        return "-Mộc";
+      case "Thìn":
+        return "+Thổ";
+      case "Tỵ":
+        return "-Hỏa";
+      case "Ngọ":
+        return "+Hỏa";
+      case "Mùi":
+        return "-Thổ";
+      case "Thân":
+        return "+Kim";
+      case "Dậu":
+        return "-Kim";
+      case "Tuất":
+        return "+Thổ";
+      case "Hợi":
+        return "-Thủy";
+      default:
+        return "";
+    }
+  };
+  // Tử Vi Base chỉ còn: 14 chính tinh, Tả Hữu Xương Khúc, Không Kiếp, Hỏa Linh, Tuần Triệt, Kình Đà
+
+  function capitalizeWords(str = "") {
+    return str
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" "); //
+  }
+
+  const getStarName = (star) => {
+    return LANGUAGE === "en" ? star.saoTenEn : star.saoTen;
+  };
+
+  function getSao(cungChu, thapNhiCung, tamHop = false) {
+    const newChinhTinh = [
+      51, 52, 53, 54, 55, 56, 57, 58, 61, 62, 92, 93, 94, 95,
+    ];
+    cungArr = thapNhiCung.filter((c) => {
+      return c.cungChu === cungChu;
+    });
+    if (cungArr.length > 0) {
+      let cung = cungArr[0];
+      const { cungSao, cungSo } = cung;
+      const chinhTinhGoc = cungSao.filter(
+        (sao) => sao.saoAmDuong && sao.saoAmDuong !== "",
+      );
+      let chinhTinhMoi = cungSao.filter(
+        (sao) => newChinhTinh.includes(sao.saoID),
+        // !checkSaoDaiVan(sao.saoTen) &&
+        // !checkSaoLuuNien(sao.saoTen) &&
+        // !checkSaoLuuNguyet(sao.saoTen) &&
+        // !checkSaoLuuNhat(sao.saoTen)
+      );
+      // let saoDaiVan = cungSao.filter((sao) => checkSaoDaiVan(sao.saoTen));
+      // let saoLuuNien = cungSao.filter((sao) => checkSaoLuuNien(sao.saoTen));
+      // let saoLuuNguyet = cungSao.filter((sao) => checkSaoLuuNguyet(sao.saoTen));
+      // let saoLuuNhat = cungSao.filter((sao) => checkSaoLuuNhat(sao.saoTen));
+      // let chinhTinhDaiVanId = [92, 93, 94, 95];
+      // let chinhTinhDaiVan = saoDaiVan.filter((sao) =>
+      //   chinhTinhDaiVanId.includes(sao.saoID)
+      // );
+      // let phuTinhDaiVan = saoDaiVan.filter(
+      //   (sao) => !chinhTinhDaiVanId.includes(sao.saoID)
+      // );
+      let tuan = cung.tuanTrung;
+      let triet = cung.trietLo;
+      let chinhTinh = [...chinhTinhGoc, ...chinhTinhMoi];
+      if (tamHop) {
+        chinhTinh = [...chinhTinhMoi];
+      }
+      if (tuan) {
+        chinhTinh = [...chinhTinh, { saoTen: "Tuần", saoTenEn: "Void Zone" }];
+        chinhTinhMoi = [
+          ...chinhTinhMoi,
+          { saoTen: "Tuần", saoTenEn: "Void Zone" },
+        ];
+      }
+      if (triet) {
+        chinhTinh = [...chinhTinh, { saoTen: "Triệt", saoTenEn: "Void Cut" }];
+        chinhTinhMoi = [
+          ...chinhTinhMoi,
+          { saoTen: "Triệt", saoTenEn: "Void Cut" },
+        ];
+      }
+      // if (cung.daiVanTuanTrung) {
+      //   saoDaiVan = [...saoDaiVan, { saoTen: "X. Void Zone" }];
+      //   chinhTinhDaiVan = [...chinhTinhDaiVan, { saoTen: "X. Void Zone" }];
+      // }
+      // if (cung.daiVanTrietLo) {
+      //   saoDaiVan = [...saoDaiVan, { saoTen: "X. Void Cut" }];
+      //   chinhTinhDaiVan = [...chinhTinhDaiVan, { saoTen: "X. Void Cut" }];
+      // }
+      // if (cung.luuNienTuanTrung) {
+      //   saoLuuNien = [...saoLuuNien, { saoTen: "Y. Void Zone" }];
+      // }
+      // if (cung.luuNienTrietLo) {
+      //   saoLuuNien = [...saoLuuNien, { saoTen: "Y. Void Cut" }];
+      // }
+      // if (cung.luuNguyetTuanTrung) {
+      //   saoLuuNguyet = [...saoLuuNguyet, { saoTen: "M. Void Zone" }];
+      // }
+      // if (cung.luuNguyetTrietLo) {
+      //   saoLuuNguyet = [...saoLuuNguyet, { saoTen: "M. Void Cut" }];
+      // }
+
+      const phuTinh = cungSao.filter(
+        (sao) => sao.saoAmDuong === "" && !newChinhTinh.includes(sao.saoID),
+        // !checkSaoDaiVan(sao.saoTen) &&
+        // !checkSaoLuuNien(sao.saoTen) &&
+        // !checkSaoLuuNguyet(sao.saoTen) &&
+        // !checkSaoLuuNhat(sao.saoTen)
+      );
+
+      return {
+        voChinhDieu: chinhTinhGoc.length === 0,
+        chinhTinhGoc: chinhTinhGoc.map((sao) => getStarName(sao)).join(" + "),
+        newChinhTinh: chinhTinhMoi.map((sao) => getStarName(sao)).join(" + "),
+        chinhTinh: chinhTinh
+          .map((sao) => capitalizeWords(getStarName(sao)))
+          .join(" + "),
+        phuTinh: phuTinh
+          .map((sao) => capitalizeWords(getStarName(sao)))
+          .join(" + "),
+        // daiVan: saoDaiVan.map((sao) => capitalizeWords(sao.saoTen)).join(" + "),
+        // chinhTinhDaiVan: chinhTinhDaiVan
+        //   .map((sao) => capitalizeWords(sao.saoTen))
+        //   .join(" + "),
+        // phuTinhDaiVan: phuTinhDaiVan
+        //   .map((sao) => capitalizeWords(sao.saoTen))
+        //   .join(" + "),
+        // luuNien: saoLuuNien
+        //   .map((sao) => capitalizeWords(sao.saoTen))
+        //   .join(" + "),
+        // luuNguyet: saoLuuNguyet
+        //   .map((sao) => capitalizeWords(sao.saoTen))
+        //   .join(" + "),
+        // luuNhat: saoLuuNhat
+        //   .map((sao) => capitalizeWords(sao.saoTen))
+        //   .join(" + "),
+        // cungDaiHan: cung.cungDaiHan,
+      };
+    }
+    return {
+      chinhTinh: "",
+      phuTinh: "",
+    };
+  }
+
+  const getXungChieu = (cungChu) => {
+    switch (cungChu) {
+      case "Mệnh":
+        return "Thiên Di";
+      case "Tài Bạch":
+        return "Phúc đức";
+      case "Phúc đức":
+        return "Tài Bạch";
+      case "Phu thê":
+        return "Quan lộc";
+      case "Thiên Di":
+        return "Mệnh";
+      case "Quan lộc":
+        return "Phu thê";
+      case "Phụ mẫu":
+        return "Tật Ách";
+      case "Tật Ách":
+        return "Phụ mẫu";
+      case "Tử tức":
+        return "Điền trạch";
+      case "Điền trạch":
+        return "Tử tức";
+      case "Nô bộc":
+        return "Huynh đệ";
+      case "Huynh đệ":
+        return "Nô bộc";
+      default:
+        return "";
+    }
+  };
+
+  const getXungChieuEn = (cungChu) => {
+    switch (cungChu) {
+      case "Destiny":
+        return "External";
+      case "Resources":
+        return "Spiritual";
+      case "Spiritual":
+        return "Resources";
+      case "Partner":
+        return "Career";
+      case "External":
+        return "Destiny";
+      case "Career":
+        return "Partner";
+      case "Senior/Parents":
+        return "Health";
+      case "Health":
+        return "Senior/Parents";
+      case "Junior/Children":
+        return "Property";
+      case "Property":
+        return "Junior/Children";
+      case "Peers":
+        return "Siblings";
+      case "Siblings":
+        return "Peers";
+      default:
+        return "";
+    }
+  };
+
+  const getCanTangData = (diaChi) => {
+    let canTangIndex = {
+      1: [
+        { id: 10, name: "Quý", score: 46.65 },
+        { id: 9, name: "Nhâm", score: 3.35 },
+      ], // Tý: Quý,Nhâm
+      2: [
+        { id: 6, name: "Kỷ", score: 30 },
+        { id: 8, name: "Tân", score: 15 },
+        { id: 10, name: "Quý", score: 5 },
+      ], // Sửu: Kỷ, Tân, Quý
+      3: [
+        { id: 1, name: "Giáp", score: 30 },
+        { id: 3, name: "Bính", score: 15 },
+        { id: 5, name: "Mậu", score: 5 },
+      ], // Dần: Giáp, Bính, Mậu
+      4: [
+        { id: 2, name: "Ất", score: 46.35 },
+        { id: 1, name: "Giáp", score: 3.35 },
+      ], // Mão: Ất,Giáp
+      5: [
+        { id: 5, name: "Mậu", score: 46.65 },
+        { id: 10, name: "Quý", score: 5 },
+        { id: 2, name: "Ất", score: 3.35 },
+      ], // Thìn: Mậu, Quý, Ất
+      6: [
+        { id: 3, name: "Bính", score: 30 },
+        { id: 7, name: "Canh", score: 15 },
+        { id: 5, name: "Mậu", score: 5 },
+      ], // Tỵ: Bính, Canh, Mậu
+      7: [
+        { id: 4, name: "Đinh", score: 30 },
+        { id: 6, name: "Kỷ", score: 20 },
+      ], // Ngọ: Đinh, Kỷ
+      8: [
+        { id: 6, name: "Kỷ", score: 30 },
+        { id: 2, name: "Ất", score: 15 },
+        { id: 4, name: "Đinh", score: 5 },
+      ], // Mùi: Kỷ, Ất, Đinh
+      9: [
+        { id: 7, name: "Canh", score: 30 },
+        { id: 9, name: "Nhâm", score: 15 },
+        { id: 5, name: "Mậu", score: 5 },
+      ], // Thân: Canh, Nhâm, Mậu
+      10: [
+        { id: 8, name: "Tân", score: 46.65 },
+        { id: 7, name: "Canh", score: 3.35 },
+      ], // Dậu: Tân,Canh
+      11: [
+        { id: 5, name: "Mậu", score: 30 },
+        { id: 4, name: "Đinh", score: 15 },
+        { id: 8, name: "Tân", score: 5 },
+      ], // Tuất: Mậu, Đinh, Tân
+      12: [
+        { id: 9, name: "Nhâm", score: 30 },
+        { id: 1, name: "Giáp", score: 20 },
+      ], // Hợi: Nhâm, Giáp
+    };
+    return canTangIndex[diaChi];
+  };
+
+  function checkNguHanhRelationshipDetailed(hanh1, hanh2) {
+    // Chuyển đổi tên ngũ hành sang ID
+    const hanhToId = {
+      K: 1, // Kim
+      M: 2, // Mộc
+      T: 3, // Thủy
+      H: 4, // Hỏa
+      O: 5, // Thổ
+    };
+
+    const id1 = hanhToId[hanh1];
+    const id2 = hanhToId[hanh2];
+
+    if (!id1 || !id2) {
+      throw new Error("Ngũ hành phải là K, M, T, H, hoặc O");
+    }
+
+    // Nếu cùng ngũ hành
+    if (id1 === id2) {
+      return "Ngang nhau";
+    }
+
+    // Ma trận tương sinh tương khắc
+    // 1: Kim, 2: Mộc, 3: Thủy, 4: Hỏa, 5: Thổ
+    // 0: Ngang nhau, 1: Sinh, -1: Được sinh, 2: Khắc, -2: Bị khắc
+    const relationshipMatrix = [
+      [null, null, null, null, null, null],
+      [null, 0, 2, 1, -2, -1], // Kim
+      [null, -2, 0, -1, 1, 2], // Mộc
+      [null, -1, 1, 0, 2, -2], // Thủy
+      [null, 2, -1, -2, 0, 1], // Hỏa
+      [null, 1, -2, 2, -1, 0], // Thổ
+    ];
+
+    const rel12 = relationshipMatrix[id1][id2];
+
+    if (rel12 === 1) return "Sinh"; // hanh1 sinh hanh2
+    if (rel12 === -1) return "Được sinh"; // hanh2 sinh hanh1 (hanh1 được sinh)
+    if (rel12 === 2) return "Khắc"; // hanh1 khắc hanh2
+    if (rel12 === -2) return "Bị khắc"; // hanh2 khắc hanh1 (hanh1 bị khắc)
+    return "Ngang nhau";
+  }
+
+  const getNguHanhCan = (thienCan) => {
+    switch (thienCan) {
+      case "Giáp":
+        return {
+          nguHanh: "M",
+          amDuong: 1,
+        };
+      case "Ất":
+        return {
+          nguHanh: "M",
+          amDuong: -1,
+        };
+      case "Bính":
+        return {
+          nguHanh: "H",
+          amDuong: 1,
+        };
+      case "Đinh":
+        return {
+          nguHanh: "H",
+          amDuong: -1,
+        };
+      case "Mậu":
+        return {
+          nguHanh: "O",
+          amDuong: 1,
+        };
+      case "Kỷ":
+        return {
+          nguHanh: "O",
+          amDuong: -1,
+        };
+      case "Canh":
+        return {
+          nguHanh: "K",
+          amDuong: 1,
+        };
+      case "Tân":
+        return {
+          nguHanh: "K",
+          amDuong: -1,
+        };
+      case "Nhâm":
+        return {
+          nguHanh: "T",
+          amDuong: 1,
+        };
+      case "Quý":
+        return {
+          nguHanh: "T",
+          amDuong: -1,
+        };
+    }
+  };
+
+  const getThapThan = (nguHanhThienCan, nguHanhNhatChu, cungDau) => {
+    let relationship = checkNguHanhRelationshipDetailed(
+      nguHanhNhatChu,
+      nguHanhThienCan,
+    );
+
+    // Bảng thập thần dựa trên mối quan hệ ngũ hành và âm dương
+    const thapThanMap = {
+      "Ngang nhau": {
+        cungDau: { tenDayDu: "Tỷ Kiên", goiTat: "Tỷ" },
+        khacDau: { tenDayDu: "Kiếp Tài", goiTat: "Kiếp" },
+      },
+      Sinh: {
+        cungDau: { tenDayDu: "Thực Thần", goiTat: "Thực" },
+        khacDau: { tenDayDu: "Thương Quan", goiTat: "Thương" },
+      },
+      "Được sinh": {
+        cungDau: { tenDayDu: "Thiên Ấn", goiTat: "Kiêu" },
+        khacDau: { tenDayDu: "Chính Ấn", goiTat: "Ấn" },
+      },
+      Khắc: {
+        cungDau: { tenDayDu: "Thiên Tài", goiTat: "Thiên" },
+        khacDau: { tenDayDu: "Chính Tài", goiTat: "Tài" },
+      },
+      "Bị khắc": {
+        cungDau: { tenDayDu: "Thiên Quan", goiTat: "Sát" },
+        khacDau: { tenDayDu: "Chính Quan", goiTat: "Quan" },
+      },
+    };
+
+    const thapThan = thapThanMap[relationship];
+    if (!thapThan) {
+      throw new Error(
+        `Không xác định được thập thần cho mối quan hệ: ${relationship}`,
+      );
+    }
+
+    return cungDau ? thapThan.cungDau.tenDayDu : thapThan.khacDau.tenDayDu;
+  };
+
+  const getCungInfo = (cungChu, thapNhiCung, nhatChu, baseInfo) => {
+    let cung = thapNhiCung.find((cung) => {
+      return cung.cungChu === cungChu;
+    });
+    let canTangData = getCanTangData(cung.cungSo);
+    if (LANGUAGE === "en") {
+      return `${cungChu} Domain ${
+        cung.cungThan ? " (also the Identity Domain)" : ""
+      } ${baseInfo.gioiTinh === 1 ? "Mr." : "Ms."} ${baseInfo.hoTen}, born in ${
+        baseInfo.namSinh
+      } locates at ${getBranchData(cung.cungTen)} Branch. Stars: ${
+        getSao(cung.cungChu, thapNhiCung).chinhTinhGoc
+          ? getSao(cung.cungChu, thapNhiCung).chinhTinh
+          : `No Major Star has ${
+              getSao(
+                LANGUAGE === "en"
+                  ? getXungChieuEn(cung.cungChu)
+                  : getXungChieu(cung.cungChu),
+                thapNhiCung,
+              ).chinhTinhGoc
+            } opposition aspect, ${
+              getSao(cung.cungChu, thapNhiCung).newChinhTinh
+            }`
+      }. Hidden Forces: ${canTangData
+        .map((item) => {
+          return getTenForcesData(
+            getThapThan(
+              getNguHanhCan(item.name).nguHanh,
+              getNguHanhCan(nhatChu).nguHanh,
+              getNguHanhCan(item.name).amDuong ===
+                getNguHanhCan(nhatChu).amDuong,
+            ),
+          );
+        })
+        .join(" + ")},`;
+    }
+
+    return `Cung ${cungChu}${
+      cung.cungThan ? " kiêm nhiệm cung an Thân" : ""
+    }: Địa Chi: ${cung.cungTen} (${getNguHanhChi(
+      cung.cungTen,
+    )}), Can Tàng: ${canTangData
+      .map((item) => {
+        return (
+          item.name +
+          " " +
+          item.score * 2 +
+          "% (" +
+          getThapThan(
+            getNguHanhCan(item.name).nguHanh,
+            getNguHanhCan(nhatChu).nguHanh,
+            getNguHanhCan(item.name).amDuong === getNguHanhCan(nhatChu).amDuong,
+          ) +
+          ")"
+        );
+      })
+      .join(" + ")}, Sao gốc: ${
+      getSao(cung.cungChu, thapNhiCung).chinhTinhGoc
+        ? getSao(cung.cungChu, thapNhiCung).chinhTinh
+        : `Vô Chính Diệu có ${
+            getSao(getXungChieu(cung.cungChu), thapNhiCung).chinhTinhGoc
+          } xung chiếu, ${getSao(cung.cungChu, thapNhiCung).newChinhTinh}`
+    }`;
+  };
+
+  const getTamHopData = (thapNhiCung, nhatChu, baseInfo) => {
+    let tamHopList = [
+      {
+        id: 1,
+        name: "Mệnh Tài Quan",
+        nameEn: "Destiny-Wealth-Career",
+        cung: ["Mệnh", "Tài Bạch", "Quan lộc"],
+        cungEn: ["Destiny", "Resources", "Career"],
+      },
+      {
+        id: 2,
+        name: "Phúc Phối Di",
+        nameEn: "Spiritual-Spouse-External",
+        cung: ["Phúc đức", "Phu thê", "Thiên Di"],
+        cungEn: ["Spiritual", "Partner", "External"],
+      },
+      {
+        id: 3,
+        name: "Phụ Tử Nô",
+        nameEn: "Senior-Junior-Peers",
+        cung: ["Phụ mẫu", "Tử tức", "Nô bộc"],
+        cungEn: ["Senior/Parents", "Junior/Children", "Peers"],
+      },
+      {
+        id: 4,
+        name: "Huynh Tật Điền",
+        nameEn: "Siblings-Health-Property",
+        cung: ["Huynh đệ", "Tật Ách", "Điền trạch"],
+        cungEn: ["Siblings", "Health", "Property"],
+      },
+    ];
+    const cungCachList = getBasicInfo(thapNhiCung).cungCach;
+    let tamHopData = "";
+    if (LANGUAGE === "en") {
+      tamHopData = tamHopList.map((item, index) => {
+        return `${item.id}. ${item.nameEn} Trine: ${
+          cungCachList[index]
+        } Combination
+        ${item.cungEn
+          .map((cungChu) =>
+            getCungInfo(cungChu, thapNhiCung, nhatChu, baseInfo),
+          )
+          .join("\n")}
+        `;
+      });
+    } else {
+      tamHopData = tamHopList.map((item, index) => {
+        return `${item.id}. Tam hợp ${item.name}: Dạng cách cục ${
+          cungCachList[index]
+        }
+        ${item.cung
+          .map((cungChu) => getCungInfo(cungChu, thapNhiCung, nhatChu))
+          .join("\n")}
+        `;
+      });
+    }
+
+    return tamHopData.join("\n");
+  };
+
+  function getBatTuTemplate(bazi) {
+    // let nam = bazi.year;
+    // let thang = bazi.month;
+    // let ngay = bazi.day;
+    // let gio = bazi.hour;
+    // let nguHanhScore = bazi.nguHanhScore;
+    let thapNhiCung = bazi.thapNhiCung;
+    let baseInfo = bazi.baseInfo;
+    let daiVan = bazi.daiVan;
+    if (LANGUAGE === "en") {
+      return `AGI Personal profile for ${baseInfo.gioiTinh === 1 ? "Mr." : "Ms."} ${
+        baseInfo.hoTen
+      } born in ${baseInfo.namSinh}     
+     A. Root Times Pillars for ${
+       baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
+     } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}     
+      ${getTuTruData(bazi, baseInfo)}
+      ${
+        !baseInfo.boTruGio
+          ? `B. Purple Star Astrology for ${
+              baseInfo.gioiTinh === 1 ? "Mr." : "Ms."
+            } ${baseInfo.hoTen}, born in ${baseInfo.namSinh}.
+      ${generateDecadeText(
+        getAgeStartDecadeIndex(thapNhiCung).ageStartDecadeIndex +
+          baseInfo.namSinh,
+        baseInfo.namSinh,
+        getAgeStartDecadeIndex(thapNhiCung).startDecadeCungSo,
+      )}        
+      ${getTamHopData(thapNhiCung, bazi.day.can, baseInfo)}`
+          : ""
+      }`;
+    } else {
+      if (daiVan?.decadeIndex === 0) {
+        return `Chưa thể xác định đại vận cho đến năm ${daiVan.yearStartDecade}`;
+      }
+      let batTuTemplate = `Hồ sơ AGI của ${
+        baseInfo.gioiTinh === 1 ? "anh" : "chị"
+      } ${baseInfo.hoTen} sinh năm ${baseInfo.namSinh}
+      Phần 1: Tứ Trụ
+      ${getTuTruData(bazi, baseInfo)}
+      ${
+        !baseInfo.boTruGio
+          ? `Phần 2: Tử Vi. Trợ lý AGI bắt buộc phải suy xét Ngũ Hành Cung, Thập Thần tàng trong Cung
+      ${getTamHopData(thapNhiCung, bazi.day.can)}`
+          : ""
+      }`;
+      return batTuTemplate;
+    }
+  }
+
+  function lapBatTu(bazi) {
+    let nam = bazi.year;
+    let thang = bazi.month;
+    let ngay = bazi.day;
+    let gio = bazi.hour;
+    let nguHanhScore = bazi.nguHanhScore;
+    // $("#namDuongLich").text(nam.solarValue);
+    // $("#thangDuongLich").text(thang.solarValue);
+    // $("#ngayDuongLich").text(ngay.solarValue);
+    // $("#gioDuongLich").text(gio.lunarValue);
+    // $("#namAmLich").text(nam.lunarValue);
+    // $("#thangAmLich").text(thang.lunarValue);
+    // $("#ngayAmLich").text(ngay.lunarValue);
+    // $("#gioAmLich").text(gio.lunarValue);
+    // $("#tenNamAm").text(nam.name);
+    // $("#tenThangAm").text(thang.name);
+    // $("#tenNgayAm").text(ngay.name);
+    // $("#tenGioAm").text(gio.name);
+    // $("#napAmNam").text(nam.nguHanhNapAm);
+    // $("#napAmThang").text(thang.nguHanhNapAm);
+    // $("#napAmNgay").text(ngay.nguHanhNapAm);
+    // $("#napAmGio").text(gio.nguHanhNapAm);
+    $("#tenNamBatTu").text(nam.name);
+    $("#napAmNamBatTu").text(nam.nguHanhNapAm);
+    $("#nguHanhCanNamBatTu").text(nam.nguHanhCan);
+    $("#nguHanhChiNamBatTu").text(nam.nguHanhChi);
+    $("#tenThangBatTu").text(thang.name);
+    $("#napAmThangBatTu").text(thang.nguHanhNapAm);
+    $("#nguHanhCanThangBatTu").text(thang.nguHanhCan);
+    $("#nguHanhChiThangBatTu").text(thang.nguHanhChi);
+    $("#tenNgayBatTu").text(ngay.name);
+    $("#napAmNgayBatTu").text(ngay.nguHanhNapAm);
+    $("#nguHanhCanNgayBatTu").text(ngay.nguHanhCan);
+    $("#nguHanhChiNgayBatTu").text(ngay.nguHanhChi);
+    $("#tenGioBatTu").text(gio ? gio.name : "");
+    $("#napAmGioBatTu").text(gio ? gio.nguHanhNapAm : "");
+    $("#nguHanhCanGioBatTu").text(gio ? gio.nguHanhCan : "");
+    $("#nguHanhChiGioBatTu").text(gio ? gio.nguHanhChi : "");
+    $("#tenDaiVanBatTu").text(bazi.daiVan ? bazi.daiVan.name : "");
+    $("#napAmDaiVanBatTu").text(bazi.daiVan ? bazi.daiVan.nguHanhNapAm : "");
+    $("#nguHanhCanDaiVanBatTu").text(bazi.daiVan ? bazi.daiVan.nguHanhCan : "");
+    $("#nguHanhChiDaiVanBatTu").text(bazi.daiVan ? bazi.daiVan.nguHanhChi : "");
+    $("#tenTieuVanBatTu").text(bazi.tieuVan ? bazi.tieuVan.name : "");
+    $("#napAmTieuVanBatTu").text(bazi.tieuVan ? bazi.tieuVan.nguHanhNapAm : "");
+    $("#nguHanhCanTieuVanBatTu").text(
+      bazi.tieuVan ? bazi.tieuVan.nguHanhCan : "",
+    );
+    $("#nguHanhChiTieuVanBatTu").text(
+      bazi.tieuVan ? bazi.tieuVan.nguHanhChi : "",
+    );
+    $("#tenNguyetVanBatTu").text(bazi.nguyetVan ? bazi.nguyetVan.name : "");
+    $("#napAmNguyetVanBatTu").text(
+      bazi.nguyetVan ? bazi.nguyetVan.nguHanhNapAm : "",
+    );
+    $("#nguHanhCanNguyetVanBatTu").text(
+      bazi.nguyetVan ? bazi.nguyetVan.nguHanhCan : "",
+    );
+    $("#nguHanhChiNguyetVanBatTu").text(
+      bazi.nguyetVan ? bazi.nguyetVan.nguHanhChi : "",
+    );
+    $("#tenNhatVanBatTu").text(bazi.nhatVan ? bazi.nhatVan.name : "");
+    $("#napAmNhatVanBatTu").text(bazi.nhatVan ? bazi.nhatVan.nguHanhNapAm : "");
+    $("#nguHanhCanNhatVanBatTu").text(
+      bazi.nhatVan ? bazi.nhatVan.nguHanhCan : "",
+    );
+    $("#nguHanhChiNhatVanBatTu").text(
+      bazi.nhatVan ? bazi.nhatVan.nguHanhChi : "",
+    );
+    $("#tenThoiVanBatTu").text(bazi.thoiVan ? bazi.thoiVan.name : "");
+    $("#napAmThoiVanBatTu").text(bazi.thoiVan ? bazi.thoiVan.nguHanhNapAm : "");
+    $("#nguHanhCanThoiVanBatTu").text(
+      bazi.thoiVan ? bazi.thoiVan.nguHanhCan : "",
+    );
+    $("#nguHanhChiThoiVanBatTu").text(
+      bazi.thoiVan ? bazi.thoiVan.nguHanhChi : "",
+    );
+    $("#tenNamTru").text(nam.name);
+    $("#tenThangTru").text(thang.name);
+    $("#tenNgayTru").text(ngay.name);
+    $("#tenGioTru").text(gio ? gio.name : "");
+    $("#tenDaiVanTru").text(bazi.daiVan ? bazi.daiVan.name : "");
+    $("#tenTieuVanTru").text(bazi.tieuVan ? bazi.tieuVan.name : "");
+    $("#tenNguyetVanTru").text(bazi.nguyetVan ? bazi.nguyetVan.name : "");
+    $("#tenNhatVanTru").text(bazi.nhatVan ? bazi.nhatVan.name : "");
+    $("#tenThoiVanTru").text(bazi.thoiVan ? bazi.thoiVan.name : "");
+    $("#canTangNam").text(nam.canTang);
+    $("#canTangThang").text(thang.canTang);
+    $("#canTangNgay").text(ngay.canTang);
+    $("#canTangGio").text(gio ? gio.canTang : "");
+    $("#canTangDaiVan").text(bazi.daiVan ? bazi.daiVan.canTang : "");
+    $("#canTangTieuVan").text(bazi.tieuVan ? bazi.tieuVan.canTang : "");
+    $("#canTangNguyetVan").text(bazi.nguyetVan ? bazi.nguyetVan.canTang : "");
+    $("#canTangNhatVan").text(bazi.nhatVan ? bazi.nhatVan.canTang : "");
+    $("#canTangThoiVan").text(bazi.thoiVan ? bazi.thoiVan.canTang : "");
+    $("#thapThanNam").text(nam.thapThan);
+    $("#thapThanThang").text(thang.thapThan);
+    $("#thapThanNgay").text(ngay.thapThan);
+    $("#thapThanGio").text(gio ? gio.thapThan : "");
+    $("#thapThanDaiVan").text(bazi.daiVan ? bazi.daiVan.thapThan : "");
+    $("#thapThanTieuVan").text(bazi.tieuVan ? bazi.tieuVan.thapThan : "");
+    $("#thapThanNguyetVan").text(bazi.nguyetVan ? bazi.nguyetVan.thapThan : "");
+    $("#thapThanNhatVan").text(bazi.nhatVan ? bazi.nhatVan.thapThan : "");
+    $("#thapThanThoiVan").text(bazi.thoiVan ? bazi.thoiVan.thapThan : "");
+    $("#nangLuongAmKim").text(
+      nguHanhScore.find((item) => item.id === 1).scoreAm,
+    );
+    $("#nangLuongAmMoc").text(
+      nguHanhScore.find((item) => item.id === 2).scoreAm,
+    );
+    $("#nangLuongAmThuy").text(
+      nguHanhScore.find((item) => item.id === 3).scoreAm,
+    );
+    $("#nangLuongAmHoa").text(
+      nguHanhScore.find((item) => item.id === 4).scoreAm,
+    );
+    $("#nangLuongAmTho").text(
+      nguHanhScore.find((item) => item.id === 5).scoreAm,
+    );
+    $("#nangLuongDuongKim").text(
+      nguHanhScore.find((item) => item.id === 1).scoreDuong,
+    );
+    $("#nangLuongDuongMoc").text(
+      nguHanhScore.find((item) => item.id === 2).scoreDuong,
+    );
+    $("#nangLuongDuongThuy").text(
+      nguHanhScore.find((item) => item.id === 3).scoreDuong,
+    );
+    $("#nangLuongDuongHoa").text(
+      nguHanhScore.find((item) => item.id === 4).scoreDuong,
+    );
+    $("#nangLuongDuongTho").text(
+      nguHanhScore.find((item) => item.id === 5).scoreDuong,
+    );
+    $("#tongNangLuongKim").text(
+      nguHanhScore.find((item) => item.id === 1).total,
+    );
+    $("#tongNangLuongMoc").text(
+      nguHanhScore.find((item) => item.id === 2).total,
+    );
+    $("#tongNangLuongThuy").text(
+      nguHanhScore.find((item) => item.id === 3).total,
+    );
+    $("#tongNangLuongHoa").text(
+      nguHanhScore.find((item) => item.id === 4).total,
+    );
+    $("#tongNangLuongTho").text(
+      nguHanhScore.find((item) => item.id === 5).total,
+    );
+    $("#phanTramNangLuongKim").text(
+      nguHanhScore.find((item) => item.id === 1).percent,
+    );
+    $("#phanTramNangLuongMoc").text(
+      nguHanhScore.find((item) => item.id === 2).percent,
+    );
+    $("#phanTramNangLuongThuy").text(
+      nguHanhScore.find((item) => item.id === 3).percent,
+    );
+    $("#phanTramNangLuongHoa").text(
+      nguHanhScore.find((item) => item.id === 4).percent,
+    );
+    $("#phanTramNangLuongTho").text(
+      nguHanhScore.find((item) => item.id === 5).percent,
+    );
+  }
+
+  $("#luunien").click(function () {
+    let checkedValues = $("#luunien").serialize();
+    if (checkedValues) {
+      $("#namxemtieuvandiv").css("display", "flex");
+      $("#onlyDecade").prop("checked", false);
+      $("#namxemdaivandiv").css("display", "none");
+    } else {
+      $("#namxemtieuvandiv").css("display", "none");
+    }
+  });
+
+  $("#onlyDecade").click(function () {
+    if ($("#onlyDecade").is(":checked")) {
+      $("#namxemdaivandiv").css("display", "flex");
+      $("#luunien").prop("checked", false);
+      $("#namxemtieuvandiv").css("display", "none");
+    } else {
+      $("#namxemdaivandiv").css("display", "none");
+    }
+  });
+
+  $("input#laplaso").click(function () {
+    $("#laso").removeClass("anlaso");
+    $("#urlLaso").val("");
+    const formData = $("form#lstv").serialize();
+    $.ajax({
+      url: "/api/get-bazi-data",
+      type: "GET",
+      dataType: "json",
+      data: formData,
+      success: function (thienBandiaBan) {
+        lapBatTu(thienBandiaBan);
+
+        // Luận giải lấy từ GET_BAZI_RESULT
+        let resultData = formData;
+        if (formData.includes("boTruGio=on")) {
+          resultData = formData
+            .split("&")
+            .filter(function (pair) {
+              return pair.split("=")[0] !== "giosinh";
+            })
+            .join("&");
+        }
+        $.ajax({
+          url: "/api/get-bazi-result",
+          type: "GET",
+          dataType: "json",
+          data: resultData,
+          success: function (result) {
+            const text = result.baziResult || "";
+            $("#batTuTemplate").html(text.replace(/\n/g, "<br>"));
+          },
+          error: function () {
+            console.log("get-bazi-result error");
+            $("#batTuTemplate").html("Không lấy được luận giải từ API.");
+          },
+        });
+      },
+      error: function () {
+        console.log("get-bazi-data AJAX error");
+      },
+    });
+  });
+
+  $("input#uploadLaso").click(function () {
+    if ($("#laso").is(":hidden")) {
+      alert("Hãy an lá số trước khi upload!");
+      return false;
+    }
+
+    html2canvas(document.getElementById("laso"), {
+      background: "#FFFFFF",
+      onrendered: function (canvas) {
+        canvasData = canvas
+          .toDataURL("image/jpeg")
+          .replace("image/jpeg", "image/octet-stream");
+        $.ajax({
+          url: uploadLaso,
+          type: "POST",
+          data: {
+            image: canvasData,
+            hoten: $("#hoten").val(),
+            ngaysinh: $("#ngaysinh").val(),
+            thangsinh: $("#thangsinh").val(),
+            namsinh: $("#namsinh").val(),
+          },
+          dataType: "json",
+          success: function (response) {
+            if (response.error == false) {
+              $("#urlLaso").val(response.message);
+              alert("Upload thành công.");
+            } else {
+              alert("Có lỗi, không lưu được lá số trên server.");
+            }
+          },
+        }).fail(function () {
+          alert("Có lỗi, không lưu được lá số trên server.");
+        });
+      },
+    });
+  });
+});
