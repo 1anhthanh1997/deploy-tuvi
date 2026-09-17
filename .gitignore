@@ -1,10 +1,39 @@
-/genLaSo/node_modules
-/dist
-/build
-/public
-/src
-/test
-/docs
-/logs
-/tmp
-/cache
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Build / cache / logs
+dist/
+build/
+coverage/
+logs/
+tmp/
+cache/
+*.log
+.DS_Store
+
+# IDE / OS
+.idea/
+.vscode/
+Thumbs.db
+
+# tuvi-server local artifacts
+tuvi-server/node_modules/
+tuvi-server/dist/
+tuvi-server/build/
+tuvi-server/coverage/
+tuvi-server/logs/
+tuvi-server/tmp/
+tuvi-server/cache/
+tuvi-server/.env
+tuvi-server/.env.*
+
+# genLaSo local artifacts
+genLaSo/node_modules/
+genLaSo/.env
+genLaSo/.env.*
